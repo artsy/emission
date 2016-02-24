@@ -1,8 +1,8 @@
 EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$CONFIGURATION_BUILD_DIR/Emission" "$CONFIGURATION_BUILD_DIR/FBSnapshotTestCase" "$CONFIGURATION_BUILD_DIR/Nimble" "$CONFIGURATION_BUILD_DIR/Nimble-Snapshots" "$CONFIGURATION_BUILD_DIR/Quick"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "$CONFIGURATION_BUILD_DIR/Emission" "$CONFIGURATION_BUILD_DIR/FBSnapshotTestCase" "$CONFIGURATION_BUILD_DIR/Nimble" "$CONFIGURATION_BUILD_DIR/Nimble-Snapshots" "$CONFIGURATION_BUILD_DIR/Quick" "$CONFIGURATION_BUILD_DIR/React"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Emission/Emission.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/FBSnapshotTestCase/FBSnapshotTestCase.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Nimble-Snapshots/Nimble_Snapshots.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Nimble/Nimble.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Quick/Quick.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Emission" -framework "FBSnapshotTestCase" -framework "Nimble" -framework "Nimble_Snapshots" -framework "Quick"
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Emission/Emission.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/FBSnapshotTestCase/FBSnapshotTestCase.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Nimble-Snapshots/Nimble_Snapshots.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Nimble/Nimble.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Quick/Quick.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/React/React.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "Emission" -framework "FBSnapshotTestCase" -framework "Nimble" -framework "Nimble_Snapshots" -framework "Quick" -framework "React"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_ROOT = ${SRCROOT}/Pods

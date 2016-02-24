@@ -15,5 +15,10 @@
     "ios": "8.0"
   },
   "requires_arc": true,
-  "source_files": "Pod/Classes/**/*"
+  "source_files": "Pod/Classes/**/*",
+  "dependencies": {
+    "React/Core": [
+      "0.21.0-rc"
+    ]
+  }
 }
