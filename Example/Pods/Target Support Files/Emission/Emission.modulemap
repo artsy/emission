@@ -1,0 +1,6 @@
+framework module Emission {
+  umbrella header "Emission-umbrella.h"
+
+  export *
+  module * { export * }
+}

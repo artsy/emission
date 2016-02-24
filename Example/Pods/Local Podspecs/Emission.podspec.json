@@ -1,0 +1,19 @@
+{
+  "name": "Emission",
+  "version": "0.1.0",
+  "summary": "React Native Components used by Eigen.",
+  "homepage": "https://github.com/artsy/emission",
+  "license": "MIT",
+  "authors": {
+    "Eloy Durán": "eloy.de.enige@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/artsy/emission.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*"
+}
