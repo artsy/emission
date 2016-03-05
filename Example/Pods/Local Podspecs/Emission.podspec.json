@@ -22,7 +22,7 @@
       "source_files": "Pod/Classes/ARComponentViewController.swift",
       "dependencies": {
         "React/Core": [
-          "0.21.0-rc"
+          ">= 0.21.0"
         ]
       }
     },
