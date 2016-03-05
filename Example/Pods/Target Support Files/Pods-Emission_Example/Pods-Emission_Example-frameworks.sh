@@ -84,10 +84,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$CONFIGURATION_BUILD_DIR/ARCollectionViewMasonryLayout/ARCollectionViewMasonryLayout.framework"
   install_framework "$CONFIGURATION_BUILD_DIR/Emission/Emission.framework"
   install_framework "$CONFIGURATION_BUILD_DIR/React/React.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/SDWebImage/SDWebImage.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$CONFIGURATION_BUILD_DIR/ARCollectionViewMasonryLayout/ARCollectionViewMasonryLayout.framework"
   install_framework "$CONFIGURATION_BUILD_DIR/Emission/Emission.framework"
   install_framework "$CONFIGURATION_BUILD_DIR/React/React.framework"
+  install_framework "$CONFIGURATION_BUILD_DIR/SDWebImage/SDWebImage.framework"
 fi

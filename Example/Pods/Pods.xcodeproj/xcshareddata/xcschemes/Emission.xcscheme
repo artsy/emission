@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '37CA229E6D735781A2C1F357D3E514BF'
+               BlueprintIdentifier = 'D4CB1E39DAC213409BC96F0A2913EB3C'
                BlueprintName = 'Emission'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Emission.framework'>

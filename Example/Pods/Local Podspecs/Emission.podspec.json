@@ -15,10 +15,31 @@
     "ios": "8.0"
   },
   "requires_arc": true,
-  "source_files": "Pod/Classes/**/*",
-  "dependencies": {
-    "React/Core": [
-      "0.21.0-rc"
-    ]
-  }
+  "default_subspecs": "ARArtworksMasonryGridComponent",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "Pod/Classes/ARComponentViewController.swift",
+      "dependencies": {
+        "React/Core": [
+          "0.21.0-rc"
+        ]
+      }
+    },
+    {
+      "name": "ARArtworksMasonryGridComponent",
+      "source_files": "Pod/Classes/ARArtworksMasonryGridComponent.swift",
+      "dependencies": {
+        "Emission/Core": [
+
+        ],
+        "ARCollectionViewMasonryLayout": [
+          ">= 2.2.0"
+        ],
+        "SDWebImage": [
+          ">= 3.7.2"
+        ]
+      }
+    }
+  ]
 }
