@@ -1,0 +1,47 @@
+
+
+// Variables
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+/**
+ * Types that Relay framework users may find useful.
+ */
+
+var Promise = require('fbjs/lib/Promise');
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule RelayTypes
+ * 
+ * @typechecks
+ */
+
+'use strict';
+
+// Ready State
+
+// Containers
+
+// Mutations
+
+// Observable
+
+// Store
+
+// Disk Cache
+
+// Network requests
+
+// Utility
+
+// from GraphQLMutatorConstants.RANGE_OPERATIONS
