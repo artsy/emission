@@ -50,7 +50,7 @@
   "directories": {},
   "dist": {
     "shasum": "f33fe9cfb52bbfd520aa18323bc65db110a1b76c",
-    "tarball": "http://registry.npmjs.org/rndm/-/rndm-1.2.0.tgz"
+    "tarball": "https://registry.npmjs.org/rndm/-/rndm-1.2.0.tgz"
   },
   "files": [
     "index.js"

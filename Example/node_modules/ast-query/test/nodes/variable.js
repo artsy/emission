@@ -12,9 +12,22 @@ describe('Variable objects', function () {
     this.tree3 = program('var a = 1; (function () { var a = 2; }());');
   });
 
-  it('selects variables', function () {
-    assert.equal(this.tree1.var('a').length, 1);
-    assert.equal(this.tree3.var('a').length, 2);
+  describe('#tree.var()', function () {
+    it('string', function () {
+      assert.equal(this.tree1.var('a').length, 1);
+      assert.equal(this.tree3.var('a').length, 2);
+    });
+
+    it('supports regex', function () {
+      var multiVarTree = program(
+        'var selectedVar = 1;' +
+        'var selectedVar2 = 1;' +
+        'var unSelectedVar1 = 1;' +
+        'var unSelectedVar2 = 1;'
+      );
+
+      assert.equal(multiVarTree.var(/^selected[A-Z]+/).length, 2);
+    });
   });
 
   describe('#value()', function () {
@@ -51,11 +64,11 @@ describe('Variable objects', function () {
     });
   });
 
-  describe('#toString()', function() {
-   it('should preserve comments when assigning new values', function() {
-       this.tree1.var('a').value('{/* some comments */ foo: "bar" }');
-       assert.equal(this.tree1.toString().replace(/[\r\n\t\s]+/gm,''), 'vara={/*somecomments*/foo:\'bar\'};');
-   });
+  describe('#toString()', function () {
+    it('should preserve comments when assigning new values', function () {
+      this.tree1.var('a').value('{/* some comments */ foo: "bar" }');
+      assert.equal(this.tree1.toString().replace(/[\r\n\t\s]+/gm, ''), 'vara={/*somecomments*/foo:\'bar\'};');
+    });
   });
 
 });

@@ -62,7 +62,7 @@
   "directories": {},
   "dist": {
     "shasum": "d5a51b53e9ab22ca07d558f2b67ae55fdb5fcbd8",
-    "tarball": "http://registry.npmjs.org/fancy-log/-/fancy-log-1.2.0.tgz"
+    "tarball": "https://registry.npmjs.org/fancy-log/-/fancy-log-1.2.0.tgz"
   },
   "engines": {
     "node": ">= 0.10"

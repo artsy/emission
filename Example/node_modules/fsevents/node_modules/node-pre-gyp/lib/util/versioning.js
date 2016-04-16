@@ -25,7 +25,7 @@ function get_electron_abi(runtime, target_version) {
         // erroneous CLI call
         throw new Error("Empty target version is not supported if electron is the target.");
     }
-    // Electron guarentees that patch version update won't break native modules.
+    // Electron guarantees that patch version update won't break native modules.
     var sem_ver = semver.parse(target_version);
     return runtime + '-v' + sem_ver.major + '.' + sem_ver.minor;
 }
@@ -241,6 +241,18 @@ function drop_double_slashes(pathname) {
     return pathname.replace(/\/\//g,'/');
 }
 
+function get_process_runtime(versions) {
+    var runtime = 'node';
+    if (versions['node-webkit']) {
+        runtime = 'node-webkit';
+    } else if (versions.electron) {
+        runtime = 'electron';
+    }
+    return runtime;
+}
+
+module.exports.get_process_runtime = get_process_runtime;
+
 var default_package_name = '{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz';
 var default_remote_path = '';
 
@@ -249,7 +261,7 @@ module.exports.evaluate = function(package_json,options) {
     validate_config(package_json);
     var v = package_json.version;
     var module_version = semver.parse(v);
-    var runtime = options.runtime || (process.versions['node-webkit'] ? 'node-webkit' : 'node');
+    var runtime = options.runtime || get_process_runtime(process.versions);
     var opts = {
         name: package_json.name,
         configuration: Boolean(options.debug) ? 'Debug' : 'Release',

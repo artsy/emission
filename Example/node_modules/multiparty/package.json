@@ -50,7 +50,7 @@
   "directories": {},
   "dist": {
     "shasum": "35de6804dc19643e5249f3d3e3bdc6c8ce301d3f",
-    "tarball": "http://registry.npmjs.org/multiparty/-/multiparty-3.3.2.tgz"
+    "tarball": "https://registry.npmjs.org/multiparty/-/multiparty-3.3.2.tgz"
   },
   "engines": {
     "node": ">=0.8.0"

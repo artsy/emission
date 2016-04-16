@@ -49,7 +49,7 @@
   "directories": {},
   "dist": {
     "shasum": "59bfb50cd905f60d7c394cd3d9acaab4e6ad934e",
-    "tarball": "http://registry.npmjs.org/first-chunk-stream/-/first-chunk-stream-1.0.0.tgz"
+    "tarball": "https://registry.npmjs.org/first-chunk-stream/-/first-chunk-stream-1.0.0.tgz"
   },
   "engines": {
     "node": ">=0.10.0"

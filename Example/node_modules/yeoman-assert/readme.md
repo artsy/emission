@@ -155,12 +155,12 @@ var anObject = {a: 1};
 assert.objectContent(anObject, {a: 2});
 ```
 
-### `assert.JSONFileContent()`
+### `assert.jsonFileContent()`
 
 Assert a JSON file contains at least a set of keys (rely of `assert.objectContent()`)
 
 ```js
-assert.JSONFileContent('path/to/file.json', {a: 2});
+assert.jsonFileContent('path/to/file.json', {a: 2});
 ```
 
 ## Contribute

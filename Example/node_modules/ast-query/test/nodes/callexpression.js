@@ -13,17 +13,31 @@ describe('CallExpression objects', function () {
     this.tree4 = program('var a;');
   });
 
-  it('selects function call', function () {
-    assert.equal(this.tree1.callExpression('foo').length, 1);
-  });
+  describe('#tree.callExpression()', function () {
+    it('selects function call', function () {
+      assert.equal(this.tree1.callExpression('foo').length, 1);
+    });
 
-  it('selects method call', function () {
-    assert.equal(this.tree2.callExpression('bar.foo').length, 1);
-    assert.equal(this.tree3.callExpression('bar.doe.foo').length, 1);
-  });
+    it('selects method call', function () {
+      assert.equal(this.tree2.callExpression('bar.foo').length, 1);
+      assert.equal(this.tree3.callExpression('bar.doe.foo').length, 1);
+    });
 
-  it('can match no node', function () {
-    assert.equal(this.tree4.callExpression('bar').length, 0);
+    it('can match no node', function () {
+      assert.equal(this.tree4.callExpression('bar').length, 0);
+    });
+
+    it('can match function name by regex', function () {
+      var multiFnTree = program(
+          'selectedFn(1);' +
+          'object.property.selectedFn(1);' +
+          'notSelectedFn(1);'
+        ),
+        matchEveryFunction = /.+/;
+
+      assert.equal(multiFnTree.callExpression(/(\.|^)selected/).length, 2);
+      assert.equal(multiFnTree.callExpression(matchEveryFunction).length, 3);
+    });
   });
 
   describe('#arguments', function () {
@@ -67,7 +81,7 @@ describe('CallExpression objects', function () {
         var newArray = array.value('[8, 9]');
         assert.equal(this.tree.var('foo').value().at(0).value(), 8);
         assert.equal(this.tree.var('foo').value().at(1).value(), 9);
-        assert.throws(function(){
+        assert.throws(function () {
           this.tree.var('foo').value().at(2).value();
         });
       });

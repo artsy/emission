@@ -1,6 +1,11 @@
-# React Proxy [![build status](https://img.shields.io/travis/gaearon/react-proxy/master.svg?style=flat-square)](https://travis-ci.org/gaearon/react-proxy) [![npm version](https://img.shields.io/npm/v/react-proxy.svg?style=flat-square)](https://www.npmjs.com/package/react-proxy) 
+# React Proxy [![build status](https://img.shields.io/travis/gaearon/react-proxy/master.svg?style=flat-square)](https://travis-ci.org/gaearon/react-proxy) [![npm version](https://img.shields.io/npm/v/react-proxy.svg?style=flat-square)](https://www.npmjs.com/package/react-proxy)
 
 A generic React component proxy used as the new engine by React Hot Loader. 
+
+## 1.x and 2.x
+
+You are looking at the README from the 1.x branch that is widely in use. However we intend to gradually transition projects such as `react-transform-hmr` to use [2.x that is being developed in master](https://github.com/gaearon/react-proxy/tree/master) instead. Currently we mirror all releases on both branches.
+
 
 ## Requirements
 

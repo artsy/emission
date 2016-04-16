@@ -59,7 +59,7 @@
   "directories": {},
   "dist": {
     "shasum": "e5f1f3928c6d95fd96558c36ec3d9d0de4a6ecea",
-    "tarball": "http://registry.npmjs.org/accepts/-/accepts-1.2.13.tgz"
+    "tarball": "https://registry.npmjs.org/accepts/-/accepts-1.2.13.tgz"
   },
   "engines": {
     "node": ">= 0.6"

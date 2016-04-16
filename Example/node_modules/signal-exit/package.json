@@ -52,7 +52,7 @@
   "directories": {},
   "dist": {
     "shasum": "375879b1f92ebc3b334480d038dc546a6d558564",
-    "tarball": "http://registry.npmjs.org/signal-exit/-/signal-exit-2.1.2.tgz"
+    "tarball": "https://registry.npmjs.org/signal-exit/-/signal-exit-2.1.2.tgz"
   },
   "gitHead": "8d50231bda6d0d1c4d39de20fc09d11487eb9951",
   "homepage": "https://github.com/bcoe/signal-exit",

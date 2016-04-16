@@ -55,7 +55,7 @@
   "directories": {},
   "dist": {
     "shasum": "ebc8a4a8619ff0b8a81ac1513c3434ff469fdb74",
-    "tarball": "http://registry.npmjs.org/pause/-/pause-0.1.0.tgz"
+    "tarball": "https://registry.npmjs.org/pause/-/pause-0.1.0.tgz"
   },
   "engines": {
     "node": ">= 0.6"

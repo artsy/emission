@@ -211,7 +211,7 @@ assert.objectContent = function (obj, content) {
       return;
     }
 
-    assert.equal(content[key], obj[key]);
+    assert.equal(obj[key], content[key]);
   });
 };
 

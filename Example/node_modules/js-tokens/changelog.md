@@ -1,3 +1,9 @@
+### Version 1.0.3 (2016-03-27) ###
+
+- Improved: Made the regex ever so slightly smaller.
+- Updated: The readme.
+
+
 ### Version 1.0.2 (2015-10-18) ###
 
 - Improved: Limited npm package contents for a smaller download. Thanks to

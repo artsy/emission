@@ -1,4 +1,4 @@
-# uuid [![Build Status](https://secure.travis-ci.org/defunctzombie/node-uuid.png?branch=master)](http://travis-ci.org/defunctzombie/node-uuid) #
+# uuid [![Build Status](https://secure.travis-ci.org/defunctzombie/node-uuid.svg?branch=master)](http://travis-ci.org/defunctzombie/node-uuid) #
 
 [![browser support](https://ci.testling.com/defunctzombie/node-uuid.png)](https://ci.testling.com/defunctzombie/node-uuid)
 
@@ -153,10 +153,6 @@ Support for the following v1.2 APIs is available in v1.3, but is deprecated and 
 
 uuid() has become uuid.v4(), and the `format` argument is now implicit in the `buffer` argument. (i.e. if you specify a buffer, the format is assumed to be binary).
 
-### uuid.BufferClass
-
-The class of container created when generating binary uuid data if no buffer argument is specified.  This is expected to go away, with no replacement API.
-
 ## Testing
 
 In node.js
@@ -187,6 +183,10 @@ For a more complete discussion of uuid performance, please see the `benchmark/RE
 For browser performance [checkout the JSPerf tests](http://jsperf.com/node-uuid-performance).
 
 ## Release notes
+
+### 2.0.0
+ 
+* Removed uuid.BufferClass
 
 ### 1.4.0
 

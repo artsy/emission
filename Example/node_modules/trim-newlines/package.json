@@ -50,7 +50,7 @@
   "directories": {},
   "dist": {
     "shasum": "5887966bb582a4503a41eb524f7d35011815a613",
-    "tarball": "http://registry.npmjs.org/trim-newlines/-/trim-newlines-1.0.0.tgz"
+    "tarball": "https://registry.npmjs.org/trim-newlines/-/trim-newlines-1.0.0.tgz"
   },
   "engines": {
     "node": ">=0.10.0"

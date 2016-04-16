@@ -125,6 +125,37 @@ Clear the terminal screen.
 
 Output a beeping sound.
 
+### image(input, [options])
+
+Display an image.
+
+*Currently only supported on iTerm >=2.9.*
+
+#### input
+
+Type: `buffer`
+
+Buffer of an image. Usually read in with `fs.readFile()`.
+
+#### options
+
+##### width
+##### height
+
+Type: `string` `number`
+
+The width and height are given as a number followed by a unit, or the word "auto".
+
+- `N`: N character cells.
+- `Npx`: N pixels.
+- `N%`: N percent of the session's width or height.
+- `auto`: The image's inherent size will be used to determine an appropriate dimension.
+
+##### preserveAspectRatio
+
+Type: `boolean`<br>
+Default: `true`
+
 
 ## Related
 

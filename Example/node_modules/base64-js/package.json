@@ -48,7 +48,7 @@
   "directories": {},
   "dist": {
     "shasum": "1101e9544f4a76b1bc3b26d452ca96d7a35e7978",
-    "tarball": "http://registry.npmjs.org/base64-js/-/base64-js-0.0.8.tgz"
+    "tarball": "https://registry.npmjs.org/base64-js/-/base64-js-0.0.8.tgz"
   },
   "engines": {
     "node": ">= 0.4"

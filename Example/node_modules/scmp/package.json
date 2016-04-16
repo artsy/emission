@@ -47,7 +47,7 @@
   "directories": {},
   "dist": {
     "shasum": "a0b272c3fc7292f77115646f00618b0262514e04",
-    "tarball": "http://registry.npmjs.org/scmp/-/scmp-1.0.0.tgz"
+    "tarball": "https://registry.npmjs.org/scmp/-/scmp-1.0.0.tgz"
   },
   "gitHead": "c8c37d3daed05ea20a761694680b13cb998c0557",
   "homepage": "https://github.com/freewil/scmp",

@@ -49,7 +49,7 @@
   "directories": {},
   "dist": {
     "shasum": "4b2b1b27eb808a9f8dcc481a58e5e56f599f3f61",
-    "tarball": "http://registry.npmjs.org/set-immediate-shim/-/set-immediate-shim-1.0.1.tgz"
+    "tarball": "https://registry.npmjs.org/set-immediate-shim/-/set-immediate-shim-1.0.1.tgz"
   },
   "engines": {
     "node": ">=0.10.0"

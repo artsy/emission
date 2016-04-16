@@ -1,7 +1,7 @@
 Gruntfile Editor
 ================
 
-[![npm](https://badge.fury.io/js/gruntfile-editor.svg)](http://badge.fury.io/js/gruntfile-editor) [![tests](https://travis-ci.org/SBoudrias/gruntfile-editor.svg?branch=master)](https://travis-ci.org/SBoudrias/gruntfile-editor) [![dependencies](https://david-dm.org/SBoudrias/gruntfile-editor.svg?theme=shields.io)](https://david-dm.org/SBoudrias/gruntfile-editor)
+[![npm](https://badge.fury.io/js/gruntfile-editor.svg)](http://badge.fury.io/js/gruntfile-editor) [![tests](https://travis-ci.org/SBoudrias/gruntfile-editor.svg?branch=master)](https://travis-ci.org/SBoudrias/gruntfile-editor) [![Coverage Status](https://coveralls.io/repos/github/SBoudrias/gruntfile-editor/badge.svg?branch=master)](https://coveralls.io/github/SBoudrias/gruntfile-editor?branch=master) [![dependencies](https://david-dm.org/SBoudrias/gruntfile-editor.svg?theme=shields.io)](https://david-dm.org/SBoudrias/gruntfile-editor)
 
 An API to modify a `Gruntfile.js` content
 

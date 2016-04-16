@@ -6,9 +6,11 @@ var esprima = require('esprima');
  * @constructor
  * @private
  * @param {Object} node
+ * @param {Object} esprimaOptions
  */
-var Body = module.exports = function (node) {
+var Body = module.exports = function (node, esprimaOptions) {
   this.node = node;
+  this.esprimaOptions = esprimaOptions;
 };
 
 /**
@@ -17,7 +19,7 @@ var Body = module.exports = function (node) {
  * @return {this}
  */
 Body.prototype.append = function (code) {
-  var values = esprima.parse(code).body;
+  var values = esprima.parse(code, this.esprimaOptions).body;
   Array.prototype.push.apply(this.node, values);
   return this;
 };
@@ -28,7 +30,7 @@ Body.prototype.append = function (code) {
  * @return {this}
  */
 Body.prototype.prepend = function (code) {
-  var values = esprima.parse(code).body;
+  var values = esprima.parse(code, this.esprimaOptions).body;
   var insertionIndex = 0;
   var nodes = this.node;
 

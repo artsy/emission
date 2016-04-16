@@ -59,7 +59,7 @@
   "directories": {},
   "dist": {
     "shasum": "64ec0c91e0f4b475f90d5b643651e3e6e5b6c2d5",
-    "tarball": "http://registry.npmjs.org/repeat-string/-/repeat-string-1.5.4.tgz"
+    "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-1.5.4.tgz"
   },
   "engines": {
     "node": ">=0.10"

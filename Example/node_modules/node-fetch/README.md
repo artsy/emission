@@ -6,7 +6,7 @@ node-fetch
 [![build status][travis-image]][travis-url]
 [![coverage status][coveralls-image]][coveralls-url]
 
-A light-weight module that brings `window.fetch` to node.js & io.js
+A light-weight module that brings `window.fetch` to Node.js
 
 
 # Motivation
@@ -15,7 +15,7 @@ I really like the notion of Matt Andrews' [isomorphic-fetch](https://github.com/
 
 Instead of implementing `XMLHttpRequest` in node to run browser-specific [fetch polyfill](https://github.com/github/fetch), why not go from node's `http` to `fetch` API directly? Node has native stream support, browserify build targets (browsers) don't, so underneath they are going to be vastly different anyway.
 
-Hence `node-fetch`, minimal code for a `window.fetch` compatible API on node.js/io.js runtime.
+Hence `node-fetch`, minimal code for a `window.fetch` compatible API on Node.js runtime.
 
 
 # Features
@@ -25,7 +25,7 @@ Hence `node-fetch`, minimal code for a `window.fetch` compatible API on node.js/
 - Use native promise, but allow substituting it with [insert your favorite promise library].
 - Use native stream for body, on both request and response.
 - Decode content encoding (gzip/deflate) properly, and convert string output (such as `res.text()` and `res.json()`) to utf-8 automatically.
-- Useful extensions such as timeout, redirect limit, response size limit.
+- Useful extensions such as timeout, redirect limit, response size limit, explicit reject errors.
 
 
 # Difference from client-side fetch
@@ -146,18 +146,19 @@ Should be an absolute url, eg `http://example.com/`
 
 ### Options
 
-default values are shown, note that only `method`, `headers` and `body` are allowed in `window.fetch`, others are node.js extensions.
+default values are shown, note that only `method`, `headers`, `redirect` and `body` are allowed in `window.fetch`, others are node.js extensions.
 
 ```
 {
 	method: 'GET'
-	, headers: {}     // request header, format {a:1} or {b:[1,2,3]}
-	, follow: 20      // maximum redirect count, 0 to not follow redirect
-	, timeout: 0      // req/res timeout in ms, 0 to disable, timeout reset on redirect
-	, compress: true  // support gzip/deflate content encoding, false to disable
-	, size: 0         // maximum response body size in bytes, 0 to disable
-	, body: empty     // request body, can be a string or readable stream
-	, agent: null     // custom http.Agent instance
+	, headers: {}        // request header. format {a:'1'} or {b:['1','2','3']}
+	, redirect: 'follow' // set to 'manual' to extract redirect headers, `error` to reject redirect
+	, follow: 20         // maximum redirect count. 0 to not follow redirect
+	, timeout: 0         // req/res timeout in ms. 0 to disable (os limit still applies), timeout reset on redirect
+	, compress: true     // support gzip/deflate content encoding. false to disable
+	, size: 0            // maximum response body size in bytes. 0 to disable
+	, body: empty        // request body. can be a string, buffer, readable stream
+	, agent: null        // http.Agent instance, allows custom proxy, certificate etc.
 }
 ```
 

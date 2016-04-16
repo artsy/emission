@@ -4,34 +4,47 @@
 */
 'use strict';
 
+var util = require('util');
+
 var Chalk = require('chalk').constructor;
 
-module.exports = function sumUp(data) {
-  if (typeof data !== 'object') {
-    throw new TypeError('Argument must be an object.');
+module.exports = function sumUp(pkgData) {
+  if (!pkgData || Array.isArray(pkgData) || typeof pkgData !== 'object') {
+    throw new TypeError(
+      util.inspect(pkgData).replace(/\n/g, '') +
+      ' is not a plain object. Expected an object of package information,' +
+      ' for example npm\'s package.json `{name: ... version: ..., description: ..., ...}`.'
+    );
   }
 
-  var chalk = new Chalk({enabled: data.color});
+  if (pkgData.color !== undefined && typeof pkgData.color !== 'boolean') {
+    throw new TypeError(
+      util.inspect(pkgData.color).replace(/\n/g, '') +
+      ' is neither true nor false. `color` option must be a Boolean value.'
+    );
+  }
+
+  var chalk = new Chalk({enabled: pkgData.color});
   var lines = [];
 
-  var nameAndVersion = chalk.cyan(data.name || '');
-  if (data.version) {
-    if (data.name) {
+  var nameAndVersion = chalk.cyan(pkgData.name || '');
+  if (pkgData.version) {
+    if (pkgData.name) {
       nameAndVersion += ' ';
     }
-    nameAndVersion += chalk.gray('v' + data.version);
+    nameAndVersion += chalk.gray('v' + pkgData.version);
   }
 
   if (nameAndVersion) {
     lines.push(nameAndVersion);
   }
 
-  if (data.homepage) {
-    lines.push(chalk.gray(data.homepage));
+  if (pkgData.homepage) {
+    lines.push(chalk.gray(pkgData.homepage));
   }
 
-  if (data.description) {
-    lines.push(data.description);
+  if (pkgData.description) {
+    lines.push(pkgData.description);
   }
 
   return lines.join('\n');

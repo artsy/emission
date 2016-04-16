@@ -45,7 +45,7 @@
   "directories": {},
   "dist": {
     "shasum": "556c137b258f942b8776f5b2ef582aa069d7d1b1",
-    "tarball": "http://registry.npmjs.org/stringmap/-/stringmap-0.2.2.tgz"
+    "tarball": "https://registry.npmjs.org/stringmap/-/stringmap-0.2.2.tgz"
   },
   "homepage": "https://github.com/olov/stringmap#readme",
   "keywords": [
