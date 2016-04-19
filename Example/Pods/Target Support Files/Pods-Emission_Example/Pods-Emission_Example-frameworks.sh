@@ -87,13 +87,19 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/ARCollectionViewMasonryLayout/ARCollectionViewMasonryLayout.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Artsy+UIFonts/Artsy_UIFonts.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Emission/Emission.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/FLKAutoLayout/FLKAutoLayout.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ObjectiveSugar/ObjectiveSugar.framework"
   install_framework "$BUILT_PRODUCTS_DIR/React/React.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UIView+BooleanAnimations/UIView_BooleanAnimations.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/ARCollectionViewMasonryLayout/ARCollectionViewMasonryLayout.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Artsy+UIFonts/Artsy_UIFonts.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Emission/Emission.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/FLKAutoLayout/FLKAutoLayout.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ObjectiveSugar/ObjectiveSugar.framework"
   install_framework "$BUILT_PRODUCTS_DIR/React/React.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UIView+BooleanAnimations/UIView_BooleanAnimations.framework"
 fi

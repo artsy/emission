@@ -15,17 +15,40 @@
     "ios": "8.0"
   },
   "requires_arc": true,
-  "default_subspecs": "ARArtworksMasonryGridComponent",
   "subspecs": [
     {
       "name": "Core",
-      "source_files": "Pod/Classes/ARComponentViewController.swift",
+      "source_files": [
+        "Pod/Classes/AREmissionFontsLoader.m",
+        "Pod/Classes/ARComponentViewController.swift"
+      ],
       "dependencies": {
         "React/Core": [
           ">= 0.24.0-rc5"
         ],
         "Artsy+UIFonts": [
           ">= 1.1.0"
+        ]
+      }
+    },
+    {
+      "name": "ARTabViewComponent",
+      "source_files": [
+        "Pod/Classes/ARTabViewComponent.*",
+        "Pod/Classes/ARSwitchView.*"
+      ],
+      "dependencies": {
+        "Emission/Core": [
+
+        ],
+        "UIView+BooleanAnimations": [
+
+        ],
+        "FLKAutoLayout": [
+
+        ],
+        "ObjectiveSugar": [
+
         ]
       }
     },

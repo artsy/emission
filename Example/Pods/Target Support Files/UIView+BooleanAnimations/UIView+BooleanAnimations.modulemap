@@ -1,0 +1,6 @@
+framework module UIView_BooleanAnimations {
+  umbrella header "UIView+BooleanAnimations-umbrella.h"
+
+  export *
+  module * { export * }
+}
