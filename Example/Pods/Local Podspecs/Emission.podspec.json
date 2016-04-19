@@ -22,7 +22,10 @@
       "source_files": "Pod/Classes/ARComponentViewController.swift",
       "dependencies": {
         "React/Core": [
-          ">= 0.21.0"
+          ">= 0.24.0-rc5"
+        ],
+        "Artsy+UIFonts": [
+          ">= 1.1.0"
         ]
       }
     },

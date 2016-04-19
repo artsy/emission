@@ -1,0 +1,25 @@
+{
+  "name": "Artsy+UIFonts",
+  "version": "1.1.0",
+  "summary": "The fonts for Artsy apps + UIFont categories.",
+  "homepage": "https://github.com/artsy/Artsy-UIFonts",
+  "license": "Proprietary",
+  "authors": {
+    "Orta": "orta.therox@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/artsy/Artsy-UIFonts.git",
+    "tag": "1.1.0"
+  },
+  "social_media_url": "https://twitter.com/artsy",
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes",
+  "resources": "Pod/Assets/*",
+  "frameworks": [
+    "UIKit",
+    "CoreText"
+  ]
+}
