@@ -18,6 +18,7 @@
 		03FF7083C6CC8214C1638D42C6157E13 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CF6E86E03ACD324C7C1BAB13098343 /* JavaScriptCore.framework */; };
 		046AB4EFFEA28C5E92EBE73E7A9E5773 /* RCTStatusBarManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 266E00DF96BD7DECF9C75E6C2219AB4D /* RCTStatusBarManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0492354DA7EF0C9068F7B4E8F74001B0 /* FailureMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76953216BD3389B580D9736EB7A85D5E /* FailureMessage.swift */; };
+		064354EB57AB2A3E4662DB037CBEA890 /* Emission-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB5C2735B29394A51271EC7D637C75F /* Emission-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		06898AC0A78A87D95ADD79C698A2F00B /* RCTRootViewInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EE06D077D9598174507670ECE6ECA91 /* RCTRootViewInternal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		06B82401D5DDA8ED618E2A74473EB6F3 /* FLKAutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ACA1AD509966E54E07566DA3078F8D6 /* FLKAutoLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0728B5E9A519EF9B6C262AFE37F33EDA /* Artsy_UIFonts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7173EF9EE9AE1ED4CFB15BAC3FC283 /* Artsy_UIFonts.framework */; };
@@ -32,7 +33,6 @@
 		0B748585066D169D7A1A8426D3F2CC96 /* RCTMapManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 06853E0AAFE0B26D8D5EE6E8ACFE0D70 /* RCTMapManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C24BFE57922DC50070F3610ED8715F9 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13132720C42B215FAB3636B4D7B44FF3 /* SDWebImage.framework */; };
 		0C2ED4EC663E221D9D93C819EB653216 /* RCTMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E9CF18CF331D57CF964FBBCA671B69 /* RCTMapManager.m */; };
-		0C79BBD0D6F12EAF726B0051836AECBC /* Emission-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FEB5C2735B29394A51271EC7D637C75F /* Emission-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0CEFF5B0A6533579C11B47DE6A95A0F3 /* UIImage+GIF.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DCEE53F50564045554930BB7B916FB3 /* UIImage+GIF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D116C8C573B152C2D6B1A6005D3C78E /* RCTTextFieldManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CB7A531FCFE82E0928A71386EA5FFE /* RCTTextFieldManager.m */; };
 		0D11DEC7FCAEB4DACCABE1B1AC1B4A0D /* RCTRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3A1E6884250FBB8BFE1A4E33451CBA /* RCTRefreshControl.m */; };
@@ -55,6 +55,7 @@
 		1629052062FFF9795A1EFDB3D487E604 /* RCTProfile.h in Headers */ = {isa = PBXBuildFile; fileRef = 65F94966A10D20E98E14C9BCEE7BA1C4 /* RCTProfile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		16F43696C267F037F2F828B19CA7C53D /* RCTPerformanceLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA79270D5E118CA89D8570F60E7B412 /* RCTPerformanceLogger.m */; };
 		170591CB2B87B3A1BCF33B45107F200A /* UIImage+Diff.m in Sources */ = {isa = PBXBuildFile; fileRef = 287F480A877C093E3D2683C6AD3C8FA5 /* UIImage+Diff.m */; };
+		175E1756E3C1FC154BB5D053E026044E /* Emission-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D96793477F2653FD0A2B9C1B90CCEC9 /* Emission-dummy.m */; };
 		1762531CF83C938565C2165B43918541 /* RCTAnimationType.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FC61BB656F75C0C5F66E95445F38C75 /* RCTAnimationType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		184A4E8E629E09850169031F6109EE28 /* World+DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94CD1E827CE2731BC496E86E65A78D6 /* World+DSL.swift */; };
 		188BB58F4B048FA8BB69D44D3B5977CC /* RCTClipboard.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0A358242775D6DD0A4E164D3A6627E /* RCTClipboard.m */; };
@@ -89,6 +90,7 @@
 		28E24742E21B2DC8B7E64E02C71E4EFC /* _ARCollectionViewMasonryAttributesGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3B2C02F6D3E78D9153D91233821ED5 /* _ARCollectionViewMasonryAttributesGrid.m */; };
 		295F6B71D08E397F3280E9EC5370EA86 /* RCTRootViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DE0EB6511EB945ED434CB3BAE3DD5875 /* RCTRootViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2977BE94ACD67D71AF1B5A01CA9858E7 /* RCTURLRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 94D16532ECA67CB481F9C5A395DBE91F /* RCTURLRequestDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29898E6DA0AC08335254990DC6B1A281 /* AREmissionFontsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A355E1B78954011CE4159BF7F13A52 /* AREmissionFontsLoader.m */; };
 		2A4D67898554FC82439CB5DC8D490A4A /* RCTBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = D85C9E18E619D40C9CCE42D725DA055B /* RCTBridge.m */; };
 		2A7C1A6D524C395F26072BD23D7F3215 /* SDWebImageOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D769849F7E005658A3D44373E0A11F7 /* SDWebImageOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BCAD2AA5AD2FDB3AB085EB528316E8D /* UIView+FLKAutoLayoutPredicate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC446138D8BBDD8ABA311AA0FAFD31C /* UIView+FLKAutoLayoutPredicate.m */; };
@@ -136,12 +138,10 @@
 		422FA352ACE8AB76FBA4A8BEC0CE4343 /* RCTWebSocketModule.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FF4EF438941A050FD2144D8290B054 /* RCTWebSocketModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42459D1770767F02AA3A524CFBF5DA2C /* RCTShadowView.h in Headers */ = {isa = PBXBuildFile; fileRef = BDD9A75AE95EDD78D561A9FA439BED00 /* RCTShadowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42ABBD2AECFCF981B1191CE030F869D2 /* RCTMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = AB256E1A43FC2202E9AE4EFF8750BBDF /* RCTMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		45DEDE1732ADDC6388F7C12FAA830029 /* ARTabViewComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 883CA1948112E3FCFAE63F409311406E /* ARTabViewComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4605585BC5CBE6FF03F313BF70A372D9 /* QuickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BA19A0545034EF074D8CDC71841C7DB /* QuickSpec.m */; };
 		472D6246B5DA7018AC4C885074BB8369 /* SDWebImageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 87D4351B3CA980BEEADC825A9D5A8E47 /* SDWebImageManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47F331EA92DA7EDE3429F72C7FADB346 /* RCTMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5BB0FE19A7B06D7897EA39BA54034A /* RCTMapAnnotation.m */; };
 		4883BA6F6F40833FD1EE1FD543A66634 /* RCTComponentData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA8B43B8C425ADF9E10B75035E0763D /* RCTComponentData.m */; };
-		4928A987C9964012585465FD4252F855 /* AREmissionFontsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A355E1B78954011CE4159BF7F13A52 /* AREmissionFontsLoader.m */; };
 		497E08099C930556132B06A76C7039D9 /* RCTDatePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFC58530589238D0ED06CB5A0207003 /* RCTDatePickerManager.m */; };
 		49F2E8198CC556F50F870E3761A624E1 /* ARCollectionViewMasonryLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 61E0F334E34DA786ABE1D31AEEFB85E9 /* ARCollectionViewMasonryLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A8A73923060696B9E13CE2AEA4DC32A /* RCTBorderDrawing.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6AED50062966D54ECD741F14225DBD /* RCTBorderDrawing.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -149,6 +149,7 @@
 		4BC5596B85F87BE6EA886D9E5DA243F1 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE15B12FCF664130691E7E8B2D4EA13C /* Filter.swift */; };
 		4BEFF8B8403F6D0FFD26D5AF4B9088BF /* RCTFrameUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8D49837CB86951E12ECDB6B278913FA /* RCTFrameUpdate.m */; };
 		4D7C79CE2A237B49B4ECC5686BD32ACA /* World.h in Headers */ = {isa = PBXBuildFile; fileRef = C70D6AE4D41BDC677D6A5BEB6840C2E8 /* World.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4E80582E075DB0BFACA802294459C514 /* ARComponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6B830D5CC6DED947280882B9AE8AC8 /* ARComponentViewController.swift */; };
 		4E87C6AE24AB15700A39FC24A2F1C93B /* BeLessThanOrEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB93F2E7EF94AF77DFAE3FEAA402A16 /* BeLessThanOrEqual.swift */; };
 		4F90338C2F336456CFC247A6430C8DA8 /* RCTAccessibilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 516AAB3852FC3018A233824CAB9C155F /* RCTAccessibilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		502BB5EA4B44BAE14DA726B29095D98A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1B8D1F94AF563D1A9AC96E342FE1014 /* XCTest.framework */; };
@@ -186,7 +187,6 @@
 		61CC7CEDCAE7BE76EE7D50F5A9BD8589 /* NSLayoutConstraint+FLKAutoLayoutDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = C5A74D9C5C22EBCA09682FC3B4C52B0A /* NSLayoutConstraint+FLKAutoLayoutDebug.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		61EF74E162B2686D2E97F3C080774529 /* RCTNullability.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5206C550CCBD83E419722E7A29F31D /* RCTNullability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		649F1D6FA87F8984048CBE067E72C805 /* AGaramondPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F81542502D278EF90136FDF17A0364D4 /* AGaramondPro-Regular.otf */; };
-		64CD05573BFB6D25E2A03F75D16CE676 /* ARArtworksMasonryGridComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5028B097071F629AFE6AF565A8A6508 /* ARArtworksMasonryGridComponent.swift */; };
 		64FA12BE6B0D461952A262BE283DBB1B /* UIFont+ArtsyFonts.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CEF7C6DFE9215481A3453EFEC2508F2 /* UIFont+ArtsyFonts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		653F68380E9D8E1897A926C8D3C88876 /* AGaramondPro-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0D400C6D8A3246790A0871AE248C73DA /* AGaramondPro-BoldItalic.otf */; };
 		657C853187F0305A093455A274A37C11 /* RCTTextViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FC80E314E483B0BFEDB1B95AE2F7248 /* RCTTextViewManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -254,17 +254,18 @@
 		82E55B1159083B37527C20EB4E621550 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046D27AF30876FDB5E6674CBF092052B /* Nimble.framework */; };
 		83058C0735156685B2CBFDBA5AB9F56B /* RCTTabBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = F70F20445499E114E955D4EF25603836 /* RCTTabBarItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		831D33A4C5C5BBC1EC158D9A236C61D7 /* NimbleXCTestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0C8E74996A18878E4848A9F85C0293 /* NimbleXCTestHandler.swift */; };
-		838C62C621AABD4F5F27C90EC9B79446 /* Emission-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D96793477F2653FD0A2B9C1B90CCEC9 /* Emission-dummy.m */; };
 		84DF4B5883B0E13C9355F9C6F8FA3342 /* RCTActivityIndicatorViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F3B7EA1E4673D7794927CB3E0BE483CF /* RCTActivityIndicatorViewManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		85541612997C03F7D7306ACE8F1C3EC9 /* RCTSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9479B47CFE1A1EADB92AEBFC82E737FC /* RCTSwitch.m */; };
 		8568FF5BD07EBB4B10AF269D665DE68B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA82E9280E7162AEC939C4E8BE41C18 /* Foundation.framework */; };
 		87E2520AD3BC2DFB4AE09B87236F032D /* RCTScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7F2E24901DC452AFAC08E2802DE690 /* RCTScrollView.m */; };
+		87EF80CF7B643FB3B52B2EE3BF79F1E3 /* ARSwitchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 113442C6A41B20F99432678D0827C6EE /* ARSwitchView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		88ADE1CEFE3F897E0C97FD9BB61C5912 /* NSDictionary+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = F7448DD38850B208D31660F011079D37 /* NSDictionary+ObjectiveSugar.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		88BA97B4370E365044CDE34BE72BF9BA /* RCTStatusBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60943C0FAEC8C6E910BC309D0D6EB1AC /* RCTStatusBarManager.m */; };
 		89DA9C1AFC09DD87E47B09B2BCC3EFF2 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D88F7C6F8C63CF743FA0F59590C0C8 /* UIButton+WebCache.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		8A290512D475885128FF32B228048289 /* Quick-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 47BB2481544421F695B82C4F421EB122 /* Quick-dummy.m */; };
 		8A5C6F8CFC347DC8B8893FFCE148AC19 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4FB45F8E2FC5D016708DE1EABC1320 /* SDWebImagePrefetcher.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		8AFC2BC0377E317F77FB33A7A9D198AF /* AGaramondPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3B9549F5B8B79FBD5875F44C634BE39 /* AGaramondPro-Bold.otf */; };
+		8C28BBA04578E95F406F59AB3B247363 /* ARArtworksMasonryGridComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5028B097071F629AFE6AF565A8A6508 /* ARArtworksMasonryGridComponent.swift */; };
 		8D0BF52FF564A170A3D1DE28C27B233E /* Poll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829C17C49BADE814710A158DD719A5A7 /* Poll.swift */; };
 		8D3CBEE5D5E3A65B1B830851317BCC3C /* RCTShadowText.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BF84FB249D6E562516761C188492565 /* RCTShadowText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8EA5E2F3206AB93160C7A0150E04440D /* RCTSliderManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 68CCC556169E7F21BDD29E38D14CB95C /* RCTSliderManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -309,7 +310,6 @@
 		A7A298904786AF46268010DA69F12B0B /* UIView+FLKAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3614496EE3924712C95525237934D1F0 /* UIView+FLKAutoLayout.m */; };
 		A88E1801247943BC502AC3A8DA0C8FB0 /* NSSet+ObjectiveSugar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DAAACE3E4929E31F2A7F7C2AE13FE6C /* NSSet+ObjectiveSugar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A8CE80573F425AF1F0FE8F7694EC6887 /* RCTSegmentedControlManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A995ACECFCAA7EA466AD8BECB5C9BC9 /* RCTSegmentedControlManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A9158181C18199E94FAFB95BCAE9F6AA /* ARSwitchView.h in Headers */ = {isa = PBXBuildFile; fileRef = D71AAF48E0EF4F5191FDC2A1D68FBDD2 /* ARSwitchView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A9A97013BAFCE98B1D6C31FC491C7576 /* SuiteHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D2083FB52D5BF972F56C89F58E7967 /* SuiteHooks.swift */; };
 		ADCF12DBD29F2344208DC5FB7D5066B8 /* RCTModuleMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 7476320BF67F635CEFD9EFC1941A57B4 /* RCTModuleMethod.m */; };
 		AE694F1399E66875D5BA0F26C0ABCAB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA82E9280E7162AEC939C4E8BE41C18 /* Foundation.framework */; };
@@ -335,7 +335,6 @@
 		B5313160BBB13B21D1F80E33C319B7BC /* RCTMapAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = B4E9E85CC70FBE462AA3BEBF6ED75DCD /* RCTMapAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B53C939326C6723EC417A3CCAE73932C /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = A401228F92945D1F91272FFCD42F5528 /* World.swift */; };
 		B66795B3F3E9DA81EF1FCA6CE51AB44E /* RCTInvalidating.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B476F119ADC1C7C05FA0FE7656C960 /* RCTInvalidating.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B6922532C00866ABB42F90A75209B392 /* ARComponentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6B830D5CC6DED947280882B9AE8AC8 /* ARComponentViewController.swift */; };
 		B6C29B34C71355488CB41B7552B703BC /* RCTSegmentedControlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A2FA4F987990E0005715B27D9F2323 /* RCTSegmentedControlManager.m */; };
 		B6F21293782FD1125F79EE67FD6DC3A9 /* FBSnapshotTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8CC36FBC886E039B91BE9277EF9A40 /* FBSnapshotTestCase.m */; };
 		B8AE9881D9469AC310237C085FBD04FA /* NSArray+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8BCD24BF4AE376E9204BBCE8EA004C /* NSArray+ObjectiveSugar.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
@@ -354,13 +353,12 @@
 		C033C346AC287D2009457C31E85587D1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD7ADA336E3EAF9952324929F467E51A /* Quick.framework */; };
 		C21619DEEBA8D9E7BF2BB9FC76506D4F /* RCTWebSocketModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A469E3AA7720D79CBC49598FCC4C4 /* RCTWebSocketModule.m */; };
 		C25070BDD5A4D451600D9E2D100AB184 /* RCTTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D791742C4EE5C82BCEE7D968C8E3B10 /* RCTTextView.m */; };
+		C282D8BD12390887BFACF375987AC009 /* ARSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B469B655AB172A594799573FF810C6 /* ARSwitchView.m */; };
 		C330A3A3162BC6E37C777F412FDCBD13 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D5B9846CF74D9CCA3031FB7B530DC8 /* QuartzCore.framework */; };
 		C3324307232954CF09A8CDE8AED62D03 /* RCTExceptionsManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3566C41C797D561107D8F12926E9F807 /* RCTExceptionsManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C35935686AAA15EA44B8A4CB99DF3520 /* RCTConvert+MapKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F2974CE4DB5A901211B4041D607E78 /* RCTConvert+MapKit.m */; };
-		C4C7FC431B7B2E85824D84F8DE3441CA /* ARSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4625509543A33D5F76724B4742C6F859 /* ARSwitchView.m */; };
 		C5731F5842DAFDF98665E414EDAD156F /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 6928BBDD3458015C63EEEEFB85C6F7C7 /* SDWebImageCompat.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		C5C9D73323054C299386EC1B1C465471 /* RCTAsyncLocalStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D84A3223C6018AD59F4E74B8D039D65 /* RCTAsyncLocalStorage.m */; };
-		C60F25479C5A9198D2446B6A57F67381 /* ARTabViewComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4144E71F9D48533FD681EE751C70F970 /* ARTabViewComponent.m */; };
 		C63AB521EA514A811A167E507C0CF9AD /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCAE9FD47CC77B5442B987FCA808980 /* Expression.swift */; };
 		C65EF4200C6F189EB1B6617C5BEC5BF3 /* SDWebImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 763163476CCB4B2097BE3276DD76EEF2 /* SDWebImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9AC658F3FCB67B50E96313C2687B33D /* MatcherProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED4187C9A2383836FCAEF3CA13C6652 /* MatcherProtocols.swift */; };
@@ -372,7 +370,9 @@
 		CD9D31B6063C50689EAC2A0745C282DC /* ObjCExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4C40AD2E4636CBC9AE10BB81895B1E /* ObjCExpectation.swift */; };
 		CF7AEEF3CC3534B5A34E371829E5B93B /* SDWebImageCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = C182A23A3741CC8A521D7508ED41763E /* SDWebImageCompat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFDB43052D056627530DD55C9BBBDFA3 /* RCTShadowRawText.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E8F1FD8C630204598F371B8A6344CF1 /* RCTShadowRawText.m */; };
+		D0A6A79127546C59858B4EE303B1DF9E /* ARSwitchViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F82082B7950F8873636BA2D1EEF1393 /* ARSwitchViewManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D165E267BBA31B3E680744FEB567107F /* RCTDataRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0D6DB34C94DF18A628EDAE70397DAB /* RCTDataRequestHandler.m */; };
+		D1FE59910D1C0DDBA7754A755B4DF5B9 /* ARSwitchViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA02772F9A2F5B4D02B3CE651788AEDD /* ARSwitchViewManager.m */; };
 		D2335FECDB282D9F1701F4205F567006 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FCB96D13CEF5BA984632386E4ADC01 /* NSData+ImageContentType.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		D39881E8AB50A77DABF756314695BF25 /* PrettySyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA3CF8F5629DAB38E188E12A1F1917B /* PrettySyntax.swift */; };
 		D429691F39B4C30A8993360FB8A3E334 /* AllPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA08789A1853983E6105AB5DA1D46149 /* AllPass.swift */; };
@@ -649,6 +649,7 @@
 		0ED8ED5498943C8518478101305A1B59 /* SDWebImageDecoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDecoder.h; path = SDWebImage/SDWebImageDecoder.h; sourceTree = "<group>"; };
 		0F73C3440DBCAC13D003E77CA3997CCC /* UIView+BooleanAnimations-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+BooleanAnimations-prefix.pch"; sourceTree = "<group>"; };
 		106A0975646D03BBB3779C7DBA2B0F76 /* RCTModalHostView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTModalHostView.h; sourceTree = "<group>"; };
+		113442C6A41B20F99432678D0827C6EE /* ARSwitchView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARSwitchView.h; sourceTree = "<group>"; };
 		1146DE60DCB84D12FA5298A4B8ACC911 /* RCTRefreshControlManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTRefreshControlManager.h; sourceTree = "<group>"; };
 		11F16FE439C3699CD6CD1865F2592B1A /* RCTSwitchManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTSwitchManager.m; sourceTree = "<group>"; };
 		122060A33198EA57C77283C0442AD708 /* RCTAssert.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTAssert.m; sourceTree = "<group>"; };
@@ -681,6 +682,7 @@
 		1DF20F3E4A2F59B567B7A75CB6C09302 /* Pods-Emission_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Emission_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1EC5D12A1AB4930DBFBD55AE0642B76B /* RCTJavaScriptLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTJavaScriptLoader.h; sourceTree = "<group>"; };
 		1F22D076CCA065BE031F880AD426C2D2 /* RCTAccessibilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTAccessibilityManager.m; sourceTree = "<group>"; };
+		1F82082B7950F8873636BA2D1EEF1393 /* ARSwitchViewManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARSwitchViewManager.h; sourceTree = "<group>"; };
 		1F84CF7505B55E4D9057A3E803C8DFA8 /* FLKAutoLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FLKAutoLayout-umbrella.h"; sourceTree = "<group>"; };
 		1FB425D7E2138711320A79E1643F0DE3 /* RCTNetInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTNetInfo.h; sourceTree = "<group>"; };
 		1FC80E314E483B0BFEDB1B95AE2F7248 /* RCTTextViewManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTTextViewManager.h; sourceTree = "<group>"; };
@@ -747,7 +749,6 @@
 		400DC48A28411E09833F342674261AC5 /* RCTSegmentedControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTSegmentedControl.m; sourceTree = "<group>"; };
 		40ADC13F1E01F38ADA10AE183EC84AF4 /* EndWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EndWith.swift; path = Nimble/Matchers/EndWith.swift; sourceTree = "<group>"; };
 		40D88F7C6F8C63CF743FA0F59590C0C8 /* UIButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+WebCache.m"; path = "SDWebImage/UIButton+WebCache.m"; sourceTree = "<group>"; };
-		4144E71F9D48533FD681EE751C70F970 /* ARTabViewComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ARTabViewComponent.m; sourceTree = "<group>"; };
 		418F52A91B6B8BFB3CA0FEC77829F14F /* SDWebImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageManager.m; path = SDWebImage/SDWebImageManager.m; sourceTree = "<group>"; };
 		421B9FC2EBFF52C2BB501075FE545AA3 /* ObjectiveSugar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ObjectiveSugar.xcconfig; sourceTree = "<group>"; };
 		423438A0A76711972DEFC3517E319820 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -765,7 +766,6 @@
 		458D9CC04A2F338183449E217E467819 /* Pods-Emission_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Emission_Example-resources.sh"; sourceTree = "<group>"; };
 		45D8C9252EC0468758891DE2253CAF72 /* AssertionRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionRecorder.swift; path = Nimble/Adapters/AssertionRecorder.swift; sourceTree = "<group>"; };
 		4617E6436E4427E6C512F583B9E2A2BD /* UIView_BooleanAnimations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIView_BooleanAnimations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4625509543A33D5F76724B4742C6F859 /* ARSwitchView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ARSwitchView.m; sourceTree = "<group>"; };
 		462EF77075A8E9008248A91C39E69919 /* RCTDatePicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTDatePicker.m; sourceTree = "<group>"; };
 		4662D64ED042881601DE68934FA35F5C /* BeEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeEmpty.swift; path = Nimble/Matchers/BeEmpty.swift; sourceTree = "<group>"; };
 		4734878228A6A40C1165BAC327CCC719 /* ARCollectionViewMasonryLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ARCollectionViewMasonryLayout-dummy.m"; sourceTree = "<group>"; };
@@ -904,7 +904,6 @@
 		84B0FFF9227083A9E1128F689DC7C32F /* RCTProfileTrampoline-x86_64.S */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.asm; path = "RCTProfileTrampoline-x86_64.S"; sourceTree = "<group>"; };
 		85567C6C4787857A63855FB9D3736D1B /* Expectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expectation.swift; path = Nimble/Expectation.swift; sourceTree = "<group>"; };
 		87D4351B3CA980BEEADC825A9D5A8E47 /* SDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = SDWebImage/SDWebImageManager.h; sourceTree = "<group>"; };
-		883CA1948112E3FCFAE63F409311406E /* ARTabViewComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARTabViewComponent.h; sourceTree = "<group>"; };
 		8A3012D45810E777A450AB418D05533E /* NSLayoutConstraint+FLKAutoLayoutDebug.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+FLKAutoLayoutDebug.m"; path = "FLKAutoLayout/Private/NSLayoutConstraint+FLKAutoLayoutDebug.m"; sourceTree = "<group>"; };
 		8A4344152EE93DA81DA4C31E11740402 /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
 		8B924641D5BE7AAABC1E47D05B3828E1 /* ARCollectionViewMasonryLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ARCollectionViewMasonryLayout.m; sourceTree = "<group>"; };
@@ -1041,7 +1040,6 @@
 		D514CE25D8D8E9F6249BA2B9473488D8 /* Emission.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Emission.modulemap; sourceTree = "<group>"; };
 		D53DB7044366BED30B86BD68235DB89B /* RCTWrapperViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTWrapperViewController.m; sourceTree = "<group>"; };
 		D5F5189141A0C4A879A37C318BFEF6EC /* NSNumber+ObjectiveSugar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+ObjectiveSugar.m"; path = "Classes/NSNumber+ObjectiveSugar.m"; sourceTree = "<group>"; };
-		D71AAF48E0EF4F5191FDC2A1D68FBDD2 /* ARSwitchView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ARSwitchView.h; sourceTree = "<group>"; };
 		D85C9E18E619D40C9CCE42D725DA055B /* RCTBridge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTBridge.m; sourceTree = "<group>"; };
 		D8A1312E213833E466453FA7B1C2C9AE /* RCTImageComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTImageComponent.h; sourceTree = "<group>"; };
 		D91F4FF01737096F3C9A7C0424EBB880 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1068,6 +1066,7 @@
 		E0FF6E835BAEEBB8D5CE94DD228FC1F7 /* RCTImageSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTImageSource.m; sourceTree = "<group>"; };
 		E20DC894D403BC70479318DFA8D30F73 /* Pods-Emission_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Emission_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E3A26E36F53D10957A2171A0EED9750B /* UIImage+Snapshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Snapshot.m"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.m"; sourceTree = "<group>"; };
+		E3B469B655AB172A594799573FF810C6 /* ARSwitchView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ARSwitchView.m; sourceTree = "<group>"; };
 		E3DE0EA9C4F3414ECCCB2433148A7FAB /* RCTMapOverlay.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTMapOverlay.m; sourceTree = "<group>"; };
 		E458D38E52DEE7805AA67D61E2F9AA0F /* RCTUIManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTUIManager.m; sourceTree = "<group>"; };
 		E46734F43DE87BEC9B2075FFCD75FBFE /* Nimble_Snapshots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble_Snapshots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1083,6 +1082,7 @@
 		E9B5E27555149B59B1DB7132DDAD1825 /* Pods-Emission_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Emission_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		E9E62688C12833B4BFD68646FC3ACEF9 /* RCTConvert+MapKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RCTConvert+MapKit.h"; sourceTree = "<group>"; };
 		E9EB90CD9A2B241FCD4B77F34526AE71 /* Pods-Emission_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Emission_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		EA02772F9A2F5B4D02B3CE651788AEDD /* ARSwitchViewManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ARSwitchViewManager.m; sourceTree = "<group>"; };
 		EA1605DBFAF9AD77A139A49E816042A9 /* RCTEventDispatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTEventDispatcher.m; sourceTree = "<group>"; };
 		EA1E460B3DC3040E8F8DE5C4ECDB489C /* NSDictionary+ObjectiveSugar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+ObjectiveSugar.h"; path = "Classes/NSDictionary+ObjectiveSugar.h"; sourceTree = "<group>"; };
 		EAA429CA6E5548C12CB013596DD939A9 /* RCTBridgeModule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTBridgeModule.h; sourceTree = "<group>"; };
@@ -1583,7 +1583,7 @@
 		4114DDB018C191D803810132D4ECF2E4 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				D566FF6426352C3FA2B47C281B924704 /* Classes */,
+				D527632102C066FBFE78C89DCC5E764D /* Classes */,
 			);
 			path = Pod;
 			sourceTree = "<group>";
@@ -2116,13 +2116,13 @@
 			path = "../Target Support Files/ObjectiveSugar";
 			sourceTree = "<group>";
 		};
-		D566FF6426352C3FA2B47C281B924704 /* Classes */ = {
+		D527632102C066FBFE78C89DCC5E764D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D71AAF48E0EF4F5191FDC2A1D68FBDD2 /* ARSwitchView.h */,
-				4625509543A33D5F76724B4742C6F859 /* ARSwitchView.m */,
-				883CA1948112E3FCFAE63F409311406E /* ARTabViewComponent.h */,
-				4144E71F9D48533FD681EE751C70F970 /* ARTabViewComponent.m */,
+				113442C6A41B20F99432678D0827C6EE /* ARSwitchView.h */,
+				E3B469B655AB172A594799573FF810C6 /* ARSwitchView.m */,
+				1F82082B7950F8873636BA2D1EEF1393 /* ARSwitchViewManager.h */,
+				EA02772F9A2F5B4D02B3CE651788AEDD /* ARSwitchViewManager.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -2525,6 +2525,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		754BF7E1F45DB07519E9FFA3B3795043 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87EF80CF7B643FB3B52B2EE3BF79F1E3 /* ARSwitchView.h in Headers */,
+				D0A6A79127546C59858B4EE303B1DF9E /* ARSwitchViewManager.h in Headers */,
+				064354EB57AB2A3E4662DB037CBEA890 /* Emission-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7CE59C92D6D376E1C09DB1B66DA51442 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -2580,16 +2590,6 @@
 				0F49254A4C560DD4696936F6080756DC /* Nimble-umbrella.h in Headers */,
 				512DFAE728521F02AF225F0082195DCC /* Nimble.h in Headers */,
 				02BF9988CC94A01E7CB6049694390020 /* NMBExceptionCapture.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EBF1887B4905556D4164F6C7B96970ED /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A9158181C18199E94FAFB95BCAE9F6AA /* ARSwitchView.h in Headers */,
-				45DEDE1732ADDC6388F7C12FAA830029 /* ARTabViewComponent.h in Headers */,
-				0C79BBD0D6F12EAF726B0051836AECBC /* Emission-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2799,9 +2799,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0ABD4473BD28F4886A1104C4D390BAD /* Build configuration list for PBXNativeTarget "Emission" */;
 			buildPhases = (
-				BB3AFCBCB03DE78B611FEA7FE96385A2 /* Sources */,
+				E77F67803B64EC8A921CDFC538F47AFE /* Sources */,
 				6554CBBC2BD10AE431E6B2D59A297B67 /* Frameworks */,
-				EBF1887B4905556D4164F6C7B96970ED /* Headers */,
+				754BF7E1F45DB07519E9FFA3B3795043 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -3160,19 +3160,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BB3AFCBCB03DE78B611FEA7FE96385A2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				64CD05573BFB6D25E2A03F75D16CE676 /* ARArtworksMasonryGridComponent.swift in Sources */,
-				B6922532C00866ABB42F90A75209B392 /* ARComponentViewController.swift in Sources */,
-				4928A987C9964012585465FD4252F855 /* AREmissionFontsLoader.m in Sources */,
-				C4C7FC431B7B2E85824D84F8DE3441CA /* ARSwitchView.m in Sources */,
-				C60F25479C5A9198D2446B6A57F67381 /* ARTabViewComponent.m in Sources */,
-				838C62C621AABD4F5F27C90EC9B79446 /* Emission-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CC264E557A8A184C30ECCED31C74BB34 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3229,6 +3216,19 @@
 				36A09777D96DA589FD7FB47DD6EDC2AB /* Nimble-Snapshots-dummy.m in Sources */,
 				ED6A0B20E661EA13A99C377E2213DC5F /* NimbleSnapshotsConfiguration.swift in Sources */,
 				D39881E8AB50A77DABF756314695BF25 /* PrettySyntax.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E77F67803B64EC8A921CDFC538F47AFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C28BBA04578E95F406F59AB3B247363 /* ARArtworksMasonryGridComponent.swift in Sources */,
+				4E80582E075DB0BFACA802294459C514 /* ARComponentViewController.swift in Sources */,
+				29898E6DA0AC08335254990DC6B1A281 /* AREmissionFontsLoader.m in Sources */,
+				C282D8BD12390887BFACF375987AC009 /* ARSwitchView.m in Sources */,
+				D1FE59910D1C0DDBA7754A755B4DF5B9 /* ARSwitchViewManager.m in Sources */,
+				175E1756E3C1FC154BB5D053E026044E /* Emission-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

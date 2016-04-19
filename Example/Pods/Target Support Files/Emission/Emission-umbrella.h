@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-#import "ARTabViewComponent.h"
+#import "ARSwitchViewManager.h"
 #import "ARSwitchView.h"
 
 FOUNDATION_EXPORT double EmissionVersionNumber;

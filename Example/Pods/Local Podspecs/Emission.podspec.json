@@ -15,7 +15,22 @@
     "ios": "8.0"
   },
   "requires_arc": true,
+  "default_subspecs": "All",
   "subspecs": [
+    {
+      "name": "All",
+      "dependencies": {
+        "Emission/Core": [
+
+        ],
+        "Emission/ARTabViewComponent": [
+
+        ],
+        "Emission/ARArtworksMasonryGridComponent": [
+
+        ]
+      }
+    },
     {
       "name": "Core",
       "source_files": [
@@ -34,7 +49,7 @@
     {
       "name": "ARTabViewComponent",
       "source_files": [
-        "Pod/Classes/ARTabViewComponent.*",
+        "Pod/Classes/ARSwitchViewManager.*",
         "Pod/Classes/ARSwitchView.*"
       ],
       "dependencies": {
