@@ -133,6 +133,7 @@
 		4E734A94405B435F633DE2722DC0125F /* RCTImageSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F643DB879C8DB433E20DDBDFDEE06A1 /* RCTImageSource.m */; };
 		4E87C6AE24AB15700A39FC24A2F1C93B /* BeLessThanOrEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEC4FAB841DDF758E0378A60309F845 /* BeLessThanOrEqual.swift */; };
 		502BB5EA4B44BAE14DA726B29095D98A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F20F009BB49852C2C35E31757C52E428 /* XCTest.framework */; };
+		510DCB011CC65CD10075E8CB /* AREmissionFontsLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 510DCAFF1CC65CD10075E8CB /* AREmissionFontsLoader.m */; };
 		512DFAE728521F02AF225F0082195DCC /* Nimble.h in Headers */ = {isa = PBXBuildFile; fileRef = B5085D83BF082B95C92D5A8EF51B3F23 /* Nimble.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5210F6D24C2DE323FFA00BF60D6A0CF0 /* UIButton+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FE4BC9C9250FD9458848E6E623B3419 /* UIButton+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		527E2968E014C5312400583246CBD012 /* RCTPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 089BC857A3F47AA08C5B87CB434DCDFC /* RCTPicker.m */; };
@@ -669,6 +670,7 @@
 		4FA05FFF739C79D8380291DF4C755B8D /* RCTHTTPRequestHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RCTHTTPRequestHandler.m; sourceTree = "<group>"; };
 		50FB2D253F0CD59870F4711947F8B652 /* RCTConvert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RCTConvert.h; sourceTree = "<group>"; };
 		50FC90B915F81175519DFF1259525861 /* SDWebImageOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageOperation.h; path = SDWebImage/SDWebImageOperation.h; sourceTree = "<group>"; };
+		510DCAFF1CC65CD10075E8CB /* AREmissionFontsLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AREmissionFontsLoader.m; sourceTree = "<group>"; };
 		5145D8C5A456A3158DA9FE26AC5664D6 /* World.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = World.swift; path = Quick/World.swift; sourceTree = "<group>"; };
 		5204E1DEBB492529631828635F03492B /* QuickSpec.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickSpec.m; path = Quick/QuickSpec.m; sourceTree = "<group>"; };
 		527C2D10F5EDB5E4AB431BCCCD0C23FF /* SDImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCache.m; path = SDWebImage/SDImageCache.m; sourceTree = "<group>"; };
@@ -1898,6 +1900,7 @@
 			isa = PBXGroup;
 			children = (
 				FB197489379AD570C302FF8DDF1922C0 /* ARComponentViewController.swift */,
+				510DCAFF1CC65CD10075E8CB /* AREmissionFontsLoader.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -2618,6 +2621,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C947100EB710D26D6E49FDCBCFE8FA7 /* ARArtworksMasonryGridComponent.swift in Sources */,
+				510DCB011CC65CD10075E8CB /* AREmissionFontsLoader.m in Sources */,
 				0C0381A793D73EFB33343F05CB543EA4 /* ARComponentViewController.swift in Sources */,
 				FD6541BAE673F3DC3CB9E4B730EBC654 /* Emission-dummy.m in Sources */,
 			);
