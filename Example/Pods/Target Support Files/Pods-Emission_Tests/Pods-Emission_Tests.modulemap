@@ -1,6 +1,0 @@
-framework module Pods_Emission_Tests {
-  umbrella header "Pods-Emission_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

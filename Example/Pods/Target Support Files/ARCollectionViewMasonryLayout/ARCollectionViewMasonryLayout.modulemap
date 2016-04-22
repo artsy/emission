@@ -1,6 +1,0 @@
-framework module ARCollectionViewMasonryLayout {
-  umbrella header "ARCollectionViewMasonryLayout-umbrella.h"
-
-  export *
-  module * { export * }
-}

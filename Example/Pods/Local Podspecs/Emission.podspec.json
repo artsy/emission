@@ -23,20 +23,17 @@
         "Emission/Core": [
 
         ],
-        "Emission/ARTabViewComponent": [
+        "Emission/ImageViewComponent": [
 
         ],
-        "Emission/ARArtworksMasonryGridComponent": [
+        "Emission/SwitchViewComponent": [
 
         ]
       }
     },
     {
       "name": "Core",
-      "source_files": [
-        "Pod/Classes/AREmissionFontsLoader.m",
-        "Pod/Classes/ARComponentViewController.swift"
-      ],
+      "source_files": "Pod/Classes/Core",
       "dependencies": {
         "React/Core": [
           ">= 0.24.0-rc5"
@@ -47,11 +44,8 @@
       }
     },
     {
-      "name": "ARTabViewComponent",
-      "source_files": [
-        "Pod/Classes/ARSwitchViewManager.*",
-        "Pod/Classes/ARSwitchView.*"
-      ],
+      "name": "SwitchViewComponent",
+      "source_files": "Pod/Classes/SwitchViewComponent",
       "dependencies": {
         "Emission/Core": [
 
@@ -61,22 +55,13 @@
         ],
         "FLKAutoLayout": [
 
-        ],
-        "ObjectiveSugar": [
-
         ]
       }
     },
     {
-      "name": "ARArtworksMasonryGridComponent",
-      "source_files": "Pod/Classes/ARArtworksMasonryGridComponent.swift",
+      "name": "ImageViewComponent",
+      "source_files": "Pod/Classes/ImageViewComponent",
       "dependencies": {
-        "Emission/Core": [
-
-        ],
-        "ARCollectionViewMasonryLayout": [
-          ">= 2.2.0"
-        ],
         "SDWebImage": [
           ">= 3.7.2"
         ]
