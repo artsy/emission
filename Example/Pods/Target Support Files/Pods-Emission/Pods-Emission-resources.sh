@@ -79,6 +79,22 @@ EOM
       ;;
   esac
 }
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "Artsy+UIFonts/Pod/Assets/AGaramondPro-Bold.otf"
+  install_resource "Artsy+UIFonts/Pod/Assets/AGaramondPro-BoldItalic.otf"
+  install_resource "Artsy+UIFonts/Pod/Assets/AGaramondPro-Italic.otf"
+  install_resource "Artsy+UIFonts/Pod/Assets/AGaramondPro-Regular.otf"
+  install_resource "Artsy+UIFonts/Pod/Assets/AGaramondPro-Semibold.otf"
+  install_resource "Artsy+UIFonts/Pod/Assets/ITCAvantGardeDemi_Track03.ttf"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "Artsy+UIFonts/Pod/Assets/AGaramondPro-Bold.otf"
+  install_resource "Artsy+UIFonts/Pod/Assets/AGaramondPro-BoldItalic.otf"
+  install_resource "Artsy+UIFonts/Pod/Assets/AGaramondPro-Italic.otf"
+  install_resource "Artsy+UIFonts/Pod/Assets/AGaramondPro-Regular.otf"
+  install_resource "Artsy+UIFonts/Pod/Assets/AGaramondPro-Semibold.otf"
+  install_resource "Artsy+UIFonts/Pod/Assets/ITCAvantGardeDemi_Track03.ttf"
+fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

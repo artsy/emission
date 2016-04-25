@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8F0F6D86866702FCF314CB8390DD423B"
-               BuildableName = "React.framework"
+               BlueprintIdentifier = "9EA9C1AC1932B6051505D2C422D51314"
+               BuildableName = "libReact-Core-RCTNetwork-RCTText-RCTWebSocket.a"
                BlueprintName = "React-Core-RCTNetwork-RCTText-RCTWebSocket"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
@@ -45,8 +45,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8F0F6D86866702FCF314CB8390DD423B"
-            BuildableName = "React.framework"
+            BlueprintIdentifier = "9EA9C1AC1932B6051505D2C422D51314"
+            BuildableName = "libReact-Core-RCTNetwork-RCTText-RCTWebSocket.a"
             BlueprintName = "React-Core-RCTNetwork-RCTText-RCTWebSocket"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>

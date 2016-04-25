@@ -1,0 +1,1 @@
+../../../../../Pod/Classes/SwitchViewComponent/ARSwitchViewManager.h
