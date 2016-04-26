@@ -23,7 +23,7 @@
         "Emission/Core": [
 
         ],
-        "Emission/ImageViewComponent": [
+        "Emission/OpaqueImageViewComponent": [
 
         ],
         "Emission/SwitchViewComponent": [
@@ -59,8 +59,8 @@
       }
     },
     {
-      "name": "ImageViewComponent",
-      "source_files": "Pod/Classes/ImageViewComponent",
+      "name": "OpaqueImageViewComponent",
+      "source_files": "Pod/Classes/OpaqueImageViewComponent",
       "dependencies": {
         "SDWebImage": [
           ">= 3.7.2"

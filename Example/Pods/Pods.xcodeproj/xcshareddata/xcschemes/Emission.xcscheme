@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '486F5B2673D70A625BD6CE576835A68F'
+               BlueprintIdentifier = '7F524F8FA3F08F8440EBC0034FF80B52'
                BlueprintName = 'Emission'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Emission.framework'>
+               BuildableName = 'libEmission.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
