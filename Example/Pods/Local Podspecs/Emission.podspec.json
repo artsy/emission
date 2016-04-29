@@ -28,6 +28,9 @@
         ],
         "Emission/SwitchViewComponent": [
 
+        ],
+        "Emission/TemporaryAPI": [
+
         ]
       }
     },
@@ -40,6 +43,15 @@
         ],
         "Artsy+UIFonts": [
           ">= 1.1.0"
+        ]
+      }
+    },
+    {
+      "name": "TemporaryAPI",
+      "source_files": "Pod/Classes/TemporaryAPI",
+      "dependencies": {
+        "Emission/Core": [
+
         ]
       }
     },
