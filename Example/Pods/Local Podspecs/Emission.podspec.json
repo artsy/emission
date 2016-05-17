@@ -37,6 +37,7 @@
     {
       "name": "Core",
       "source_files": "Pod/Classes/Core",
+      "resources": "Pod/Assets/Emission.jsbundle",
       "dependencies": {
         "React/Core": [
           ">= 0.24.0-rc5"

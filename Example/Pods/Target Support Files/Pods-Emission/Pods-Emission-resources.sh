@@ -86,6 +86,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "Artsy+UIFonts/Pod/Assets/AGaramondPro-Regular.otf"
   install_resource "Artsy+UIFonts/Pod/Assets/AGaramondPro-Semibold.otf"
   install_resource "Artsy+UIFonts/Pod/Assets/ITCAvantGardeDemi_Track03.ttf"
+  install_resource "../../Pod/Assets/Emission.jsbundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "Artsy+UIFonts/Pod/Assets/AGaramondPro-Bold.otf"
@@ -94,6 +95,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "Artsy+UIFonts/Pod/Assets/AGaramondPro-Regular.otf"
   install_resource "Artsy+UIFonts/Pod/Assets/AGaramondPro-Semibold.otf"
   install_resource "Artsy+UIFonts/Pod/Assets/ITCAvantGardeDemi_Track03.ttf"
+  install_resource "../../Pod/Assets/Emission.jsbundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
