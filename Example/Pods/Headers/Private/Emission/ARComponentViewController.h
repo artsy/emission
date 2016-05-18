@@ -1,1 +1,1 @@
-../../../../../Pod/Classes/Core/ARComponentViewController.h
+../../../../../Pod/Classes/ViewControllers/ARComponentViewController.h
