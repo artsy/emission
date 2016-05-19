@@ -29,6 +29,9 @@
         "Emission/SwitchViewComponent": [
 
         ],
+        "Emission/SpinnerComponent": [
+
+        ],
         "Emission/TemporaryAPI": [
 
         ],
@@ -67,6 +70,18 @@
 
         ],
         "Extraction/ARSwitchView": [
+
+        ]
+      }
+    },
+    {
+      "name": "SpinnerComponent",
+      "source_files": "Pod/Classes/SpinnerComponent",
+      "dependencies": {
+        "Emission/Core": [
+
+        ],
+        "Extraction/ARSpinner": [
 
         ]
       }
