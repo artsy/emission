@@ -66,10 +66,7 @@
         "Emission/Core": [
 
         ],
-        "UIView+BooleanAnimations": [
-
-        ],
-        "FLKAutoLayout": [
+        "Extraction/ARSwitchView": [
 
         ]
       }

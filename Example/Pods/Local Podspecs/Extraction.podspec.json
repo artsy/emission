@@ -1,0 +1,51 @@
+{
+  "name": "Extraction",
+  "version": "0.1.0",
+  "summary": "UI components shared between Eigen and Emission.",
+  "homepage": "https://github.com/artsy/extraction",
+  "license": "MIT",
+  "authors": {
+    "Eloy Durán": "eloy.de.enige@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/artsy/extraction.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "subspecs": [
+    {
+      "name": "ARSwitchView",
+      "source_files": "Extraction/Classes/ARSwitchView.{h,m}",
+      "dependencies": {
+        "Artsy+UIFonts": [
+          ">= 1.1.0"
+        ],
+        "FLKAutoLayout": [
+
+        ],
+        "UIView+BooleanAnimations": [
+
+        ]
+      }
+    },
+    {
+      "name": "ARSpinner",
+      "source_files": "Extraction/Classes/ARSpinner.{h,m}",
+      "dependencies": {
+        "Extraction/UIView+ARSpinner": [
+
+        ],
+        "UIView+BooleanAnimations": [
+
+        ]
+      }
+    },
+    {
+      "name": "UIView+ARSpinner",
+      "source_files": "Extraction/Classes/UIView+ARSpinner.{h,m}"
+    }
+  ]
+}
