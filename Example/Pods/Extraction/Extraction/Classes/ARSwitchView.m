@@ -2,10 +2,12 @@
 
 #if __has_include(<Artsy+UIFonts/UIFont+ArtsyFonts.h>)
 #import <Artsy+UIFonts/UIFont+ArtsyFonts.h>
+#import <Artsy+UIColors/UIColor+ArtsyColors.h>
 #import <FLKAutoLayout/FLKAutoLayout.h>
 #import <UIView+BooleanAnimations/UIView+BooleanAnimations.h>
 #else
 @import Artsy_UIFonts;
+@import Artsy_UIColors;
 @import FLKAutoLayout;
 @import UIView_BooleanAnimations;
 #endif
@@ -123,8 +125,7 @@ static CGFloat ARAnimationQuickDuration = 0.15;
   
   self.topSelectionIndicator.backgroundColor = [UIColor blackColor];
   self.bottomSelectionIndicator.backgroundColor = [UIColor blackColor];
-  //  self.backgroundColor = [UIColor artsyGrayMedium];
-  self.backgroundColor = [UIColor lightGrayColor];
+  self.backgroundColor = [UIColor artsyGrayMedium];
   
   [self.selectionIndicator addSubview:self.topSelectionIndicator];
   [self.selectionIndicator addSubview:self.bottomSelectionIndicator];
@@ -162,8 +163,7 @@ static CGFloat ARAnimationQuickDuration = 0.15;
   
   [button setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
   [button setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
-  //  [button setTitleColor:[UIColor artsyGraySemibold] forState:UIControlStateNormal];
-  [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+  [button setTitleColor:[UIColor artsyGraySemibold] forState:UIControlStateNormal];
   
   return button;
 }
