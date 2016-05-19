@@ -29,6 +29,9 @@
         "Emission/SwitchViewComponent": [
 
         ],
+        "Emission/SpinnerComponent": [
+
+        ],
         "Emission/TemporaryAPI": [
 
         ],
@@ -66,10 +69,19 @@
         "Emission/Core": [
 
         ],
-        "UIView+BooleanAnimations": [
+        "Extraction/ARSwitchView": [
+
+        ]
+      }
+    },
+    {
+      "name": "SpinnerComponent",
+      "source_files": "Pod/Classes/SpinnerComponent",
+      "dependencies": {
+        "Emission/Core": [
 
         ],
-        "FLKAutoLayout": [
+        "Extraction/ARSpinner": [
 
         ]
       }
