@@ -23,6 +23,9 @@
         "Artsy+UIFonts": [
           ">= 1.1.0"
         ],
+        "Artsy+UIColors": [
+
+        ],
         "FLKAutoLayout": [
 
         ],
