@@ -45,11 +45,17 @@
       "source_files": "Pod/Classes/Core",
       "resources": "Pod/Assets/Emission.jsbundle",
       "dependencies": {
+        "Artsy+UIFonts": [
+          ">= 1.1.0"
+        ],
         "React/Core": [
           ">= 0.24.0-rc5"
         ],
-        "Artsy+UIFonts": [
-          ">= 1.1.0"
+        "React/RCTText": [
+          ">= 0.24.0-rc5"
+        ],
+        "React/RCTNetwork": [
+          ">= 0.24.0-rc5"
         ]
       }
     },
