@@ -50,7 +50,7 @@
   "directories": {},
   "dist": {
     "shasum": "0bc25ddac941ec8a496ae258fd4ac188003ef3af",
-    "tarball": "http://registry.npmjs.org/array-find-index/-/array-find-index-1.0.1.tgz"
+    "tarball": "https://registry.npmjs.org/array-find-index/-/array-find-index-1.0.1.tgz"
   },
   "engines": {
     "node": ">=0.10.0"

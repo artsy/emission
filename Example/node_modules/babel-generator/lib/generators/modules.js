@@ -1,22 +1,24 @@
-"use strict";
-
-var _interopRequireWildcard = require("babel-runtime/helpers/interop-require-wildcard")["default"];
+/*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
 exports.ImportSpecifier = ImportSpecifier;
-exports.ImportDefaultSpecifier = ImportDefaultSpecifier;
-exports.ExportDefaultSpecifier = ExportDefaultSpecifier;
-exports.ExportSpecifier = ExportSpecifier;
-exports.ExportNamespaceSpecifier = ExportNamespaceSpecifier;
-exports.ExportAllDeclaration = ExportAllDeclaration;
-exports.ExportNamedDeclaration = ExportNamedDeclaration;
-exports.ExportDefaultDeclaration = ExportDefaultDeclaration;
-exports.ImportDeclaration = ImportDeclaration;
-exports.ImportNamespaceSpecifier = ImportNamespaceSpecifier;
+/*istanbul ignore next*/exports.ImportDefaultSpecifier = ImportDefaultSpecifier;
+/*istanbul ignore next*/exports.ExportDefaultSpecifier = ExportDefaultSpecifier;
+/*istanbul ignore next*/exports.ExportSpecifier = ExportSpecifier;
+/*istanbul ignore next*/exports.ExportNamespaceSpecifier = ExportNamespaceSpecifier;
+/*istanbul ignore next*/exports.ExportAllDeclaration = ExportAllDeclaration;
+/*istanbul ignore next*/exports.ExportNamedDeclaration = ExportNamedDeclaration;
+/*istanbul ignore next*/exports.ExportDefaultDeclaration = ExportDefaultDeclaration;
+/*istanbul ignore next*/exports.ImportDeclaration = ImportDeclaration;
+/*istanbul ignore next*/exports.ImportNamespaceSpecifier = ImportNamespaceSpecifier;
 
-var _babelTypes = require("babel-types");
+var /*istanbul ignore next*/_babelTypes = require("babel-types");
 
+/*istanbul ignore next*/
 var t = _interopRequireWildcard(_babelTypes);
+
+/*istanbul ignore next*/
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function ImportSpecifier(node) {
   this.print(node.imported, node);

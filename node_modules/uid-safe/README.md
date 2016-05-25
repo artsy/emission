@@ -68,7 +68,7 @@ var string = uid.sync(18)
 [npm-image]: https://img.shields.io/npm/v/uid-safe.svg
 [npm-url]: https://npmjs.org/package/uid-safe
 [node-version-image]: https://img.shields.io/node/v/uid-safe.svg
-[node-version-url]: http://nodejs.org/download/
+[node-version-url]: https://nodejs.org/en/download/
 [travis-image]: https://img.shields.io/travis/crypto-utils/uid-safe/master.svg
 [travis-url]: https://travis-ci.org/crypto-utils/uid-safe
 [coveralls-image]: https://img.shields.io/coveralls/crypto-utils/uid-safe/master.svg

@@ -17,6 +17,7 @@ var NativeMethodsMixin = require('NativeMethodsMixin');
 var Platform = require('Platform');
 var PropTypes = require('ReactPropTypes');
 var React = require('React');
+var ReactNative = require('ReactNative');
 var ReactChildren = require('ReactChildren');
 var StyleSheet = require('StyleSheet');
 var Text = require('Text');
@@ -318,9 +319,12 @@ var TextInput = React.createClass({
         AndroidTextInput.viewConfig :
         {})) : Object),
 
+  /**
+   * Returns if the input is currently focused.
+   */
   isFocused: function(): boolean {
     return TextInputState.currentlyFocusedField() ===
-      React.findNodeHandle(this.refs.input);
+      ReactNative.findNodeHandle(this.refs.input);
   },
 
   contextTypes: {
@@ -367,6 +371,9 @@ var TextInput = React.createClass({
     isInAParentText: React.PropTypes.bool
   },
 
+  /**
+   * Removes all text from the input.
+   */
   clear: function() {
     this.setNativeProps({text: ''});
   },
@@ -436,8 +443,8 @@ var TextInput = React.createClass({
         !(props.value && childCount),
         'Cannot specify both value and children.'
       );
-      if (childCount > 1) {
-        children = <Text>{children}</Text>;
+      if (childCount >= 1) {
+        children = <Text style={props.style}>{children}</Text>;
       }
       if (props.inputView) {
         children = [children, props.inputView];

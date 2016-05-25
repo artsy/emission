@@ -1,5 +1,5 @@
 /**
- * Copyright 2013-2015, Facebook, Inc.
+ * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -12,10 +12,11 @@
 
 'use strict';
 
+var _assign = require('object-assign');
+
 var ReactInstanceMap = require('./ReactInstanceMap');
 var ReactTestUtils = require('./ReactTestUtils');
 
-var assign = require('./Object.assign');
 var invariant = require('fbjs/lib/invariant');
 
 function reactComponentExpect(instance) {
@@ -30,7 +31,7 @@ function reactComponentExpect(instance) {
   expect(instance).not.toBeNull();
   expect(instance).not.toBeUndefined();
 
-  !ReactTestUtils.isCompositeComponent(instance) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'reactComponentExpect(...): instance must be a composite component') : invariant(false) : undefined;
+  !ReactTestUtils.isCompositeComponent(instance) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'reactComponentExpect(...): instance must be a composite component') : invariant(false) : void 0;
   var internalInstance = ReactInstanceMap.get(instance);
 
   expect(typeof internalInstance).toBe('object');
@@ -44,7 +45,7 @@ function reactComponentExpectInternal(internalInstance) {
   this._instance = internalInstance;
 }
 
-assign(reactComponentExpectInternal.prototype, {
+_assign(reactComponentExpectInternal.prototype, {
   // Getters -------------------------------------------------------------------
 
   /**

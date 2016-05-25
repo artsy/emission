@@ -1,22 +1,25 @@
-"use strict";
-
-var _interopRequireWildcard = require("babel-runtime/helpers/interop-require-wildcard")["default"];
+/*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
+exports.Flow = exports.Pure = exports.Generated = exports.User = exports.Var = exports.BlockScoped = exports.Referenced = exports.Scope = exports.Expression = exports.Statement = exports.BindingIdentifier = exports.ReferencedMemberExpression = exports.ReferencedIdentifier = undefined;
 
-var _babelTypes = require("babel-types");
+var /*istanbul ignore next*/_babelTypes = require("babel-types");
 
+/*istanbul ignore next*/
 var t = _interopRequireWildcard(_babelTypes);
 
-var ReferencedIdentifier = {
+/*istanbul ignore next*/
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var ReferencedIdentifier = /*istanbul ignore next*/exports.ReferencedIdentifier = {
   types: ["Identifier", "JSXIdentifier"],
-  checkPath: function checkPath(_ref, opts) {
-    var node = _ref.node;
-    var parent = _ref.parent;
+  /*istanbul ignore next*/checkPath: function checkPath(_ref, opts) {
+    /*istanbul ignore next*/var node = _ref.node;
+    /*istanbul ignore next*/var parent = _ref.parent;
 
     if (!t.isIdentifier(node, opts)) {
       if (t.isJSXIdentifier(node, opts)) {
-        if (_babelTypes.react.isCompatTag(node.name)) return false;
+        if ( /*istanbul ignore next*/_babelTypes.react.isCompatTag(node.name)) return false;
       } else {
         // not a JSXIdentifier or an Identifier
         return false;
@@ -28,34 +31,31 @@ var ReferencedIdentifier = {
   }
 };
 
-exports.ReferencedIdentifier = ReferencedIdentifier;
-var ReferencedMemberExpression = {
+var ReferencedMemberExpression = /*istanbul ignore next*/exports.ReferencedMemberExpression = {
   types: ["MemberExpression"],
-  checkPath: function checkPath(_ref2) {
-    var node = _ref2.node;
-    var parent = _ref2.parent;
+  /*istanbul ignore next*/checkPath: function checkPath(_ref2) {
+    /*istanbul ignore next*/var node = _ref2.node;
+    /*istanbul ignore next*/var parent = _ref2.parent;
 
     return t.isMemberExpression(node) && t.isReferenced(node, parent);
   }
 };
 
-exports.ReferencedMemberExpression = ReferencedMemberExpression;
-var BindingIdentifier = {
+var BindingIdentifier = /*istanbul ignore next*/exports.BindingIdentifier = {
   types: ["Identifier"],
-  checkPath: function checkPath(_ref3) {
-    var node = _ref3.node;
-    var parent = _ref3.parent;
+  /*istanbul ignore next*/checkPath: function checkPath(_ref3) {
+    /*istanbul ignore next*/var node = _ref3.node;
+    /*istanbul ignore next*/var parent = _ref3.parent;
 
     return t.isIdentifier(node) && t.isBinding(node, parent);
   }
 };
 
-exports.BindingIdentifier = BindingIdentifier;
-var Statement = {
+var Statement = /*istanbul ignore next*/exports.Statement = {
   types: ["Statement"],
-  checkPath: function checkPath(_ref4) {
-    var node = _ref4.node;
-    var parent = _ref4.parent;
+  /*istanbul ignore next*/checkPath: function checkPath(_ref4) {
+    /*istanbul ignore next*/var node = _ref4.node;
+    /*istanbul ignore next*/var parent = _ref4.parent;
 
     if (t.isStatement(node)) {
       if (t.isVariableDeclaration(node)) {
@@ -70,10 +70,9 @@ var Statement = {
   }
 };
 
-exports.Statement = Statement;
-var Expression = {
+var Expression = /*istanbul ignore next*/exports.Expression = {
   types: ["Expression"],
-  checkPath: function checkPath(path) {
+  /*istanbul ignore next*/checkPath: function checkPath(path) {
     if (path.isIdentifier()) {
       return path.isReferencedIdentifier();
     } else {
@@ -82,62 +81,54 @@ var Expression = {
   }
 };
 
-exports.Expression = Expression;
-var Scope = {
+var Scope = /*istanbul ignore next*/exports.Scope = {
   types: ["Scopable"],
-  checkPath: function checkPath(path) {
+  /*istanbul ignore next*/checkPath: function checkPath(path) {
     return t.isScope(path.node, path.parent);
   }
 };
 
-exports.Scope = Scope;
-var Referenced = {
+var Referenced = /*istanbul ignore next*/exports.Referenced = { /*istanbul ignore next*/
   checkPath: function checkPath(path) {
     return t.isReferenced(path.node, path.parent);
   }
 };
 
-exports.Referenced = Referenced;
-var BlockScoped = {
+var BlockScoped = /*istanbul ignore next*/exports.BlockScoped = { /*istanbul ignore next*/
   checkPath: function checkPath(path) {
     return t.isBlockScoped(path.node);
   }
 };
 
-exports.BlockScoped = BlockScoped;
-var Var = {
+var Var = /*istanbul ignore next*/exports.Var = {
   types: ["VariableDeclaration"],
-  checkPath: function checkPath(path) {
+  /*istanbul ignore next*/checkPath: function checkPath(path) {
     return t.isVar(path.node);
   }
 };
 
-exports.Var = Var;
-var User = {
+var User = /*istanbul ignore next*/exports.User = { /*istanbul ignore next*/
   checkPath: function checkPath(path) {
     return path.node && !!path.node.loc;
   }
 };
 
-exports.User = User;
-var Generated = {
+var Generated = /*istanbul ignore next*/exports.Generated = { /*istanbul ignore next*/
   checkPath: function checkPath(path) {
     return !path.isUser();
   }
 };
 
-exports.Generated = Generated;
-var Pure = {
+var Pure = /*istanbul ignore next*/exports.Pure = { /*istanbul ignore next*/
   checkPath: function checkPath(path, opts) {
     return path.scope.isPure(path.node, opts);
   }
 };
 
-exports.Pure = Pure;
-var Flow = {
+var Flow = /*istanbul ignore next*/exports.Flow = {
   types: ["Flow", "ImportDeclaration", "ExportDeclaration"],
-  checkPath: function checkPath(_ref5) {
-    var node = _ref5.node;
+  /*istanbul ignore next*/checkPath: function checkPath(_ref5) {
+    /*istanbul ignore next*/var node = _ref5.node;
 
     if (t.isFlow(node)) {
       return true;
@@ -150,4 +141,3 @@ var Flow = {
     }
   }
 };
-exports.Flow = Flow;

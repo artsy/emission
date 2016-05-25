@@ -8,7 +8,7 @@
 [travis-url]:https://travis-ci.org/IndigoUnited/node-cross-spawn-async
 [travis-image]:http://img.shields.io/travis/IndigoUnited/node-cross-spawn-async/master.svg
 [appveyor-url]:https://ci.appveyor.com/project/satazor/node-cross-spawn-async
-[appveyor-image]:https://img.shields.io/appveyor/ci/satazor/node-cross-spawn-async.svg
+[appveyor-image]:https://img.shields.io/appveyor/ci/satazor/node-cross-spawn-async/master.svg
 [david-dm-url]:https://david-dm.org/IndigoUnited/node-cross-spawn-async
 [david-dm-image]:https://img.shields.io/david/IndigoUnited/node-cross-spawn-async.svg
 [david-dm-dev-url]:https://david-dm.org/IndigoUnited/node-cross-spawn-async#info=devDependencies

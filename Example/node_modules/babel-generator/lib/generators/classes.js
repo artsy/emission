@@ -1,11 +1,10 @@
-"use strict";
+/*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
 exports.ClassDeclaration = ClassDeclaration;
-exports.ClassBody = ClassBody;
-exports.ClassProperty = ClassProperty;
-exports.ClassMethod = ClassMethod;
-
+/*istanbul ignore next*/exports.ClassBody = ClassBody;
+/*istanbul ignore next*/exports.ClassProperty = ClassProperty;
+/*istanbul ignore next*/exports.ClassMethod = ClassMethod;
 function ClassDeclaration(node) {
   this.printJoin(node.decorators, node, { separator: "" });
   this.push("class");
@@ -23,17 +22,16 @@ function ClassDeclaration(node) {
     this.print(node.superTypeParameters, node);
   }
 
-  if (node["implements"]) {
+  if (node.implements) {
     this.push(" implements ");
-    this.printJoin(node["implements"], node, { separator: ", " });
+    this.printJoin(node.implements, node, { separator: ", " });
   }
 
   this.space();
   this.print(node.body, node);
 }
 
-exports.ClassExpression = ClassDeclaration;
-
+/*istanbul ignore next*/exports.ClassExpression = ClassDeclaration;
 function ClassBody(node) {
   this.push("{");
   this.printInnerComments(node);
@@ -53,7 +51,7 @@ function ClassBody(node) {
 function ClassProperty(node) {
   this.printJoin(node.decorators, node, { separator: "" });
 
-  if (node["static"]) this.push("static ");
+  if (node.static) this.push("static ");
   this.print(node.key, node);
   this.print(node.typeAnnotation, node);
   if (node.value) {
@@ -68,7 +66,7 @@ function ClassProperty(node) {
 function ClassMethod(node) {
   this.printJoin(node.decorators, node, { separator: "" });
 
-  if (node["static"]) {
+  if (node.static) {
     this.push("static ");
   }
 

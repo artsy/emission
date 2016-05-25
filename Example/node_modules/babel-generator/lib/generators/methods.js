@@ -1,28 +1,30 @@
-"use strict";
-
-var _interopRequireWildcard = require("babel-runtime/helpers/interop-require-wildcard")["default"];
+/*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
+exports.FunctionDeclaration = undefined;
 exports._params = _params;
-exports._method = _method;
-exports.FunctionExpression = FunctionExpression;
-exports.ArrowFunctionExpression = ArrowFunctionExpression;
+/*istanbul ignore next*/exports._method = _method;
+/*istanbul ignore next*/exports.FunctionExpression = FunctionExpression;
+/*istanbul ignore next*/exports.ArrowFunctionExpression = ArrowFunctionExpression;
 
-var _babelTypes = require("babel-types");
+var /*istanbul ignore next*/_babelTypes = require("babel-types");
 
+/*istanbul ignore next*/
 var t = _interopRequireWildcard(_babelTypes);
 
-function _params(node) {
-  // istanbul ignore next
+/*istanbul ignore next*/
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
+function _params(node) {
+  /*istanbul ignore next*/
   var _this = this;
 
   this.print(node.typeParameters, node);
   this.push("(");
   this.printList(node.params, node, {
-    iterator: function iterator(node) {
-      if (node.optional) _this.push("?");
-      _this.print(node.typeAnnotation, node);
+    iterator: function /*istanbul ignore next*/iterator(node) {
+      if (node.optional) /*istanbul ignore next*/_this.push("?");
+      /*istanbul ignore next*/_this.print(node.typeAnnotation, node);
     }
   });
   this.push(")");
@@ -78,8 +80,7 @@ function FunctionExpression(node) {
   this.print(node.body, node);
 }
 
-exports.FunctionDeclaration = FunctionExpression;
-
+/*istanbul ignore next*/exports.FunctionDeclaration = FunctionExpression;
 function ArrowFunctionExpression(node) {
   if (node.async) this.push("async ");
 

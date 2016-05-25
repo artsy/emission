@@ -1,5 +1,5 @@
 /**
- * Sinon.JS 2.0.0-pre, 2016/01/16
+ * Sinon.JS 2.0.0-pre, 2016/03/19
  *
  * @author Christian Johansen (christian@cjohansen.no)
  * @author Contributors: https://github.com/cjohansen/Sinon.JS/blob/master/AUTHORS
@@ -33,8 +33,6 @@
  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-(function () {
-  'use strict';
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.sinon = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /**
  * Sinon core utilities. For internal use only.
@@ -58,12 +56,10 @@ exports.spy = require("./sinon/spy");
 exports.spyCall = require("./sinon/call");
 exports.stub = require("./sinon/stub");
 exports.mock = require("./sinon/mock");
+exports.sandbox = require("./sinon/sandbox");
 exports.expectation = require("./sinon/mock-expectation");
 exports.createStubInstance = require("./sinon/stub").createStubInstance;
 exports.typeOf = require("./sinon/typeOf");
-
-exports.log = function () {};
-exports.logError = require("./sinon/log_error");
 
 var event = require("./sinon/util/event");
 exports.Event = event.Event;
@@ -96,12 +92,8 @@ exports.fakeServerWithClock = require("./sinon/util/fake_server_with_clock");
  */
 exports.deepEqual = exports.deepEqual.use(match);
 
-// Modifying exports of another modules is not the right
-// way to handle exports in CommonJS but this is a minimal
-// change to how sinon was built before.
-require("./sinon/test_case");
 
-},{"./sinon/assert":2,"./sinon/call":4,"./sinon/collection":5,"./sinon/extend":6,"./sinon/log_error":7,"./sinon/match":8,"./sinon/mock":10,"./sinon/mock-expectation":9,"./sinon/spy":12,"./sinon/stub":13,"./sinon/test_case":15,"./sinon/typeOf":16,"./sinon/util/core":26,"./sinon/util/event":33,"./sinon/util/fake_server":34,"./sinon/util/fake_server_with_clock":35,"./sinon/util/fake_timers":36,"./sinon/util/fake_xdomain_request":37,"./sinon/util/fake_xml_http_request":38}],2:[function(require,module,exports){
+},{"./sinon/assert":2,"./sinon/call":4,"./sinon/collection":5,"./sinon/extend":6,"./sinon/match":7,"./sinon/mock":9,"./sinon/mock-expectation":8,"./sinon/sandbox":10,"./sinon/spy":11,"./sinon/stub":12,"./sinon/typeOf":13,"./sinon/util/core":23,"./sinon/util/event":31,"./sinon/util/fake_server":32,"./sinon/util/fake_server_with_clock":33,"./sinon/util/fake_timers":34,"./sinon/util/fake_xdomain_request":35,"./sinon/util/fake_xml_http_request":36}],2:[function(require,module,exports){
 (function (global){
 /**
  * Assertions matching the test spy retrieval interface.
@@ -299,7 +291,7 @@ mirrorPropAsAssertion("alwaysThrew", "%n did not always throw exception%C");
 module.exports = assert;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./match":8,"./util/core/called-in-order":17,"./util/core/format":21,"./util/core/order-by-first-call":28,"./util/core/times-in-words":30}],3:[function(require,module,exports){
+},{"./match":7,"./util/core/called-in-order":14,"./util/core/format":18,"./util/core/order-by-first-call":26,"./util/core/times-in-words":28}],3:[function(require,module,exports){
 (function (process){
 /**
  * Stub behavior
@@ -629,7 +621,7 @@ for (var method in proto) {
 module.exports = proto;
 
 }).call(this,require('_process'))
-},{"./extend":6,"./util/core/function-name":22,"_process":39}],4:[function(require,module,exports){
+},{"./extend":6,"./util/core/function-name":19,"_process":39}],4:[function(require,module,exports){
 /**
   * Spy calls
   *
@@ -642,11 +634,11 @@ module.exports = proto;
   */
 "use strict";
 
-var sinon = require("./util/core");
 var sinonMatch = require("./match");
 var deepEqual = require("./util/core/deep-equal").use(sinonMatch);
 var functionName = require("./util/core/function-name");
 var createInstance = require("./util/core/create");
+var sinonFormat = require("./util/core/format");
 var slice = Array.prototype.slice;
 
 function throwYieldError(proxy, text, args) {
@@ -793,13 +785,13 @@ var callProto = {
         }
 
         for (var i = 0, l = this.args.length; i < l; ++i) {
-            args.push(sinon.format(this.args[i]));
+            args.push(sinonFormat(this.args[i]));
         }
 
         callStr = callStr + args.join(", ") + ")";
 
         if (typeof this.returnValue !== "undefined") {
-            callStr += " => " + sinon.format(this.returnValue);
+            callStr += " => " + sinonFormat(this.returnValue);
         }
 
         if (this.exception) {
@@ -839,7 +831,7 @@ createSpyCall.toString = callProto.toString; // used by mocks
 
 module.exports = createSpyCall;
 
-},{"./match":8,"./util/core":26,"./util/core/create":18,"./util/core/deep-equal":19,"./util/core/function-name":22}],5:[function(require,module,exports){
+},{"./match":7,"./util/core/create":15,"./util/core/deep-equal":16,"./util/core/format":18,"./util/core/function-name":19}],5:[function(require,module,exports){
 /**
  * Collections of stubs, spies and mocks.
  *
@@ -852,6 +844,8 @@ module.exports = createSpyCall;
 
 var sinon = require("./util/core");
 var sinonSpy = require("./spy");
+var walk = require("./util/core/walk");
+var getPropertyDescriptor = require("./util/core/get-property-descriptor");
 
 var push = [].push;
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -945,13 +939,16 @@ var collection = {
             }
         }
         if (!property && !!object && typeof object === "object") {
+            var col = this;
             var stubbedObj = sinon.stub.apply(sinon, arguments);
 
-            for (var prop in stubbedObj) {
-                if (typeof stubbedObj[prop] === "function") {
-                    this.add(stubbedObj[prop]);
+            walk(stubbedObj, function (val, prop, propOwner) {
+                if (
+                    typeof getPropertyDescriptor(propOwner, prop).value === "function"
+                ) {
+                    col.add(stubbedObj[prop]);
                 }
-            }
+            });
 
             return stubbedObj;
         }
@@ -984,7 +981,7 @@ var collection = {
 
 module.exports = collection;
 
-},{"./spy":12,"./util/core":26}],6:[function(require,module,exports){
+},{"./spy":11,"./util/core":23,"./util/core/get-property-descriptor":22,"./util/core/walk":29}],6:[function(require,module,exports){
 "use strict";
 
 // Adapted from https://developer.mozilla.org/en/docs/ECMAScript_DontEnum_attribute#JScript_DontEnum_Bug
@@ -1063,56 +1060,6 @@ module.exports = function extend(target /*, sources */) {
 };
 
 },{}],7:[function(require,module,exports){
-/**
- * Logs errors
- *
- * @author Christian Johansen (christian@cjohansen.no)
- * @license BSD
- *
- * Copyright (c) 2010-2014 Christian Johansen
- */
-"use strict";
-
-var sinon = require("./util/core");
-
-// cache a reference to setTimeout, so that our reference won't be stubbed out
-// when using fake timers and errors will still get logged
-// https://github.com/cjohansen/Sinon.JS/issues/381
-var realSetTimeout = setTimeout;
-
-function logError(label, err) {
-    var msg = label + " threw exception: ";
-
-    function throwLoggedError() {
-        err.message = msg + err.message;
-        throw err;
-    }
-
-    sinon.log(msg + "[" + err.name + "] " + err.message);
-
-    if (err.stack) {
-        sinon.log(err.stack);
-    }
-
-    if (logError.useImmediateExceptions) {
-        throwLoggedError();
-    } else {
-        logError.setTimeout(throwLoggedError, 0);
-    }
-}
-
-// When set to true, any errors logged will be thrown immediately;
-// If set to false, the errors will be thrown in separate execution frame.
-logError.useImmediateExceptions = true;
-
-// wrap realSetTimeout with something we can stub in tests
-logError.setTimeout = function (func, timeout) {
-    realSetTimeout(func, timeout);
-};
-
-module.exports = logError;
-
-},{"./util/core":26}],8:[function(require,module,exports){
 /**
  * Match functions
  *
@@ -1344,7 +1291,7 @@ match.date = match.typeOf("date");
 
 module.exports = match;
 
-},{"./typeOf":16,"./util/core/create":18,"./util/core/deep-equal":19,"./util/core/function-name":22}],9:[function(require,module,exports){
+},{"./typeOf":13,"./util/core/create":15,"./util/core/deep-equal":16,"./util/core/function-name":19}],8:[function(require,module,exports){
 /**
  * Mock expecations
  *
@@ -1638,7 +1585,7 @@ var mockExpectation = {
 
 module.exports = mockExpectation;
 
-},{"./assert":2,"./call":4,"./extend":6,"./match":8,"./spy":12,"./stub":13,"./util/core/deep-equal":19,"./util/core/format":21,"./util/core/times-in-words":30}],10:[function(require,module,exports){
+},{"./assert":2,"./call":4,"./extend":6,"./match":7,"./spy":11,"./stub":12,"./util/core/deep-equal":16,"./util/core/format":18,"./util/core/times-in-words":28}],9:[function(require,module,exports){
 /**
  * Mock functions.
  *
@@ -1819,7 +1766,7 @@ extend(mock, {
 
 module.exports = mock;
 
-},{"./call":4,"./extend":6,"./match":8,"./mock-expectation":9,"./util/core/deep-equal":19,"./util/core/wrap-method":32}],11:[function(require,module,exports){
+},{"./call":4,"./extend":6,"./match":7,"./mock-expectation":8,"./util/core/deep-equal":16,"./util/core/wrap-method":30}],10:[function(require,module,exports){
 /**
  * Manages fake collections as well as fake utilities such as Sinon's
  * timers and fake XHR implementation in one convenient object.
@@ -1831,13 +1778,16 @@ module.exports = mock;
  */
 "use strict";
 
-require("./extend");
-require("./collection");
-require("./util/fake_server_with_clock");
-require("./util/fake_timers");
 var sinon = require("./util/core");
 
+var extend = require("./extend");
+var createInstance = require("./util/core/create");
+var sinonCollection = require("./collection");
+var sinonMatch = require("./match");
+
 var push = [].push;
+
+var sinonSandbox = createInstance(sinonCollection);
 
 function exposeValue(sandbox, config, key, value) {
     if (!value) {
@@ -1853,7 +1803,7 @@ function exposeValue(sandbox, config, key, value) {
 }
 
 function prepareSandboxFromConfig(config) {
-    var sandbox = sinon.create(sinon.sandbox);
+    var sandbox = createInstance(sinonSandbox);
 
     if (config.useFakeServer) {
         if (typeof config.useFakeServer === "object") {
@@ -1874,14 +1824,14 @@ function prepareSandboxFromConfig(config) {
     return sandbox;
 }
 
-sinon.sandbox = sinon.extend(sinon.create(sinon.collection), {
+extend(sinonSandbox, {
     useFakeTimers: function useFakeTimers() {
         this.clock = sinon.useFakeTimers.apply(sinon, arguments);
 
         return this.add(this.clock);
     },
 
-    serverPrototype: sinon.fakeServer,
+    serverPrototype: sinon.fakeServerWithClock,
 
     useFakeServer: function useFakeServer() {
         var proto = this.serverPrototype || sinon.fakeServer;
@@ -1895,7 +1845,7 @@ sinon.sandbox = sinon.extend(sinon.create(sinon.collection), {
     },
 
     inject: function (obj) {
-        sinon.collection.inject.call(this, obj);
+        sinonCollection.inject.call(this, obj);
 
         if (this.clock) {
             obj.clock = this.clock;
@@ -1906,13 +1856,13 @@ sinon.sandbox = sinon.extend(sinon.create(sinon.collection), {
             obj.requests = this.server.requests;
         }
 
-        obj.match = sinon.match;
+        obj.match = sinonMatch;
 
         return obj;
     },
 
     restore: function () {
-        sinon.collection.restore.apply(this, arguments);
+        sinonCollection.restore.apply(this, arguments);
         this.restoreContext();
     },
 
@@ -1927,7 +1877,7 @@ sinon.sandbox = sinon.extend(sinon.create(sinon.collection), {
 
     create: function (config) {
         if (!config) {
-            return sinon.create(sinon.sandbox);
+            return createInstance(sinonSandbox);
         }
 
         var sandbox = prepareSandboxFromConfig(config);
@@ -1951,12 +1901,14 @@ sinon.sandbox = sinon.extend(sinon.create(sinon.collection), {
         return sandbox;
     },
 
-    match: sinon.match
+    match: sinonMatch
 });
 
-sinon.sandbox.useFakeXMLHttpRequest = sinon.sandbox.useFakeServer;
+sinonSandbox.useFakeXMLHttpRequest = sinonSandbox.useFakeServer;
 
-},{"./collection":5,"./extend":6,"./util/core":26,"./util/fake_server_with_clock":35,"./util/fake_timers":36}],12:[function(require,module,exports){
+module.exports = sinonSandbox;
+
+},{"./collection":5,"./extend":6,"./match":7,"./util/core":23,"./util/core/create":15}],11:[function(require,module,exports){
 /**
   * Spy functions
   *
@@ -1968,14 +1920,15 @@ sinon.sandbox.useFakeXMLHttpRequest = sinon.sandbox.useFakeServer;
 "use strict";
 
 var extend = require("./extend");
-var deepEqual = require("./util/core/deep-equal");
 var functionName = require("./util/core/function-name");
 var functionToString = require("./util/core/function-to-string");
 var getPropertyDescriptor = require("./util/core/get-property-descriptor");
-var sinon = require("./util/core");
+var sinonMatch = require("./match");
+var deepEqual = require("./util/core/deep-equal").use(sinonMatch);
 var spyCall = require("./call");
 var timesInWords = require("./util/core/times-in-words");
 var wrapMethod = require("./util/core/wrap-method");
+var sinonFormat = require("./util/core/format");
 
 var push = Array.prototype.push;
 var slice = Array.prototype.slice;
@@ -2280,7 +2233,7 @@ var spyApi = {
             if (typeof formatter === "function") {
                 return formatter.call(null, spyInstance, args);
             } else if (!isNaN(parseInt(specifyer, 10))) {
-                return sinon.format(args[specifyer - 1]);
+                return sinonFormat(args[specifyer - 1]);
             }
 
             return "%" + specifyer;
@@ -2388,7 +2341,7 @@ spyApi.formatters = {
         var objects = [];
 
         for (var i = 0, l = spyInstance.callCount; i < l; ++i) {
-            push.call(objects, sinon.format(spyInstance.thisValues[i]));
+            push.call(objects, sinonFormat(spyInstance.thisValues[i]));
         }
 
         return objects.join(", ");
@@ -2398,7 +2351,7 @@ spyApi.formatters = {
         var formatted = [];
 
         for (var i = 0, l = args.length; i < l; ++i) {
-            push.call(formatted, sinon.format(args[i]));
+            push.call(formatted, sinonFormat(args[i]));
         }
 
         return formatted.join(", ");
@@ -2411,7 +2364,7 @@ spy.spyCall = spyCall;
 
 module.exports = spy;
 
-},{"./call":4,"./extend":6,"./util/core":26,"./util/core/deep-equal":19,"./util/core/function-name":22,"./util/core/function-to-string":23,"./util/core/get-property-descriptor":25,"./util/core/times-in-words":30,"./util/core/wrap-method":32}],13:[function(require,module,exports){
+},{"./call":4,"./extend":6,"./match":7,"./util/core/deep-equal":16,"./util/core/format":18,"./util/core/function-name":19,"./util/core/function-to-string":20,"./util/core/get-property-descriptor":22,"./util/core/times-in-words":28,"./util/core/wrap-method":30}],12:[function(require,module,exports){
 /**
  * Stub functions
  *
@@ -2602,163 +2555,7 @@ extend(stub, proto);
 
 module.exports = stub;
 
-},{"./behavior":3,"./extend":6,"./spy":12,"./util/core/create":18,"./util/core/function-to-string":23,"./util/core/get-property-descriptor":25,"./util/core/object-keys":27,"./util/core/walk":31,"./util/core/wrap-method":32}],14:[function(require,module,exports){
-/**
- * Test function, sandboxes fakes
- *
- * @author Christian Johansen (christian@cjohansen.no)
- * @license BSD
- *
- * Copyright (c) 2010-2013 Christian Johansen
- */
-"use strict";
-
-require("./sandbox");
-var sinon = require("./util/core");
-
-var slice = Array.prototype.slice;
-
-function test(callback) {
-    var type = typeof callback;
-
-    if (type !== "function") {
-        throw new TypeError("sinon.test needs to wrap a test function, got " + type);
-    }
-
-    function sinonSandboxedTest() {
-        var config = sinon.getConfig(sinon.config);
-        config.injectInto = config.injectIntoThis && this || config.injectInto;
-        var sandbox = sinon.sandbox.create(config);
-        var args = slice.call(arguments);
-        var oldDone = args.length && args[args.length - 1];
-        var exception, result;
-
-        if (typeof oldDone === "function") {
-            args[args.length - 1] = function sinonDone(res) {
-                if (res) {
-                    sandbox.restore();
-                } else {
-                    sandbox.verifyAndRestore();
-                }
-                oldDone(res);
-            };
-        }
-
-        try {
-            result = callback.apply(this, args.concat(sandbox.args));
-        } catch (e) {
-            exception = e;
-        }
-
-        if (typeof oldDone !== "function") {
-            if (typeof exception !== "undefined") {
-                sandbox.restore();
-                throw exception;
-            } else {
-                sandbox.verifyAndRestore();
-            }
-        }
-
-        return result;
-    }
-
-    if (callback.length) {
-        return function sinonAsyncSandboxedTest(done) { // eslint-disable-line no-unused-vars
-            return sinonSandboxedTest.apply(this, arguments);
-        };
-    }
-
-    return sinonSandboxedTest;
-}
-
-test.config = {
-    injectIntoThis: true,
-    injectInto: null,
-    properties: ["spy", "stub", "mock", "clock", "server", "requests"],
-    useFakeTimers: true,
-    useFakeServer: true
-};
-
-sinon.test = test;
-
-},{"./sandbox":11,"./util/core":26}],15:[function(require,module,exports){
-/**
- * Test case, sandboxes all test functions
- *
- * @author Christian Johansen (christian@cjohansen.no)
- * @license BSD
- *
- * Copyright (c) 2010-2013 Christian Johansen
- */
-"use strict";
-
-require("./test");
-var sinon = require("./util/core");
-
-function createTest(property, setUp, tearDown) {
-    return function () {
-        if (setUp) {
-            setUp.apply(this, arguments);
-        }
-
-        var exception, result;
-
-        try {
-            result = property.apply(this, arguments);
-        } catch (e) {
-            exception = e;
-        }
-
-        if (tearDown) {
-            tearDown.apply(this, arguments);
-        }
-
-        if (exception) {
-            throw exception;
-        }
-
-        return result;
-    };
-}
-
-function testCase(tests, prefix) {
-    if (!tests || typeof tests !== "object") {
-        throw new TypeError("sinon.testCase needs an object with test functions");
-    }
-
-    prefix = prefix || "test";
-    var rPrefix = new RegExp("^" + prefix);
-    var methods = {};
-    var setUp = tests.setUp;
-    var tearDown = tests.tearDown;
-    var testName,
-        property,
-        method;
-
-    for (testName in tests) {
-        if (tests.hasOwnProperty(testName) && !/^(setUp|tearDown)$/.test(testName)) {
-            property = tests[testName];
-
-            if (typeof property === "function" && rPrefix.test(testName)) {
-                method = property;
-
-                if (setUp || tearDown) {
-                    method = createTest(property, setUp, tearDown);
-                }
-
-                methods[testName] = sinon.test(method);
-            } else {
-                methods[testName] = tests[testName];
-            }
-        }
-    }
-
-    return methods;
-}
-
-sinon.testCase = testCase;
-
-},{"./test":14,"./util/core":26}],16:[function(require,module,exports){
+},{"./behavior":3,"./extend":6,"./spy":11,"./util/core/create":15,"./util/core/function-to-string":20,"./util/core/get-property-descriptor":22,"./util/core/object-keys":25,"./util/core/walk":29,"./util/core/wrap-method":30}],13:[function(require,module,exports){
 /**
  * Format functions
  *
@@ -2779,7 +2576,7 @@ module.exports = function typeOf(value) {
     return string.substring(8, string.length - 1).toLowerCase();
 };
 
-},{}],17:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 "use strict";
 
 module.exports = function calledInOrder(spies) {
@@ -2792,7 +2589,7 @@ module.exports = function calledInOrder(spies) {
     return true;
 };
 
-},{}],18:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 "use strict";
 
 var Klass = function () {};
@@ -2802,7 +2599,7 @@ module.exports = function create(proto) {
     return new Klass();
 };
 
-},{}],19:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 "use strict";
 
 var div = typeof document !== "undefined" && document.createElement("div");
@@ -2907,7 +2704,7 @@ deepEqual.use = function (match) {
     };
 };
 
-},{}],20:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 "use strict";
 
 module.exports = {
@@ -2918,7 +2715,7 @@ module.exports = {
     useFakeServer: true
 };
 
-},{}],21:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 /**
  * Format functions
  *
@@ -2940,7 +2737,7 @@ module.exports = function format() {
     return formatter.ascii.apply(formatter, arguments);
 };
 
-},{"formatio":40}],22:[function(require,module,exports){
+},{"formatio":37}],19:[function(require,module,exports){
 "use strict";
 
 module.exports = function functionName(func) {
@@ -2959,7 +2756,7 @@ module.exports = function functionName(func) {
 };
 
 
-},{}],23:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 "use strict";
 
 module.exports = function toString() {
@@ -2981,7 +2778,7 @@ module.exports = function toString() {
     return this.displayName || "sinon fake";
 };
 
-},{}],24:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 "use strict";
 
 var defaultConfig = require("./default-config");
@@ -3001,7 +2798,7 @@ module.exports = function getConfig(custom) {
     return config;
 };
 
-},{"./default-config":20}],25:[function(require,module,exports){
+},{"./default-config":17}],22:[function(require,module,exports){
 "use strict";
 
 module.exports = function getPropertyDescriptor(object, property) {
@@ -3014,7 +2811,7 @@ module.exports = function getPropertyDescriptor(object, property) {
     return descriptor;
 };
 
-},{}],26:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 /**
  * Sinon core utilities. For internal use only.
  *
@@ -3055,7 +2852,66 @@ exports.walk = require("./walk");
 
 exports.restore = require("./restore");
 
-},{"./called-in-order":17,"./create":18,"./deep-equal":19,"./default-config":20,"./format":21,"./function-name":22,"./function-to-string":23,"./get-config":24,"./get-property-descriptor":25,"./object-keys":27,"./order-by-first-call":28,"./restore":29,"./times-in-words":30,"./walk":31,"./wrap-method":32}],27:[function(require,module,exports){
+exports.configureLogError = require("./log_error");
+
+},{"./called-in-order":14,"./create":15,"./deep-equal":16,"./default-config":17,"./format":18,"./function-name":19,"./function-to-string":20,"./get-config":21,"./get-property-descriptor":22,"./log_error":24,"./object-keys":25,"./order-by-first-call":26,"./restore":27,"./times-in-words":28,"./walk":29,"./wrap-method":30}],24:[function(require,module,exports){
+/**
+ * Logs errors
+ *
+ * @author Christian Johansen (christian@cjohansen.no)
+ * @license BSD
+ *
+ * Copyright (c) 2010-2014 Christian Johansen
+ */
+"use strict";
+
+// cache a reference to setTimeout, so that our reference won't be stubbed out
+// when using fake timers and errors will still get logged
+// https://github.com/cjohansen/Sinon.JS/issues/381
+var realSetTimeout = setTimeout;
+
+function configure(config) {
+    config = config || {};
+    // Function which prints errors.
+    if (!config.hasOwnProperty("logger")) {
+        config.logger = function () { };
+    }
+    // When set to true, any errors logged will be thrown immediately;
+    // If set to false, the errors will be thrown in separate execution frame.
+    if (!config.hasOwnProperty("useImmediateExceptions")) {
+        config.useImmediateExceptions = true;
+    }
+    // wrap realSetTimeout with something we can stub in tests
+    if (!config.hasOwnProperty("setTimeout")) {
+        config.setTimeout = realSetTimeout;
+    }
+
+    return function logError(label, e) {
+        var msg = label + " threw exception: ";
+        var err = { name: e.name || label, message: e.message || e.toString(), stack: e.stack };
+
+        function throwLoggedError() {
+            err.message = msg + err.message;
+            throw err;
+        }
+
+        config.logger(msg + "[" + err.name + "] " + err.message);
+
+        if (err.stack) {
+            config.logger(err.stack);
+        }
+
+        if (config.useImmediateExceptions) {
+            throwLoggedError();
+        } else {
+            config.setTimeout(throwLoggedError, 0);
+        }
+    };
+}
+
+module.exports = configure;
+
+},{}],25:[function(require,module,exports){
 "use strict";
 
 var hasOwn = Object.prototype.hasOwnProperty;
@@ -3076,7 +2932,7 @@ module.exports = function objectKeys(obj) {
     return keys;
 };
 
-},{}],28:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 "use strict";
 
 module.exports = function orderByFirstCall(spies) {
@@ -3091,8 +2947,10 @@ module.exports = function orderByFirstCall(spies) {
     });
 };
 
-},{}],29:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 "use strict";
+
+var walk = require("./walk");
 
 function isRestorable(obj) {
     return typeof obj === "function" && typeof obj.restore === "function" && obj.restore.sinon;
@@ -3100,17 +2958,17 @@ function isRestorable(obj) {
 
 module.exports = function restore(object) {
     if (object !== null && typeof object === "object") {
-        for (var prop in object) {
+        walk(object, function (value, prop) {
             if (isRestorable(object[prop])) {
                 object[prop].restore();
             }
-        }
+        });
     } else if (isRestorable(object)) {
         object.restore();
     }
 };
 
-},{}],30:[function(require,module,exports){
+},{"./walk":29}],28:[function(require,module,exports){
 "use strict";
 
 var array = [null, "once", "twice", "thrice"];
@@ -3119,7 +2977,7 @@ module.exports = function timesInWords(count) {
     return array[count] || (count || 0) + " times";
 };
 
-},{}],31:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 "use strict";
 
 function walkInternal(obj, iterator, context, originalObj, seen) {
@@ -3166,7 +3024,7 @@ module.exports = function walk(obj, iterator, context) {
     return walkInternal(obj, iterator, context, obj, {});
 };
 
-},{}],32:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 "use strict";
 
 var getPropertyDescriptor = require("./get-property-descriptor");
@@ -3305,7 +3163,7 @@ module.exports = function wrapMethod(object, property, method) {
     return method;
 };
 
-},{"./get-property-descriptor":25,"./object-keys":27}],33:[function(require,module,exports){
+},{"./get-property-descriptor":22,"./object-keys":25}],31:[function(require,module,exports){
 /**
  * Minimal Event interface implementation
  *
@@ -3401,7 +3259,7 @@ module.exports = {
     EventTarget: EventTarget
 };
 
-},{}],34:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 /**
  * The Sinon "server" mimics a web server that receives requests from
  * sinon.FakeXMLHttpRequest and provides an API to respond to those requests,
@@ -3419,6 +3277,7 @@ var push = [].push;
 var sinon = require("./core");
 var createInstance = require("./core/create");
 var format = require("./core/format");
+var configureLogError = require("./core/log_error");
 
 function responseArray(handler) {
     var response = handler;
@@ -3484,12 +3343,14 @@ var fakeServer = {
 
         return server;
     },
+
     configure: function (config) {
         var whitelist = {
             "autoRespond": true,
             "autoRespondAfter": true,
             "respondImmediately": true,
-            "fakeHTTPMethods": true
+            "fakeHTTPMethods": true,
+            "logger": true
         };
         var setting;
 
@@ -3499,7 +3360,9 @@ var fakeServer = {
                 this[setting] = config[setting];
             }
         }
+        this.logError = configureLogError(config);
     },
+
     addRequest: function addRequest(xhrObj) {
         var server = this;
         push.call(this.requests, xhrObj);
@@ -3541,13 +3404,21 @@ var fakeServer = {
         }
     },
 
+    logger: function () {
+        // no-op; override via configure()
+    },
+
+    logError: configureLogError({}),
+
     log: function log(response, request) {
         var str;
 
         str = "Request:\n" + format(request) + "\n\n";
         str += "Response:\n" + format(response) + "\n\n";
 
-        sinon.log(str);
+        if (typeof this.logger === "function") {
+            this.logger(str);
+        }
     },
 
     respondWith: function respondWith(method, url, body) {
@@ -3614,7 +3485,7 @@ var fakeServer = {
                 request.respond(response[0], response[1], response[2]);
             }
         } catch (e) {
-            sinon.logError("Fake server request processing", e);
+            this.logError("Fake server request processing", e);
         }
     },
 
@@ -3625,7 +3496,7 @@ var fakeServer = {
 
 module.exports = fakeServer;
 
-},{"./core":26,"./core/create":18,"./core/format":21}],35:[function(require,module,exports){
+},{"./core":23,"./core/create":15,"./core/format":18,"./core/log_error":24}],33:[function(require,module,exports){
 /**
  * Add-on for sinon.fakeServer that automatically handles a fake timer along with
  * the FakeXMLHttpRequest. The direct inspiration for this add-on is jQuery
@@ -3707,7 +3578,7 @@ fakeServerWithClock.restore = function restore() {
 
 module.exports = fakeServerWithClock;
 
-},{"./fake_server":34,"./fake_timers":36}],36:[function(require,module,exports){
+},{"./fake_server":32,"./fake_timers":34}],34:[function(require,module,exports){
 /**
  * Fake timer API
  * setTimeout
@@ -3760,7 +3631,7 @@ exports.timers = {
     Date: Date
 };
 
-},{"lolex":41}],37:[function(require,module,exports){
+},{"lolex":38}],35:[function(require,module,exports){
 (function (global){
 /**
  * Fake XDomainRequest object
@@ -3770,19 +3641,20 @@ exports.timers = {
 
 var event = require("./event");
 var extend = require("../extend");
-var logError = require("../log_error");
+var configureLogError = require("./core/log_error");
 
 var xdr = { XDomainRequest: global.XDomainRequest };
 xdr.GlobalXDomainRequest = global.XDomainRequest;
 xdr.supportsXDR = typeof xdr.GlobalXDomainRequest !== "undefined";
 xdr.workingXDR = xdr.supportsXDR ? xdr.GlobalXDomainRequest : false;
 
-function FakeXDomainRequest() {
+function FakeXDomainRequest(config) {
     this.readyState = FakeXDomainRequest.UNSENT;
     this.requestBody = null;
     this.requestHeaders = {};
     this.status = 0;
     this.timeout = null;
+    this.logError = configureLogError(config);
 
     if (typeof FakeXDomainRequest.onCreate === "function") {
         FakeXDomainRequest.onCreate(this);
@@ -3859,7 +3731,7 @@ extend(FakeXDomainRequest.prototype, event.EventTarget, {
                 try {
                     this[eventName]();
                 } catch (e) {
-                    logError("Fake XHR " + eventName + " handler", e);
+                    this.logError("Fake XHR " + eventName + " handler", e);
                 }
             }
         }
@@ -3959,7 +3831,7 @@ module.exports = {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../extend":6,"../log_error":7,"./event":33}],38:[function(require,module,exports){
+},{"../extend":6,"./core/log_error":24,"./event":31}],36:[function(require,module,exports){
 (function (global){
 /**
  * Fake XMLHttpRequest object
@@ -3973,7 +3845,7 @@ module.exports = {
 
 var TextEncoder = require("text-encoding").TextEncoder;
 
-var sinon = require("./core");
+var configureLogError = require("./core/log_error");
 var sinonEvent = require("./event");
 var extend = require("../extend");
 
@@ -3997,7 +3869,13 @@ var supportsProgress = typeof ProgressEvent !== "undefined";
 var supportsCustomEvent = typeof CustomEvent !== "undefined";
 var supportsFormData = typeof FormData !== "undefined";
 var supportsArrayBuffer = typeof ArrayBuffer !== "undefined";
-var supportsBlob = typeof Blob === "function";
+var supportsBlob = (function () {
+    try {
+        return !!new Blob();
+    } catch (e) {
+        return false;
+    }
+})();
 var sinonXhr = { XMLHttpRequest: global.XMLHttpRequest };
 sinonXhr.GlobalXMLHttpRequest = global.XMLHttpRequest;
 sinonXhr.GlobalActiveXObject = global.ActiveXObject;
@@ -4067,7 +3945,7 @@ UploadProgress.prototype.dispatchEvent = function dispatchEvent(event) {
 // we lose some of the alignment with the spec.
 // To ensure as close a match as possible,
 // set responseType before calling open, send or respond;
-function FakeXMLHttpRequest() {
+function FakeXMLHttpRequest(config) {
     this.readyState = FakeXMLHttpRequest.UNSENT;
     this.requestHeaders = {};
     this.requestBody = null;
@@ -4076,6 +3954,7 @@ function FakeXMLHttpRequest() {
     this.upload = new UploadProgress();
     this.responseType = "";
     this.response = "";
+    this.logError = configureLogError(config);
     if (sinonXhr.supportsCORS) {
         this.withCredentials = false;
     }
@@ -4397,7 +4276,7 @@ extend(FakeXMLHttpRequest.prototype, sinonEvent.EventTarget, {
             try {
                 this.onreadystatechange(readyStateChangeEvent);
             } catch (e) {
-                sinon.logError("Fake XHR onreadystatechange handler", e);
+                this.logError("Fake XHR onreadystatechange handler", e);
             }
         }
 
@@ -4641,100 +4520,7 @@ module.exports = {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../extend":6,"./core":26,"./event":33,"text-encoding":43}],39:[function(require,module,exports){
-// shim for using process in browser
-
-var process = module.exports = {};
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-
-function cleanUpNextTick() {
-    draining = false;
-    if (currentQueue.length) {
-        queue = currentQueue.concat(queue);
-    } else {
-        queueIndex = -1;
-    }
-    if (queue.length) {
-        drainQueue();
-    }
-}
-
-function drainQueue() {
-    if (draining) {
-        return;
-    }
-    var timeout = setTimeout(cleanUpNextTick);
-    draining = true;
-
-    var len = queue.length;
-    while(len) {
-        currentQueue = queue;
-        queue = [];
-        while (++queueIndex < len) {
-            if (currentQueue) {
-                currentQueue[queueIndex].run();
-            }
-        }
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    clearTimeout(timeout);
-}
-
-process.nextTick = function (fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) {
-        for (var i = 1; i < arguments.length; i++) {
-            args[i - 1] = arguments[i];
-        }
-    }
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) {
-        setTimeout(drainQueue, 0);
-    }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function () {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() { return 0; };
-
-},{}],40:[function(require,module,exports){
+},{"../extend":6,"./core/log_error":24,"./event":31,"text-encoding":41}],37:[function(require,module,exports){
 (function (global){
 ((typeof define === "function" && define.amd && function (m) {
     define("formatio", ["samsam"], m);
@@ -4951,7 +4737,7 @@ process.umask = function() { return 0; };
 });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"samsam":42}],41:[function(require,module,exports){
+},{"samsam":40}],38:[function(require,module,exports){
 (function (global){
 /*global global, window*/
 /**
@@ -5507,7 +5293,100 @@ process.umask = function() { return 0; };
 }(global || this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],42:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
+// shim for using process in browser
+
+var process = module.exports = {};
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = setTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    clearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        setTimeout(drainQueue, 0);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+},{}],40:[function(require,module,exports){
 ((typeof define === "function" && define.amd && function (m) { define("samsam", m); }) ||
  (typeof module === "object" &&
       function (m) { module.exports = m(); }) || // Node
@@ -5908,7 +5787,7 @@ process.umask = function() { return 0; };
     };
 });
 
-},{}],43:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 // Copyright 2014 Joshua Bell. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -5930,7 +5809,7 @@ module.exports = {
   TextDecoder: encoding.TextDecoder,
 };
 
-},{"./lib/encoding.js":45}],44:[function(require,module,exports){
+},{"./lib/encoding.js":43}],42:[function(require,module,exports){
 // Copyright 2014 Joshua Bell. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -5986,7 +5865,7 @@ module.exports = {
 };
 }(this));
 
-},{}],45:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 // Copyright 2014 Joshua Bell. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -9056,6 +8935,5 @@ if (typeof module !== "undefined" && module.exports) {
     global['TextDecoder'] = TextDecoder;
 }(this));
 
-},{"./encoding-indexes.js":44}]},{},[1])(1)
+},{"./encoding-indexes.js":42}]},{},[1])(1)
 });
-}());

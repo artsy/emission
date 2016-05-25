@@ -55,7 +55,7 @@
   "directories": {},
   "dist": {
     "shasum": "fa622e1bc388bf257309082d6b65200ce67090ba",
-    "tarball": "http://registry.npmjs.org/crc/-/crc-3.3.0.tgz"
+    "tarball": "https://registry.npmjs.org/crc/-/crc-3.3.0.tgz"
   },
   "gitHead": "5ec5f3c74cd5a0315ac428af695743ff447a6723",
   "homepage": "https://github.com/alexgorbatchev/node-crc",

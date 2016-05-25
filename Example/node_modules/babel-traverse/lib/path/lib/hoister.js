@@ -1,18 +1,28 @@
-"use strict";
-
-var _classCallCheck = require("babel-runtime/helpers/class-call-check")["default"];
-
-var _interopRequireWildcard = require("babel-runtime/helpers/interop-require-wildcard")["default"];
+/*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
 
-var _babelTypes = require("babel-types");
+var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");
 
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _getIterator2 = require("babel-runtime/core-js/get-iterator");
+
+var _getIterator3 = _interopRequireDefault(_getIterator2);
+
+var /*istanbul ignore next*/_babelTypes = require("babel-types");
+
+/*istanbul ignore next*/
 var t = _interopRequireWildcard(_babelTypes);
 
-var referenceVisitor = {
+/*istanbul ignore next*/
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var referenceVisitor = { /*istanbul ignore next*/
   ReferencedIdentifier: function ReferencedIdentifier(path, state) {
-    if (path.isJSXIdentifier() && _babelTypes.react.isCompatTag(path.node.name)) {
+    if (path.isJSXIdentifier() && /*istanbul ignore next*/_babelTypes.react.isCompatTag(path.node.name)) {
       return;
     }
 
@@ -27,19 +37,31 @@ var referenceVisitor = {
     if (binding.constant) {
       state.bindings[path.node.name] = binding;
     } else {
-      var _arr = binding.constantViolations;
+      for ( /*istanbul ignore next*/var _iterator = binding.constantViolations, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : (0, _getIterator3.default)(_iterator);;) {
+        /*istanbul ignore next*/
+        var _ref;
 
-      for (var _i = 0; _i < _arr.length; _i++) {
-        var violationPath = _arr[_i];
+        if (_isArray) {
+          if (_i >= _iterator.length) break;
+          _ref = _iterator[_i++];
+        } else {
+          _i = _iterator.next();
+          if (_i.done) break;
+          _ref = _i.value;
+        }
+
+        var violationPath = _ref;
+
         state.breakOnScopePaths = state.breakOnScopePaths.concat(violationPath.getAncestry());
       }
     }
   }
 };
 
-var PathHoister = (function () {
-  function PathHoister(path, scope) {
-    _classCallCheck(this, PathHoister);
+/*istanbul ignore next*/
+var PathHoister = function () {
+  function /*istanbul ignore next*/PathHoister(path, scope) {
+    /*istanbul ignore next*/(0, _classCallCheck3.default)(this, PathHoister);
 
     this.breakOnScopePaths = [];
     this.bindings = {};
@@ -102,10 +124,10 @@ var PathHoister = (function () {
   };
 
   PathHoister.prototype.hasOwnParamBindings = function hasOwnParamBindings(scope) {
-    for (var _name in this.bindings) {
-      if (!scope.hasOwnBinding(_name)) continue;
+    for (var name in this.bindings) {
+      if (!scope.hasOwnBinding(name)) continue;
 
-      var binding = this.bindings[_name];
+      var binding = this.bindings[name];
       if (binding.kind === "param") return true;
     }
     return false;
@@ -142,7 +164,7 @@ var PathHoister = (function () {
   };
 
   return PathHoister;
-})();
+}();
 
-exports["default"] = PathHoister;
-module.exports = exports["default"];
+/*istanbul ignore next*/exports.default = PathHoister;
+/*istanbul ignore next*/module.exports = exports["default"];

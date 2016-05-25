@@ -1,5 +1,5 @@
 /**
- * Copyright 2013-2015, Facebook, Inc.
+ * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -11,7 +11,8 @@
 
 'use strict';
 
-var assign = require('./Object.assign');
+var _assign = require('object-assign');
+
 var warning = require('fbjs/lib/warning');
 
 /**
@@ -30,16 +31,18 @@ function deprecated(fnName, newModule, newPackage, ctx, fn) {
   if (process.env.NODE_ENV !== 'production') {
     var newFn = function () {
       process.env.NODE_ENV !== 'production' ? warning(warned,
+      /* eslint-disable no-useless-concat */
       // Require examples in this string must be split to prevent React's
       // build tools from mistaking them for real requires.
       // Otherwise the build tools will attempt to build a '%s' module.
-      'React.%s is deprecated. Please use %s.%s from require' + '(\'%s\') ' + 'instead.', fnName, newModule, fnName, newPackage) : undefined;
+      'React.%s is deprecated. Please use %s.%s from require' + '(\'%s\') ' + 'instead.', fnName, newModule, fnName, newPackage) : void 0;
+      /* eslint-enable no-useless-concat */
       warned = true;
       return fn.apply(ctx, arguments);
     };
     // We need to make sure all properties of the original fn are copied over.
     // In particular, this is needed to support PropTypes
-    return assign(newFn, fn);
+    return _assign(newFn, fn);
   }
 
   return fn;

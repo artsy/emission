@@ -1,19 +1,20 @@
-"use strict";
+/*istanbul ignore next*/"use strict";
 
-var _interopRequireDefault = require("babel-runtime/helpers/interop-require-default")["default"];
+var /*istanbul ignore next*/_index = require("./index");
 
-var _index = require("./index");
-
+/*istanbul ignore next*/
 var _index2 = _interopRequireDefault(_index);
 
-_index2["default"]("AnyTypeAnnotation", {
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*istanbul ignore next*/(0, _index2.default)("AnyTypeAnnotation", {
   aliases: ["Flow", "FlowBaseAnnotation"],
   fields: {
     // todo
   }
 });
 
-_index2["default"]("ArrayTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("ArrayTypeAnnotation", {
   visitor: ["elementType"],
   aliases: ["Flow"],
   fields: {
@@ -21,24 +22,24 @@ _index2["default"]("ArrayTypeAnnotation", {
   }
 });
 
-_index2["default"]("BooleanTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("BooleanTypeAnnotation", {
   aliases: ["Flow", "FlowBaseAnnotation"],
   fields: {
     // todo
   }
 });
 
-_index2["default"]("BooleanLiteralTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("BooleanLiteralTypeAnnotation", {
   aliases: ["Flow"],
   fields: {}
 });
 
-_index2["default"]("NullLiteralTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("NullLiteralTypeAnnotation", {
   aliases: ["Flow", "FlowBaseAnnotation"],
   fields: {}
 });
 
-_index2["default"]("ClassImplements", {
+/*istanbul ignore next*/(0, _index2.default)("ClassImplements", {
   visitor: ["id", "typeParameters"],
   aliases: ["Flow"],
   fields: {
@@ -46,7 +47,7 @@ _index2["default"]("ClassImplements", {
   }
 });
 
-_index2["default"]("ClassProperty", {
+/*istanbul ignore next*/(0, _index2.default)("ClassProperty", {
   visitor: ["key", "value", "typeAnnotation", "decorators"],
   aliases: ["Flow", "Property"],
   fields: {
@@ -54,7 +55,7 @@ _index2["default"]("ClassProperty", {
   }
 });
 
-_index2["default"]("DeclareClass", {
+/*istanbul ignore next*/(0, _index2.default)("DeclareClass", {
   visitor: ["id", "typeParameters", "extends", "body"],
   aliases: ["Flow", "FlowDeclaration", "Statement", "Declaration"],
   fields: {
@@ -62,7 +63,7 @@ _index2["default"]("DeclareClass", {
   }
 });
 
-_index2["default"]("DeclareFunction", {
+/*istanbul ignore next*/(0, _index2.default)("DeclareFunction", {
   visitor: ["id"],
   aliases: ["Flow", "FlowDeclaration", "Statement", "Declaration"],
   fields: {
@@ -70,7 +71,7 @@ _index2["default"]("DeclareFunction", {
   }
 });
 
-_index2["default"]("DeclareInterface", {
+/*istanbul ignore next*/(0, _index2.default)("DeclareInterface", {
   visitor: ["id", "typeParameters", "extends", "body"],
   aliases: ["Flow", "FlowDeclaration", "Statement", "Declaration"],
   fields: {
@@ -78,7 +79,7 @@ _index2["default"]("DeclareInterface", {
   }
 });
 
-_index2["default"]("DeclareModule", {
+/*istanbul ignore next*/(0, _index2.default)("DeclareModule", {
   visitor: ["id", "body"],
   aliases: ["Flow", "FlowDeclaration", "Statement", "Declaration"],
   fields: {
@@ -86,7 +87,7 @@ _index2["default"]("DeclareModule", {
   }
 });
 
-_index2["default"]("DeclareTypeAlias", {
+/*istanbul ignore next*/(0, _index2.default)("DeclareTypeAlias", {
   visitor: ["id", "typeParameters", "right"],
   aliases: ["Flow", "FlowDeclaration", "Statement", "Declaration"],
   fields: {
@@ -94,7 +95,7 @@ _index2["default"]("DeclareTypeAlias", {
   }
 });
 
-_index2["default"]("DeclareVariable", {
+/*istanbul ignore next*/(0, _index2.default)("DeclareVariable", {
   visitor: ["id"],
   aliases: ["Flow", "FlowDeclaration", "Statement", "Declaration"],
   fields: {
@@ -102,11 +103,11 @@ _index2["default"]("DeclareVariable", {
   }
 });
 
-_index2["default"]("ExistentialTypeParam", {
+/*istanbul ignore next*/(0, _index2.default)("ExistentialTypeParam", {
   aliases: ["Flow"]
 });
 
-_index2["default"]("FunctionTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("FunctionTypeAnnotation", {
   visitor: ["typeParameters", "params", "rest", "returnType"],
   aliases: ["Flow"],
   fields: {
@@ -114,7 +115,7 @@ _index2["default"]("FunctionTypeAnnotation", {
   }
 });
 
-_index2["default"]("FunctionTypeParam", {
+/*istanbul ignore next*/(0, _index2.default)("FunctionTypeParam", {
   visitor: ["name", "typeAnnotation"],
   aliases: ["Flow"],
   fields: {
@@ -122,7 +123,7 @@ _index2["default"]("FunctionTypeParam", {
   }
 });
 
-_index2["default"]("GenericTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("GenericTypeAnnotation", {
   visitor: ["id", "typeParameters"],
   aliases: ["Flow"],
   fields: {
@@ -130,7 +131,7 @@ _index2["default"]("GenericTypeAnnotation", {
   }
 });
 
-_index2["default"]("InterfaceExtends", {
+/*istanbul ignore next*/(0, _index2.default)("InterfaceExtends", {
   visitor: ["id", "typeParameters"],
   aliases: ["Flow"],
   fields: {
@@ -138,7 +139,7 @@ _index2["default"]("InterfaceExtends", {
   }
 });
 
-_index2["default"]("InterfaceDeclaration", {
+/*istanbul ignore next*/(0, _index2.default)("InterfaceDeclaration", {
   visitor: ["id", "typeParameters", "extends", "body"],
   aliases: ["Flow", "FlowDeclaration", "Statement", "Declaration"],
   fields: {
@@ -146,7 +147,7 @@ _index2["default"]("InterfaceDeclaration", {
   }
 });
 
-_index2["default"]("IntersectionTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("IntersectionTypeAnnotation", {
   visitor: ["types"],
   aliases: ["Flow"],
   fields: {
@@ -154,11 +155,11 @@ _index2["default"]("IntersectionTypeAnnotation", {
   }
 });
 
-_index2["default"]("MixedTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("MixedTypeAnnotation", {
   aliases: ["Flow", "FlowBaseAnnotation"]
 });
 
-_index2["default"]("NullableTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("NullableTypeAnnotation", {
   visitor: ["typeAnnotation"],
   aliases: ["Flow"],
   fields: {
@@ -166,40 +167,40 @@ _index2["default"]("NullableTypeAnnotation", {
   }
 });
 
-_index2["default"]("NumericLiteralTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("NumericLiteralTypeAnnotation", {
   aliases: ["Flow"],
   fields: {
     // todo
   }
 });
 
-_index2["default"]("NumberTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("NumberTypeAnnotation", {
   aliases: ["Flow", "FlowBaseAnnotation"],
   fields: {
     // todo
   }
 });
 
-_index2["default"]("StringLiteralTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("StringLiteralTypeAnnotation", {
   aliases: ["Flow"],
   fields: {
     // todo
   }
 });
 
-_index2["default"]("StringTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("StringTypeAnnotation", {
   aliases: ["Flow", "FlowBaseAnnotation"],
   fields: {
     // todo
   }
 });
 
-_index2["default"]("ThisTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("ThisTypeAnnotation", {
   aliases: ["Flow", "FlowBaseAnnotation"],
   fields: {}
 });
 
-_index2["default"]("TupleTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("TupleTypeAnnotation", {
   visitor: ["types"],
   aliases: ["Flow"],
   fields: {
@@ -207,7 +208,7 @@ _index2["default"]("TupleTypeAnnotation", {
   }
 });
 
-_index2["default"]("TypeofTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("TypeofTypeAnnotation", {
   visitor: ["argument"],
   aliases: ["Flow"],
   fields: {
@@ -215,7 +216,7 @@ _index2["default"]("TypeofTypeAnnotation", {
   }
 });
 
-_index2["default"]("TypeAlias", {
+/*istanbul ignore next*/(0, _index2.default)("TypeAlias", {
   visitor: ["id", "typeParameters", "right"],
   aliases: ["Flow", "FlowDeclaration", "Statement", "Declaration"],
   fields: {
@@ -223,7 +224,7 @@ _index2["default"]("TypeAlias", {
   }
 });
 
-_index2["default"]("TypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("TypeAnnotation", {
   visitor: ["typeAnnotation"],
   aliases: ["Flow"],
   fields: {
@@ -231,7 +232,7 @@ _index2["default"]("TypeAnnotation", {
   }
 });
 
-_index2["default"]("TypeCastExpression", {
+/*istanbul ignore next*/(0, _index2.default)("TypeCastExpression", {
   visitor: ["expression", "typeAnnotation"],
   aliases: ["Flow", "ExpressionWrapper", "Expression"],
   fields: {
@@ -239,7 +240,7 @@ _index2["default"]("TypeCastExpression", {
   }
 });
 
-_index2["default"]("TypeParameterDeclaration", {
+/*istanbul ignore next*/(0, _index2.default)("TypeParameterDeclaration", {
   visitor: ["params"],
   aliases: ["Flow"],
   fields: {
@@ -247,7 +248,7 @@ _index2["default"]("TypeParameterDeclaration", {
   }
 });
 
-_index2["default"]("TypeParameterInstantiation", {
+/*istanbul ignore next*/(0, _index2.default)("TypeParameterInstantiation", {
   visitor: ["params"],
   aliases: ["Flow"],
   fields: {
@@ -255,7 +256,7 @@ _index2["default"]("TypeParameterInstantiation", {
   }
 });
 
-_index2["default"]("ObjectTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("ObjectTypeAnnotation", {
   visitor: ["properties", "indexers", "callProperties"],
   aliases: ["Flow"],
   fields: {
@@ -263,7 +264,7 @@ _index2["default"]("ObjectTypeAnnotation", {
   }
 });
 
-_index2["default"]("ObjectTypeCallProperty", {
+/*istanbul ignore next*/(0, _index2.default)("ObjectTypeCallProperty", {
   visitor: ["value"],
   aliases: ["Flow", "UserWhitespacable"],
   fields: {
@@ -271,7 +272,7 @@ _index2["default"]("ObjectTypeCallProperty", {
   }
 });
 
-_index2["default"]("ObjectTypeIndexer", {
+/*istanbul ignore next*/(0, _index2.default)("ObjectTypeIndexer", {
   visitor: ["id", "key", "value"],
   aliases: ["Flow", "UserWhitespacable"],
   fields: {
@@ -279,7 +280,7 @@ _index2["default"]("ObjectTypeIndexer", {
   }
 });
 
-_index2["default"]("ObjectTypeProperty", {
+/*istanbul ignore next*/(0, _index2.default)("ObjectTypeProperty", {
   visitor: ["key", "value"],
   aliases: ["Flow", "UserWhitespacable"],
   fields: {
@@ -287,7 +288,7 @@ _index2["default"]("ObjectTypeProperty", {
   }
 });
 
-_index2["default"]("QualifiedTypeIdentifier", {
+/*istanbul ignore next*/(0, _index2.default)("QualifiedTypeIdentifier", {
   visitor: ["id", "qualification"],
   aliases: ["Flow"],
   fields: {
@@ -295,7 +296,7 @@ _index2["default"]("QualifiedTypeIdentifier", {
   }
 });
 
-_index2["default"]("UnionTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("UnionTypeAnnotation", {
   visitor: ["types"],
   aliases: ["Flow"],
   fields: {
@@ -303,7 +304,7 @@ _index2["default"]("UnionTypeAnnotation", {
   }
 });
 
-_index2["default"]("VoidTypeAnnotation", {
+/*istanbul ignore next*/(0, _index2.default)("VoidTypeAnnotation", {
   aliases: ["Flow", "FlowBaseAnnotation"],
   fields: {
     // todo

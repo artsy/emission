@@ -13,8 +13,8 @@
  */
 
 var rndm = require('rndm')
-var scmp = require('scmp')
 var uid = require('uid-safe')
+var compare = require('tsscmp')
 var crypto = require('crypto')
 var escape = require('base64-url').escape
 
@@ -34,7 +34,7 @@ module.exports = Tokens
  * @public
  */
 
-function Tokens(options) {
+function Tokens (options) {
   if (!(this instanceof Tokens)) {
     return new Tokens(options)
   }
@@ -68,7 +68,7 @@ function Tokens(options) {
  * @public
  */
 
-Tokens.prototype.create = function create(secret) {
+Tokens.prototype.create = function create (secret) {
   if (!secret || typeof secret !== 'string') {
     throw new TypeError('argument secret is required')
   }
@@ -83,7 +83,7 @@ Tokens.prototype.create = function create(secret) {
  * @public
  */
 
-Tokens.prototype.secret = function secret(callback) {
+Tokens.prototype.secret = function secret (callback) {
   return uid(this.secretLength, callback)
 }
 
@@ -92,7 +92,7 @@ Tokens.prototype.secret = function secret(callback) {
  * @public
  */
 
-Tokens.prototype.secretSync = function secretSync() {
+Tokens.prototype.secretSync = function secretSync () {
   return uid.sync(this.secretLength)
 }
 
@@ -101,7 +101,7 @@ Tokens.prototype.secretSync = function secretSync() {
  * @private
  */
 
-Tokens.prototype._tokenize = function tokenize(secret, salt) {
+Tokens.prototype._tokenize = function tokenize (secret, salt) {
   var hash = crypto
     .createHash('sha1')
     .update(salt + '-' + secret, 'ascii')
@@ -117,7 +117,7 @@ Tokens.prototype._tokenize = function tokenize(secret, salt) {
  * @public
  */
 
-Tokens.prototype.verify = function verify(secret, token) {
+Tokens.prototype.verify = function verify (secret, token) {
   if (!secret || typeof secret !== 'string') {
     return false
   }
@@ -135,5 +135,5 @@ Tokens.prototype.verify = function verify(secret, token) {
   var salt = token.substr(0, index)
   var expected = this._tokenize(secret, salt)
 
-  return scmp(token, expected)
+  return compare(token, expected)
 }

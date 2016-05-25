@@ -14,6 +14,15 @@ $ npm install --save vinyl-file
 
 ```js
 const vinylFile = require('vinyl-file');
+
+vinylFile.read('index.js').then(file => {
+    console.log(file.path);
+    //=> '/Users/sindresorhus/dev/vinyl-file/index.js'
+
+    console.log(file.cwd);
+    //=> '/Users/sindresorhus/dev/vinyl-file'
+});
+
 const file = vinylFile.readSync('index.js');
 
 console.log(file.path);
@@ -26,9 +35,9 @@ console.log(file.cwd);
 
 ## API
 
-### read(path, [options], callback)
+### read(path, [options])
 
-Create a vinyl file and pass it to the callback.
+Returns a promise for a vinyl file.
 
 ### readSync(path, [options])
 

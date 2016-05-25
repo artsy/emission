@@ -1,10 +1,9 @@
-"use strict";
+/*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
 exports.TaggedTemplateExpression = TaggedTemplateExpression;
-exports.TemplateElement = TemplateElement;
-exports.TemplateLiteral = TemplateLiteral;
-
+/*istanbul ignore next*/exports.TemplateElement = TemplateElement;
+/*istanbul ignore next*/exports.TemplateLiteral = TemplateLiteral;
 function TaggedTemplateExpression(node) {
   this.print(node.tag, node);
   this.print(node.quasi, node);

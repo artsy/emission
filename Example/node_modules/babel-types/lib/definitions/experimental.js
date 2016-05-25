@@ -1,23 +1,24 @@
-"use strict";
+/*istanbul ignore next*/"use strict";
 
-var _interopRequireDefault = require("babel-runtime/helpers/interop-require-default")["default"];
+var /*istanbul ignore next*/_index = require("./index");
 
-var _index = require("./index");
-
+/*istanbul ignore next*/
 var _index2 = _interopRequireDefault(_index);
 
-_index2["default"]("AwaitExpression", {
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*istanbul ignore next*/(0, _index2.default)("AwaitExpression", {
   builder: ["argument"],
   visitor: ["argument"],
   aliases: ["Expression", "Terminatorless"],
   fields: {
     argument: {
-      validate: _index.assertNodeType("Expression")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("Expression")
     }
   }
 });
 
-_index2["default"]("BindExpression", {
+/*istanbul ignore next*/(0, _index2.default)("BindExpression", {
   visitor: ["object", "callee"],
   aliases: ["Expression"],
   fields: {
@@ -25,61 +26,61 @@ _index2["default"]("BindExpression", {
   }
 });
 
-_index2["default"]("Decorator", {
+/*istanbul ignore next*/(0, _index2.default)("Decorator", {
   visitor: ["expression"],
   fields: {
     expression: {
-      validate: _index.assertNodeType("Expression")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("Expression")
     }
   }
 });
 
-_index2["default"]("DoExpression", {
+/*istanbul ignore next*/(0, _index2.default)("DoExpression", {
   visitor: ["body"],
   aliases: ["Expression"],
   fields: {
     body: {
-      validate: _index.assertNodeType("BlockStatement")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("BlockStatement")
     }
   }
 });
 
-_index2["default"]("ExportDefaultSpecifier", {
+/*istanbul ignore next*/(0, _index2.default)("ExportDefaultSpecifier", {
   visitor: ["exported"],
   aliases: ["ModuleSpecifier"],
   fields: {
     exported: {
-      validate: _index.assertNodeType("Identifier")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("Identifier")
     }
   }
 });
 
-_index2["default"]("ExportNamespaceSpecifier", {
+/*istanbul ignore next*/(0, _index2.default)("ExportNamespaceSpecifier", {
   visitor: ["exported"],
   aliases: ["ModuleSpecifier"],
   fields: {
     exported: {
-      validate: _index.assertNodeType("Identifier")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("Identifier")
     }
   }
 });
 
-_index2["default"]("RestProperty", {
+/*istanbul ignore next*/(0, _index2.default)("RestProperty", {
   visitor: ["argument"],
   aliases: ["UnaryLike"],
   fields: {
     argument: {
-      validate: _index.assertNodeType("LVal")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("LVal")
     }
   }
 });
 
-_index2["default"]("SpreadProperty", {
+/*istanbul ignore next*/(0, _index2.default)("SpreadProperty", {
   visitor: ["argument"],
   aliases: ["UnaryLike"],
   fields: {
     argument: {
-      validate: _index.assertNodeType("Expression")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("Expression")
     }
   }
 });

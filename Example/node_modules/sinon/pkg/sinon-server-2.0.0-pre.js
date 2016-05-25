@@ -1,5 +1,5 @@
 /**
- * Sinon.JS 2.0.0-pre, 2016/01/16
+ * Sinon.JS 2.0.0-pre, 2016/03/19
  *
  * @author Christian Johansen (christian@cjohansen.no)
  * @author Contributors: https://github.com/cjohansen/Sinon.JS/blob/master/AUTHORS
@@ -194,7 +194,7 @@ module.exports = function format() {
     return formatter.ascii.apply(formatter, arguments);
 };
 
-},{"formatio":20}],6:[function(require,module,exports){
+},{"formatio":21}],6:[function(require,module,exports){
 "use strict";
 
 module.exports = function functionName(func) {
@@ -309,7 +309,66 @@ exports.walk = require("./walk");
 
 exports.restore = require("./restore");
 
-},{"./called-in-order":1,"./create":2,"./deep-equal":3,"./default-config":4,"./format":5,"./function-name":6,"./function-to-string":7,"./get-config":8,"./get-property-descriptor":9,"./object-keys":11,"./order-by-first-call":12,"./restore":13,"./times-in-words":14,"./walk":15,"./wrap-method":16}],11:[function(require,module,exports){
+exports.configureLogError = require("./log_error");
+
+},{"./called-in-order":1,"./create":2,"./deep-equal":3,"./default-config":4,"./format":5,"./function-name":6,"./function-to-string":7,"./get-config":8,"./get-property-descriptor":9,"./log_error":11,"./object-keys":12,"./order-by-first-call":13,"./restore":14,"./times-in-words":15,"./walk":16,"./wrap-method":17}],11:[function(require,module,exports){
+/**
+ * Logs errors
+ *
+ * @author Christian Johansen (christian@cjohansen.no)
+ * @license BSD
+ *
+ * Copyright (c) 2010-2014 Christian Johansen
+ */
+"use strict";
+
+// cache a reference to setTimeout, so that our reference won't be stubbed out
+// when using fake timers and errors will still get logged
+// https://github.com/cjohansen/Sinon.JS/issues/381
+var realSetTimeout = setTimeout;
+
+function configure(config) {
+    config = config || {};
+    // Function which prints errors.
+    if (!config.hasOwnProperty("logger")) {
+        config.logger = function () { };
+    }
+    // When set to true, any errors logged will be thrown immediately;
+    // If set to false, the errors will be thrown in separate execution frame.
+    if (!config.hasOwnProperty("useImmediateExceptions")) {
+        config.useImmediateExceptions = true;
+    }
+    // wrap realSetTimeout with something we can stub in tests
+    if (!config.hasOwnProperty("setTimeout")) {
+        config.setTimeout = realSetTimeout;
+    }
+
+    return function logError(label, e) {
+        var msg = label + " threw exception: ";
+        var err = { name: e.name || label, message: e.message || e.toString(), stack: e.stack };
+
+        function throwLoggedError() {
+            err.message = msg + err.message;
+            throw err;
+        }
+
+        config.logger(msg + "[" + err.name + "] " + err.message);
+
+        if (err.stack) {
+            config.logger(err.stack);
+        }
+
+        if (config.useImmediateExceptions) {
+            throwLoggedError();
+        } else {
+            config.setTimeout(throwLoggedError, 0);
+        }
+    };
+}
+
+module.exports = configure;
+
+},{}],12:[function(require,module,exports){
 "use strict";
 
 var hasOwn = Object.prototype.hasOwnProperty;
@@ -330,7 +389,7 @@ module.exports = function objectKeys(obj) {
     return keys;
 };
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 "use strict";
 
 module.exports = function orderByFirstCall(spies) {
@@ -345,8 +404,10 @@ module.exports = function orderByFirstCall(spies) {
     });
 };
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 "use strict";
+
+var walk = require("./walk");
 
 function isRestorable(obj) {
     return typeof obj === "function" && typeof obj.restore === "function" && obj.restore.sinon;
@@ -354,17 +415,17 @@ function isRestorable(obj) {
 
 module.exports = function restore(object) {
     if (object !== null && typeof object === "object") {
-        for (var prop in object) {
+        walk(object, function (value, prop) {
             if (isRestorable(object[prop])) {
                 object[prop].restore();
             }
-        }
+        });
     } else if (isRestorable(object)) {
         object.restore();
     }
 };
 
-},{}],14:[function(require,module,exports){
+},{"./walk":16}],15:[function(require,module,exports){
 "use strict";
 
 var array = [null, "once", "twice", "thrice"];
@@ -373,7 +434,7 @@ module.exports = function timesInWords(count) {
     return array[count] || (count || 0) + " times";
 };
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 "use strict";
 
 function walkInternal(obj, iterator, context, originalObj, seen) {
@@ -420,7 +481,7 @@ module.exports = function walk(obj, iterator, context) {
     return walkInternal(obj, iterator, context, obj, {});
 };
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 "use strict";
 
 var getPropertyDescriptor = require("./get-property-descriptor");
@@ -559,7 +620,7 @@ module.exports = function wrapMethod(object, property, method) {
     return method;
 };
 
-},{"./get-property-descriptor":9,"./object-keys":11}],17:[function(require,module,exports){
+},{"./get-property-descriptor":9,"./object-keys":12}],18:[function(require,module,exports){
 /**
  * The Sinon "server" mimics a web server that receives requests from
  * sinon.FakeXMLHttpRequest and provides an API to respond to those requests,
@@ -577,6 +638,7 @@ var push = [].push;
 var sinon = require("./core");
 var createInstance = require("./core/create");
 var format = require("./core/format");
+var configureLogError = require("./core/log_error");
 
 function responseArray(handler) {
     var response = handler;
@@ -642,12 +704,14 @@ var fakeServer = {
 
         return server;
     },
+
     configure: function (config) {
         var whitelist = {
             "autoRespond": true,
             "autoRespondAfter": true,
             "respondImmediately": true,
-            "fakeHTTPMethods": true
+            "fakeHTTPMethods": true,
+            "logger": true
         };
         var setting;
 
@@ -657,7 +721,9 @@ var fakeServer = {
                 this[setting] = config[setting];
             }
         }
+        this.logError = configureLogError(config);
     },
+
     addRequest: function addRequest(xhrObj) {
         var server = this;
         push.call(this.requests, xhrObj);
@@ -699,13 +765,21 @@ var fakeServer = {
         }
     },
 
+    logger: function () {
+        // no-op; override via configure()
+    },
+
+    logError: configureLogError({}),
+
     log: function log(response, request) {
         var str;
 
         str = "Request:\n" + format(request) + "\n\n";
         str += "Response:\n" + format(response) + "\n\n";
 
-        sinon.log(str);
+        if (typeof this.logger === "function") {
+            this.logger(str);
+        }
     },
 
     respondWith: function respondWith(method, url, body) {
@@ -772,7 +846,7 @@ var fakeServer = {
                 request.respond(response[0], response[1], response[2]);
             }
         } catch (e) {
-            sinon.logError("Fake server request processing", e);
+            this.logError("Fake server request processing", e);
         }
     },
 
@@ -783,7 +857,7 @@ var fakeServer = {
 
 module.exports = fakeServer;
 
-},{"./core":10,"./core/create":2,"./core/format":5}],18:[function(require,module,exports){
+},{"./core":10,"./core/create":2,"./core/format":5,"./core/log_error":11}],19:[function(require,module,exports){
 /**
  * Add-on for sinon.fakeServer that automatically handles a fake timer along with
  * the FakeXMLHttpRequest. The direct inspiration for this add-on is jQuery
@@ -865,7 +939,7 @@ fakeServerWithClock.restore = function restore() {
 
 module.exports = fakeServerWithClock;
 
-},{"./fake_server":17,"./fake_timers":19}],19:[function(require,module,exports){
+},{"./fake_server":18,"./fake_timers":20}],20:[function(require,module,exports){
 /**
  * Fake timer API
  * setTimeout
@@ -918,7 +992,7 @@ exports.timers = {
     Date: Date
 };
 
-},{"lolex":21}],20:[function(require,module,exports){
+},{"lolex":22}],21:[function(require,module,exports){
 (function (global){
 ((typeof define === "function" && define.amd && function (m) {
     define("formatio", ["samsam"], m);
@@ -1135,7 +1209,7 @@ exports.timers = {
 });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"samsam":22}],21:[function(require,module,exports){
+},{"samsam":23}],22:[function(require,module,exports){
 (function (global){
 /*global global, window*/
 /**
@@ -1691,7 +1765,7 @@ exports.timers = {
 }(global || this));
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 ((typeof define === "function" && define.amd && function (m) { define("samsam", m); }) ||
  (typeof module === "object" &&
       function (m) { module.exports = m(); }) || // Node
@@ -2092,5 +2166,5 @@ exports.timers = {
     };
 });
 
-},{}]},{},[18])(18)
+},{}]},{},[19])(19)
 });

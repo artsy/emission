@@ -1,13 +1,12 @@
-"use strict";
+/*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
 exports.File = File;
-exports.Program = Program;
-exports.BlockStatement = BlockStatement;
-exports.Noop = Noop;
-exports.Directive = Directive;
-exports.DirectiveLiteral = DirectiveLiteral;
-
+/*istanbul ignore next*/exports.Program = Program;
+/*istanbul ignore next*/exports.BlockStatement = BlockStatement;
+/*istanbul ignore next*/exports.Noop = Noop;
+/*istanbul ignore next*/exports.Directive = Directive;
+/*istanbul ignore next*/exports.DirectiveLiteral = DirectiveLiteral;
 function File(node) {
   this.print(node.program, node);
 }
@@ -32,8 +31,11 @@ function BlockStatement(node) {
 
     this.printSequence(node.body, node, { indent: true });
     if (!this.format.retainLines && !this.format.concise) this.removeLast("\n");
+
+    this.source("end", node.loc);
     this.rightBrace();
   } else {
+    this.source("end", node.loc);
     this.push("}");
   }
 }

@@ -1,4 +1,6 @@
-# Yeoman Environment [![npm](https://badge.fury.io/js/yeoman-environment.svg)](http://badge.fury.io/js/yeoman-environment) [![Build Status](https://travis-ci.org/yeoman/generator.svg?branch=master)](https://travis-ci.org/yeoman/environment) [![Coverage Status](https://coveralls.io/repos/yeoman/environment/badge.svg?branch=master&service=github)](https://coveralls.io/github/yeoman/environment?branch=master)
+# Yeoman Environment
+
+[![npm](https://badge.fury.io/js/yeoman-environment.svg)](http://badge.fury.io/js/yeoman-environment) [![Build Status](https://travis-ci.org/yeoman/generator.svg?branch=master)](https://travis-ci.org/yeoman/environment) [![Coverage Status](https://coveralls.io/repos/yeoman/environment/badge.svg?branch=master&service=github)](https://coveralls.io/github/yeoman/environment?branch=master) [![Gitter](https://img.shields.io/badge/Gitter-Join_the_Yeoman_chat_%E2%86%92-00d06f.svg)](https://gitter.im/yeoman/yeoman)
 
 > Handles the lifecycle and bootstrapping of generators in a specific environment
 

@@ -74,7 +74,7 @@
   "directories": {},
   "dist": {
     "shasum": "2b1d6f5dfe07c8a355753e5f27fac7f1cde1616a",
-    "tarball": "http://registry.npmjs.org/lodash._reescape/-/lodash._reescape-3.0.0.tgz"
+    "tarball": "https://registry.npmjs.org/lodash._reescape/-/lodash._reescape-3.0.0.tgz"
   },
   "homepage": "https://lodash.com/",
   "icon": "https://lodash.com/icon.svg",

@@ -11,7 +11,7 @@
 
 'use strict';
 
-var invariant = require('invariant');
+var invariant = require('./invariant');
 
 /**
  * Provides open-source compatible instrumentation for monitoring certain API
@@ -21,10 +21,7 @@ var invariant = require('invariant');
  */
 
 function monitorCodeUse(eventName, data) {
-  invariant(
-    eventName && !/[^a-z0-9_]/.test(eventName),
-    'You must provide an eventName using only the characters [a-z0-9_]'
-  );
+  invariant(eventName && !/[^a-z0-9_]/.test(eventName), 'You must provide an eventName using only the characters [a-z0-9_]');
 }
 
 module.exports = monitorCodeUse;

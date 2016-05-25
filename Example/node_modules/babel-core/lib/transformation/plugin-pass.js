@@ -1,80 +1,92 @@
-"use strict";
-
-var _inherits = require("babel-runtime/helpers/inherits")["default"];
-
-var _classCallCheck = require("babel-runtime/helpers/class-call-check")["default"];
-
-var _interopRequireDefault = require("babel-runtime/helpers/interop-require-default")["default"];
+/*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
 
-var _store = require("../store");
+var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");
 
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _possibleConstructorReturn2 = require("babel-runtime/helpers/possibleConstructorReturn");
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require("babel-runtime/helpers/inherits");
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var /*istanbul ignore next*/_store = require("../store");
+
+/*istanbul ignore next*/
 var _store2 = _interopRequireDefault(_store);
 
-var _babelTraverse = require("babel-traverse");
+var /*istanbul ignore next*/_babelTraverse = require("babel-traverse");
 
+/*istanbul ignore next*/
 var _babelTraverse2 = _interopRequireDefault(_babelTraverse);
 
-var _file5 = require("./file");
+var /*istanbul ignore next*/_file5 = require("./file");
 
+/*istanbul ignore next*/
 var _file6 = _interopRequireDefault(_file5);
 
-var PluginPass = (function (_Store) {
-  _inherits(PluginPass, _Store);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-  function PluginPass(file, plugin) {
-    var options = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+var PluginPass = function (_Store) {
+  (0, _inherits3.default)(PluginPass, _Store);
 
-    _classCallCheck(this, PluginPass);
+  function /*istanbul ignore next*/PluginPass(file, plugin) {
+    /*istanbul ignore next*/var options = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+    /*istanbul ignore next*/(0, _classCallCheck3.default)(this, PluginPass);
 
-    _Store.call(this);
-    this.plugin = plugin;
-    this.file = file;
-    this.opts = options;
+    var _this = (0, _possibleConstructorReturn3.default)(this, /*istanbul ignore next*/_Store.call( /*istanbul ignore next*/this));
+
+    /*istanbul ignore next*/_this.plugin = plugin;
+    /*istanbul ignore next*/_this.file = file;
+    /*istanbul ignore next*/_this.opts = options;
+    /*istanbul ignore next*/return _this;
   }
 
   PluginPass.prototype.transform = function transform() {
     var file = this.file;
-    file.log.debug("Start transformer " + this.key);
-    _babelTraverse2["default"](file.ast, this.plugin.visitor, file.scope, file);
-    file.log.debug("Finish transformer " + this.key);
+    file.log.debug( /*istanbul ignore next*/"Start transformer " + this.key);
+    /*istanbul ignore next*/(0, _babelTraverse2.default)(file.ast, this.plugin.visitor, file.scope, file);
+    file.log.debug( /*istanbul ignore next*/"Finish transformer " + this.key);
   };
 
   PluginPass.prototype.addHelper = function addHelper() {
-    // istanbul ignore next
-
+    /*istanbul ignore next*/
     var _file;
 
-    return (_file = this.file).addHelper.apply(_file, arguments);
+    return (/*istanbul ignore next*/(_file = this.file).addHelper. /*istanbul ignore next*/apply( /*istanbul ignore next*/_file, /*istanbul ignore next*/arguments)
+    );
   };
 
   PluginPass.prototype.addImport = function addImport() {
-    // istanbul ignore next
-
+    /*istanbul ignore next*/
     var _file2;
 
-    return (_file2 = this.file).addImport.apply(_file2, arguments);
+    return (/*istanbul ignore next*/(_file2 = this.file).addImport. /*istanbul ignore next*/apply( /*istanbul ignore next*/_file2, /*istanbul ignore next*/arguments)
+    );
   };
 
   PluginPass.prototype.getModuleName = function getModuleName() {
-    // istanbul ignore next
-
+    /*istanbul ignore next*/
     var _file3;
 
-    return (_file3 = this.file).getModuleName.apply(_file3, arguments);
+    return (/*istanbul ignore next*/(_file3 = this.file).getModuleName. /*istanbul ignore next*/apply( /*istanbul ignore next*/_file3, /*istanbul ignore next*/arguments)
+    );
   };
 
   PluginPass.prototype.buildCodeFrameError = function buildCodeFrameError() {
-    // istanbul ignore next
-
+    /*istanbul ignore next*/
     var _file4;
 
-    return (_file4 = this.file).buildCodeFrameError.apply(_file4, arguments);
+    return (/*istanbul ignore next*/(_file4 = this.file).buildCodeFrameError. /*istanbul ignore next*/apply( /*istanbul ignore next*/_file4, /*istanbul ignore next*/arguments)
+    );
   };
 
   return PluginPass;
-})(_store2["default"]);
+}(_store2.default);
 
-exports["default"] = PluginPass;
-module.exports = exports["default"];
+/*istanbul ignore next*/exports.default = PluginPass;
+/*istanbul ignore next*/module.exports = exports["default"];

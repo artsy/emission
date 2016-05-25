@@ -1,16 +1,23 @@
-"use strict";
-
-var _Object$create = require("babel-runtime/core-js/object/create")["default"];
-
-var _interopRequireWildcard = require("babel-runtime/helpers/interop-require-wildcard")["default"];
+/*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
+
+var _create = require("babel-runtime/core-js/object/create");
+
+var _create2 = _interopRequireDefault(_create);
+
 exports.getBindingIdentifiers = getBindingIdentifiers;
-exports.getOuterBindingIdentifiers = getOuterBindingIdentifiers;
+/*istanbul ignore next*/exports.getOuterBindingIdentifiers = getOuterBindingIdentifiers;
 
-var _index = require("./index");
+var /*istanbul ignore next*/_index = require("./index");
 
+/*istanbul ignore next*/
 var t = _interopRequireWildcard(_index);
+
+/*istanbul ignore next*/
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Return a list of binding identifiers associated with the input `node`.
@@ -18,7 +25,7 @@ var t = _interopRequireWildcard(_index);
 
 function getBindingIdentifiers(node, duplicates, outerOnly) {
   var search = [].concat(node);
-  var ids = _Object$create(null);
+  var ids = /*istanbul ignore next*/(0, _create2.default)(null);
 
   while (search.length) {
     var id = search.shift();

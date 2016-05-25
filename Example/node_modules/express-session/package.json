@@ -15,9 +15,7 @@
     "name": "dougwilson"
   },
   "_npmVersion": "1.4.28",
-  "_phantomChildren": {
-    "base64-url": "1.2.1"
-  },
+  "_phantomChildren": {},
   "_requested": {
     "name": "express-session",
     "raw": "express-session@~1.11.3",
