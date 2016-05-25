@@ -29,7 +29,13 @@
         "Emission/SwitchViewComponent": [
 
         ],
+        "Emission/SpinnerComponent": [
+
+        ],
         "Emission/TemporaryAPI": [
+
+        ],
+        "Emission/ViewControllers": [
 
         ]
       }
@@ -37,12 +43,19 @@
     {
       "name": "Core",
       "source_files": "Pod/Classes/Core",
+      "resources": "Pod/Assets/Emission.jsbundle",
       "dependencies": {
+        "Artsy+UIFonts": [
+          ">= 1.1.0"
+        ],
         "React/Core": [
           ">= 0.24.0-rc5"
         ],
-        "Artsy+UIFonts": [
-          ">= 1.1.0"
+        "React/RCTText": [
+          ">= 0.24.0-rc5"
+        ],
+        "React/RCTNetwork": [
+          ">= 0.24.0-rc5"
         ]
       }
     },
@@ -62,10 +75,19 @@
         "Emission/Core": [
 
         ],
-        "UIView+BooleanAnimations": [
+        "Extraction/ARSwitchView": [
+
+        ]
+      }
+    },
+    {
+      "name": "SpinnerComponent",
+      "source_files": "Pod/Classes/SpinnerComponent",
+      "dependencies": {
+        "Emission/Core": [
 
         ],
-        "FLKAutoLayout": [
+        "Extraction/ARSpinner": [
 
         ]
       }
@@ -76,6 +98,15 @@
       "dependencies": {
         "SDWebImage": [
           ">= 3.7.2"
+        ]
+      }
+    },
+    {
+      "name": "ViewControllers",
+      "source_files": "Pod/Classes/ViewControllers",
+      "dependencies": {
+        "Emission/Core": [
+
         ]
       }
     }
