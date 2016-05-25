@@ -1,16 +1,20 @@
+/*istanbul ignore next*/"use strict";
+
+exports.__esModule = true;
+
+var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 /**
  * Track current position in code generation.
  */
 
-"use strict";
-
-var _classCallCheck = require("babel-runtime/helpers/class-call-check")["default"];
-
-exports.__esModule = true;
-
-var Position = (function () {
-  function Position() {
-    _classCallCheck(this, Position);
+var Position = function () {
+  function /*istanbul ignore next*/Position() {
+    /*istanbul ignore next*/(0, _classCallCheck3.default)(this, Position);
 
     this.line = 1;
     this.column = 0;
@@ -46,7 +50,7 @@ var Position = (function () {
   };
 
   return Position;
-})();
+}();
 
-exports["default"] = Position;
-module.exports = exports["default"];
+/*istanbul ignore next*/exports.default = Position;
+/*istanbul ignore next*/module.exports = exports["default"];

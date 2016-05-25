@@ -1,16 +1,20 @@
-"use strict";
-
-var _WeakMap = require("babel-runtime/core-js/weak-map")["default"];
+/*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
-exports.clear = clear;
-var path = new _WeakMap();
-exports.path = path;
-var scope = new _WeakMap();
+exports.scope = exports.path = undefined;
 
-exports.scope = scope;
+var _weakMap = require("babel-runtime/core-js/weak-map");
+
+var _weakMap2 = _interopRequireDefault(_weakMap);
+
+exports.clear = clear;
+/*istanbul ignore next*/
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var path = /*istanbul ignore next*/exports.path = new /*istanbul ignore next*/_weakMap2.default();
+var scope = /*istanbul ignore next*/exports.scope = new /*istanbul ignore next*/_weakMap2.default();
 
 function clear() {
-  exports.path = path = new _WeakMap();
-  exports.scope = scope = new _WeakMap();
+  /*istanbul ignore next*/exports.path = path = new /*istanbul ignore next*/_weakMap2.default();
+  /*istanbul ignore next*/exports.scope = scope = new /*istanbul ignore next*/_weakMap2.default();
 }

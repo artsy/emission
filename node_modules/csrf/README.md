@@ -11,7 +11,7 @@ Logic behind CSRF token creation and verification.
 Read [Understanding-CSRF](https://github.com/pillarjs/understanding-csrf)
 for more information on CSRF. Use this module to create custom CSRF middleware.
 
-Looking for a CSRF framework for your favorate framework that uses this
+Looking for a CSRF framework for your favorite framework that uses this
 module?
 
   * Express/connect: [csurf](https://www.npmjs.com/package/csurf) or

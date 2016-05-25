@@ -1,5 +1,5 @@
 /**
- * Copyright 2013-2015, Facebook, Inc.
+ * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -10,7 +10,7 @@
  */
 
 function makeEmptyFunction(arg) {
-  return function() {
+  return function () {
     return arg;
   };
 }
@@ -26,7 +26,11 @@ emptyFunction.thatReturns = makeEmptyFunction;
 emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
 emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
 emptyFunction.thatReturnsNull = makeEmptyFunction(null);
-emptyFunction.thatReturnsThis = function() { return this; };
-emptyFunction.thatReturnsArgument = function(arg) { return arg; };
+emptyFunction.thatReturnsThis = function () {
+  return this;
+};
+emptyFunction.thatReturnsArgument = function (arg) {
+  return arg;
+};
 
 module.exports = emptyFunction;

@@ -1,137 +1,138 @@
-"use strict";
+/*istanbul ignore next*/"use strict";
 
-var _interopRequireDefault = require("babel-runtime/helpers/interop-require-default")["default"];
+var /*istanbul ignore next*/_index = require("./index");
 
-var _index = require("./index");
-
+/*istanbul ignore next*/
 var _index2 = _interopRequireDefault(_index);
 
-_index2["default"]("JSXAttribute", {
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*istanbul ignore next*/(0, _index2.default)("JSXAttribute", {
   visitor: ["name", "value"],
   aliases: ["JSX", "Immutable"],
   fields: {
     name: {
-      validate: _index.assertNodeType("JSXIdentifier", "JSXNamespacedName")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("JSXIdentifier", "JSXNamespacedName")
     },
     value: {
       optional: true,
-      validate: _index.assertNodeType("JSXElement", "StringLiteral", "JSXExpressionContainer")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("JSXElement", "StringLiteral", "JSXExpressionContainer")
     }
   }
 });
 
-_index2["default"]("JSXClosingElement", {
+/*istanbul ignore next*/(0, _index2.default)("JSXClosingElement", {
   visitor: ["name"],
   aliases: ["JSX", "Immutable"],
   fields: {
     name: {
-      validate: _index.assertNodeType("JSXIdentifier", "JSXMemberExpression")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("JSXIdentifier", "JSXMemberExpression")
     }
   }
 });
 
-_index2["default"]("JSXElement", {
+/*istanbul ignore next*/(0, _index2.default)("JSXElement", {
   builder: ["openingElement", "closingElement", "children", "selfClosing"],
   visitor: ["openingElement", "children", "closingElement"],
   aliases: ["JSX", "Immutable", "Expression"],
   fields: {
     openingElement: {
-      validate: _index.assertNodeType("JSXOpeningElement")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("JSXOpeningElement")
     },
     closingElement: {
       optional: true,
-      validate: _index.assertNodeType("JSXClosingElement")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("JSXClosingElement")
     },
     children: {
-      validate: _index.chain(_index.assertValueType("array"), _index.assertEach(_index.assertNodeType("JSXText", "JSXExpressionContainer", "JSXElement")))
+      validate: /*istanbul ignore next*/(0, _index.chain)( /*istanbul ignore next*/(0, _index.assertValueType)("array"), /*istanbul ignore next*/(0, _index.assertEach)( /*istanbul ignore next*/(0, _index.assertNodeType)("JSXText", "JSXExpressionContainer", "JSXElement")))
     }
   }
 });
 
-_index2["default"]("JSXEmptyExpression", {
+/*istanbul ignore next*/(0, _index2.default)("JSXEmptyExpression", {
   aliases: ["JSX", "Expression"]
 });
 
-_index2["default"]("JSXExpressionContainer", {
+/*istanbul ignore next*/(0, _index2.default)("JSXExpressionContainer", {
   visitor: ["expression"],
   aliases: ["JSX", "Immutable"],
   fields: {
     expression: {
-      validate: _index.assertNodeType("Expression")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("Expression")
     }
   }
 });
 
-_index2["default"]("JSXIdentifier", {
+/*istanbul ignore next*/(0, _index2.default)("JSXIdentifier", {
   builder: ["name"],
   aliases: ["JSX", "Expression"],
   fields: {
     name: {
-      validate: _index.assertValueType("string")
+      validate: /*istanbul ignore next*/(0, _index.assertValueType)("string")
     }
   }
 });
 
-_index2["default"]("JSXMemberExpression", {
+/*istanbul ignore next*/(0, _index2.default)("JSXMemberExpression", {
   visitor: ["object", "property"],
   aliases: ["JSX", "Expression"],
   fields: {
     object: {
-      validate: _index.assertNodeType("JSXMemberExpression", "JSXIdentifier")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("JSXMemberExpression", "JSXIdentifier")
     },
     property: {
-      validate: _index.assertNodeType("JSXIdentifier")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("JSXIdentifier")
     }
   }
 });
 
-_index2["default"]("JSXNamespacedName", {
+/*istanbul ignore next*/(0, _index2.default)("JSXNamespacedName", {
   visitor: ["namespace", "name"],
   aliases: ["JSX"],
   fields: {
     namespace: {
-      validate: _index.assertNodeType("JSXIdentifier")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("JSXIdentifier")
     },
     name: {
-      validate: _index.assertNodeType("JSXIdentifier")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("JSXIdentifier")
     }
   }
 });
 
-_index2["default"]("JSXOpeningElement", {
+/*istanbul ignore next*/(0, _index2.default)("JSXOpeningElement", {
   builder: ["name", "attributes", "selfClosing"],
   visitor: ["name", "attributes"],
   aliases: ["JSX", "Immutable"],
   fields: {
     name: {
-      validate: _index.assertNodeType("JSXIdentifier", "JSXMemberExpression")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("JSXIdentifier", "JSXMemberExpression")
     },
     selfClosing: {
-      "default": false,
-      validate: _index.assertValueType("boolean")
+      default: false,
+      validate: /*istanbul ignore next*/(0, _index.assertValueType)("boolean")
     },
     attributes: {
-      validate: _index.chain(_index.assertValueType("array"), _index.assertEach(_index.assertNodeType("JSXAttribute", "JSXSpreadAttribute")))
+      validate: /*istanbul ignore next*/(0, _index.chain)( /*istanbul ignore next*/(0, _index.assertValueType)("array"), /*istanbul ignore next*/(0, _index.assertEach)( /*istanbul ignore next*/(0, _index.assertNodeType)("JSXAttribute", "JSXSpreadAttribute")))
     }
   }
 });
 
-_index2["default"]("JSXSpreadAttribute", {
+/*istanbul ignore next*/(0, _index2.default)("JSXSpreadAttribute", {
   visitor: ["argument"],
   aliases: ["JSX"],
   fields: {
     argument: {
-      validate: _index.assertNodeType("Expression")
+      validate: /*istanbul ignore next*/(0, _index.assertNodeType)("Expression")
     }
   }
 });
 
-_index2["default"]("JSXText", {
+/*istanbul ignore next*/(0, _index2.default)("JSXText", {
   aliases: ["JSX"],
   builder: ["value"],
   fields: {
     value: {
-      validate: _index.assertValueType("string")
+      validate: /*istanbul ignore next*/(0, _index.assertValueType)("string")
     }
   }
 });

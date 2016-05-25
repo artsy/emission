@@ -1,5 +1,6 @@
 'use strict';
 
+var _ = require('lodash');
 var inquirer = require('inquirer');
 var diff = require('diff');
 var chalk = require('chalk');
@@ -14,14 +15,14 @@ var logger = require('./util/log');
  * @constructor
  */
 var TerminalAdapter = module.exports = function TerminalAdapter() {
-  this.prompt = inquirer.createPromptModule();
+  this.promptModule = inquirer.createPromptModule();
 };
 
 TerminalAdapter.prototype._colorDiffAdded = chalk.black.bgGreen;
 TerminalAdapter.prototype._colorDiffRemoved = chalk.bgRed;
 TerminalAdapter.prototype._colorLines = function colorLines(name, str) {
-  return str.split('\n').map(function (str) {
-    return this['_colorDiff' + name](str);
+  return str.split('\n').map(function (line) {
+    return this['_colorDiff' + name](line);
   }, this).join('\n');
 };
 
@@ -76,3 +77,9 @@ TerminalAdapter.prototype.diff = function _diff(actual, expected) {
  * @type {env/log}
  */
 TerminalAdapter.prototype.log = logger();
+
+TerminalAdapter.prototype.prompt = function (questions, cb) {
+  var promise = this.promptModule(questions);
+  promise.then(cb || _.noop);
+  return promise;
+};

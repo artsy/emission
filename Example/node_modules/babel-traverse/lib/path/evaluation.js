@@ -1,16 +1,27 @@
-/* eslint indent: 0 */
-/* eslint max-len: 0 */
+/*istanbul ignore next*/"use strict";
+
+exports.__esModule = true;
+
+var _typeof2 = require("babel-runtime/helpers/typeof");
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+var _getIterator2 = require("babel-runtime/core-js/get-iterator");
+
+var _getIterator3 = _interopRequireDefault(_getIterator2);
+
+exports.evaluateTruthy = evaluateTruthy;
+/*istanbul ignore next*/exports.evaluate = evaluate;
+/*istanbul ignore next*/
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // This file contains Babels metainterpreter that can evaluate static code.
 
 /* eslint eqeqeq: 0 */
 
-"use strict";
+var VALID_CALLEES = ["String", "Number", "Math"]; /* eslint indent: 0 */
+/* eslint max-len: 0 */
 
-exports.__esModule = true;
-exports.evaluateTruthy = evaluateTruthy;
-exports.evaluate = evaluate;
-var VALID_CALLEES = ["String", "Number", "Math"];
 var INVALID_METHODS = ["random"];
 
 /**
@@ -53,7 +64,7 @@ function evaluateTruthy() {
 
 function evaluate() {
   var confident = true;
-  var deoptPath = undefined;
+  var deoptPath = /*istanbul ignore next*/void 0;
 
   function deopt(path) {
     if (!confident) return;
@@ -72,7 +83,8 @@ function evaluate() {
   function evaluate(path) {
     if (!confident) return;
 
-    var node = path.node;
+    /*istanbul ignore next*/var node = path.node;
+
 
     if (path.isSequenceExpression()) {
       var exprs = path.get("expressions");
@@ -91,11 +103,23 @@ function evaluate() {
       var str = "";
 
       var i = 0;
-      var exprs = path.get("expressions");
+      var _exprs = path.get("expressions");
 
-      var _arr = node.quasis;
-      for (var _i = 0; _i < _arr.length; _i++) {
-        var elem = _arr[_i];
+      for ( /*istanbul ignore next*/var _iterator = node.quasis, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : (0, _getIterator3.default)(_iterator);;) {
+        /*istanbul ignore next*/
+        var _ref;
+
+        if (_isArray) {
+          if (_i >= _iterator.length) break;
+          _ref = _iterator[_i++];
+        } else {
+          _i = _iterator.next();
+          if (_i.done) break;
+          _ref = _i.value;
+        }
+
+        var elem = _ref;
+
         // not confident, evaluated an expression we don't like
         if (!confident) break;
 
@@ -103,7 +127,7 @@ function evaluate() {
         str += elem.value.cooked;
 
         // add on interpolated expression if it's present
-        var expr = exprs[i++];
+        var expr = _exprs[i++];
         if (expr) str += String(evaluate(expr));
       }
 
@@ -133,7 +157,7 @@ function evaluate() {
 
       if (object.isLiteral() && property.isIdentifier()) {
         var _value = object.node.value;
-        var type = typeof _value;
+        var type = /*istanbul ignore next*/typeof _value === "undefined" ? "undefined" : (0, _typeof3.default)(_value);
         if (type === "number" || type === "string") {
           return _value[property.node.name];
         }
@@ -185,21 +209,35 @@ function evaluate() {
         case "~":
           return ~arg;
         case "typeof":
-          return typeof arg;
+          return (/*istanbul ignore next*/typeof arg === "undefined" ? "undefined" : (0, _typeof3.default)(arg)
+          );
       }
     }
 
     if (path.isArrayExpression()) {
       var arr = [];
       var elems = path.get("elements");
-      for (var _i2 = 0; _i2 < elems.length; _i2++) {
-        var elem = elems[_i2];
-        elem = elem.evaluate();
+      for ( /*istanbul ignore next*/var _iterator2 = elems, _isArray2 = Array.isArray(_iterator2), _i2 = 0, _iterator2 = _isArray2 ? _iterator2 : (0, _getIterator3.default)(_iterator2);;) {
+        /*istanbul ignore next*/
+        var _ref2;
 
-        if (elem.confident) {
-          arr.push(elem.value);
+        if (_isArray2) {
+          if (_i2 >= _iterator2.length) break;
+          _ref2 = _iterator2[_i2++];
         } else {
-          return deopt(elem);
+          _i2 = _iterator2.next();
+          if (_i2.done) break;
+          _ref2 = _i2.value;
+        }
+
+        var _elem = _ref2;
+
+        _elem = _elem.evaluate();
+
+        if (_elem.confident) {
+          arr.push(_elem.value);
+        } else {
+          return deopt(_elem);
         }
       }
       return arr;
@@ -244,59 +282,60 @@ function evaluate() {
     }
 
     if (path.isBinaryExpression()) {
-      var left = evaluate(path.get("left"));
+      var _left = evaluate(path.get("left"));
       if (!confident) return;
-      var right = evaluate(path.get("right"));
+      var _right = evaluate(path.get("right"));
       if (!confident) return;
 
       switch (node.operator) {
         case "-":
-          return left - right;
+          return _left - _right;
         case "+":
-          return left + right;
+          return _left + _right;
         case "/":
-          return left / right;
+          return _left / _right;
         case "*":
-          return left * right;
+          return _left * _right;
         case "%":
-          return left % right;
+          return _left % _right;
         case "**":
-          return Math.pow(left, right);
+          return (/*istanbul ignore next*/Math.pow(_left, _right)
+          );
         case "<":
-          return left < right;
+          return _left < _right;
         case ">":
-          return left > right;
+          return _left > _right;
         case "<=":
-          return left <= right;
+          return _left <= _right;
         case ">=":
-          return left >= right;
+          return _left >= _right;
         case "==":
-          return left == right;
+          return _left == _right;
         case "!=":
-          return left != right;
+          return _left != _right;
         case "===":
-          return left === right;
+          return _left === _right;
         case "!==":
-          return left !== right;
+          return _left !== _right;
         case "|":
-          return left | right;
+          return _left | _right;
         case "&":
-          return left & right;
+          return _left & _right;
         case "^":
-          return left ^ right;
+          return _left ^ _right;
         case "<<":
-          return left << right;
+          return _left << _right;
         case ">>":
-          return left >> right;
+          return _left >> _right;
         case ">>>":
-          return left >>> right;
+          return _left >>> _right;
       }
     }
 
     if (path.isCallExpression()) {
       var callee = path.get("callee");
-      var context = undefined;
-      var func = undefined;
+      var context = /*istanbul ignore next*/void 0;
+      var func = /*istanbul ignore next*/void 0;
 
       // Number(1);
       if (callee.isIdentifier() && !path.scope.getBinding(callee.node.name, true) && VALID_CALLEES.indexOf(callee.node.name) >= 0) {
@@ -304,21 +343,21 @@ function evaluate() {
       }
 
       if (callee.isMemberExpression()) {
-        var object = callee.get("object");
-        var property = callee.get("property");
+        var _object = callee.get("object");
+        var _property = callee.get("property");
 
         // Math.min(1, 2)
-        if (object.isIdentifier() && property.isIdentifier() && VALID_CALLEES.indexOf(object.node.name) >= 0 && INVALID_METHODS.indexOf(property.node.name) < 0) {
-          context = global[object.node.name];
-          func = context[property.node.name];
+        if (_object.isIdentifier() && _property.isIdentifier() && VALID_CALLEES.indexOf(_object.node.name) >= 0 && INVALID_METHODS.indexOf(_property.node.name) < 0) {
+          context = global[_object.node.name];
+          func = context[_property.node.name];
         }
 
         // "abc".charCodeAt(4)
-        if (object.isLiteral() && property.isIdentifier()) {
-          var type = typeof object.node.value;
-          if (type === "string" || type === "number") {
-            context = object.node.value;
-            func = context[property.node.name];
+        if (_object.isLiteral() && _property.isIdentifier()) {
+          var _type = /*istanbul ignore next*/(0, _typeof3.default)(_object.node.value);
+          if (_type === "string" || _type === "number") {
+            context = _object.node.value;
+            func = context[_property.node.name];
           }
         }
       }

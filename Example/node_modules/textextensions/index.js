@@ -29,4 +29,4 @@ module.exports = [
 	'xml',
 	'yaml',
 	'yml'
-];
+]

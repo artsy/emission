@@ -1,48 +1,52 @@
-"use strict";
-
-var _classCallCheck = require("babel-runtime/helpers/class-call-check")["default"];
-
-var _interopRequireDefault = require("babel-runtime/helpers/interop-require-default")["default"];
-
-var _interopRequireWildcard = require("babel-runtime/helpers/interop-require-wildcard")["default"];
+/*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
 
-var _binding = require("../binding");
+var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");
 
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var /*istanbul ignore next*/_binding = require("../binding");
+
+/*istanbul ignore next*/
 var _binding2 = _interopRequireDefault(_binding);
 
-var _babelTypes = require("babel-types");
+var /*istanbul ignore next*/_babelTypes = require("babel-types");
 
+/*istanbul ignore next*/
 var t = _interopRequireWildcard(_babelTypes);
 
-var renameVisitor = {
+/*istanbul ignore next*/
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var renameVisitor = { /*istanbul ignore next*/
   ReferencedIdentifier: function ReferencedIdentifier(_ref, state) {
-    var node = _ref.node;
+    /*istanbul ignore next*/var node = _ref.node;
 
     if (node.name === state.oldName) {
       node.name = state.newName;
     }
   },
-
-  Scope: function Scope(path, state) {
+  /*istanbul ignore next*/Scope: function Scope(path, state) {
     if (!path.scope.bindingIdentifierEquals(state.oldName, state.binding.identifier)) {
       path.skip();
     }
   },
-
-  "AssignmentExpression|Declaration": function AssignmentExpressionDeclaration(path, state) {
+  /*istanbul ignore next*/"AssignmentExpression|Declaration": function AssignmentExpressionDeclaration(path, state) {
     var ids = path.getOuterBindingIdentifiers();
 
-    for (var _name in ids) {
-      if (_name === state.oldName) ids[_name].name = state.newName;
+    for (var name in ids) {
+      if (name === state.oldName) ids[name].name = state.newName;
     }
   }
 };
 
-var Renamer = (function () {
-  function Renamer(binding, oldName, newName) {
-    _classCallCheck(this, Renamer);
+/*istanbul ignore next*/
+var Renamer = function () {
+  function /*istanbul ignore next*/Renamer(binding, oldName, newName) {
+    /*istanbul ignore next*/(0, _classCallCheck3.default)(this, Renamer);
 
     this.newName = newName;
     this.oldName = oldName;
@@ -65,9 +69,9 @@ var Renamer = (function () {
     var bindingIdentifiers = parentDeclar.getOuterBindingIdentifiers();
     var specifiers = [];
 
-    for (var _name2 in bindingIdentifiers) {
-      var localName = _name2 === this.oldName ? this.newName : _name2;
-      var exportedName = isDefault ? "default" : _name2;
+    for (var name in bindingIdentifiers) {
+      var localName = name === this.oldName ? this.newName : name;
+      var exportedName = isDefault ? "default" : name;
       specifiers.push(t.exportSpecifier(t.identifier(localName), t.identifier(exportedName)));
     }
 
@@ -114,13 +118,14 @@ var Renamer = (function () {
   };
 
   Renamer.prototype.rename = function rename(block) {
-    var binding = this.binding;
-    var oldName = this.oldName;
-    var newName = this.newName;
-    var scope = binding.scope;
-    var path = binding.path;
+    /*istanbul ignore next*/var binding = this.binding;
+    /*istanbul ignore next*/var oldName = this.oldName;
+    /*istanbul ignore next*/var newName = this.newName;
+    /*istanbul ignore next*/var scope = binding.scope;
+    /*istanbul ignore next*/var path = binding.path;
 
-    var parentDeclar = path.find(function (path) {
+
+    var parentDeclar = path.find(function (path) /*istanbul ignore next*/{
       return path.isDeclaration() || path.isFunctionExpression();
     });
     if (parentDeclar) {
@@ -147,7 +152,7 @@ var Renamer = (function () {
   };
 
   return Renamer;
-})();
+}();
 
-exports["default"] = Renamer;
-module.exports = exports["default"];
+/*istanbul ignore next*/exports.default = Renamer;
+/*istanbul ignore next*/module.exports = exports["default"];

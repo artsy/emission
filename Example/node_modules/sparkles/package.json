@@ -56,7 +56,7 @@
   "directories": {},
   "dist": {
     "shasum": "1acbbfb592436d10bbe8f785b7cc6f82815012c3",
-    "tarball": "http://registry.npmjs.org/sparkles/-/sparkles-1.0.0.tgz"
+    "tarball": "https://registry.npmjs.org/sparkles/-/sparkles-1.0.0.tgz"
   },
   "engines": {
     "node": ">= 0.10"

@@ -1,34 +1,41 @@
-// This file contains that retrieve or validate anything related to the current paths ancestry.
-
-"use strict";
-
-var _interopRequireWildcard = require("babel-runtime/helpers/interop-require-wildcard")["default"];
-
-var _interopRequireDefault = require("babel-runtime/helpers/interop-require-default")["default"];
+/*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
+
+var _getIterator2 = require("babel-runtime/core-js/get-iterator");
+
+var _getIterator3 = _interopRequireDefault(_getIterator2);
+
 exports.findParent = findParent;
-exports.find = find;
-exports.getFunctionParent = getFunctionParent;
-exports.getStatementParent = getStatementParent;
-exports.getEarliestCommonAncestorFrom = getEarliestCommonAncestorFrom;
-exports.getDeepestCommonAncestorFrom = getDeepestCommonAncestorFrom;
-exports.getAncestry = getAncestry;
-exports.inType = inType;
-exports.inShadow = inShadow;
+/*istanbul ignore next*/exports.find = find;
+/*istanbul ignore next*/exports.getFunctionParent = getFunctionParent;
+/*istanbul ignore next*/exports.getStatementParent = getStatementParent;
+/*istanbul ignore next*/exports.getEarliestCommonAncestorFrom = getEarliestCommonAncestorFrom;
+/*istanbul ignore next*/exports.getDeepestCommonAncestorFrom = getDeepestCommonAncestorFrom;
+/*istanbul ignore next*/exports.getAncestry = getAncestry;
+/*istanbul ignore next*/exports.inType = inType;
+/*istanbul ignore next*/exports.inShadow = inShadow;
 
-var _babelTypes = require("babel-types");
+var /*istanbul ignore next*/_babelTypes = require("babel-types");
 
+/*istanbul ignore next*/
 var t = _interopRequireWildcard(_babelTypes);
 
-var _index = require("./index");
+var /*istanbul ignore next*/_index = require("./index");
 
+/*istanbul ignore next*/
 var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Call the provided `callback` with the `NodePath`s of all the parents.
  * When the `callback` returns a truthy value, we return that node path.
  */
+
+// This file contains that retrieve or validate anything related to the current paths ancestry.
 
 function findParent(callback) {
   var path = this;
@@ -55,7 +62,7 @@ function find(callback) {
  */
 
 function getFunctionParent() {
-  return this.findParent(function (path) {
+  return this.findParent(function (path) /*istanbul ignore next*/{
     return path.isFunction() || path.isProgram();
   });
 }
@@ -83,12 +90,24 @@ function getStatementParent() {
 
 function getEarliestCommonAncestorFrom(paths) {
   return this.getDeepestCommonAncestorFrom(paths, function (deepest, i, ancestries) {
-    var earliest = undefined;
+    var earliest = /*istanbul ignore next*/void 0;
     var keys = t.VISITOR_KEYS[deepest.type];
 
-    var _arr = ancestries;
-    for (var _i = 0; _i < _arr.length; _i++) {
-      var ancestry = _arr[_i];
+    for ( /*istanbul ignore next*/var _iterator = ancestries, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : (0, _getIterator3.default)(_iterator);;) {
+      /*istanbul ignore next*/
+      var _ref;
+
+      if (_isArray) {
+        if (_i >= _iterator.length) break;
+        _ref = _iterator[_i++];
+      } else {
+        _i = _iterator.next();
+        if (_i.done) break;
+        _ref = _i.value;
+      }
+
+      var ancestry = _ref;
+
       var path = ancestry[i + 1];
 
       // first path
@@ -126,8 +145,7 @@ function getEarliestCommonAncestorFrom(paths) {
  */
 
 function getDeepestCommonAncestorFrom(paths, filter) {
-  // istanbul ignore next
-
+  /*istanbul ignore next*/
   var _this = this;
 
   if (!paths.length) {
@@ -142,8 +160,8 @@ function getDeepestCommonAncestorFrom(paths, filter) {
   var minDepth = Infinity;
 
   // last common ancestor
-  var lastCommonIndex = undefined,
-      lastCommon = undefined;
+  var lastCommonIndex = /*istanbul ignore next*/void 0,
+      lastCommon = /*istanbul ignore next*/void 0;
 
   // get the ancestors of the path, breaking when the parent exceeds ourselves
   var ancestries = paths.map(function (path) {
@@ -151,7 +169,7 @@ function getDeepestCommonAncestorFrom(paths, filter) {
 
     do {
       ancestry.unshift(path);
-    } while ((path = path.parentPath) && path !== _this);
+    } while ((path = path.parentPath) && path !== /*istanbul ignore next*/_this);
 
     // save min depth to avoid going too far in
     if (ancestry.length < minDepth) {
@@ -168,9 +186,21 @@ function getDeepestCommonAncestorFrom(paths, filter) {
   depthLoop: for (var i = 0; i < minDepth; i++) {
     var shouldMatch = first[i];
 
-    var _arr2 = ancestries;
-    for (var _i2 = 0; _i2 < _arr2.length; _i2++) {
-      var ancestry = _arr2[_i2];
+    for ( /*istanbul ignore next*/var _iterator2 = ancestries, _isArray2 = Array.isArray(_iterator2), _i2 = 0, _iterator2 = _isArray2 ? _iterator2 : (0, _getIterator3.default)(_iterator2);;) {
+      /*istanbul ignore next*/
+      var _ref2;
+
+      if (_isArray2) {
+        if (_i2 >= _iterator2.length) break;
+        _ref2 = _iterator2[_i2++];
+      } else {
+        _i2 = _iterator2.next();
+        if (_i2.done) break;
+        _ref2 = _i2.value;
+      }
+
+      var ancestry = _ref2;
+
       if (ancestry[i] !== shouldMatch) {
         // we've hit a snag
         break depthLoop;
@@ -211,10 +241,21 @@ function getAncestry() {
 function inType() {
   var path = this;
   while (path) {
-    var _arr3 = arguments;
+    for ( /*istanbul ignore next*/var _iterator3 = arguments, _isArray3 = Array.isArray(_iterator3), _i3 = 0, _iterator3 = _isArray3 ? _iterator3 : (0, _getIterator3.default)(_iterator3);;) {
+      /*istanbul ignore next*/
+      var _ref3;
 
-    for (var _i3 = 0; _i3 < _arr3.length; _i3++) {
-      var type = _arr3[_i3];
+      if (_isArray3) {
+        if (_i3 >= _iterator3.length) break;
+        _ref3 = _iterator3[_i3++];
+      } else {
+        _i3 = _iterator3.next();
+        if (_i3.done) break;
+        _ref3 = _i3.value;
+      }
+
+      var type = _ref3;
+
       if (path.node.type === type) return true;
     }
     path = path.parentPath;
@@ -257,7 +298,7 @@ function inType() {
  */
 
 function inShadow(key) {
-  var parentFn = this.isFunction() ? this : this.findParent(function (p) {
+  var parentFn = this.isFunction() ? this : this.findParent(function (p) /*istanbul ignore next*/{
     return p.isFunction();
   });
   if (!parentFn) return;

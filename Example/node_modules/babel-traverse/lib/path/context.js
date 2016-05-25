@@ -1,41 +1,43 @@
-// This file contains methods responsible for maintaining a TraversalContext.
-
-"use strict";
-
-var _getIterator = require("babel-runtime/core-js/get-iterator")["default"];
-
-var _interopRequireDefault = require("babel-runtime/helpers/interop-require-default")["default"];
+/*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
+
+var _getIterator2 = require("babel-runtime/core-js/get-iterator");
+
+var _getIterator3 = _interopRequireDefault(_getIterator2);
+
 exports.call = call;
-exports._call = _call;
-exports.isBlacklisted = isBlacklisted;
-exports.visit = visit;
-exports.skip = skip;
-exports.skipKey = skipKey;
-exports.stop = stop;
-exports.setScope = setScope;
-exports.setContext = setContext;
-exports.resync = resync;
-exports._resyncParent = _resyncParent;
-exports._resyncKey = _resyncKey;
-exports._resyncList = _resyncList;
-exports._resyncRemoved = _resyncRemoved;
-exports.popContext = popContext;
-exports.pushContext = pushContext;
-exports.setup = setup;
-exports.setKey = setKey;
-exports.requeue = requeue;
-exports._getQueueContexts = _getQueueContexts;
+/*istanbul ignore next*/exports._call = _call;
+/*istanbul ignore next*/exports.isBlacklisted = isBlacklisted;
+/*istanbul ignore next*/exports.visit = visit;
+/*istanbul ignore next*/exports.skip = skip;
+/*istanbul ignore next*/exports.skipKey = skipKey;
+/*istanbul ignore next*/exports.stop = stop;
+/*istanbul ignore next*/exports.setScope = setScope;
+/*istanbul ignore next*/exports.setContext = setContext;
+/*istanbul ignore next*/exports.resync = resync;
+/*istanbul ignore next*/exports._resyncParent = _resyncParent;
+/*istanbul ignore next*/exports._resyncKey = _resyncKey;
+/*istanbul ignore next*/exports._resyncList = _resyncList;
+/*istanbul ignore next*/exports._resyncRemoved = _resyncRemoved;
+/*istanbul ignore next*/exports.popContext = popContext;
+/*istanbul ignore next*/exports.pushContext = pushContext;
+/*istanbul ignore next*/exports.setup = setup;
+/*istanbul ignore next*/exports.setKey = setKey;
+/*istanbul ignore next*/exports.requeue = requeue;
+/*istanbul ignore next*/exports._getQueueContexts = _getQueueContexts;
 
-var _index = require("../index");
+var /*istanbul ignore next*/_index = require("../index");
 
+/*istanbul ignore next*/
 var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function call(key) {
   var opts = this.opts;
 
-  this.debug(function () {
+  this.debug(function () /*istanbul ignore next*/{
     return key;
   });
 
@@ -48,20 +50,33 @@ function call(key) {
   }
 
   return false;
-}
+} // This file contains methods responsible for maintaining a TraversalContext.
 
 function _call(fns) {
   if (!fns) return false;
 
-  for (var _i = 0; _i < fns.length; _i++) {
-    var fn = fns[_i];
+  for ( /*istanbul ignore next*/var _iterator = fns, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : (0, _getIterator3.default)(_iterator);;) {
+    /*istanbul ignore next*/
+    var _ref;
+
+    if (_isArray) {
+      if (_i >= _iterator.length) break;
+      _ref = _iterator[_i++];
+    } else {
+      _i = _iterator.next();
+      if (_i.done) break;
+      _ref = _i.value;
+    }
+
+    var fn = _ref;
+
     if (!fn) continue;
 
     var node = this.node;
     if (!node) return true;
 
     var ret = fn.call(this.state, this, this.state);
-    if (ret) throw new Error("Unexpected return value from visitor method " + fn);
+    if (ret) throw new Error( /*istanbul ignore next*/"Unexpected return value from visitor method " + fn);
 
     // node has been replaced, it will have been requeued
     if (this.node !== node) return true;
@@ -91,16 +106,16 @@ function visit() {
   }
 
   if (this.call("enter") || this.shouldSkip) {
-    this.debug(function () {
+    this.debug(function () /*istanbul ignore next*/{
       return "Skip...";
     });
     return this.shouldStop;
   }
 
-  this.debug(function () {
+  this.debug(function () /*istanbul ignore next*/{
     return "Recursing into...";
   });
-  _index2["default"].node(this.node, this.opts, this.scope, this.state, this, this.skipKeys);
+  /*istanbul ignore next*/_index2.default.node(this.node, this.opts, this.scope, this.state, this, this.skipKeys);
 
   this.call("exit");
 
@@ -246,7 +261,7 @@ function setKey(key) {
 }
 
 function requeue() {
-  var pathToQueue = arguments.length <= 0 || arguments[0] === undefined ? this : arguments[0];
+  /*istanbul ignore next*/var pathToQueue = arguments.length <= 0 || arguments[0] === undefined ? this : arguments[0];
 
   if (pathToQueue.removed) return;
 
@@ -255,19 +270,20 @@ function requeue() {
   // let contexts = this._getQueueContexts();
   var contexts = this.contexts;
 
-  for (var _iterator = contexts, _isArray = Array.isArray(_iterator), _i2 = 0, _iterator = _isArray ? _iterator : _getIterator(_iterator);;) {
-    var _ref;
+  for ( /*istanbul ignore next*/var _iterator2 = contexts, _isArray2 = Array.isArray(_iterator2), _i2 = 0, _iterator2 = _isArray2 ? _iterator2 : (0, _getIterator3.default)(_iterator2);;) {
+    /*istanbul ignore next*/
+    var _ref2;
 
-    if (_isArray) {
-      if (_i2 >= _iterator.length) break;
-      _ref = _iterator[_i2++];
+    if (_isArray2) {
+      if (_i2 >= _iterator2.length) break;
+      _ref2 = _iterator2[_i2++];
     } else {
-      _i2 = _iterator.next();
+      _i2 = _iterator2.next();
       if (_i2.done) break;
-      _ref = _i2.value;
+      _ref2 = _i2.value;
     }
 
-    var context = _ref;
+    var context = _ref2;
 
     context.maybeQueue(pathToQueue);
   }

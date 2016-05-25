@@ -20,7 +20,7 @@ Fast (and loose) selective `process.env` replacer using [js-tokens](https://gith
 
 ## Usage/Options
 
-loose-envify has the exact same interface as [envify](https://github.com/hughsk/envify).
+loose-envify has the exact same interface as [envify](https://github.com/hughsk/envify), including the CLI.
 
 ## Benchmark
 

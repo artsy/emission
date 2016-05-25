@@ -8,19 +8,21 @@ Base64 encode, decode, escape and unescape for URL applications.
 
 
 ## API
-    
-	> base64url.encode('Node.js is awesome.');
-	Tm9kZS5qcyBpcyBhd2Vzb21lLg
 
-	> base64url.decode('Tm9kZS5qcyBpcyBhd2Vzb21lLg');
-	Node.js is awesome.
- 
-	> base64url.escape('This+is/goingto+escape==');
-	This-is_goingto-escape
-  	
-    > base64url.unescape('This-is_goingto-escape');
-    This+is/goingto+escape==
-  	
+```js
+base64url.encode('Node.js is awesome.');
+// returns Tm9kZS5qcyBpcyBhd2Vzb21lLg
+
+base64url.decode('Tm9kZS5qcyBpcyBhd2Vzb21lLg');
+// returns Node.js is awesome.
+
+base64url.escape('This+is/goingto+escape==');
+// returns This-is_goingto-escape
+
+base64url.unescape('This-is_goingto-escape');
+// returns This+is/goingto+escape==
+```
+
 
 ## Development
 
@@ -49,5 +51,5 @@ npm run check-coverage
 
 to open the code coverage report
 ``` js
-npm run open-coverage
+npm run coverage
 ```

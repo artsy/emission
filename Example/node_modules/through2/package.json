@@ -23,7 +23,7 @@
   "_phantomChildren": {
     "core-util-is": "1.0.2",
     "inherits": "2.0.1",
-    "process-nextick-args": "1.0.6",
+    "process-nextick-args": "1.0.7",
     "string_decoder": "0.10.31",
     "util-deprecate": "1.0.2"
   },

@@ -1,18 +1,19 @@
-"use strict";
-
-var _interopRequireWildcard = require("babel-runtime/helpers/interop-require-wildcard")["default"];
+/*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
+exports.isReactComponent = undefined;
 exports.isCompatTag = isCompatTag;
-exports.buildChildren = buildChildren;
+/*istanbul ignore next*/exports.buildChildren = buildChildren;
 
-var _index = require("./index");
+var /*istanbul ignore next*/_index = require("./index");
 
+/*istanbul ignore next*/
 var t = _interopRequireWildcard(_index);
 
-var isReactComponent = t.buildMatchMemberExpression("React.Component");
+/*istanbul ignore next*/
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-exports.isReactComponent = isReactComponent;
+var isReactComponent = /*istanbul ignore next*/exports.isReactComponent = t.buildMatchMemberExpression("React.Component");
 
 function isCompatTag(tagName) {
   return !!tagName && /^[a-z]|\-/.test(tagName);
@@ -31,12 +32,12 @@ function cleanJSXElementLiteralChild(child, args) {
 
   var str = "";
 
-  for (var i = 0; i < lines.length; i++) {
-    var line = lines[i];
+  for (var _i = 0; _i < lines.length; _i++) {
+    var line = lines[_i];
 
-    var isFirstLine = i === 0;
-    var isLastLine = i === lines.length - 1;
-    var isLastNonEmptyLine = i === lastNonEmptyLine;
+    var isFirstLine = _i === 0;
+    var isLastLine = _i === lines.length - 1;
+    var isLastNonEmptyLine = _i === lastNonEmptyLine;
 
     // replace rendered whitespace tabs with spaces
     var trimmedLine = line.replace(/\t/g, " ");

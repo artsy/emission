@@ -50,7 +50,7 @@
   "directories": {},
   "dist": {
     "shasum": "b2bf4ee8514aae6165b4817829d21b2ef49904ec",
-    "tarball": "http://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz"
+    "tarball": "https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz"
   },
   "engines": {
     "node": ">= 0.8"

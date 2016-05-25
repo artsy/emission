@@ -52,7 +52,7 @@
   "directories": {},
   "dist": {
     "shasum": "3f3414f380321743bfc1042f9a83ff1d5824d464",
-    "tarball": "http://registry.npmjs.org/batch/-/batch-0.5.3.tgz"
+    "tarball": "https://registry.npmjs.org/batch/-/batch-0.5.3.tgz"
   },
   "gitHead": "247f3ec041be32bb8ddc0816d2155b2391550084",
   "homepage": "https://github.com/visionmedia/batch",

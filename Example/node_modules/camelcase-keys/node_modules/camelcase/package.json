@@ -54,7 +54,7 @@
   "directories": {},
   "dist": {
     "shasum": "7c1d16d679a1bbe59ca02cacecfb011e201f5a1f",
-    "tarball": "http://registry.npmjs.org/camelcase/-/camelcase-2.1.1.tgz"
+    "tarball": "https://registry.npmjs.org/camelcase/-/camelcase-2.1.1.tgz"
   },
   "engines": {
     "node": ">=0.10.0"

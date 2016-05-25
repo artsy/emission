@@ -5,7 +5,6 @@
 
 var inquirer = module.exports;
 
-
 /**
  * Client interfaces
  */
@@ -23,10 +22,15 @@ inquirer.ui = {
  * Create a new self-contained prompt module.
  */
 inquirer.createPromptModule = function (opt) {
-  var promptModule = function (questions, allDone) {
+  var promptModule = function (questions) {
     var ui = new inquirer.ui.Prompt(promptModule.prompts, opt);
-    ui.run(questions, allDone);
-    return ui;
+    var promise = ui.run(questions);
+
+    // Monkey patch the UI on the promise object so
+    // that it remains publicly accessible.
+    promise.ui = ui;
+
+    return promise;
   };
   promptModule.prompts = {};
 

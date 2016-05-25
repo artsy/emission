@@ -1,49 +1,69 @@
-"use strict";
-
-var _inherits = require("babel-runtime/helpers/inherits")["default"];
-
-var _classCallCheck = require("babel-runtime/helpers/class-call-check")["default"];
-
-var _interopRequireDefault = require("babel-runtime/helpers/interop-require-default")["default"];
-
-var _interopRequireWildcard = require("babel-runtime/helpers/interop-require-wildcard")["default"];
+/*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
+exports.CodeGenerator = undefined;
 
-var _detectIndent = require("detect-indent");
+var _classCallCheck2 = require("babel-runtime/helpers/classCallCheck");
 
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _possibleConstructorReturn2 = require("babel-runtime/helpers/possibleConstructorReturn");
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = require("babel-runtime/helpers/inherits");
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+exports.default = function (ast, opts, code) {
+  var gen = new CodeGenerator(ast, opts, code);
+  return gen.generate();
+};
+
+var /*istanbul ignore next*/_detectIndent = require("detect-indent");
+
+/*istanbul ignore next*/
 var _detectIndent2 = _interopRequireDefault(_detectIndent);
 
-var _whitespace = require("./whitespace");
+var /*istanbul ignore next*/_whitespace = require("./whitespace");
 
+/*istanbul ignore next*/
 var _whitespace2 = _interopRequireDefault(_whitespace);
 
-var _sourceMap = require("./source-map");
+var /*istanbul ignore next*/_sourceMap = require("./source-map");
 
+/*istanbul ignore next*/
 var _sourceMap2 = _interopRequireDefault(_sourceMap);
 
-var _position = require("./position");
+var /*istanbul ignore next*/_position = require("./position");
 
+/*istanbul ignore next*/
 var _position2 = _interopRequireDefault(_position);
 
-var _babelMessages = require("babel-messages");
+var /*istanbul ignore next*/_babelMessages = require("babel-messages");
 
+/*istanbul ignore next*/
 var messages = _interopRequireWildcard(_babelMessages);
 
-var _printer = require("./printer");
+var /*istanbul ignore next*/_printer = require("./printer");
 
+/*istanbul ignore next*/
 var _printer2 = _interopRequireDefault(_printer);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Babel's code generator, turns an ast into code, maintaining sourcemaps,
  * user preferences, and valid output.
  */
 
-var CodeGenerator = (function (_Printer) {
-  _inherits(CodeGenerator, _Printer);
+var CodeGenerator = exports.CodeGenerator = function (_Printer) {
+  (0, _inherits3.default)(CodeGenerator, _Printer);
 
-  function CodeGenerator(ast, opts, code) {
-    _classCallCheck(this, CodeGenerator);
+  function /*istanbul ignore next*/CodeGenerator(ast, opts, code) {
+    /*istanbul ignore next*/(0, _classCallCheck3.default)(this, CodeGenerator);
 
     opts = opts || {};
 
@@ -51,20 +71,22 @@ var CodeGenerator = (function (_Printer) {
     var tokens = ast.tokens || [];
     var format = CodeGenerator.normalizeOptions(code, opts, tokens);
 
-    var position = new _position2["default"]();
+    var position = new /*istanbul ignore next*/_position2.default();
 
-    _Printer.call(this, position, format);
+    /*istanbul ignore next*/
+    var _this = (0, _possibleConstructorReturn3.default)(this, /*istanbul ignore next*/_Printer.call( /*istanbul ignore next*/this, position, format));
 
-    this.comments = comments;
-    this.position = position;
-    this.tokens = tokens;
-    this.format = format;
-    this.opts = opts;
-    this.ast = ast;
-    this._inForStatementInitCounter = 0;
+    /*istanbul ignore next*/_this.comments = comments;
+    /*istanbul ignore next*/_this.position = position;
+    /*istanbul ignore next*/_this.tokens = tokens;
+    /*istanbul ignore next*/_this.format = format;
+    /*istanbul ignore next*/_this.opts = opts;
+    /*istanbul ignore next*/_this.ast = ast;
+    /*istanbul ignore next*/_this._inForStatementInitCounter = 0;
 
-    this.whitespace = new _whitespace2["default"](tokens);
-    this.map = new _sourceMap2["default"](position, opts, code);
+    /*istanbul ignore next*/_this.whitespace = new /*istanbul ignore next*/_whitespace2.default(tokens);
+    /*istanbul ignore next*/_this.map = new /*istanbul ignore next*/_sourceMap2.default(position, opts, code);
+    /*istanbul ignore next*/return _this;
   }
 
   /**
@@ -77,7 +99,7 @@ var CodeGenerator = (function (_Printer) {
   CodeGenerator.normalizeOptions = function normalizeOptions(code, opts, tokens) {
     var style = "  ";
     if (code && typeof code === "string") {
-      var _indent = _detectIndent2["default"](code).indent;
+      var _indent = /*istanbul ignore next*/(0, _detectIndent2.default)(code).indent;
       if (_indent && _indent !== " ") style = _indent;
     }
 
@@ -120,6 +142,7 @@ var CodeGenerator = (function (_Printer) {
   /**
    * Determine if input code uses more single or double quotes.
    */
+
 
   CodeGenerator.findCommonStringDelimiter = function findCommonStringDelimiter(code, tokens) {
     var occurences = {
@@ -167,11 +190,4 @@ var CodeGenerator = (function (_Printer) {
   };
 
   return CodeGenerator;
-})(_printer2["default"]);
-
-exports.CodeGenerator = CodeGenerator;
-
-exports["default"] = function (ast, opts, code) {
-  var gen = new CodeGenerator(ast, opts, code);
-  return gen.generate();
-};
+}(_printer2.default);

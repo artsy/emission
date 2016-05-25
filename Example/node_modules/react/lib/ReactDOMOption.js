@@ -1,5 +1,5 @@
 /**
- * Copyright 2013-2015, Facebook, Inc.
+ * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -11,28 +11,39 @@
 
 'use strict';
 
+var _assign = require('object-assign');
+
 var ReactChildren = require('./ReactChildren');
+var ReactDOMComponentTree = require('./ReactDOMComponentTree');
 var ReactDOMSelect = require('./ReactDOMSelect');
 
-var assign = require('./Object.assign');
 var warning = require('fbjs/lib/warning');
-
-var valueContextKey = ReactDOMSelect.valueContextKey;
 
 /**
  * Implements an <option> native component that warns when `selected` is set.
  */
 var ReactDOMOption = {
-  mountWrapper: function (inst, props, context) {
+  mountWrapper: function (inst, props, nativeParent) {
     // TODO (yungsters): Remove support for `selected` in <option>.
     if (process.env.NODE_ENV !== 'production') {
-      process.env.NODE_ENV !== 'production' ? warning(props.selected == null, 'Use the `defaultValue` or `value` props on <select> instead of ' + 'setting `selected` on <option>.') : undefined;
+      process.env.NODE_ENV !== 'production' ? warning(props.selected == null, 'Use the `defaultValue` or `value` props on <select> instead of ' + 'setting `selected` on <option>.') : void 0;
     }
 
-    // Look up whether this option is 'selected' via context
-    var selectValue = context[valueContextKey];
+    // Look up whether this option is 'selected'
+    var selectValue = null;
+    if (nativeParent != null) {
+      var selectParent = nativeParent;
 
-    // If context key is null (e.g., no specified value or after initial mount)
+      if (selectParent._tag === 'optgroup') {
+        selectParent = selectParent._nativeParent;
+      }
+
+      if (selectParent != null && selectParent._tag === 'select') {
+        selectValue = ReactDOMSelect.getSelectValueContext(selectParent);
+      }
+    }
+
+    // If the value is null (e.g., no specified value or after initial mount)
     // or missing (e.g., for <datalist>), we don't change props.selected
     var selected = null;
     if (selectValue != null) {
@@ -53,8 +64,17 @@ var ReactDOMOption = {
     inst._wrapperState = { selected: selected };
   },
 
-  getNativeProps: function (inst, props, context) {
-    var nativeProps = assign({ selected: undefined, children: undefined }, props);
+  postMountWrapper: function (inst) {
+    // value="" should make a value attribute (#6219)
+    var props = inst._currentElement.props;
+    if (props.value != null) {
+      var node = ReactDOMComponentTree.getNodeFromInstance(inst);
+      node.setAttribute('value', props.value);
+    }
+  },
+
+  getNativeProps: function (inst, props) {
+    var nativeProps = _assign({ selected: undefined, children: undefined }, props);
 
     // Read state only from initial mount because <select> updates value
     // manually; we need the initial state only for server rendering
@@ -73,7 +93,7 @@ var ReactDOMOption = {
       if (typeof child === 'string' || typeof child === 'number') {
         content += child;
       } else {
-        process.env.NODE_ENV !== 'production' ? warning(false, 'Only strings and numbers are supported as <option> children.') : undefined;
+        process.env.NODE_ENV !== 'production' ? warning(false, 'Only strings and numbers are supported as <option> children.') : void 0;
       }
     });
 

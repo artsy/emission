@@ -1,3 +1,12 @@
+2.3.6 / 2016-05-20
+==================
+
+  * deps: methods@~1.1.2
+    - perf: enable strict mode
+  * deps: parseurl@~1.3.1
+    - perf: enable strict mode
+  * deps: vary@~1.1.0
+
 2.3.5 / 2015-07-31
 ==================
 

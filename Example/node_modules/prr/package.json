@@ -46,7 +46,7 @@
   "directories": {},
   "dist": {
     "shasum": "1a84b85908325501411853d0081ee3fa86e2926a",
-    "tarball": "http://registry.npmjs.org/prr/-/prr-0.0.0.tgz"
+    "tarball": "https://registry.npmjs.org/prr/-/prr-0.0.0.tgz"
   },
   "homepage": "https://github.com/rvagg/prr",
   "keywords": [

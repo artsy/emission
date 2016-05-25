@@ -1,44 +1,55 @@
-/* eslint max-len: 0 */
-// This file contains methods that modify the path/node in some ways.
-
-"use strict";
-
-var _getIterator = require("babel-runtime/core-js/get-iterator")["default"];
-
-var _interopRequireDefault = require("babel-runtime/helpers/interop-require-default")["default"];
-
-var _interopRequireWildcard = require("babel-runtime/helpers/interop-require-wildcard")["default"];
+/*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
+
+var _typeof2 = require("babel-runtime/helpers/typeof");
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+var _getIterator2 = require("babel-runtime/core-js/get-iterator");
+
+var _getIterator3 = _interopRequireDefault(_getIterator2);
+
 exports.insertBefore = insertBefore;
-exports._containerInsert = _containerInsert;
-exports._containerInsertBefore = _containerInsertBefore;
-exports._containerInsertAfter = _containerInsertAfter;
-exports._maybePopFromStatements = _maybePopFromStatements;
-exports.insertAfter = insertAfter;
-exports.updateSiblingKeys = updateSiblingKeys;
-exports._verifyNodeList = _verifyNodeList;
-exports.unshiftContainer = unshiftContainer;
-exports.pushContainer = pushContainer;
-exports.hoist = hoist;
+/*istanbul ignore next*/exports._containerInsert = _containerInsert;
+/*istanbul ignore next*/exports._containerInsertBefore = _containerInsertBefore;
+/*istanbul ignore next*/exports._containerInsertAfter = _containerInsertAfter;
+/*istanbul ignore next*/exports._maybePopFromStatements = _maybePopFromStatements;
+/*istanbul ignore next*/exports.insertAfter = insertAfter;
+/*istanbul ignore next*/exports.updateSiblingKeys = updateSiblingKeys;
+/*istanbul ignore next*/exports._verifyNodeList = _verifyNodeList;
+/*istanbul ignore next*/exports.unshiftContainer = unshiftContainer;
+/*istanbul ignore next*/exports.pushContainer = pushContainer;
+/*istanbul ignore next*/exports.hoist = hoist;
 
-var _cache = require("../cache");
+var /*istanbul ignore next*/_cache = require("../cache");
 
-var _libHoister = require("./lib/hoister");
+var /*istanbul ignore next*/_hoister = require("./lib/hoister");
 
-var _libHoister2 = _interopRequireDefault(_libHoister);
+/*istanbul ignore next*/
+var _hoister2 = _interopRequireDefault(_hoister);
 
-var _index = require("./index");
+var /*istanbul ignore next*/_index = require("./index");
 
+/*istanbul ignore next*/
 var _index2 = _interopRequireDefault(_index);
 
-var _babelTypes = require("babel-types");
+var /*istanbul ignore next*/_babelTypes = require("babel-types");
 
+/*istanbul ignore next*/
 var t = _interopRequireWildcard(_babelTypes);
+
+/*istanbul ignore next*/
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Insert the provided nodes before the current one.
  */
+
+/* eslint max-len: 0 */
+// This file contains methods that modify the path/node in some ways.
 
 function insertBefore(nodes) {
   this._assertUnremoved();
@@ -84,7 +95,7 @@ function _containerInsert(from, nodes) {
       if (this.context.queue) path.pushContext(this.context);
       paths.push(path);
     } else {
-      paths.push(_index2["default"].get({
+      paths.push( /*istanbul ignore next*/_index2.default.get({
         parentPath: this.parentPath,
         parent: this.parent,
         container: this.container,
@@ -96,7 +107,8 @@ function _containerInsert(from, nodes) {
 
   var contexts = this._getQueueContexts();
 
-  for (var _iterator = paths, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _getIterator(_iterator);;) {
+  for ( /*istanbul ignore next*/var _iterator = paths, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : (0, _getIterator3.default)(_iterator);;) {
+    /*istanbul ignore next*/
     var _ref;
 
     if (_isArray) {
@@ -108,14 +120,15 @@ function _containerInsert(from, nodes) {
       _ref = _i.value;
     }
 
-    var path = _ref;
+    var _path = _ref;
 
-    path.setScope();
-    path.debug(function () {
+    _path.setScope();
+    _path.debug(function () /*istanbul ignore next*/{
       return "Inserted.";
     });
 
-    for (var _iterator2 = contexts, _isArray2 = Array.isArray(_iterator2), _i2 = 0, _iterator2 = _isArray2 ? _iterator2 : _getIterator(_iterator2);;) {
+    for ( /*istanbul ignore next*/var _iterator2 = contexts, _isArray2 = Array.isArray(_iterator2), _i2 = 0, _iterator2 = _isArray2 ? _iterator2 : (0, _getIterator3.default)(_iterator2);;) {
+      /*istanbul ignore next*/
       var _ref2;
 
       if (_isArray2) {
@@ -129,7 +142,7 @@ function _containerInsert(from, nodes) {
 
       var context = _ref2;
 
-      context.maybeQueue(path, true);
+      context.maybeQueue(_path, true);
     }
   }
 
@@ -194,7 +207,7 @@ function insertAfter(nodes) {
 function updateSiblingKeys(fromIndex, incrementBy) {
   if (!this.parent) return;
 
-  var paths = _cache.path.get(this.parent);
+  var paths = /*istanbul ignore next*/_cache.path.get(this.parent);
   for (var i = 0; i < paths.length; i++) {
     var path = paths[i];
     if (path.key >= fromIndex) {
@@ -214,21 +227,21 @@ function _verifyNodeList(nodes) {
 
   for (var i = 0; i < nodes.length; i++) {
     var node = nodes[i];
-    var msg = undefined;
+    var msg = /*istanbul ignore next*/void 0;
 
     if (!node) {
       msg = "has falsy node";
-    } else if (typeof node !== "object") {
+    } else if ( /*istanbul ignore next*/(typeof node === "undefined" ? "undefined" : (0, _typeof3.default)(node)) !== "object") {
       msg = "contains a non-object node";
     } else if (!node.type) {
       msg = "without a type";
-    } else if (node instanceof _index2["default"]) {
+    } else if (node instanceof /*istanbul ignore next*/_index2.default) {
       msg = "has a NodePath when it expected a raw object";
     }
 
     if (msg) {
-      var type = Array.isArray(node) ? "array" : typeof node;
-      throw new Error("Node list " + msg + " with the index of " + i + " and type of " + type);
+      var type = Array.isArray(node) ? "array" : /*istanbul ignore next*/typeof node === "undefined" ? "undefined" : (0, _typeof3.default)(node);
+      throw new Error( /*istanbul ignore next*/"Node list " + msg + " with the index of " + i + " and type of " + type);
     }
   }
 
@@ -242,7 +255,7 @@ function unshiftContainer(listKey, nodes) {
 
   // get the first path and insert our nodes before it, if it doesn't exist then it
   // doesn't matter, our nodes will be inserted anyway
-  var path = _index2["default"].get({
+  var path = /*istanbul ignore next*/_index2.default.get({
     parentPath: this,
     parent: this.node,
     container: this.node[listKey],
@@ -262,7 +275,7 @@ function pushContainer(listKey, nodes) {
   // nodes, effectively inlining it
 
   var container = this.node[listKey];
-  var path = _index2["default"].get({
+  var path = /*istanbul ignore next*/_index2.default.get({
     parentPath: this,
     parent: this.node,
     container: container,
@@ -279,8 +292,8 @@ function pushContainer(listKey, nodes) {
  */
 
 function hoist() {
-  var scope = arguments.length <= 0 || arguments[0] === undefined ? this.scope : arguments[0];
+  /*istanbul ignore next*/var scope = arguments.length <= 0 || arguments[0] === undefined ? this.scope : arguments[0];
 
-  var hoister = new _libHoister2["default"](this, scope);
+  var hoister = new /*istanbul ignore next*/_hoister2.default(this, scope);
   return hoister.run();
 }

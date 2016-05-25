@@ -52,7 +52,7 @@
   "directories": {},
   "dist": {
     "shasum": "dbb164f6221b1c0b1ccf82aea328b497df0ea3c4",
-    "tarball": "http://registry.npmjs.org/glob-base/-/glob-base-0.3.0.tgz"
+    "tarball": "https://registry.npmjs.org/glob-base/-/glob-base-0.3.0.tgz"
   },
   "engines": {
     "node": ">=0.10.0"

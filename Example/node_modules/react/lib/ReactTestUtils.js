@@ -1,5 +1,5 @@
 /**
- * Copyright 2013-2015, Facebook, Inc.
+ * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -11,21 +11,23 @@
 
 'use strict';
 
+var _assign = require('object-assign');
+
 var EventConstants = require('./EventConstants');
 var EventPluginHub = require('./EventPluginHub');
+var EventPluginRegistry = require('./EventPluginRegistry');
 var EventPropagators = require('./EventPropagators');
 var React = require('./React');
+var ReactDefaultInjection = require('./ReactDefaultInjection');
 var ReactDOM = require('./ReactDOM');
+var ReactDOMComponentTree = require('./ReactDOMComponentTree');
 var ReactElement = require('./ReactElement');
 var ReactBrowserEventEmitter = require('./ReactBrowserEventEmitter');
 var ReactCompositeComponent = require('./ReactCompositeComponent');
-var ReactInstanceHandles = require('./ReactInstanceHandles');
 var ReactInstanceMap = require('./ReactInstanceMap');
-var ReactMount = require('./ReactMount');
 var ReactUpdates = require('./ReactUpdates');
 var SyntheticEvent = require('./SyntheticEvent');
 
-var assign = require('./Object.assign');
 var emptyObject = require('fbjs/lib/emptyObject');
 var findDOMNode = require('./findDOMNode');
 var invariant = require('fbjs/lib/invariant');
@@ -140,7 +142,7 @@ var ReactTestUtils = {
     if (!inst) {
       return [];
     }
-    !ReactTestUtils.isCompositeComponent(inst) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'findAllInRenderedTree(...): instance must be a composite component') : invariant(false) : undefined;
+    !ReactTestUtils.isCompositeComponent(inst) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'findAllInRenderedTree(...): instance must be a composite component') : invariant(false) : void 0;
     return findAllInRenderedTreeInternal(ReactInstanceMap.get(inst), test);
   },
 
@@ -150,9 +152,6 @@ var ReactTestUtils = {
    * @return {array} an array of all the matches.
    */
   scryRenderedDOMComponentsWithClass: function (root, classNames) {
-    if (!Array.isArray(classNames)) {
-      classNames = classNames.split(/\s+/);
-    }
     return ReactTestUtils.findAllInRenderedTree(root, function (inst) {
       if (ReactTestUtils.isDOMComponent(inst)) {
         var className = inst.className;
@@ -161,6 +160,11 @@ var ReactTestUtils = {
           className = inst.getAttribute('class') || '';
         }
         var classList = className.split(/\s+/);
+
+        if (!Array.isArray(classNames)) {
+          !(classNames !== undefined) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'TestUtils.scryRenderedDOMComponentsWithClass expects a ' + 'className as a second argument.') : invariant(false) : void 0;
+          classNames = classNames.split(/\s+/);
+        }
         return classNames.every(function (name) {
           return classList.indexOf(name) !== -1;
         });
@@ -178,7 +182,7 @@ var ReactTestUtils = {
   findRenderedDOMComponentWithClass: function (root, className) {
     var all = ReactTestUtils.scryRenderedDOMComponentsWithClass(root, className);
     if (all.length !== 1) {
-      throw new Error('Did not find exactly one match ' + '(found: ' + all.length + ') for class:' + className);
+      throw new Error('Did not find exactly one match (found: ' + all.length + ') ' + 'for class:' + className);
     }
     return all[0];
   },
@@ -203,7 +207,7 @@ var ReactTestUtils = {
   findRenderedDOMComponentWithTag: function (root, tagName) {
     var all = ReactTestUtils.scryRenderedDOMComponentsWithTag(root, tagName);
     if (all.length !== 1) {
-      throw new Error('Did not find exactly one match for tag:' + tagName);
+      throw new Error('Did not find exactly one match (found: ' + all.length + ') ' + 'for tag:' + tagName);
     }
     return all[0];
   },
@@ -227,7 +231,7 @@ var ReactTestUtils = {
   findRenderedComponentWithType: function (root, componentType) {
     var all = ReactTestUtils.scryRenderedComponentsWithType(root, componentType);
     if (all.length !== 1) {
-      throw new Error('Did not find exactly one match for componentType:' + componentType + ' (found ' + all.length + ')');
+      throw new Error('Did not find exactly one match (found: ' + all.length + ') ' + 'for componentType:' + componentType);
     }
     return all[0];
   },
@@ -299,8 +303,8 @@ var ReactShallowRenderer = function () {
   this._instance = null;
 };
 
-ReactShallowRenderer.prototype.getRenderOutput = function () {
-  return this._instance && this._instance._renderedComponent && this._instance._renderedComponent._renderedOutput || null;
+ReactShallowRenderer.prototype.getMountedInstance = function () {
+  return this._instance ? this._instance._instance : null;
 };
 
 var NoopInternalComponent = function (element) {
@@ -317,6 +321,10 @@ NoopInternalComponent.prototype = {
     this._currentElement = element;
   },
 
+  getNativeNode: function () {
+    return undefined;
+  },
+
   unmountComponent: function () {},
 
   getPublicInstance: function () {
@@ -324,34 +332,48 @@ NoopInternalComponent.prototype = {
   }
 };
 
-var ShallowComponentWrapper = function () {};
-assign(ShallowComponentWrapper.prototype, ReactCompositeComponent.Mixin, {
+var ShallowComponentWrapper = function (element) {
+  this.construct(element);
+};
+_assign(ShallowComponentWrapper.prototype, ReactCompositeComponent.Mixin, {
+  _constructComponent: ReactCompositeComponent.Mixin._constructComponentWithoutOwner,
   _instantiateReactComponent: function (element) {
     return new NoopInternalComponent(element);
   },
-  _replaceNodeWithMarkupByID: function () {},
+  _replaceNodeWithMarkup: function () {},
   _renderValidatedComponent: ReactCompositeComponent.Mixin._renderValidatedComponentWithoutOwnerOrContext
 });
 
 ReactShallowRenderer.prototype.render = function (element, context) {
-  !ReactElement.isValidElement(element) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'ReactShallowRenderer render(): Invalid component element.%s', typeof element === 'function' ? ' Instead of passing a component class, make sure to instantiate ' + 'it by passing it to React.createElement.' : '') : invariant(false) : undefined;
-  !(typeof element.type !== 'string') ? process.env.NODE_ENV !== 'production' ? invariant(false, 'ReactShallowRenderer render(): Shallow rendering works only with custom ' + 'components, not primitives (%s). Instead of calling `.render(el)` and ' + 'inspecting the rendered output, look at `el.props` directly instead.', element.type) : invariant(false) : undefined;
+  // Ensure we've done the default injections. This might not be true in the
+  // case of a simple test that only requires React and the TestUtils in
+  // conjunction with an inline-requires transform.
+  ReactDefaultInjection.inject();
+
+  !ReactElement.isValidElement(element) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'ReactShallowRenderer render(): Invalid component element.%s', typeof element === 'function' ? ' Instead of passing a component class, make sure to instantiate ' + 'it by passing it to React.createElement.' : '') : invariant(false) : void 0;
+  !(typeof element.type !== 'string') ? process.env.NODE_ENV !== 'production' ? invariant(false, 'ReactShallowRenderer render(): Shallow rendering works only with custom ' + 'components, not primitives (%s). Instead of calling `.render(el)` and ' + 'inspecting the rendered output, look at `el.props` directly instead.', element.type) : invariant(false) : void 0;
 
   if (!context) {
     context = emptyObject;
   }
   ReactUpdates.batchedUpdates(_batchedRender, this, element, context);
+
+  return this.getRenderOutput();
 };
 
 function _batchedRender(renderer, element, context) {
-  var transaction = ReactUpdates.ReactReconcileTransaction.getPooled(false);
+  var transaction = ReactUpdates.ReactReconcileTransaction.getPooled(true);
   renderer._render(element, transaction, context);
   ReactUpdates.ReactReconcileTransaction.release(transaction);
 }
 
+ReactShallowRenderer.prototype.getRenderOutput = function () {
+  return this._instance && this._instance._renderedComponent && this._instance._renderedComponent._renderedOutput || null;
+};
+
 ReactShallowRenderer.prototype.unmount = function () {
   if (this._instance) {
-    this._instance.unmountComponent();
+    this._instance.unmountComponent(false);
   }
 };
 
@@ -359,12 +381,8 @@ ReactShallowRenderer.prototype._render = function (element, transaction, context
   if (this._instance) {
     this._instance.receiveComponent(element, transaction, context);
   } else {
-    var rootID = ReactInstanceHandles.createReactRootID();
-    var instance = new ShallowComponentWrapper(element.type);
-    instance.construct(element);
-
-    instance.mountComponent(rootID, transaction, context);
-
+    var instance = new ShallowComponentWrapper(element);
+    instance.mountComponent(transaction, null, null, context);
     this._instance = instance;
   }
 };
@@ -380,20 +398,24 @@ ReactShallowRenderer.prototype._render = function (element, transaction, context
 function makeSimulator(eventType) {
   return function (domComponentOrNode, eventData) {
     var node;
+    !!React.isValidElement(domComponentOrNode) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'TestUtils.Simulate expects a component instance and not a ReactElement.' + 'TestUtils.Simulate will not work if you are using shallow rendering.') : invariant(false) : void 0;
     if (ReactTestUtils.isDOMComponent(domComponentOrNode)) {
       node = findDOMNode(domComponentOrNode);
     } else if (domComponentOrNode.tagName) {
       node = domComponentOrNode;
     }
 
-    var dispatchConfig = ReactBrowserEventEmitter.eventNameDispatchConfigs[eventType];
+    var dispatchConfig = EventPluginRegistry.eventNameDispatchConfigs[eventType];
 
     var fakeNativeEvent = new Event();
     fakeNativeEvent.target = node;
     // We don't use SyntheticEvent.getPooled in order to not have to worry about
     // properly destroying any properties assigned from `eventData` upon release
-    var event = new SyntheticEvent(dispatchConfig, ReactMount.getID(node), fakeNativeEvent, node);
-    assign(event, eventData);
+    var event = new SyntheticEvent(dispatchConfig, ReactDOMComponentTree.getInstanceFromNode(node), fakeNativeEvent, node);
+    // Since we aren't using pooling, always persist the event. This will make
+    // sure it's marked and won't warn when setting additional properties.
+    event.persist();
+    _assign(event, eventData);
 
     if (dispatchConfig.phasedRegistrationNames) {
       EventPropagators.accumulateTwoPhaseDispatches(event);
@@ -412,7 +434,7 @@ function buildSimulators() {
   ReactTestUtils.Simulate = {};
 
   var eventType;
-  for (eventType in ReactBrowserEventEmitter.eventNameDispatchConfigs) {
+  for (eventType in EventPluginRegistry.eventNameDispatchConfigs) {
     /**
      * @param {!Element|ReactDOMComponent} domComponentOrNode
      * @param {?object} eventData Fake event data to use in SyntheticEvent.
@@ -454,7 +476,7 @@ buildSimulators();
 function makeNativeSimulator(eventType) {
   return function (domComponentOrNode, nativeEventData) {
     var fakeNativeEvent = new Event(eventType);
-    assign(fakeNativeEvent, nativeEventData);
+    _assign(fakeNativeEvent, nativeEventData);
     if (ReactTestUtils.isDOMComponent(domComponentOrNode)) {
       ReactTestUtils.simulateNativeEventOnDOMComponent(eventType, domComponentOrNode, fakeNativeEvent);
     } else if (domComponentOrNode.tagName) {

@@ -1,5 +1,5 @@
 /**
- * Copyright 2014-2015, Facebook, Inc.
+ * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -11,9 +11,11 @@
 
 'use strict';
 
+var _assign = require('object-assign');
+
 var ReactCurrentOwner = require('./ReactCurrentOwner');
 
-var assign = require('./Object.assign');
+var warning = require('fbjs/lib/warning');
 var canDefineProperty = require('./canDefineProperty');
 
 // The Symbol used to tag the ReactElement type. If there is no native Symbol
@@ -27,9 +29,13 @@ var RESERVED_PROPS = {
   __source: true
 };
 
+var specialPropKeyWarningShown, specialPropRefWarningShown;
+
 /**
- * Base constructor for all React elements. This is only used to make this
- * work with a dynamic instanceof check. Nothing should live on this prototype.
+ * Factory method to create a new React element. This no longer adheres to
+ * the class pattern, so do not use new to call it. Also, no instanceof check
+ * will work. Instead test $$typeof field against Symbol.for('react.element') to check
+ * if something is a React Element.
  *
  * @param {*} type
  * @param {*} key
@@ -98,8 +104,10 @@ var ReactElement = function (type, key, ref, self, source, owner, props) {
       element._self = self;
       element._source = source;
     }
-    Object.freeze(element.props);
-    Object.freeze(element);
+    if (Object.freeze) {
+      Object.freeze(element.props);
+      Object.freeze(element);
+    }
   }
 
   return element;
@@ -117,8 +125,13 @@ ReactElement.createElement = function (type, config, children) {
   var source = null;
 
   if (config != null) {
-    ref = config.ref === undefined ? null : config.ref;
-    key = config.key === undefined ? null : '' + config.key;
+    if (process.env.NODE_ENV !== 'production') {
+      ref = !config.hasOwnProperty('ref') || Object.getOwnPropertyDescriptor(config, 'ref').get ? null : config.ref;
+      key = !config.hasOwnProperty('key') || Object.getOwnPropertyDescriptor(config, 'key').get ? null : '' + config.key;
+    } else {
+      ref = config.ref === undefined ? null : config.ref;
+      key = config.key === undefined ? null : '' + config.key;
+    }
     self = config.__self === undefined ? null : config.__self;
     source = config.__source === undefined ? null : config.__source;
     // Remaining properties are added to a new props object
@@ -146,12 +159,41 @@ ReactElement.createElement = function (type, config, children) {
   if (type && type.defaultProps) {
     var defaultProps = type.defaultProps;
     for (propName in defaultProps) {
-      if (typeof props[propName] === 'undefined') {
+      if (props[propName] === undefined) {
         props[propName] = defaultProps[propName];
       }
     }
   }
-
+  if (process.env.NODE_ENV !== 'production') {
+    // Create dummy `key` and `ref` property to `props` to warn users
+    // against its use
+    if (typeof props.$$typeof === 'undefined' || props.$$typeof !== REACT_ELEMENT_TYPE) {
+      if (!props.hasOwnProperty('key')) {
+        Object.defineProperty(props, 'key', {
+          get: function () {
+            if (!specialPropKeyWarningShown) {
+              specialPropKeyWarningShown = true;
+              process.env.NODE_ENV !== 'production' ? warning(false, '%s: `key` is not a prop. Trying to access it will result ' + 'in `undefined` being returned. If you need to access the same ' + 'value within the child component, you should pass it as a different ' + 'prop. (https://fb.me/react-special-props)', typeof type === 'function' && 'displayName' in type ? type.displayName : 'Element') : void 0;
+            }
+            return undefined;
+          },
+          configurable: true
+        });
+      }
+      if (!props.hasOwnProperty('ref')) {
+        Object.defineProperty(props, 'ref', {
+          get: function () {
+            if (!specialPropRefWarningShown) {
+              specialPropRefWarningShown = true;
+              process.env.NODE_ENV !== 'production' ? warning(false, '%s: `ref` is not a prop. Trying to access it will result ' + 'in `undefined` being returned. If you need to access the same ' + 'value within the child component, you should pass it as a different ' + 'prop. (https://fb.me/react-special-props)', typeof type === 'function' && 'displayName' in type ? type.displayName : 'Element') : void 0;
+            }
+            return undefined;
+          },
+          configurable: true
+        });
+      }
+    }
+  }
   return ReactElement(type, key, ref, self, source, ReactCurrentOwner.current, props);
 };
 
@@ -172,22 +214,11 @@ ReactElement.cloneAndReplaceKey = function (oldElement, newKey) {
   return newElement;
 };
 
-ReactElement.cloneAndReplaceProps = function (oldElement, newProps) {
-  var newElement = ReactElement(oldElement.type, oldElement.key, oldElement.ref, oldElement._self, oldElement._source, oldElement._owner, newProps);
-
-  if (process.env.NODE_ENV !== 'production') {
-    // If the key on the original is valid, then the clone is valid
-    newElement._store.validated = oldElement._store.validated;
-  }
-
-  return newElement;
-};
-
 ReactElement.cloneElement = function (element, config, children) {
   var propName;
 
   // Original props are copied
-  var props = assign({}, element.props);
+  var props = _assign({}, element.props);
 
   // Reserved names are extracted
   var key = element.key;
@@ -212,9 +243,18 @@ ReactElement.cloneElement = function (element, config, children) {
       key = '' + config.key;
     }
     // Remaining properties override existing props
+    var defaultProps;
+    if (element.type && element.type.defaultProps) {
+      defaultProps = element.type.defaultProps;
+    }
     for (propName in config) {
       if (config.hasOwnProperty(propName) && !RESERVED_PROPS.hasOwnProperty(propName)) {
-        props[propName] = config[propName];
+        if (config[propName] === undefined && defaultProps !== undefined) {
+          // Resolve default props
+          props[propName] = defaultProps[propName];
+        } else {
+          props[propName] = config[propName];
+        }
       }
     }
   }

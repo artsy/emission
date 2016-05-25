@@ -54,7 +54,7 @@
   "directories": {},
   "dist": {
     "shasum": "f5ffaa5ecd29cb31c0474bca7d756b6bb29e3f28",
-    "tarball": "http://registry.npmjs.org/read-pkg/-/read-pkg-1.1.0.tgz"
+    "tarball": "https://registry.npmjs.org/read-pkg/-/read-pkg-1.1.0.tgz"
   },
   "engines": {
     "node": ">=0.10.0"

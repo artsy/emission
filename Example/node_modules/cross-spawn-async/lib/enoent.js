@@ -47,5 +47,5 @@ function verifyENOENT(status, parsed, syscall) {
 }
 
 module.exports.hookChildProcess = hookChildProcess;
-module.exports.verifyENOENT     = verifyENOENT;
-module.exports.notFoundError    = notFoundError;
+module.exports.verifyENOENT = verifyENOENT;
+module.exports.notFoundError = notFoundError;

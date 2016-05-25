@@ -45,7 +45,7 @@
   "directories": {},
   "dist": {
     "shasum": "ef259c4e349344377fcd1c913dd2e848c9c042b5",
-    "tarball": "http://registry.npmjs.org/stringset/-/stringset-0.2.1.tgz"
+    "tarball": "https://registry.npmjs.org/stringset/-/stringset-0.2.1.tgz"
   },
   "homepage": "https://github.com/olov/stringset#readme",
   "keywords": [

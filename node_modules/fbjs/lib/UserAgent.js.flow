@@ -1,5 +1,5 @@
 /**
- * Copyright 2013-2015, Facebook, Inc.
+ * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -11,11 +11,11 @@
 
 'use strict';
 
-var UserAgentData = require('UserAgentData');
-var VersionRange = require('VersionRange');
+const UserAgentData = require('./UserAgentData');
+const VersionRange = require('./VersionRange');
 
-var mapObject = require('mapObject');
-var memoizeStringOnly = require('memoizeStringOnly');
+const mapObject = require('./mapObject');
+const memoizeStringOnly = require('./memoizeStringOnly');
 
 /**
  * Checks to see whether `name` and `version` satisfy `query`.
@@ -38,7 +38,7 @@ function compare(name, version, query, normalizer) {
   }
 
   // full comparison with version
-  var range = query.slice(name.length);
+  let range = query.slice(name.length);
   if (version) {
     range = normalizer ? normalizer(range) : range;
     return VersionRange.contains(range, version);
@@ -68,7 +68,7 @@ function normalizePlatformVersion(version) {
  * Provides client-side access to the authoritative PHP-generated User Agent
  * information supplied by the server.
  */
-var UserAgent = {
+const UserAgent = {
   /**
    * Check if the User Agent browser matches `query`.
    *
@@ -113,11 +113,7 @@ var UserAgent = {
    * @return {boolean}
    */
   isBrowser(query) {
-    return compare(
-      UserAgentData.browserName,
-      UserAgentData.browserFullVersion,
-      query
-    );
+    return compare(UserAgentData.browserName, UserAgentData.browserFullVersion, query);
   },
 
   /**
@@ -129,11 +125,7 @@ var UserAgent = {
    * @return {boolean}
    */
   isBrowserArchitecture(query) {
-    return compare(
-      UserAgentData.browserArchitecture,
-      null,
-      query
-    );
+    return compare(UserAgentData.browserArchitecture, null, query);
   },
 
   /**
@@ -187,11 +179,7 @@ var UserAgent = {
    * @return {boolean}
    */
   isEngine(query) {
-    return compare(
-      UserAgentData.engineName,
-      UserAgentData.engineVersion,
-      query
-    );
+    return compare(UserAgentData.engineName, UserAgentData.engineVersion, query);
   },
 
   /**
@@ -230,12 +218,7 @@ var UserAgent = {
    * @return {boolean}
    */
   isPlatform(query) {
-    return compare(
-      UserAgentData.platformName,
-      UserAgentData.platformFullVersion,
-      query,
-      normalizePlatformVersion
-    );
+    return compare(UserAgentData.platformName, UserAgentData.platformFullVersion, query, normalizePlatformVersion);
   },
 
   /**
@@ -247,12 +230,8 @@ var UserAgent = {
    * @return {boolean}
    */
   isPlatformArchitecture(query) {
-    return compare(
-      UserAgentData.platformArchitecture,
-      null,
-      query
-    );
-  },
+    return compare(UserAgentData.platformArchitecture, null, query);
+  }
 
 };
 

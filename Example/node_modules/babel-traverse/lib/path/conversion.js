@@ -1,22 +1,22 @@
-// This file contains methods that convert the path node into another node or some other type of data.
-
-"use strict";
-
-var _interopRequireWildcard = require("babel-runtime/helpers/interop-require-wildcard")["default"];
+/*istanbul ignore next*/"use strict";
 
 exports.__esModule = true;
 exports.toComputedKey = toComputedKey;
-exports.ensureBlock = ensureBlock;
-exports.arrowFunctionToShadowed = arrowFunctionToShadowed;
+/*istanbul ignore next*/exports.ensureBlock = ensureBlock;
+/*istanbul ignore next*/exports.arrowFunctionToShadowed = arrowFunctionToShadowed;
 
-var _babelTypes = require("babel-types");
+var /*istanbul ignore next*/_babelTypes = require("babel-types");
 
+/*istanbul ignore next*/
 var t = _interopRequireWildcard(_babelTypes);
+
+/*istanbul ignore next*/
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function toComputedKey() {
   var node = this.node;
 
-  var key = undefined;
+  var key = /*istanbul ignore next*/void 0;
   if (this.isMemberExpression()) {
     key = node.property;
   } else if (this.isProperty() || this.isMethod()) {
@@ -30,7 +30,7 @@ function toComputedKey() {
   }
 
   return key;
-}
+} // This file contains methods that convert the path node into another node or some other type of data.
 
 function ensureBlock() {
   return t.ensureBlock(this.node);
@@ -42,7 +42,7 @@ function arrowFunctionToShadowed() {
 
   this.ensureBlock();
 
-  var node = this.node;
+  /*istanbul ignore next*/var node = this.node;
 
   node.expression = false;
   node.type = "FunctionExpression";

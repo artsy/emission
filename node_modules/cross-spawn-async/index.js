@@ -1,5 +1,7 @@
-var cp     = require('child_process');
-var parse  = require('./lib/parse');
+'use strict';
+
+var cp = require('child_process');
+var parse = require('./lib/parse');
 var enoent = require('./lib/enoent');
 
 function spawn(command, args, options) {
@@ -19,7 +21,7 @@ function spawn(command, args, options) {
     return spawned;
 }
 
-module.exports       = spawn;
+module.exports = spawn;
 module.exports.spawn = spawn;
 module.exports._parse = parse;
 module.exports._enoent = enoent;

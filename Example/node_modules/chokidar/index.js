@@ -46,10 +46,10 @@ var isString = function(thing) {
 //
 //  var watcher = new FSWatcher()
 //    .add(directories)
-//    .on('add', function(path) {console.log('File', path, 'was added');})
-//    .on('change', function(path) {console.log('File', path, 'was changed');})
-//    .on('unlink', function(path) {console.log('File', path, 'was removed');})
-//    .on('all', function(event, path) {console.log(path, ' emitted ', event);})
+//    .on('add', path => console.log('File', path, 'was added'))
+//    .on('change', path => console.log('File', path, 'was changed'))
+//    .on('unlink', path => console.log('File', path, 'was removed'))
+//    .on('all', (event, path) => console.log(path, ' emitted ', event))
 //
 function FSWatcher(_opts) {
   EventEmitter.call(this);
@@ -148,7 +148,10 @@ FSWatcher.prototype._emit = function(event, path, val1, val2, val3) {
   else if (val1 !== undefined) args.push(val1);
 
   var awf = this.options.awaitWriteFinish;
-  if (awf && this._pendingWrites[path]) return this;
+  if (awf && this._pendingWrites[path]) {
+    this._pendingWrites[path].lastChange = new Date();
+    return this;
+  }
 
   if (this.options.atomic) {
     if (event === 'unlink') {
@@ -159,7 +162,9 @@ FSWatcher.prototype._emit = function(event, path, val1, val2, val3) {
           this.emit.apply(this, ['all'].concat(this._pendingUnlinks[path]));
           delete this._pendingUnlinks[path];
         }.bind(this));
-      }.bind(this), 100);
+      }.bind(this), typeof this.options.atomic === "number"
+        ? this.options.atomic
+        : 100);
       return this;
     } else if (event === 'add' && this._pendingUnlinks[path]) {
       event = args[0] = 'change';
@@ -189,7 +194,7 @@ FSWatcher.prototype._emit = function(event, path, val1, val2, val3) {
       }
     };
 
-    this._awaitWriteFinish(path, awf.stabilityThreshold, awfEmit);
+    this._awaitWriteFinish(path, awf.stabilityThreshold, event, awfEmit);
     return this;
   }
 
@@ -262,7 +267,7 @@ FSWatcher.prototype._throttle = function(action, path, timeout) {
 // * awfEmit - function, to be called when ready for event to be emitted
 // Polls a newly created file for size variations. When files size does not
 // change for 'threshold' milliseconds calls callback.
-FSWatcher.prototype._awaitWriteFinish = function(path, threshold, awfEmit) {
+FSWatcher.prototype._awaitWriteFinish = function(path, threshold, event, awfEmit) {
   var timeoutHandler;
 
   var fullPath = path;
@@ -303,6 +308,7 @@ FSWatcher.prototype._awaitWriteFinish = function(path, threshold, awfEmit) {
       cancelWait: function() {
         delete this._pendingWrites[path];
         clearTimeout(timeoutHandler);
+        return event;
       }.bind(this)
     };
     timeoutHandler = setTimeout(
@@ -512,9 +518,11 @@ FSWatcher.prototype._remove = function(directory, item) {
   parent.remove(item);
 
   // If we wait for this file to be fully written, cancel the wait.
-  if (this.options.awaitWriteFinish && this._pendingWrites[path]) {
-    this._pendingWrites[path].cancelWait();
-    return;
+  var relPath = path;
+  if (this.options.cwd) relPath = sysPath.relative(this.options.cwd, path);
+  if (this.options.awaitWriteFinish && this._pendingWrites[relPath]) {
+    var event = this._pendingWrites[relPath].cancelWait();
+    if (event === 'add') return;
   }
 
   // The Entry will either be a directory that just got removed

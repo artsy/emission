@@ -11,7 +11,7 @@
 
 'use strict';
 
-var emptyFunction = require('emptyFunction');
+var emptyFunction = require('./emptyFunction');
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -23,12 +23,9 @@ var emptyFunction = require('emptyFunction');
 var warning = emptyFunction;
 
 if (__DEV__) {
-  warning = function(condition, format, ...args) {
+  warning = function (condition, format, ...args) {
     if (format === undefined) {
-      throw new Error(
-        '`warning(condition, format, ...args)` requires a warning ' +
-        'message argument'
-      );
+      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
     }
 
     if (format.indexOf('Failed Composite propType: ') === 0) {

@@ -1,5 +1,5 @@
 /**
- * Copyright 2013-2015, Facebook, Inc.
+ * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -27,7 +27,7 @@ var UAParser = require('ua-parser-js');
 var UNKNOWN = 'Unknown';
 
 var PLATFORM_MAP = {
-  'Mac OS': 'Mac OS X',
+  'Mac OS': 'Mac OS X'
 };
 
 /**
@@ -46,13 +46,13 @@ function getBrowserVersion(version) {
   if (!version) {
     return {
       major: '',
-      minor: '',
+      minor: ''
     };
   }
   var parts = version.split('.');
   return {
     major: parts[0],
-    minor: parts[1],
+    minor: parts[1]
   };
 }
 
@@ -77,8 +77,7 @@ var uaData = {
   platformArchitecture: results.cpu.architecture || UNKNOWN,
   platformName: convertPlatformName(results.os.name) || UNKNOWN,
   platformVersion: results.os.version || UNKNOWN,
-  platformFullVersion: results.os.version || UNKNOWN,
+  platformFullVersion: results.os.version || UNKNOWN
 };
-
 
 module.exports = uaData;

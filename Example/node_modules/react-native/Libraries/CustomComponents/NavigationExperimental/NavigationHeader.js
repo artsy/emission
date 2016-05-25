@@ -32,7 +32,8 @@
  */
 'use strict';
 
-const React = require('react-native');
+const React = require('React');
+const ReactNative = require('react-native');
 const NavigationContainer = require('NavigationContainer');
 const NavigationHeaderTitle = require('NavigationHeaderTitle');
 const NavigationHeaderBackButton = require('NavigationHeaderBackButton');
@@ -45,7 +46,7 @@ const {
   Platform,
   StyleSheet,
   View,
-} = React;
+} = ReactNative;
 
 import type  {
   NavigationSceneRenderer,
@@ -64,6 +65,7 @@ type Props = NavigationSceneRendererProps & {
   renderRightComponent: NavigationSceneRenderer,
   renderTitleComponent: NavigationSceneRenderer,
   style?: any;
+  viewProps?: any;
 };
 
 type SubViewName = 'left' | 'title' | 'right';
@@ -93,11 +95,12 @@ class NavigationHeader extends React.Component<DefaultProps, Props, any> {
   };
 
   static propTypes = {
-    ...NavigationPropTypes.SceneRenderer,
+    ...NavigationPropTypes.SceneRendererProps,
     renderLeftComponent: PropTypes.func,
     renderRightComponent: PropTypes.func,
     renderTitleComponent: PropTypes.func,
     style: View.propTypes.style,
+    viewProps: PropTypes.shape(View.propTypes),
   };
 
   shouldComponentUpdate(nextProps: Props, nextState: any): boolean {
@@ -109,7 +112,7 @@ class NavigationHeader extends React.Component<DefaultProps, Props, any> {
   }
 
   render(): ReactElement {
-    const { scenes, style } = this.props;
+    const { scenes, style, viewProps } = this.props;
 
     const scenesProps = scenes.map(scene => {
       const props = NavigationPropTypes.extractSceneRendererProps(this.props);
@@ -118,7 +121,7 @@ class NavigationHeader extends React.Component<DefaultProps, Props, any> {
     });
 
     return (
-      <View style={[ styles.appbar, style ]}>
+      <View style={[ styles.appbar, style ]} {...viewProps}>
         {scenesProps.map(this._renderLeft, this)}
         {scenesProps.map(this._renderTitle, this)}
         {scenesProps.map(this._renderRight, this)}
@@ -183,7 +186,7 @@ class NavigationHeader extends React.Component<DefaultProps, Props, any> {
       return null;
     }
 
-    const pointerEvents = offset !== 0 || isStale ? 'none' : 'auto';
+    const pointerEvents = offset !== 0 || isStale ? 'none' : 'box-none';
     return (
       <Animated.View
         pointerEvents={pointerEvents}
@@ -241,10 +244,10 @@ const styles = StyleSheet.create({
   },
 });
 
-NavigationHeader = NavigationContainer.create(NavigationHeader);
+const NavigationHeaderContainer = NavigationContainer.create(NavigationHeader);
 
-NavigationHeader.HEIGHT = APPBAR_HEIGHT + STATUSBAR_HEIGHT;
-NavigationHeader.Title = NavigationHeaderTitle;
-NavigationHeader.BackButton = NavigationHeaderBackButton;
+NavigationHeaderContainer.HEIGHT = APPBAR_HEIGHT + STATUSBAR_HEIGHT;
+NavigationHeaderContainer.Title = NavigationHeaderTitle;
+NavigationHeaderContainer.BackButton = NavigationHeaderBackButton;
 
-module.exports = NavigationHeader;
+module.exports = NavigationHeaderContainer;

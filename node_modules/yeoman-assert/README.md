@@ -155,12 +155,30 @@ var anObject = {a: 1};
 assert.objectContent(anObject, {a: 2});
 ```
 
+### `assert.noObjectContent()`
+
+Assert an object does not contain at least a set of keys
+
+```js
+var anObject = {a: 1};
+
+assert.noObjectContent(anObject, {a: 1});
+```
+
 ### `assert.jsonFileContent()`
 
 Assert a JSON file contains at least a set of keys (rely of `assert.objectContent()`)
 
 ```js
 assert.jsonFileContent('path/to/file.json', {a: 2});
+```
+
+### `assert.noJsonFileContent()`
+
+Assert a JSON file does not contain at least a set of keys (rely of `assert.noObjectContent()`)
+
+```js
+assert.noJsonFileContent('path/to/file.json', {a: 1});
 ```
 
 ## Contribute

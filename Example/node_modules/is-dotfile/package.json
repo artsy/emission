@@ -50,7 +50,7 @@
   "directories": {},
   "dist": {
     "shasum": "2c132383f39199f8edc268ca01b9b007d205cc4d",
-    "tarball": "http://registry.npmjs.org/is-dotfile/-/is-dotfile-1.0.2.tgz"
+    "tarball": "https://registry.npmjs.org/is-dotfile/-/is-dotfile-1.0.2.tgz"
   },
   "engines": {
     "node": ">=0.10.0"

@@ -1,5 +1,5 @@
 /**
- * Copyright 2013-2015, Facebook, Inc.
+ * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -11,10 +11,11 @@
 
 'use strict';
 
+var _assign = require('object-assign');
+
 var React = require('./React');
 var ReactTransitionChildMapping = require('./ReactTransitionChildMapping');
 
-var assign = require('./Object.assign');
 var emptyFunction = require('fbjs/lib/emptyFunction');
 
 var ReactTransitionGroup = React.createClass({
@@ -176,7 +177,7 @@ var ReactTransitionGroup = React.createClass({
       this.performEnter(key);
     } else {
       this.setState(function (state) {
-        var newChildren = assign({}, state.children);
+        var newChildren = _assign({}, state.children);
         delete newChildren[key];
         return { children: newChildren };
       });
