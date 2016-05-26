@@ -214,6 +214,7 @@ function resolve(id, opts, cb) {
     // opts.packageFilter
 
     opts = opts || {};
+    opts.filename = opts.filename || '';
 
     var base = path.dirname(opts.filename);
 
@@ -278,6 +279,8 @@ resolve.sync = function (id, opts) {
     // opts.packageFilter
 
     opts = opts || {};
+    opts.filename = opts.filename || '';
+
     var base = path.dirname(opts.filename);
 
     if (opts.basedir) {
