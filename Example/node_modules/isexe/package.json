@@ -57,7 +57,7 @@
   },
   "dist": {
     "shasum": "36f3e22e60750920f5e7241a476a8c6a42275ad0",
-    "tarball": "http://registry.npmjs.org/isexe/-/isexe-1.1.2.tgz"
+    "tarball": "https://registry.npmjs.org/isexe/-/isexe-1.1.2.tgz"
   },
   "gitHead": "1882eed72c2ba152f4dd1336d857b0755ae306d9",
   "homepage": "https://github.com/isaacs/isexe#readme",

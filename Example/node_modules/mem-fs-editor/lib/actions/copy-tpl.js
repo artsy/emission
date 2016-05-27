@@ -6,12 +6,15 @@ var ejs = require('ejs');
 
 module.exports = function (from, to, context, tplSettings) {
   context = context || {};
-  // Setting filename by default allow including partials.
-  tplSettings = extend({filename: from}, tplSettings || {});
 
   this.copy(from, to, {
-    process: function (contents) {
-      return ejs.render(contents.toString(), context, tplSettings);
+    process: function (contents, filename) {
+      return ejs.render(
+        contents.toString(),
+        context,
+        // Setting filename by default allow including partials.
+        extend({filename: filename}, tplSettings || {})
+      );
     }
   });
 };

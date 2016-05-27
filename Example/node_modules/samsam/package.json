@@ -64,7 +64,7 @@
   "directories": {},
   "dist": {
     "shasum": "bec11fdc83a9fda063401210e40176c3024d1567",
-    "tarball": "http://registry.npmjs.org/samsam/-/samsam-1.1.2.tgz"
+    "tarball": "https://registry.npmjs.org/samsam/-/samsam-1.1.2.tgz"
   },
   "homepage": "http://busterjs.org/docs/buster-assertions",
   "main": "./lib/samsam",
