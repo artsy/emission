@@ -47,7 +47,7 @@
   "directories": {},
   "dist": {
     "shasum": "784a797915a38ead27bad456b5572cb4bbaa78c1",
-    "tarball": "http://registry.npmjs.org/breakable/-/breakable-1.0.0.tgz"
+    "tarball": "https://registry.npmjs.org/breakable/-/breakable-1.0.0.tgz"
   },
   "homepage": "https://github.com/olov/breakable",
   "keywords": [

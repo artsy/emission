@@ -69,7 +69,7 @@
   "directories": {},
   "dist": {
     "shasum": "f289a392f17d2baacf194d0a673004394433b115",
-    "tarball": "http://registry.npmjs.org/loud-rejection/-/loud-rejection-1.3.0.tgz"
+    "tarball": "https://registry.npmjs.org/loud-rejection/-/loud-rejection-1.3.0.tgz"
   },
   "engines": {
     "node": ">=0.10.0"

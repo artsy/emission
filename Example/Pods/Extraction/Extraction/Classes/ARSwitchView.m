@@ -163,7 +163,7 @@ static CGFloat ARAnimationQuickDuration = 0.15;
   
   [button setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
   [button setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
-  [button setTitleColor:[UIColor artsyGraySemibold] forState:UIControlStateNormal];
+  [button setTitleColor:[UIColor artsyGrayMedium] forState:UIControlStateNormal];
   
   return button;
 }

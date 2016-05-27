@@ -55,7 +55,7 @@
   "directories": {},
   "dist": {
     "shasum": "965a52d9e8d05d2b857548541fb89b53a2497d9b",
-    "tarball": "http://registry.npmjs.org/finalhandler/-/finalhandler-0.4.0.tgz"
+    "tarball": "https://registry.npmjs.org/finalhandler/-/finalhandler-0.4.0.tgz"
   },
   "engines": {
     "node": ">= 0.8"

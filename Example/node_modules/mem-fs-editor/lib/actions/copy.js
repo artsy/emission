@@ -9,8 +9,8 @@ var extend = require('deep-extend');
 var File = require('vinyl');
 var util = require('../util');
 
-function applyProcessingFunc(process, contents) {
-  var output = process(contents);
+function applyProcessingFunc(process, contents, filename) {
+  var output = process(contents, filename);
   return output instanceof Buffer ? output : new Buffer(output);
 }
 
@@ -48,7 +48,7 @@ exports._copySingle = function (from, to, options) {
 
   var contents = file.contents;
   if (options.process) {
-    contents = applyProcessingFunc(options.process, file.contents);
+    contents = applyProcessingFunc(options.process, file.contents, file.path);
   }
 
   this.write(to, contents, file.stat);

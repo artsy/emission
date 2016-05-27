@@ -59,7 +59,7 @@
   "directories": {},
   "dist": {
     "shasum": "7a057fc6ee28dc63f64566e5fa57b111a86aecd2",
-    "tarball": "http://registry.npmjs.org/serve-index/-/serve-index-1.7.3.tgz"
+    "tarball": "https://registry.npmjs.org/serve-index/-/serve-index-1.7.3.tgz"
   },
   "engines": {
     "node": ">= 0.8.0"

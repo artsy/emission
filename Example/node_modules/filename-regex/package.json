@@ -45,7 +45,7 @@
   "directories": {},
   "dist": {
     "shasum": "996e3e80479b98b9897f15a8a58b3d084e926775",
-    "tarball": "http://registry.npmjs.org/filename-regex/-/filename-regex-2.0.0.tgz"
+    "tarball": "https://registry.npmjs.org/filename-regex/-/filename-regex-2.0.0.tgz"
   },
   "engines": {
     "node": ">=0.10.0"

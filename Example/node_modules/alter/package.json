@@ -49,7 +49,7 @@
   "directories": {},
   "dist": {
     "shasum": "c7588808617572034aae62480af26b1d4d1cb3cd",
-    "tarball": "http://registry.npmjs.org/alter/-/alter-0.2.0.tgz"
+    "tarball": "https://registry.npmjs.org/alter/-/alter-0.2.0.tgz"
   },
   "homepage": "https://github.com/olov/alter#readme",
   "keywords": [

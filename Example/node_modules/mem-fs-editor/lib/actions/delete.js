@@ -9,7 +9,7 @@ var util = require('../util');
 function deleteFile(path, store) {
   var file = store.get(path);
   file.state = 'deleted';
-  file.contents = new Buffer('');
+  file.contents = null;
   store.add(file);
 }
 
