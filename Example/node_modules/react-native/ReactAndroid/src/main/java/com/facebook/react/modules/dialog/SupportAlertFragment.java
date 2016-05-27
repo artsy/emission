@@ -21,13 +21,9 @@ import android.support.v4.app.DialogFragment;
  * {@link AlertFragment} for apps that use the Support FragmentActivity and FragmentManager
  * for legacy reasons.
  */
-public class SupportAlertFragment extends DialogFragment implements DialogInterface.OnClickListener {
+/* package */ class SupportAlertFragment extends DialogFragment implements DialogInterface.OnClickListener {
 
   private final @Nullable DialogModule.AlertFragmentListener mListener;
-
-  public SupportAlertFragment() {
-      mListener = null;
-  }
 
   public SupportAlertFragment(@Nullable DialogModule.AlertFragmentListener listener, Bundle arguments) {
     mListener = listener;

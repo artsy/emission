@@ -1,5 +1,5 @@
 /**
- * Copyright 2014-present, Facebook, Inc.
+ * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -7,6 +7,7 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule ReactServerBatchingStrategy
+ * @typechecks
  */
 
 'use strict';

@@ -83,12 +83,4 @@ public class TouchEventCoalescingKeyHelper {
   public static void removeCoalescingKey(long downTime) {
     sDownTimeToCoalescingKey.delete((int) downTime);
   }
-
-  public static boolean hasCoalescingKey(long downTime) {
-    int currentValue = sDownTimeToCoalescingKey.get((int) downTime, -1);
-    if (currentValue == -1) {
-      return false;
-    }
-    return true;
-  }
 }

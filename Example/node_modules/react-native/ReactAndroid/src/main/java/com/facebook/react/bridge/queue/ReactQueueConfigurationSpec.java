@@ -9,8 +9,6 @@
 
 package com.facebook.react.bridge.queue;
 
-import android.os.Build;
-
 import javax.annotation.Nullable;
 
 import com.facebook.infer.annotation.Assertions;
@@ -22,8 +20,6 @@ import com.facebook.infer.annotation.Assertions;
  * specs allows the Threads to be created fully configured.
  */
 public class ReactQueueConfigurationSpec {
-
-  private static final long LEGACY_STACK_SIZE_BYTES = 2000000;
 
   private final MessageQueueThreadSpec mNativeModulesQueueThreadSpec;
   private final MessageQueueThreadSpec mJSQueueThreadSpec;
@@ -48,12 +44,10 @@ public class ReactQueueConfigurationSpec {
   }
 
   public static ReactQueueConfigurationSpec createDefault() {
-    MessageQueueThreadSpec spec = Build.VERSION.SDK_INT < 21 ?
-        MessageQueueThreadSpec.newBackgroundThreadSpec("native_modules", LEGACY_STACK_SIZE_BYTES) :
-        MessageQueueThreadSpec.newBackgroundThreadSpec("native_modules");
     return builder()
         .setJSQueueThreadSpec(MessageQueueThreadSpec.newBackgroundThreadSpec("js"))
-        .setNativeModulesQueueThreadSpec(spec)
+        .setNativeModulesQueueThreadSpec(
+            MessageQueueThreadSpec.newBackgroundThreadSpec("native_modules"))
         .build();
   }
 
