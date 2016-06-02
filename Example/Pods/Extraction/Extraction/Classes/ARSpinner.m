@@ -58,7 +58,7 @@
 {
     self.alpha = 0;
     [self startAnimating];
-
+    
     [UIView animateIf:animated duration:0.3:^{
         self.alpha = 1;
     } completion:completion];
@@ -68,7 +68,7 @@
 {
     self.alpha = 1;
     [self stopAnimating];
-
+    
     [UIView animateIf:animated duration:0.3:^{
         self.alpha = 0;
     } completion:completion];
