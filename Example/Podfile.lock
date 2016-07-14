@@ -49,11 +49,11 @@ EXTERNAL SOURCES:
   Artsy+UIFonts:
     :git: https://github.com/artsy/Artsy-UIFonts.git
   Emission:
-    :path: "../"
+    :path: ../
   Extraction:
     :git: https://github.com/artsy/extraction.git
   React:
-    :path: "../node_modules/react-native"
+    :path: ../node_modules/react-native
 
 CHECKOUT OPTIONS:
   Artsy+UIFonts:
@@ -76,4 +76,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 98fc0535ec33cfd0203dc53fe742079e3be9c5dc
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.0.1
