@@ -12,6 +12,18 @@
       "internalDebuggerPort": 9090,
       "sourceMaps": true,
       "outDir": "${workspaceRoot}/.vscode/.react"
+    },
+    {
+      "name": "Debug Android",
+      "program": "${workspaceRoot}/.vscode/launchReactNative.js",
+      "type": "reactnative",
+      "request": "launch",
+      "platform": "android",
+      "iosRelativeProjectPath": "android",
+      "target": "iPhone 5s",
+      "internalDebuggerPort": 9090,
+      "sourceMaps": true,
+      "outDir": "${workspaceRoot}/.vscode/.react"
     }
   ]
 }

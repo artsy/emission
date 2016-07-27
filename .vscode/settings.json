@@ -6,6 +6,17 @@
         "*.h": "objective-c",
         "*.js": "flow"
     },
+    "search.exclude": {
+        ".git/": true,
+        "node_modules/": true,
+        "node_modules/react-native/**/**": false,
+        ".vscode": true,
+        "Example/**/*": true,
+        "Example/Emission/*": false,
+        "Pod/Assets/*": true,
+        "typings/*": true,
+        "android/app/build/*": true
+    },
     "files.trimTrailingWhitespace": true,
 
 	"editor.renderWhitespace": true,

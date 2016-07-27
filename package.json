@@ -35,6 +35,8 @@
   "homepage": "https://github.com/artsy/emission#readme",
   "files": [
     "index.js",
+    "index.ios.js",
+    "index.android.js",
     "data",
     "lib"
   ],

@@ -30,9 +30,16 @@ timeline.xctimeline
 playground.xcworkspace
 
 # Custom
-
 .DS_Store
 node_modules
+
+# iOS
 Example/Pods
 Example/compile_commands.json
 Example/Emission/Configuration.h
+
+# Android
+android/app/src/main/assets/fonts
+android/keys.android.js
+android/.gradle/
+android/build
