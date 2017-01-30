@@ -6,16 +6,16 @@
 //    - leting the artwork component do a layout pass and calculate its own height based on the column width.
 // 4. Update height of grid to encompass all items.
 
-import Relay from 'react-relay'
-import React from 'react'
+import * as Relay from 'react-relay'
+import * as React from 'react'
 import { Dimensions, View, ScrollView, StyleSheet } from 'react-native'
-import type { LayoutEvent } from '../../system/events'
 
 import Artwork from './artwork'
 import Spinner from '../spinner'
+import { LayoutEvent } from '../../system/events'
 
 import metaphysics from '../../metaphysics'
-import {get, isEqual} from 'lodash'
+import { get, isEqual } from 'lodash'
 
 const PageSize = 10
 const PageEndThreshold = 1000
@@ -29,7 +29,7 @@ const PageEndThreshold = 1000
  *   - the calculation currently only takes into account the size of the image, not if e.g. the sale message is present
  */
 
-type Props = {
+interface Props {
   /** The direction for the grid, currently only 'column' is supported . */
   sectionDirection: string;
 
@@ -64,17 +64,16 @@ type Props = {
   queryArtworksKeypath: string;
 }
 
-class InfiniteScrollArtworksGrid extends React.Component {
-  state: {
-    sectionDimension: number,
-    artworks: any[],
-    page: number,
-    completed: boolean,
-    fetchingNextPage: boolean,
-  }
+interface State {
+  sectionDimension: number
+  artworks: any[]
+  page: number
+  completed: boolean
+  fetchingNextPage: boolean
+}
 
+class InfiniteScrollArtworksGrid extends React.Component<Props, State> {
   _sentEndForContentLength: null | number;
-  props: Props
 
   static defaultProps = {
     sectionDirection: 'column',
@@ -146,7 +145,7 @@ class InfiniteScrollArtworksGrid extends React.Component {
   }
 
   /** A simplified version of the Relay debugging logs for infinite scrolls */
-  debugLog(query: string, response: ?any, error: ?any) {
+  debugLog(query: string, response?: any, error?: any) {
     if (__DEV__ && global.originalXMLHttpRequest !== undefined) {
       var groupName = '%c[' + this.state.page + '] ' + 'Infinite scroll request'
       console.groupCollapsed(groupName, 'color:' + (response ? 'black' : 'red') + ';')
