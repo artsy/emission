@@ -1,6 +1,6 @@
 import * as Relay from 'react-relay'
 import * as React from 'react'
-import { View, Dimensions, StyleSheet } from 'react-native'
+import { View, Dimensions, StyleSheet, ViewProperties, TouchEvent } from 'react-native'
 import * as _ from 'lodash'
 
 import ParallaxScrollView from 'react-native-parallax-scroll-view'
@@ -27,14 +27,15 @@ const TABS = {
 /** The title of the gene when scrolled, with margins */
 const HeaderHeight = 64
 
-interface Props extends React.Props<Gene> {
+interface Props extends ViewProperties {
   medium: string
   price_range: string
   gene: any
+  relay: Relay.RelayProp
 }
 
 interface State {
-  selectedTabIndex?: number
+  selectedTabIndex: number
   showingStickyHeader?: boolean
   sort?: string
   selectedMedium?: string
@@ -77,7 +78,7 @@ class Gene extends React.Component<Props, State> {
     }
   }
 
-  switchSelectionDidChange = (event: SwitchEvent) => {
+  switchSelectionDidChange = (event: TouchEvent<SwitchView>) => {
     this.setState({ selectedTabIndex: event.nativeEvent.selectedIndex })
   }
 
@@ -145,8 +146,10 @@ class Gene extends React.Component<Props, State> {
   }
 
   /**  No sticky header if you're in the about section */
-  stickyHeaderHeight(): number {
-    if (!this.showingArtworksSection) { return null }
+  stickyHeaderHeight(): number | null {
+    if (!this.showingArtworksSection) {
+      return null
+    }
     return HeaderHeight
   }
 
@@ -210,7 +213,7 @@ class Gene extends React.Component<Props, State> {
       </View>)
   }
 
-  render() {
+  render(): JSX.Element {
     const stickyTopMargin = this.state.showingStickyHeader ?  0 : -HeaderHeight
 
     return (
@@ -254,23 +257,23 @@ class Gene extends React.Component<Props, State> {
   }
 
   /** Converts a price string like 30.00-5000.00 to $30 - $5,000 */
- priceRangeToHumanReadableString = (range: string) => {
-  const dollars = (value: string) => {
-    return parseInt(value, 10).toLocaleString('en-US', {style: 'currency', currency: 'USD', minimumFractionDigits: 0})
-  }
+  priceRangeToHumanReadableString = (range: string) => {
+    const dollars = (value: string) => {
+      return parseInt(value, 10).toLocaleString('en-US', {style: 'currency', currency: 'USD', minimumFractionDigits: 0})
+    }
 
-  if (range === '*-*') { return '' }
-  if (range.includes('-*')) {
-    const below = dollars(range.split('-*')[0])
-    return `Above ${below}`
+    if (range === '*-*') { return '' }
+    if (range.includes('-*')) {
+      const below = dollars(range.split('-*')[0])
+      return `Above ${below}`
+    }
+    if (range.includes('*-')) {
+      const below = dollars(range.split('*-').pop() || '')
+      return `Below ${below}`
+    }
+    const [first, second] = range.split('-')
+    return `${dollars(first)} - ${dollars(second)}`
   }
-  if (range.includes('*-')) {
-    const below = dollars(range.split('*-').pop())
-    return `Below ${below}`
-  }
-  const [first, second] = range.split('-')
-  return `${dollars(first)} - ${dollars(second)}`
-}
 
   stateQuery = () => {
     return {
@@ -281,7 +284,6 @@ class Gene extends React.Component<Props, State> {
   }
 
   resolveQuery = (component: any, page: number, state: any) : string => {
-
     return `
     {
       gene(id: "${this.props.gene.id}") {
