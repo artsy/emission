@@ -29,7 +29,7 @@ const PageEndThreshold = 1000
  *   - the calculation currently only takes into account the size of the image, not if e.g. the sale message is present
  */
 
-interface Props {
+interface Props extends RelayProps {
   /** The direction for the grid, currently only 'column' is supported . */
   sectionDirection: string;
 
@@ -146,6 +146,7 @@ class InfiniteScrollArtworksGrid extends React.Component<Props, State> {
 
   /** A simplified version of the Relay debugging logs for infinite scrolls */
   debugLog(query: string, response?: any, error?: any) {
+
     if (__DEV__ && global.originalXMLHttpRequest !== undefined) {
       var groupName = '%c[' + this.state.page + '] ' + 'Infinite scroll request'
       console.groupCollapsed(groupName, 'color:' + (response ? 'black' : 'red') + ';')
@@ -160,7 +161,7 @@ class InfiniteScrollArtworksGrid extends React.Component<Props, State> {
     }
   }
 
-shouldComponentUpdate(nextProps, nextState){
+shouldComponentUpdate(nextProps, nextState) {
   if (this.props === undefined) {
     return true
   }
@@ -206,7 +207,7 @@ shouldComponentUpdate(nextProps, nextState){
       if (artwork.image) {
         // Find section with lowest *inverted* aspect ratio sum, which is the shortest column.
         let lowestRatioSum = Number.MAX_VALUE // Start higher, so we always find a
-        let sectionIndex: ?number = null
+        let sectionIndex: number | null = null
         for (let j = 0; j < sectionRatioSums.length; j++) {
           const ratioSum = sectionRatioSums[j]
           if (ratioSum < lowestRatioSum) {
@@ -236,10 +237,10 @@ shouldComponentUpdate(nextProps, nextState){
     }
 
     const sectionedArtworks = this.sectionedArtworks()
-    const sections = []
+    const sections: JSX.Element[] = []
     for (let i = 0; i < this.props.sectionCount; i++) {
-      const artworkComponents = []
-      const artworks = sectionedArtworks[i]
+      const artworkComponents: JSX.Element[] = []
+      const artworks: JSX.Element[] = sectionedArtworks[i]
       for (let j = 0; j < artworks.length; j++) {
         const artwork = artworks[j]
         artworkComponents.push(<Artwork artwork={artwork} key={'artwork-' + j + '-' + artwork.__id} />)
@@ -300,7 +301,7 @@ shouldComponentUpdate(nextProps, nextState){
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-  },
+  } as React.ViewStyle,
   section: {
     flex: 1,
     flexDirection: 'column',
@@ -354,3 +355,12 @@ InfiniteScrollArtworksGridContainer.artworksQuery = (artistID, filter, page) => 
 
 export default InfiniteScrollArtworksGridContainer
 
+
+interface RelayProps {
+  artworks: Array<{
+    __id: string,
+    image: {
+      aspect_ratio: number | null,
+    } | null,
+  } | null> | null,
+}
