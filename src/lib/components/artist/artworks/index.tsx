@@ -1,6 +1,6 @@
-import Relay from 'react-relay'
-import React from 'react'
-import { View, StyleSheet } from 'react-native'
+import * as Relay from 'react-relay'
+import * as React from 'react'
+import { View, StyleSheet, ViewProperties } from 'react-native'
 
 import Separator from '../../separator'
 import SerifText from '../../text/serif'
@@ -10,7 +10,19 @@ import colors from '../../../../data/colors'
 
 const PageSize = 10
 
-class Artworks extends React.Component {
+interface Props extends ViewProperties {
+  artist: {
+    counts: {
+      for_sale_artworks: number
+      artworks: number
+    }
+    not_for_sale_artworks: any[]
+    for_sale_artworks: any[]
+  }
+  relay: any
+}
+
+class Artworks extends React.Component<Props, {}> {
   state: {
     completedForSaleWorks: boolean
   }
@@ -31,7 +43,7 @@ class Artworks extends React.Component {
                                 this.resolveQuery,
                                  null)
     } else {
-      const otherWorks = []
+      let otherWorks : any[] = []
       const showOtherWorks = (other_count > 0) && (for_sale_count < 10 || this.state.completedForSaleWorks)
       if (showOtherWorks) {
         otherWorks.push(<Separator style={styles.sectionSeparator} key="separator" />)
