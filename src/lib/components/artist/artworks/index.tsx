@@ -80,7 +80,7 @@ class Artworks extends React.Component<Props, {}> {
     )
   }
 
-  resolveQuery = (component: ArtworksGrid, page: number, state: any) : string => {
+  resolveQuery = (component: any, page: number, state: any) : string => {
     // The page + 1 is to take into account the fact that we _start_ with results already
     return Artworks.artworksQuery(this.props.relay.route.params.artistID, state.availability, component.state.page + 1)
   }
