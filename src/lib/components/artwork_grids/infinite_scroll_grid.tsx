@@ -242,7 +242,7 @@ shouldComponentUpdate(nextProps, nextState) {
       const artworkComponents: JSX.Element[] = []
       const artworks: JSX.Element[] = sectionedArtworks[i]
       for (let j = 0; j < artworks.length; j++) {
-        const artwork = artworks[j]
+        const artwork: any = artworks[j]
         artworkComponents.push(<Artwork artwork={artwork} key={'artwork-' + j + '-' + artwork.__id} />)
         // Setting a marginBottom on the artwork component didn’t work, so using a spacer view instead.
         if (j < artworks.length - 1) {

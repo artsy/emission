@@ -113,8 +113,7 @@ class Gene extends React.Component<Props, State> {
   }
 
   get commonPadding(): number {
-    const windowDimensions = Dimensions.get('window')
-    return windowDimensions.width > 700 ? 40 : 20
+    return isPad ? 40 : 20
   }
 
   get showingArtworksSection(): boolean {
@@ -205,7 +204,7 @@ class Gene extends React.Component<Props, State> {
 
     return (<View style={{ backgroundColor: 'white'}}>
         <Separator style={{marginTop: topMargin, backgroundColor: separatorColor}} />
-        <View style={{flexDirection: 'row', justifyContent: 'space-between', height: 26, marginTop:12, marginBottom:12, paddingLeft: this.commonPadding, paddingRight: this.commonPadding }} >
+        <View style={styles.stickyHeader}>
           <SerifText style={{ fontStyle: 'italic', marginTop:4 }}>{ this.artworkQuerySummaryString() }</SerifText>
           {/* <WhiteButton text="REFINE" style={{ height: 26, width: 80, }} onPress={this.refineTapped}/> */}
         </View>
@@ -317,7 +316,16 @@ const styles = StyleSheet.create({
   header: {
     width: isPad ? 330 : null,
     alignSelf: isPad ? 'center' : null,
-  }
+  },
+  stickyHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    height: 26,
+    marginTop: 12,
+    marginBottom: 12,
+    paddingLeft: isPad ? 40 : 20,
+    paddingRight: isPad ? 40 : 20
+  } as React.ViewStyle
 })
 
 export default Relay.createContainer(Gene, {
