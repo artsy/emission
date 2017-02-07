@@ -73,16 +73,22 @@ exports[`test renders properly 1`] = `
         )
       </Text>
     </Text>
-    <ArtworksGrid
-      artworks={undefined}
-      onComplete={[Function]}
-      queryArtworksKeypath="artist.artworks"
-      queryForPage={[Function]}
-      queryState={
-        Object {
-          "availability": "IS_FOR_SALE",
-        }
-      } />
+    <RCTScrollView
+      accessibilityLabel="Artworks ScrollView"
+      onLayout={[Function]}
+      onScroll={[Function]}
+      scrollEventThrottle={50}
+      scrollsToTop={false}>
+      <View>
+        <View
+          accessibilityLabel="Artworks Content View"
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          } />
+      </View>
+    </RCTScrollView>
   </View>
   <View
     style={
@@ -90,8 +96,8 @@ exports[`test renders properly 1`] = `
         Object {
           "backgroundColor": "#e5e5e5",
           "height": 1,
-          "marginLeft": -20,
-          "marginRight": -20,
+          "marginLeft": -40,
+          "marginRight": -40,
         },
         Object {
           "marginBottom": 20,
@@ -167,16 +173,22 @@ exports[`test renders properly 1`] = `
         )
       </Text>
     </Text>
-    <ArtworksGrid
-      artworks={undefined}
-      onComplete={null}
-      queryArtworksKeypath="artist.artworks"
-      queryForPage={[Function]}
-      queryState={
-        Object {
-          "availability": "IS_NOT_FOR_SALE",
-        }
-      } />
+    <RCTScrollView
+      accessibilityLabel="Artworks ScrollView"
+      onLayout={[Function]}
+      onScroll={[Function]}
+      scrollEventThrottle={50}
+      scrollsToTop={false}>
+      <View>
+        <View
+          accessibilityLabel="Artworks Content View"
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          } />
+      </View>
+    </RCTScrollView>
   </View>
 </View>
 `;

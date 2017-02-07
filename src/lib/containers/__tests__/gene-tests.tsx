@@ -1,9 +1,6 @@
-// @flow
-
-'use strict'
 import 'react-native'
-import React from 'react'
-import renderer from 'react-test-renderer'
+import * as React from 'react'
+import * as renderer from 'react-test-renderer'
 
 // Stub out these views for simplicities sake
 jest.mock('../../components/gene/header', () => 'Header')
@@ -17,18 +14,21 @@ jest.mock('../../components/switch_view', () => 'Spinner')
 import Gene from '../gene'
 
 describe('handling price ranges', () => {
+  let gene = null
+  beforeAll(() => {
+    gene = new Gene(props)
+  })
+
   it('is empty when *-*', () => {
-    const gene = new Gene()
+    console.log(gene.render())
     expect(gene.priceRangeToHumanReadableString('*-*')).toEqual('')
   })
 
   it('looks right when there is only a min value', () => {
-    const gene = new Gene()
     expect(gene.priceRangeToHumanReadableString('50.00-*')).toEqual('Above $50')
   })
 
   it('looks right when there is only a max value', () => {
-    const gene = new Gene()
     expect(gene.priceRangeToHumanReadableString('*-100.00')).toEqual('Below $100')
   })
 
@@ -39,6 +39,12 @@ describe('handling price ranges', () => {
 })
 
 it('looks like expected', () => {
+  const tree = renderer.create(
+    <Gene geneID={props.gene.name} gene={props.gene}/>
+  ).toJSON()
+  expect(tree).toMatchSnapshot()
+})
+
   const props = {
       gene: {
         id: 'An ID',
@@ -71,8 +77,3 @@ it('looks like expected', () => {
         ]
       }
     }
-  const tree = renderer.create(
-    <Gene geneID={props.gene.name} gene={props.gene}/>
-  ).toJSON()
-  expect(tree).toMatchSnapshot()
-})

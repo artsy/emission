@@ -84,10 +84,11 @@ class InfiniteScrollArtworksGrid extends React.Component<Props, State> {
 
   constructor(props) {
     super(props)
+
     this.state = {
       sectionDimension: 0,
-      artworks: this.props.artworks,
-      page: this.props.artworks.length ? 1 : 0,
+      artworks: this.props.artworks || [],
+      page: (this.props.artworks || []).length ? 1 : 0,
       completed: false,
       fetchingNextPage: false,
     }
@@ -117,7 +118,7 @@ class InfiniteScrollArtworksGrid extends React.Component<Props, State> {
 
     const nextPage = this.state.page + 1
     const queryState = this.props.queryState
-    const query = this.props.queryForPage(this, nextPage, queryState)
+    const query = this.props.queryForPage ? this.props.queryForPage(this, nextPage, queryState) : null
 
     metaphysics(query)
       .then((results) => {
@@ -147,9 +148,10 @@ class InfiniteScrollArtworksGrid extends React.Component<Props, State> {
   /** A simplified version of the Relay debugging logs for infinite scrolls */
   debugLog(query: string, response?: any, error?: any) {
 
-    if (__DEV__ && global.originalXMLHttpRequest !== undefined) {
-      var groupName = '%c[' + this.state.page + '] ' + 'Infinite scroll request'
-      console.groupCollapsed(groupName, 'color:' + (response ? 'black' : 'red') + ';')
+    if (__DEV__ && (global as any).originalXMLHttpRequest !== undefined) {
+      var groupName = '%c[' + this.state.page + '] ' + 'Infinite scroll request';
+
+      (console as any).groupCollapsed(groupName, 'color:' + (response ? 'black' : 'red') + ';')
       console.log('Query:\n', query)
       if (response) {
         console.log('Response:\n', response)
