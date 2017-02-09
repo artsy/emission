@@ -163,24 +163,24 @@ class InfiniteScrollArtworksGrid extends React.Component<Props, State> {
     }
   }
 
-shouldComponentUpdate(nextProps, nextState) {
-  if (this.props === undefined) {
-    return true
-  }
+  shouldComponentUpdate(nextProps, nextState) {
+    if (this.props === undefined) {
+      return true
+    }
 
-  if (!isEqual(this.props.queryState, nextProps.queryState)) {
-    // Empty the artworks, and reset the state as we have new a query object
-    this.setState({
-      artworks: [],
-      completed: false,
-      page: 0,
-      fetchingNextPage: false
-    })
-    return true
-  }
+    if (!isEqual(this.props.queryState, nextProps.queryState)) {
+      // Empty the artworks, and reset the state as we have new a query object
+      this.setState({
+        artworks: [],
+        completed: false,
+        page: 0,
+        fetchingNextPage: false
+      })
+      return true
+    }
 
-  return (!isEqual(this.props, nextProps) || !isEqual(this.state, nextState))
-}
+    return (!isEqual(this.props, nextProps) || !isEqual(this.state, nextState))
+  }
 
   onLayout = (event: LayoutEvent) => {
     const layout = event.nativeEvent.layout

@@ -5,14 +5,16 @@ import { renderWithLayout } from '../../../tests/render_with_layout'
 
 import InfiniteScrollArtworksGrid from '../infinite_scroll_grid'
 
-jest.mock('../../../metaphysics.ts')
-jest.mock('../../opaque_image_view.tsx', () => 'AROpaqueImageView')
-jest.mock('../../spinner.tsx', () => 'ARSpinner')
+debugger;
+// jest.mock('react-relay')
+// jest.mock('../../../metaphysics.ts')
+// jest.mock('../../opaque_image_view.tsx', () => 'AROpaqueImageView')
+// jest.mock('../../spinner.tsx', () => 'ARSpinner')
 
 it('renders properly', () => {
   const artworks = [ artwork(), artwork(), artwork() ]
 
-  const grid = renderWithLayout(<InfiniteScrollArtworksGrid artworks={artworks} />, { width: 768})
+  const grid = renderWithLayout(<InfiniteScrollArtworksGrid artworks={artworks} />, { width: 768 })
   expect(grid).toMatchSnapshot()
 })
 
