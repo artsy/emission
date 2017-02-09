@@ -1,13 +1,67 @@
 exports[`test renders properly 1`] = `
-<RCTScrollView>
-  <View>
-    <View
-      accessibilityLabel="Artworks Content View"
-      style={
-        Object {
-          "flexDirection": "row",
-        }
-      } />
-  </View>
-</RCTScrollView>
+<ArtworksGrid
+  artworks={
+    Array [
+      Object {
+        "__id": 0.5015070325398081,
+        "artists": Array [
+          Object {
+            "name": "Jenny Holzer",
+          },
+        ],
+        "date": "2008",
+        "href": "/artwork/jenny-holzer-talking-politics",
+        "image": Object {
+          "aspect_ratio": 1.27,
+          "url": "artsy.net/image-url",
+        },
+        "is_in_auction": false,
+        "partner": Object {
+          "name": "Kukje Gallery",
+        },
+        "sale_message": "Not for sale",
+        "title": "TALKING POLITICS",
+      },
+      Object {
+        "__id": 0.7288685164384021,
+        "artists": Array [
+          Object {
+            "name": "Jenny Holzer",
+          },
+        ],
+        "date": "2008",
+        "href": "/artwork/jenny-holzer-talking-politics",
+        "image": Object {
+          "aspect_ratio": 1.27,
+          "url": "artsy.net/image-url",
+        },
+        "is_in_auction": false,
+        "partner": Object {
+          "name": "Kukje Gallery",
+        },
+        "sale_message": "Not for sale",
+        "title": "TALKING POLITICS",
+      },
+      Object {
+        "__id": 0.44684341208424394,
+        "artists": Array [
+          Object {
+            "name": "Jenny Holzer",
+          },
+        ],
+        "date": "2008",
+        "href": "/artwork/jenny-holzer-talking-politics",
+        "image": Object {
+          "aspect_ratio": 1.27,
+          "url": "artsy.net/image-url",
+        },
+        "is_in_auction": false,
+        "partner": Object {
+          "name": "Kukje Gallery",
+        },
+        "sale_message": "Not for sale",
+        "title": "TALKING POLITICS",
+      },
+    ]
+  } />
 `;

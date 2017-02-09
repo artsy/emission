@@ -2,8 +2,7 @@ import * as Relay from 'react-relay'
 import * as React from 'react'
 import { View, Dimensions, StyleSheet, ViewProperties, TouchEvent } from 'react-native'
 import * as _ from 'lodash'
-
-import ParallaxScrollView from 'react-native-parallax-scroll-view'
+import * as ParallaxScrollView from 'react-native-parallax-scroll-view'
 
 import Separator from '../components/separator'
 import SerifText from '../components/text/serif'

@@ -2,16 +2,6 @@ import 'react-native'
 import * as React from 'react'
 import * as renderer from 'react-test-renderer'
 
-// Stub out these views for simplicities sake
-// jest.mock('../../components/gene/header', () => 'Header')
-// jest.mock('../../components/gene/artworks', () => 'Artworks')
-
-// Native view the Gene references
-debugger;
-// jest.mock('../../components/opaque_image_view.tsx', () => 'AROpaqueImageView')
-// jest.mock('../../components/spinner.tsx', () => 'ARSpinner')
-// jest.mock('../../components/switch_view.tsx', () => 'ARSwitchView')
-
 import Gene from '../gene'
 
 describe('handling price ranges', () => {

@@ -24,21 +24,15 @@ exports[`test renders properly 1`] = `
         }
         testID={undefined}>
         <AROpaqueImageView
-          aspectRatio={undefined}
-          imageURL={null}
-          onLayout={[Function]}
-          placeholderBackgroundColor={4293256677}
+          imageURL="artsy.net/image-url"
           style={
-            Array [
-              Object {
-                "height": 75,
-                "marginBottom": 20,
-                "marginRight": 15,
-                "marginTop": 20,
-                "width": 75,
-              },
-              null,
-            ]
+            Object {
+              "height": 75,
+              "marginBottom": 20,
+              "marginRight": 15,
+              "marginTop": 20,
+              "width": 75,
+            }
           } />
         <View
           style={
@@ -168,21 +162,15 @@ exports[`test renders properly 1`] = `
         }
         testID={undefined}>
         <AROpaqueImageView
-          aspectRatio={undefined}
-          imageURL={null}
-          onLayout={[Function]}
-          placeholderBackgroundColor={4293256677}
+          imageURL="artsy.net/image-url"
           style={
-            Array [
-              Object {
-                "height": 75,
-                "marginBottom": 20,
-                "marginRight": 15,
-                "marginTop": 20,
-                "width": 75,
-              },
-              null,
-            ]
+            Object {
+              "height": 75,
+              "marginBottom": 20,
+              "marginRight": 15,
+              "marginTop": 20,
+              "width": 75,
+            }
           } />
         <View
           style={
