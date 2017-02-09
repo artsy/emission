@@ -6,7 +6,7 @@ PODS:
     - ISO8601DateFormatter
     - NSURL+QueryDictionary
   - Artsy+UIColors (3.0.1)
-  - Artsy+UIFonts (1.1.1)
+  - Artsy+UIFonts (3.0.0)
   - Artsy-UIButtons (2.0.1):
     - Artsy+UIColors (~> 3.0)
     - Artsy+UIFonts
@@ -14,12 +14,12 @@ PODS:
   - Emission (1.1.4):
     - Artsy+UIFonts (>= 1.1.0)
     - Extraction (>= 1.2.1)
-    - React/Core (= 1000.0.0)
-    - React/RCTImage (= 1000.0.0)
-    - React/RCTNetwork (= 1000.0.0)
-    - React/RCTText (= 1000.0.0)
+    - React/Core (= 0.42.0-rc.2)
+    - React/RCTImage (= 0.42.0-rc.2)
+    - React/RCTNetwork (= 0.42.0-rc.2)
+    - React/RCTText (= 0.42.0-rc.2)
     - SDWebImage (>= 3.7.2)
-    - Yoga (~> 1.0)
+    - Yoga (= 0.42.0-rc.2.React)
   - Extraction (1.2.1):
     - Extraction/ARAnimationContinuation (= 1.2.1)
     - Extraction/ARLoadFailureView (= 1.2.1)
@@ -48,24 +48,24 @@ PODS:
   - NSURL+QueryDictionary (1.2.0)
   - ORStackView (2.0.3):
     - FLKAutoLayout
-  - React (1000.0.0):
-    - React/Core (= 1000.0.0)
-  - React/Core (1000.0.0):
+  - React (0.42.0-rc.2):
+    - React/Core (= 0.42.0-rc.2)
+  - React/Core (0.42.0-rc.2):
     - React/cxxreact
-    - Yoga
-  - React/cxxreact (1000.0.0):
+    - Yoga (= 0.42.0-rc.2.React)
+  - React/cxxreact (0.42.0-rc.2):
     - React/jschelpers
-  - React/jschelpers (1000.0.0)
-  - React/RCTImage (1000.0.0):
+  - React/jschelpers (0.42.0-rc.2)
+  - React/RCTImage (0.42.0-rc.2):
     - React/Core
     - React/RCTNetwork
-  - React/RCTNetwork (1000.0.0):
+  - React/RCTNetwork (0.42.0-rc.2):
     - React/Core
-  - React/RCTTest (1000.0.0):
+  - React/RCTTest (0.42.0-rc.2):
     - React/Core
-  - React/RCTText (1000.0.0):
+  - React/RCTText (0.42.0-rc.2):
     - React/Core
-  - React/RCTWebSocket (1000.0.0):
+  - React/RCTWebSocket (0.42.0-rc.2):
     - React/Core
   - SAMKeychain (1.5.0)
   - SDWebImage (3.7.5):
@@ -73,28 +73,30 @@ PODS:
   - SDWebImage/Core (3.7.5)
   - Specta (1.0.5)
   - UIView+BooleanAnimations (1.0.2)
-  - Yoga (1.0.0)
+  - Yoga (0.42.0-rc.2.React)
 
 DEPENDENCIES:
   - AppHub
   - ARGenericTableViewController
   - Artsy+Authentication/email (from `https://github.com/artsy/Artsy-Authentication.git`, branch `fetch-user-details`)
-  - Artsy+UIFonts
   - Emission (from `../`)
   - FLKAutoLayout
   - React/RCTTest (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
   - SAMKeychain
   - Specta
+  - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 EXTERNAL SOURCES:
   Artsy+Authentication:
     :branch: fetch-user-details
     :git: https://github.com/artsy/Artsy-Authentication.git
   Emission:
-    :path: ../
+    :path: "../"
   React:
-    :path: ../node_modules/react-native
+    :path: "../node_modules/react-native"
+  Yoga:
+    :path: "../node_modules/react-native/ReactCommon/yoga"
 
 CHECKOUT OPTIONS:
   Artsy+Authentication:
@@ -106,21 +108,21 @@ SPEC CHECKSUMS:
   ARGenericTableViewController: 61a0897ba66c35111b5d1cc3b44884282bd3c1a5
   Artsy+Authentication: 3bf11ceca61c52e9e31490535bf5798f625406fa
   Artsy+UIColors: 10a2d71e9ffe1015be43d4e084d13ff4337aab97
-  Artsy+UIFonts: 155b972733a24bb12f152fb6d25e2610c1cb93e0
+  Artsy+UIFonts: eb25b56a47550acd70b536f9084cdb34b4f42c3b
   Artsy-UIButtons: 26e6d1e0d2174773e9cf7693985d27faddd61743
-  Emission: 9c4a9e62a8bac89d5a3b22871063ce4d1c73c437
+  Emission: 3ad4246816c227ddc9cb40a1242df0282f0c64be
   Extraction: e1b194982c2cdea996512a9c03a72a5410991282
   FLKAutoLayout: 106b14dbae09d32c6730190f4e78a959759ba4a4
   ISO8601DateFormatter: 4551b6ce4f83185425f583b0b3feb3c7b59b942c
   NSURL+QueryDictionary: bae616404e2adf6409d3d5c02a093cbf44c8a236
   ORStackView: b9507271cb41fb9e0b3eecc6414d831201e7cf7c
-  React: 4f1e70e7ab5d69e5e033c9cb157f72f2d597d78b
+  React: d1360f7223a79ceace525d92cfc858fe5df4e6b2
   SAMKeychain: 1fc9ae02f576365395758b12888c84704eebc423
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   Specta: ac94d110b865115fe60ff2c6d7281053c6f8e8a2
   UIView+BooleanAnimations: a760be9a066036e55f298b7b7350a6cb14cfcd97
-  Yoga: e85333384a06d90639ad1824c9a669515284e5f4
+  Yoga: 4c4169082d61ed807719b24019a230d5ee74d36e
 
-PODFILE CHECKSUM: 8416182b4802fd6cb4f70f476a42f7ce4d560623
+PODFILE CHECKSUM: 4d8222d32ecec347603c5c34a530c12a25d5af8c
 
-COCOAPODS: 1.2.0.rc.1
+COCOAPODS: 1.2.0
