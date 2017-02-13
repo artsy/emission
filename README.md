@@ -1,6 +1,12 @@
-# Reactions ⟶ Emissions
+# Reactions ⇒ Emissions
 
-[React Native] Components used by [Eigen].
+Emission is a collection of [React Native] Components which are consumed by [Eigen]. A writeup on how & why we made a lot of the repo decisions is on our [blog here].
+
+Inside here you will find:
+
+* An example app for building and running Emission's components with an Eigen-like API.
+* An NPM module that relies on React Native and manages the components.
+* A Podspec that wraps it all together for easy external usage in Eigen.
 
 ### Meta
 
@@ -15,35 +21,50 @@ Want to know more about Emission? Read the [mobile](http://artsy.github.io/blog/
 
 ### Installation
 
-1. Install Node.js and type checking tool: `$ brew install node flow`
+1. Install [Node.js][node], and [Yarn][yarn]: `$ brew install node yarn`
 2. Install file watcher used by React Native:
    * `$ brew install pcre`
    * `$ brew link pcre`
    * `$ brew install watchman --HEAD`
-3. Install NPM modules: `$ npm install`
-4. Install Pods: `$ cd Example && pod install`
+3. Install NPM modules: `$ yarn install`
+4. Install CocoaPods: `$ gem install cocoapods`
+5. Install Pods: `$ cd Example && ARTSY_STAFF_MEMBER=true pod install`
+
+Why Yarn? See [our JS glossary for Yarn][glossary-yarn],
 
 ### Development
 
+
+
 ### Using VS Code as an IDE
 
-There is a full document covering [our setup here](docs/vscode.md).
+There is a comprehensive document covering [our setup here](docs/vscode.md).
 
 ### Vanilla Commands
 
-1. Run `$ npm start` from the top directory, which will:
+1. Run `$ yarn start` from the top directory, which will:
    * Clean the example app’s Xcode build dir.
    * Start the example app’s React Native packager.
    * Start the React Storybooks environment.
 
 2. Now from Xcode you can run the app in `Example/Emission.xcworkspace`.
 
+
+### Debugging
+
+You can use React Native debugger which is a standalone app to inspect views as well as the standard chrome debugging tools.
+
+1. Install [RN debugger](https://github.com/jhen0409/react-native-debugger): `$ brew update && brew cask install react-native-debugger`.
+2. You can now use `$ yarn run rndebugger` instead of `$ yarn start` to configure the React Native packager to use RNdebugger.
+
+![screen shot 2017-01-23 at 1 00 01 pm](https://cloud.githubusercontent.com/assets/296775/22220775/09bb10ec-e17e-11e6-8801-3b0ccbdbaa84.png)
+
 ### Updating Dependencies
 
 1. We vendor some data from other repositories that you will sometimes need to update. You can either update all of them
-   with `$ npm run sync-externals` or individually:
-   * The GraphQL schema of metaphysics that Relay uses to generate queries from: `$ npm run sync-schema`
-   * The colors defined in Artsy’s style-guide: `$ npm run sync-colors`
+   with `$ yarn run sync-externals` or individually:
+   * The GraphQL schema of metaphysics that Relay uses to generate queries from: `$ yarn run sync-schema`
+   * The colors defined in Artsy’s style-guide: `$ yarn run sync-colors`
 
 ### Using Relay
 
@@ -113,10 +134,17 @@ On the other hand, our JS is deployed from master to our dev build on Testflight
   - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   - http://blog.krawaller.se/posts/a-react-app-demonstrating-css3-flexbox/
 
-* React Native Storybooks
+* React Native Storybooks:
   - https://github.com/kadirahq/react-native-storybook
   - https://github.com/kadirahq/react-storybook
 
+* React Native Debugger:
+  - https://github.com/jhen0409/react-native-debugger
 
 [React Native]: http://facebook.github.io/react-native/
 [Eigen]: https://github.com/artsy/eigen
+[yarn]: https://yarnpkg.com
+[flow]: http://flowtype.org
+[node]: http://nodejs.org
+[glossary-yarn]: http://artsy.github.io/blog/2016/11/14/JS-Glossary/#yarn
+[blog here]: http://artsy.github.io/blog/2016/08/24/On-Emission/
