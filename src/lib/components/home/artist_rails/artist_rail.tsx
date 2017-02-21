@@ -176,7 +176,7 @@ class ArtistRail extends React.Component<Props, State> {
 
 const styles = StyleSheet.create({
   cardContainer: {
-    flex: 1,
+    flexGrow: 1,
     flexDirection: 'row',
     marginTop: 10,
     minHeight: 330,
