@@ -14,6 +14,7 @@ interface Props extends RelayProps {}
 interface State {
   dataSource: ListViewDataSource | null
   sideMargin: number
+  topMargin: number
 }
 
 export class WorksForYou extends React.Component<Props, State> {
@@ -28,14 +29,16 @@ export class WorksForYou extends React.Component<Props, State> {
     this.state = {
       dataSource,
       sideMargin: 20,
+      topMargin: 0,
     }
-
   }
 
   onLayout = (event: LayoutEvent) => {
     const layout = event.nativeEvent.layout
     const sideMargin = layout.width > 600 ? 40 : 20
-    this.setState({ sideMargin })
+    const topMargin = layout.width > 600 ? 20 : 0
+
+    this.setState({ sideMargin, topMargin })
   }
 
   render() {
@@ -63,7 +66,7 @@ export class WorksForYou extends React.Component<Props, State> {
                 renderSeparator={(sectionID, rowID) =>
                   <View key={`${sectionID}-${rowID}`} style={styles.separator} /> as React.ReactElement<{}>
                 }
-                style={{marginTop: 20}}
+                style={{marginTop: this.state.topMargin}}
       />)
   }
 
