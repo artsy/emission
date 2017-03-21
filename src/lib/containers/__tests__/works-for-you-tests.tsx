@@ -54,6 +54,11 @@ let notificationsResponse = () => {
               date: "Mar 16",
               message: "1 Work Added",
               artworks: [ { title: "Anti-Product Postcard" } ],
+              image: {
+                resized: {
+                  url: "cloudfront.url",
+                },
+              },
             },
           },
           {
@@ -62,6 +67,11 @@ let notificationsResponse = () => {
               date: "Mar 16",
               message: "2 Works Added",
               artworks: [ { title: "Corazón de Roca con Sangre" }, { title: "Butterfly" } ],
+              image: {
+                resized: {
+                  url: "cloudfront.url",
+                },
+              },
             },
           },
         ],
