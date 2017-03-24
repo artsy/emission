@@ -6,6 +6,7 @@
 - Made Gene view work with new relay-based infinite scroll grid - cab
 - Updated our fonts lib - orta
 - Converted to TypeScript - luc, sarah, alloy, orta
+- Fixes display of artworks in non-expanding grids in artwork rails - ash
 
 ### 1.2.2
 
