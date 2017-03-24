@@ -1,3 +1,7 @@
+### 1.2.3
+
+- Fixes display of artworks in non-expanding grids in artwork rails - ash
+
 ### 1.2.2
 
 - Move active bids home module to the top of the feed - alloy
