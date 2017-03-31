@@ -69,8 +69,8 @@
   ],
   "dependencies": {
     "lodash": "3.10.1",
-    "react": "latest",
-    "react-native": "https://github.com/alloy/react-native.git#v0.42.0-with-customisable-source-exts",
+    "react": "16.0.0-alpha.4",
+    "react-native": "file:../react-native",
     "react-native-parallax-scroll-view": "https://github.com/orta/react-native-parallax-scroll-view",
     "react-relay": "https://github.com/alloy/relay/releases/download/v0.9.3/react-relay-0.9.3.tgz",
     "remove-markdown": "0.1.0",
