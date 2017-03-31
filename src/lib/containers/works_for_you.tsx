@@ -21,11 +21,18 @@ import Notification from "../components/works_for_you/notification"
 
 import colors from "../../data/colors"
 
-interface Props extends RelayProps {}
+const PageSize = 10
+const PageEndThreshold = 1000
+
+interface Props extends RelayProps {
+  relay: any;
+}
 
 interface State {
   sideMargin: number
   topMargin: number
+  fetchingNextPage: boolean
+  completed: boolean
 }
 
 export class WorksForYou extends React.Component<Props, State> {
@@ -35,10 +42,14 @@ export class WorksForYou extends React.Component<Props, State> {
     this.state = {
       sideMargin: 20,
       topMargin: 0,
+      completed: false,
+      fetchingNextPage: false,
     }
   }
 
   componentDidMount() {
+    const notifications = this.props.me.notifications_connection.edges.map((edge) => edge.node)
+
     // update status in gravity
     NativeModules.ARTemporaryAPIModule.markNotificationsRead((error) => {
       if (error) {
@@ -61,6 +72,25 @@ export class WorksForYou extends React.Component<Props, State> {
     const topMargin = layout.width > 600 ? 20 : 0
 
     this.setState({ sideMargin, topMargin })
+  }
+
+  fetchNextPage() {
+    if (this.state.fetchingNextPage || this.state.completed) {
+      return
+    }
+    this.setState({ fetchingNextPage: true })
+    this.props.relay.setVariables({
+      totalSize: this.props.relay.variables.totalSize + PageSize,
+    }, (readyState) => {
+      if (readyState.done) {
+        this.setState({
+          fetchingNextPage: false,
+        })
+        if (!this.props.me.notifications_connection.pageInfo.hasNextPage) {
+          this.setState({ completed: true })
+        }
+      }
+    })
   }
 
   render() {
@@ -91,6 +121,7 @@ export class WorksForYou extends React.Component<Props, State> {
       <FlatList
         data={notifications}
         renderItem={({item}) => <Notification notification={item.node}/>}
+        onEndReached={() => this.fetchNextPage()}
       />
     )
   }
@@ -159,12 +190,19 @@ const styles = StyleSheet.create<Styles>({
 })
 
 export default Relay.createContainer(WorksForYou, {
+  initialVariables: {
+    totalSize: PageSize,
+  },
   fragments: {
     me: () => Relay.QL`
       fragment on Me {
-        notifications_connection(first: 10) {
+        notifications_connection(first: $totalSize) {
+          pageInfo {
+            hasNextPage
+          }
           edges {
             node {
+              __id
               ${Notification.getFragment("notification")}
             }
           }
@@ -176,6 +214,9 @@ export default Relay.createContainer(WorksForYou, {
 interface RelayProps {
   me: {
     notifications_connection: {
+      pageInfo: {
+        hasNextPage: boolean,
+      },
       edges: Array<{
         node: any | null,
       }>,
