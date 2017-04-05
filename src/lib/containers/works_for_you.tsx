@@ -2,9 +2,8 @@ import * as React from "react"
 import * as Relay from "react-relay"
 
 import {
+  FlatList,
   LayoutChangeEvent,
-  ListView,
-  ListViewDataSource,
   NativeModules,
   ScrollView,
   StyleSheet,
@@ -25,7 +24,6 @@ import colors from "../../data/colors"
 interface Props extends RelayProps {}
 
 interface State {
-  dataSource: ListViewDataSource | null
   sideMargin: number
   topMargin: number
 }
@@ -34,13 +32,7 @@ export class WorksForYou extends React.Component<Props, State> {
   constructor(props) {
     super(props)
 
-    const edges = props.me.notifications_connection.edges
-    const dataSource = edges.length && new ListView.DataSource({
-                                      rowHasChanged: (row1, row2) => row1 !== row2,
-                                    }).cloneWithRows(edges.map((edge) => edge.node))
-
     this.state = {
-      dataSource,
       sideMargin: 20,
       topMargin: 0,
     }
@@ -74,7 +66,7 @@ export class WorksForYou extends React.Component<Props, State> {
   render() {
     const margin = this.state.sideMargin
     const containerMargins = { marginLeft: margin, marginRight: margin }
-    const hasNotifications = this.state.dataSource
+    const hasNotifications = this.props.me.notifications_connection.edges.length > 0
 
     /* if showing the empty state, the ScrollView should have a {flex: 1} style so it can expand to fit the screen.
        otherwise, it should not use any flex growth.
@@ -89,15 +81,18 @@ export class WorksForYou extends React.Component<Props, State> {
     )
   }
 
+
   renderNotifications() {
-    return(
-      <ListView dataSource={this.state.dataSource}
-                renderRow={(notification) => <Notification notification={notification}/>}
-                renderSeparator={(sectionID, rowID) =>
-                  <View key={`${sectionID}-${rowID}`} style={styles.separator} /> as React.ReactElement<{}>
-                }
-                style={{marginTop: this.state.topMargin}}
-      />)
+    const notifications = this.props.me.notifications_connection.edges.map((edge, index) => {
+      return { key: "notification-" + index, node: edge.node }
+    })
+
+    return (
+      <FlatList
+        data={notifications}
+        renderItem={({item}) => <Notification notification={item.node}/>}
+      />
+    )
   }
 
   renderEmptyState() {
