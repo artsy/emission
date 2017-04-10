@@ -12,7 +12,7 @@ target 'Emission' do
   pod 'Emission', :path => '../'
 
   # As this runs dev, we need the developer web socket
-  pod 'React', :path => react_path, :subspecs => %w(RCTWebSocket)
+  pod 'React', :path => react_path, :subspecs => %w(RCTWebSocket DevSupport)
   pod 'Yoga', :path => yoga_path
 
   # Got to make it look right

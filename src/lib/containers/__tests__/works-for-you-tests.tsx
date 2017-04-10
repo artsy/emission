@@ -11,11 +11,6 @@ beforeAll(() => {
 })
 
 describe("with notifications", () => {
-  it("creates a ListViewDataSource upon instantiation", () => {
-    const worksForYou = new WorksForYou(notificationsResponse())
-    expect(worksForYou.state.dataSource).toBeTruthy()
-  })
-
   it("updates the notification count", () => {
     const worksForYou = new WorksForYou(notificationsResponse())
     worksForYou.componentDidMount()
