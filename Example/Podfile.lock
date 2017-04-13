@@ -11,15 +11,31 @@ PODS:
     - Artsy+UIColors (~> 3.0)
     - Artsy+UIFonts
     - UIView+BooleanAnimations
+  - boost (1.59.0):
+    - boost/graph-includes (= 1.59.0)
+    - boost/math-includes (= 1.59.0)
+    - boost/numeric-includes (= 1.59.0)
+    - boost/pointer_cast-includes (= 1.59.0)
+    - boost/preprocessor-includes (= 1.59.0)
+    - boost/shared_ptr-includes (= 1.59.0)
+    - boost/string_algorithms-includes (= 1.59.0)
+  - boost/graph-includes (1.59.0)
+  - boost/math-includes (1.59.0)
+  - boost/numeric-includes (1.59.0)
+  - boost/pointer_cast-includes (1.59.0)
+  - boost/preprocessor-includes (1.59.0)
+  - boost/shared_ptr-includes (1.59.0)
+  - boost/string_algorithms-includes (1.59.0)
+  - DoubleConversion (1.1.5)
   - Emission (1.2.1):
     - Artsy+UIFonts (>= 3.0.0)
     - Extraction (>= 1.2.1)
-    - React/Core (= 0.42.0)
-    - React/RCTImage (= 0.42.0)
-    - React/RCTNetwork (= 0.42.0)
-    - React/RCTText (= 0.42.0)
+    - React/Core (= 1000.0.0)
+    - React/RCTImage (= 1000.0.0)
+    - React/RCTNetwork (= 1000.0.0)
+    - React/RCTText (= 1000.0.0)
     - SDWebImage (>= 3.7.2)
-    - Yoga (= 0.42.0.React)
+    - Yoga (= 1000.0.0.React)
   - Extraction (1.2.3):
     - Extraction/ARAnimationContinuation (= 1.2.3)
     - Extraction/ARLoadFailureView (= 1.2.3)
@@ -44,28 +60,52 @@ PODS:
   - Extraction/UIView+ARSpinner (1.2.3):
     - Extraction/ARAnimationContinuation
   - FLKAutoLayout (1.0.0)
+  - Folly (2016.09.26.00):
+    - boost
+    - DoubleConversion
+    - Folly/detail (= 2016.09.26.00)
+    - Folly/portability (= 2016.09.26.00)
+    - GLog
+  - Folly/detail (2016.09.26.00):
+    - boost
+    - DoubleConversion
+    - GLog
+  - Folly/portability (2016.09.26.00):
+    - boost
+    - DoubleConversion
+    - GLog
+  - GLog (0.3.4)
   - ISO8601DateFormatter (0.8)
   - NSURL+QueryDictionary (1.2.0)
   - ORStackView (2.0.3):
     - FLKAutoLayout
-  - React (0.42.0):
-    - React/Core (= 0.42.0)
-  - React/Core (0.42.0):
+  - React (1000.0.0):
+    - React/Core (= 1000.0.0)
+  - React/Core (1000.0.0):
+    - Yoga (= 1000.0.0.React)
+  - React/CxxBridge (1000.0.0):
+    - Folly
+    - React/Core
     - React/cxxreact
-    - Yoga (= 0.42.0.React)
-  - React/cxxreact (0.42.0):
+  - React/cxxreact (1000.0.0):
+    - boost
+    - Folly
     - React/jschelpers
-  - React/jschelpers (0.42.0)
-  - React/RCTImage (0.42.0):
+  - React/DevSupport (1000.0.0):
+    - React/Core
+    - React/RCTWebSocket
+  - React/jschelpers (1000.0.0):
+    - Folly
+  - React/RCTImage (1000.0.0):
     - React/Core
     - React/RCTNetwork
-  - React/RCTNetwork (0.42.0):
+  - React/RCTNetwork (1000.0.0):
     - React/Core
-  - React/RCTTest (0.42.0):
+  - React/RCTTest (1000.0.0):
     - React/Core
-  - React/RCTText (0.42.0):
+  - React/RCTText (1000.0.0):
     - React/Core
-  - React/RCTWebSocket (0.42.0):
+  - React/RCTWebSocket (1000.0.0):
     - React/Core
   - SAMKeychain (1.5.0)
   - SDWebImage (3.7.5):
@@ -73,15 +113,20 @@ PODS:
   - SDWebImage/Core (3.7.5)
   - Specta (1.0.5)
   - UIView+BooleanAnimations (1.0.2)
-  - Yoga (0.42.0.React)
+  - Yoga (1000.0.0.React)
 
 DEPENDENCIES:
   - AppHub
   - ARGenericTableViewController
   - Artsy+Authentication/email (from `https://github.com/artsy/Artsy-Authentication.git`, branch `fetch-user-details`)
   - Artsy+UIFonts
+  - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Emission (from `../`)
   - FLKAutoLayout
+  - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
+  - GLog (from `../node_modules/react-native/third-party-podspecs/GLog.podspec`)
+  - React/CxxBridge (from `../node_modules/react-native`)
+  - React/DevSupport (from `../node_modules/react-native`)
   - React/RCTTest (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
   - SAMKeychain
@@ -92,8 +137,14 @@ EXTERNAL SOURCES:
   Artsy+Authentication:
     :branch: fetch-user-details
     :git: https://github.com/artsy/Artsy-Authentication.git
+  DoubleConversion:
+    :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   Emission:
     :path: "../"
+  Folly:
+    :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
+  GLog:
+    :podspec: "../node_modules/react-native/third-party-podspecs/GLog.podspec"
   React:
     :path: "../node_modules/react-native"
   Yoga:
@@ -111,19 +162,23 @@ SPEC CHECKSUMS:
   Artsy+UIColors: 31c03c4146f5e6618a9b950f37dfe02dd9ac09a6
   Artsy+UIFonts: e66afb5c40100e2fc5bba28feb7487e252f2d06f
   Artsy-UIButtons: cdcc3ccf4d0d31ee80f45c1d11ffd2d772695b74
-  Emission: d3a2a12e1a953cdf9605d0d4bbf028680a40b199
+  boost: 30a15ffb6d9aa4646dd3caffc960753f4cb4ca4e
+  DoubleConversion: 08fd92ee44beec5d61445039bf9440fc7d277cd8
+  Emission: 06c03381122dc3f6a294a0cd8e28ee584152c1ea
   Extraction: 612cf0866f74d4c0dd616677ff24146efa200958
   FLKAutoLayout: 106b14dbae09d32c6730190f4e78a959759ba4a4
+  Folly: 55c4bf6bd790c3a09e48de1ec2ee32b5f8764094
+  GLog: 6999126da812a274bcac3ce06243c74b22208905
   ISO8601DateFormatter: 4551b6ce4f83185425f583b0b3feb3c7b59b942c
   NSURL+QueryDictionary: bae616404e2adf6409d3d5c02a093cbf44c8a236
   ORStackView: b9507271cb41fb9e0b3eecc6414d831201e7cf7c
-  React: 8ec97f0d79ba31892c526cf56425937926cc9b48
+  React: f748cecc20b8e9ed3ac59d48e10a2a83668bb77d
   SAMKeychain: 1fc9ae02f576365395758b12888c84704eebc423
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   Specta: ac94d110b865115fe60ff2c6d7281053c6f8e8a2
   UIView+BooleanAnimations: a760be9a066036e55f298b7b7350a6cb14cfcd97
-  Yoga: 4183cc70cae189d73f996b1e40c3078aca9f96ef
+  Yoga: 5572d92eb09e8e579e4be868f3404718e1d0bbd9
 
-PODFILE CHECKSUM: 990bd33b5f7498ce22f8913c5c5d09ff6f1ce39e
+PODFILE CHECKSUM: 47253d564fe098d3ea4028eb5bd2048edcaf3ff8
 
 COCOAPODS: 1.2.0

@@ -5,6 +5,8 @@ platform :ios, '9.0'
 # FIXME: Figure out why we are getting hit by this issue.
 install! 'cocoapods', :deterministic_uuids => false
 
+use_frameworks!
+
 react_path = '../node_modules/react-native'
 yoga_path = File.join(react_path, 'ReactCommon/yoga')
 
@@ -12,8 +14,12 @@ target 'Emission' do
   pod 'Emission', :path => '../'
 
   # As this runs dev, we need the developer web socket
-  pod 'React', :path => react_path, :subspecs => %w(RCTWebSocket)
+  pod 'React', :path => react_path, :subspecs => %w(CxxBridge RCTWebSocket DevSupport)
   pod 'Yoga', :path => yoga_path
+  # Third party deps
+  pod 'DoubleConversion', :podspec => File.join(react_path, 'third-party-podspecs/DoubleConversion.podspec')
+  pod 'GLog', :podspec => File.join(react_path, 'third-party-podspecs/GLog.podspec')
+  pod 'Folly', :podspec => File.join(react_path, 'third-party-podspecs/Folly.podspec')
 
   # Got to make it look right
   pod 'Artsy+UIFonts'
