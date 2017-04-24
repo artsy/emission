@@ -1,11 +1,13 @@
 import * as React from "react"
 import * as Relay from "react-relay"
+import eventHandler from "../../helpers/decorators"
 
 import {
   Dimensions,
   NativeModules,
   StyleSheet,
   TextStyle,
+  Touchable,
   View,
   ViewStyle,
 } from "react-native"
@@ -52,29 +54,35 @@ class Header extends React.Component<HeaderProps, State> {
     })
   }
 
-  handleFollowChange = () => {
+  @eventHandler("Follow Artist")
+  handleFollowChange() { // this now needs to be a normal method, not a property
     const newFollowersCount = this.state.following ? (this.state.followersCount - 1) : (this.state.followersCount + 1)
-    ARTemporaryAPIModule.setFollowArtistStatus(!this.state.following, this.props.artist._id, (error, following) => {
-      if (error) {
-        console.error(error)
-      } else {
-        Events.postEvent(this, {
-          name: following ? "Follow artist" : "Unfollow artist",
-          artist_id: this.props.artist._id,
-          artist_slug: this.props.artist.id,
-          // TODO At some point, this component might be on other screens.
-          source_screen: "artist page",
-        })
-      }
-      this.setState({ following, followersCount: newFollowersCount })
+    return new Promise((resolve, reject) => {
+      ARTemporaryAPIModule.setFollowArtistStatus(!this.state.following, this.props.artist._id, (error, following) => {
+        if (error) {
+          console.error(error)
+          reject(error)
+        } else {
+          Events.postEvent(this, {
+            name: following ? "Follow artist" : "Unfollow artist",
+            artist_id: this.props.artist._id,
+            artist_slug: this.props.artist.id,
+            // TODO At some point, this component might be on other screens.
+            source_screen: "artist page",
+          })
+          resolve()
+        }
+        this.setState({ following, followersCount: newFollowersCount })
+      })
+      this.setState({ following: !this.state.following, followersCount: newFollowersCount })
     })
-    this.setState({ following: !this.state.following, followersCount: newFollowersCount })
   }
 
   render() {
     const artist = this.props.artist
+
     return (
-      <View style={{paddingTop: 20}}>
+      <View style={{ paddingTop: 20 }}>
         <Headline style={[styles.base, styles.headline]}>
           {artist.name}
         </Headline>
@@ -88,10 +96,10 @@ class Header extends React.Component<HeaderProps, State> {
   renderFollowButton() {
     if (this.state.following !== null) {
       return (
-        <View style={styles.followButton}>
-            <InvertedButton text={this.state.following ? "Following" : "Follow"}
-                            selected={this.state.following}
-                            onPress={this.handleFollowChange} />
+        <View style={styles.followButton} >
+          <InvertedButton text={this.state.following ? "Following" : "Follow"}
+            selected={this.state.following}
+            onPress={this.handleFollowChange} />
         </View>
       )
     }
