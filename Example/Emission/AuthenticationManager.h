@@ -10,6 +10,8 @@
 
 - (void)presentAuthenticationPromptOnViewController:(UIViewController *)viewController completion:(dispatch_block_t)completion;
 
+- (void)validateStoredCredentialsPassing:(dispatch_block_t)pass failing:(dispatch_block_t)fail;
+
 /// Is there a userID & token?
 @property (readonly) BOOL isAuthenticated;
 
