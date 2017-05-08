@@ -70,7 +70,15 @@ randomBOOL(void)
   if ([auth isAuthenticated]) {
     NSString *accessToken = [auth token];
     if (accessToken) {
-      [self setupEmissionWithUserID:[auth userID] accessToken:accessToken keychainService:service];
+
+      [auth validateStoredCredentialsPassing:^{
+        [self setupEmissionWithUserID:[auth userID] accessToken:accessToken keychainService:service];
+      } failing:^{
+        [auth presentAuthenticationPromptOnViewController:rootVC completion:^{
+          NSLog(@"Logged in successfully :)");
+          [self setupEmissionWithUserID:[auth userID] accessToken:[auth token] keychainService:service];
+        }];
+      }];
     }
   } else {
     [auth presentAuthenticationPromptOnViewController:rootVC completion:^{

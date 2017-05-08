@@ -8,6 +8,10 @@
 #import <Artsy+Authentication/ArtsyAuthenticationRouter.h>
 #import <Artsy+Authentication/ArtsyToken.h>
 
+#import <Artsy+Authentication/ArtsyNetworkOperator.h>
+#import <ISO8601DateFormatter/ISO8601DateFormatter.h>
+
+
 @interface AuthenticationManager()
 @property (nonatomic, strong) UIViewController *authenticationSpinnerController;
 @end
@@ -104,6 +108,13 @@
             NSParameterAssert(accessToken);
 
             NSError *error = nil;
+            if([SAMKeychain passwordForService:service account:userID]) {
+              [SAMKeychain deletePasswordForService:service account:userID error:&error];
+              if (error) {
+                NSLog(@"%@", error);
+              }
+            }
+
             [SAMKeychain setPassword:accessToken forService:service account:userID error:&error];
             if (error) {
               NSLog(@"%@", error);
@@ -116,6 +127,21 @@
         });
       }];
     }
+  }];
+}
+
+- (void)validateStoredCredentialsPassing:(dispatch_block_t)pass failing:(dispatch_block_t)fail
+{
+  ArtsyNetworkOperator *networkOperator = [ArtsyNetworkOperator new];
+  ArtsyAuthentication *auth = [[ArtsyAuthentication alloc] initWithClientID:@"e750db60ac506978fc70"
+                                                               clientSecret:@"3a33d2085cbd1176153f99781bbce7c6"];
+  auth.router.authToken = [[ArtsyToken alloc] initWithToken:self.token expirationDate:[NSDate distantFuture]];
+
+  NSURLRequest *request = [auth.router requestForUserDetails];
+  [networkOperator JSONTaskWithRequest:request success:^(NSURLRequest *_, NSHTTPURLResponse *__, id JSON) {
+    pass();
+  } failure:^(NSURLRequest *_, NSHTTPURLResponse *response, NSError *error, id JSON) {
+    fail();
   }];
 }
 
