@@ -6,6 +6,8 @@ def run(script)
   sh script
 end
 
+
+
 lane :update_signing do
   match(type: 'appstore')
 end
@@ -23,17 +25,21 @@ lane :stamp_plist do
 end
 
 lane :validate do
-  unless ENV['SLACK_URL']
-    raise "You need to set SLACK_URL (#{ENV['SLACK_URL']}) in your environment."
-  end
-
-  unless ENV['FASTLANE_USERNAME'] && ENV['FASTLANE_PASSWORD']
-    raise 'You need to set FASTLANE_USERNAME and FASTLANE_PASSWORD in your environment'
+  unless ENV['FASTLANE_USERNAME'] && ENV['FASTLANE_PASSWORD'] && ENV['MATCH_PASSWORD']
+    raise 'You need to set FASTLANE_USERNAME, FASTLANE_PASSWORD and MATCH_PASSWORD in your environment'
   end
 
   unless ENV['GITHUB_SUBMODULES_USER']
     raise 'You need to set GITHUB_SUBMODULES_USER in your environment'
   end
+
+  unless ENV['SLACK_URL']
+    raise "You need to set SLACK_URL (#{ENV['SLACK_URL']}) in your environment."
+  end
+end
+
+lane :build do
+  gym workspace: 'fastlane/Emission/Example/Emission.xcworkspace', configuration: 'Release', scheme: 'Emission'
 end
 
 lane :ship do
@@ -41,11 +47,10 @@ lane :ship do
   setup_signing
   stamp_plist
 
+  build
+
   changelog = 'emission/CHANGELOG.md'
   upcoming_release_notes = File.read(changelog).lines[0...12].join("\n")
-
-  # Build
-  gym workspace: 'Emission/Example/Emission.xcworkspace', configuration: 'Release', scheme: 'Emission'
 
   # Log into iTunes connection, get the latest version of the app we shipped, and how many builds we've sent too
   Spaceship::Tunes.login(ENV['FASTLANE_USERNAME'], ENV['FASTLANE_PASSWORD'])
