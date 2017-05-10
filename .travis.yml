@@ -1,17 +1,18 @@
 language: objective-c
 
 before_install:
-  - brew install yarn
-  - gem install bundler
   - bundle update
 
 before_script:
-  - git clone https://github.com/artsy/emission.git fastlane/emission
-  - cd fastlane/emission && npm install
-  - git pull origin fastlane_match 
+  - git clone https://github.com/artsy/emission.git
+  - cd emission && npm install
+  - git log -2
   - cd Example && pod install
-  - cd ../../..
+  - cd ../..
 
 script:
-
+  - bundle exec fastlane validate_env_vars
+  - bundle exec fastlane setup_signing
+  - bundle exec fastlane stamp_plist
+  - bundle exec fastlane build
   - bundle exec fastlane ship

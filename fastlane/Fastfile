@@ -2,16 +2,11 @@
 
 # The main job for Fastlane in this repo.
 lane :ship do
-  validate_env_vars
-  setup_signing
-  stamp_plist
-
-  build
-
-  changelog = 'emission/CHANGELOG.md'
+  # Get the last 10 lines of the CHANGELOG for Testflight
+  changelog = '../emission/CHANGELOG.md'
   upcoming_release_notes = File.read(changelog).lines[0...12].join("\n")
 
-  # Log into iTunes connection, get the latest version of the app we shipped, and how many builds we've sent too
+  # Log into iTunes connect, get the latest version of the app we shipped, and how many builds we've sent
   Spaceship::Tunes.login(ENV['FASTLANE_USERNAME'], ENV['FASTLANE_PASSWORD'])
   app = Spaceship::Tunes::Application.find('net.artsy.Emission')
   latest_version = app.build_trains.keys.sort.last
@@ -19,14 +14,16 @@ lane :ship do
   build_version = train.builds.count + 1
 
   # Do a tag, we use a http git remote so we can have push access
-  # as the default remote for circle is read-only
+  # as the default remote for travis is read-only
   tag = "deploy-#{latest_version}-#{build_version}"
   `git tag -d "#{tag}"`
 
-  pilot changelog: release_notes
+  # Ship to testflight
+  pilot changelog: upcoming_release_notes
 
+  # Tag releases
   add_git_tag tag: tag
-  `git remote add http https://github.com/artsy/emission.git`
+  `git remote add http https://#{ENV["GITHUB_SUBMODULES_USER"]}@github.com/artsy/emission.git`
   `git push http #{tag}`
 
   slack message: 'There is a new Emission beta available on Testflight.',
@@ -40,7 +37,7 @@ end
 # A separate build task so you can run `bundle exec fastlane build` to test the
 # build process locally.
 lane :build do
-  gym workspace: 'fastlane/emission/Example/Emission.xcworkspace',
+  gym workspace: 'emission/Example/Emission.xcworkspace',
       configuration: 'Deploy',
       scheme: 'Emission',
       clean: true
@@ -58,7 +55,7 @@ end
 
 # Minor plist modifications
 lane :stamp_plist do
-  plist = 'emission/Example/Emission/Info.plist'
+  plist = '../emission/Example/Emission/Info.plist'
 
   # Increment build number to current date
   build_number = Time.new.strftime('%Y.%m.%d.%H')
