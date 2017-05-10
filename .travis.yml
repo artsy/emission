@@ -4,7 +4,11 @@ before_install:
   - brew install yarn
   - gem install bundler
   - bundle update
-  - bundle exec fastlane setup
+
+before_script:
+  - git clone https://github.com/artsy/emission.git fastlane/emission
+  - cd fastlane/emission && yarn install
+  - cd fastlane/emission/Example && pod install
 
 script:
   - bundle exec fastlane setup_signing

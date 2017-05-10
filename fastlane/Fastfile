@@ -6,21 +6,6 @@ def run(script)
   sh script
 end
 
-# Sets up Emission for building
-
-lane :setup do
-  run('git clone https://github.com/artsy/emission.git')
-  Dir.chdir 'emission' do
-    # Emission runs React out of the node modules
-    run('yarn install')
-  end
-
-  Dir.chdir 'emission/example' do
-    # Emissions native deps depend on CocoaPods
-    run('pod install')
-  end
-end
-
 lane :update_signing do
   match(type: 'appstore')
 end
