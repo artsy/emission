@@ -8,6 +8,7 @@ before_install:
 before_script:
   - git clone https://github.com/artsy/emission.git fastlane/emission
   - cd fastlane/emission && npm install
+  - git pull origin fastlane_match 
   - cd Example && pod install
   - cd ../../..
 

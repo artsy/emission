@@ -1,49 +1,8 @@
-def run(script)
-  puts "\n> #{script}".yellow
-  sh script
-end
+# This is documented in the Artsy Blog: XXX
 
-
-
-lane :update_signing do
-  match(type: 'appstore')
-end
-
-lane :setup_signing do
-  match(type: 'appstore', readonly: true)
-end
-
-lane :stamp_plist do
-  plist = 'emission/Example/Emission/Info.plist'
-
-  # Increment build number to current date
-  build_number = Time.new.strftime('%Y.%m.%d.%H')
-  `/usr/libexec/PlistBuddy -c "Set CFBundleVersion #{build_number}" "#{plist}"`
-end
-
-lane :validate do
-  unless ENV['FASTLANE_USERNAME'] && ENV['FASTLANE_PASSWORD'] && ENV['MATCH_PASSWORD']
-    raise 'You need to set FASTLANE_USERNAME, FASTLANE_PASSWORD and MATCH_PASSWORD in your environment'
-  end
-
-  unless ENV['GITHUB_SUBMODULES_USER']
-    raise 'You need to set GITHUB_SUBMODULES_USER in your environment'
-  end
-
-  unless ENV['SLACK_URL']
-    raise "You need to set SLACK_URL (#{ENV['SLACK_URL']}) in your environment."
-  end
-end
-
-lane :build do
-  gym workspace: 'fastlane/emission/Example/Emission.xcworkspace',
-      configuration: 'Deploy',
-      scheme: 'Emission',
-      clean: true
-end
-
+# The main job for Fastlane in this repo.
 lane :ship do
-  validate
+  validate_env_vars
   setup_signing
   stamp_plist
 
@@ -64,18 +23,60 @@ lane :ship do
   tag = "deploy-#{latest_version}-#{build_version}"
   `git tag -d "#{tag}"`
 
+  pilot changelog: release_notes
+
   add_git_tag tag: tag
   `git remote add http https://github.com/artsy/emission.git`
   `git push http #{tag}`
 
-  pilot changelog: release_notes
-
-  slack message: 'There is a new Emission beta available. Grab it from Testflight on your iOS device.',
+  slack message: 'There is a new Emission beta available on Testflight.',
         payload: {
           'Version' => latest_version,
           "What's new" => upcoming_release_notes
         },
         default_payloads: []
+end
+
+# A separate build task so you can run `bundle exec fastlane build` to test the
+# build process locally.
+lane :build do
+  gym workspace: 'fastlane/emission/Example/Emission.xcworkspace',
+      configuration: 'Deploy',
+      scheme: 'Emission',
+      clean: true
+end
+
+# In case you need to update the signing profiles for this app
+lane :update_signing do
+  match(type: 'appstore')
+end
+
+# Used by CI, will not sneakily update (the CI only has read-only access to the repo anyway)
+lane :setup_signing do
+  match(type: 'appstore', readonly: true)
+end
+
+# Minor plist modifications
+lane :stamp_plist do
+  plist = 'emission/Example/Emission/Info.plist'
+
+  # Increment build number to current date
+  build_number = Time.new.strftime('%Y.%m.%d.%H')
+  `/usr/libexec/PlistBuddy -c "Set CFBundleVersion #{build_number}" "#{plist}"`
+end
+
+lane :validate_env_vars do
+  unless ENV['FASTLANE_USERNAME'] && ENV['FASTLANE_PASSWORD'] && ENV['MATCH_PASSWORD']
+    raise 'You need to set FASTLANE_USERNAME, FASTLANE_PASSWORD and MATCH_PASSWORD in your environment'
+  end
+
+  unless ENV['GITHUB_SUBMODULES_USER']
+    raise 'You need to set GITHUB_SUBMODULES_USER in your environment'
+  end
+
+  unless ENV['SLACK_URL']
+    raise "You need to set SLACK_URL (#{ENV['SLACK_URL']}) in your environment."
+  end
 end
 
 # If the weekly task fails, then ship a message
