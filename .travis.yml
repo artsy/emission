@@ -1,0 +1,10 @@
+language: objective-c
+
+before_install:
+  - brew install yarn
+  - gem install bundler
+  - bundle update
+  - bundle exec fastlane setup
+
+script:
+  - bundle exec fastlane ship

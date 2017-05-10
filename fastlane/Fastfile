@@ -1,0 +1,94 @@
+require 'yaml'
+
+def run(script)
+  puts "\n> #{script}".yellow
+  sh script
+end
+
+# Sets up Emission for building
+
+lane :setup do
+  run('git clone https://github.com/artsy/emission.git')
+  Dir.chdir 'emission' do
+    # Emission runs React out of the node modules
+    run('yarn install')
+  end
+
+  Dir.chdir 'emission/example' do
+    # Emissions native deps depend on CocoaPods
+    run('pod install')
+  end
+end
+
+lane :ship do
+  unless ENV['SLACK_URL']
+    raise "You need to set SLACK_URL (#{ENV['SLACK_URL']}) in your environment."
+  end
+
+  unless ENV['FASTLANE_USERNAME'] && ENV['FASTLANE_PASSWORD']
+    raise 'You need to set FASTLANE_USERNAME and FASTLANE_PASSWORD in your environment'
+  end
+
+  match(type: 'appstore', readonly: true)
+
+  # Increment build number to current date
+  build_number = Time.new.strftime('%Y.%m.%d.%H')
+  `/usr/libexec/PlistBuddy -c "Set CFBundleVersion #{build_number}" "../Supporting Files/info.plist"`
+
+  # # Set version number to the one at the top of the CHANGELOG
+  # readme_yaml = File.read("../docs/CHANGELOG.yml")
+  # begin
+  #   readme_data = YAML.load(readme_yaml)
+  # rescue StandardError
+  #   fail("CHANGELOG isn't legit YAML")
+  # end
+  # commit = `git log -n1 --format='%h'`.strip
+
+  # latest_version = readme_data["upcoming"]["version"]
+
+  # #increment_version_number release_task: latest_version, xcodeproj: './Artsy Folio.xcodeproj'
+  # `/usr/libexec/PlistBuddy -c "Set CFBundleShortVersionString #{latest_version}" "../Supporting Files/info.plist"`
+
+  # # Generate release notes from CHANGELOG
+  # upcoming = readme_data["upcoming"]
+  # upcoming_release_notes =  "## #{upcoming["version"]} \n\n - #{upcoming["notes"].join "\n - "} \n\n"
+
+  # last_release = readme_data["releases"][0]
+  # last_release_notes =  "## #{last_release["version"]} - #{last_release["date"]} \n\n - #{last_release["notes"].join "\n - "}"
+
+  # release_notes = "#{upcoming_release_notes} \n\n #{last_release_notes}"
+
+  # Build
+  gym workspace: 'Emission/Example/Emission.xcworkspace', configuration: 'Release', scheme: 'Emission'
+
+  # Find out how many builds we've sent for this version
+  # if it's zero, it will raise an exception
+  build_version = 0
+  begin
+    Spaceship::Tunes.login(ENV['FASTLANE_USERNAME'], ENV['FASTLANE_PASSWORD'])
+    app = Spaceship::Tunes::Application.find('net.artsy.Emission')
+    train = app.build_trains[latest_version]
+    build_version = train.builds.count + 1
+  rescue
+    puts 'Assuming build version 0'
+  end
+
+  # Do a tag, we use a http git remote so we can have push access
+  # as the default remote for circle is read-only
+  tag = "deploy-#{latest_version}-#{build_version}"
+  `git tag -d "#{tag}"`
+
+  add_git_tag tag: tag
+  `git remote add http https://github.com/artsy/emission.git`
+  `git push http #{tag}`
+
+  pilot changelog: release_notes
+
+  slack message: 'There is a new Emission beta available. Grab it from Testflight on your iOS device.',
+        channel: 'collector-gmv',
+        payload: {
+          'Version' => latest_version,
+          'What\'s new' => upcoming_release_notes
+        },
+        default_payloads: []
+end
