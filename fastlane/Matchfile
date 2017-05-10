@@ -1,1 +1,1 @@
-git_url "https://github.com/artsy/mobile_fastlane_match"
+git_url "https://#{ENV['GITHUB_SUBMODULES_USER']}@github.com/artsy/mobile_fastlane_match"

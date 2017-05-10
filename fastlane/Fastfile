@@ -22,7 +22,7 @@ lane :stamp_plist do
   `/usr/libexec/PlistBuddy -c "Set CFBundleVersion #{build_number}" "#{plist}"`
 end
 
-lane :ship do
+lane :validate do
   unless ENV['SLACK_URL']
     raise "You need to set SLACK_URL (#{ENV['SLACK_URL']}) in your environment."
   end
@@ -31,13 +31,21 @@ lane :ship do
     raise 'You need to set FASTLANE_USERNAME and FASTLANE_PASSWORD in your environment'
   end
 
+  unless ENV['GITHUB_SUBMODULES_USER']
+    raise 'You need to set GITHUB_SUBMODULES_USER in your environment'
+  end
+end
+
+lane :ship do
+  validate
+  setup_signing
   stamp_plist
 
   changelog = 'emission/CHANGELOG.md'
   upcoming_release_notes = File.read(changelog).lines[0...12].join("\n")
 
   # Build
-  gym workspace: 'mmission/Example/Emission.xcworkspace', configuration: 'Release', scheme: 'Emission'
+  gym workspace: 'Emission/Example/Emission.xcworkspace', configuration: 'Release', scheme: 'Emission'
 
   # Log into iTunes connection, get the latest version of the app we shipped, and how many builds we've sent too
   Spaceship::Tunes.login(ENV['FASTLANE_USERNAME'], ENV['FASTLANE_PASSWORD'])

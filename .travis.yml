@@ -12,5 +12,5 @@ before_script:
   - cd ../../..
 
 script:
-  - bundle exec fastlane setup_signing
+
   - bundle exec fastlane ship
