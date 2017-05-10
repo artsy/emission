@@ -7,4 +7,5 @@ before_install:
   - bundle exec fastlane setup
 
 script:
+  - bundle exec fastlane setup_signing
   - bundle exec fastlane ship

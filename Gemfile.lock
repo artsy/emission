@@ -44,6 +44,7 @@ GEM
       nap (>= 0.8, < 2.0)
       netrc (= 0.7.8)
     cocoapods-try (1.1.0)
+    coderay (1.1.1)
     colored (1.2)
     colored2 (3.1.2)
     commander-fastlane (4.4.4)
@@ -126,6 +127,7 @@ GEM
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
     memoist (0.15.0)
+    method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -140,6 +142,10 @@ GEM
     netrc (0.7.8)
     os (0.9.6)
     plist (3.3.0)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     public_suffix (2.0.5)
     representable (2.3.0)
       uber (~> 0.0.7)
@@ -154,6 +160,7 @@ GEM
       jwt (~> 1.5)
       multi_json (~> 1.10)
     slack-notifier (1.5.1)
+    slop (3.6.0)
     terminal-notifier (1.7.1)
     terminal-table (1.7.3)
       unicode-display_width (~> 1.1.1)
@@ -183,6 +190,7 @@ PLATFORMS
 DEPENDENCIES
   cocoapods
   fastlane
+  pry
 
 BUNDLED WITH
    1.14.6

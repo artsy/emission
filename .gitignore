@@ -52,3 +52,7 @@ fastlane/screenshots
 
 iOSInjectionProject/
 fastlane/Emission
+
+# These files aren't useful to us
+fastlane/report.xml
+fastlane/README.md
