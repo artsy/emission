@@ -2,7 +2,9 @@ source 'https://github.com/artsy/Specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '9.0'
+
 use_frameworks!
+
 # FIXME: Figure out why we are getting hit by this issue.
 install! 'cocoapods', :deterministic_uuids => false
 
@@ -18,7 +20,15 @@ target 'Emission' do
   pod 'React', :path => react_path, :subspecs => %w(RCTWebSocket)
   pod 'Yoga', :path => yoga_path
 
-  pod 'SentryReactNative', :path => sentry_path
+
+  if ENV['DEPLOY']
+    puts 'Changing to using stubbed Swift libraries'
+    pod 'Sentry', :path => 'Podspecs'
+    pod 'SentryReactNative', :path => 'Podspecs'
+  else
+    pod 'SentryReactNative', :path => sentry_path
+  end
+
 
   # Got to make it look right
   pod 'Artsy+UIFonts'
