@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name         = 'SentryReactNative'
-  s.version      = '0.8.3'
+  s.version      = "0.8.5"
   s.summary      = 'A short description of Sentry.'
   s.description  = 'Empty description'
   s.homepage     = 'http://github.com/artsy/emission'

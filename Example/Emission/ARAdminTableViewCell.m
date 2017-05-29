@@ -1,6 +1,6 @@
 #import "ARAdminTableViewCell.h"
-#import <Artsy_UIFonts/UIFont+ArtsyFonts.h>
-#import <Artsy_UIColors/UIColor+ArtsyColors.h>
+@import Artsy_UIFonts;
+@import Artsy_UIColors;
 
 CGFloat ARTableViewCellSettingsHeight = 60;
 
