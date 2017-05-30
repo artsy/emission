@@ -14,6 +14,7 @@
 #import <Emission/ARGeneComponentViewController.h>
 #import <Emission/ARWorksForYouComponentViewController.h>
 #import <Emission/ARComponentViewController.h>
+#import <Emission/ARMessagesComponentViewController.h>
 #import "ARStorybookComponentViewController.h"
 
 @implementation ARRootViewController
@@ -59,6 +60,7 @@
   [sectionData addCellData:self.jumpToRefinedGene];
   [sectionData addCellData:self.jumpToWorksForYou];
   [sectionData addCellData:self.jumpToConsignments];
+  [sectionData addCellData:self.jumpToMessages];
 
   return sectionData;
 }
@@ -149,7 +151,6 @@
   }];
 }
 
-
 - (ARCellData *)jumpToConsignments
 {
   return [self tappableCellDataWithTitle:@"Start Consignment Flow" selection:^{
@@ -158,6 +159,13 @@
   }];
 }
 
+- (ARCellData *)jumpToMessages
+{
+  return [self tappableCellDataWithTitle:@"Messages" selection:^{
+    id viewController = [[ARMessagesComponentViewController alloc] initWithMessages];
+    [self.navigationController pushViewController:viewController animated:YES];
+  }];
+}
 
 - (ARCellData *)generateStagingSwitch
 {
