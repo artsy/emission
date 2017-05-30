@@ -9,6 +9,7 @@
 // See https://github.com/artsy/eigen/blob/master/Artsy/View_Controllers/Admin/ARAdminSettingsViewController.m
 // for examples of how to work with this.
 
+#import "ARRootViewController+AppHub.h"
 #import <Emission/ARArtistComponentViewController.h>
 #import <Emission/ARHomeComponentViewController.h>
 #import <Emission/ARGeneComponentViewController.h>
@@ -32,6 +33,9 @@
   [appData addCellData:self.generateStagingSwitch];
   [tableViewData addSectionData:appData];
 
+  ARSectionData *userSection = [self userSection];
+  [tableViewData addSectionData:userSection];
+
   ARSectionData *viewControllerSection = [self jumpToViewControllersSection];
   [tableViewData addSectionData:viewControllerSection];
 
@@ -40,8 +44,10 @@
   [tableViewData addSectionData:developerSection];
 #endif
 
-  ARSectionData *userSection = [self userSection];
-  [tableViewData addSectionData:userSection];
+#if defined(DEPLOY)
+  ARSectionData *appHubSection = [self appHubSectionData];
+  [tableViewData addSectionData:appHubSection];
+#endif
 
   self.tableViewData = tableViewData;
 }
@@ -71,6 +77,7 @@
   [self setupSection:sectionData withTitle:@"Developer"];
 
   [sectionData addCellData:self.jumpToStorybooks];
+
   return sectionData;
 }
 
@@ -79,8 +86,17 @@
 
 - (ARCellData *)jumpToStorybooks
 {
-  return [self tappableCellDataWithTitle:@"Open Storybooks" selection: ^{
+  return [self tappableCellDataWithTitle:@"Open Storybook" selection: ^{
     id viewController = [ARStorybookComponentViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+  }];
+}
+
+- (ARCellData *)jumpToEndUserStorybooks
+{
+  return [self tappableCellDataWithTitle:@"Open Storybook Browser" selection: ^{
+    id viewController = [[ARComponentViewController alloc] initWithEmission:nil moduleName:@"StorybookBrowser" initialProperties: @{}];
+
     [self.navigationController pushViewController:viewController animated:YES];
   }];
 }
@@ -193,6 +209,7 @@
   ARSectionData *sectionData = [[ARSectionData alloc] init];
   [self setupSection:sectionData withTitle:@"User"];
 
+  [sectionData addCellData:self.jumpToEndUserStorybooks];
   [sectionData addCellData:self.logOutButton];
   return sectionData;
 }

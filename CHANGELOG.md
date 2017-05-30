@@ -2,6 +2,8 @@
 
 #### Consignments
 
+- Users now can access stories from inside the app - orta
+- [dev] Adds component for artist search  - orta
 - [dev] Adds component for consignments todo  - orta
 - [dev] Adds a root component for the Consignments flow  - orta
 - [dev] Adds storybooks for consignments  - orta
