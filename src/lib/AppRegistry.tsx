@@ -3,10 +3,10 @@ import * as React from "react"
 import { AppRegistry, ViewProperties } from "react-native"
 import * as Relay from "react-relay"
 
-import Consignments from "./components/consignments"
-import LoadFailureView from "./components/load_failure_view"
-import Spinner from "./components/spinner"
-import Containers from "./containers/index"
+import Consignments from "./Components/Consignments"
+import LoadFailureView from "./Components/LoadFailureView"
+import Spinner from "./Components/Spinner"
+import Containers from "./Containers/index"
 import Routes from "./relay/routes"
 
 interface Props extends ViewProperties {

@@ -4,7 +4,7 @@ import "react-native"
 import { RootContainer } from "react-relay"
 import StubContainer from "react-storybooks-relay-container"
 
-import Routes from "../../../../Relay/Routes"
+import Routes from "../../../../relay/routes"
 import Inbox from "../index"
 
 storiesOf("Conversations - Inbox")

@@ -4,7 +4,7 @@ import { View } from "react-native"
 import { RootContainer } from "react-relay"
 import StubContainer from "react-storybooks-relay-container"
 
-import Routes from "../../../Relay/Routes"
+import Routes from "../../../relay/routes"
 import ArtistHeader from "../Header"
 
 storiesOf("Artist Header")
