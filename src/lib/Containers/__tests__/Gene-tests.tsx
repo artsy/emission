@@ -2,7 +2,7 @@ import * as React from "react"
 import * as renderer from "react-test-renderer"
 
 let refineCallbackPromise = () => Promise.resolve({})
-jest.mock("../../native_modules/refine_callback", () => ({ default: { triggerRefine: () => refineCallbackPromise() } }))
+jest.mock("../../native_modules/triggerRefine", () => ({ default: { triggerRefine: () => refineCallbackPromise() } }))
 
 // Stub out these views for simplicity sake
 jest.mock("../../components/gene/header", () => "Header")

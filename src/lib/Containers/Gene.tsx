@@ -17,7 +17,7 @@ import Artworks from "../components/artwork_grids/relay_connections/gene_artwork
 import SwitchView, { SwitchEvent } from "../components/switch_view"
 
 import colors from "../../data/colors"
-import Refine from "../native_modules/refine_callback"
+import Refine from "../native_modules/triggerRefine"
 
 const isPad = Dimensions.get("window").width > 700
 
