@@ -1,3 +1,3 @@
-import "./artist.story"
-import "./gene.story"
-import "./my_account.story.tsx"
+import "./Artist.story"
+import "./Gene.story"
+import "./MyAccount.story.tsx"

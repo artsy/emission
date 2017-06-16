@@ -3,7 +3,7 @@ import * as Relay from "react-relay"
 
 import { Animated, Easing, ScrollView, StyleSheet, View, ViewProperties, ViewStyle } from "react-native"
 
-import metaphysics from "../../../Metaphysics"
+import metaphysics from "../../../metaphysics"
 
 import Separator from "../../Separator"
 import Spinner from "../../Spinner"

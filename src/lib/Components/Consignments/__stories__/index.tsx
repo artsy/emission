@@ -1,9 +1,9 @@
-import "./consignments.story"
-import "./style.story"
-
 import { storiesOf } from "@storybook/react-native"
 import * as React from "react"
 import { View } from "react-native"
+
+import "./Consignments.story"
+import "./Style.story"
 
 import * as bottomAlignedButton from "./BottomAligned.story"
 import * as search from "./Search.story"

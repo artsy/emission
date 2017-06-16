@@ -2,7 +2,7 @@ import { storiesOf } from "@storybook/react-native"
 import * as React from "react"
 import { RootContainer } from "react-relay"
 
-import Routes from "../../Relay/Routes"
+import Routes from "../../relay/routes"
 import Artist from "../Artist"
 
 storiesOf("Artist")
