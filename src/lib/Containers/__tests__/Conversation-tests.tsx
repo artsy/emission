@@ -1,7 +1,7 @@
 import * as React from "react"
 import "react-native"
 import * as renderer from "react-test-renderer"
-import Conversation from "../conversation"
+import Conversation from "../Conversation"
 
 it("looks correct when rendered", () => {
   const tree = renderer.create(<Conversation me={props} />).toJSON()

@@ -14,11 +14,11 @@ import {
   ViewStyle,
 } from "react-native"
 
-import Events from "../native_modules/events"
+import Events from "../NativeModules/Events"
 
-import ArtworksGrid from "../components/artwork_grids/generic_grid"
-import SerifText from "../components/text/serif"
-import Notification from "../components/works_for_you/notification"
+import ArtworksGrid from "../Components/ArtworkGrids/GenericGrid"
+import SerifText from "../Components/Text/Serif"
+import Notification from "../Components/WorksForYou/Notification"
 
 import colors from "../../data/colors"
 

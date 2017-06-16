@@ -1,10 +1,10 @@
-import Artist from "./artist"
-import Conversation from "./conversation"
-import Gene from "./gene"
-import Home from "./home"
-import Inbox from "./inbox"
-import MyAccount from "./my_account"
-import WorksForYou from "./works_for_you"
+import Artist from "./Artist"
+import Conversation from "./Conversation"
+import Gene from "./Gene"
+import Home from "./Home"
+import Inbox from "./Inbox"
+import MyAccount from "./MyAccount"
+import WorksForYou from "./WorksForYou"
 
 export default {
   Artist,

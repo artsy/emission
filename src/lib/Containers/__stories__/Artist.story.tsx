@@ -2,8 +2,8 @@ import { storiesOf } from "@storybook/react-native"
 import * as React from "react"
 import { RootContainer } from "react-relay"
 
-import Routes from "../../relay/routes"
-import Artist from "../artist"
+import Routes from "../../Relay/Routes"
+import Artist from "../Artist"
 
 storiesOf("Artist")
   .add("Glenn Brown", () => {

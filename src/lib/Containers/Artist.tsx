@@ -3,14 +3,14 @@ import * as Relay from "react-relay"
 
 import { Dimensions, ScrollView, StyleSheet, View, ViewProperties, ViewStyle } from "react-native"
 
-import About from "../components/artist/about"
-import Artworks from "../components/artist/artworks"
-import Header from "../components/artist/header"
-import Shows from "../components/artist/shows"
-import Events from "../native_modules/events"
+import About from "../Components/Artist/About"
+import Artworks from "../Components/Artist/Artworks"
+import Header from "../Components/Artist/Header"
+import Shows from "../Components/Artist/Shows"
+import Events from "../NativeModules/Events"
 
-import { SwitchEvent } from "../components/switch_view"
-import TabView from "../components/tab_view"
+import { SwitchEvent } from "../Components/SwitchView"
+import TabView from "../Components/TabView"
 
 const isPad = Dimensions.get("window").width > 700
 

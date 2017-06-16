@@ -13,7 +13,7 @@ jest.mock("../../components/opaque_image_view", () => "AROpaqueImageView")
 jest.mock("../../components/spinner", () => "ARSpinner")
 jest.mock("../../components/switch_view", () => "ARSwitchView")
 
-import { Gene } from "../gene"
+import { Gene } from "../Gene"
 
 describe("state", () => {
   it("sets up the initial state in componentWillMount", () => {

@@ -5,19 +5,19 @@ import * as Relay from "react-relay"
 
 import { Dimensions, StyleSheet, View, ViewProperties, ViewStyle } from "react-native"
 
-import WhiteButton from "../components/buttons/flat_white"
-import Separator from "../components/separator"
-import SerifText from "../components/text/serif"
+import WhiteButton from "../Components/Buttons/FlatWhite"
+import Separator from "../Components/Separator"
+import SerifText from "../Components/Text/Serif"
 
-import About from "../components/gene/about"
-import Header from "../components/gene/header"
+import About from "../Components/Gene/About"
+import Header from "../Components/Gene/Header"
 
-import Artworks from "../components/artwork_grids/relay_connections/gene_artworks_grid"
+import Artworks from "../Components/ArtworkGrids/RelayConnections/GeneArtworksGrid"
 
-import SwitchView, { SwitchEvent } from "../components/switch_view"
+import SwitchView, { SwitchEvent } from "../Components/SwitchView"
 
 import colors from "../../data/colors"
-import Refine from "../native_modules/triggerRefine"
+import Refine from "../NativeModules/triggerRefine"
 
 const isPad = Dimensions.get("window").width > 700
 

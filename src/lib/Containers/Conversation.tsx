@@ -1,16 +1,16 @@
 import * as React from "react"
 import * as Relay from "react-relay"
 
-import { MetadataText, SmallHeadline } from "../components/inbox/typography"
+import { MetadataText, SmallHeadline } from "../Components/Inbox/Typography"
 
 import { FlatList, ImageURISource, ViewProperties } from "react-native"
 
 import styled from "styled-components/native"
 import colors from "../../data/colors"
-import ArtworkPreview from "../components/inbox/conversations/artwork_preview"
-import Composer from "../components/inbox/conversations/composer"
-import Message from "../components/inbox/conversations/message"
-import ARSwitchBoard from "../native_modules/switch_board"
+import ArtworkPreview from "../Components/Inbox/Conversations/ArtworkPreview"
+import Composer from "../Components/Inbox/Conversations/Composer"
+import Message from "../Components/Inbox/Conversations/Message"
+import ARSwitchBoard from "../NativeModules/SwitchBoard"
 
 // tslint:disable-next-line:no-var-requires
 const chevron: ImageURISource = require("../../../images/horizontal_chevron.png")

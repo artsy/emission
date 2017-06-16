@@ -1,7 +1,7 @@
 import * as React from "react"
 import * as renderer from "react-test-renderer"
 
-import { MyAccount } from "../my_account"
+import { MyAccount } from "../MyAccount"
 
 it("looks like expected", () => {
   const props = {

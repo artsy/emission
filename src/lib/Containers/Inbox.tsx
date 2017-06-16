@@ -1,7 +1,7 @@
 import * as React from "react"
 import * as Relay from "react-relay"
 
-import Conversations from "../../lib/components/inbox/conversations"
+import Conversations from "../Components/Inbox/Conversations"
 
 export class Inbox extends React.Component<any, any> {
   render() {

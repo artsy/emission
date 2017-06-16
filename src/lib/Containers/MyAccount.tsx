@@ -3,7 +3,7 @@ import * as Relay from "react-relay"
 
 import { Dimensions, ScrollView, View, ViewProperties, ViewStyle } from "react-native"
 
-import Headline from "../components/text/headline"
+import Headline from "../Components/Text/Headline"
 
 interface Props extends ViewProperties, RelayProps {}
 

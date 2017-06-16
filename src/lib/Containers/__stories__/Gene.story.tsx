@@ -2,8 +2,8 @@ import { storiesOf } from "@storybook/react-native"
 import * as React from "react"
 import { RootContainer } from "react-relay"
 
-import Routes from "../../relay/routes"
-import Gene from "../gene"
+import Routes from "../../Relay/Routes"
+import Gene from "../Gene"
 
 const defaultRefineSettings = {
   medium: "*",

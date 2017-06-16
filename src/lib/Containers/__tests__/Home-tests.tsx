@@ -1,7 +1,7 @@
 import * as React from "react"
 import * as renderer from "react-test-renderer"
 
-import { Home } from "../home"
+import { Home } from "../Home"
 
 describe("upon initialization", () => {
   it("starts with isRefreshing set to false", () => {

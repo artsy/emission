@@ -3,10 +3,10 @@ import * as Relay from "react-relay"
 
 import { ListView, ListViewDataSource, RefreshControl, ScrollView, ScrollViewProps, ViewProperties } from "react-native"
 
-import ArtistRail from "../components/home/artist_rails/artist_rail"
-import ArtworkRail from "../components/home/artwork_rails/artwork_rail"
-import HeroUnits from "../components/home/hero_units"
-import SearchBar from "../components/home/search_bar"
+import ArtistRail from "../Components/Home/ArtistRails/ArtistRail"
+import ArtworkRail from "../Components/Home/ArtworkRails/ArtworkRail"
+import HeroUnits from "../Components/Home/HeroUnits"
+import SearchBar from "../Components/Home/SearchBar"
 
 interface DataSourceRow {
   type: "search_bar" | "hero_units" | "artwork" | "artist"

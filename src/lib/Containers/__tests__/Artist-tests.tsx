@@ -2,7 +2,7 @@ import * as React from "react"
 import "react-native"
 import * as renderer from "react-test-renderer"
 
-import { Artist } from "../artist"
+import { Artist } from "../Artist"
 
 describe("availableTabs", () => {
   it("returns nothing if artist has no metadata, shows, or works", () => {
