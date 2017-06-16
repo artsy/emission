@@ -2,16 +2,16 @@ import * as React from "react"
 import * as renderer from "react-test-renderer"
 
 let refineCallbackPromise = () => Promise.resolve({})
-jest.mock("../../native_modules/triggerRefine", () => ({ default: { triggerRefine: () => refineCallbackPromise() } }))
+jest.mock("../../NativeModules/triggerRefine", () => ({ default: { triggerRefine: () => refineCallbackPromise() } }))
 
 // Stub out these views for simplicity sake
-jest.mock("../../components/gene/header", () => "Header")
-jest.mock("../../components/gene/artworks", () => "Artworks")
+jest.mock("../../Components/Gene/Header", () => "Header")
+jest.mock("../../Components/Gene/Artworks", () => "Artworks")
 
 // Native view the Gene references
-jest.mock("../../components/opaque_image_view", () => "AROpaqueImageView")
-jest.mock("../../components/spinner", () => "ARSpinner")
-jest.mock("../../components/switch_view", () => "ARSwitchView")
+jest.mock("../../Components/OpaqueImageView", () => "AROpaqueImageView")
+jest.mock("../../Components/Spinner", () => "ARSpinner")
+jest.mock("../../Components/SwitchView", () => "ARSwitchView")
 
 import { Gene } from "../Gene"
 
