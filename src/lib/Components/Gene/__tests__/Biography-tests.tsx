@@ -3,7 +3,7 @@ import "react-native"
 import * as React from "react"
 import * as renderer from "react-test-renderer"
 
-import Biography from "../biography"
+import Biography from "../Biography"
 
 it("renders properly", () => {
   const gene = {

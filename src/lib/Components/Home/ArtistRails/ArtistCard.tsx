@@ -15,10 +15,10 @@ import {
 const { ARTemporaryAPIModule } = NativeModules
 
 import colors from "../../../../data/colors"
-import Events from "../../../native_modules/events"
-import SwitchBoard from "../../../native_modules/switch_board"
-import InvertedButton from "../../buttons/inverted_button"
-import ImageView from "../../opaque_image_view"
+import Events from "../../../NativeModules/Events"
+import SwitchBoard from "../../../NativeModules/SwitchBoard"
+import InvertedButton from "../../Buttons/InvertedButton"
+import ImageView from "../../OpaqueImageView"
 
 type ArtistFollowHandlerResult = Promise<Animated.EndResult>
 export type ArtistFollowButtonStatusSetter = (status: boolean) => ArtistFollowHandlerResult

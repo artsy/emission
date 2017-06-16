@@ -3,7 +3,7 @@ import "react-native"
 import * as React from "react"
 import * as renderer from "react-test-renderer"
 
-import Artworks from "../artworks"
+import Artworks from "../Artworks"
 
 it("renders properly", () => {
   const props = {

@@ -3,8 +3,8 @@ import * as Relay from "react-relay"
 
 import { LayoutChangeEvent, StyleSheet, TextStyle, View, ViewProperties, ViewStyle } from "react-native"
 
-import SerifText from "../text/serif"
-import RelatedArtist from "./related_artist"
+import SerifText from "../Text/Serif"
+import RelatedArtist from "./RelatedArtist"
 
 interface Props extends ViewProperties, RelayProps {}
 

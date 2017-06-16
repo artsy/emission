@@ -3,7 +3,7 @@ import "react-native"
 import * as React from "react"
 import * as renderer from "react-test-renderer"
 
-import Show from "../show"
+import Show from "../Show"
 
 it("renders properly", () => {
   const showProps = {

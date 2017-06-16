@@ -1,10 +1,10 @@
 import * as React from "react"
 import { NavigatorIOS, Route, View, ViewProperties } from "react-native"
-import { LargeHeadline, Subtitle } from "../typography"
+import { LargeHeadline, Subtitle } from "../Typography"
 
-import TODO from "../components/artwork_consignment_todo"
-import Artist from "./artist"
-import Welcome from "./welcome"
+import TODO from "../Components/ArtworkConsignmentTodo"
+import Artist from "./Artist"
+import Welcome from "./Welcome"
 
 interface Props extends ViewProperties {
   navigator: NavigatorIOS

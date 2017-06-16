@@ -4,7 +4,7 @@ import * as Relay from "react-relay"
 import { StyleSheet, Text, TextStyle, View, ViewProperties, ViewStyle } from "react-native"
 
 import colors from "../../../../data/colors"
-import SerifText from "../../text/serif"
+import SerifText from "../../Text/Serif"
 
 interface Props extends ViewProperties {
   show: {

@@ -2,14 +2,14 @@ import * as moment from "moment"
 import * as React from "react"
 import * as Relay from "react-relay"
 
-import { MetadataText, PreviewText as P, SmallHeadline } from "../typography"
+import { MetadataText, PreviewText as P, SmallHeadline } from "../Typography"
 
 import { StyleSheet, TouchableWithoutFeedback, ViewStyle } from "react-native"
 
 import styled from "styled-components/native"
 import colors from "../../../../data/colors"
 import fonts from "../../../../data/fonts"
-import OpaqueImageView from "../../opaque_image_view"
+import OpaqueImageView from "../../OpaqueImageView"
 
 const Card = styled.View`
     marginLeft: 20

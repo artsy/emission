@@ -3,10 +3,10 @@ import * as Relay from "react-relay"
 
 import { StyleSheet, View, ViewStyle } from "react-native"
 
-import Biography from "./biography"
+import Biography from "./Biography"
 
-import RelatedArtists from "../related_artists"
-import Separator from "../separator"
+import RelatedArtists from "../RelatedArtists"
+import Separator from "../Separator"
 
 class About extends React.Component<RelayPropsWorkaround, any> {
   render() {

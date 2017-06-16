@@ -1,9 +1,9 @@
 import "react-native"
 
 import * as React from "react"
-import { renderWithLayout } from "../../../tests/render_with_layout"
+import { renderWithLayout } from "../../../tests/renderWithLayout"
 
-import InfiniteScrollArtworksGrid from "../relay_connections/artist_artworks_grid"
+import InfiniteScrollArtworksGrid from "../RelayConnections/ArtistArtworksGrid"
 import artwork from "./__fixtures__/artwork"
 
 it("renders properly", () => {

@@ -2,7 +2,7 @@ import * as React from "react"
 import { ListView, NavigatorIOS, Route, TouchableHighlight, View, ViewProperties } from "react-native"
 
 import { Story, StorySection } from "./"
-import { Background, BodyText, Separator, Title } from "./styles"
+import { Background, BodyText, Separator, Title } from "./Styles"
 
 interface Props extends ViewProperties {
   navigator: NavigatorIOS

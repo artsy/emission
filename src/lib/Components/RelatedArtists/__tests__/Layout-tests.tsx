@@ -1,6 +1,6 @@
 import * as React from "react"
 import "react-native"
-import { renderWithLayout } from "../../../tests/render_with_layout"
+import { renderWithLayout } from "../../../tests/renderWithLayout"
 
 import RelatedArtists from "../"
 

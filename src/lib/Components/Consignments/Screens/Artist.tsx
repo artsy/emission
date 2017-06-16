@@ -1,7 +1,7 @@
 import * as React from "react"
 
-import ArtistSearch from "../components/artist_search_results"
-import DoneButton from "../components/bottom_aligned_button"
+import ArtistSearch from "../Components/ArtistSearchResults"
+import DoneButton from "../Components/BottomAlignedButton"
 import { ConsignmentSetup } from "../index"
 
 import { NavigatorIOS, Route, ScrollView, View, ViewProperties } from "react-native"

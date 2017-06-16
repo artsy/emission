@@ -2,9 +2,9 @@ import { storiesOf } from "@storybook/react-native"
 import * as React from "react"
 
 import Nav from "../index"
-import Artist from "../screens/artist"
-import Overview from "../screens/overview"
-import Welcome from "../screens/welcome"
+import Artist from "../Screens/Artist"
+import Overview from "../Screens/Overview"
+import Welcome from "../Screens/Welcome"
 
 const nav = {} as any
 const route = {} as any

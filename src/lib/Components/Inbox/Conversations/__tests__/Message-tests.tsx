@@ -2,7 +2,7 @@ import * as React from "react"
 import "react-native"
 import * as renderer from "react-test-renderer"
 
-import Message from "../message"
+import Message from "../Message"
 
 it("looks correct when rendered", () => {
   // tslint:disable-next-line:max-line-length

@@ -4,9 +4,9 @@ import { Image, StyleSheet, TouchableWithoutFeedback, View } from "react-native"
 import * as Relay from "react-relay"
 
 import colors from "../../../data/colors"
-import SwitchBoard from "../../native_modules/switch_board"
-import ImageView from "../opaque_image_view"
-import SerifText from "../text/serif"
+import SwitchBoard from "../../NativeModules/SwitchBoard"
+import ImageView from "../OpaqueImageView"
+import SerifText from "../Text/Serif"
 
 class Artwork extends React.Component<RelayProps, any> {
   handleTap() {

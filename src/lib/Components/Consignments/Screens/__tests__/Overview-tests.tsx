@@ -1,7 +1,7 @@
 import * as React from "react"
 import "react-native"
 import * as renderer from "react-test-renderer"
-import Overview from "../overview"
+import Overview from "../Overview"
 
 it("Sets up the right view hierarchy", () => {
   const nav = {} as any

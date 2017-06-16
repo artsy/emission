@@ -10,11 +10,11 @@ import * as React from "react"
 
 import { Dimensions, LayoutChangeEvent, ScrollView, StyleSheet, View, ViewStyle } from "react-native"
 
-import Spinner from "../spinner"
-import Artwork from "./artwork"
+import Spinner from "../Spinner"
+import Artwork from "./Artwork"
 
-import { ArtistRelayProps } from "./relay_connections/artist_artworks_grid"
-import { GeneRelayProps } from "./relay_connections/gene_artworks_grid"
+import { ArtistRelayProps } from "./RelayConnections/ArtistArtworksGrid"
+import { GeneRelayProps } from "./RelayConnections/GeneArtworksGrid"
 
 export const PageSize = 10
 export const PageEndThreshold = 1000

@@ -1,8 +1,8 @@
 import * as React from "react"
 import "react-native"
 
-import { renderWithLayout } from "../../../tests/render_with_layout"
-import { Notification } from "../notification"
+import { renderWithLayout } from "../../../tests/renderWithLayout"
+import { Notification } from "../Notification"
 
 it("lays out correctly for unread notification", () => {
   const props = notification()

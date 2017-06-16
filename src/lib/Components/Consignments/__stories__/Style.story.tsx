@@ -2,9 +2,9 @@ import { storiesOf } from "@storybook/react-native"
 import * as React from "react"
 import { View } from "react-native"
 
-import Text from "../components/text_input"
-import Toggle from "../components/toggle"
-import * as T from "../typography"
+import Text from "../Components/TextInput"
+import Toggle from "../Components/Toggle"
+import * as T from "../Typography"
 
 import { Wrapper } from "./"
 

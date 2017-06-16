@@ -1,7 +1,7 @@
 import * as React from "react"
 
 import { Image, ListView, ListViewDataSource, ScrollView, Text, View } from "react-native"
-import { LargeHeadline } from "../typography"
+import { LargeHeadline } from "../Typography"
 
 import styled from "styled-components/native"
 import colors from "../../../../data/colors"

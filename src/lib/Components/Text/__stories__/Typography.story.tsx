@@ -1,8 +1,8 @@
 import { storiesOf } from "@storybook/react-native"
 import * as React from "react"
 
-import Headline from "../headline"
-import Serif from "../serif"
+import Headline from "../Headline"
+import Serif from "../Serif"
 
 storiesOf("Artsy Typography")
   .add("App Headline", () => {

@@ -3,7 +3,7 @@ import "react-native"
 import * as React from "react"
 import * as renderer from "react-test-renderer"
 
-import Metadata from "../metadata"
+import Metadata from "../Metadata"
 
 it("renders properly", () => {
   const show = {

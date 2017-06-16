@@ -4,8 +4,8 @@ import { View } from "react-native"
 import { RootContainer } from "react-relay"
 import StubContainer from "react-storybooks-relay-container"
 
-import Routes from "../../../relay/routes"
-import ArtistHeader from "../header"
+import Routes from "../../../Relay/Routes"
+import ArtistHeader from "../Header"
 
 storiesOf("Artist Header")
   .addDecorator(story => <View style={{ marginLeft: 20, marginRight: 20 }}>{story()}</View>)

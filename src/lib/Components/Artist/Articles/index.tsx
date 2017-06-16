@@ -2,8 +2,8 @@ import * as React from "react"
 import { ScrollView, StyleSheet, View, ViewProperties } from "react-native"
 import * as Relay from "react-relay"
 
-import SerifText from "../../text/serif"
-import Article from "./article"
+import SerifText from "../../Text/Serif"
+import Article from "./Article"
 
 interface Props extends ViewProperties {
   articles: any[]

@@ -5,12 +5,12 @@ import * as Relay from "react-relay"
 import { Dimensions, NativeModules, StyleSheet, TextStyle, View, ViewStyle } from "react-native"
 const { ARTemporaryAPIModule } = NativeModules
 
-import Events from "../../native_modules/events"
+import Events from "../../NativeModules/Events"
 
 import colors from "../../../data/colors"
-import InvertedButton from "../buttons/inverted_button"
-import Headline from "../text/headline"
-import SerifText from "../text/serif"
+import InvertedButton from "../Buttons/InvertedButton"
+import Headline from "../Text/Headline"
+import SerifText from "../Text/Serif"
 
 const isPad = Dimensions.get("window").width > 700
 

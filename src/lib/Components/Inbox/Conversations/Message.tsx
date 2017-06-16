@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { BodyText, MetadataText, SmallHeadline } from "../typography"
+import { BodyText, MetadataText, SmallHeadline } from "../Typography"
 
 import styled from "styled-components/native"
 import colors from "../../../../data/colors"

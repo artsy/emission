@@ -4,7 +4,7 @@ import * as React from "react"
 import "react-native"
 import { ScrollView } from "react-native"
 
-import { Conversation, ConversationSnippet } from "../conversation_snippet"
+import { Conversation, ConversationSnippet } from "../ConversationSnippet"
 
 const conversation: Conversation = {
   id: "582",

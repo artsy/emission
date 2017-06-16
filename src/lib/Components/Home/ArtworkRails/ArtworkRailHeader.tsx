@@ -14,13 +14,13 @@ import {
 } from "react-native"
 const { ARTemporaryAPIModule } = NativeModules
 
-import Events from "../../../native_modules/events"
+import Events from "../../../NativeModules/Events"
 
 import colors from "../../../../data/colors"
-import Button from "../../buttons/inverted_button"
-import SerifText from "../../text/serif"
-import SectionTitle from "../section_title"
-import fragments from "./relay_fragments"
+import Button from "../../Buttons/InvertedButton"
+import SerifText from "../../Text/Serif"
+import SectionTitle from "../SectionTitle"
+import fragments from "./RelayFragments"
 
 const isPad = Dimensions.get("window").width > 700
 

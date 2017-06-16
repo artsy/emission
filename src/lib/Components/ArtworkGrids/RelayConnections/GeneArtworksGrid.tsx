@@ -1,6 +1,6 @@
 import * as Relay from "react-relay"
-import Artwork from "../artwork"
-import InfiniteScrollArtworksGrid, { PageSize } from "../infinite_scroll_grid"
+import Artwork from "../Artwork"
+import InfiniteScrollArtworksGrid, { PageSize } from "../InfiniteScrollGrid"
 
 export default Relay.createContainer(InfiniteScrollArtworksGrid, {
   initialVariables: {

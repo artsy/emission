@@ -2,7 +2,7 @@ import * as React from "react"
 import { ListView, ListViewDataSource, StyleSheet, View, ViewProperties } from "react-native"
 import * as Relay from "react-relay"
 
-import Show from "./show"
+import Show from "./Show"
 
 import colors from "../../../../data/colors"
 

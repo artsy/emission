@@ -3,7 +3,7 @@ import * as React from "react"
 import "react-native"
 import * as renderer from "react-test-renderer"
 
-import ArtworkPreview from "../artwork_preview"
+import ArtworkPreview from "../ArtworkPreview"
 
 it("renders correctly", () => {
   const tree = renderer.create(<ArtworkPreview artwork={artwork} />)

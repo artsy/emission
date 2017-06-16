@@ -1,8 +1,8 @@
 import * as React from "react"
 import "react-native"
-import { renderWithLayout } from "../../../tests/render_with_layout"
+import { renderWithLayout } from "../../../tests/renderWithLayout"
 
-import GenericArtworksGrid from "../generic_grid"
+import GenericArtworksGrid from "../GenericGrid"
 
 it("renders properly", () => {
   const artworks = [artwork(), artwork(), artwork()]

@@ -3,7 +3,7 @@ import * as Relay from "react-relay"
 
 import { LayoutChangeEvent, StyleSheet, View, ViewProperties, ViewStyle } from "react-native"
 
-import Show from "./show"
+import Show from "./Show"
 
 interface Props extends ViewProperties {
   showSize: "medium" | "large"

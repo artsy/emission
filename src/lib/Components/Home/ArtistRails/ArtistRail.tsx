@@ -3,12 +3,12 @@ import * as Relay from "react-relay"
 
 import { Animated, Easing, ScrollView, StyleSheet, View, ViewProperties, ViewStyle } from "react-native"
 
-import metaphysics from "../../../metaphysics"
+import metaphysics from "../../../Metaphysics"
 
-import Separator from "../../separator"
-import Spinner from "../../spinner"
-import SectionTitle from "../section_title"
-import ArtistCard, { ArtistCardQuery, ArtistCardResponse, ArtistFollowButtonStatusSetter } from "./artist_card"
+import Separator from "../../Separator"
+import Spinner from "../../Spinner"
+import SectionTitle from "../SectionTitle"
+import ArtistCard, { ArtistCardQuery, ArtistCardResponse, ArtistFollowButtonStatusSetter } from "./ArtistCard"
 
 const Animation = {
   yDelta: 20,

@@ -3,7 +3,7 @@ import "react-native"
 import * as React from "react"
 import * as renderer from "react-test-renderer"
 
-import Article from "../article"
+import Article from "../Article"
 
 it("renders properly", () => {
   const article = {

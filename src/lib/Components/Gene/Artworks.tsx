@@ -1,6 +1,6 @@
 import * as PropTypes from "prop-types"
 import * as React from "react"
-import ArtworksGrid from "../artwork_grids/relay_connections/gene_artworks_grid"
+import ArtworksGrid from "../ArtworkGrids/RelayConnections/GeneArtworksGrid"
 
 class Artworks extends React.Component<any, any> {
   static propTypes = {

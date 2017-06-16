@@ -3,9 +3,9 @@ import * as Relay from "react-relay"
 
 import { LayoutChangeEvent, ScrollView, TouchableHighlight, View, ViewProperties } from "react-native"
 
-import SwitchBoard from "../../native_modules/switch_board"
-import OpaqueImageView from "../opaque_image_view"
-import Headline from "../text/headline"
+import SwitchBoard from "../../NativeModules/SwitchBoard"
+import OpaqueImageView from "../OpaqueImageView"
+import Headline from "../Text/Headline"
 
 interface Props extends ViewProperties, RelayProps {}
 

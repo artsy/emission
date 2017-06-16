@@ -1,9 +1,9 @@
 import * as React from "react"
 
-import Button from "../../buttons/flat_white"
-import Circle from "../components/circle_image"
-import { BodyText as P, LargeHeadline } from "../typography"
-import Overview from "./overview"
+import Button from "../../Buttons/FlatWhite"
+import Circle from "../Components/CircleImage"
+import { BodyText as P, LargeHeadline } from "../Typography"
+import Overview from "./Overview"
 
 import { NavigatorIOS, Route, ScrollView, View, ViewProperties } from "react-native"
 

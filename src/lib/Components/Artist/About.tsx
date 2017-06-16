@@ -3,11 +3,11 @@ import * as Relay from "react-relay"
 
 import { Dimensions, StyleSheet, View, ViewProperties } from "react-native"
 
-import NavButton from "../buttons/navigation_button"
-import RelatedArtists from "../related_artists"
-import Separator from "../separator"
-import Articles from "./articles"
-import Biography from "./biography"
+import NavButton from "../Buttons/NavigationButton"
+import RelatedArtists from "../RelatedArtists"
+import Separator from "../Separator"
+import Articles from "./Articles"
+import Biography from "./Biography"
 
 interface Props extends ViewProperties {
   artist: any

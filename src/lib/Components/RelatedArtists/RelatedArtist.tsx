@@ -4,8 +4,8 @@ import * as Relay from "react-relay"
 import { StyleSheet, Text, TextStyle, TouchableWithoutFeedback, View } from "react-native"
 
 import colors from "../../../data/colors"
-import SwitchBoard from "../../native_modules/switch_board"
-import ImageView from "../opaque_image_view"
+import SwitchBoard from "../../NativeModules/SwitchBoard"
+import ImageView from "../OpaqueImageView"
 
 class RelatedArtist extends React.Component<any, any> {
   handleTap() {

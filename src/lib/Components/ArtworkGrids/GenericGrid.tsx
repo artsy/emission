@@ -3,7 +3,7 @@ import * as Relay from "react-relay"
 
 import { LayoutChangeEvent, StyleSheet, View, ViewStyle } from "react-native"
 
-import Artwork from "./artwork"
+import Artwork from "./Artwork"
 
 interface Props extends RelayProps {
   sectionDirection: "column" // FIXME: We don’t actually support more options atm

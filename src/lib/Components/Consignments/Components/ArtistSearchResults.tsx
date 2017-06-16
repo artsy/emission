@@ -5,7 +5,7 @@ import styled from "styled-components/native"
 import colors from "../../../../data/colors"
 import fonts from "../../../../data/fonts"
 
-import TextInput, { TextInputProps } from "./text_input"
+import TextInput, { TextInputProps } from "./TextInput"
 
 const Result = styled.View`
   flex-direction: row;

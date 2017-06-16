@@ -2,7 +2,7 @@ import * as React from "react"
 import "react-native"
 import * as renderer from "react-test-renderer"
 
-import TabView from "../tab_view"
+import TabView from "../TabView"
 
 it("looks like expected", () => {
   const tree = renderer

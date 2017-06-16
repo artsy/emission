@@ -3,7 +3,7 @@ import * as React from "react"
 import { View } from "react-native"
 import StubContainer from "react-storybooks-relay-container"
 
-import ArtistArticles from "../articles"
+import ArtistArticles from "../Articles"
 
 storiesOf("Artist Articles")
   .addDecorator(story => <View style={{ marginTop: 20, marginLeft: 20, marginRight: 20 }}>{story()}</View>)

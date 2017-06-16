@@ -3,10 +3,10 @@ import * as Relay from "react-relay"
 
 import { Dimensions, StyleSheet, TextStyle, View, ViewProperties, ViewStyle } from "react-native"
 
-import Separator from "../../separator"
-import SerifText from "../../text/serif"
-import SmallShowsList from "./small_list"
-import VariableSizeShowsList from "./variable_size_shows_list"
+import Separator from "../../Separator"
+import SerifText from "../../Text/Serif"
+import SmallShowsList from "./SmallList"
+import VariableSizeShowsList from "./VariableSizeShowsList"
 
 const windowDimensions = Dimensions.get("window")
 

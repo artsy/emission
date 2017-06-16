@@ -3,7 +3,7 @@ import * as React from "react"
 import "react-native"
 import * as renderer from "react-test-renderer"
 
-import ConversationSnippet from "../conversation_snippet"
+import ConversationSnippet from "../ConversationSnippet"
 
 it("renders correctly", () => {
   const tree = renderer.create(<ConversationSnippet conversation={conversation} onSelected={null} />)

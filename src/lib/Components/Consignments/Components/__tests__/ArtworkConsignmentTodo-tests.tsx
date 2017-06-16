@@ -3,10 +3,10 @@ import * as React from "react"
 import * as renderer from "react-test-renderer"
 import * as shallow from "react-test-renderer/shallow"
 
-import * as TODOStories from "../../__stories__/todo.story"
-import storyRunner from "./runner"
+import * as TODOStories from "../../__stories__/Todo.story"
+import storyRunner from "./Runner"
 
-import TODO from "../artwork_consignment_todo"
+import TODO from "../ArtworkConsignmentTodo"
 
 storyRunner("TODO states:", TODOStories)
 

@@ -3,8 +3,8 @@ import * as Relay from "react-relay"
 
 import { StyleSheet, Text, TextStyle, TouchableWithoutFeedback, View, ViewProperties, ViewStyle } from "react-native"
 
-import SwitchBoard from "../../../native_modules/switch_board"
-import ImageView from "../../opaque_image_view"
+import SwitchBoard from "../../../NativeModules/SwitchBoard"
+import ImageView from "../../OpaqueImageView"
 
 interface Props extends ViewProperties {
   article: {

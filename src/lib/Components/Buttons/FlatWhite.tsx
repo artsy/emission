@@ -2,7 +2,7 @@ import * as React from "react"
 import { Animated, StyleSheet, TouchableHighlight, View, ViewProperties } from "react-native"
 
 import colors from "../../../data/colors"
-import Headline from "../text/headline"
+import Headline from "../Text/Headline"
 
 const AnimationDuration = 250
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableHighlight)

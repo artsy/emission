@@ -2,9 +2,9 @@ import * as React from "react"
 import { TouchableWithoutFeedback, View, ViewProperties } from "react-native"
 import * as Relay from "react-relay"
 
-import SwitchBoard from "../../../native_modules/switch_board"
-import OpaqueImageView from "../../opaque_image_view"
-import ShowMetadata from "./metadata"
+import SwitchBoard from "../../../NativeModules/SwitchBoard"
+import OpaqueImageView from "../../OpaqueImageView"
+import ShowMetadata from "./Metadata"
 
 interface Props extends ViewProperties {
   show: {

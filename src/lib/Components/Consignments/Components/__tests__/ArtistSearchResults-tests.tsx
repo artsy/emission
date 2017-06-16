@@ -1,4 +1,4 @@
-import * as Search from "../../__stories__/search.story"
-import storyRunner from "./runner"
+import * as Search from "../../__stories__/Search.story"
+import storyRunner from "./Runner"
 
 storyRunner("Search states: ", Search)

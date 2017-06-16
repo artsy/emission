@@ -2,11 +2,11 @@ import * as React from "react"
 import * as Relay from "react-relay"
 
 import { ListView, ListViewDataSource, ScrollView, Text, View } from "react-native"
-import { LargeHeadline } from "../typography"
+import { LargeHeadline } from "../Typography"
 
-import SwitchBoard from "../../../native_modules/switch_board"
-import ConversationSnippet from "./conversation_snippet"
-import ZeroStateInbox from "./zerostate_inbox"
+import SwitchBoard from "../../../NativeModules/SwitchBoard"
+import ConversationSnippet from "./ConversationSnippet"
+import ZeroStateInbox from "./ZerostateInbox"
 
 const PageSize = 10
 

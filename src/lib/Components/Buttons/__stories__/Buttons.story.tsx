@@ -2,9 +2,9 @@ import { action, storiesOf } from "@storybook/react-native"
 import * as React from "react"
 import { View } from "react-native"
 
-import FlatWhite from "../flat_white"
-import InvertedButton from "../inverted_button"
-import NavigationButton from "../navigation_button"
+import FlatWhite from "../FlatWhite"
+import InvertedButton from "../InvertedButton"
+import NavigationButton from "../NavigationButton"
 
 const smallButton = { height: 26, width: 320, marginBottom: 20 }
 const largeButton = { height: 26, width: 320, marginBottom: 20 }

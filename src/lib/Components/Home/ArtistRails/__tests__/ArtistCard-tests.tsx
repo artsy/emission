@@ -2,7 +2,7 @@ import * as React from "react"
 import "react-native"
 import * as renderer from "react-test-renderer"
 
-import { ArtistCard } from "../artist_card"
+import { ArtistCard } from "../ArtistCard"
 
 it("renders correctly", () => {
   const tree = renderer.create(<ArtistCard artist={artistProps(true).artist} />).toJSON()

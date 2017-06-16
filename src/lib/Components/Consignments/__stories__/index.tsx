@@ -5,9 +5,9 @@ import { storiesOf } from "@storybook/react-native"
 import * as React from "react"
 import { View } from "react-native"
 
-import * as bottomAlignedButton from "./bottom_aligned.story"
-import * as search from "./search.story"
-import * as todo from "./todo.story"
+import * as bottomAlignedButton from "./BottomAligned.story"
+import * as search from "./Search.story"
+import * as todo from "./Todo.story"
 
 // Just a quick interface so you know the API
 export interface AutoStory {

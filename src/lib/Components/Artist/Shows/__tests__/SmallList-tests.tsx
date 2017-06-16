@@ -3,7 +3,7 @@ import "react-native"
 import * as React from "react"
 import * as renderer from "react-test-renderer"
 
-import SmallList from "../small_list"
+import SmallList from "../SmallList"
 
 it("renders properly", () => {
   const show1 = showProps()

@@ -2,7 +2,7 @@ import * as React from "react"
 import "react-native"
 import * as renderer from "react-test-renderer"
 
-import { ArtworkRail, minRailHeight } from "../artwork_rail"
+import { ArtworkRail, minRailHeight } from "../ArtworkRail"
 
 it("renders correctly", () => {
   const props = railProps(false) as any

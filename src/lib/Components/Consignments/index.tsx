@@ -1,5 +1,5 @@
 import * as React from "react"
-import Welcome from "./screens/welcome"
+import Welcome from "./Screens/Welcome"
 
 import { NavigatorIOS, ViewProperties } from "react-native"
 

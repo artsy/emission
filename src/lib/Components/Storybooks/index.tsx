@@ -1,7 +1,7 @@
 import * as React from "react"
 import { AppRegistry, NavigatorIOS } from "react-native"
 
-import Browser from "./section_browser"
+import Browser from "./SectionBrowser"
 
 export interface Story {
   name: string

@@ -3,7 +3,7 @@ import "react-native"
 import * as React from "react"
 import * as renderer from "react-test-renderer"
 
-import About from "../about"
+import About from "../About"
 
 it("renders properly", () => {
   const artist = {

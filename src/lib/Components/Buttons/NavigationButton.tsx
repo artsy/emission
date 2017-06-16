@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Image, Text, TouchableWithoutFeedback, View } from "react-native"
 
-import SwitchBoard from "../../native_modules/switch_board"
-import Separator from "../separator"
+import SwitchBoard from "../../NativeModules/SwitchBoard"
+import Separator from "../Separator"
 
 interface Props extends React.Props<NavigationButton> {
   href: string

@@ -17,12 +17,12 @@ import {
 } from "react-native"
 
 import colors from "../../../../data/colors"
-import SwitchBoard from "../../../native_modules/switch_board"
-import Grid from "../../artwork_grids/generic_grid"
-import Separator from "../../separator"
-import Spinner from "../../spinner"
-import Header from "./artwork_rail_header"
-import fragments from "./relay_fragments"
+import SwitchBoard from "../../../NativeModules/SwitchBoard"
+import Grid from "../../ArtworkGrids/GenericGrid"
+import Separator from "../../Separator"
+import Spinner from "../../Spinner"
+import Header from "./ArtworkRailHeader"
+import fragments from "./RelayFragments"
 
 // tslint:disable-next-line:no-var-requires
 const chevron: ImageURISource = require("../../../../../images/chevron.png")

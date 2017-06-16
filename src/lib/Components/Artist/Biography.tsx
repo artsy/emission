@@ -4,8 +4,8 @@ import * as Relay from "react-relay"
 
 import * as removeMarkdown from "remove-markdown"
 
-import Headline from "../text/headline"
-import SerifText from "../text/serif"
+import Headline from "../Text/Headline"
+import SerifText from "../Text/Serif"
 
 const sideMargin = Dimensions.get("window").width > 700 ? 50 : 0
 

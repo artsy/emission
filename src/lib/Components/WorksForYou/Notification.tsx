@@ -2,10 +2,10 @@ import * as React from "react"
 import { Image, StyleSheet, TextStyle, TouchableWithoutFeedback, View, ViewStyle } from "react-native"
 import * as Relay from "react-relay"
 
-import SwitchBoard from "../../native_modules/switch_board"
-import ArtworksGrid from "../artwork_grids/generic_grid"
-import Headline from "../text/headline"
-import SerifText from "../text/serif"
+import SwitchBoard from "../../NativeModules/SwitchBoard"
+import ArtworksGrid from "../ArtworkGrids/GenericGrid"
+import Headline from "../Text/Headline"
+import SerifText from "../Text/Serif"
 
 import colors from "../../../data/colors"
 

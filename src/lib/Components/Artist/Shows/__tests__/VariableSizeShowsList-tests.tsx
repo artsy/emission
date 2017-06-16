@@ -2,7 +2,7 @@ import * as React from "react"
 import "react-native"
 import * as renderer from "react-test-renderer"
 
-import ShowsList from "../variable_size_shows_list"
+import ShowsList from "../VariableSizeShowsList"
 
 it("renders properly", () => {
   const show1 = showProps(1)

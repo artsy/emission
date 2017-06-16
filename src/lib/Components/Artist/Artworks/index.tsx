@@ -2,9 +2,9 @@ import * as React from "react"
 import { StyleSheet, View, ViewProperties } from "react-native"
 import * as Relay from "react-relay"
 
-import ArtworksGrid from "../../artwork_grids/relay_connections/artist_artworks_grid"
-import Separator from "../../separator"
-import SerifText from "../../text/serif"
+import ArtworksGrid from "../../ArtworkGrids/RelayConnections/ArtistArtworksGrid"
+import Separator from "../../Separator"
+import SerifText from "../../Text/Serif"
 
 import colors from "../../../../data/colors"
 

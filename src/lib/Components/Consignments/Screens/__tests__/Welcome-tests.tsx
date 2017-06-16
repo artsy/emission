@@ -3,7 +3,7 @@ import * as React from "react"
 import "react-native"
 import * as renderer from "react-test-renderer"
 
-import Welcome from "../welcome"
+import Welcome from "../Welcome"
 
 it("Sets up the right view hierarchy", () => {
   const nav = {} as any

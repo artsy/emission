@@ -3,7 +3,7 @@ import { NativeModules } from "react-native"
 import * as React from "react"
 import * as renderer from "react-test-renderer"
 
-import Header from "../header"
+import Header from "../Header"
 
 beforeAll(() => {
   NativeModules.ARTemporaryAPIModule = { followStatusForArtist: jest.fn() }

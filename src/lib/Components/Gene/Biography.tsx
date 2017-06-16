@@ -4,7 +4,7 @@ import * as removeMarkdown from "remove-markdown"
 
 import { Dimensions, StyleSheet, View, ViewProperties } from "react-native"
 
-import SerifText from "../text/serif"
+import SerifText from "../Text/Serif"
 
 const sideMargin = Dimensions.get("window").width > 700 ? 50 : 0
 
