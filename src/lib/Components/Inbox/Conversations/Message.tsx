@@ -83,7 +83,8 @@ export class Message extends React.Component<Props, any> {
   render() {
     const { artworkPreview, initials, message, senderName } = this.props
     const isSent = this.props.relay ? !this.props.relay.hasOptimisticUpdate(message) : true
-
+    let sanitizedText = message.raw_text.split("\n\nAbout")[0]
+    sanitizedText = sanitizedText.split("\n\nVIEW FULL INQUIRY")[0]
     return (
       <Container>
         <Avatar isUser={message.is_from_user} initials={initials} />
@@ -105,7 +106,7 @@ export class Message extends React.Component<Props, any> {
           {this.renderAttachmentPreviews(message.attachments)}
 
           <BodyText disabled={!isSent}>
-            {message.raw_text.split("\n\nAbout")[0]}
+            {sanitizedText}
           </BodyText>
         </TextContainer>
       </Container>
