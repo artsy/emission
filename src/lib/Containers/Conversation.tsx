@@ -81,6 +81,7 @@ interface Props extends RelayProps {
 interface State {
   sendingMessage: boolean
   isConnected: boolean
+  transaction?: any
 }
 
 export class Conversation extends React.Component<Props, State> {
@@ -137,6 +138,11 @@ export class Conversation extends React.Component<Props, State> {
 
   handleConnectivityChange(isConnected) {
     this.setState({ isConnected })
+
+    if (isConnected && this.state.transaction) {
+      this.setState({ sendingMessage: true })
+      this.state.transaction.recommit()
+    }
   }
 
   render() {
@@ -152,24 +158,23 @@ export class Conversation extends React.Component<Props, State> {
       <Composer
         disabled={this.state.sendingMessage}
         onSubmit={text => {
-          this.props.relay.commitUpdate(
-            new SendConversationMessageMutation({
-              body_text: text,
-              reply_to_message_id: lastMessage.impulse_id,
-              conversation: this.props.me.conversation as any,
-            }),
-            {
-              onFailure: transaction => {
-                // TODO Actually handle errors
-                console.error(transaction.getError())
-                this.setState({ sendingMessage: false })
-              },
-              onSuccess: () => {
-                this.setState({ sendingMessage: false })
-              },
-            }
-          )
+          const messageData = {
+            body_text: text,
+            reply_to_message_id: lastMessage.impulse_id,
+            conversation: this.props.me.conversation as any,
+          }
+          const transaction = this.props.relay.applyUpdate(new SendConversationMessageMutation(messageData), {
+            onFailure: failedTransaction => {
+              // TODO Actually handle errors
+              console.error(failedTransaction.getError())
+              this.setState({ sendingMessage: false, transaction: failedTransaction })
+            },
+            onSuccess: () => {
+              this.setState({ sendingMessage: false })
+            },
+          })
           this.setState({ sendingMessage: true })
+          transaction.commit()
         }}
       >
         <Container>

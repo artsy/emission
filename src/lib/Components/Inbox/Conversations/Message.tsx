@@ -84,6 +84,11 @@ export class Message extends React.Component<Props, any> {
   render() {
     const { artworkPreview, initials, message, senderName } = this.props
     const isSent = this.props.relay ? !this.props.relay.hasOptimisticUpdate(message) : true
+    const transactions = this.props.relay.getPendingTransactions(message)
+
+    if (transactions && transactions.length) {
+      console.log(transactions[0].getStatus())
+    }
 
     return (
       <Container>
