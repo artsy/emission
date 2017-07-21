@@ -76,16 +76,10 @@ class Artwork extends React.Component<RelayProps, any> {
       } else {
         return <SerifText style={styles.text}>Auction Closed</SerifText>
       }
-      return (
-        <View style={{flexDirection: "row"}}>
-          <Image style={{ marginRight: 4 }} source={require("../../../../images/paddle.png")} />
-          <SerifText style={styles.text}>{text}</SerifText>
-        </View>
-      )
     } else {
       return artwork.sale_message && <SerifText style={styles.text}>{artwork.sale_message}</SerifText>
     }
-   }
+  }
 }
 
 const styles = StyleSheet.create({
