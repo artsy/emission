@@ -1,5 +1,7 @@
 ### Master
 
+- Changes post-sale supplementary artwork info - ash
+
 ### 1.3.10
 
 - No longer display bid/price info for artworks in sales that are closed.
