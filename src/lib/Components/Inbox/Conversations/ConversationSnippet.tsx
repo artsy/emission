@@ -4,7 +4,7 @@ import * as Relay from "react-relay"
 
 import { MetadataText, PreviewText as P, SmallHeadline } from "../Typography"
 
-import { StyleSheet, TouchableWithoutFeedback, ViewStyle } from "react-native"
+import { StyleSheet, TouchableWithoutFeedback, View, ViewStyle } from "react-native"
 
 import styled from "styled-components/native"
 import colors from "../../../../data/colors"
@@ -57,7 +57,7 @@ const Separator = styled.View`
   margin-bottom: 5px;
 `
 
-const ArtworkSubtitle = styled.Text`
+const Subtitle = styled.Text`
   font-family: ${fonts["garamond-regular"]};
   font-size: 16px;
   color: black;
@@ -65,7 +65,7 @@ const ArtworkSubtitle = styled.Text`
   margin-bottom: 2;
 `
 
-const ArtworkTitle = styled(ArtworkSubtitle)`
+const Title = styled(Subtitle)`
   font-family: ${fonts["garamond-italic"]};
 `
 
@@ -86,15 +86,9 @@ export interface Conversation {
   }
   last_message: string | null
   last_message_at: string | null
-  artworks: Array<{
-    id: string | null
-    href: string | null
+  items: Array<{
     title: string | null
-    date: string | null
-    artist_names: string | null
-    image: {
-      url: string | null
-    }
+    item: any
   }>
 }
 
@@ -104,23 +98,67 @@ interface Props {
 }
 
 export class ConversationSnippet extends React.Component<Props, any> {
+  renderTitleForItem(conversationItem) {
+    const item = conversationItem.item
+    const title = conversationItem.title
+    if (item.__typename === "Artwork") {
+      const artworkTitle = `${title.trim()}, `
+      const artworkDate = `${item.date}`
+      const artworkArtist = `${item.artist_names} · `
+
+      return (
+        <HorizontalLayout>
+          <P>
+            <Subtitle>
+              {artworkArtist}
+            </Subtitle>
+            <Title>
+              {artworkTitle}
+            </Title>
+            <Subtitle>
+              {artworkDate}
+            </Subtitle>
+          </P>
+        </HorizontalLayout>
+      )
+    }
+
+    return (
+      <HorizontalLayout>
+        <P>
+          <Subtitle>
+            {title}
+          </Subtitle>
+        </P>
+      </HorizontalLayout>
+    )
+  }
+
   render() {
     const conversation = this.props.conversation
-    const artwork = conversation.artworks[0]
 
-    // TODO We need to make artworks available even if they are unpublished.
-    if (!artwork) {
-      console.warn(`Unable to load artwork for conversation with ID ${conversation.id}`)
+    // If we cannot resolve items in the conversation, such as deleted fair booths
+    // prior to snapshotting them at time of inquiry (generally older conversations),
+    // just skip over the entire conversation.
+    if (conversation.items.length === 0) {
+      console.warn(`Unable to load items for conversation with ID ${conversation.id}`)
       return null
     }
 
+    const conversationItem = conversation.items[0]
+    const item = conversationItem.item
+
+    let imageURL
+    if (item.__typename === "Artwork") {
+      imageURL = item.image.url
+    } else {
+      imageURL = item.cover_image.url
+    }
+
     const partnerName = conversation.to.name
-    const artworkTitle = `${artwork.title.trim()}, `
-    const artworkDate = `${artwork.date}`
-    const artworkArtist = `${artwork.artist_names} · `
+
     const conversationText = conversation.last_message.replace(/\n/g, " ")
     const date = moment(conversation.last_message_at).fromNow(true)
-    const imageURL = artwork.image.url
 
     return (
       <TouchableWithoutFeedback onPress={this.props.onSelected}>
@@ -139,19 +177,7 @@ export class ConversationSnippet extends React.Component<Props, any> {
                   <UnreadIndicator />
                 </DateHeading>
               </HorizontalLayout>
-              <HorizontalLayout>
-                <P>
-                  <ArtworkSubtitle>
-                    {artworkArtist}
-                  </ArtworkSubtitle>
-                  <ArtworkTitle>
-                    {artworkTitle}
-                  </ArtworkTitle>
-                  <ArtworkSubtitle>
-                    {artworkDate}
-                  </ArtworkSubtitle>
-                </P>
-              </HorizontalLayout>
+              {this.renderTitleForItem(conversation.items[0])}
               <P>
                 {conversationText}
               </P>
@@ -178,14 +204,25 @@ export default Relay.createContainer(ConversationSnippet, {
         }
         last_message
         last_message_at
-        artworks {
-          id
-          href
+        items {
           title
-          date
-          artist_names
-          image {
-            url
+          item {
+            __typename
+            ... on Artwork {
+              id
+              date
+              href
+              title
+              artist_names
+              image {
+                url
+              }
+            }
+            ... on Show {
+              cover_image {
+                url
+              }
+            }
           }
         }
       }
@@ -205,15 +242,10 @@ interface RelayProps {
     }
     last_message: string
     last_message_at: string | null
-    artworks: Array<{
-      id: string
-      href: string | null
+    __typename: string
+    items: Array<{
       title: string | null
-      date: string | null
-      artist_names: string | null
-      image: {
-        url: string | null
-      } | null
+      item: any
     } | null> | null
   }
 }

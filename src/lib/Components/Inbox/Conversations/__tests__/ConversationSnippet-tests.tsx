@@ -18,16 +18,20 @@ const conversation = {
   last_message: "Karl and Anna... Fab!",
   last_message_at: moment().subtract(30, "minutes").toISOString(),
   created_at: "2017-06-01T14:14:35.538Z",
-  artworks: [
+  items: [
     {
-      id: "bradley-theodore-karl-and-anna-face-off-diptych",
-      href: "/artwork/bradley-theodore-karl-and-anna-face-off-diptych",
       title: "Karl and Anna Face Off (Diptych)",
-      date: "2016",
-      artist_names: "Bradley Theodore",
-      image: {
-        url: "https://d32dm0rphc51dk.cloudfront.net/bJ9I_vJX9ksaKFJAkOAIKg/normalized.jpg",
-        image_url: "https://d32dm0rphc51dk.cloudfront.net/bJ9I_vJX9ksaKFJAkOAIKg/:version.jpg",
+      item: {
+        __typename: "Artwork",
+        id: "bradley-theodore-karl-and-anna-face-off-diptych",
+        href: "/artwork/bradley-theodore-karl-and-anna-face-off-diptych",
+        title: "Karl and Anna Face Off (Diptych)",
+        date: "2016",
+        artist_names: "Bradley Theodore",
+        image: {
+          url: "https://d32dm0rphc51dk.cloudfront.net/bJ9I_vJX9ksaKFJAkOAIKg/normalized.jpg",
+          image_url: "https://d32dm0rphc51dk.cloudfront.net/bJ9I_vJX9ksaKFJAkOAIKg/:version.jpg",
+        },
       },
     },
   ],
