@@ -2613,9 +2613,9 @@ d@1:
   dependencies:
     es5-ext "^0.10.9"
 
-danger-plugin-spellcheck@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/danger-plugin-spellcheck/-/danger-plugin-spellcheck-0.6.0.tgz#2e46950424d0f055e9ef35da6a662df011808674"
+danger-plugin-spellcheck@^0.7.4:
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/danger-plugin-spellcheck/-/danger-plugin-spellcheck-0.7.4.tgz#c5c4f2942e29d1edd8af1b5be66fe946dfdd6244"
   dependencies:
     markdown-spellcheck "^0.11.0"
   optionalDependencies:
@@ -2632,18 +2632,15 @@ danger-plugin-yarn@^0.2.10:
   optionalDependencies:
     esdoc "^0.5.2"
 
-danger@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/danger/-/danger-1.2.0.tgz#45012a191af890c8bb3879a2f3bdf0ef406e0cef"
+danger@2.0.0-alpha.7:
+  version "2.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/danger/-/danger-2.0.0-alpha.7.tgz#c029df171f10f4a7535084452d837957e0b739ba"
   dependencies:
     babel-polyfill "^6.20.0"
     chalk "^2.0.0"
     commander "^2.9.0"
-    debug "^2.6.0"
+    debug "^3.0.0"
     github "^9.2.0"
-    jest-config "^20.0.0"
-    jest-environment-node "^20.0.0"
-    jest-runtime "^20.0.0"
     jsome "^2.3.25"
     jsonpointer "^4.0.1"
     lodash.find "^4.6.0"
@@ -2654,6 +2651,7 @@ danger@^1.2.0:
     parse-diff "^0.4.0"
     parse-link-header "^1.0.1"
     rfc6902 "^1.3.0"
+    vm2 patriksimek/vm2
     voca "^1.2.0"
 
 dashdash@^1.12.0:
@@ -2688,6 +2686,12 @@ debug@2.3.3:
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.3.3.tgz#40c453e67e6e13c901ddec317af8986cda9eff8c"
   dependencies:
     ms "0.7.2"
+
+debug@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.0.0.tgz#1d2feae53349047b08b264ec41906ba17a8516e4"
+  dependencies:
+    ms "2.0.0"
 
 debug@~2.2.0:
   version "2.2.0"
@@ -4493,7 +4497,7 @@ jest-environment-jsdom@^20.0.3:
     jest-util "^20.0.3"
     jsdom "^9.12.0"
 
-jest-environment-node@^20.0.0, jest-environment-node@^20.0.3:
+jest-environment-node@^20.0.3:
   version "20.0.3"
   resolved "https://registry.yarnpkg.com/jest-environment-node/-/jest-environment-node-20.0.3.tgz#d488bc4612af2c246e986e8ae7671a099163d403"
   dependencies:
@@ -4583,7 +4587,7 @@ jest-resolve@^20.0.4:
     is-builtin-module "^1.0.0"
     resolve "^1.3.2"
 
-jest-runtime@^20.0.0, jest-runtime@^20.0.4:
+jest-runtime@^20.0.4:
   version "20.0.4"
   resolved "https://registry.yarnpkg.com/jest-runtime/-/jest-runtime-20.0.4.tgz#a2c802219c4203f754df1404e490186169d124d8"
   dependencies:
@@ -8213,6 +8217,10 @@ vm-browserify@0.0.4:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-0.0.4.tgz#5d7ea45bbef9e4a6ff65f95438e0a87c357d5a73"
   dependencies:
     indexof "0.0.1"
+
+vm2@patriksimek/vm2:
+  version "3.4.6"
+  resolved "https://codeload.github.com/patriksimek/vm2/tar.gz/0711926ba6e6fbfb89277d8033cfd11b69888e46"
 
 voca@^1.2.0:
   version "1.3.0"

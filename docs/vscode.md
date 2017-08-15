@@ -8,11 +8,11 @@
 
 ### Terminology - Commands / Extensions / Tasks
 
-A command is a one off thing the editor cawn do, press  `cmd + shift + p` to bring up a list, then type the one you want.
+A command is a one off thing the editor can do, press  `cmd + shift + p` to bring up a list, then type the one you want.
 
 An extension is a way to add specific features to the editor, you can run the command "Install Extensions" to start installing new ones.
 
-A task is a customizaible command that is set up per-project.
+A task is a customizable command that is set up per-project.
 
 ---
 
