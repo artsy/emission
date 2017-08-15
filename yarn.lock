@@ -2613,9 +2613,9 @@ d@1:
   dependencies:
     es5-ext "^0.10.9"
 
-danger-plugin-spellcheck@^0.7.4:
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/danger-plugin-spellcheck/-/danger-plugin-spellcheck-0.7.4.tgz#c5c4f2942e29d1edd8af1b5be66fe946dfdd6244"
+danger-plugin-spellcheck@^0.7.6:
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/danger-plugin-spellcheck/-/danger-plugin-spellcheck-0.7.6.tgz#4d9e5fd028407e5c2c43ff2a6a4123e8fd485c90"
   dependencies:
     markdown-spellcheck "^0.11.0"
   optionalDependencies:

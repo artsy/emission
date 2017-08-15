@@ -193,4 +193,4 @@ schedule(yarn())
 
 // Check out docs
 import spellcheck from "danger-plugin-spellcheck"
-schedule(spellcheck({}))
+schedule(spellcheck({ ignore: "artsy/artsy-danger@spellcheck.json" }))
