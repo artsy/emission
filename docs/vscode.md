@@ -3,7 +3,7 @@
 ### Getting Set Up
 
 1. [Install VS Code](https://code.visualstudio.com).
-1. When you open VS Code in emission for the first time, it will offer some extensions to use, install them all.
+1. When you open VS Code in emission for the first time, it will offer some extensoins to use, install them all.
 1. In order to launch VS Code from your terminal, in VS Code install the command line tools via the command: "Install 'code' command in PATH".
 
 ### Terminology - Commands / Extensions / Tasks
