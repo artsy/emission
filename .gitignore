@@ -61,3 +61,13 @@ haul-debug.log
 test-results.json
 head_metadata.json
 .vscode/*.sql
+.vscode/temp.sql
+
+# Android
+android/app/src/main/assets/fonts
+android/keys.android.js
+android/.gradle/
+android/build
+android/local.properties
+android/app/app.iml
+*.iml
