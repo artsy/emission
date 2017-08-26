@@ -53,3 +53,11 @@ Emission.js.meta
 
 # Danger artifacts
 tslint-errors.json
+
+# Android
+android/app/src/main/assets/fonts
+android/keys.android.js
+android/.gradle/
+android/build
+android/local.properties
+android/.idea
