@@ -2,7 +2,8 @@
 
 ###### Dev
 
--   Upgrades to React Native v0.48.0-rc.1 - sarah
+-   Upgrades to React Native v0.48.0 - sarah
+-   Extracts connectivity banner into its own component - sarah
 -   Adds stylelint to the dev-experience, not validated on CI yet - orta
 -   Updates Storybooks to 3.2 - orta
 -   CocoaPods/Danger updates - orta

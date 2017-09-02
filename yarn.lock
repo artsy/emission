@@ -3875,8 +3875,8 @@ inquirer@3.0.6:
     through "^2.3.6"
 
 inquirer@^3.0.6:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-3.2.2.tgz#c2aaede1507cc54d826818737742d621bef2e823"
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-3.2.3.tgz#1c7b1731cf77b934ec47d22c9ac5aa8fe7fbe095"
   dependencies:
     ansi-escapes "^2.0.0"
     chalk "^2.0.0"
@@ -6395,9 +6395,9 @@ react-native-storybook-loader@^1.5.0:
     glob "^7.1.1"
     yargs "^8.0.2"
 
-react-native@0.48.0-rc.1:
-  version "0.48.0-rc.1"
-  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.48.0-rc.1.tgz#7ecc61fda1f57e24657c48f1fd3057bef25a8a63"
+react-native@0.48.0:
+  version "0.48.0"
+  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.48.0.tgz#b2f06ee969c3145a0ad19700fb5ee90125bc0d25"
   dependencies:
     absolute-path "^0.0.0"
     art "^0.10.0"
