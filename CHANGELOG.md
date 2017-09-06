@@ -1,5 +1,7 @@
 ### Master
 
+### 1.3.11
+
 - Changes post-sale supplementary artwork info - ash
 
 ### 1.3.10
