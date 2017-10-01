@@ -1,0 +1,13 @@
+diff --git a/node_modules/haul/bin/cli.js b/node_modules/haul/bin/cli.js
+index 9c2bb7d..725da02 100755
+--- a/node_modules/haul/bin/cli.js
++++ b/node_modules/haul/bin/cli.js
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env node
+ 
+ require('babel-register')({
+-  ignore: /node_modules(?!\/haul)/,
++  ignore: [/node_modules(?!\/haul)/],
+   retainLines: true,
+   sourceMaps: 'inline',
+ });

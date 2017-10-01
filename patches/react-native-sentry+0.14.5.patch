@@ -1,0 +1,14 @@
+diff --git a/node_modules/react-native-sentry/lib/Sentry.js b/node_modules/react-native-sentry/lib/Sentry.js
+index e9492bf..98938e2 100644
+--- a/node_modules/react-native-sentry/lib/Sentry.js
++++ b/node_modules/react-native-sentry/lib/Sentry.js
+@@ -1,4 +1,8 @@
+-import {NativeModules, NativeEventEmitter} from 'react-native';
++/**
++ * @flow
++ */
++
++const {NativeModules, NativeEventEmitter} = require('react-native');
+ import Raven from 'raven-js';
+ 
+ const {RNSentry, RNSentryEventEmitter} = NativeModules;

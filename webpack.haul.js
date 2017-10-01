@@ -1,26 +1,8 @@
-const merge = require("webpack-merge")
-
-module.exports = ({ platform }, configuration) =>
-  merge(configuration, {
-    entry: `./Example/Emission/index.${platform}.js`,
-    resolve: {
-      extensions: [".ts", ".tsx", ".js"],
-    },
-    module: {
-      rules: [
-        {
-          test: /\.tsx?$/,
-          use: [
-            {
-              loader: "awesome-typescript-loader",
-              options: {
-                useBabel: true,
-                useCache: true,
-                useTranspileModule: true, // Supposedly faster, won’t work if/when we emit TS declaration files.
-              },
-            },
-          ],
-        },
-      ],
-    },
-  })
+module.exports = ({ platform }, defaultConfig) => {
+  const config = Object.assign({}, defaultConfig)
+  config.entry = `./Example/Emission/index.${platform}.js`
+  config.resolve.extensions = config.resolve.extensions.concat([".ts", ".tsx", ".js", ".jsx"])
+  // Modify existing JS loader to also handle TS sources.
+  config.module.rules.find(rule => rule.test && rule.test.toString() === "/\\.js$/").test = /\.(js|tsx?)$/
+  return config
+}

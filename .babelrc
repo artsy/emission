@@ -1,4 +1,4 @@
 {
-  "plugins": ["relay"],
-  "presets": ["react-native"]
+  "plugins": ["transform-decorators", "relay"],
+  "presets": ["typescript", "react-native"]
 }

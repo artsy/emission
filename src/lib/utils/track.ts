@@ -1,34 +1,31 @@
 import * as React from "react"
 import _track, { Track as _Track } from "react-tracking"
 
-// tslint:disable-next-line:no-namespace
-export namespace Schema {
+/**
+ * The global tracking-info keys in Artsy’s schema.
+ */
+export interface GlobalSchema {
   /**
-   * The global tracking-info keys in Artsy’s schema.
+   * The name of an event.
    */
-  export interface Global {
-    /**
-     * The name of an event.
-     */
-    action: string
+  action: string
 
-    /**
-     * The root container component should specify this as the screen context.
-     */
-    page: string
-  }
+  /**
+   * The root container component should specify this as the screen context.
+   */
+  page: string
+}
 
-  export interface Entity extends Global {
-    /**
-     * The ID of the entity in its database. E.g. the Mongo ID for entities that reside in Gravity.
-     */
-    entity_id: string
+export interface EntitySchema extends GlobalSchema {
+  /**
+   * The ID of the entity in its database. E.g. the Mongo ID for entities that reside in Gravity.
+   */
+  entity_id: string
 
-    /**
-     * The public slug for this entity.
-     */
-    entity_slug: string
-  }
+  /**
+   * The public slug for this entity.
+   */
+  entity_slug: string
 }
 
 /**
@@ -37,7 +34,7 @@ export namespace Schema {
  * @example
  *
  *      ```ts
- *      import { Schema, Track, track as _track } from "src/utils/track"
+ *      import { EntitySchema, Track, track as _track } from "src/utils/track"
  *
  *
  *      interface Props {
@@ -51,7 +48,7 @@ export namespace Schema {
  *        following: boolean
  *      }
  *
- *      const track: Track<Props, State, Schema.Entity> = _track
+ *      const track: Track<Props, State, EntitySchema> = _track
  *
  *      @track()
  *      class Artist extends React.Component<Props, State> {
@@ -75,7 +72,7 @@ export namespace Schema {
  *
  *      ```
  */
-export interface Track<P = any, S = any, T extends Schema.Global = Schema.Global> extends _Track<T, P, S> {} // tslint:disable-line:no-empty-interface
+export interface Track<P = any, S = any, T extends GlobalSchema = GlobalSchema> extends _Track<T, P, S> {} // tslint:disable-line:no-empty-interface
 
 /**
  * A typed tracking-info alias of the default react-tracking `track` function.

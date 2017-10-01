@@ -1,0 +1,17 @@
+diff --git a/node_modules/babel-plugin-syntax-flow/lib/index.js b/node_modules/babel-plugin-syntax-flow/lib/index.js
+index 0654c91..e768359 100644
+--- a/node_modules/babel-plugin-syntax-flow/lib/index.js
++++ b/node_modules/babel-plugin-syntax-flow/lib/index.js
+@@ -4,8 +4,8 @@ exports.__esModule = true;
+ 
+ exports.default = function () {
+   return {
+-    manipulateOptions: function manipulateOptions(opts, parserOpts) {
+-      parserOpts.plugins.push("flow");
+-    }
++    // manipulateOptions: function manipulateOptions(opts, parserOpts) {
++    //   parserOpts.plugins.push("flow");
++    // }
+   };
+ };
+\ No newline at end of file
