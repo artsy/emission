@@ -33,11 +33,10 @@
     "sync-externals": "npm run-script sync-schema && npm run-script sync-colors",
     "sync-schema": "cd externals/metaphysics && git fetch && git checkout origin/master && yarn install && npm run dump-schema -- ../../data && rm -rf node_modules",
     "version": "yarn install && yarn bundle && pushd Example && bundle install && bundle exec pod install && popd && git add Pod/Assets Example/Podfile.lock",
-    "flow-remove-node-modules": "rm -rf node_modules/react-native/flow && find node_modules -type f -name '*.js' -print0 | xargs -0 grep -l '@flow' | xargs -P $(expr $(sysctl -n hw.ncpu) + 1) -I '{}' ./node_modules/.bin/flow-remove-types --pretty --quiet '{}' --out-file '{}' || true",
-    "patch-node-modules": "patch-package && npm run flow-remove-node-modules",
+    "flow-remove-node-modules": "rm -rf node_modules/react-native/flow && find node_modules -type f -name '*.js' -print0 | xargs -0 grep -lE '@(no)?flow' | xargs -P $(expr $(sysctl -n hw.ncpu) + 1) -I '{}' ./node_modules/.bin/flow-remove-types --pretty --quiet '{}' --out-file '{}' || true",
     "prestorybook": "rnstl",
     "postversion": "git push --follow-tags && env EMISSION_ROOT=\"$(pwd)\" pod repo push artsy --allow-warnings --use-json --skip-import-validation",
-    "postinstall": "(sed -i '' 's/#import <RCTAnimation\\/RCTValueAnimatedNode.h>/#import \"RCTValueAnimatedNode.h\"/' ./node_modules/react-native/Libraries/NativeAnimation/RCTNativeAnimatedNodesManager.h || true)"
+    "postinstall": "patch-package && npm run flow-remove-node-modules"
   },
   "repository": {
     "type": "git",
