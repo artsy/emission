@@ -1,6 +1,6 @@
 import * as _ from "lodash"
 import * as React from "react"
-import { AppRegistry, ViewProperties } from "react-native"
+import { AppRegistry } from "react-native"
 import * as Relay from "react-relay"
 
 import LoadFailureView from "./components/load_failure_view"
@@ -8,15 +8,10 @@ import Spinner from "./components/spinner"
 import Containers from "./containers/index"
 import Routes from "./relay/routes"
 
-interface Props extends ViewProperties {
-  trigger1pxScrollHack ?: boolean,
-}
-
-class RootContainer extends React.Component<Props, {}> {
+class RootContainer extends React.Component<{}, {}> {
   state: { retrying: boolean }
   component: Relay.RelayContainerClass<any>
   route: Relay.Route
-  renderFetched?: Relay.RootContainerProps["renderFetched"]
 
   constructor(props) {
     super(props)
@@ -28,7 +23,6 @@ class RootContainer extends React.Component<Props, {}> {
     return (<Relay.RootContainer
              Component={this.component}
              route={this.route}
-             renderFetched={this.renderFetched}
              renderLoading={() => {
                if (this.state.retrying) {
                  // This will re-use the native view first created in the renderFailure callback, which means it can
@@ -76,7 +70,6 @@ class Home extends RootContainer {
     super(props)
     this.component = Containers.Home
     this.route = new Routes.Home()
-    this.renderFetched = data => <Containers.Home {...data} trigger1pxScrollHack={this.props.trigger1pxScrollHack} />
   }
 }
 
@@ -86,8 +79,6 @@ class WorksForYou extends RootContainer {
 
     this.component = Containers.WorksForYou
     this.route = new Routes.WorksForYou({ selectedArtist: props.selectedArtist })
-    this.renderFetched = data => <Containers.WorksForYou {...data}
-                                    trigger1pxScrollHack={this.props.trigger1pxScrollHack} />
   }
 }
 
