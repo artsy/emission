@@ -1,5 +1,9 @@
 ### Master
 
+### 1.3.12
+
+- Fix for Home blank scroll view bug - sarah
+
 ### 1.3.11
 
 - Changes post-sale supplementary artwork info - ash
