@@ -8,7 +8,6 @@ exports[`layout renders as expected 1`] = `
       "items": 6,
     }
   }
-  onScroll={[Function]}
   refreshControl={
     <RefreshControlMock
       onRefresh={[Function]}

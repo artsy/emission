@@ -41,9 +41,6 @@ interface State {
 }
 
 export class WorksForYou extends React.Component<Props, State> {
-  listView: ListView
-  currentScrollOffset: number
-
   constructor(props) {
     super(props)
 
@@ -68,6 +65,7 @@ export class WorksForYou extends React.Component<Props, State> {
     // Update read status in gravity
     NativeModules.ARTemporaryAPIModule.markNotificationsRead((error) => {
       if (error) {
+        // tslint:disable-next-line:no-console
         console.error(error)
       } else {
         Events.postEvent(this, {
@@ -116,7 +114,7 @@ export class WorksForYou extends React.Component<Props, State> {
       totalSize: this.props.relay.variables.totalSize + PageSize,
     }, (readyState) => {
       if (readyState.done) {
-        let notifications = this.props.viewer.me.notifications.edges.map((edge) => edge.node)
+        const notifications = this.props.viewer.me.notifications.edges.map((edge) => edge.node)
 
         // Make sure we maintain the special notification if it exists
         if (this.props.viewer.selectedArtist) {
@@ -134,10 +132,6 @@ export class WorksForYou extends React.Component<Props, State> {
     })
   }
 
-  componentDidUpdate() {
-    this.scrollView.scrollTo({ y: this.currentScrollOffset + 1, animated: false })
-  }
-
   render() {
     const margin = this.state.sideMargin
     const containerMargins = { marginLeft: margin, marginRight: margin }
@@ -149,9 +143,7 @@ export class WorksForYou extends React.Component<Props, State> {
     return (
       <ScrollView contentContainerStyle={ hasNotifications ? {} : styles.container}
                   onLayout={this.onLayout.bind(this)}
-                  onScroll={event => this.currentScrollOffset = event.nativeEvent.contentOffset.y}
                   scrollEventThrottle={100}
-                  ref={scrollView => this.scrollView = scrollView}
       >
         <SerifText style={[styles.title, containerMargins]}>Works by Artists you Follow</SerifText>
         <View style={[containerMargins, {flex: 1}]}>

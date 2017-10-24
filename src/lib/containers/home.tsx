@@ -15,7 +15,7 @@ import ArtworkRail from "../components/home/artwork_rails/artwork_rail"
 import HeroUnits from "../components/home/hero_units"
 import SearchBar from "../components/home/search_bar"
 
-type DataSourceRow = {
+interface DataSourceRow {
   type: "search_bar" | "hero_units" | "artwork" | "artist",
   data: any,
 }
@@ -31,9 +31,6 @@ interface State {
 }
 
 export class Home extends React.Component<Props, State> {
-  listView: ListView
-  currentScrollOffset: number
-
   constructor(props) {
     super(props)
 
@@ -84,14 +81,6 @@ export class Home extends React.Component<Props, State> {
     })).then(stopRefreshing, stopRefreshing)
   }
 
-  componentDidUpdate(previousProps: Props) {
-    const didTrigger1pxScrollHack = (!!previousProps.trigger1pxScrollHack) === false
-                                    && this.props.trigger1pxScrollHack === true
-    if (didTrigger1pxScrollHack) {
-      this.listView.scrollTo({ y: this.currentScrollOffset + 1, animated: false })
-    }
-  }
-
   render() {
     return (
       <ListView dataSource={this.state.dataSource}
@@ -115,8 +104,6 @@ export class Home extends React.Component<Props, State> {
                       return <ArtistRail ref={registerModule} key={data.__id} rail={data} />
                   }
                 }}
-                onScroll={event => this.currentScrollOffset = event.nativeEvent.contentOffset.y}
-                ref={listView => this.listView = listView }
                 style={{ marginTop: 20, overflow: "visible" }} />
     )
   }
