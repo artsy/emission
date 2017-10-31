@@ -17,6 +17,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   required: {
-    fontFamily: "Avant Garde Gothic ITCW01Dm",
+    fontFamily: "AvantGardeGothicITC",
   },
 })

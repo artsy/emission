@@ -75,7 +75,7 @@ const styles = StyleSheet.create<Styles>({
     fontSize: 10,
     textAlign: "left",
     marginTop: 5,
-    fontFamily: "Avant Garde Gothic ITCW01Dm",
+    fontFamily: "AvantGardeGothicITC",
     color: "grey",
   },
   serifText: {

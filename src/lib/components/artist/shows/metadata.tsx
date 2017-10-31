@@ -88,7 +88,7 @@ const styles = StyleSheet.create<Styles>({
     textAlign: "left",
     margin: 2,
     marginLeft: 0,
-    fontFamily: "Avant Garde Gothic ITCW01Dm",
+    fontFamily: "AvantGardeGothicITC",
   },
 })
 

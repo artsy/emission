@@ -140,7 +140,7 @@ exports[`with notifications lays out correctly on larger screens 1`] = `
                           "fontSize": 14,
                         },
                         Object {
-                          "fontFamily": "Avant Garde Gothic ITCW01Dm",
+                          "fontFamily": "AvantGardeGothicITC",
                         },
                       ]
                     }
@@ -269,7 +269,7 @@ exports[`with notifications lays out correctly on larger screens 1`] = `
                           "fontSize": 14,
                         },
                         Object {
-                          "fontFamily": "Avant Garde Gothic ITCW01Dm",
+                          "fontFamily": "AvantGardeGothicITC",
                         },
                       ]
                     }
@@ -471,7 +471,7 @@ exports[`with notifications lays out correctly on small screens 1`] = `
                           "fontSize": 14,
                         },
                         Object {
-                          "fontFamily": "Avant Garde Gothic ITCW01Dm",
+                          "fontFamily": "AvantGardeGothicITC",
                         },
                       ]
                     }
@@ -600,7 +600,7 @@ exports[`with notifications lays out correctly on small screens 1`] = `
                           "fontSize": 14,
                         },
                         Object {
-                          "fontFamily": "Avant Garde Gothic ITCW01Dm",
+                          "fontFamily": "AvantGardeGothicITC",
                         },
                       ]
                     }

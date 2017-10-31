@@ -61,7 +61,7 @@ const styles = StyleSheet.create<Styles>({
     fontSize: 12,
     textAlign: "left",
     marginTop: 10,
-    fontFamily: "Avant Garde Gothic ITCW01Dm",
+    fontFamily: "AvantGardeGothicITC",
   },
   serifText: {
     fontFamily: "AGaramondPro-Regular",

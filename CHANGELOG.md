@@ -1,5 +1,9 @@
 ### Master
 
+### 1.3.13
+
+- Fix for missing fonts due to Avant Garde change - sarah
+
 ### 1.3.12
 
 - Fix for Home blank scroll view bug - sarah

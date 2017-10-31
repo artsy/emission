@@ -184,7 +184,7 @@ const styles = StyleSheet.create<Styles>({
     height: 17,
     fontSize: 12,
     textAlign: "left",
-    fontFamily: "Avant Garde Gothic ITCW01Dm",
+    fontFamily: "AvantGardeGothicITC",
   },
   serifText: {
     marginRight: 12,

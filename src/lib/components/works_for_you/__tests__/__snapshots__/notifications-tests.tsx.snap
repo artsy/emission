@@ -75,7 +75,7 @@ exports[`does not show artist avatar if no avatar image exists 1`] = `
                 "fontSize": 14,
               },
               Object {
-                "fontFamily": "Avant Garde Gothic ITCW01Dm",
+                "fontFamily": "AvantGardeGothicITC",
               },
             ]
           }
@@ -218,7 +218,7 @@ exports[`lays out correctly for read notification 1`] = `
                 "fontSize": 14,
               },
               Object {
-                "fontFamily": "Avant Garde Gothic ITCW01Dm",
+                "fontFamily": "AvantGardeGothicITC",
               },
             ]
           }
@@ -350,7 +350,7 @@ exports[`lays out correctly for unread notification 1`] = `
                 "fontSize": 14,
               },
               Object {
-                "fontFamily": "Avant Garde Gothic ITCW01Dm",
+                "fontFamily": "AvantGardeGothicITC",
               },
             ]
           }
