@@ -1,5 +1,8 @@
 import { storiesOf } from "@storybook/react-native"
+import { SaleRenderer } from "lib/relay/QueryRenderers"
+import { LotsByFollowedArtists } from "lib/Scenes/Home/Components/Sales/Components/LotsByFollowedArtists"
 import { SaleItem } from "lib/Scenes/Home/Components/Sales/Components/SaleItem"
+import renderWithLoadProgress from "lib/utils/renderWithLoadProgress"
 import React from "react"
 import { Text, View } from "react-native"
 
@@ -27,14 +30,15 @@ storiesOf("Scenes/Home/Sales")
   .add("<SaleItem /> | Current Timed", () => {
     return (
       <View>
-        <Text>Todo</Text>
+        <Text>Todo hi!</Text>
       </View>
     )
   })
   .add("Lots By Artists You Follow", () => {
     return (
-      <View>
-        <Text>Todo</Text>
-      </View>
+      <SaleRenderer
+        saleID="rago-auctions-curiouser-and-curiouser"
+        render={renderWithLoadProgress(LotsByFollowedArtists)}
+      />
     )
   })
