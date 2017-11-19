@@ -6,6 +6,7 @@ import Components from "./src/lib/Components"
 
 import "./src/lib/relay/config"
 import "./src/lib/AppRegistry"
+import "./src/lib/relay/warmRootCaches"
 
 export default {
   Containers,

@@ -55,6 +55,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init NS_UNAVAILABLE;
 
+// Runs a relay query that covers data from the root view controllers
+- (void)warmCache;
+
 @end
 
 NS_ASSUME_NONNULL_END

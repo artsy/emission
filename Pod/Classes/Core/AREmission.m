@@ -97,6 +97,11 @@ static AREmission *_sharedInstance = nil;
   return self;
 }
 
+- (void)warmCache:(dispatch_block_t)completion
+{
+    [self.bridge enqueueJSCall:@"ARCacheWarmer" method:@"warm" args:@[] completion:completion];
+}
+
 - (NSURL *)releaseBundleURL;
 {
   return [[NSBundle bundleForClass:self.class] URLForResource:@"Emission" withExtension:@"js"];

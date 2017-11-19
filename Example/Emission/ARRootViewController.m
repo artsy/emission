@@ -2,12 +2,14 @@
 #import "ARAnimatedTickView.h"
 #import "ARTickedTableViewCell.h"
 #import "ARAdminTableViewCell.h"
+
 #import <SAMKeychain/SAMKeychain.h>
 
 #import "AppDelegate.h"
 #import "ARDefaults.h"
 #import "AppSetup.h"
 #import "CommitNetworkModel.h"
+#import <Emission/AREmission.h>
 
 #import "ARRootViewController+PRs.h"
 
@@ -100,6 +102,7 @@
   [self setupSection:sectionData withTitle:@"Developer"];
 
   [sectionData addCellData:self.jumpToStorybooks];
+  [sectionData addCellData:self.warmRelayCache];
 
   return sectionData;
 }
@@ -114,6 +117,20 @@
     [self.navigationController pushViewController:viewController animated:YES];
   }];
 }
+
+- (ARCellData *)warmRelayCache
+{
+  ARCellData *crashCellData = [[ARCellData alloc] initWithIdentifier:AROptionCell];
+  [crashCellData setCellConfigurationBlock:^(UITableViewCell *cell) {
+    cell.textLabel.text = @"Warm Relay Cache";
+  }];
+
+  [crashCellData setCellSelectionBlock:^(UITableView *tableView, NSIndexPath *indexPath) {
+    [[AREmission sharedInstance] warmCache];
+  }];
+  return crashCellData;
+}
+
 
 - (ARCellData *)jumpToEndUserStorybooks
 {
