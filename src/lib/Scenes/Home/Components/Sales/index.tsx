@@ -59,6 +59,7 @@ class Sales extends React.Component<Props, null> {
   }
 
   render() {
+    // console.log(this.props) // FIXME
     const sales = this.props.sales
     const liveAuctions = sales.filter(a => !!a.live_start_at)
     const timedAuctions = sales.filter(a => !a.live_start_at)

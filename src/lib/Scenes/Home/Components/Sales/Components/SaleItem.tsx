@@ -8,7 +8,7 @@ import { createFragmentContainer, graphql } from "react-relay"
 import OpaqueImageView from "lib/Components/OpaqueImageView"
 import Serif from "lib/Components/Text/Serif"
 import fonts from "lib/data/fonts"
-import { liveDate, timedDate } from "../formatDate"
+import { liveDate, timedDate } from "../Utils/formatDate"
 
 const Image = styled(OpaqueImageView)`
   position: absolute;
@@ -34,7 +34,7 @@ const Header = styled.View`
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  padding: 10px 10px;
+  padding: 10px;
 `
 
 const Footer = styled.View`
