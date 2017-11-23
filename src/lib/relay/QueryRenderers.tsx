@@ -125,18 +125,45 @@ export const GeneRenderer: React.SFC<GeneRendererProps> = ({ render, geneID, med
   )
 }
 
-export const HomeRenderer: React.SFC<RendererProps> = ({ render }) => {
+interface SaleRendererProps extends RendererProps {
+  saleID: string
+}
+
+export const SaleRenderer: React.SFC<SaleRendererProps> = ({ render, saleID }) => {
   return (
     <QueryRenderer
       environment={environment}
       query={graphql`
-        query QueryRenderersHomeQuery {
-          home: home_page {
-            ...Home_home
+        query QueryRenderersSaleQuery($saleID: String!) {
+          sale(id: $saleID) {
+            ...Sale_sale
           }
         }
       `}
-      variables={{}}
+      variables={{ saleID }}
+      render={render}
+    />
+  )
+}
+
+interface WorksForYouRendererProps extends RendererProps {
+  selectedArtist?: string
+}
+
+export const WorksForYouRenderer: React.SFC<WorksForYouRendererProps> = ({ render, selectedArtist }) => {
+  return (
+    <QueryRenderer
+      environment={environment}
+      query={graphql.experimental`
+        query QueryRenderersWorksForYouQuery($selectedArtist: String!) {
+          viewer {
+            ...WorksForYou_viewer @arguments(selectedArtist: $selectedArtist)
+          }
+        }
+      `}
+      variables={{
+        selectedArtist: selectedArtist || "",
+      }}
       render={render}
     />
   )
@@ -194,50 +221,6 @@ export const MyProfileRenderer: React.SFC<RendererProps> = ({ render }) => {
         }
       `}
       variables={{}}
-      render={render}
-    />
-  )
-}
-
-interface SaleRendererProps extends RendererProps {
-  saleID: string
-}
-
-export const SaleRenderer: React.SFC<SaleRendererProps> = ({ render, saleID }) => {
-  return (
-    <QueryRenderer
-      environment={environment}
-      query={graphql`
-        query QueryRenderersSaleQuery($saleID: String!) {
-          sale(id: $saleID) {
-            ...Sale_sale
-          }
-        }
-      `}
-      variables={{ saleID }}
-      render={render}
-    />
-  )
-}
-
-interface WorksForYouRendererProps extends RendererProps {
-  selectedArtist?: string
-}
-
-export const WorksForYouRenderer: React.SFC<WorksForYouRendererProps> = ({ render, selectedArtist }) => {
-  return (
-    <QueryRenderer
-      environment={environment}
-      query={graphql.experimental`
-        query QueryRenderersWorksForYouQuery($selectedArtist: String!) {
-          viewer {
-            ...WorksForYou_viewer @arguments(selectedArtist: $selectedArtist)
-          }
-        }
-      `}
-      variables={{
-        selectedArtist: selectedArtist || "",
-      }}
       render={render}
     />
   )
