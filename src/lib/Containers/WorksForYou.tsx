@@ -42,7 +42,8 @@ export class WorksForYou extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)
 
-    const notifications = this.props.viewer.me.notifications.edges.map(edge => edge.node)
+    const notifications =
+      (this.props.viewer.me.notifications && this.props.viewer.me.notifications.edges.map(edge => edge.node)) || []
     if (this.props.viewer.selectedArtist) {
       notifications.unshift(this.formattedSpecialNotification())
     }

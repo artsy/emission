@@ -15,9 +15,11 @@ const PAGE_SIZE = 10
 
 export const LotsByFollowedArtists: React.SFC<Props> = props => {
   const { viewer, relay, title = DEFAULT_TITLE } = props
-  const artworks = viewer.sale_artworks.edges.filter(({ node }) => node.is_biddable).map(({ node }) => node.artwork)
+  const artworks =
+    viewer.sale_artworks &&
+    viewer.sale_artworks.edges.filter(({ node }) => node.is_biddable).map(({ node }) => node.artwork)
 
-  if (!artworks.length) {
+  if (!artworks || artworks.length === 0) {
     return null
   }
 
