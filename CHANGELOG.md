@@ -2,6 +2,7 @@
 // These docs are aimed at developers, but are shown inside collector GMV's channel
 
 ### Master
+-   Sort Home/Auctions list
 
 ### 1.4.0-beta.10
 
