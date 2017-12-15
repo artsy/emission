@@ -2,6 +2,7 @@
 // These docs are aimed at developers, but are shown inside collector GMV's channel
 
 ### Master
+-   Sort Home/Auctions list
 
 -   Sets the status bar BG color to dark for Consignments - orta 
 -   Bug fix for the Gene refine not showing on Eigen - orta
