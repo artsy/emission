@@ -78,12 +78,12 @@ export class FairsRail extends Component<Props, any> {
     )
   }
 
-  refreshData = () => {
-    if (this.refs.rail) {
-      return new Promise((resolve, _reject) => {
-        resolve() // Refetch not needed yet
-      })
-    }
+  refreshData = _total => {
+    // if (this.refs.rail) {
+    return new Promise((resolve, _reject) => {
+      resolve() // Refetch not needed yet
+    })
+    // }
   }
 
   render() {
