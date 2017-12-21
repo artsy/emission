@@ -66,9 +66,10 @@ export class ForYou extends React.Component<ViewProperties & RelayProps, State> 
     this.setState({ isRefreshing: true })
 
     try {
+      console.log("Starting refresh of ", this.railModules.length, " rail modules")
       await Promise.all(
-        this.railModules.map(railModule => {
-          railModule.refreshData()
+        this.railModules.map((railModule, index) => {
+          railModule.refreshData(index)
         })
       )
 

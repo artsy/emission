@@ -198,7 +198,15 @@ export class ArtworkCarousel extends Component<Props & RelayPropsWorkaround, Sta
     if (this.expandable() && !this.state.expanded) {
       return (
         <TouchableHighlight style={styles.expansionButton} onPress={this.expand} underlayColor={"white"}>
-          <Image style={{ height: 8, width: 15, alignSelf: "center", resizeMode: "center" }} source={chevron} />
+          <Image
+            style={{
+              height: 8,
+              width: 15,
+              alignSelf: "center",
+              resizeMode: "center",
+            }}
+            source={chevron}
+          />
         </TouchableHighlight>
       )
     }
@@ -230,36 +238,37 @@ export class ArtworkCarousel extends Component<Props & RelayPropsWorkaround, Sta
     return style
   }
 
-  refreshData = () => {
+  refreshData = (railIndex = undefined) => {
     // TODO: Ensures rail has been mounted before a refresh occurs, circumventing setState errors.
     // See https://stackoverflow.com/a/40969739/1038901 for more info.
-    if (this.refs.rail) {
-      if (this.inflightRequest) {
-        this.inflightRequest.dispose()
-      }
-
-      return new Promise((resolve, reject) => {
-        this.inflightRequest = this.props.relay.refetch({ ...this.props.rail, fetchContent: true }, null, error => {
-          if (error) {
-            console.error("ArtworkCarousel.jsx", error.message)
-
-            this.setState({
-              loadFailed: true,
-            })
-
-            reject(error)
-          } else {
-            this.inflightRequest = null
-
-            this.setState({
-              didPerformFetch: true,
-            })
-
-            resolve()
-          }
-        })
-      })
+    // if (this.refs.rail) {
+    if (this.inflightRequest) {
+      this.inflightRequest.dispose()
     }
+
+    return new Promise((resolve, reject) => {
+      this.inflightRequest = this.props.relay.refetch({ ...this.props.rail, fetchContent: true }, null, error => {
+        if (error) {
+          console.error("ArtworkCarousel.jsx", error.message)
+
+          this.setState({
+            loadFailed: true,
+          })
+
+          reject(error)
+        } else {
+          console.log("Refreshing rail # ", railIndex)
+          this.inflightRequest = null
+
+          this.setState({
+            didPerformFetch: true,
+          })
+
+          resolve()
+        }
+      })
+    })
+    // }
   }
 
   render() {
