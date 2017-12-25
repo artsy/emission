@@ -42,7 +42,7 @@ export const LotsByFollowedArtists: React.SFC<Props> = props => {
 
 export default createPaginationContainer(
   LotsByFollowedArtists,
-  graphql.experimental`
+  graphql`
     fragment LotsByFollowedArtists_viewer on Viewer
       @argumentDefinitions(count: { type: "Int", defaultValue: 10 }, cursor: { type: "String" }) {
       sale_artworks: sale_artworks(first: $count, after: $cursor, include_artworks_by_followed_artists: true)
@@ -67,7 +67,7 @@ export default createPaginationContainer(
     getConnectionFromProps: ({ viewer }) => viewer && (viewer.sale_artworks as ConnectionData),
     getFragmentVariables: (prevVars, totalCount) => ({ ...prevVars, count: totalCount }),
     getVariables: (_props, { count, cursor }) => ({ count, cursor }),
-    query: graphql.experimental`
+    query: graphql`
       query LotsByFollowedArtistsQuery($count: Int!, $cursor: String) {
         viewer {
           ...LotsByFollowedArtists_viewer @arguments(count: $count, cursor: $cursor)

@@ -158,7 +158,7 @@ export class Messages extends React.Component<Props, State> {
 export default createPaginationContainer(
   Messages,
   {
-    conversation: graphql.experimental`
+    conversation: graphql`
       fragment Messages_conversation on Conversation
         @argumentDefinitions(count: { type: "Int", defaultValue: 10 }, after: { type: "String" }) {
         __id
@@ -226,7 +226,7 @@ export default createPaginationContainer(
         after: paginationInfo.cursor,
       }
     },
-    query: graphql.experimental`
+    query: graphql`
       query MessagesQuery($conversationID: String!, $count: Int!, $after: String) {
         me {
           conversation(id: $conversationID) {

@@ -173,7 +173,7 @@ const styles = StyleSheet.create<Styles>({
 const WorksForYouContainer = createPaginationContainer(
   WorksForYou,
   {
-    viewer: graphql.experimental`
+    viewer: graphql`
       fragment WorksForYou_viewer on Viewer
         @argumentDefinitions(
           count: { type: "Int", defaultValue: 10 }
@@ -233,7 +233,7 @@ const WorksForYouContainer = createPaginationContainer(
         cursor,
       }
     },
-    query: graphql.experimental`
+    query: graphql`
       query WorksForYouQuery($count: Int!, $cursor: String) {
         viewer {
           ...WorksForYou_viewer @arguments(count: $count, cursor: $cursor)

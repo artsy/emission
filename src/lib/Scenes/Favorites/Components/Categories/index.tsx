@@ -46,7 +46,7 @@ export class Categories extends React.Component<RelayProps> {
 export default createPaginationContainer<RelayProps>(
   Categories,
   {
-    me: graphql.experimental`
+    me: graphql`
       fragment Categories_me on Me
         @argumentDefinitions(count: { type: "Int", defaultValue: 10 }, cursor: { type: "String" }) {
         followed_genes(first: $count, after: $cursor) @connection(key: "Categories_followed_genes") {
@@ -85,7 +85,7 @@ export default createPaginationContainer<RelayProps>(
     getVariables(_props, pageInfo, _fragmentVariables) {
       return pageInfo
     },
-    query: graphql.experimental`
+    query: graphql`
       query CategoriesMeQuery($count: Int!, $cursor: String) {
         me {
           ...Categories_me @arguments(count: $count, cursor: $cursor)

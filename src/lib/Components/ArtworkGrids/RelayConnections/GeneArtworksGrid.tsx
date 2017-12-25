@@ -9,7 +9,7 @@ Artwork
 const GeneArtworksGrid = createPaginationContainer(
   InfiniteScrollArtworksGrid,
   {
-    gene: graphql.experimental`
+    gene: graphql`
       fragment GeneArtworksGrid_gene on Gene
         @argumentDefinitions(
           count: { type: "Int", defaultValue: 10 }
@@ -65,7 +65,7 @@ const GeneArtworksGrid = createPaginationContainer(
         cursor,
       }
     },
-    query: graphql.experimental`
+    query: graphql`
       query GeneArtworksGridQuery(
         $__id: ID!
         $count: Int!

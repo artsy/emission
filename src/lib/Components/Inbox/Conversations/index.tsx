@@ -126,7 +126,7 @@ export class Conversations extends Component<Props, State> {
 export default createPaginationContainer(
   Conversations,
   {
-    me: graphql.experimental`
+    me: graphql`
       fragment Conversations_me on Me
         @argumentDefinitions(count: { type: "Int", defaultValue: 10 }, cursor: { type: "String", defaultValue: "" }) {
         conversations(first: $count, after: $cursor) @connection(key: "Conversations_conversations") {
@@ -165,7 +165,7 @@ export default createPaginationContainer(
         cursor,
       }
     },
-    query: graphql.experimental`
+    query: graphql`
       query ConversationsQuery($count: Int!, $cursor: String) {
         me {
           ...Conversations_me @arguments(count: $count, cursor: $cursor)
