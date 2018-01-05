@@ -9,7 +9,7 @@ Artwork
 const ArtistForSaleArtworksGrid = createPaginationContainer(
   InfiniteScrollArtworksGrid,
   {
-    artist: graphql.experimental`
+    artist: graphql`
       fragment ArtistForSaleArtworksGrid_artist on Artist
         @argumentDefinitions(
           count: { type: "Int", defaultValue: 10 }
@@ -61,7 +61,7 @@ const ArtistForSaleArtworksGrid = createPaginationContainer(
         filter,
       }
     },
-    query: graphql.experimental`
+    query: graphql`
       query ArtistForSaleArtworksGridQuery(
         $__id: ID!
         $count: Int!

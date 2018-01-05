@@ -342,7 +342,7 @@ const styles = StyleSheet.create<Styles>({
 
 export default createRefetchContainer(
   Gene,
-  graphql.experimental`
+  graphql`
     fragment Gene_gene on Gene
       @argumentDefinitions(
         sort: { type: "String", defaultValue: "-partner_updated_at" }
@@ -372,7 +372,7 @@ export default createRefetchContainer(
       }
     }
   `,
-  graphql.experimental`
+  graphql`
     query GeneRefetchQuery($geneID: String!, $sort: String, $medium: String, $price_range: String) {
       gene(id: $geneID) {
         ...Gene_gene @arguments(sort: $sort, medium: $medium, price_range: $price_range)

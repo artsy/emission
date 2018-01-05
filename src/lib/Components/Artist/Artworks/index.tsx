@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
 
 export default createFragmentContainer(
   Artworks,
-  graphql.experimental`
+  graphql`
     fragment Artworks_artist on Artist {
       counts {
         artworks

@@ -63,7 +63,7 @@ export class SavedWorks extends Component<Props> {
 export default createPaginationContainer(
   SavedWorks,
   {
-    me: graphql.experimental`
+    me: graphql`
       fragment Artworks_me on Me
         @argumentDefinitions(count: { type: "Int", defaultValue: 10 }, cursor: { type: "String", defaultValue: "" }) {
         saved_artworks {
@@ -101,7 +101,7 @@ export default createPaginationContainer(
         cursor,
       }
     },
-    query: graphql.experimental`
+    query: graphql`
       query ArtworksQuery($count: Int!, $cursor: String) {
         me {
           ...Artworks_me @arguments(count: $count, cursor: $cursor)

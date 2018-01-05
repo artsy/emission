@@ -282,7 +282,7 @@ function suggestedArtistQuery(artistID: string): string {
 
 export default createRefetchContainer(
   ArtistRail,
-  graphql.experimental`
+  graphql`
     fragment ArtistRail_rail on HomePageArtistModule
       @argumentDefinitions(fetchContent: { type: "Boolean!", defaultValue: false }) {
       __id
@@ -294,7 +294,7 @@ export default createRefetchContainer(
       }
     }
   `,
-  graphql.experimental`
+  graphql`
     query ArtistRailRefetchQuery($__id: ID!, $fetchContent: Boolean!) {
       node(__id: $__id) {
         ...ArtistRail_rail @arguments(fetchContent: $fetchContent)

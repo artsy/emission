@@ -300,7 +300,7 @@ const styles = StyleSheet.create<Styles>({
 
 export default createRefetchContainer(
   ArtworkRail,
-  graphql.experimental`
+  graphql`
     fragment ArtworkRail_rail on HomePageArtworkModule
       @argumentDefinitions(fetchContent: { type: "Boolean!", defaultValue: false }) {
       ...ArtworkRailHeader_rail
@@ -336,7 +336,7 @@ export default createRefetchContainer(
       }
     }
   `,
-  graphql.experimental`
+  graphql`
     query ArtworkRailRefetchQuery($__id: ID!, $fetchContent: Boolean!) {
       node(__id: $__id) {
         ...ArtworkRail_rail @arguments(fetchContent: $fetchContent)

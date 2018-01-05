@@ -47,7 +47,7 @@ class Artists extends React.Component<RelayProps> {
 export default createPaginationContainer<RelayProps>(
   Artists,
   {
-    me: graphql.experimental`
+    me: graphql`
       fragment Artists_me on Me
         @argumentDefinitions(count: { type: "Int", defaultValue: 10 }, cursor: { type: "String" }) {
         followed_artists_connection(first: $count, after: $cursor)
@@ -87,7 +87,7 @@ export default createPaginationContainer<RelayProps>(
     getVariables(_props, pageInfo, _fragmentVariables) {
       return pageInfo
     },
-    query: graphql.experimental`
+    query: graphql`
       query ArtistsMeQuery($count: Int!, $cursor: String) {
         me {
           ...Artists_me @arguments(count: $count, cursor: $cursor)
