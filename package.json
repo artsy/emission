@@ -100,6 +100,7 @@
     "concurrently": "^2.2.0",
     "danger": "^2.1.5",
     "danger-plugin-jest": "^1.1.0",
+    "detox": "^7.0.1",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.2",
     "jest": "^21.2.1",
@@ -162,5 +163,18 @@
     "singleQuote": false,
     "trailingComma": "es5",
     "bracketSpacing": true
+  },
+  "detox": {
+    "test-runner": "jest",
+    "runner-config": "e2e/config.json",
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "Example/build/Build/Products/Debug-iphonesimulator/Emission.app",
+        "build":
+          "xcodebuild -workspace Example/Emission.xcworkspace -scheme Emission -configuration Debug -sdk iphonesimulator -derivedDataPath Example/build",
+        "type": "ios.simulator",
+        "name": "iPhone 7"
+      }
+    }
   }
 }

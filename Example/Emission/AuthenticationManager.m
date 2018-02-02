@@ -52,11 +52,13 @@
 
   [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
     textField.placeholder = @"Email";
+    textField.accessibilityIdentifier = @"Username";
   }];
 
   [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
     textField.placeholder = @"Password";
     textField.secureTextEntry = YES;
+    textField.accessibilityIdentifier = @"Username";
   }];
 
   __weak UIAlertController *weakAlert = alert;
