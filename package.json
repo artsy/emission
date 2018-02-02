@@ -106,6 +106,7 @@
     "jest-react-native": "18.0.0",
     "jest-styled-components": "^4.9.0",
     "lint-staged": "^6.0.0",
+    "loki": "^0.6.5",
     "prettier": "1.9.2",
     "react-dom": "16.0.0-alpha.12",
     "react-native-storybook-loader": "^1.6.0",
@@ -162,5 +163,12 @@
     "singleQuote": false,
     "trailingComma": "es5",
     "bracketSpacing": true
+  },
+  "loki": {
+    "configurations": {
+      "ios.iphone7": {
+        "target": "ios.simulator"
+      }
+    }
   }
 }
