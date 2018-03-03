@@ -1,0 +1,72 @@
+patch-package
+--- a/node_modules/metro/src/babel-bridge.js
++++ b/node_modules/metro/src/babel-bridge.js
+@@ -13,7 +13,7 @@
+ 
+ // This is a temporary migration bridge to switch between babel 6 and 7
+ 
+-const IS_BABEL7 = process.env.BABEL_VERSION === '7';
++const IS_BABEL7 = true;
+ 
+ // ## Babel 6 stuff
+ 
+@@ -44,7 +44,7 @@ const babelTraverse7 = require('@babel/traverse').default;
+ const babelTypes7 = require('@babel/types');
+ const babylon7 = require('metro-babylon7');
+ 
+-const externalHelpersPlugin7 = require('babel-plugin-external-helpers');
++const externalHelpersPlugin7 = require('@babel/plugin-external-helpers');
+ const inlineRequiresPlugin7 = require('babel-preset-fbjs/plugins/inline-requires');
+ const makeHMRConfig7 = makeMakeHMRConfig7();
+ function resolvePlugins7(plugins) {
+@@ -105,47 +105,11 @@ function resolvePlugins7(plugins) {
+   getPreset: IS_BABEL7 ? getPreset7 : getPreset6 };
+ 
+ 
++// Plugin not functional in Babel 7, is deprecated, and no replacement exists.
+ function makeMakeHMRConfig7() {
+-  // from: babel-preset-react-native/configs/hmr
+-  /**
+-   * Copyright (c) 2015-present, Facebook, Inc.
+-   *
+-   * This source code is licensed under the MIT license found in the
+-   * LICENSE file in the root directory of this source tree.
+-   */
+-  'use strict';
+-
+-  var path = require('path');
+-  var hmrTransform = 'react-transform-hmr/lib/index.js';
+-  var transformPath = require.resolve(hmrTransform);
+-
+   return function (options, filename) {
+-    var transform = filename ?
+-    './' + path.relative(path.dirname(filename), transformPath) // packager can't handle absolute paths
+-    : hmrTransform;
+-
+-    // Fix the module path to use '/' on Windows.
+-    if (path.sep === '\\') {
+-      transform = transform.replace(/\\/g, '/');
+-    }
+-
+-    return {
+-      plugins: resolvePlugins7([
+-      [
+-      'react-transform',
+-      {
+-        transforms: [
+-        {
+-          transform,
+-          imports: ['react'],
+-          locals: ['module'] }] }]]) };
+-
+-
+-
+-
+-
+-
+-  };
++    return {};
++  }
+ }
+ 
+ function getPreset7() {

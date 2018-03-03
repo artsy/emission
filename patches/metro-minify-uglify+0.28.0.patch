@@ -1,0 +1,12 @@
+patch-package
+--- a/node_modules/metro-minify-uglify/src/minifier.js
++++ b/node_modules/metro-minify-uglify/src/minifier.js
+@@ -34,7 +34,7 @@ filename)
+ 
+ function minify(inputCode, inputMap) {
+   const result = uglify.minify(inputCode, {
+-    mangle: { toplevel: true },
++    mangle: { toplevel: true, safari10: true },
+     output: {
+       ascii_only: true,
+       quote_style: 3,

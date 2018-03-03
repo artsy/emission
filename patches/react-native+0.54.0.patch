@@ -1,0 +1,56 @@
+patch-package
+--- a/node_modules/react-native/Libraries/Alert/AlertIOS.js
++++ b/node_modules/react-native/Libraries/Alert/AlertIOS.js
+@@ -122,11 +122,11 @@ class AlertIOS {
+         'keyboardType) and the old syntax will be removed in a future version.');
+ 
+       var callback = type;
+-      var defaultValue = message;
++      var _defaultValue = message;
+       RCTAlertManager.alertWithArgs({
+         title: title || '',
+         type: 'plain-text',
+-        defaultValue,
++        _defaultValue,
+       }, (id, value) => {
+         callback(value);
+       });
+--- a/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableListViewDataSource.js
++++ b/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableListViewDataSource.js
+@@ -7,6 +7,7 @@
+  * of patent rights can be found in the PATENTS file in the same directory.
+  *
+  * @providesModule SwipeableListViewDataSource
++ * @flow
+  */
+ 'use strict';
+ 
+--- a/node_modules/react-native/Libraries/Interaction/PanResponder.js
++++ b/node_modules/react-native/Libraries/Interaction/PanResponder.js
+@@ -7,6 +7,7 @@
+  * of patent rights can be found in the PATENTS file in the same directory.
+  *
+  * @providesModule PanResponder
++ * @flow
+  */
+ 
+ 'use strict';
+--- a/node_modules/react-native/Libraries/Renderer/ReactNativeRenderer-dev.js
++++ b/node_modules/react-native/Libraries/Renderer/ReactNativeRenderer-dev.js
+@@ -4532,12 +4532,12 @@ var ReactDebugCurrentFiber = {
+ };
+ 
+ // Re-export dynamic flags from the fbsource version.
+-var _require = require("ReactFeatureFlags");
++var featureFlags = require("ReactFeatureFlags");
+ 
+-var debugRenderPhaseSideEffects = _require.debugRenderPhaseSideEffects;
++var debugRenderPhaseSideEffects = featureFlags.debugRenderPhaseSideEffects;
+ var debugRenderPhaseSideEffectsForStrictMode =
+-  _require.debugRenderPhaseSideEffectsForStrictMode;
+-var warnAboutDeprecatedLifecycles = _require.warnAboutDeprecatedLifecycles;
++featureFlags.debugRenderPhaseSideEffectsForStrictMode;
++var warnAboutDeprecatedLifecycles = featureFlags.warnAboutDeprecatedLifecycles;
+ 
+ var enableUserTimingAPI = true;
+ var enableMutatingReconciler = true;
