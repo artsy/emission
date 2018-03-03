@@ -64,6 +64,7 @@
   ],
   "resolutions": {
     "graphql": "^0.12.3",
+    "uglify-es": "^3.3.9",
     "relay-runtime": "https://github.com/alloy/relay/releases/download/v1.5.0-artsy.3/relay-runtime-1.5.0-artsy.3.tgz"
   },
   "dependencies": {
@@ -84,6 +85,12 @@
     "styled-components": "^3.1.4"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.40",
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/preset-react": "^7.0.0-beta.40",
+    "@babel/preset-stage-1": "^7.0.0-beta.40",
+    "@babel/preset-typescript": "^7.0.0-beta.40",
     "@playlyfe/gql": "^2.3.2",
     "@storybook/react-native": "^3.3.11",
     "@types/jest": "^22.1.1",
@@ -95,13 +102,12 @@
     "@types/react-tracking": "^5.0.0",
     "@types/relay-runtime": "^1.3.2",
     "awesome-typescript-loader": "^3.2.3",
+    "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^22.1.0",
-    "babel-plugin-relay":
-      "https://github.com/alloy/relay/releases/download/v1.5.0-artsy.3/babel-plugin-relay-1.5.0-artsy.3.tgz",
+    "babel-plugin-relay": "https://github.com/alloy/relay/releases/download/v1.5.0-artsy.3/babel-plugin-relay-1.5.0-artsy.3.tgz",
     "babel-polyfill": "^6.13.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-react-native": "^4.0.0",
     "babel-preset-stage-0": "^6.24.1",
     "concurrently": "^2.2.0",
     "danger": "^2.1.5",
@@ -116,7 +122,6 @@
     "prettier": "1.9.2",
     "react-dom": "16.2.0",
     "react-native-storybook-loader": "^1.6.0",
-    "react-native-typescript-transformer": "^1.2.3",
     "react-storybooks-relay-container": "^1.0.0",
     "react-test-renderer": "^16.3.0-alpha.1",
     "recursive-readdir-sync": "^1.0.6",
@@ -131,7 +136,8 @@
     "tslint": "^5.8.0",
     "tslint-config-prettier": "^1.6.0",
     "typescript": "^2.5.3",
-    "typescript-styled-plugin": "^0.1.2"
+    "typescript-styled-plugin": "^0.1.2",
+    "uglify-es": "^3.3.9"
   },
   "jest": {
     "preset": "react-native",
@@ -149,16 +155,23 @@
       "^lib/(.*)": "<rootDir>/src/lib/$1"
     },
     "transform": {
-      "^[./a-zA-Z0-9$_-]+\\.(bmp|gif|jpg|jpeg|mp4|png|psd|svg|webp)$":
-        "<rootDir>/node_modules/react-native/jest/assetFileTransformer.js",
+      "^[./a-zA-Z0-9$_-]+\\.(bmp|gif|jpg|jpeg|mp4|png|psd|svg|webp)$": "<rootDir>/node_modules/react-native/jest/assetFileTransformer.js",
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "/__tests__/.*-tests.(ts|tsx|js)$",
-    "testPathIgnorePatterns": ["\\.snap$", "<rootDir>/build", "<rootDir>/node_modules/"],
-    "setupFiles": ["./src/setupJest.ts"],
+    "testPathIgnorePatterns": [
+      "\\.snap$",
+      "<rootDir>/build",
+      "<rootDir>/node_modules/"
+    ],
+    "setupFiles": [
+      "./src/setupJest.ts"
+    ],
     "cacheDirectory": ".jest/cache",
-    "modulePathIgnorePatterns": ["<rootDir>/externals"]
+    "modulePathIgnorePatterns": [
+      "<rootDir>/externals"
+    ]
   },
   "lint-staged": {
     "*.@(ts|tsx)": [

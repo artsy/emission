@@ -1,4 +1,14 @@
 {
   "plugins": [["relay", { "artifactDirectory": "./src/__generated__" }]],
-  "presets": ["react-native"]
+  "presets": [
+    ["@babel/preset-env", {
+      "exclude": ["transform-typeof-symbol"],
+      "targets": {
+        "ios": 8
+      }
+    }],
+    "@babel/preset-stage-1",
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ]
 }
