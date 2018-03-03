@@ -35,12 +35,14 @@
     "sync-externals": "npm run-script sync-schema && npm run-script sync-colors",
     "sync-schema": "cd externals/metaphysics && git fetch && git checkout origin/master && yarn install && yarn dump-schema -- ../../data && rm -rf node_modules",
     "sync-schema:localhost": "cd ../metaphysics && yarn dump-schema -- ../emission/data",
-    "version":
-      "yarn install && yarn bundle && pushd Example && bundle install && bundle exec pod update Emission && popd && git add Pod/Assets Example/Podfile.lock",
-    "postversion":
-      "git push --follow-tags && env EMISSION_ROOT=\"$(pwd)\" pod repo push artsy --allow-warnings --use-json --skip-import-validation",
+    "version": "yarn install && yarn bundle && pushd Example && bundle install && bundle exec pod update Emission && popd && git add Pod/Assets Example/Podfile.lock",
+    "postversion": "git push --follow-tags && env EMISSION_ROOT=\"$(pwd)\" pod repo push artsy --allow-warnings --use-json --skip-import-validation",
     "prestorybook": "rnstl",
-    "prepare": "patch-package"
+    "postinstall": "yarn -s patch",
+    "patch": "yarn -s patch:packages && yarn -s patch:remove-flow-from-packages && yarn -s patch:react-native-babel-helpers",
+    "patch:packages": "patch-package",
+    "patch:react-native-babel-helpers": "babel-external-helpers > node_modules/react-native/Libraries/polyfills/babelHelpers.js",
+    "patch:remove-flow-from-packages": "rm -rf node_modules/react-native/flow && (find node_modules -type f -name '*.js' -print0 | xargs -0 grep -lE '@(no)?flow' | xargs -P $(expr $(sysctl -n hw.ncpu) + 1) -I '{}' ./node_modules/.bin/flow-remove-types --pretty --quiet '{}' --out-file '{}') || true"
   },
   "repository": {
     "type": "git",
@@ -114,6 +116,7 @@
     "danger-plugin-jest": "^1.1.0",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.2",
+    "flow-remove-types": "^1.2.3",
     "jest": "^22.4.2",
     "jest-styled-components": "^4.10.0",
     "lint-staged": "^6.0.0",
