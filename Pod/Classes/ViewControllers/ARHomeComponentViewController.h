@@ -18,6 +18,8 @@ typedef enum ARHomeTabType {
 + (NSArray<ARGraphQLQuery *> *)preloadQueriesWithSelectedArtist:(nullable NSString *)artistID
                                                             tab:(ARHomeTabType)selectedTab;
 
+- (void)changeHomeTabTo:(ARHomeTabType)tab;
+
 - (instancetype)initWithSelectedArtist:(nullable NSString *)artistID
                                    tab:(ARHomeTabType)selectedTab
                               emission:(nullable AREmission*)emission NS_DESIGNATED_INITIALIZER;
