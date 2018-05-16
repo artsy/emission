@@ -43,6 +43,7 @@
 ### 1.4.8
 
 * Fixing broken previous deploy, no changes - alloy
+* Add support for changing tabs of the home view - maxim
 
 ### 1.4.7
 
