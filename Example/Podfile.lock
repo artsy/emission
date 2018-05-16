@@ -9,9 +9,7 @@ PODS:
     - Artsy+UIColors (~> 3.0)
     - Artsy+UIFonts
     - UIView+BooleanAnimations
-  - boost-for-react-native (1.63.0)
-  - DoubleConversion (1.1.5)
-  - Emission (1.4.6):
+  - Emission (1.4.8):
     - Artsy+UIColors
     - Artsy+UIFonts (>= 3.0.0)
     - DoubleConversion (= 1.1.5)
