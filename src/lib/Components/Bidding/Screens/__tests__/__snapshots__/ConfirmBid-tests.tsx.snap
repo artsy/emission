@@ -55,33 +55,61 @@ exports[`renders properly 1`] = `
     >
       Confirm your bid
     </Text>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      fontSize={2}
+    <View
+      alignItems="center"
       style={
         Array [
-          Object {
-            "fontFamily": "Unica77LL-Medium",
-            "fontSize": 14,
-          },
+          Object {},
           undefined,
         ]
       }
     >
-      00
-      d
-        
-      00
-      h
-        
-      20
-      m
-        
-      00
-      s
-    </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        fontSize={1}
+        style={
+          Array [
+            Object {
+              "fontFamily": "Unica77LL-Medium",
+              "fontSize": 12,
+            },
+            undefined,
+          ]
+        }
+      >
+        Ends 
+        Invalid date
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        fontSize={2}
+        style={
+          Array [
+            Object {
+              "fontFamily": "Unica77LL-Medium",
+              "fontSize": 14,
+            },
+            undefined,
+          ]
+        }
+      >
+        NaN
+        d
+          
+        NaN
+        h
+          
+        NaN
+        m
+          
+        NaN
+        s
+      </Text>
+    </View>
   </View>
   <View>
     <View

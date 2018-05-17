@@ -15,6 +15,8 @@ it("renders properly", () => {
     lot_label: "538",
     sale: {
       id: "best art sale in town",
+      live_start_at: "2018-06-11T01:00:00+00:00",
+      end_at: null,
     },
   }
   const bg = renderer

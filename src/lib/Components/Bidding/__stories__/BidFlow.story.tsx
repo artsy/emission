@@ -79,6 +79,8 @@ storiesOf("Bidding")
         sale_artwork={{
           sale: {
             id: "1",
+            live_start_at: "2018-06-11T01:00:00+00:00",
+            end_at: null,
           },
           artwork: {
             id: "1",
