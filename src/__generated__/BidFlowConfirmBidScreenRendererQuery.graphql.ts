@@ -24,6 +24,8 @@ query BidFlowConfirmBidScreenRendererQuery(
 fragment ConfirmBid_sale_artwork on SaleArtwork {
   sale {
     id
+    live_start_at
+    end_at
     __id
   }
   artwork {
@@ -88,7 +90,7 @@ return {
   "kind": "Request",
   "operationKind": "query",
   "name": "BidFlowConfirmBidScreenRendererQuery",
-  "id": "9433394e0e43b03a2e903b5628b1bd36",
+  "id": "2c05cbf9628a0b3b7f5a2ff168f252dd",
   "text": null,
   "metadata": {},
   "fragment": {
@@ -141,7 +143,6 @@ return {
             "plural": false,
             "selections": [
               v3,
-              v2,
               {
                 "kind": "ScalarField",
                 "alias": null,
@@ -155,7 +156,8 @@ return {
                 "name": "end_at",
                 "args": null,
                 "storageKey": null
-              }
+              },
+              v2
             ]
           },
           {

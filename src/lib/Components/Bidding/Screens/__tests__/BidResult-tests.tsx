@@ -12,10 +12,11 @@ const saleArtwork = {
     display: "CHF 10,000",
   },
   sale: {
-    live_start_at: "2022-01-01T00:03:00+00:00",
-    end_at: "2022-05-01T00:03:00+00:00",
+    live_start_at: "2022-01-01T12:00:00+00:00",
+    end_at: "2022-01-01T12:00:00+00:00",
   },
 }
+
 describe("BidResult component", () => {
   Date.now = jest.fn(() => 1525983752116)
   it("renders winning screen properly", () => {
@@ -25,7 +26,7 @@ describe("BidResult component", () => {
     const bg = renderer.create(bidResult).toJSON()
 
     const component = shallow(bidResult)
-    expect(component.find("TimeLeftToBidDisplay")).toHaveLength(1)
+    expect(component.find("Timer")).toHaveLength(1)
 
     expect(bg).toMatchSnapshot()
   })
@@ -50,7 +51,7 @@ describe("BidResult component", () => {
     expect(bg).toMatchSnapshot()
 
     const component = shallow(bidResult)
-    expect(component.find("TimeLeftToBidDisplay")).toHaveLength(1)
+    expect(component.find("Timer")).toHaveLength(1)
   })
   it("doesn't render timer when live bidding is started", () => {
     jest.useFakeTimers()
@@ -74,6 +75,6 @@ describe("BidResult component", () => {
     expect(bg).toMatchSnapshot()
 
     const component = shallow(bidResult)
-    expect(component.find("TimeLeftToBidDisplay")).toHaveLength(0)
+    expect(component.find("Timer")).toHaveLength(0)
   })
 })
