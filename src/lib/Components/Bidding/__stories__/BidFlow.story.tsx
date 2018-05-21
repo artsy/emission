@@ -18,6 +18,8 @@ import { BidResultScreen } from "../Screens/BidResult"
 import { ConfirmBid } from "../Screens/ConfirmBid"
 import { ConfirmFirstTimeBid } from "../Screens/ConfirmFirstTimeBid"
 import { MaxBidScreen } from "../Screens/SelectMaxBid"
+import {NavigatorIOS} from "react-native";
+import {BillingAddress} from "../Screens/BillingAddress";
 
 const testSaleArtworkID = "5ae73b417622dd026f0fe473"
 const testArtworkID = "ran-hwang-ephemeral-blossom-pp"
@@ -75,21 +77,28 @@ storiesOf("Bidding")
   })
   .add("Confirm Bid (first time)", () => {
     return (
-      <ConfirmFirstTimeBid
-        sale_artwork={{
-          sale: {
-            id: "1",
+      <NavigatorIOS
+        navigationBarHidden={true}
+        initialRoute={{
+          component: ConfirmFirstTimeBid,
+          title: "",
+          passProps: {
+            sale_artwork: {
+              sale: {
+                id: "1",
+              },
+              artwork: {
+                id: "1",
+                title: "Morgan Hill (Prototype)",
+                date: "1973",
+                artist_names: "Lewis balts",
+              },
+              lot_label: "1",
+            },
+            bid: { display: "$45,000", cents: 4500000 },
           },
-          artwork: {
-            id: "1",
-            title: "Morgan Hill (Prototype)",
-            date: "1973",
-            artist_names: "Lewis balts",
-          },
-          lot_label: "1",
         }}
-        bid={{ display: "$45,000", cents: 4500000 }}
-      />
+        style={{ flex: 1 }} />
     )
   })
   .add("Bidding Result (winning)", () => {
@@ -122,6 +131,9 @@ storiesOf("Bidding")
         saleArtworkID={testSaleArtworkID}
       />
     )
+  })
+  .add("Billing Address", () => {
+    return <BillingAddress />
   })
   .add("Bidding Result (live bidding started)", () => {
     const status = "ERROR_LIVE_BIDDING_STARTED"
