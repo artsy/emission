@@ -69,6 +69,6 @@ export class Validation<I extends InputStrings> {
   }
 }
 
-const result = new Foo(rules).validate({ name: "", age: "27", occupation: "crime", email: "someone.com" })
+const result = new Validation(rules).validate({ name: "", age: "27", occupation: "crime", email: "someone.com" })
 
 console.log(result)
