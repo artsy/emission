@@ -24,17 +24,8 @@ import SwitchBoard from "lib/NativeModules/SwitchBoard"
 
 import { Checkbox } from "../Components/Checkbox"
 import { Timer } from "../Components/Timer"
-import { BillingAddress } from "./BillingAddress"
+import { BillingAddress, Address } from "./BillingAddress"
 import { ConfirmBidProps } from "./ConfirmBid"
-
-export interface Address {
-  fullName: string
-  addressLine1: string
-  addressLine2?: string
-  city: string
-  state: string
-  postalCode: string
-}
 
 interface ConformBidState {
   billingAddress?: Address

@@ -1,13 +1,13 @@
 // currently this assumes every input is a string
-interface InputStrings {
+export interface InputStrings {
   [everyProp: string]: string
 }
 
 type ValidationRule = (val: string) => boolean
 type Errors<Inputs> = Partial<{ [P in keyof Inputs]: string }>
 type Validator = (val: string) => string | void
-type ValidatorWithMessage = (msg?: string) => Validator
-// type ValidatorWithArg = (arg: any, msg?: string) => Validator
+type MakeValidator = (msg?: string) => Validator
+type MakeValidatorWithArg = (arg: any, msg?: string) => Validator
 
 export type ValidationSchema<Inputs> = Partial<{ [P in keyof Inputs]: Validator[] }>
 
@@ -22,15 +22,15 @@ const validateEmail: ValidationRule = val => val.indexOf("@") !== -1
 const validateRequired: ValidationRule = val => val.length > 0
 const validateNumber: ValidationRule = val => Number.isNaN(Number.parseFloat(val))
 const validateInt: ValidationRule = val => Number.isNaN(Number.parseInt(val))
-// const validateMinLength: (min: number) => ValidationRule = min => val => val.length >= min
+const validateMinLength: (min: number) => ValidationRule = min => val => val.length >= min
 
 // Validators from Functions
-export const isRequired: ValidatorWithMessage = (message = "Required") => composeValidator(validateRequired, message)
-export const isEmail: ValidatorWithMessage = (msg = "Valid Email Required") => composeValidator(validateEmail, msg)
-export const isNumber: ValidatorWithMessage = (msg = "Number Required") => composeValidator(validateNumber, msg)
-export const isInt: ValidatorWithMessage = (msg = "Integer Required") => composeValidator(validateInt, msg)
-// export const minLength: (min: number, msg?: string) => ValidatorWithArg = (min, msg) =>
-// composeValidator(validateMinLength(min), msg || `Min Length ${min} required`)
+export const isRequired: MakeValidator = (message = "Required") => composeValidator(validateRequired, message)
+export const isEmail: MakeValidator = (msg = "Valid Email Required") => composeValidator(validateEmail, msg)
+export const isNumber: MakeValidator = (msg = "Number Required") => composeValidator(validateNumber, msg)
+export const isInt: MakeValidator = (msg = "Integer Required") => composeValidator(validateInt, msg)
+export const isMinLength: MakeValidatorWithArg = (min, msg) =>
+  composeValidator(validateMinLength(min), msg || `Min Length ${min} required`)
 
 const rules = {
   name: [isRequired()],

@@ -1,7 +1,5 @@
-import _ from "lodash"
 import React from "react"
 import { ScrollView } from "react-native"
-import * as Yup from "yup"
 
 import { Flex } from "../Elements/Flex"
 import { Sans12, Serif16 } from "../Elements/Typography"
@@ -12,7 +10,16 @@ import { Container } from "../Components/Containers"
 import { Input } from "../Components/Input"
 import { Title } from "../Components/Title"
 
-import { Address } from "./ConfirmFirstTimeBid"
+import { InputStrings, isMinLength, isRequired, Validation } from "./Validation"
+
+export interface Address extends InputStrings {
+  fullName: string
+  addressLine1: string
+  addressLine2?: string
+  city: string
+  state: string
+  postalCode: string
+}
 
 interface BillingAddressProps {
   onSubmit?: (values: Address) => null
@@ -32,13 +39,12 @@ interface BillingAddressState {
 }
 
 export class BillingAddress extends React.Component<BillingAddressProps, BillingAddressState> {
-  private readonly validationSchema = Yup.object().shape({
-    fullName: Yup.string().required("This field is required"),
-    addressLine1: Yup.string().required("This field is required"),
-    addressLine2: Yup.string(),
-    city: Yup.string().required("This field is required"),
-    state: Yup.string().required("This field is required"),
-    postalCode: Yup.string().required("This field is required"),
+  private readonly validationSchema = new Validation({
+    fullName: [isRequired()],
+    addressLine1: [isRequired()],
+    city: [isRequired()],
+    state: [isRequired()],
+    postalCode: [isRequired(), isMinLength(3, "postal codes are probably at least 3 long")],
   })
 
   constructor(props) {
@@ -59,19 +65,13 @@ export class BillingAddress extends React.Component<BillingAddressProps, Billing
   }
 
   onSubmit() {
-    this.validationSchema
-      .validate(this.state.values, { abortEarly: false })
-      .catch(err => {
-        const newState = _.fromPairs(err.inner.map(error => [error.path, error.errors[0]]))
-        this.setState({ errors: newState })
-      })
-      .then(valid => valid && this.props.onSubmit(this.state.values))
+    const errors = this.validationSchema.validate(this.state.values)
+    if (Object.keys(errors).length === 0) {
+      this.props.onSubmit(this.state.values)
+    } else {
+      this.setState({ errors })
+    }
   }
-
-  // updateField = (name, text) => {
-  //   const error = validatedField(name, text)
-  //   this.setState({errors: { [name]: error}, values: {[name]: text} })
-  // }
 
   render() {
     const { errors } = this.state
