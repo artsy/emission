@@ -1,4 +1,6 @@
-// currently this assumes every input is a string
+// currently this assumes every input is a string: interface Address extends InputStrings { ... }
+// not sure this guarantees what i think it does,
+// and anyhow not all inputs are strings... 🤔
 export interface InputStrings {
   [everyProp: string]: string
 }
@@ -6,6 +8,7 @@ export interface InputStrings {
 type ValidationRule = (val: string) => boolean
 type Errors<Inputs> = Partial<{ [P in keyof Inputs]: string }>
 type Validator = (val: string) => string | void
+
 type MakeValidator = (msg?: string) => Validator
 type MakeValidatorWithArg = (arg: any, msg?: string) => Validator
 
@@ -31,12 +34,6 @@ export const isNumber: MakeValidator = (msg = "Number Required") => composeValid
 export const isInt: MakeValidator = (msg = "Integer Required") => composeValidator(validateInt, msg)
 export const isMinLength: MakeValidatorWithArg = (min, msg) =>
   composeValidator(validateMinLength(min), msg || `Min Length ${min} required`)
-
-const rules = {
-  name: [isRequired()],
-  age: [isRequired("This should be an age")],
-  email: [isRequired(), isEmail()],
-}
 
 // export const validateField = (name, values, schema) => {
 //   const validators = schema[name]
@@ -68,7 +65,12 @@ export class Validation<I extends InputStrings> {
     }, {})
   }
 }
-
-const result = new Validation(rules).validate({ name: "", age: "27", occupation: "crime", email: "someone.com" })
-
-console.log(result)
+// const data = { name: "", age: "27", occupation: "crime", email: "someone.com" }
+// const rules = {
+//   name: [isRequired()],
+//   age: [isRequired("This should be an age")],
+//   email: [isRequired(), isEmail()],
+// }
+// const result = new Validation(rules).validate(data)
+// console.log(data)
+// console.log(result)
