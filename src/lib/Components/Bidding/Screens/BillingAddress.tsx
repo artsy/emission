@@ -84,48 +84,48 @@ export class BillingAddress extends React.Component<BillingAddressProps, Billing
               Your billing address
             </Title>
 
-            <Serif16 mb={2}>Full name</Serif16>
             <StyledInput
+              label="Full name"
               value={this.state.values.fullName}
               onChangeText={fullName => this.setState({ values: { ...this.state.values, fullName } })}
               placeholder="Enter your full name"
               error={errors.fullName}
             />
 
-            <Serif16 mb={2}>Address line 1</Serif16>
             <StyledInput
+              label="Address line 1"
               value={this.state.values.addressLine1}
               onChangeText={addressLine1 => this.setState({ values: { ...this.state.values, addressLine1 } })}
               placeholder="Enter your street address"
               error={errors.addressLine1}
             />
 
-            <Serif16 mb={2}>Address line 2 (optional)</Serif16>
             <StyledInput
+              label="Address line 2 (optional)"
               value={this.state.values.addressLine2}
               onChangeText={addressLine2 => this.setState({ values: { ...this.state.values, addressLine2 } })}
               placeholder="Enter your apt, floor, suite, etc."
               error={errors.addressLine2}
             />
 
-            <Serif16 mb={2}>City</Serif16>
             <StyledInput
+              label="City"
               value={this.state.values.city}
               onChangeText={city => this.setState({ values: { ...this.state.values, city } })}
               placeholder="Enter city"
               error={errors.city}
             />
 
-            <Serif16 mb={2}>State, Province, or Region</Serif16>
             <StyledInput
+              label="State, Province, or Region"
               value={this.state.values.state}
               onChangeText={state => this.setState({ values: { ...this.state.values, state } })}
               placeholder="Enter state, province, or region"
               error={errors.state}
             />
 
-            <Serif16 mb={2}>Postal code</Serif16>
             <StyledInput
+              label="Postal code"
               value={this.state.values.postalCode}
               onChangeText={postalCode => this.setState({ values: { ...this.state.values, postalCode } })}
               placeholder="Enter your postal code"
@@ -140,8 +140,9 @@ export class BillingAddress extends React.Component<BillingAddressProps, Billing
   }
 }
 
-const StyledInput = ({ error, ...props }) => (
+const StyledInput = ({ label, error, ...props }) => (
   <Flex mb={4}>
+    <Serif16 mb={2}>{label}</Serif16>
     <Input mb={3} error={Boolean(error)} {...props} />
     {error && <Sans12 color="red100">{error}</Sans12>}
   </Flex>
