@@ -35,7 +35,8 @@ export function metaphysics<T>(payload: Payload, checkStatus: boolean = true): P
   return (
     request(payload, checkStatus)
       .then<T & { errors: any[] }>(
-        response => (response.headers["x-crunch"] === "true" ? uncrunch(response.json()) : response.json())
+        response =>
+          response.headers && response.headers["x-crunch"] === "true" ? uncrunch(response.json()) : response.json()
       )
       // TODO: This is here because existing callers may rely on this, but it’s now duplicated here and in fetchQuery.ts
       .then(json => {
