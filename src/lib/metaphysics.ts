@@ -1,11 +1,11 @@
-import { NativeModules } from "react-native"
 import { uncrunch } from "graphql-crunch"
+import { NativeModules } from "react-native"
 const Emission = NativeModules.Emission || {}
 
 import { metaphysicsURL } from "./relay/config"
 import { NetworkError } from "./utils/errors"
 
-const enableCrunch = Emission.crunch || "true"
+const enableCrunch = Emission.crunch != null ? Emission.crunch : "true"
 
 type Payload = { query: string; variables?: object } | { documentID: string; variables?: object }
 
