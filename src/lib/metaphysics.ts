@@ -1,8 +1,11 @@
 import { NativeModules } from "react-native"
+import { uncrunch } from "graphql-crunch"
 const Emission = NativeModules.Emission || {}
 
 import { metaphysicsURL } from "./relay/config"
 import { NetworkError } from "./utils/errors"
+
+const enableCrunch = Emission.crunch || "true"
 
 type Payload = { query: string; variables?: object } | { documentID: string; variables?: object }
 
@@ -14,7 +17,7 @@ export function request(payload: Payload, checkStatus: boolean = true): Promise<
       "User-Agent": Emission.userAgent,
       "X-USER-ID": Emission.userID,
       "X-ACCESS-TOKEN": Emission.authenticationToken,
-      "X-CRUNCH": "true"
+      "X-CRUNCH": enableCrunch,
     },
     body: JSON.stringify(payload),
   }).then(response => {
@@ -32,6 +35,7 @@ export function metaphysics<T>(payload: Payload, checkStatus: boolean = true): P
   return (
     request(payload, checkStatus)
       .then<T & { errors: any[] }>(response => response.json())
+      .then(json => (enableCrunch ? uncrunch(json) : json))
       // TODO: This is here because existing callers may rely on this, but it’s now duplicated here and in fetchQuery.ts
       .then(json => {
         if (json.errors) {
