@@ -14,6 +14,7 @@ export function request(payload: Payload, checkStatus: boolean = true): Promise<
       "User-Agent": Emission.userAgent,
       "X-USER-ID": Emission.userID,
       "X-ACCESS-TOKEN": Emission.authenticationToken,
+      "X-CRUNCH": "true"
     },
     body: JSON.stringify(payload),
   }).then(response => {
