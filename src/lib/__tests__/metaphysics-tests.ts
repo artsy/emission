@@ -20,7 +20,7 @@ it("Adds a user agent for reaction", () => {
   return metaphysics("query {}").then(() => {
     expect(global.fetch).toBeCalledWith("https://metaphysics-production.artsy.net", {
       body: '{"query":"query {}"}',
-      headers: { "Content-Type": "application/json", "User-Agent": "Emission" },
+      headers: expect.objectContaining({ "Content-Type": "application/json", "User-Agent": "Emission" }),
       method: "POST",
     })
   })
