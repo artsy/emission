@@ -6,6 +6,7 @@ import styled from "styled-components/native"
 import { Flex } from "../Elements/Flex"
 import { Col, Row } from "../Elements/Grid"
 import {
+  Sans12,
   Serif14,
   Serif16,
   SerifItalic14,
@@ -29,7 +30,7 @@ import { ConfirmBid_sale_artwork } from "__generated__/ConfirmBid_sale_artwork.g
 import { Checkbox } from "../Components/Checkbox"
 import { Timer } from "../Components/Timer"
 
-interface ConfirmBidProps extends ViewProperties {
+export interface ConfirmBidProps extends ViewProperties {
   sale_artwork: ConfirmBid_sale_artwork
   bid: {
     display: string
@@ -194,8 +195,9 @@ export class ConfirmBid extends React.Component<ConfirmBidProps, ConformBidState
               <Col>
                 <SerifSemibold16>Max bid</SerifSemibold16>
               </Col>
-              <Col alignItems="flex-end">
+              <Col alignItems="center" justifyContent="flex-end" flexDirection="row">
                 <Serif16>{this.props.bid.display}</Serif16>
+                <Sans12 color="purple100" ml={3} mb={2}>Edit</Sans12>
               </Col>
             </Row>
 
@@ -203,7 +205,7 @@ export class ConfirmBid extends React.Component<ConfirmBidProps, ConformBidState
           </View>
 
           <View>
-            <Checkbox pl={3} pb={1} justifyContent="center" onPress={() => this.conditionsOfSalePressed()}>
+            <Checkbox justifyContent="center" onPress={() => this.conditionsOfSalePressed()}>
               <Serif14 mt={2} color="black60">
                 You agree to <LinkText onPress={this.onPressConditionsOfSale}>Conditions of Sale</LinkText>.
               </Serif14>
