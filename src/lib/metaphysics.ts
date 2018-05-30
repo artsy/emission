@@ -5,8 +5,6 @@ const Emission = NativeModules.Emission || {}
 import { metaphysicsURL } from "./relay/config"
 import { NetworkError } from "./utils/errors"
 
-const enableCrunch = Emission.crunch != null ? Emission.crunch : "true"
-
 type Payload = { query: string; variables?: object } | { documentID: string; variables?: object }
 
 export function request(payload: Payload, checkStatus: boolean = true): Promise<Response> {
@@ -17,7 +15,7 @@ export function request(payload: Payload, checkStatus: boolean = true): Promise<
       "User-Agent": Emission.userAgent,
       "X-USER-ID": Emission.userID,
       "X-ACCESS-TOKEN": Emission.authenticationToken,
-      "X-CRUNCH": enableCrunch,
+      "X-CRUNCH": "true",
     },
     body: JSON.stringify(payload),
   }).then(response => {
