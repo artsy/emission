@@ -22,6 +22,14 @@ import SwitchBoard from "lib/NativeModules/SwitchBoard"
 import { BillingAddress } from "./BillingAddress"
 import { ConfirmBidProps } from "./ConfirmBid"
 
+import stripe from "tipsi-stripe"
+
+stripe.setOptions({
+  publishableKey: "PUBLISHABLE_KEY",
+  merchantId: "MERCHANT_ID", // Optional
+  androidPayMode: "test", // Android only
+})
+
 export interface Address {
   fullName: string
   addressLine1: string

@@ -19,6 +19,7 @@ import { BidResultScreen } from "../Screens/BidResult"
 import { BillingAddress } from "../Screens/BillingAddress"
 import { ConfirmBid } from "../Screens/ConfirmBid"
 import { ConfirmFirstTimeBid } from "../Screens/ConfirmFirstTimeBid"
+import { CreditCardForm } from "../Screens/CreditCardForm"
 import { MaxBidScreen } from "../Screens/SelectMaxBid"
 
 const testSaleArtworkID = "5ae73b417622dd026f0fe473"
@@ -132,6 +133,9 @@ storiesOf("Bidding")
         saleArtworkID={testSaleArtworkID}
       />
     )
+  })
+  .add("Credit Card", () => {
+    return <CreditCardForm />
   })
   .add("Billing Address", () => {
     return <BillingAddress />
