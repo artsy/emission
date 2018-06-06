@@ -67,15 +67,6 @@ interface StripeToken {
   extra: any
 }
 
-const theme = {
-  primaryBackgroundColor: Colors.White,
-  secondaryBackgroundColor: Colors.GrayLight,
-  primaryForegroundColor: Colors.GrayBold,
-  secondaryForegroundColor: Colors.GrayRegular,
-  accentColor: Colors.PurpleRegular,
-  errorColor: Colors.RedRegular,
-}
-
 @screenTrack({
   context_screen: Schema.PageNames.BidFlowConfirmBidPage,
   context_screen_owner_type: null,
@@ -116,7 +107,7 @@ export class ConfirmFirstTimeBid extends React.Component<ConfirmBidProps, Confir
   }
 
   onCreditCardAdded = async (params: PaymentCardTextFieldParams) => {
-    // Get token here or just set state? Getting token gives us card type for free
+    // Get token here or just set state? Getting token gives us card type for free but we may not have billing addr yet (for stronger token??? Assumptions)
     const token = await stripe.createTokenWithCard(params)
     this.setState({ creditCardToken: token, creditCardFormParams: params })
   }
