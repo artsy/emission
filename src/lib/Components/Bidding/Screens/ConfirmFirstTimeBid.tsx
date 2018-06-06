@@ -143,9 +143,15 @@ export class ConfirmFirstTimeBid extends React.Component<ConfirmBidProps, Confor
 
             <Divider mb={2} />
 
-            <BidInfoRow label="Credit card" value={token && token.tokenId} onPress={() => this.awaitTokenFromCreditCardForm()} />
+            <BidInfoRow
+              label="Credit card"
+              value={token && token.tokenId}
+              onPress={() => this.awaitTokenFromCreditCardForm()}
+            />
 
             <Divider mb={2} />
+
+            <BidInfoRow label="Credit Card" value={token && `Token: ${token.tokenId}`} onPress={() => null} />
 
             <BidInfoRow
               label="Billing address"
