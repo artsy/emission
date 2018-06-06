@@ -10,19 +10,16 @@ import { Flex } from "../Elements/Flex"
 import { TextInput } from "../Elements/TextInput"
 import { theme } from "../Elements/Theme"
 import { Sans18 } from "../Elements/Typography"
-
-// interface CreditCard {
-//   cardNumber: string
-//   expiry: string
-//   cvv: string
-// }
+import { PaymentCardTextFieldParams } from "./ConfirmFirstTimeBid"
 
 interface CreditCardFormProps {
   navigator?: NavigatorIOS
+  onSubmit: (p: PaymentCardTextFieldParams) => void
 }
 
-interface CreditCardFormState extends PaymentCardTextFieldParams {
+interface CreditCardFormState {
   valid: boolean
+  params: PaymentCardTextFieldParams
 }
 
 const styles = StyleSheet.create({
@@ -38,22 +35,16 @@ const styles = StyleSheet.create({
   },
 })
 
-// values from the Tipsi PaymentCardTextField component
-interface PaymentCardTextFieldParams {
-  number: string
-  expMonth: string
-  expYear: string
-  cvc: string
-}
-
 export class CreditCardForm extends Component<CreditCardFormProps, CreditCardFormState> {
   // TODO: handle case where user already has a card and is changing it? fresh empty form?
   state = {
     valid: false,
-    number: null,
-    expMonth: null,
-    expYear: null,
-    cvc: null,
+    params: {
+      number: null,
+      expMonth: null,
+      expYear: null,
+      cvc: null,
+    },
   }
 
   constructor(props) {
@@ -63,19 +54,23 @@ export class CreditCardForm extends Component<CreditCardFormProps, CreditCardFor
   handleFieldParamsChange = (valid, params: PaymentCardTextFieldParams) => {
     this.setState({
       valid,
-      ...params,
+      params,
     })
-    console.log(`
-      Valid: ${valid}
-      Number: ${params.number || "-"}
-      Month: ${params.expMonth || "-"}
-      Year: ${params.expYear || "-"}
-      CVC: ${params.cvc || "-"}
-    `)
+    // console.log(`
+    //   Valid: ${valid}
+    //   Number: ${params.number || "-"}
+    //   Month: ${params.expMonth || "-"}
+    //   Year: ${params.expYear || "-"}
+    //   CVC: ${params.cvc || "-"}
+    // `)
   }
 
   onSubmit = () => {
-    console.log("Submitting:", this.state)
+    // console.log("Submitting:", this.state)
+    if (this.state.valid) {
+      this.props.onSubmit(this.state.params)
+      this.props.navigator.pop()
+    }
   }
 
   render() {
@@ -89,8 +84,8 @@ export class CreditCardForm extends Component<CreditCardFormProps, CreditCardFor
             <Sans18>Valid: {String(this.state.valid)}</Sans18>
           </Flex>
 
-          <Flex m={4} flexDirection="row" border={1} borderColor="purple100" p={3} pb={2}>
-            {/* {big && <CardType type={this.state.cardType} /> } */}
+          {/* <Flex m={4} flexDirection="row" border={1} borderColor="purple100" p={3} pb={2}>
+            {big && <CardType type={this.state.cardType} /> }
             <TextInput
               placeholder="4242 4242 4242 4242"
               numberOfLines={1}
@@ -128,7 +123,7 @@ export class CreditCardForm extends Component<CreditCardFormProps, CreditCardFor
               flexBasis="auto"
               fontSize={3}
             />
-          </Flex>
+          </Flex> */}
           <Button text="Add credit card" onPress={this.state.valid ? () => this.onSubmit() : null} />
         </View>
       </BiddingThemeProvider>

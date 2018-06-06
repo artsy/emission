@@ -137,7 +137,7 @@ storiesOf("Bidding")
     )
   })
   .add("Credit Card", () => {
-    return <CreditCardForm />
+    return <CreditCardForm onSubmit={params => console.warn(params)} />
   })
   .add("Billing Address", () => {
     return <BillingAddress />
