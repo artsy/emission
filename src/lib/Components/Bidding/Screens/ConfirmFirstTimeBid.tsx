@@ -1,5 +1,5 @@
 import React from "react"
-import { NativeModules, TouchableWithoutFeedback, View } from "react-native"
+import { NativeModules, View } from "react-native"
 const Emission = NativeModules.Emission || {}
 import { createFragmentContainer, graphql } from "react-relay"
 import styled from "styled-components/native"
@@ -23,7 +23,6 @@ import SwitchBoard from "lib/NativeModules/SwitchBoard"
 import { BillingAddress } from "./BillingAddress"
 import { ConfirmBidProps } from "./ConfirmBid"
 
-import { Colors } from "lib/data/colors"
 import stripe from "tipsi-stripe"
 import { CreditCardForm } from "./CreditCardForm"
 
