@@ -128,6 +128,7 @@ export class ConfirmFirstTimeBid extends React.Component<ConfirmBidProps, Confir
   }
 
   render() {
+    const { live_start_at, end_at } = this.props.sale_artwork.sale
     const { billingAddress, creditCardToken: token } = this.state
 
     return (
@@ -135,7 +136,7 @@ export class ConfirmFirstTimeBid extends React.Component<ConfirmBidProps, Confir
         <Container m={0}>
           <Flex alignItems="center">
             <Title mb={3}>Confirm your bid</Title>
-            <Timer timeLeftInMilliseconds={1000 * 60 * 20} />
+            <Timer liveStartsAt={live_start_at} endsAt={end_at} />
           </Flex>
 
           <View>
@@ -206,6 +207,8 @@ export const ConfirmFirstTimeBidScreen = createFragmentContainer(
     fragment ConfirmFirstTimeBid_sale_artwork on SaleArtwork {
       sale {
         id
+        live_start_at
+        end_at
       }
       artwork {
         id
