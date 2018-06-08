@@ -8,8 +8,6 @@ const onSubmitMock = jest.fn()
 
 jest.mock("tipsi-stripe", () => {
   const MockTextInput = require("react-native").TextInput
-  // const ReactInner = require("react")
-  // const mockStripeCardField = () => ReactInner.createElement(TextInputInner)
   return { PaymentCardTextField: MockTextInput }
 })
 

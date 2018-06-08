@@ -7,7 +7,6 @@ import { Button } from "../Components/Button"
 import { Title } from "../Components/Title"
 import { Flex } from "../Elements/Flex"
 import { theme } from "../Elements/Theme"
-import { Sans18 } from "../Elements/Typography"
 import { PaymentCardTextFieldParams } from "./ConfirmFirstTimeBid"
 
 interface CreditCardFormProps {
@@ -30,12 +29,10 @@ const styles = StyleSheet.create({
     borderColor: theme.colors.purple100,
     borderWidth: 1,
     borderRadius: 0,
-    // margin: 20,
   },
 })
 
 export class CreditCardForm extends Component<CreditCardFormProps, CreditCardFormState> {
-  // TODO: handle case where user already has a card and is changing it? fresh empty form?
   state = {
     valid: false,
     params: {
@@ -51,25 +48,12 @@ export class CreditCardForm extends Component<CreditCardFormProps, CreditCardFor
   }
 
   handleFieldParamsChange = (valid, params: PaymentCardTextFieldParams) => {
-    this.setState({
-      valid,
-      params,
-    })
-    // console.log(`
-    //   Valid: ${valid}
-    //   Number: ${params.number || "-"}
-    //   Month: ${params.expMonth || "-"}
-    //   Year: ${params.expYear || "-"}
-    //   CVC: ${params.cvc || "-"}
-    // `)
+    this.setState({ valid, params })
   }
 
-  onSubmit = () => {
-    // console.log("Submitting:", this.state)
-    if (this.state.valid) {
-      this.props.onSubmit(this.state.params)
-      this.props.navigator.pop()
-    }
+  onSubmit() {
+    this.props.onSubmit(this.state.params)
+    this.props.navigator.pop()
   }
 
   render() {
@@ -80,7 +64,6 @@ export class CreditCardForm extends Component<CreditCardFormProps, CreditCardFor
 
           <Flex m={4}>
             <PaymentCardTextField style={styles.field} onParamsChange={this.handleFieldParamsChange} />
-            <Sans18>Valid: {String(this.state.valid)}</Sans18>
           </Flex>
 
           <Button text="Add credit card" onPress={this.state.valid ? () => this.onSubmit() : null} />
