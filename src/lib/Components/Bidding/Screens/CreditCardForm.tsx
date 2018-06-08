@@ -24,6 +24,7 @@ interface CreditCardFormState {
 
 const styles = StyleSheet.create({
   field: {
+    // TODO: Fix baseline/line height on this font to make it appear nicely
     fontFamily: Fonts.GaramondRegular,
     height: 40,
     fontSize: theme.fontSizes[3],
@@ -84,46 +85,6 @@ export class CreditCardForm extends Component<CreditCardFormProps, CreditCardFor
             <Sans18>Valid: {String(this.state.valid)}</Sans18>
           </Flex>
 
-          {/* <Flex m={4} flexDirection="row" border={1} borderColor="purple100" p={3} pb={2}>
-            {big && <CardType type={this.state.cardType} /> }
-            <TextInput
-              placeholder="4242 4242 4242 4242"
-              numberOfLines={1}
-              keyboardType="number-pad"
-              onChangeText={cardNumber => this.setState({ values: { ...this.state.values, cardNumber } })}
-              pr={3}
-              flexGrow={1}
-              fontSize={3}
-            />
-            <TextInput
-              placeholder="MM/YY"
-              maxLength={5}
-              numberOfLines={1}
-              keyboardType="number-pad"
-              onChangeText={expiry => this.setState({ values: { ...this.state.values, expiry } })}
-              width={75}
-              px={3}
-              alignItems="flex-end"
-              flexGrow={0}
-              flexShrink={0}
-              flexBasis="auto"
-              fontSize={3}
-            />
-            <TextInput
-              placeholder="CVV"
-              maxLength={4}
-              numberOfLines={1}
-              keyboardType="number-pad"
-              onChangeText={cvv => this.setState({ values: { ...this.state.values, cvv } })}
-              width={63}
-              px={3}
-              alignItems="flex-end"
-              flexGrow={0}
-              flexShrink={0}
-              flexBasis="auto"
-              fontSize={3}
-            />
-          </Flex> */}
           <Button text="Add credit card" onPress={this.state.valid ? () => this.onSubmit() : null} />
         </View>
       </BiddingThemeProvider>
