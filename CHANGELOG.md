@@ -18,6 +18,8 @@
 
 * Adds going back to max bid when selecting edit bid from confirmation screen - maxim
 * Adds line-height to the type system - sepans
+* Adds `intent` to `ARBidFlowViewController` and `<BidFlow>` component - ash
+* Adds the ability for first-time users to register and place bid simultaneously - yuki24
 
 ### 1.5.3
 
@@ -36,6 +38,7 @@
 * Now the `<ConfirmBid>` component shows a spinner while loading - yuki24
 * Now the `<Input>` component updates the border color when the parent component updates the `error` prop - yuki24
 * Shows correct message when reserve is not met - sepans
+* Shows the appropriate Auction end/start time adjusted to the user's time zone - yuki24
 
 ### 1.5.1
 

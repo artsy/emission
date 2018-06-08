@@ -4,6 +4,8 @@ import * as renderer from "react-test-renderer"
 
 import BidFlow from "../BidFlow"
 
+jest.mock("tipsi-stripe", () => ({ setOptions: jest.fn() }))
+
 const Me = {
   has_qualified_credit_cards: true,
 }
@@ -34,6 +36,6 @@ const SaleArtwork = {
 }
 
 it("renders properly", () => {
-  const bg = renderer.create(<BidFlow me={Me} sale_artwork={SaleArtwork} />).toJSON()
+  const bg = renderer.create(<BidFlow me={Me} sale_artwork={SaleArtwork} intent="bid" />).toJSON()
   expect(bg).toMatchSnapshot()
 })
