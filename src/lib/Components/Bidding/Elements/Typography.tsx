@@ -5,7 +5,7 @@ import { color, fontSize, lineHeight, maxWidth, space, textAlign } from "styled-
 import { Fonts } from "../../../data/fonts"
 
 const Sans = styled.Text`
-  font-family: "${Fonts.Unica77LLMedium}";
+  font-family: "${Fonts.Unica77LLRegular}";
   ${color}
   ${fontSize}
   ${lineHeight}
