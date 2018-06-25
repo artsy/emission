@@ -67,7 +67,7 @@ export class SaleList extends Component<Props, State> {
             data={item.data}
             numColumns={columnCount}
             keyExtractor={row => row.__id}
-            renderItem={row => <SaleListItem key={row.index} sale={row.item} containerWidth={columnWidth} />}
+            renderItem={row => <SaleListItem key={row.index} sale={row.item as any} containerWidth={columnWidth} />}
           />
         ) : null}
       </View>

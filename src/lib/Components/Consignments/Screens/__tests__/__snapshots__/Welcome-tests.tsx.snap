@@ -412,14 +412,7 @@ exports[`Sets up the right view hierarchy for iPad in landscape mode 1`] = `
               }
             >
               <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
                 accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                nativeID={undefined}
-                onLayout={undefined}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
@@ -438,7 +431,6 @@ exports[`Sets up the right view hierarchy for iPad in landscape mode 1`] = `
                     "width": 174,
                   }
                 }
-                testID={undefined}
               >
                 <Text
                   accessible={true}
@@ -464,14 +456,7 @@ exports[`Sets up the right view hierarchy for iPad in landscape mode 1`] = `
                 </Text>
               </View>
               <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
                 accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                nativeID={undefined}
-                onLayout={undefined}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
@@ -490,7 +475,6 @@ exports[`Sets up the right view hierarchy for iPad in landscape mode 1`] = `
                     "width": 174,
                   }
                 }
-                testID={undefined}
               >
                 <Text
                   accessible={true}
@@ -936,14 +920,7 @@ exports[`Sets up the right view hierarchy for iPad in portrait mode 1`] = `
               }
             >
               <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
                 accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                nativeID={undefined}
-                onLayout={undefined}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
@@ -962,7 +939,6 @@ exports[`Sets up the right view hierarchy for iPad in portrait mode 1`] = `
                     "width": 174,
                   }
                 }
-                testID={undefined}
               >
                 <Text
                   accessible={true}
@@ -988,14 +964,7 @@ exports[`Sets up the right view hierarchy for iPad in portrait mode 1`] = `
                 </Text>
               </View>
               <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
                 accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                nativeID={undefined}
-                onLayout={undefined}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
@@ -1014,7 +983,6 @@ exports[`Sets up the right view hierarchy for iPad in portrait mode 1`] = `
                     "width": 174,
                   }
                 }
-                testID={undefined}
               >
                 <Text
                   accessible={true}
@@ -1460,14 +1428,7 @@ exports[`Sets up the right view hierarchy for iPhone 4 1`] = `
               }
             >
               <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
                 accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                nativeID={undefined}
-                onLayout={undefined}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
@@ -1486,7 +1447,6 @@ exports[`Sets up the right view hierarchy for iPhone 4 1`] = `
                     "width": 174,
                   }
                 }
-                testID={undefined}
               >
                 <Text
                   accessible={true}
@@ -1512,14 +1472,7 @@ exports[`Sets up the right view hierarchy for iPhone 4 1`] = `
                 </Text>
               </View>
               <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
                 accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                nativeID={undefined}
-                onLayout={undefined}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
@@ -1538,7 +1491,6 @@ exports[`Sets up the right view hierarchy for iPhone 4 1`] = `
                     "width": 174,
                   }
                 }
-                testID={undefined}
               >
                 <Text
                   accessible={true}
@@ -1984,14 +1936,7 @@ exports[`Sets up the right view hierarchy for iPhone 5 1`] = `
               }
             >
               <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
                 accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                nativeID={undefined}
-                onLayout={undefined}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
@@ -2010,7 +1955,6 @@ exports[`Sets up the right view hierarchy for iPhone 5 1`] = `
                     "width": 174,
                   }
                 }
-                testID={undefined}
               >
                 <Text
                   accessible={true}
@@ -2036,14 +1980,7 @@ exports[`Sets up the right view hierarchy for iPhone 5 1`] = `
                 </Text>
               </View>
               <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
                 accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                nativeID={undefined}
-                onLayout={undefined}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
@@ -2062,7 +1999,6 @@ exports[`Sets up the right view hierarchy for iPhone 5 1`] = `
                     "width": 174,
                   }
                 }
-                testID={undefined}
               >
                 <Text
                   accessible={true}
@@ -2508,14 +2444,7 @@ exports[`Sets up the right view hierarchy for iPhone 6 1`] = `
               }
             >
               <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
                 accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                nativeID={undefined}
-                onLayout={undefined}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
@@ -2534,7 +2463,6 @@ exports[`Sets up the right view hierarchy for iPhone 6 1`] = `
                     "width": 174,
                   }
                 }
-                testID={undefined}
               >
                 <Text
                   accessible={true}
@@ -2560,14 +2488,7 @@ exports[`Sets up the right view hierarchy for iPhone 6 1`] = `
                 </Text>
               </View>
               <View
-                accessibilityComponentType={undefined}
-                accessibilityLabel={undefined}
-                accessibilityTraits={undefined}
                 accessible={true}
-                collapsable={undefined}
-                hitSlop={undefined}
-                nativeID={undefined}
-                onLayout={undefined}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
@@ -2586,7 +2507,6 @@ exports[`Sets up the right view hierarchy for iPhone 6 1`] = `
                     "width": 174,
                   }
                 }
-                testID={undefined}
               >
                 <Text
                   accessible={true}

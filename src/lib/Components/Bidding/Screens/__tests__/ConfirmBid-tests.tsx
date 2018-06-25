@@ -293,7 +293,7 @@ describe("polling to verify bid position", () => {
       )
     })
 
-    xit("shows the error screen with a network failure")
+    xit("shows the error screen with a network failure", () => null)
   })
 })
 

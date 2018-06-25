@@ -233,7 +233,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
                               undefined,
                             ]
                           }
-                          value={undefined}
                         />
                       </View>
                       <View
@@ -307,7 +306,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
                               undefined,
                             ]
                           }
-                          value={undefined}
                         />
                       </View>
                       <View
@@ -381,7 +379,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
                               undefined,
                             ]
                           }
-                          value={undefined}
                         />
                       </View>
                       <View
@@ -456,7 +453,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
                               undefined,
                             ]
                           }
-                          value={undefined}
                         />
                       </View>
                       <View
@@ -518,7 +514,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
                               undefined,
                             ]
                           }
-                          value={undefined}
                         />
                       </View>
                       <View
@@ -644,15 +639,8 @@ exports[`state is set up with empty consignment metadata 1`] = `
                         Units
                       </Text>
                       <View
-                        accessibilityComponentType={undefined}
-                        accessibilityLabel={undefined}
-                        accessibilityTraits={undefined}
                         accessible={true}
-                        hasTVPreferredFocus={undefined}
-                        hitSlop={undefined}
                         isTVSelectable={true}
-                        nativeID={undefined}
-                        onLayout={undefined}
                         onResponderGrant={[Function]}
                         onResponderMove={[Function]}
                         onResponderRelease={[Function]}
@@ -675,8 +663,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
                             },
                           ]
                         }
-                        testID={undefined}
-                        tvParallaxProperties={undefined}
                       >
                         <View
                           style={null}
@@ -778,13 +764,7 @@ exports[`state is set up with empty consignment metadata 1`] = `
                     </View>
                   </View>
                   <View
-                    accessibilityComponentType={undefined}
-                    accessibilityLabel={undefined}
-                    accessibilityTraits={undefined}
                     accessible={true}
-                    hitSlop={undefined}
-                    nativeID={undefined}
-                    onLayout={undefined}
                     onResponderGrant={[Function]}
                     onResponderMove={[Function]}
                     onResponderRelease={[Function]}
@@ -801,7 +781,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
                         },
                       ]
                     }
-                    testID={undefined}
                   >
                     <View
                       style={
@@ -867,16 +846,8 @@ exports[`state is set up with empty consignment metadata 1`] = `
           }
         />
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -892,8 +863,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
               "paddingTop": 18,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <Text
             accessible={true}
@@ -1474,15 +1443,8 @@ exports[`state is set up with filled consignment metadata 1`] = `
                         Units
                       </Text>
                       <View
-                        accessibilityComponentType={undefined}
-                        accessibilityLabel={undefined}
-                        accessibilityTraits={undefined}
                         accessible={true}
-                        hasTVPreferredFocus={undefined}
-                        hitSlop={undefined}
                         isTVSelectable={true}
-                        nativeID={undefined}
-                        onLayout={undefined}
                         onResponderGrant={[Function]}
                         onResponderMove={[Function]}
                         onResponderRelease={[Function]}
@@ -1505,8 +1467,6 @@ exports[`state is set up with filled consignment metadata 1`] = `
                             },
                           ]
                         }
-                        testID={undefined}
-                        tvParallaxProperties={undefined}
                       >
                         <View
                           style={null}
@@ -1608,13 +1568,7 @@ exports[`state is set up with filled consignment metadata 1`] = `
                     </View>
                   </View>
                   <View
-                    accessibilityComponentType={undefined}
-                    accessibilityLabel={undefined}
-                    accessibilityTraits={undefined}
                     accessible={true}
-                    hitSlop={undefined}
-                    nativeID={undefined}
-                    onLayout={undefined}
                     onResponderGrant={[Function]}
                     onResponderMove={[Function]}
                     onResponderRelease={[Function]}
@@ -1631,7 +1585,6 @@ exports[`state is set up with filled consignment metadata 1`] = `
                         },
                       ]
                     }
-                    testID={undefined}
                   >
                     <View
                       style={
@@ -1697,16 +1650,8 @@ exports[`state is set up with filled consignment metadata 1`] = `
           }
         />
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          collapsable={undefined}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -1722,8 +1667,6 @@ exports[`state is set up with filled consignment metadata 1`] = `
               "paddingTop": 18,
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <Text
             accessible={true}

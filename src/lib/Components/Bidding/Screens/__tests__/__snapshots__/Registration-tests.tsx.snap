@@ -154,15 +154,9 @@ exports[`renders properly 1`] = `
       width="100%"
     />
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
       flexDirection="row"
-      hitSlop={undefined}
       justifyContent="space-between"
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -181,7 +175,6 @@ exports[`renders properly 1`] = `
           undefined,
         ]
       }
-      testID={undefined}
     >
       <View
         flex={1}
@@ -290,15 +283,9 @@ exports[`renders properly 1`] = `
       width="100%"
     />
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
       flexDirection="row"
-      hitSlop={undefined}
       justifyContent="space-between"
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -317,7 +304,6 @@ exports[`renders properly 1`] = `
           undefined,
         ]
       }
-      testID={undefined}
     >
       <View
         flex={1}
@@ -426,16 +412,10 @@ exports[`renders properly 1`] = `
   </View>
   <View>
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
       alignItems="center"
       flexDirection="row"
-      hitSlop={undefined}
       justifyContent="center"
-      nativeID={undefined}
-      onLayout={undefined}
       onPress={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -449,7 +429,6 @@ exports[`renders properly 1`] = `
           undefined,
         ]
       }
-      testID={undefined}
     >
       <View
         animate={
@@ -458,7 +437,6 @@ exports[`renders properly 1`] = `
             "borderColor",
           ]
         }
-        collapsable={undefined}
         style={
           Object {
             "alignItems": "center",
@@ -550,15 +528,8 @@ exports[`renders properly 1`] = `
         }
       >
         <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
           accessible={true}
-          hasTVPreferredFocus={undefined}
-          hitSlop={undefined}
           isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -573,8 +544,6 @@ exports[`renders properly 1`] = `
               "justifyContent": "center",
             }
           }
-          testID={undefined}
-          tvParallaxProperties={undefined}
         >
           <View
             style={null}

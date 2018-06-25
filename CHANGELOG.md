@@ -16,6 +16,8 @@
 
 ### Master
 
+* Updates to React Native 0.56_rc3 - orta
+
 ### 1.5.6
 
 * Updates bid status when returning to the [sale] artwork screen- erik

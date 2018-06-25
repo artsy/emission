@@ -79,9 +79,9 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": <Styled(View)>
-        <Styled(View)>
-          <Styled(View)>
+      "children": <Styled(Component)>
+        <Styled(Component)>
+          <Styled(Component)>
             <SmallHeadline
               style={
                 Object {
@@ -91,9 +91,9 @@ ShallowWrapper {
             >
               Kimberly Klark
             </SmallHeadline>
-            <View />
-          </Styled(View)>
-        </Styled(View)>
+            <Component />
+          </Styled(Component)>
+        </Styled(Component)>
         <Messages
           componentRef={[Function]}
           conversation={
@@ -150,7 +150,7 @@ ShallowWrapper {
           }
           onDataFetching={[Function]}
         />
-      </Styled(View)>,
+      </Styled(Component)>,
       "disabled": false,
       "onSubmit": [Function],
       "value": null,
@@ -162,8 +162,8 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          <Styled(View)>
-            <Styled(View)>
+          <Styled(Component)>
+            <Styled(Component)>
               <SmallHeadline
                 style={
                   Object {
@@ -173,9 +173,9 @@ ShallowWrapper {
               >
                 Kimberly Klark
               </SmallHeadline>
-              <View />
-            </Styled(View)>
-          </Styled(View)>,
+              <Component />
+            </Styled(Component)>
+          </Styled(Component)>,
           false,
           <Messages
             componentRef={[Function]}
@@ -242,7 +242,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <Styled(View)>
+            "children": <Styled(Component)>
               <SmallHeadline
                 style={
                   Object {
@@ -252,8 +252,8 @@ ShallowWrapper {
               >
                 Kimberly Klark
               </SmallHeadline>
-              <View />
-            </Styled(View)>,
+              <Component />
+            </Styled(Component)>,
           },
           "ref": null,
           "rendered": Object {
@@ -271,7 +271,7 @@ ShallowWrapper {
                 >
                   Kimberly Klark
                 </SmallHeadline>,
-                <View />,
+                <Component />,
               ],
             },
             "ref": null,
@@ -378,9 +378,9 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": <Styled(View)>
-          <Styled(View)>
-            <Styled(View)>
+        "children": <Styled(Component)>
+          <Styled(Component)>
+            <Styled(Component)>
               <SmallHeadline
                 style={
                   Object {
@@ -390,9 +390,9 @@ ShallowWrapper {
               >
                 Kimberly Klark
               </SmallHeadline>
-              <View />
-            </Styled(View)>
-          </Styled(View)>
+              <Component />
+            </Styled(Component)>
+          </Styled(Component)>
           <Messages
             componentRef={[Function]}
             conversation={
@@ -449,7 +449,7 @@ ShallowWrapper {
             }
             onDataFetching={[Function]}
           />
-        </Styled(View)>,
+        </Styled(Component)>,
         "disabled": false,
         "onSubmit": [Function],
         "value": null,
@@ -461,8 +461,8 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <Styled(View)>
-              <Styled(View)>
+            <Styled(Component)>
+              <Styled(Component)>
                 <SmallHeadline
                   style={
                     Object {
@@ -472,9 +472,9 @@ ShallowWrapper {
                 >
                   Kimberly Klark
                 </SmallHeadline>
-                <View />
-              </Styled(View)>
-            </Styled(View)>,
+                <Component />
+              </Styled(Component)>
+            </Styled(Component)>,
             false,
             <Messages
               componentRef={[Function]}
@@ -541,7 +541,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "children": <Styled(View)>
+              "children": <Styled(Component)>
                 <SmallHeadline
                   style={
                     Object {
@@ -551,8 +551,8 @@ ShallowWrapper {
                 >
                   Kimberly Klark
                 </SmallHeadline>
-                <View />
-              </Styled(View)>,
+                <Component />
+              </Styled(Component)>,
             },
             "ref": null,
             "rendered": Object {
@@ -570,7 +570,7 @@ ShallowWrapper {
                   >
                     Kimberly Klark
                   </SmallHeadline>,
-                  <View />,
+                  <Component />,
                 ],
               },
               "ref": null,
@@ -761,9 +761,9 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": <Styled(View)>
-        <Styled(View)>
-          <Styled(View)>
+      "children": <Styled(Component)>
+        <Styled(Component)>
+          <Styled(Component)>
             <SmallHeadline
               style={
                 Object {
@@ -773,9 +773,9 @@ ShallowWrapper {
             >
               Kimberly Klark
             </SmallHeadline>
-            <View />
-          </Styled(View)>
-        </Styled(View)>
+            <Component />
+          </Styled(Component)>
+        </Styled(Component)>
         <Messages
           componentRef={[Function]}
           conversation={
@@ -832,7 +832,7 @@ ShallowWrapper {
           }
           onDataFetching={[Function]}
         />
-      </Styled(View)>,
+      </Styled(Component)>,
       "disabled": false,
       "onSubmit": [Function],
       "value": null,
@@ -844,8 +844,8 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          <Styled(View)>
-            <Styled(View)>
+          <Styled(Component)>
+            <Styled(Component)>
               <SmallHeadline
                 style={
                   Object {
@@ -855,9 +855,9 @@ ShallowWrapper {
               >
                 Kimberly Klark
               </SmallHeadline>
-              <View />
-            </Styled(View)>
-          </Styled(View)>,
+              <Component />
+            </Styled(Component)>
+          </Styled(Component)>,
           false,
           <Messages
             componentRef={[Function]}
@@ -924,7 +924,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <Styled(View)>
+            "children": <Styled(Component)>
               <SmallHeadline
                 style={
                   Object {
@@ -934,8 +934,8 @@ ShallowWrapper {
               >
                 Kimberly Klark
               </SmallHeadline>
-              <View />
-            </Styled(View)>,
+              <Component />
+            </Styled(Component)>,
           },
           "ref": null,
           "rendered": Object {
@@ -953,7 +953,7 @@ ShallowWrapper {
                 >
                   Kimberly Klark
                 </SmallHeadline>,
-                <View />,
+                <Component />,
               ],
             },
             "ref": null,
@@ -1060,9 +1060,9 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": <Styled(View)>
-          <Styled(View)>
-            <Styled(View)>
+        "children": <Styled(Component)>
+          <Styled(Component)>
+            <Styled(Component)>
               <SmallHeadline
                 style={
                   Object {
@@ -1072,9 +1072,9 @@ ShallowWrapper {
               >
                 Kimberly Klark
               </SmallHeadline>
-              <View />
-            </Styled(View)>
-          </Styled(View)>
+              <Component />
+            </Styled(Component)>
+          </Styled(Component)>
           <Messages
             componentRef={[Function]}
             conversation={
@@ -1131,7 +1131,7 @@ ShallowWrapper {
             }
             onDataFetching={[Function]}
           />
-        </Styled(View)>,
+        </Styled(Component)>,
         "disabled": false,
         "onSubmit": [Function],
         "value": null,
@@ -1143,8 +1143,8 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": Array [
-            <Styled(View)>
-              <Styled(View)>
+            <Styled(Component)>
+              <Styled(Component)>
                 <SmallHeadline
                   style={
                     Object {
@@ -1154,9 +1154,9 @@ ShallowWrapper {
                 >
                   Kimberly Klark
                 </SmallHeadline>
-                <View />
-              </Styled(View)>
-            </Styled(View)>,
+                <Component />
+              </Styled(Component)>
+            </Styled(Component)>,
             false,
             <Messages
               componentRef={[Function]}
@@ -1223,7 +1223,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "children": <Styled(View)>
+              "children": <Styled(Component)>
                 <SmallHeadline
                   style={
                     Object {
@@ -1233,8 +1233,8 @@ ShallowWrapper {
                 >
                   Kimberly Klark
                 </SmallHeadline>
-                <View />
-              </Styled(View)>,
+                <Component />
+              </Styled(Component)>,
             },
             "ref": null,
             "rendered": Object {
@@ -1252,7 +1252,7 @@ ShallowWrapper {
                   >
                     Kimberly Klark
                   </SmallHeadline>,
-                  <View />,
+                  <Component />,
                 ],
               },
               "ref": null,

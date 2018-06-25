@@ -68,16 +68,10 @@ exports[`looks correct when rendered 1`] = `
       value={null}
     />
     <Text
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
       allowFontScaling={true}
       disabled={true}
       ellipsizeMode="tail"
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -95,7 +89,6 @@ exports[`looks correct when rendered 1`] = `
           undefined,
         ]
       }
-      testID={undefined}
     >
       SEND
     </Text>
@@ -132,7 +125,7 @@ ShallowWrapper {
       "behavior": "padding",
       "children": Array [
         undefined,
-        <Styled(View)
+        <Styled(Component)
           active={false}
         >
           <TextInput
@@ -168,7 +161,7 @@ ShallowWrapper {
               SEND
             </Styled(Text)>
           </TouchableWithoutFeedback>
-        </Styled(View)>,
+        </Styled(Component)>,
       ],
       "keyboardVerticalOffset": 20,
     },
@@ -291,7 +284,7 @@ ShallowWrapper {
         "behavior": "padding",
         "children": Array [
           undefined,
-          <Styled(View)
+          <Styled(Component)
             active={false}
           >
             <TextInput
@@ -327,7 +320,7 @@ ShallowWrapper {
                 SEND
               </Styled(Text)>
             </TouchableWithoutFeedback>
-          </Styled(View)>,
+          </Styled(Component)>,
         ],
         "keyboardVerticalOffset": 20,
       },
@@ -520,16 +513,10 @@ exports[`regarding the send button disables it when there is no text 1`] = `
       value={null}
     />
     <Text
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
       allowFontScaling={true}
       disabled={true}
       ellipsizeMode="tail"
-      hitSlop={undefined}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -547,7 +534,6 @@ exports[`regarding the send button disables it when there is no text 1`] = `
           undefined,
         ]
       }
-      testID={undefined}
     >
       SEND
     </Text>

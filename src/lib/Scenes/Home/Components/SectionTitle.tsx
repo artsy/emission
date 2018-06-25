@@ -1,9 +1,11 @@
 import React from "react"
 import { StyleSheet, Text, TextStyle } from "react-native"
 
+const anyText = Text as any
+
 export default class SectionTitle extends React.Component<any, any> {
   static propTypes = {
-    ...Text.propTypes,
+    ...anyText.propTypes,
   }
 
   render() {
