@@ -1,0 +1,22 @@
+{
+  "projects": {
+    "metaphysics-sdl": {
+      "schemaPath": "data/schema.graphql",
+      "extensions": {
+        "endpoints": {
+          "staging": "https://metaphysics-staging.artsy.net/",
+          "local": "http://localhost:5000"
+        }
+      }
+    },
+    "metaphysics-json": {
+      "schemaPath": "data/schema.json",
+      "extensions": {
+        "endpoints": {
+          "staging": "https://metaphysics-staging.artsy.net/",
+          "local": "http://localhost:5000"
+        }
+      }
+    }
+  }
+}
