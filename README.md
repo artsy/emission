@@ -75,7 +75,7 @@ There is a comprehensive document covering [the various options](docs/debugging.
 
 1. We vendor some data from other repositories that you will sometimes need to update. You can either update all of them
    with `$ yarn run sync-externals` or individually:
-   * The GraphQL schema of metaphysics that Relay uses to generate queries from: `$ yarn run sync-schema`
+   * The GraphQL schema of metaphysics that Relay uses to generate queries from: `$ yarn run schema-staging` or `$ yarn run schema-local`
    * The colors defined in Artsy’s style-guide: `$ yarn run sync-colors`
 
 ---

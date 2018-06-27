@@ -40,10 +40,9 @@
     "merge-graphql-query-map": "node scripts/merge-graphql-query-map.js",
     "sync-colors":
       "cd externals/elan && git fetch && git checkout origin/master && cp components/lib/variables/colors.json ../../data",
-    "sync-externals": "npm run-script sync-schema && npm run-script sync-colors",
-    "sync-schema":
-      "cd externals/metaphysics && git fetch && git checkout origin/master && yarn install && yarn dump-schema -- ../../data && rm -rf node_modules",
-    "sync-schema:localhost": "cd ../metaphysics && yarn dump-schema -- ../emission/data",
+    "sync-externals": "npm run-script schema-staging && npm run-script sync-colors",
+    "schema-staging": "yarn graphql get-schema staging",
+    "schema-local": "yarn graphql get-schema local",
     "version":
       "yarn install && yarn bundle && pushd Example && bundle install && bundle exec pod update Emission && popd && git add Pod/Assets Example/Podfile.lock",
     "postversion":
@@ -115,6 +114,7 @@
     "danger-plugin-jest": "^1.1.0",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.2",
+    "graphql-cli": "^2.16.3",
     "husky": "^0.14.3",
     "jest": "^22.4.2",
     "jest-styled-components": "^4.10.0",
