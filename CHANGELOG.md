@@ -16,10 +16,11 @@
 
 ### Master
 
-* Adding artwork badges to brick - matt
-* Add @artsy/palette - yuki/orta/chris
+* Adds artwork badges to brick - matt
+* Adds @artsy/palette - yuki/orta/chris
 * Adds a Labs setting UI to the example app - orta
-* Updates Typescript version to 3.0.3
+* Upgrades typescript@3.0.3 - chris
+* Upgrades @artsy/palette@2.16.0 - chris
 
 ### 1.5.15
 
