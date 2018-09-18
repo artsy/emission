@@ -30,6 +30,7 @@ function loadStories() {
   require('../src/lib/Components/Inbox/Conversations/__stories__/Inbox.story.tsx');
   require('../src/lib/Components/Inbox/Conversations/__stories__/Message.story.tsx');
   require('../src/lib/Components/Inbox/Conversations/__stories__/ZeroStateInbox.story.tsx');
+  require('../src/lib/Components/Palette/__stories__/Palette.story.tsx');
   require('../src/lib/Components/States/__stories__/ZeroState.story.tsx');
   require('../src/lib/Components/Text/__stories__/Typography.story.tsx');
   require('../src/lib/Components/__stories__/DottedLine.story.tsx');
@@ -71,6 +72,7 @@ const stories = [
   '../src/lib/Components/Inbox/Conversations/__stories__/Inbox.story.tsx',
   '../src/lib/Components/Inbox/Conversations/__stories__/Message.story.tsx',
   '../src/lib/Components/Inbox/Conversations/__stories__/ZeroStateInbox.story.tsx',
+  '../src/lib/Components/Palette/__stories__/Palette.story.tsx',
   '../src/lib/Components/States/__stories__/ZeroState.story.tsx',
   '../src/lib/Components/Text/__stories__/Typography.story.tsx',
   '../src/lib/Components/__stories__/DottedLine.story.tsx',
