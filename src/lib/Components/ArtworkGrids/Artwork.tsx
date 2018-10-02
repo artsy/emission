@@ -20,7 +20,7 @@ const Badges = styled.View`
 `
 const Badge = styled.View`
   border-radius: 2px;
-  padding: 3px 5px 1px 5px;
+  padding: 3px 5px 1px 6px;
   background-color: white;
   margin-left: 5px;
 `
@@ -71,18 +71,18 @@ class Artwork extends React.Component<Props, any> {
     const { is_acquireable, is_biddable } = this.props.artwork
 
     return (
-      this.hasBadges() && (
+      true && (
         <Badges>
-          {is_acquireable && (
+          {true && (
             <Badge>
-              <Sans weight="medium" size="1">
+              <Sans weight="medium" style={{ paddingTop: 1 }} size="0">
                 BUY NOW
               </Sans>
             </Badge>
           )}
-          {is_biddable && (
+          {true && (
             <Badge>
-              <Sans weight="medium" size="1">
+              <Sans weight="medium" style={{ paddingTop: 1 }} size="0">
                 BID
               </Sans>
             </Badge>
