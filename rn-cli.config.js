@@ -1,8 +1,6 @@
-module.exports = {
-  getTransformModulePath() {
-    return require.resolve("react-native-typescript-transformer")
-  },
-  getSourceExts() {
-    return ["ts", "tsx"]
-  },
-}
+console.log("ASDASDASDASS")
+
+// module.exports = {
+//   getTransformModulePath: require.resolve("react-native-typescript-transformer"),
+//   getSourceExts: ["ts", "tsx"],
+// }
