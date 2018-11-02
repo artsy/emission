@@ -23,6 +23,8 @@
 - Updates cocoapods (1.5.3) - luc
 - Adds Mapbox + Location Component - luc
 - Adds Artwork grids with infinite scroll to Show View - ashley
+- Fixes crash in marketing banner - ash
+- Adds Relay DevTools, Update Node.js to 10.13.0 - javamonn
 
 ### 1.7.1
 
