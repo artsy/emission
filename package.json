@@ -65,7 +65,8 @@
     "relay-runtime": "https://github.com/alloy/relay/releases/download/v1.5.0-artsy.5/relay-runtime-1.5.0-artsy.5.tgz",
     "@types/relay-runtime": "^1.3.5",
     "cheerio": "0.22.0",
-    "fsevents": "1.2.4"
+    "fsevents": "1.2.4",
+    "babel-core": "^7.0.0-bridge.0"
   },
   "dependencies": {
     "@artsy/palette": "^2.11.0",
@@ -108,7 +109,7 @@
     "@types/styled-system": "^3.0.1",
     "awesome-typescript-loader": "^3.2.3",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.6.0",
+    "babel-jest": "^23.4.2",
     "babel-plugin-relay": "https://github.com/alloy/relay/releases/download/v1.5.0-artsy.3/babel-plugin-relay-1.5.0-artsy.3.tgz",
     "concurrently": "^2.2.0",
     "danger": "^6",
@@ -156,11 +157,6 @@
     "testRegex": "/__tests__/.*-tests.(ts|tsx|js)$",
     "testEnvironment": "jsdom",
     "testURL": "http://localhost/",
-    "testPathIgnorePatterns": [
-      "\\.snap$",
-      "<rootDir>/build",
-      "<rootDir>/node_modules/"
-    ],
     "setupFiles": [
       "./src/setupJest.ts"
     ],
@@ -201,13 +197,5 @@
     "singleQuote": false,
     "trailingComma": "es5",
     "bracketSpacing": true
-  },
-  "babel": {
-    "plugins": [
-      "@babel/plugin-proposal-class-properties",
-      ["@babel/plugin-proposal-decorators",{ "legacy": true } ],
-      ["relay", { "artifactDirectory": "./src/__generated__" }]
-    ],
-    "presets": ["module:metro-react-native-babel-preset"]
   }
 }
