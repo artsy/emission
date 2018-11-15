@@ -916,10 +916,10 @@
   resolved "https://registry.yarnpkg.com/@types/inline-style-prefixer/-/inline-style-prefixer-3.0.1.tgz#8541e636b029124b747952e9a28848286d2b5bf6"
   integrity sha512-+kbOcYW1/noncDwRryRoB9tH87IYcMfdBGvw98iocK39LtTA2DFL7agmk4UHW/GxjzVfwrxfjlLrqrgA7MCtmg==
 
-"@types/jest@^22.1.1":
-  version "22.1.1"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-22.1.1.tgz#231d7c60ed130200af9e96c82469ed25b59a7ea2"
-  integrity sha512-JSh6yk+GkeSkucPa3DllFtpDXe0BMxDTFqCxoryzGKvZiusdb97Sb7X5gnMiKdFGkHbTMjSH+HbE9wrBIzrUTA==
+"@types/jest@^23.3.9":
+  version "23.3.9"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.9.tgz#c16b55186ee73ae65e001fbee69d392c51337ad1"
+  integrity sha512-wNMwXSUcwyYajtbayfPp55tSayuDVU6PfY5gzvRSj80UvxdXEJOVPnUVajaOp7NgXLm+1e2ZDLULmpsU9vDvQw==
 
 "@types/lodash@^4.14.64":
   version "4.14.91"
@@ -4102,10 +4102,10 @@ danger-plugin-jest@^1.1.0:
   optionalDependencies:
     serve "^5.1.5"
 
-danger@^6:
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/danger/-/danger-6.0.2.tgz#760f7603bf8bdd1c451236cd29c790baa4cf8185"
-  integrity sha512-Q1+IH66brlszk9idu7ctFeiy7Ft+7jxW9cQWOWuHjS4mXM1qy+Vgz735vY26fPPfCfXpGUj3gxkft0rZiqeV4g==
+danger@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/danger/-/danger-6.1.1.tgz#8738688773c85720a7f0f5f1e912699a738a776f"
+  integrity sha512-WLg9iHPqY8iAzDAucPh11+NPVIcL8+1S1Nm2NfpomlLw5l4jixTQf7VgD4moiAWs2zkr6vzJMpJWLn276r9c8g==
   dependencies:
     "@babel/polyfill" "^7.0.0"
     "@octokit/rest" "^15.12.1"
