@@ -1,3 +1,12 @@
+// re: https://github.com/facebook/react-native/issues/19955
+// and https://github.com/facebook/metro/pull/198
+//
+// import applyDecoratedDescriptor from "@babel/runtime/helpers/applyDecoratedDescriptor"
+// import initializerDefineProperty from "@babel/runtime/helpers/initializerDefineProperty"
+// declare var babelHelpers: any
+// Object.assign(babelHelpers, { applyDecoratedDescriptor, initializerDefineProperty })
+// import "@babel/runtime"
+
 import Enzyme from "enzyme"
 import Adapter from "enzyme-adapter-react-16"
 import expect from "expect"
@@ -9,7 +18,10 @@ Enzyme.configure({ adapter: new Adapter() })
 import diff from "snapshot-diff"
 expect.extend({ toMatchDiffSnapshot: (diff as any).toMatchDiffSnapshot })
 
-jest.mock("react-tracking")
+// Jest cannot mock a decorator?
+//
+// jest.mock("react-tracking")
+
 // Mock this separately so react-tracking can be unmocked in tests but not result in the `window` global being accessed.
 jest.mock("react-tracking/build/dispatchTrackingEvent")
 

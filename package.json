@@ -77,7 +77,7 @@
     "prop-types": "^15.5.10",
     "query-string": "^4.1.0",
     "react": "16.6.0-alpha.8af6728",
-    "react-native": "0.57.4",
+    "react-native": "^0.58.0-rc.1",
     "react-native-hyperlink": "0.0.11",
     "react-native-parallax-scroll-view": "https://github.com/orta/react-native-parallax-scroll-view",
     "react-native-scrollable-tab-view": "^0.9.0",
@@ -94,6 +94,9 @@
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-decorators": "^7.1.2",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-typescript": "^7.1.0",
+    "@babel/runtime": "^7.2.0",
     "@playlyfe/gql": "^2.3.2",
     "@storybook/react-native": "^3.3.11",
     "@types/jest": "^23.3.9",
@@ -163,9 +166,12 @@
     "cacheDirectory": ".jest/cache",
     "transform": {
       "^[./a-zA-Z0-9$_-]+\\.(bmp|gif|jpg|jpeg|mp4|png|psd|svg|webp)$": "<rootDir>/node_modules/react-native/jest/assetFileTransformer.js",
-      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
-      "\\.(ts|tsx)$": "babel-jest"
-    }
+      "node_modules/react-native/.+\\.(js|tsx?)$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+      ".*(ts|tsx|js|jsx)$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-native)/)"
+    ]
   },
   "lint-staged": {
     "*.@(ts|tsx)": [
