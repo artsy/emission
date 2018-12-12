@@ -77,7 +77,7 @@
     "prop-types": "^15.5.10",
     "query-string": "^4.1.0",
     "react": "16.6.0-alpha.8af6728",
-    "react-native": "^0.58.0-rc.1",
+    "react-native": "^0.57.7",
     "react-native-hyperlink": "0.0.11",
     "react-native-parallax-scroll-view": "https://github.com/orta/react-native-parallax-scroll-view",
     "react-native-scrollable-tab-view": "^0.9.0",
@@ -170,7 +170,7 @@
       ".*(ts|tsx|js|jsx)$": "babel-jest"
     },
     "transformIgnorePatterns": [
-      "node_modules/(?!(react-native)/)"
+      "node_modules/(?!(react-native(-.*)?)/)"
     ]
   },
   "lint-staged": {
