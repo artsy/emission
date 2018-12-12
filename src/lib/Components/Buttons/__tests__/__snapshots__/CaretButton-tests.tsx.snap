@@ -27,10 +27,7 @@ exports[`CaretButton renders properly 1`] = `
   }
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
     className="sc-htpNat KtFsv"
-    ellipsizeMode="tail"
     fontFamily="AvantGardeGothicITC"
     fontSize={14}
     lineHeight={18}

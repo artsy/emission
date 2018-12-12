@@ -12,11 +12,8 @@ exports[`looks correct when rendererd 1`] = `
   }
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
     className="sc-bdVaJa bDWFJH"
     color="#000"
-    ellipsizeMode="tail"
     fontFamily="Unica77LL-Medium"
     fontSize={12}
     lineHeight={16}
@@ -35,10 +32,7 @@ exports[`looks correct when rendererd 1`] = `
     Joseph K. Levene Fine Art, Ltd.
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
     className="sc-bdVaJa bDWFJH"
-    ellipsizeMode="tail"
     fontFamily="Unica77LL-Regular"
     fontSize={10}
     lineHeight={14}
@@ -56,10 +50,7 @@ exports[`looks correct when rendererd 1`] = `
     25 Central Park West
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
     className="sc-bdVaJa bDWFJH"
-    ellipsizeMode="tail"
     fontFamily="Unica77LL-Regular"
     fontSize={10}
     lineHeight={14}
