@@ -18,8 +18,6 @@ Enzyme.configure({ adapter: new Adapter() })
 import diff from "snapshot-diff"
 expect.extend({ toMatchDiffSnapshot: (diff as any).toMatchDiffSnapshot })
 
-// Jest cannot mock a decorator?
-//
 jest.mock("react-tracking")
 import _track from "react-tracking"
 const track = _track as jest.Mock<typeof _track>
