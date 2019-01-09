@@ -32,6 +32,7 @@ fragment Fair_fair on Fair {
   ...FairExhibitors_fair
   ...FairArtists_fair
   ...FairArtworks_fair
+  ...FairMoreInfo_fair
   __id
 }
 
@@ -103,6 +104,13 @@ fragment FairArtworks_fair on Fair {
     ...FilteredInfiniteScrollGrid_filteredArtworks
     __id
   }
+}
+
+fragment FairMoreInfo_fair on Fair {
+  links
+  about
+  tickets_link
+  __id
 }
 
 fragment FilteredInfiniteScrollGrid_filteredArtworks on FilterArtworks {
@@ -921,7 +929,7 @@ return {
   "kind": "Request",
   "operationKind": "query",
   "name": "FairQuery",
-  "id": "55be0af4e47ea70f24dd6cdc9d9e3aa0",
+  "id": "512bf25f02b57c139b6c8d2cd49c212a",
   "text": null,
   "metadata": {},
   "fragment": {
@@ -964,13 +972,7 @@ return {
         "concreteType": "Fair",
         "plural": false,
         "selections": [
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "start_at",
-            "args": null,
-            "storageKey": null
-          },
+          v2,
           v3,
           {
             "kind": "LinkedField",
@@ -1121,7 +1123,13 @@ return {
               v2
             ]
           },
-          v6,
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "start_at",
+            "args": null,
+            "storageKey": null
+          },
           {
             "kind": "ScalarField",
             "alias": null,
@@ -1129,7 +1137,7 @@ return {
             "args": null,
             "storageKey": null
           },
-          v2,
+          v6,
           {
             "kind": "ScalarField",
             "alias": null,
@@ -1526,6 +1534,27 @@ return {
             "concreteType": "FilterArtworks",
             "plural": false,
             "selections": v39
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "links",
+            "args": null,
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "about",
+            "args": null,
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "tickets_link",
+            "args": null,
+            "storageKey": null
           }
         ]
       }

@@ -10,6 +10,7 @@ import { FairArtworksContainer as FairArtworksScreen } from "./Screens/FairArtwo
 import { FairBoothContainer as FairBoothScreen } from "./Screens/FairBooth"
 import { FairDetailContainer as FairDetailScreen } from "./Screens/FairDetail"
 import { FairExhibitorsContainer as FairExhibitorsScreen } from "./Screens/FairExhibitors"
+import { FairMoreInfoContainer as FairMoreInfoScreen } from "./Screens/FairMoreInfo"
 
 import { Fair_fair } from "__generated__/Fair_fair.graphql"
 
@@ -64,6 +65,18 @@ export class Fair extends React.Component<Props> {
     this.navigate({ component: ShowArtworksScreen, props })
   }
 
+  handleViewMoreInfoPressed = () => {
+    if (!this.navigator) {
+      throw new Error("navigator is undefined")
+    }
+
+    this.navigator.push({
+      component: FairMoreInfoScreen,
+      title: "",
+      passProps: this.props,
+    })
+  }
+
   render() {
     return (
       <Theme>
@@ -81,6 +94,7 @@ export class Fair extends React.Component<Props> {
               onViewAllArtworksPressed: this.handleViewAllArtworksPressed,
               onViewAllArtistsPressed: this.handleViewAllArtistsPressed,
               onViewFairBoothPressed: this.handleViewFairBoothPressed,
+              onViewMoreInfoPressed: this.handleViewMoreInfoPressed,
             },
           }}
           style={{ flex: 1 }}
@@ -98,6 +112,7 @@ export const FairContainer = createFragmentContainer(
       ...FairExhibitors_fair
       ...FairArtists_fair
       ...FairArtworks_fair
+      ...FairMoreInfo_fair
     }
   `
 )
