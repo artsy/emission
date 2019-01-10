@@ -1,11 +1,11 @@
-import { Serif, Box, Separator, Spacer } from "@artsy/palette"
-import React from "react"
-import { FlatList } from "react-native"
-import { graphql, createFragmentContainer } from "react-relay"
+import { Box, Separator, Serif, Spacer } from "@artsy/palette"
 import { FairMoreInfo_fair } from "__generated__/FairMoreInfo_fair.graphql"
 import { CaretButton } from "lib/Components/Buttons/CaretButton"
-import styled from "styled-components/native"
 import SwitchBoard from "lib/NativeModules/SwitchBoard"
+import React from "react"
+import { FlatList } from "react-native"
+import { createFragmentContainer, graphql } from "react-relay"
+import styled from "styled-components/native"
 
 const ListHeaderText = styled(Serif)`
   height: 36px;
