@@ -1,7 +1,6 @@
-import { MockRelayRendererFixtures_artist } from "__generated__/MockRelayRendererFixtures_artist.graphql"
-import { MockRelayRendererFixtures_artwork } from "__generated__/MockRelayRendererFixtures_artwork.graphql"
-import { MockRelayRendererFixtures_artworkMetadata } from "__generated__/MockRelayRendererFixtures_artworkMetadata.graphql"
-import { MockRelayRendererFixturesArtistQuery } from "__generated__/MockRelayRendererFixturesArtistQuery.graphql"
+// This is our only test file to need to specify its own query renderer, which fails to pass linting.
+/* tslint:disable:relay-operation-generics */
+
 import cheerio from "cheerio"
 import { render } from "enzyme"
 import * as React from "react"
@@ -11,7 +10,7 @@ import { ContextConsumer } from "../../utils/Context"
 import renderWithLoadProgress from "../../utils/renderWithLoadProgress"
 
 const Metadata = createFragmentContainer(
-  (props: { artworkMetadata: MockRelayRendererFixtures_artworkMetadata }) => <Text>{props.artworkMetadata.title}</Text>,
+  (props: { artworkMetadata }) => <Text>{props.artworkMetadata.title}</Text>,
   graphql`
     fragment MockRelayRendererFixtures_artworkMetadata on Artwork {
       title
@@ -20,7 +19,7 @@ const Metadata = createFragmentContainer(
 )
 
 export const Artwork = createFragmentContainer(
-  (props: { artwork: MockRelayRendererFixtures_artwork }) => (
+  (props: { artwork }) => (
     <View>
       <Image source={{ uri: props.artwork.image.url }} />
       <Metadata artworkMetadata={props.artwork} />
@@ -41,7 +40,7 @@ export const Artwork = createFragmentContainer(
 )
 
 const Artist = createFragmentContainer(
-  (props: { artist: MockRelayRendererFixtures_artist }) => <Text>{props.artist.name}</Text>,
+  (props: { artist }) => <Text>{props.artist.name}</Text>,
   graphql`
     fragment MockRelayRendererFixtures_artist on Artist {
       name
@@ -53,7 +52,7 @@ const ArtistQueryRenderer = (props: { id: string }) => (
   <ContextConsumer>
     {({ relayEnvironment }) => {
       return (
-        <QueryRenderer<MockRelayRendererFixturesArtistQuery>
+        <QueryRenderer
           environment={relayEnvironment}
           variables={props}
           query={graphql`
@@ -63,7 +62,7 @@ const ArtistQueryRenderer = (props: { id: string }) => (
               }
             }
           `}
-          render={renderWithLoadProgress(Artist)}
+          render={renderWithLoadProgress(Artist as any)}
         />
       )
     }}
