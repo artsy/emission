@@ -16,6 +16,120 @@
 
 ### Master
 
+- Styles Fair view to match design - kieran
+- Removes All Artworks from artwork preview - kieran
+- Adds booth number to fair booth view - kieran
+- Adds item separator to FairBooth - kieran
+- Adds counts to Artworks and Artist previews for FairBooth - kieran
+- Restyles CaretButton to reflect design - kieran
+- Clicking on Fair booth title now takes you to booth view (Reviewed this with Jun) - kieran
+- Adds inter-component communication for map and bottom sheet view - ash
+- Fix createMockNetworkLayer and update tests - luc
+- Adds inter-component communication for map and bottom sheet view - ash
+- Adds SearchIcon from svg - Kieran
+- Styles SearchLink - Kieran
+- Fixes bug in filter bar when centering selected items - ash
+- Replaces PNG Chevron for SVG icon - kieran
+- Centers Fair titles in fairbooth preview - kieran
+- Adds some small styling adjustments to the hoursCollapsible - kieran
+- Fix overfetching data on Fair Detail - luc
+- Update Show detail view spacing & copy - luc
+- Improves native integration with bottom sheet UI - ash
+- Adds missing fair booth separator - kieran
+- Refactors Fair Header view to use EntityList - luc
+- Fix bug with Markdown renderer - luc
+- Refactors Show Header view to use EntityList - luc
+- Fix fair booth view by adding query renderer - luc
+- Enable saving fairs in Fair header view - ashley
+- Moves Description and View more information below map - kieran
+- Decreases size of pin slightly - kieran
+- Resizes fair banner to be larger - kieran
+- Adds artwork count to view all in booth preview - kieran
+- Checks coords before rending map & checks for artworks before render fair booth preview - kieran
+- Adds save functionality to show - kieran
+- Adds city and zip code to show address - kieran
+- Checks for works before rendering works section - kieran
+- Checks for hours before rending hours section - kieran
+- Adds logging for relay queries and metaphysics extensions used in query - luc
+
+### 1.8.1
+
+- Ports over @ds300's Relay mock utils from reaction - luc
+- Swap Mapbox style from default to Artsy theme - luc
+- Display pins on map based user location - luc
+- Update MapRenderer to user Geolocation service - luc
+- Adds `Make Offer` badge to artwork brick - matt
+- Fair booth title now a link to gallery - kieran
+- Replace theme and icon on LocationMap - luc
+- Adds links to fair exhibitors - Kieran
+- Removes "All" from Artists, Exhibitors, and Works Headers - ashley
+- Adds navigation from Fair Booth Partners to Partners page and from Fair Artists view to Artists page - ashley
+- Show UI cleanup: removes map icon, enables Artist navigation - ashley
+- Expands Show installation shot carousel to screen width - ashley
+- Adds external link to partner galleries - ashley
+- Replace theme and icon on LocationMap - luc
+- Removes "View on Map" text from More Shows section in Show view - ashley
+- Adds more data marshalling for city view, sets up city scaffold - ash
+
+### 1.8.0
+
+- Adds styled LocationMap with custom pins - kieran
+- Refactor auctions countdown timer, add fair countdown timer - javamonn
+- Refactors ARNotificationManager to implicitly call all JS methods on main queue - ash
+- Adds the mapBoxAPIClientKey to cocoapods
+- Updates Show detail view styles - luc
+- Styles artists list - Kieran
+- Updates @artsy/palette (2.21.1) - javamonn
+- Refactor More Shows section - luc
+- Styles fair header view - luc
+- Increases size of pin for LocationMap and zooms in slighlty - kieran
+- Adds extra checking around sale artwork messaging in artwork grids - ash
+- Add fair-scoped search link to native Eigen screen - javamonn
+- Adds "View on map" to show view for "More shows" - Kieran
+- Adds AllArtist page to Shows and adds styled gray border InvertedButton - Kieran
+- Add HoursCollapsible to Fair detail view - javamonn
+- Adds fair booth section - luc
+- Add browse artworks screen to Fair, Show - javamonn
+- fixes to the artwork favourites pagination - orta
+- Add rules prop to Markdown, left-align fair and show hours markdown - javamonn
+- Add paginated artists screen to fair detail, refactor show artists - javamonn
+- Update Show MoreInfo screen with events - javamonn
+- Update artwork grid item text spacing - javamonn
+- Add Browse Artworks link from Fair booth, works - javamonn
+- Enable navigation link from Fair contextual detail to Gallery and Artist pages - ashley
+- All Exhibitors View bug fix - ashley
+- Add FairBooth screen - javamonn
+- Splits Fair screens into seperate query renderers - luc
+- Adds Map and City view container - luc
+- Adds native unit test suite and CI - ash
+- Add FairMoreInfo screen - roop and javamonn
+- Adds shows list to Show View - ashley
+- Adds fair exhibitors to Fair view - ashley
+- Reordering Fair sections to match design specs -ashley
+- Add contextual data to Fair view - ashley
+- Enable navigation on contextual data in Show view - ashley
+
+### 1.7.6
+
+- Removes the buy now banner from the homescreen - orta
+
+### 1.7.5
+
+- fixes to the artwork favourites pagination - orta
+
+### 1.7.4
+
+- Emission's podspec contains deps for all of its native dependencies - orta
+
+### 1.7.3
+
+#### User Facing
+
+- Makes the consignment banner show by default, and allows changing this via an echo flag - orta
+- Fixes crash in marketing banner - ash
+
+#### Not user facing
+
 - Adds Shows detail page header components - javamonn
 - Updates to relay-compiler and relay-runtime - ash
 - Adds tslint-plugin-relay lint rule (from Reaction) - ash
@@ -23,8 +137,12 @@
 - Updates cocoapods (1.5.3) - luc
 - Adds Mapbox + Location Component - luc
 - Adds Artwork grids with infinite scroll to Show View - ashley
-- Fixes crash in marketing banner - ash
 - Adds Relay DevTools, Update Node.js to 10.13.0 - javamonn
+- Adds artists list component to show detail view - javamonn
+- Adds Fair detail view header components - luc
+- Adds MoreInfo screen to show detail view - javamonn
+- Clean up Jest log output, update relay-mock-network-layer - javamonn
+- Fair performance enhancements - ashley
 
 ### 1.7.1
 

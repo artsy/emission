@@ -1,10 +1,18 @@
+GIT
+  remote: https://github.com/square/cocoapods-check.git
+  revision: f19086dee299c27b52453e5a87b011900b7f8ae0
+  branch: master
+  specs:
+    cocoapods-check (1.0.2)
+      cocoapods (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
     CFPropertyList (3.0.0)
     RubyInline (3.12.4)
       ZenTest (~> 4.3)
-    ZenTest (4.11.1)
+    ZenTest (4.11.2)
     activesupport (4.2.10)
       i18n (~> 0.7)
       minitest (~> 5.1)
@@ -82,9 +90,10 @@ PLATFORMS
 
 DEPENDENCIES
   cocoapods
+  cocoapods-check!
   cocoapods-fix-react-native
   cocoapods-keys
   psych
 
 BUNDLED WITH
-   1.16.6
+   1.17.1

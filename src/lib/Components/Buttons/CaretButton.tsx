@@ -1,6 +1,7 @@
-import { Display, Flex } from "@artsy/palette"
+import { Box, Flex, Sans } from "@artsy/palette"
+import ChevronIcon from "lib/Icons/ChevronIcon"
 import React from "react"
-import { GestureResponderEvent, Image, TouchableWithoutFeedback } from "react-native"
+import { GestureResponderEvent, TouchableWithoutFeedback } from "react-native"
 
 interface Props {
   onPress?: (ev: GestureResponderEvent) => void
@@ -10,9 +11,13 @@ interface Props {
 export const CaretButton: React.SFC<Props> = ({ text, onPress }) => {
   return (
     <TouchableWithoutFeedback onPress={onPress}>
-      <Flex alignItems="center" justifyContent="space-between" flexDirection="row" height={36}>
-        <Display size="4t">{text}</Display>
-        <Image style={{ alignSelf: "center" }} source={require("../../../../images/horizontal_chevron.png")} />
+      <Flex flexDirection="row" align-items="base-line">
+        <Sans size="3t" weight="medium">
+          {text}
+        </Sans>
+        <Box ml={1}>
+          <ChevronIcon />
+        </Box>
       </Flex>
     </TouchableWithoutFeedback>
   )

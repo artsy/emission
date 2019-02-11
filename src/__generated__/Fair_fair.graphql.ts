@@ -1,10 +1,12 @@
 /* tslint:disable */
 
 import { ConcreteFragment } from "relay-runtime";
+import { FairDetail_fair$ref } from "./FairDetail_fair.graphql";
 declare const _Fair_fair$ref: unique symbol;
 export type Fair_fair$ref = typeof _Fair_fair$ref;
 export type Fair_fair = {
-    readonly name: string | null;
+    readonly id: string;
+    readonly " $fragmentRefs": FairDetail_fair$ref;
     readonly " $refType": Fair_fair$ref;
 };
 
@@ -20,9 +22,14 @@ const node: ConcreteFragment = {
     {
       "kind": "ScalarField",
       "alias": null,
-      "name": "name",
+      "name": "id",
       "args": null,
       "storageKey": null
+    },
+    {
+      "kind": "FragmentSpread",
+      "name": "FairDetail_fair",
+      "args": null
     },
     {
       "kind": "ScalarField",
@@ -33,5 +40,5 @@ const node: ConcreteFragment = {
     }
   ]
 };
-(node as any).hash = '5496c758924be928482513d395e6d47d';
+(node as any).hash = '76379b672e62b0644edc02b901ea0bee';
 export default node;

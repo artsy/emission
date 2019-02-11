@@ -1,62 +1,20 @@
 /* tslint:disable */
 
 import { ConcreteFragment } from "relay-runtime";
-import { Artworks_show$ref } from "./Artworks_show.graphql";
-import { Location_show$ref } from "./Location_show.graphql";
-import { ShowHeader_show$ref } from "./ShowHeader_show.graphql";
+import { Detail_show$ref } from "./Detail_show.graphql";
+import { MoreInfo_show$ref } from "./MoreInfo_show.graphql";
+import { ShowArtists_show$ref } from "./ShowArtists_show.graphql";
+import { ShowArtworks_show$ref } from "./ShowArtworks_show.graphql";
 declare const _Show_show$ref: unique symbol;
 export type Show_show$ref = typeof _Show_show$ref;
 export type Show_show = {
-    readonly id: string;
-    readonly name: string | null;
-    readonly description: string | null;
-    readonly press_release: string | null;
-    readonly artists: ReadonlyArray<({
-        readonly __id: string;
-        readonly id: string;
-        readonly name: string | null;
-        readonly is_followed: boolean | null;
-    }) | null> | null;
-    readonly status: string | null;
-    readonly counts: ({
-        readonly artworks: number | null;
-        readonly eligible_artworks: any | null;
-    }) | null;
-    readonly partner: ({
-        readonly name?: string | null;
-    }) | null;
-    readonly " $fragmentRefs": ShowHeader_show$ref & Location_show$ref & Artworks_show$ref;
+    readonly " $fragmentRefs": Detail_show$ref & MoreInfo_show$ref & ShowArtists_show$ref & ShowArtworks_show$ref;
     readonly " $refType": Show_show$ref;
 };
 
 
 
-const node: ConcreteFragment = (function(){
-var v0 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "id",
-  "args": null,
-  "storageKey": null
-},
-v1 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "name",
-  "args": null,
-  "storageKey": null
-},
-v2 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "__id",
-  "args": null,
-  "storageKey": null
-},
-v3 = [
-  v1
-];
-return {
+const node: ConcreteFragment = {
   "kind": "Fragment",
   "name": "Show_show",
   "type": "Show",
@@ -65,113 +23,32 @@ return {
   "selections": [
     {
       "kind": "FragmentSpread",
-      "name": "Artworks_show",
-      "args": null
-    },
-    v0,
-    {
-      "kind": "ScalarField",
-      "alias": null,
-      "name": "description",
-      "args": null,
-      "storageKey": null
-    },
-    {
-      "kind": "ScalarField",
-      "alias": null,
-      "name": "press_release",
-      "args": null,
-      "storageKey": null
-    },
-    {
-      "kind": "FragmentSpread",
-      "name": "ShowHeader_show",
+      "name": "Detail_show",
       "args": null
     },
     {
       "kind": "FragmentSpread",
-      "name": "Location_show",
+      "name": "MoreInfo_show",
       "args": null
     },
-    v1,
     {
-      "kind": "LinkedField",
-      "alias": null,
-      "name": "artists",
-      "storageKey": null,
-      "args": null,
-      "concreteType": "Artist",
-      "plural": true,
-      "selections": [
-        v2,
-        v0,
-        v1,
-        {
-          "kind": "ScalarField",
-          "alias": null,
-          "name": "is_followed",
-          "args": null,
-          "storageKey": null
-        }
-      ]
+      "kind": "FragmentSpread",
+      "name": "ShowArtists_show",
+      "args": null
+    },
+    {
+      "kind": "FragmentSpread",
+      "name": "ShowArtworks_show",
+      "args": null
     },
     {
       "kind": "ScalarField",
       "alias": null,
-      "name": "status",
+      "name": "__id",
       "args": null,
       "storageKey": null
-    },
-    {
-      "kind": "LinkedField",
-      "alias": null,
-      "name": "counts",
-      "storageKey": null,
-      "args": null,
-      "concreteType": "ShowCounts",
-      "plural": false,
-      "selections": [
-        {
-          "kind": "ScalarField",
-          "alias": null,
-          "name": "artworks",
-          "args": null,
-          "storageKey": null
-        },
-        {
-          "kind": "ScalarField",
-          "alias": null,
-          "name": "eligible_artworks",
-          "args": null,
-          "storageKey": null
-        }
-      ]
-    },
-    {
-      "kind": "LinkedField",
-      "alias": null,
-      "name": "partner",
-      "storageKey": null,
-      "args": null,
-      "concreteType": null,
-      "plural": false,
-      "selections": [
-        v2,
-        {
-          "kind": "InlineFragment",
-          "type": "Partner",
-          "selections": v3
-        },
-        {
-          "kind": "InlineFragment",
-          "type": "ExternalPartner",
-          "selections": v3
-        }
-      ]
-    },
-    v2
+    }
   ]
 };
-})();
-(node as any).hash = '0137daf86034cf527fa9b620b8cd1a6b';
+(node as any).hash = 'b1c8b81457565759412e680750cbbcdb';
 export default node;

@@ -21,7 +21,9 @@
 #import <Emission/ARArtistComponentViewController.h>
 #import <Emission/ARHomeComponentViewController.h>
 #import <Emission/ARGeneComponentViewController.h>
+#import <Emission/ARShowComponentViewController.h>
 #import <Emission/ARConversationComponentViewController.h>
+#import <Emission/ARFairComponentViewController.h>
 #import <Keys/EmissionKeys.h>
 
 #import <React/RCTUtils.h>
@@ -119,18 +121,19 @@ randomBOOL(void)
   AppSetup *setup = [AppSetup ambientSetup];
 
   EmissionKeys *keys = [[EmissionKeys alloc] init];
-  
+
   AREmissionConfiguration *config = [[AREmissionConfiguration alloc] initWithUserID:userID
                                                                 authenticationToken:accessToken
                                                                           sentryDSN:nil
                                                                stripePublishableKey:[keys stripePublishableKey]
                                                                    googleMapsAPIKey:nil
+                                                                 mapBoxAPIClientKey:[keys mapBoxAPIClientKey]
                                                                          gravityURL:setup.gravityURL
                                                                      metaphysicsURL:setup.metaphysicsURL
                                                                       predictionURL:setup.predictionURL
                                                                           userAgent:@"Emission Example"
                                                                             options:setup.options];
-  
+
   emission = [[AREmission alloc] initWithConfiguration:config packagerURL:setup.jsCodeLocation];
   [AREmission setSharedInstance:emission];
   [emission.bridge reload];
@@ -254,6 +257,10 @@ randomBOOL(void)
     NSString *artistID = [[route componentsSeparatedByString:@"/"] lastObject];
     viewController = [[ARArtistComponentViewController alloc] initWithArtistID:artistID];
 
+  } else if ([route hasPrefix:@"/show/"] || [route hasPrefix:@"show/"]) {
+    NSString *showID = [[route componentsSeparatedByString:@"/"] lastObject];
+    viewController = [[ARShowComponentViewController alloc] initWithShowID:showID];
+
   } else if ([route hasPrefix:@"/gene/"] || [route hasPrefix:@"gene/"]) {
     NSString *geneID = [[[[route componentsSeparatedByString:@"/"] lastObject] componentsSeparatedByString:@"?"] firstObject];
     NSURLComponents *components = [NSURLComponents componentsWithString:route];
@@ -275,8 +282,8 @@ randomBOOL(void)
     viewController = [[ARHomeComponentViewController alloc] initWithSelectedArtist:artistID tab:ARHomeTabArtists emission:nil];
 
   } else {
-
-    viewController = [[UnroutedViewController alloc] initWithRoute:route];
+    NSString *fairID = [[route componentsSeparatedByString:@"/"] lastObject];
+    viewController = [[ARFairComponentViewController alloc] initWithFairID:fairID];
   }
 
   return viewController;

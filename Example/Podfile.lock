@@ -10,8 +10,8 @@ PODS:
     - "Artsy+UIFonts"
     - "UIView+BooleanAnimations"
   - boost-for-react-native (1.63.0)
-  - DoubleConversion (1.1.6)
-  - Emission (1.7.2):
+  - DoubleConversion (1.1.5)
+  - Emission (1.8.1):
     - "Artsy+UIColors"
     - "Artsy+UIFonts (>= 3.0.0)"
     - DoubleConversion (= 1.1.6)
@@ -52,6 +52,11 @@ PODS:
   - "Extraction/UILabel+Typography (1.2.4)"
   - "Extraction/UIView+ARSpinner (1.2.4)":
     - Extraction/ARAnimationContinuation
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
   - FLKAutoLayout (1.0.0)
   - Folly (2016.10.31.00):
     - boost-for-react-native
@@ -117,6 +122,8 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
+  - RNSVG (9.0.4):
+    - React
   - SAMKeychain (1.5.0)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
@@ -131,6 +138,7 @@ PODS:
     - React
     - Sentry (~> 3.9.0)
     - Sentry/KSCrash (~> 3.9.0)
+  - Specta (1.0.7)
   - Stripe (11.2.0)
   - tipsi-stripe (5.2.4):
     - React
@@ -144,16 +152,21 @@ DEPENDENCIES:
   - "Artsy+UIFonts"
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Emission (from `../`)
+  - Expecta
+  - FBSnapshotTestCase
   - FLKAutoLayout
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - Keys (from `Pods/CocoaPodsKeys`)
+  - Pulley (from `https://github.com/l2succes/Pulley.git`, branch `master`)
   - "react-native-mapbox-gl (from `../node_modules/@mapbox/react-native-mapbox-gl`)"
   - React/DevSupport (from `../node_modules/react-native`)
+  - RNSVG (from `../node_modules/react-native-svg`)
   - SAMKeychain
   - Sentry/Core
   - Sentry/KSCrash
   - SentryReactNative (from `../node_modules/react-native-sentry`)
+  - Specta
   - tipsi-stripe (from `../node_modules/tipsi-stripe/tipsi-stripe.podspec`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -166,6 +179,8 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ARGenericTableViewController
     - boost-for-react-native
+    - Expecta
+    - FBSnapshotTestCase
     - FLKAutoLayout
     - ISO8601DateFormatter
     - KSCrash
@@ -174,6 +189,7 @@ SPEC REPOS:
     - SAMKeychain
     - SDWebImage
     - Sentry
+    - Specta
     - Stripe
     - "UIView+BooleanAnimations"
 
@@ -191,10 +207,15 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   Keys:
     :path: Pods/CocoaPodsKeys
+  Pulley:
+    :branch: master
+    :git: https://github.com/l2succes/Pulley.git
   React:
     :path: "../node_modules/react-native"
   react-native-mapbox-gl:
     :path: "../node_modules/@mapbox/react-native-mapbox-gl"
+  RNSVG:
+    :path: "../node_modules/react-native-svg"
   SentryReactNative:
     :path: "../node_modules/react-native-sentry"
   tipsi-stripe:
@@ -206,6 +227,9 @@ CHECKOUT OPTIONS:
   "Artsy+Authentication":
     :commit: 1b582675598c999726d9edacd3b8559e01cf7c48
     :git: https://github.com/artsy/Artsy-Authentication.git
+  Pulley:
+    :commit: 34b274c62823f005d6d6d8cf3cb726e3c7e419be
+    :git: https://github.com/l2succes/Pulley.git
   tipsi-stripe:
     :commit: efcbc49dc7cf472099d8aa8c3fb2b64441fc5ea1
     :git: https://github.com/erikdstock/tipsi-stripe.git
@@ -220,6 +244,7 @@ SPEC CHECKSUMS:
   DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
   Emission: f76136f6eaab1ba0f7c692b17727dbcceebfa856
   Extraction: 642a73b8ccc7806e9a7daf95ebb4c14c374829f1
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
   FLKAutoLayout: 106b14dbae09d32c6730190f4e78a959759ba4a4
   Folly: c89ac2d5c6ab169cd7397ef27485c44f35f742c7
   glog: e8acf0ebbf99759d3ff18c86c292a5898282dcde
@@ -230,15 +255,17 @@ SPEC CHECKSUMS:
   ORStackView: b9507271cb41fb9e0b3eecc6414d831201e7cf7c
   React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
   react-native-mapbox-gl: b42480060cdcc515dfa3d8e403fb4dd32466a1b9
+  RNSVG: 4834be1d644eb77f0e3f6de851881b83758a3124
   SAMKeychain: 1fc9ae02f576365395758b12888c84704eebc423
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   Sentry: e2707f9a6b498277d9620a48fcb1bd3b655c8473
   SentryReactNative: a292506edfa707119e3aa155892cdb07e453a93a
+  Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
   Stripe: 898f83a95d72180c6eb4acd65b2ae6158fc6a8bd
   tipsi-stripe: 25a3f6ba746e9a27f7b21e928c9974d016efcd77
   "UIView+BooleanAnimations": a760be9a066036e55f298b7b7350a6cb14cfcd97
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: 158aeb77c5785a2d9a2b236d52851cd5644914e0
+PODFILE CHECKSUM: 278087d891d4b4dd228571713a2c1d65ef4b875a
 
 COCOAPODS: 1.5.3

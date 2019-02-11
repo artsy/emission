@@ -5,6 +5,12 @@ unless using_bundler
   exit(1)
 end
 
+unless Dir.exist? '../node_modules'
+  puts "\nYou will need to run:".red
+  puts "  yarn install\n\n"
+  exit(1)
+end
+
 source 'https://github.com/artsy/Specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
@@ -19,6 +25,9 @@ yoga_path = File.join(react_path, 'ReactCommon/yoga')
 folly_spec_path = File.join(react_path, 'third-party-podspecs/Folly.podspec')
 glog_spec_path = File.join(react_path, 'third-party-podspecs/glog.podspec')
 double_conversion_spec_path = File.join(react_path, 'third-party-podspecs/DoubleConversion.podspec')
+
+
+# If you add a new dependency here, it should also go in the Podspec
 sentry_path = File.join(node_modules_path, 'react-native-sentry')
 tispi_stripe_spec_path = File.join(node_modules_path, 'tipsi-stripe/tipsi-stripe.podspec')
 mapbox_path = File.join(node_modules_path, '@mapbox/react-native-mapbox-gl')
@@ -57,6 +66,21 @@ target 'Emission' do
 
   # Map library
   pod 'react-native-mapbox-gl', :path => mapbox_path
+  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
+  # Bottom Sheet view controller for Map view
+  pod 'Pulley', :git => 'https://github.com/l2succes/Pulley.git', :branch => 'master'
+
+  target 'EmissionTests' do
+    inherit! :search_paths
+
+    # Used for standard Objective-C unit tests, analagous to Jest.
+    pod 'Specta'
+    pod 'Expecta'
+
+    # Necessary because we're bypassing the RCTTestCase subspec.
+    pod 'FBSnapshotTestCase'
+  end
 end
 
 plugin 'cocoapods-keys', {
@@ -65,6 +89,7 @@ plugin 'cocoapods-keys', {
     'ArtsyAPIClientSecret',   # Authing to the Artsy API
     'ArtsyAPIClientKey',      #
     'StripePublishableKey',
+    'MapBoxAPIClientKey',
   ]
 }
 
