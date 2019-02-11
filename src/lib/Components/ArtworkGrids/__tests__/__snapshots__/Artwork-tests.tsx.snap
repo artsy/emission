@@ -51,10 +51,7 @@ exports[`in a closed sale renders bid when an auction is about to open, but not 
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          className="sc-bdVaJa bDWFJH"
-          ellipsizeMode="tail"
+          className="sc-ifAKCX cFlEyZ"
           fontFamily="Unica77LL-Medium"
           fontSize="8px"
           lineHeight={8}
@@ -91,10 +88,7 @@ exports[`in a closed sale renders bid when an auction is about to open, but not 
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          className="sc-bdVaJa bDWFJH"
-          ellipsizeMode="tail"
+          className="sc-ifAKCX cFlEyZ"
           fontFamily="Unica77LL-Medium"
           fontSize="8px"
           lineHeight={8}
@@ -131,11 +125,8 @@ exports[`in a closed sale renders bid when an auction is about to open, but not 
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      className="sc-bdVaJa bDWFJH"
+      className="sc-ifAKCX cFlEyZ"
       color="#000"
-      ellipsizeMode="tail"
       fontFamily="Unica77LL-Medium"
       fontSize="13px"
       lineHeight="18px"
@@ -155,11 +146,8 @@ exports[`in a closed sale renders bid when an auction is about to open, but not 
        
     </Text>
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      className="sc-bdVaJa bDWFJH"
+      className="sc-ifAKCX cFlEyZ"
       color="#666"
-      ellipsizeMode="tail"
       fontFamily="Unica77LL-Regular"
       fontSize="12px"
       lineHeight="16px"
@@ -179,9 +167,6 @@ exports[`in a closed sale renders bid when an auction is about to open, but not 
     </Text>
   </View>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     numberOfLines={1}
     style={
       Array [
@@ -208,9 +193,6 @@ exports[`in a closed sale renders bid when an auction is about to open, but not 
     Mikael Olson
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     numberOfLines={1}
     style={
       Array [
@@ -230,9 +212,6 @@ exports[`in a closed sale renders bid when an auction is about to open, but not 
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -261,9 +240,6 @@ exports[`in a closed sale renders bid when an auction is about to open, but not 
     , 2015
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     numberOfLines={1}
     style={
       Array [
@@ -338,10 +314,7 @@ exports[`in a closed sale renders without any price information 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          className="sc-bdVaJa bDWFJH"
-          ellipsizeMode="tail"
+          className="sc-ifAKCX cFlEyZ"
           fontFamily="Unica77LL-Medium"
           fontSize="8px"
           lineHeight={8}
@@ -378,10 +351,7 @@ exports[`in a closed sale renders without any price information 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          className="sc-bdVaJa bDWFJH"
-          ellipsizeMode="tail"
+          className="sc-ifAKCX cFlEyZ"
           fontFamily="Unica77LL-Medium"
           fontSize="8px"
           lineHeight={8}
@@ -418,11 +388,8 @@ exports[`in a closed sale renders without any price information 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      className="sc-bdVaJa bDWFJH"
+      className="sc-ifAKCX cFlEyZ"
       color="#000"
-      ellipsizeMode="tail"
       fontFamily="Unica77LL-Medium"
       fontSize="13px"
       lineHeight="18px"
@@ -442,11 +409,8 @@ exports[`in a closed sale renders without any price information 1`] = `
        
     </Text>
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      className="sc-bdVaJa bDWFJH"
+      className="sc-ifAKCX cFlEyZ"
       color="#666"
-      ellipsizeMode="tail"
       fontFamily="Unica77LL-Regular"
       fontSize="12px"
       lineHeight="16px"
@@ -466,9 +430,6 @@ exports[`in a closed sale renders without any price information 1`] = `
     </Text>
   </View>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     numberOfLines={1}
     style={
       Array [
@@ -495,9 +456,6 @@ exports[`in a closed sale renders without any price information 1`] = `
     Mikael Olson
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     numberOfLines={1}
     style={
       Array [
@@ -517,9 +475,6 @@ exports[`in a closed sale renders without any price information 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -548,9 +503,6 @@ exports[`in a closed sale renders without any price information 1`] = `
     , 2015
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     numberOfLines={1}
     style={
       Array [
@@ -625,10 +577,7 @@ exports[`in an open sale renders with current bid 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          className="sc-bdVaJa bDWFJH"
-          ellipsizeMode="tail"
+          className="sc-ifAKCX cFlEyZ"
           fontFamily="Unica77LL-Medium"
           fontSize="8px"
           lineHeight={8}
@@ -665,10 +614,7 @@ exports[`in an open sale renders with current bid 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          className="sc-bdVaJa bDWFJH"
-          ellipsizeMode="tail"
+          className="sc-ifAKCX cFlEyZ"
           fontFamily="Unica77LL-Medium"
           fontSize="8px"
           lineHeight={8}
@@ -705,11 +651,8 @@ exports[`in an open sale renders with current bid 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      className="sc-bdVaJa bDWFJH"
+      className="sc-ifAKCX cFlEyZ"
       color="#000"
-      ellipsizeMode="tail"
       fontFamily="Unica77LL-Medium"
       fontSize="13px"
       lineHeight="18px"
@@ -729,11 +672,8 @@ exports[`in an open sale renders with current bid 1`] = `
        
     </Text>
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      className="sc-bdVaJa bDWFJH"
+      className="sc-ifAKCX cFlEyZ"
       color="#666"
-      ellipsizeMode="tail"
       fontFamily="Unica77LL-Regular"
       fontSize="12px"
       lineHeight="16px"
@@ -753,9 +693,6 @@ exports[`in an open sale renders with current bid 1`] = `
     </Text>
   </View>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     numberOfLines={1}
     style={
       Array [
@@ -782,9 +719,6 @@ exports[`in an open sale renders with current bid 1`] = `
     Mikael Olson
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     numberOfLines={1}
     style={
       Array [
@@ -804,9 +738,6 @@ exports[`in an open sale renders with current bid 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -835,9 +766,6 @@ exports[`in an open sale renders with current bid 1`] = `
     , 2015
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     numberOfLines={1}
     style={
       Array [
@@ -912,10 +840,7 @@ exports[`in an open sale renders with starting bid 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          className="sc-bdVaJa bDWFJH"
-          ellipsizeMode="tail"
+          className="sc-ifAKCX cFlEyZ"
           fontFamily="Unica77LL-Medium"
           fontSize="8px"
           lineHeight={8}
@@ -952,10 +877,7 @@ exports[`in an open sale renders with starting bid 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          className="sc-bdVaJa bDWFJH"
-          ellipsizeMode="tail"
+          className="sc-ifAKCX cFlEyZ"
           fontFamily="Unica77LL-Medium"
           fontSize="8px"
           lineHeight={8}
@@ -992,11 +914,8 @@ exports[`in an open sale renders with starting bid 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      className="sc-bdVaJa bDWFJH"
+      className="sc-ifAKCX cFlEyZ"
       color="#000"
-      ellipsizeMode="tail"
       fontFamily="Unica77LL-Medium"
       fontSize="13px"
       lineHeight="18px"
@@ -1015,11 +934,8 @@ exports[`in an open sale renders with starting bid 1`] = `
        
     </Text>
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      className="sc-bdVaJa bDWFJH"
+      className="sc-ifAKCX cFlEyZ"
       color="#666"
-      ellipsizeMode="tail"
       fontFamily="Unica77LL-Regular"
       fontSize="12px"
       lineHeight="16px"
@@ -1039,9 +955,6 @@ exports[`in an open sale renders with starting bid 1`] = `
     </Text>
   </View>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     numberOfLines={1}
     style={
       Array [
@@ -1068,9 +981,6 @@ exports[`in an open sale renders with starting bid 1`] = `
     Mikael Olson
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     numberOfLines={1}
     style={
       Array [
@@ -1090,9 +1000,6 @@ exports[`in an open sale renders with starting bid 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -1121,9 +1028,6 @@ exports[`in an open sale renders with starting bid 1`] = `
     , 2015
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     numberOfLines={1}
     style={
       Array [
@@ -1198,10 +1102,7 @@ exports[`renders properly 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          className="sc-bdVaJa bDWFJH"
-          ellipsizeMode="tail"
+          className="sc-ifAKCX cFlEyZ"
           fontFamily="Unica77LL-Medium"
           fontSize="8px"
           lineHeight={8}
@@ -1238,10 +1139,7 @@ exports[`renders properly 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          className="sc-bdVaJa bDWFJH"
-          ellipsizeMode="tail"
+          className="sc-ifAKCX cFlEyZ"
           fontFamily="Unica77LL-Medium"
           fontSize="8px"
           lineHeight={8}
@@ -1278,11 +1176,8 @@ exports[`renders properly 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      className="sc-bdVaJa bDWFJH"
+      className="sc-ifAKCX cFlEyZ"
       color="#000"
-      ellipsizeMode="tail"
       fontFamily="Unica77LL-Medium"
       fontSize="13px"
       lineHeight="18px"
@@ -1302,11 +1197,8 @@ exports[`renders properly 1`] = `
        
     </Text>
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      className="sc-bdVaJa bDWFJH"
+      className="sc-ifAKCX cFlEyZ"
       color="#666"
-      ellipsizeMode="tail"
       fontFamily="Unica77LL-Regular"
       fontSize="12px"
       lineHeight="16px"
@@ -1324,9 +1216,6 @@ exports[`renders properly 1`] = `
     />
   </View>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     numberOfLines={1}
     style={
       Array [
@@ -1353,9 +1242,6 @@ exports[`renders properly 1`] = `
     Mikael Olson
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     numberOfLines={1}
     style={
       Array [
@@ -1375,9 +1261,6 @@ exports[`renders properly 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       numberOfLines={1}
       style={
         Array [
@@ -1406,9 +1289,6 @@ exports[`renders properly 1`] = `
     , 2015
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     numberOfLines={1}
     style={
       Array [

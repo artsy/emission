@@ -61,11 +61,8 @@ exports[`renders properly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            className="sc-bdVaJa bDWFJH"
+            className="sc-ifAKCX cFlEyZ"
             color="#000"
-            ellipsizeMode="tail"
             fontFamily="Unica77LL-Medium"
             fontSize="13px"
             lineHeight="18px"
@@ -84,11 +81,8 @@ exports[`renders properly 1`] = `
              
           </Text>
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            className="sc-bdVaJa bDWFJH"
+            className="sc-ifAKCX cFlEyZ"
             color="#666"
-            ellipsizeMode="tail"
             fontFamily="Unica77LL-Regular"
             fontSize="12px"
             lineHeight="16px"
@@ -106,9 +100,6 @@ exports[`renders properly 1`] = `
           />
         </View>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -135,9 +126,6 @@ exports[`renders properly 1`] = `
           Guerrilla Girls
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -157,9 +145,6 @@ exports[`renders properly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             numberOfLines={1}
             style={
               Array [
@@ -188,9 +173,6 @@ exports[`renders properly 1`] = `
           , 2012
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -262,11 +244,8 @@ exports[`renders properly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            className="sc-bdVaJa bDWFJH"
+            className="sc-ifAKCX cFlEyZ"
             color="#000"
-            ellipsizeMode="tail"
             fontFamily="Unica77LL-Medium"
             fontSize="13px"
             lineHeight="18px"
@@ -285,11 +264,8 @@ exports[`renders properly 1`] = `
              
           </Text>
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            className="sc-bdVaJa bDWFJH"
+            className="sc-ifAKCX cFlEyZ"
             color="#666"
-            ellipsizeMode="tail"
             fontFamily="Unica77LL-Regular"
             fontSize="12px"
             lineHeight="16px"
@@ -307,9 +283,6 @@ exports[`renders properly 1`] = `
           />
         </View>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -336,9 +309,6 @@ exports[`renders properly 1`] = `
           Guerrilla Girls
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -358,9 +328,6 @@ exports[`renders properly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             numberOfLines={1}
             style={
               Array [
@@ -389,9 +356,6 @@ exports[`renders properly 1`] = `
           , 2012
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -463,11 +427,8 @@ exports[`renders properly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            className="sc-bdVaJa bDWFJH"
+            className="sc-ifAKCX cFlEyZ"
             color="#000"
-            ellipsizeMode="tail"
             fontFamily="Unica77LL-Medium"
             fontSize="13px"
             lineHeight="18px"
@@ -486,11 +447,8 @@ exports[`renders properly 1`] = `
              
           </Text>
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            className="sc-bdVaJa bDWFJH"
+            className="sc-ifAKCX cFlEyZ"
             color="#666"
-            ellipsizeMode="tail"
             fontFamily="Unica77LL-Regular"
             fontSize="12px"
             lineHeight="16px"
@@ -508,9 +466,6 @@ exports[`renders properly 1`] = `
           />
         </View>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -537,9 +492,6 @@ exports[`renders properly 1`] = `
           Guerrilla Girls
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -559,9 +511,6 @@ exports[`renders properly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             numberOfLines={1}
             style={
               Array [
@@ -590,9 +539,6 @@ exports[`renders properly 1`] = `
           , 2012
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
