@@ -4,31 +4,37 @@ PODS:
     - ISO8601DateFormatter
     - "NSURL+QueryDictionary"
   - "Artsy+UIColors (3.1.0)"
-  - "Artsy+UIFonts (3.2.0)"
+  - "Artsy+UIFonts (3.2.1)"
   - Artsy-UIButtons (2.3.3):
     - "Artsy+UIColors (~> 3.0)"
     - "Artsy+UIFonts"
     - "UIView+BooleanAnimations"
   - boost-for-react-native (1.63.0)
-  - DoubleConversion (1.1.5)
+  - DoubleConversion (1.1.6)
   - Emission (1.8.1):
     - "Artsy+UIColors"
     - "Artsy+UIFonts (>= 3.0.0)"
     - DoubleConversion (= 1.1.6)
     - Extraction (>= 1.2.1)
-    - Folly (= 2016.10.31.00)
+    - Folly (= 2018.10.22.00)
     - glog (= 0.3.5)
-    - React/Core (= 0.57.4)
-    - React/CxxBridge (= 0.57.4)
-    - React/RCTAnimation (= 0.57.4)
-    - React/RCTCameraRoll (= 0.57.4)
-    - React/RCTImage (= 0.57.4)
-    - React/RCTLinkingIOS (= 0.57.4)
-    - React/RCTNetwork (= 0.57.4)
-    - React/RCTText (= 0.57.4)
+    - Pulley
+    - react-native-mapbox-gl (= 6.1.3)
+    - React/Core (= 0.58.4)
+    - React/CxxBridge (= 0.58.4)
+    - React/RCTAnimation (= 0.58.4)
+    - React/RCTCameraRoll (= 0.58.4)
+    - React/RCTGeolocation (= 0.58.4)
+    - React/RCTImage (= 0.58.4)
+    - React/RCTLinkingIOS (= 0.58.4)
+    - React/RCTNetwork (= 0.58.4)
+    - React/RCTText (= 0.58.4)
+    - RNSVG (= 9.2.4)
     - SDWebImage (< 4, >= 3.7.2)
     - SentryReactNative (= 0.30.3)
-    - yoga (= 0.57.4.React)
+    - tipsi-stripe (= 5.2.4)
+    - yoga (= 0.58.4.React)
+  - Expecta (1.0.6)
   - Extraction (1.2.4):
     - Extraction/ARAnimationContinuation (= 1.2.4)
     - Extraction/ARLoadFailureView (= 1.2.4)
@@ -57,74 +63,79 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - FLKAutoLayout (1.0.0)
-  - Folly (2016.10.31.00):
+  - FLKAutoLayout (1.0.1)
+  - Folly (2018.10.22.00):
     - boost-for-react-native
     - DoubleConversion
     - glog
   - glog (0.3.5)
   - ISO8601DateFormatter (0.8)
   - Keys (1.0.1)
-  - KSCrash/Core (1.15.16):
+  - KSCrash/Core (1.15.18):
     - KSCrash/Reporting/Filters/Basic
-  - KSCrash/Recording (1.15.16):
-    - KSCrash/Recording/Tools (= 1.15.16)
-  - KSCrash/Recording/Tools (1.15.16)
-  - KSCrash/Reporting/Filters/Base (1.15.16):
+  - KSCrash/Recording (1.15.18):
+    - KSCrash/Recording/Tools (= 1.15.18)
+  - KSCrash/Recording/Tools (1.15.18)
+  - KSCrash/Reporting/Filters/Base (1.15.18):
     - KSCrash/Recording
-  - KSCrash/Reporting/Filters/Basic (1.15.16):
+  - KSCrash/Reporting/Filters/Basic (1.15.18):
     - KSCrash/Recording
     - KSCrash/Reporting/Filters/Base
   - "NSURL+QueryDictionary (1.2.0)"
   - ORStackView (2.0.3):
     - FLKAutoLayout
-  - React (0.57.4):
-    - React/Core (= 0.57.4)
+  - Pulley (2.6.2)
+  - React (0.58.4):
+    - React/Core (= 0.58.4)
   - react-native-mapbox-gl (6.1.3):
     - React
-  - React/Core (0.57.4):
-    - yoga (= 0.57.4.React)
-  - React/CxxBridge (0.57.4):
-    - Folly (= 2016.10.31.00)
+  - React/Core (0.58.4):
+    - yoga (= 0.58.4.React)
+  - React/CxxBridge (0.58.4):
+    - Folly (= 2018.10.22.00)
     - React/Core
     - React/cxxreact
-  - React/cxxreact (0.57.4):
+    - React/jsiexecutor
+  - React/cxxreact (0.58.4):
     - boost-for-react-native (= 1.63.0)
-    - Folly (= 2016.10.31.00)
-    - React/jschelpers
+    - Folly (= 2018.10.22.00)
     - React/jsinspector
-  - React/DevSupport (0.57.4):
+  - React/DevSupport (0.58.4):
     - React/Core
     - React/RCTWebSocket
-  - React/fishhook (0.57.4)
-  - React/jschelpers (0.57.4):
-    - Folly (= 2016.10.31.00)
-    - React/PrivateDatabase
-  - React/jsinspector (0.57.4)
-  - React/PrivateDatabase (0.57.4)
-  - React/RCTAnimation (0.57.4):
+  - React/fishhook (0.58.4)
+  - React/jsi (0.58.4):
+    - Folly (= 2018.10.22.00)
+  - React/jsiexecutor (0.58.4):
+    - Folly (= 2018.10.22.00)
+    - React/cxxreact
+    - React/jsi
+  - React/jsinspector (0.58.4)
+  - React/RCTAnimation (0.58.4):
     - React/Core
-  - React/RCTBlob (0.57.4):
+  - React/RCTBlob (0.58.4):
     - React/Core
-  - React/RCTCameraRoll (0.57.4):
+  - React/RCTCameraRoll (0.58.4):
     - React/Core
     - React/RCTImage
-  - React/RCTImage (0.57.4):
+  - React/RCTGeolocation (0.58.4):
+    - React/Core
+  - React/RCTImage (0.58.4):
     - React/Core
     - React/RCTNetwork
-  - React/RCTLinkingIOS (0.57.4):
+  - React/RCTLinkingIOS (0.58.4):
     - React/Core
-  - React/RCTNetwork (0.57.4):
+  - React/RCTNetwork (0.58.4):
     - React/Core
-  - React/RCTText (0.57.4):
+  - React/RCTText (0.58.4):
     - React/Core
-  - React/RCTWebSocket (0.57.4):
+  - React/RCTWebSocket (0.58.4):
     - React/Core
     - React/fishhook
     - React/RCTBlob
-  - RNSVG (9.0.4):
+  - RNSVG (9.2.4):
     - React
-  - SAMKeychain (1.5.0)
+  - SAMKeychain (1.5.3)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -144,7 +155,7 @@ PODS:
     - React
     - Stripe (~> 11.2.0)
   - "UIView+BooleanAnimations (1.0.2)"
-  - yoga (0.57.4.React)
+  - yoga (0.58.4.React)
 
 DEPENDENCIES:
   - ARGenericTableViewController
@@ -230,33 +241,32 @@ CHECKOUT OPTIONS:
   Pulley:
     :commit: 34b274c62823f005d6d6d8cf3cb726e3c7e419be
     :git: https://github.com/l2succes/Pulley.git
-  tipsi-stripe:
-    :commit: efcbc49dc7cf472099d8aa8c3fb2b64441fc5ea1
-    :git: https://github.com/erikdstock/tipsi-stripe.git
 
 SPEC CHECKSUMS:
   ARGenericTableViewController: 61a0897ba66c35111b5d1cc3b44884282bd3c1a5
   "Artsy+Authentication": 3bf11ceca61c52e9e31490535bf5798f625406fa
   "Artsy+UIColors": 31c03c4146f5e6618a9b950f37dfe02dd9ac09a6
-  "Artsy+UIFonts": d29579aa105e3709032651fb3145d24f8339e905
+  "Artsy+UIFonts": 3195e768ca4ca89c03fbddbd82e5f4af5168c5d8
   Artsy-UIButtons: 3c396f0fad352a7b0332100e0ffcb0ca577e0082
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
-  Emission: f76136f6eaab1ba0f7c692b17727dbcceebfa856
+  Emission: 2518da842760c0e8534cf278aa1004b6a8e71cfc
+  Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
   Extraction: 642a73b8ccc7806e9a7daf95ebb4c14c374829f1
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  FLKAutoLayout: 106b14dbae09d32c6730190f4e78a959759ba4a4
-  Folly: c89ac2d5c6ab169cd7397ef27485c44f35f742c7
-  glog: e8acf0ebbf99759d3ff18c86c292a5898282dcde
+  FLKAutoLayout: 37e1e09de6411dbee5526860d9f55d9063323ea8
+  Folly: de497beb10f102453a1afa9edbf8cf8a251890de
+  glog: aefd1eb5dda2ab95ba0938556f34b98e2da3a60d
   ISO8601DateFormatter: 4551b6ce4f83185425f583b0b3feb3c7b59b942c
   Keys: 7e91fe066d4f94790fd35b5a9fc63e441cd3b6d2
-  KSCrash: e4cda5c8612c5f9478defcf43418f24870d313f4
+  KSCrash: 5394936f41e5c1ef7b79cf79b30d53299b0c160e
   "NSURL+QueryDictionary": bae616404e2adf6409d3d5c02a093cbf44c8a236
   ORStackView: b9507271cb41fb9e0b3eecc6414d831201e7cf7c
-  React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
+  Pulley: 2679a2b5a9714c5eb760b1fbb535d15c60e50fb4
+  React: 9b873b38b92ed8012d7cdf3b965477095ed364c4
   react-native-mapbox-gl: b42480060cdcc515dfa3d8e403fb4dd32466a1b9
   RNSVG: 4834be1d644eb77f0e3f6de851881b83758a3124
-  SAMKeychain: 1fc9ae02f576365395758b12888c84704eebc423
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   Sentry: e2707f9a6b498277d9620a48fcb1bd3b655c8473
   SentryReactNative: a292506edfa707119e3aa155892cdb07e453a93a
@@ -264,7 +274,7 @@ SPEC CHECKSUMS:
   Stripe: 898f83a95d72180c6eb4acd65b2ae6158fc6a8bd
   tipsi-stripe: 25a3f6ba746e9a27f7b21e928c9974d016efcd77
   "UIView+BooleanAnimations": a760be9a066036e55f298b7b7350a6cb14cfcd97
-  yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
+  yoga: 0885622311729a02c2bc02dca97167787a51488b
 
 PODFILE CHECKSUM: 278087d891d4b4dd228571713a2c1d65ef4b875a
 
