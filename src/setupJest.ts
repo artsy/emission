@@ -7,9 +7,11 @@
 // Object.assign(babelHelpers, { applyDecoratedDescriptor, initializerDefineProperty })
 // import "@babel/runtime"
 
+import chalk from "chalk"
 import Enzyme from "enzyme"
 import Adapter from "enzyme-adapter-react-16"
 import expect from "expect"
+import { format } from "util"
 
 import "lib/tests/renderUntil"
 Enzyme.configure({ adapter: new Adapter() })
@@ -76,4 +78,40 @@ NativeModules.ARSwitchBoardModule = {
   presentModalViewController: jest.fn(),
   presentMediaPreviewController: jest.fn(),
   presentArtworksSet: jest.fn(),
+}
+
+declare const process: any
+
+if (process.env.ALLOW_CONSOLE_LOGS !== "true") {
+  const originalLoggers = {
+    error: console.error,
+    warn: console.warn,
+  }
+
+  function logToError(type, args, constructorOpt: () => void) {
+    const explanation =
+      chalk.white(`Test failed due to \`console.${type}(…)\` call.\n`) +
+      chalk.gray("(Disable with ALLOW_CONSOLE_LOGS=true env variable.)\n\n")
+    if (args[0] instanceof Error) {
+      const msg = explanation + chalk.red(args[0].message)
+      const err = new Error(msg)
+      err.stack = args[0].stack.replace(`Error: ${args[0].message}`, msg)
+      return err
+    } else {
+      const err = new Error(explanation + chalk.red(format(args[0], ...args.slice(1))))
+      ;(Error as any).captureStackTrace(err, constructorOpt)
+      return err
+    }
+  }
+
+  beforeEach(done => {
+    ;["error", "warn"].forEach((type: "error" | "warn") => {
+      // Don't spy on loggers that have been modified by the current test.
+      if (console[type] === originalLoggers[type]) {
+        const handler = (...args) => done.fail(logToError(type, args, handler))
+        jest.spyOn(console, type).mockImplementation(handler)
+      }
+    })
+    done() // it is important to call this here or every test will timeout
+  })
 }

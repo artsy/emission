@@ -99,6 +99,7 @@
     "@babel/runtime": "^7.2.0",
     "@playlyfe/gql": "^2.3.2",
     "@storybook/react-native": "^3.3.11",
+    "@types/chalk": "^2.2.0",
     "@types/jest": "^23.3.9",
     "@types/lodash": "^4.14.64",
     "@types/moment-timezone": "^0.5.4",
@@ -114,6 +115,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.4.2",
     "babel-plugin-relay": "https://github.com/alloy/relay/releases/download/v1.5.0-artsy.3/babel-plugin-relay-1.5.0-artsy.3.tgz",
+    "chalk": "^2.4.2",
     "concurrently": "^2.2.0",
     "danger": "^6.1.1",
     "danger-plugin-jest": "^1.1.0",
@@ -160,9 +162,7 @@
     "testRegex": "/__tests__/.*-tests.(ts|tsx|js)$",
     "testEnvironment": "jsdom",
     "testURL": "http://localhost/",
-    "setupFiles": [
-      "./src/setupJest.ts"
-    ],
+    "setupTestFrameworkScriptFile": "./src/setupJest.ts",
     "cacheDirectory": ".jest/cache",
     "transform": {
       "^[./a-zA-Z0-9$_-]+\\.(bmp|gif|jpg|jpeg|mp4|png|psd|svg|webp)$": "<rootDir>/node_modules/react-native/jest/assetFileTransformer.js",
