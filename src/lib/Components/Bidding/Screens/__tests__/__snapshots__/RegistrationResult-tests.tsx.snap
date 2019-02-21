@@ -51,10 +51,7 @@ exports[`Registration result component renders registration complete properly 1`
         width={20}
       />
       <Text
-        accessible={true}
-        allowFontScaling={true}
         className="sc-bwzfXH uTxCW"
-        ellipsizeMode="tail"
         fontFamily="AGaramondPro-Semibold"
         fontSize={22}
         lineHeight={28}
@@ -92,11 +89,8 @@ exports[`Registration result component renders registration complete properly 1`
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
           className="sc-bwzfXH uTxCW"
           color="black60"
-          ellipsizeMode="tail"
           fontFamily="AGaramondPro-Regular"
           fontSize={16}
           lineHeight={20}
@@ -146,9 +140,6 @@ to bid on works in this sale.
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -223,10 +214,7 @@ exports[`Registration result component renders registration error properly 1`] =
         width={20}
       />
       <Text
-        accessible={true}
-        allowFontScaling={true}
         className="sc-bwzfXH uTxCW"
-        ellipsizeMode="tail"
         fontFamily="AGaramondPro-Semibold"
         fontSize={22}
         lineHeight={28}
@@ -264,11 +252,8 @@ exports[`Registration result component renders registration error properly 1`] =
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
           className="sc-bwzfXH uTxCW"
           color="black60"
-          ellipsizeMode="tail"
           fontFamily="AGaramondPro-Regular"
           fontSize={16}
           lineHeight={20}
@@ -288,9 +273,6 @@ exports[`Registration result component renders registration error properly 1`] =
         >
           Please contact 
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             onPress={[Function]}
             style={
               Array [
@@ -335,9 +317,6 @@ with any questions.
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -412,10 +391,7 @@ exports[`Registration result component renders registration pending properly 1`]
         width={20}
       />
       <Text
-        accessible={true}
-        allowFontScaling={true}
         className="sc-bwzfXH uTxCW"
-        ellipsizeMode="tail"
         fontFamily="AGaramondPro-Semibold"
         fontSize={22}
         lineHeight={28}
@@ -453,11 +429,8 @@ exports[`Registration result component renders registration pending properly 1`]
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
           className="sc-bwzfXH uTxCW"
           color="black60"
-          ellipsizeMode="tail"
           fontFamily="AGaramondPro-Regular"
           fontSize={16}
           lineHeight={20}
@@ -478,9 +451,6 @@ exports[`Registration result component renders registration pending properly 1`]
           Your registration status is pending.
 Please contact 
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             onPress={[Function]}
             style={
               Array [
@@ -525,9 +495,6 @@ more information.
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {

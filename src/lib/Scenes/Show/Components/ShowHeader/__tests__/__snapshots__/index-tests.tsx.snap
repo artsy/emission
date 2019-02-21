@@ -79,10 +79,7 @@ Array [
     />
   </View>,
   <Text
-    accessible={true}
-    allowFontScaling={true}
     className="sc-bwzfXH uTxCW"
-    ellipsizeMode="tail"
     fontFamily="AGaramondPro-Semibold"
     fontSize={22}
     lineHeight={28}
@@ -102,10 +99,7 @@ Array [
     foo
   </Text>,
   <Text
-    accessible={true}
-    allowFontScaling={true}
     className="sc-bwzfXH uTxCW"
-    ellipsizeMode="tail"
     fontFamily="AGaramondPro-Regular"
     fontSize={16}
     lineHeight={24}
@@ -164,10 +158,7 @@ Array [
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
         className="sc-bdVaJa bDWFJH"
-        ellipsizeMode="tail"
         fontFamily="Unica77LL-Regular"
         fontSize={14}
         lineHeight={24}
@@ -218,9 +209,6 @@ Array [
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Array [
             Object {
@@ -254,10 +242,7 @@ Array [
       }
     />
     <Text
-      accessible={true}
-      allowFontScaling={true}
       className="sc-bwzfXH uTxCW"
-      ellipsizeMode="tail"
       fontFamily="AGaramondPro-Regular"
       fontSize={14}
       lineHeight={18}
@@ -314,10 +299,7 @@ Array [
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
         className="sc-htpNat KtFsv"
-        ellipsizeMode="tail"
         fontFamily="AvantGardeGothicITC"
         fontSize={14}
         lineHeight={18}

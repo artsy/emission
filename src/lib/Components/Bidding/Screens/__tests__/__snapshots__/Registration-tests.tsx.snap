@@ -32,10 +32,7 @@ exports[`renders properly for a user with a credit card 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
         className="sc-bwzfXH uTxCW"
-        ellipsizeMode="tail"
         fontFamily="AGaramondPro-Semibold"
         fontSize={22}
         lineHeight={28}
@@ -70,10 +67,7 @@ exports[`renders properly for a user with a credit card 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
           className="sc-bdVaJa bDWFJH"
-          ellipsizeMode="tail"
           fontFamily="Unica77LL-Medium"
           fontSize={16}
           lineHeight={22}
@@ -101,10 +95,7 @@ exports[`renders properly for a user with a credit card 1`] = `
           s
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
           className="sc-bdVaJa bDWFJH"
-          ellipsizeMode="tail"
           fontFamily="Unica77LL-Medium"
           fontSize={12}
           lineHeight={16}
@@ -123,10 +114,7 @@ exports[`renders properly for a user with a credit card 1`] = `
         </Text>
       </View>
       <Text
-        accessible={true}
-        allowFontScaling={true}
         className="sc-bwzfXH uTxCW"
-        ellipsizeMode="tail"
         fontFamily="AGaramondPro-Semibold"
         fontSize={18}
         lineHeight={22}
@@ -220,10 +208,7 @@ exports[`renders properly for a user with a credit card 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
                 className="sc-bdVaJa bDWFJH"
-                ellipsizeMode="tail"
                 fontFamily="Unica77LL-Medium"
                 fontSize={14}
                 lineHeight={24}
@@ -249,11 +234,8 @@ exports[`renders properly for a user with a credit card 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
                 className="sc-bdVaJa bDWFJH"
                 color="#666"
-                ellipsizeMode="tail"
                 fontFamily="Unica77LL-Regular"
                 fontSize={14}
                 lineHeight={24}
@@ -294,9 +276,6 @@ exports[`renders properly for a user with a credit card 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -376,11 +355,8 @@ exports[`renders properly for a user with a credit card 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
           className="sc-bwzfXH uTxCW"
           color="black60"
-          ellipsizeMode="tail"
           fontFamily="AGaramondPro-Regular"
           fontSize={14}
           lineHeight={18}
@@ -401,9 +377,6 @@ exports[`renders properly for a user with a credit card 1`] = `
           Agree to
            
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             onPress={[Function]}
             style={
               Array [
@@ -467,9 +440,6 @@ exports[`renders properly for a user with a credit card 1`] = `
             style={null}
           >
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Array [
                   Object {
@@ -527,10 +497,7 @@ exports[`renders properly for a user without a credit card 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
         className="sc-bwzfXH uTxCW"
-        ellipsizeMode="tail"
         fontFamily="AGaramondPro-Semibold"
         fontSize={22}
         lineHeight={28}
@@ -565,10 +532,7 @@ exports[`renders properly for a user without a credit card 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
           className="sc-bdVaJa bDWFJH"
-          ellipsizeMode="tail"
           fontFamily="Unica77LL-Medium"
           fontSize={16}
           lineHeight={22}
@@ -596,10 +560,7 @@ exports[`renders properly for a user without a credit card 1`] = `
           s
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
           className="sc-bdVaJa bDWFJH"
-          ellipsizeMode="tail"
           fontFamily="Unica77LL-Medium"
           fontSize={12}
           lineHeight={16}
@@ -618,10 +579,7 @@ exports[`renders properly for a user without a credit card 1`] = `
         </Text>
       </View>
       <Text
-        accessible={true}
-        allowFontScaling={true}
         className="sc-bwzfXH uTxCW"
-        ellipsizeMode="tail"
         fontFamily="AGaramondPro-Semibold"
         fontSize={18}
         lineHeight={22}
@@ -706,10 +664,7 @@ exports[`renders properly for a user without a credit card 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             className="sc-bwzfXH uTxCW"
-            ellipsizeMode="tail"
             fontFamily="AGaramondPro-Semibold"
             fontSize={16}
             lineHeight={24}
@@ -755,11 +710,8 @@ exports[`renders properly for a user without a credit card 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             className="sc-bdVaJa bDWFJH"
             color="purple100"
-            ellipsizeMode="tail"
             fontFamily="Unica77LL-Regular"
             fontSize={12}
             lineHeight={16}
@@ -841,10 +793,7 @@ exports[`renders properly for a user without a credit card 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             className="sc-bwzfXH uTxCW"
-            ellipsizeMode="tail"
             fontFamily="AGaramondPro-Semibold"
             fontSize={16}
             lineHeight={24}
@@ -890,11 +839,8 @@ exports[`renders properly for a user without a credit card 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
             className="sc-bdVaJa bDWFJH"
             color="purple100"
-            ellipsizeMode="tail"
             fontFamily="Unica77LL-Regular"
             fontSize={12}
             lineHeight={16}
@@ -1004,10 +950,7 @@ exports[`renders properly for a user without a credit card 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
                 className="sc-bdVaJa bDWFJH"
-                ellipsizeMode="tail"
                 fontFamily="Unica77LL-Medium"
                 fontSize={14}
                 lineHeight={24}
@@ -1033,11 +976,8 @@ exports[`renders properly for a user without a credit card 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
                 className="sc-bdVaJa bDWFJH"
                 color="#666"
-                ellipsizeMode="tail"
                 fontFamily="Unica77LL-Regular"
                 fontSize={14}
                 lineHeight={24}
@@ -1078,9 +1018,6 @@ exports[`renders properly for a user without a credit card 1`] = `
               }
             >
               <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
                 style={
                   Array [
                     Object {
@@ -1160,11 +1097,8 @@ exports[`renders properly for a user without a credit card 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
           className="sc-bwzfXH uTxCW"
           color="black60"
-          ellipsizeMode="tail"
           fontFamily="AGaramondPro-Regular"
           fontSize={14}
           lineHeight={18}
@@ -1185,9 +1119,6 @@ exports[`renders properly for a user without a credit card 1`] = `
           Agree to
            
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             onPress={[Function]}
             style={
               Array [
@@ -1251,9 +1182,6 @@ exports[`renders properly for a user without a credit card 1`] = `
             style={null}
           >
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Array [
                   Object {

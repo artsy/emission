@@ -40,10 +40,7 @@ exports[`renders correctly 1`] = `
     }
   >
     <Text
-      accessible={true}
       active={false}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -85,10 +82,7 @@ exports[`renders correctly 1`] = `
     }
   >
     <Text
-      accessible={true}
       active={false}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
@@ -130,10 +124,7 @@ exports[`renders correctly 1`] = `
     }
   >
     <Text
-      accessible={true}
       active={false}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Array [
           Object {
