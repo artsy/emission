@@ -1,9 +1,9 @@
 import { mount } from "enzyme"
 import * as React from "react"
 import { Image, Text, View } from "react-native"
-import { Artwork, badQuery, query, renderToString } from "../../tests/__tests__/MockRelayRendererFixtures"
-import { MockRelayRenderer } from "../../tests/MockRelayRenderer"
-import { renderUntil } from "../../tests/renderUntil"
+import { MockRelayRenderer } from "../MockRelayRenderer"
+import { renderUntil } from "../renderUntil"
+import { Artwork, badQuery, query, renderToString } from "./MockRelayRendererFixtures"
 
 jest.unmock("react-relay")
 
