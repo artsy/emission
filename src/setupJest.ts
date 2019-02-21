@@ -97,18 +97,30 @@ if (process.env.ALLOW_CONSOLE_LOGS !== "true") {
       const err = new Error(msg)
       err.stack = args[0].stack.replace(`Error: ${args[0].message}`, msg)
       return err
-    } else {
+    } else if (
+      // Because we use react-dom in tests to render react-native components, a few warnings are being logged that we do
+      // not care for, so ignore these.
+      !args[0].includes("is using incorrect casing") &&
+      !args[0].includes("is unrecognized in this browser") &&
+      ![args[0].includes("React does not recognize the `testID` prop on a DOM element.")]
+    ) {
       const err = new Error(explanation + chalk.red(format(args[0], ...args.slice(1))))
       ;(Error as any).captureStackTrace(err, constructorOpt)
       return err
     }
+    return null
   }
 
   beforeEach(done => {
     ;["error", "warn"].forEach((type: "error" | "warn") => {
       // Don't spy on loggers that have been modified by the current test.
       if (console[type] === originalLoggers[type]) {
-        const handler = (...args) => done.fail(logToError(type, args, handler))
+        const handler = (...args) => {
+          const error = logToError(type, args, handler)
+          if (error) {
+            done.fail(error)
+          }
+        }
         jest.spyOn(console, type).mockImplementation(handler)
       }
     })
