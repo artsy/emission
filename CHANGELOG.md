@@ -21,6 +21,7 @@
 - Adds CityTab stying and passes CityName to AllEvents view - kieran
 - Fixes some analytics tracking events - luc
 - Updates All tab to display Saved events first - kieran
+- Adds styled city picker modal - ashley
 
 ### 1.8.7
 
