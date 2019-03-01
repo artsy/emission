@@ -1,10 +1,11 @@
-import { Box, Separator, Serif } from "@artsy/palette"
+import { Box, Flex, Sans, Separator, Serif } from "@artsy/palette"
 import { EventSection } from "lib/Scenes/City/Components/EventSection"
 import { BucketKey, BucketResults } from "lib/Scenes/Map/Bucket"
 import React from "react"
-import { FlatList } from "react-native"
+import { FlatList, Image } from "react-native"
+import styled from "styled-components/native"
 import { FairEventSection } from "./FairEventSection"
-import { SavedEventSection } from "./SavedEventSection"
+import { HasNoSaves } from "./HasNoSaves"
 
 interface Props {
   currentBucket: BucketKey
@@ -37,10 +38,14 @@ export class AllEvents extends React.Component<Props, State> {
       data: `${cityName} City Guide`,
     })
 
-    if (buckets.saved) {
+    if (buckets.saved && buckets.saved.length) {
       sections.push({
         type: "saved",
         data: buckets.saved,
+      })
+    } else {
+      sections.push({
+        type: "noSaves",
       })
     }
 
@@ -83,7 +88,7 @@ export class AllEvents extends React.Component<Props, State> {
   }
 
   renderItemSeparator = ({ leadingItem }) => {
-    if (["fairs", "saved", "header"].indexOf(leadingItem.type) === -1) {
+    if (["fairs", "noSaves", "header"].indexOf(leadingItem.type) === -1) {
       return (
         <Box py={1} px={2}>
           <Separator />
@@ -98,6 +103,8 @@ export class AllEvents extends React.Component<Props, State> {
     switch (type) {
       case "fairs":
         return <FairEventSection data={data} />
+      case "saved":
+        return <EventSection title="Saved shows" data={data} />
       case "galleries":
         return <EventSection title="Gallery shows" data={data} />
       case "museums":
@@ -106,13 +113,23 @@ export class AllEvents extends React.Component<Props, State> {
         return <EventSection title="Opening shows" data={data} />
       case "closing":
         return <EventSection title="Closing shows" data={data} />
-      case "saved":
-        return <SavedEventSection data={data} />
+      case "noSaves":
+        return <HasNoSaves />
       case "header":
         return (
-          <Box px={2} pt={4}>
-            {data && <Serif size="8">{data}</Serif>}
-          </Box>
+          <>
+            <Box px={2} pt={4}>
+              {data && <Serif size="8">{data}</Serif>}
+            </Box>
+            <Box mx={2} pb={3}>
+              <Flex flexDirection="row" alignItems="center">
+                <Logo source={require("../../../../../images/BMW-logo.jpg")} />
+                <Sans size="3" ml={1}>
+                  Presented in Partnership with BMW
+                </Sans>
+              </Flex>
+            </Box>
+          </>
         )
       default:
         return null
@@ -132,3 +149,8 @@ export class AllEvents extends React.Component<Props, State> {
     )
   }
 }
+
+const Logo = styled(Image)`
+  width: 32px;
+  height: 32px;
+`
