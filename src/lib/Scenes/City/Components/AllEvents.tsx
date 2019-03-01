@@ -88,7 +88,7 @@ export class AllEvents extends React.Component<Props, State> {
   }
 
   renderItemSeparator = ({ leadingItem }) => {
-    if (["fairs", "noSaves", "header"].indexOf(leadingItem.type) === -1) {
+    if (["fairs", "noSaves", "header", "saved"].indexOf(leadingItem.type) === -1) {
       return (
         <Box py={1} px={2}>
           <Separator />
