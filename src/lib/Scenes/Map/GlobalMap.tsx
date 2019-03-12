@@ -746,7 +746,7 @@ export const GlobalMapContainer = createFragmentContainer(
           lng
         }
 
-        shows(includeStubShows: true, status: RUNNING, first: $maxInt, sort: PARTNER_ASC) {
+        shows(includeStubShows: true, first: $maxInt, sort: START_AT_ASC) {
           edges {
             node {
               id
@@ -780,7 +780,7 @@ export const GlobalMapContainer = createFragmentContainer(
           }
         }
 
-        fairs(first: $maxInt, status: CURRENT, sort: START_AT_ASC) {
+        fairs(first: $maxInt) {
           edges {
             node {
               id
