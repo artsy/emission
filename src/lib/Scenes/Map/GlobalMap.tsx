@@ -787,7 +787,7 @@ export const GlobalMapContainer = createFragmentContainer(
           }
         }
 
-        fairs(first: $maxInt) {
+        fairs(first: $maxInt, status: CURRENT, sort: START_AT_ASC) {
           edges {
             node {
               id

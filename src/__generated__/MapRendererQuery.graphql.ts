@@ -123,7 +123,7 @@ fragment GlobalMap_viewer_3La17j on Viewer {
         }
       }
     }
-    fairs(first: $maxInt) {
+    fairs(first: $maxInt, status: CURRENT, sort: START_AT_ASC) {
       edges {
         node {
           id
@@ -396,7 +396,7 @@ return {
   "kind": "Request",
   "operationKind": "query",
   "name": "MapRendererQuery",
-  "id": "812efa44cbf1f581982c5940d3472e87",
+  "id": "06884abfd611b203c2fbda755a56ada6",
   "text": null,
   "metadata": {},
   "fragment": {
@@ -555,7 +555,19 @@ return {
                 "name": "fairs",
                 "storageKey": null,
                 "args": [
-                  v14
+                  v14,
+                  {
+                    "kind": "Literal",
+                    "name": "sort",
+                    "value": "START_AT_ASC",
+                    "type": "FairSorts"
+                  },
+                  {
+                    "kind": "Literal",
+                    "name": "status",
+                    "value": "CURRENT",
+                    "type": "EventStatus"
+                  }
                 ],
                 "concreteType": "FairConnection",
                 "plural": false,

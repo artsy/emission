@@ -448,7 +448,19 @@ return {
           "name": "fairs",
           "storageKey": null,
           "args": [
-            v13
+            v13,
+            {
+              "kind": "Literal",
+              "name": "sort",
+              "value": "START_AT_ASC",
+              "type": "FairSorts"
+            },
+            {
+              "kind": "Literal",
+              "name": "status",
+              "value": "CURRENT",
+              "type": "EventStatus"
+            }
           ],
           "concreteType": "FairConnection",
           "plural": false,
@@ -588,5 +600,5 @@ return {
   ]
 };
 })();
-(node as any).hash = '7fec3dbad70e9289ece081a27c63a426';
+(node as any).hash = 'd5fed89a7fefd779af77a490a4438224';
 export default node;
