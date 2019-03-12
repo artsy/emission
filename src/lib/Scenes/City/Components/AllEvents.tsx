@@ -93,7 +93,6 @@ export class AllEvents extends React.Component<Props, State> {
     if (buckets.museums && buckets.museums.length) {
       sections.push({
         type: "bmw",
-        data: buckets.museums,
       })
     }
 
