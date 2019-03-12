@@ -47,18 +47,16 @@ class CitySavedList extends React.Component<Props, State> {
     const { fetchingNextPage } = this.state
     return (
       <Theme>
-        <Box pt={6}>
-          <EventList
-            header="Saved shows"
-            key={name + "save"}
-            cityName={name}
-            bucket={shows.edges.map(e => e.node) as any}
-            type={"saved"}
-            relay={relay}
-            onScroll={isCloseToBottom(this.fetchData)}
-            fetchingNextPage={fetchingNextPage}
-          />
-        </Box>
+        <EventList
+          header="Saved shows"
+          key={name + "save"}
+          cityName={name}
+          bucket={shows.edges.map(e => e.node) as any}
+          type={"saved"}
+          relay={relay}
+          onScroll={isCloseToBottom(this.fetchData)}
+          fetchingNextPage={fetchingNextPage}
+        />
       </Theme>
     )
   }
