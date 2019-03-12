@@ -3,7 +3,7 @@ import { PAGE_SIZE } from "lib/data/constants"
 import { isCloseToBottom } from "lib/utils/isCloseToBottom"
 import React from "react"
 import { createPaginationContainer, graphql, RelayPaginationProp } from "react-relay"
-import { EventList } from "./components/EventList"
+import { EventList } from "./Components/EventList"
 
 interface Props {
   city: CityBMWList_city
