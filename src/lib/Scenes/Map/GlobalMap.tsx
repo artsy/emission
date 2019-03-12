@@ -423,7 +423,7 @@ export class GlobalMap extends React.Component<Props, State> {
     const hasShows = activeShows.length > 0
 
     // Check if it's an iPhone with ears (iPhone X, Xr, Xs, etc...)
-    const iPhoneHasEars = this.props.safeAreaInsets.top > 20
+    const iPhoneHasEars = this.props.safeAreaInsets && this.props.safeAreaInsets.top > 20
 
     // We need to update activeShows in case of a mutation (save show)
     const updatedShows: Array<Fair | Show> = activeShows.map((item: any) => {
@@ -527,7 +527,7 @@ export class GlobalMap extends React.Component<Props, State> {
           resizeMode="cover"
           style={{ ...this.backgroundImageSize }}
         />
-        <TopButtonsContainer style={{ top: this.props.safeAreaInsets.top }}>
+        <TopButtonsContainer style={{ top: this.props.safeAreaInsets ? this.props.safeAreaInsets.top : null }}>
           <Animated.View style={this.moveButtons && { transform: [{ translateY: this.moveButtons }] }}>
             <Flex flexDirection="row" justifyContent="flex-start" alignContent="flex-start" px={3} pt={1}>
               <CitySwitcherButton
@@ -714,7 +714,6 @@ export const GlobalMapContainer = createFragmentContainer(
                 id
                 _id
                 __id
-
                 name
                 status
                 href
@@ -737,9 +736,6 @@ export const GlobalMapContainer = createFragmentContainer(
                     name
                     type
                   }
-                  ... on ExternalPartner {
-                    name
-                  }
                 }
               }
             }
@@ -750,13 +746,13 @@ export const GlobalMapContainer = createFragmentContainer(
           lng
         }
 
-        shows(includeStubShows: true, first: $maxInt, sort: START_AT_ASC) {
+        shows(includeStubShows: true, status: RUNNING, first: $maxInt, sort: PARTNER_ASC) {
           edges {
             node {
               id
               _id
               __id
-
+              isStubShow
               name
               status
               href
@@ -779,15 +775,12 @@ export const GlobalMapContainer = createFragmentContainer(
                   name
                   type
                 }
-                ... on ExternalPartner {
-                  name
-                }
               }
             }
           }
         }
 
-        fairs(first: $maxInt) {
+        fairs(first: $maxInt, status: CURRENT, sort: START_AT_ASC) {
           edges {
             node {
               id
