@@ -17,6 +17,9 @@
 ### Master
 
 - Adds RUNNING_AND_UPCOMING to CitySavedList - kieran
+- Fixes C compiler error - ash
+
+### 1.8.23
 
 ### 1.8.23
 
