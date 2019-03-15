@@ -28,6 +28,10 @@ import ShowsRenderer from "./Components/Shows/Relay/FavoriteShows"
 
 import { gravityURL } from "lib/relay/config"
 
+import TabBar, { Tab } from "lib/Components/TabBar"
+
+const TabBarContainer = styled.View``
+
 const Title = styled.Text`
   font-family: ${Fonts.GaramondRegular};
   font-size: 30px;
@@ -60,10 +64,9 @@ class Favorites extends React.Component<Props, null> {
         <ScrollableTabView
           onChangeTab={selectedTab => this.fireTabSelectionAnalytics(selectedTab)}
           renderTabBar={props => (
-            <View>
-              <Title>Saves &amp; Follows</Title>
-              <ScrollableTabBar {...props} />
-            </View>
+            <TabBarContainer>
+              <TabBar {...props} />
+            </TabBarContainer>
           )}
         >
           <ScrollableTab tabLabel="Works">
