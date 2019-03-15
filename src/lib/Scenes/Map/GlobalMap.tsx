@@ -290,26 +290,26 @@ export class GlobalMap extends React.Component<Props, State> {
       return
     }
 
-    const tab = cityTabs[this.state.activeIndex]
-    const shows = tab.getShows(this.state.bucketResults)
-    const fairs = tab.getFairs(this.state.bucketResults)
+    // const tab = cityTabs[this.state.activeIndex]
+    // const shows = tab.getShows(this.state.bucketResults)
+    // const fairs = tab.getFairs(this.state.bucketResults)
 
-    const showData = showsToGeoCityShow(shows)
-    const fairData = fairToGeoCityFairs(fairs)
+    // const showData = showsToGeoCityShow(shows)
+    // const fairData = fairToGeoCityFairs(fairs)
 
-    const data = showData.concat((fairData as any) as Show[])
-    const geoJSONFeature = convertCityToGeoJSON(data)
+    // const data = showData.concat((fairData as any) as Show[])
+    // const geoJSONFeature = convertCityToGeoJSON(data)
 
-    this.featureCollection = geoJSONFeature
+    // this.featureCollection = geoJSONFeature
 
-    if (updateState) {
-      this.setState({
-        featureCollection: geoJSONFeature,
-      })
-    }
+    // if (updateState) {
+    //   this.setState({
+    //     featureCollection: geoJSONFeature,
+    //   })
+    // }
 
-    // close but not enough yet
-    this.clusterEngine.load(this.featureCollection.features as any)
+    // // close but not enough yet
+    // this.clusterEngine.load(this.featureCollection.features as any)
   }
 
   emitFilteredBucketResults() {
