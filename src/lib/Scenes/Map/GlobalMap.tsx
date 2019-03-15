@@ -560,79 +560,81 @@ export class GlobalMap extends React.Component<Props, State> {
       },
     }
 
-    return (
-      <Flex mb={0.5} flexDirection="column" style={{ backgroundColor: colors["gray-light"] }}>
-        <LoadingScreen
-          source={require("../../../../images/map-bg.png")}
-          resizeMode="cover"
-          style={{ ...this.backgroundImageSize }}
-        />
-        <TopButtonsContainer style={{ top: this.props.safeAreaInsets.top }}>
-          <Animated.View style={this.moveButtons && { transform: [{ translateY: this.moveButtons }] }}>
-            <Flex flexDirection="row" justifyContent="flex-start" alignContent="flex-start" px={3} pt={1}>
-              <CitySwitcherButton
-                sponsoredContentUrl={this.props.viewer && this.props.viewer.city.sponsoredContent.artGuideUrl}
-                city={city}
-                isLoading={!city && !(relayErrorState && !relayErrorState.isRetrying)}
-                onPress={() => {
-                  this.setState({
-                    activeShows: [],
-                    activePin: null,
-                  })
-                }}
-              />
-              {this.state.userLocation && (
-                <Box style={{ marginLeft: "auto" }}>
-                  <UserPositionButton
-                    highlight={this.state.userLocation === this.state.currentLocation}
-                    onPress={() => {
-                      const { lat, lng } = this.state.userLocation
-                      this.map.moveTo([lng, lat], 500)
-                    }}
-                  />
-                </Box>
-              )}
-            </Flex>
-          </Animated.View>
-        </TopButtonsContainer>
-        <Spring
-          native
-          from={{ opacity: 0 }}
-          to={mapLoaded ? { opacity: 1.0 } : { opacity: 0 }}
-          config={{
-            duration: 300,
-          }}
-          precision={1}
-        >
-          {({ opacity }) => (
-            <AnimatedView style={{ flex: 1, opacity }}>
-              <Map
-                {...mapProps}
-                {...mapInteractions}
-                ref={(c: any) => {
-                  if (c) {
-                    this.map = c.root
-                  }
-                }}
-              >
-                {city && (
-                  <>
-                    {this.featureCollection && (
-                      <PinsShapeLayer
-                        featureCollection={this.featureCollection}
-                        onPress={e => this.handleFeaturePress(e.nativeEvent)}
-                      />
-                    )}
-                    <ShowCardContainer>{this.renderShowCard()}</ShowCardContainer>
-                    {mapLoaded && activeShows && activePin && this.renderSelectedPin()}
-                  </>
-                )}
-              </Map>
-            </AnimatedView>
-          )}
-        </Spring>
-      </Flex>
-    )
+    return null
+
+    // return (
+    //   <Flex mb={0.5} flexDirection="column" style={{ backgroundColor: colors["gray-light"] }}>
+    //     <LoadingScreen
+    //       source={require("../../../../images/map-bg.png")}
+    //       resizeMode="cover"
+    //       style={{ ...this.backgroundImageSize }}
+    //     />
+    //     <TopButtonsContainer style={{ top: this.props.safeAreaInsets.top }}>
+    //       <Animated.View style={this.moveButtons && { transform: [{ translateY: this.moveButtons }] }}>
+    //         <Flex flexDirection="row" justifyContent="flex-start" alignContent="flex-start" px={3} pt={1}>
+    //           <CitySwitcherButton
+    //             sponsoredContentUrl={this.props.viewer && this.props.viewer.city.sponsoredContent.artGuideUrl}
+    //             city={city}
+    //             isLoading={!city && !(relayErrorState && !relayErrorState.isRetrying)}
+    //             onPress={() => {
+    //               this.setState({
+    //                 activeShows: [],
+    //                 activePin: null,
+    //               })
+    //             }}
+    //           />
+    //           {this.state.userLocation && (
+    //             <Box style={{ marginLeft: "auto" }}>
+    //               <UserPositionButton
+    //                 highlight={this.state.userLocation === this.state.currentLocation}
+    //                 onPress={() => {
+    //                   const { lat, lng } = this.state.userLocation
+    //                   this.map.moveTo([lng, lat], 500)
+    //                 }}
+    //               />
+    //             </Box>
+    //           )}
+    //         </Flex>
+    //       </Animated.View>
+    //     </TopButtonsContainer>
+    //     <Spring
+    //       native
+    //       from={{ opacity: 0 }}
+    //       to={mapLoaded ? { opacity: 1.0 } : { opacity: 0 }}
+    //       config={{
+    //         duration: 300,
+    //       }}
+    //       precision={1}
+    //     >
+    //       {({ opacity }) => (
+    //         <AnimatedView style={{ flex: 1, opacity }}>
+    //           <Map
+    //             {...mapProps}
+    //             {...mapInteractions}
+    //             ref={(c: any) => {
+    //               if (c) {
+    //                 this.map = c.root
+    //               }
+    //             }}
+    //           >
+    //             {city && (
+    //               <>
+    //                 {this.featureCollection && (
+    //                   <PinsShapeLayer
+    //                     featureCollection={this.featureCollection}
+    //                     onPress={e => this.handleFeaturePress(e.nativeEvent)}
+    //                   />
+    //                 )}
+    //                 <ShowCardContainer>{this.renderShowCard()}</ShowCardContainer>
+    //                 {mapLoaded && activeShows && activePin && this.renderSelectedPin()}
+    //               </>
+    //             )}
+    //           </Map>
+    //         </AnimatedView>
+    //       )}
+    //     </Spring>
+    //   </Flex>
+    // )
   }
 
   get backgroundImageSize() {
