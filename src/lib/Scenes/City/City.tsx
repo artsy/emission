@@ -14,6 +14,10 @@ import { cityTabs } from "./cityTabs"
 import { AllEvents } from "./Components/AllEvents"
 import { EventList } from "./Components/EventList"
 
+import TabBar, { Tab } from "lib/Components/TabBar"
+
+const TabBarContainer = styled.View``
+
 interface Props {
   verticalMargin?: number
   isDrawerOpen?: boolean
@@ -165,9 +169,9 @@ export class CityView extends Component<Props, State> {
               onChangeTab={selectedTab => this.setSelectedTab(selectedTab)}
               prerenderingSiblingsNumber={2}
               renderTabBar={props => (
-                <View>
-                  <ScrollableTabBar {...props} />
-                </View>
+                <TabBarContainer>
+                  <TabBar {...props} />
+                </TabBarContainer>
               )}
               onLayout={layout => (this.scrollViewVerticalStart = layout.nativeEvent.layout.y)}
               // These are the ScrollView props for inside the scrollable tab view
