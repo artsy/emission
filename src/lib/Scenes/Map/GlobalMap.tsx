@@ -236,7 +236,7 @@ export class GlobalMap extends React.Component<Props, State> {
       setTimeout(() => this.map.zoomTo(10, 100), 500)
     }
 
-    if (nextProps.viewer) {
+    if (!this.props.viewer && nextProps.viewer) {
       const bucketResults = bucketCityResults(nextProps.viewer)
 
       this.setState({ bucketResults }, () => {
