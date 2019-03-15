@@ -91,8 +91,10 @@ export class EventList extends React.Component<Props> {
   }
 
   render() {
-    const { bucket } = this.props
-    const hasEvents = bucket.length > 0
-    return hasEvents ? this.hasEventsComponent() : this.hasNoEventsComponent()
+    return null
+
+    // const { bucket } = this.props
+    // const hasEvents = bucket.length > 0
+    // return hasEvents ? this.hasEventsComponent() : this.hasNoEventsComponent()
   }
 }
