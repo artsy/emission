@@ -336,169 +336,152 @@ export class GlobalMap extends React.Component<Props, State> {
   }
 
   updateShowIdMap() {
-    if (!this.props.viewer) {
-      return
-    }
-
-    const { city } = this.props.viewer
-    if (city) {
-      const savedUpcomingShows = city.upcomingShows.edges.filter(e => e.node.is_followed === true)
-      const shows = city.shows.edges
-      const concatedShows = uniq(shows.concat(savedUpcomingShows))
-
-      concatedShows.forEach(({ node }) => {
-        if (!node || !node.location || !node.location.coordinates) {
-          return null
-        }
-
-        this.shows[node.id] = node
-      })
-
-      city.fairs.edges.forEach(({ node }) => {
-        if (!node || !node.location || !node.location.coordinates) {
-          return null
-        }
-
-        this.fairs[node.id] = {
-          ...node,
-          type: "Fair",
-        }
-      })
-    }
+    // if (!this.props.viewer) {
+    //   return
+    // }
+    // const { city } = this.props.viewer
+    // if (city) {
+    //   const savedUpcomingShows = city.upcomingShows.edges.filter(e => e.node.is_followed === true)
+    //   const shows = city.shows.edges
+    //   const concatedShows = uniq(shows.concat(savedUpcomingShows))
+    //   concatedShows.forEach(({ node }) => {
+    //     if (!node || !node.location || !node.location.coordinates) {
+    //       return null
+    //     }
+    //     this.shows[node.id] = node
+    //   })
+    //   city.fairs.edges.forEach(({ node }) => {
+    //     if (!node || !node.location || !node.location.coordinates) {
+    //       return null
+    //     }
+    //     this.fairs[node.id] = {
+    //       ...node,
+    //       type: "Fair",
+    //     }
+    //   })
+    // }
   }
 
   renderSelectedPin() {
-    const { activeShows, activePin } = this.state
-    const {
-      properties: { cluster, type },
-    } = activePin
-
-    if (cluster) {
-      const {
-        nearestFeature: { properties, geometry },
-      } = this.state
-      const [clusterLat, clusterLng] = geometry.coordinates
-
-      const clusterId = properties.cluster_id.toString()
-      let pointCount = properties.point_count
-
-      const width = pointCount < 3 ? 35 : pointCount < 21 ? 50 : 60
-      const height = pointCount < 3 ? 35 : pointCount < 21 ? 50 : 60
-      pointCount = pointCount.toString()
-
-      return (
-        clusterId &&
-        clusterLat &&
-        clusterLng &&
-        pointCount && (
-          <Mapbox.PointAnnotation key={clusterId} id={clusterId} selected={true} coordinate={[clusterLat, clusterLng]}>
-            <SelectedCluster width={width} height={height}>
-              <Sans size="3" weight="medium" color={color("white100")}>
-                {pointCount}
-              </Sans>
-            </SelectedCluster>
-          </Mapbox.PointAnnotation>
-        )
-      )
-    }
-
-    const item = activeShows[0]
-
-    if (!item || !item.location) {
-      return null
-    }
-
-    const lat = item.location.coordinates.lat
-    const lng = item.location.coordinates.lng
-    const id = item.id
-
-    if (type === "Fair") {
-      return (
-        lat &&
-        lng &&
-        id && (
-          <Mapbox.PointAnnotation key={id} id={id} coordinate={[lng, lat]}>
-            <PinFairSelected />
-          </Mapbox.PointAnnotation>
-        )
-      )
-    } else if (type === "Show") {
-      const isSaved = (item as Show).is_followed
-
-      return (
-        lat &&
-        lng &&
-        id && (
-          <Mapbox.PointAnnotation key={id} id={id} selected={true} coordinate={[lng, lat]}>
-            {isSaved ? (
-              <PinSavedSelected pinHeight={45} pinWidth={45} />
-            ) : (
-              <Pin pinHeight={45} pinWidth={45} selected={true} />
-            )}
-          </Mapbox.PointAnnotation>
-        )
-      )
-    }
+    // const { activeShows, activePin } = this.state
+    // const {
+    //   properties: { cluster, type },
+    // } = activePin
+    // if (cluster) {
+    //   const {
+    //     nearestFeature: { properties, geometry },
+    //   } = this.state
+    //   const [clusterLat, clusterLng] = geometry.coordinates
+    //   const clusterId = properties.cluster_id.toString()
+    //   let pointCount = properties.point_count
+    //   const width = pointCount < 3 ? 35 : pointCount < 21 ? 50 : 60
+    //   const height = pointCount < 3 ? 35 : pointCount < 21 ? 50 : 60
+    //   pointCount = pointCount.toString()
+    //   return (
+    //     clusterId &&
+    //     clusterLat &&
+    //     clusterLng &&
+    //     pointCount && (
+    //       <Mapbox.PointAnnotation key={clusterId} id={clusterId} selected={true} coordinate={[clusterLat, clusterLng]}>
+    //         <SelectedCluster width={width} height={height}>
+    //           <Sans size="3" weight="medium" color={color("white100")}>
+    //             {pointCount}
+    //           </Sans>
+    //         </SelectedCluster>
+    //       </Mapbox.PointAnnotation>
+    //     )
+    //   )
+    // }
+    // const item = activeShows[0]
+    // if (!item || !item.location) {
+    //   return null
+    // }
+    // const lat = item.location.coordinates.lat
+    // const lng = item.location.coordinates.lng
+    // const id = item.id
+    // if (type === "Fair") {
+    //   return (
+    //     lat &&
+    //     lng &&
+    //     id && (
+    //       <Mapbox.PointAnnotation key={id} id={id} coordinate={[lng, lat]}>
+    //         <PinFairSelected />
+    //       </Mapbox.PointAnnotation>
+    //     )
+    //   )
+    // } else if (type === "Show") {
+    //   const isSaved = (item as Show).is_followed
+    //   return (
+    //     lat &&
+    //     lng &&
+    //     id && (
+    //       <Mapbox.PointAnnotation key={id} id={id} selected={true} coordinate={[lng, lat]}>
+    //         {isSaved ? (
+    //           <PinSavedSelected pinHeight={45} pinWidth={45} />
+    //         ) : (
+    //           <Pin pinHeight={45} pinWidth={45} selected={true} />
+    //         )}
+    //       </Mapbox.PointAnnotation>
+    //     )
+    //   )
+    // }
   }
 
   renderShowCard() {
-    const { activeShows } = this.state
-    const hasShows = activeShows.length > 0
-
-    // Check if it's an iPhone with ears (iPhone X, Xr, Xs, etc...)
-    const iPhoneHasEars = this.props.safeAreaInsets.top > 20
-
-    // We need to update activeShows in case of a mutation (save show)
-    const updatedShows: Array<Fair | Show> = activeShows.map((item: any) => {
-      if (item.type === "Show") {
-        return this.shows[item.id]
-      } else if (item.type === "Fair") {
-        return this.fairs[item.id]
-      }
-      return item
-    })
-
-    return (
-      <Spring
-        native
-        from={{ bottom: -150, progress: 0, opacity: 0 }}
-        to={
-          hasShows
-            ? { bottom: iPhoneHasEars ? 80 : 45, progress: 1, opacity: 1.0 }
-            : { bottom: -150, progress: 0, opacity: 0 }
-        }
-        config={config.stiff}
-        precision={1}
-      >
-        {({ bottom, opacity }) => (
-          <AnimatedView
-            style={{
-              bottom,
-              left: 0,
-              right: 0,
-              opacity,
-              position: "absolute",
-              height: 150,
-            }}
-          >
-            <Theme>
-              {hasShows && (
-                <ShowCard
-                  shows={updatedShows as any}
-                  relay={this.props.relay}
-                  onSaveStarted={() => {
-                    this.setState({ isSavingShow: true })
-                  }}
-                  onSaveEnded={() => {
-                    this.setState({ isSavingShow: false })
-                  }}
-                />
-              )}
-            </Theme>
-          </AnimatedView>
-        )}
-      </Spring>
-    )
+    // const { activeShows } = this.state
+    // const hasShows = activeShows.length > 0
+    // // Check if it's an iPhone with ears (iPhone X, Xr, Xs, etc...)
+    // const iPhoneHasEars = this.props.safeAreaInsets.top > 20
+    // // We need to update activeShows in case of a mutation (save show)
+    // const updatedShows: Array<Fair | Show> = activeShows.map((item: any) => {
+    //   if (item.type === "Show") {
+    //     return this.shows[item.id]
+    //   } else if (item.type === "Fair") {
+    //     return this.fairs[item.id]
+    //   }
+    //   return item
+    // })
+    // return (
+    //   <Spring
+    //     native
+    //     from={{ bottom: -150, progress: 0, opacity: 0 }}
+    //     to={
+    //       hasShows
+    //         ? { bottom: iPhoneHasEars ? 80 : 45, progress: 1, opacity: 1.0 }
+    //         : { bottom: -150, progress: 0, opacity: 0 }
+    //     }
+    //     config={config.stiff}
+    //     precision={1}
+    //   >
+    //     {({ bottom, opacity }) => (
+    //       <AnimatedView
+    //         style={{
+    //           bottom,
+    //           left: 0,
+    //           right: 0,
+    //           opacity,
+    //           position: "absolute",
+    //           height: 150,
+    //         }}
+    //       >
+    //         <Theme>
+    //           {hasShows && (
+    //             <ShowCard
+    //               shows={updatedShows as any}
+    //               relay={this.props.relay}
+    //               onSaveStarted={() => {
+    //                 this.setState({ isSavingShow: true })
+    //               }}
+    //               onSaveEnded={() => {
+    //                 this.setState({ isSavingShow: false })
+    //               }}
+    //             />
+    //           )}
+    //         </Theme>
+    //       </AnimatedView>
+    //     )}
+    //   </Spring>
+    // )
   }
 
   render() {
