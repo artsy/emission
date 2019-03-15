@@ -502,63 +502,63 @@ export class GlobalMap extends React.Component<Props, State> {
   }
 
   render() {
-    const city = get(this.props, "viewer.city")
-    const { relayErrorState } = this.props
-    const { lat: centerLat, lng: centerLng } = this.props.initialCoordinates || get(city, "coordinates")
-    const { mapLoaded, activeShows, activePin } = this.state
+    // const city = get(this.props, "viewer.city")
+    // const { relayErrorState } = this.props
+    // const { lat: centerLat, lng: centerLng } = this.props.initialCoordinates || get(city, "coordinates")
+    // const { mapLoaded, activeShows, activePin } = this.state
 
-    const mapProps = {
-      showUserLocation: true,
-      styleURL: ArtsyMapStyleURL,
-      userTrackingMode: Mapbox.UserTrackingModes.Follow,
-      centerCoordinate: [centerLng, centerLat],
-      zoomLevel: DefaultZoomLevel,
-      minZoomLevel: 10,
-      logoEnabled: !!city,
-      attributionEnabled: false,
-      compassEnabled: false,
-    }
+    // const mapProps = {
+    //   showUserLocation: true,
+    //   styleURL: ArtsyMapStyleURL,
+    //   userTrackingMode: Mapbox.UserTrackingModes.Follow,
+    //   centerCoordinate: [centerLng, centerLat],
+    //   zoomLevel: DefaultZoomLevel,
+    //   minZoomLevel: 10,
+    //   logoEnabled: !!city,
+    //   attributionEnabled: false,
+    //   compassEnabled: false,
+    // }
 
-    const mapInteractions = {
-      onRegionIsChanging: async () => {
-        const zoom = Math.floor(await this.map.getZoom())
+    // const mapInteractions = {
+    //   onRegionIsChanging: async () => {
+    //     const zoom = Math.floor(await this.map.getZoom())
 
-        if (!this.currentZoom) {
-          this.currentZoom = zoom
-        }
+    //     if (!this.currentZoom) {
+    //       this.currentZoom = zoom
+    //     }
 
-        if (this.currentZoom !== zoom) {
-          this.setState({
-            activePin: null,
-          })
-        }
-      },
-      onRegionDidChange: (location: MapGeoFeature) => {
-        this.setState({
-          trackUserLocation: false,
-          currentLocation: GlobalMap.lngLatArrayToLocation(location.geometry && location.geometry.coordinates),
-        })
-      },
-      onUserLocationUpdate: (location: OSCoordsUpdate) => {
-        this.setState({
-          userLocation: location.coords && GlobalMap.longCoordsToLocation(location.coords),
-          currentLocation: location.coords && GlobalMap.longCoordsToLocation(location.coords),
-          trackUserLocation: true,
-        })
-      },
-      onDidFinishRenderingMapFully: () => {
-        NativeModules.ARNotificationsManager.postNotificationName("ARLocalDiscoveryMapHasRendered", {})
-        this.setState({ mapLoaded: true })
-      },
-      onPress: () => {
-        if (!this.state.isSavingShow) {
-          this.setState({
-            activeShows: [],
-            activePin: null,
-          })
-        }
-      },
-    }
+    //     if (this.currentZoom !== zoom) {
+    //       this.setState({
+    //         activePin: null,
+    //       })
+    //     }
+    //   },
+    //   onRegionDidChange: (location: MapGeoFeature) => {
+    //     this.setState({
+    //       trackUserLocation: false,
+    //       currentLocation: GlobalMap.lngLatArrayToLocation(location.geometry && location.geometry.coordinates),
+    //     })
+    //   },
+    //   onUserLocationUpdate: (location: OSCoordsUpdate) => {
+    //     this.setState({
+    //       userLocation: location.coords && GlobalMap.longCoordsToLocation(location.coords),
+    //       currentLocation: location.coords && GlobalMap.longCoordsToLocation(location.coords),
+    //       trackUserLocation: true,
+    //     })
+    //   },
+    //   onDidFinishRenderingMapFully: () => {
+    //     NativeModules.ARNotificationsManager.postNotificationName("ARLocalDiscoveryMapHasRendered", {})
+    //     this.setState({ mapLoaded: true })
+    //   },
+    //   onPress: () => {
+    //     if (!this.state.isSavingShow) {
+    //       this.setState({
+    //         activeShows: [],
+    //         activePin: null,
+    //       })
+    //     }
+    //   },
+    // }
 
     return null
 
