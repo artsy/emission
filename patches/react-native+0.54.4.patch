@@ -1,0 +1,12 @@
+patch-package
+--- a/node_modules/react-native/React/Views/ScrollView/RCTScrollView.m
++++ b/node_modules/react-native/React/Views/ScrollView/RCTScrollView.m
+@@ -653,6 +653,8 @@ - (void)removeScrollListener:(NSObject<UIScrollViewDelegate> *)scrollListener
+ 
+ - (void)scrollViewDidScroll:(UIScrollView *)scrollView
+ {
++    return;
++    
+   [self updateClippedSubviews];
+   NSTimeInterval now = CACurrentMediaTime();
+   /**
