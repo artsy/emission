@@ -118,6 +118,7 @@
     "awesome-typescript-loader": "^3.2.3",
     "babel-jest": "^23.6.0",
     "babel-plugin-relay": "https://github.com/alloy/relay/releases/download/v1.5.0-artsy.3/babel-plugin-relay-1.5.0-artsy.3.tgz",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "babel-polyfill": "^6.13.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
