@@ -1,4 +1,4 @@
 {
-  "plugins": [["relay", { "artifactDirectory": "./src/__generated__" }], "transform-remove-console"],
+  "plugins": [["relay", { "artifactDirectory": "./src/__generated__" }]],
   "presets": ["react-native"]
 }
