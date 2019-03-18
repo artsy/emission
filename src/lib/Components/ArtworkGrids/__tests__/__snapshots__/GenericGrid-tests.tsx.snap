@@ -42,15 +42,46 @@ exports[`renders properly 1`] = `
             }
           }
         >
-          <AROpaqueImageView
-            aspectRatio={2.18}
-            imageURL="artsy.net/image-url"
+          <Text
+            className="sc-ifAKCX cFlEyZ"
+            color="#000"
+            fontFamily="Unica77LL-Medium"
+            fontSize="13px"
+            lineHeight="18px"
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                  "fontFamily": "Unica77LL-Medium",
+                  "fontSize": 13,
+                  "lineHeight": 18,
+                },
+                undefined,
+              ]
+            }
+          >
+
+          </Text>
+          <Text
+            className="sc-ifAKCX cFlEyZ"
+            color="#666"
+            fontFamily="Unica77LL-Regular"
+            fontSize="12px"
+            lineHeight="16px"
+            style={
+              Array [
+                Object {
+                  "color": "#666",
+                  "fontFamily": "Unica77LL-Regular",
+                  "fontSize": 12,
+                  "lineHeight": 16,
+                },
+                undefined,
+              ]
+            }
           />
         </View>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -77,9 +108,6 @@ exports[`renders properly 1`] = `
           Guerrilla Girls
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -99,9 +127,6 @@ exports[`renders properly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             numberOfLines={1}
             style={
               Array [
@@ -130,9 +155,6 @@ exports[`renders properly 1`] = `
           , 2012
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -185,15 +207,46 @@ exports[`renders properly 1`] = `
             }
           }
         >
-          <AROpaqueImageView
-            aspectRatio={2.18}
-            imageURL="artsy.net/image-url"
+          <Text
+            className="sc-ifAKCX cFlEyZ"
+            color="#000"
+            fontFamily="Unica77LL-Medium"
+            fontSize="13px"
+            lineHeight="18px"
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                  "fontFamily": "Unica77LL-Medium",
+                  "fontSize": 13,
+                  "lineHeight": 18,
+                },
+                undefined,
+              ]
+            }
+          >
+
+          </Text>
+          <Text
+            className="sc-ifAKCX cFlEyZ"
+            color="#666"
+            fontFamily="Unica77LL-Regular"
+            fontSize="12px"
+            lineHeight="16px"
+            style={
+              Array [
+                Object {
+                  "color": "#666",
+                  "fontFamily": "Unica77LL-Regular",
+                  "fontSize": 12,
+                  "lineHeight": 16,
+                },
+                undefined,
+              ]
+            }
           />
         </View>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -220,9 +273,6 @@ exports[`renders properly 1`] = `
           Guerrilla Girls
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -242,9 +292,6 @@ exports[`renders properly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             numberOfLines={1}
             style={
               Array [
@@ -273,9 +320,6 @@ exports[`renders properly 1`] = `
           , 2012
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -328,15 +372,46 @@ exports[`renders properly 1`] = `
             }
           }
         >
-          <AROpaqueImageView
-            aspectRatio={2.18}
-            imageURL="artsy.net/image-url"
+          <Text
+            className="sc-ifAKCX cFlEyZ"
+            color="#000"
+            fontFamily="Unica77LL-Medium"
+            fontSize="13px"
+            lineHeight="18px"
+            style={
+              Array [
+                Object {
+                  "color": "#000",
+                  "fontFamily": "Unica77LL-Medium",
+                  "fontSize": 13,
+                  "lineHeight": 18,
+                },
+                undefined,
+              ]
+            }
+          >
+
+          </Text>
+          <Text
+            className="sc-ifAKCX cFlEyZ"
+            color="#666"
+            fontFamily="Unica77LL-Regular"
+            fontSize="12px"
+            lineHeight="16px"
+            style={
+              Array [
+                Object {
+                  "color": "#666",
+                  "fontFamily": "Unica77LL-Regular",
+                  "fontSize": 12,
+                  "lineHeight": 16,
+                },
+                undefined,
+              ]
+            }
           />
         </View>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -363,9 +438,6 @@ exports[`renders properly 1`] = `
           Guerrilla Girls
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -385,9 +457,6 @@ exports[`renders properly 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
             numberOfLines={1}
             style={
               Array [
@@ -416,9 +485,6 @@ exports[`renders properly 1`] = `
           , 2012
         </Text>
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -443,4 +509,4 @@ exports[`renders properly 1`] = `
     </View>
   </View>
 </View>
-`;
+`
