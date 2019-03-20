@@ -77,7 +77,7 @@
     "react-spring": "5.5"
   },
   "dependencies": {
-    "@artsy/palette": "^2.23.0",
+    "@artsy/palette": "^4.3.1",
     "@mapbox/react-native-mapbox-gl": "l2succes/react-native-mapbox-gl#fix-gesture-recognizer",
     "lodash": "^4.17.4",
     "moment": "^2.19.4",
