@@ -43,24 +43,31 @@ export class Shows extends Component<Props, State> {
     const shows = this.props.me.followsAndSaves.shows.edges.map(edge => edge.node)
 
     if (shows.length === 0 || !shows) {
-      return <ZeroState title="You haven’t followed any shows yet" />
+      return (
+        <ZeroState
+          title="You haven’t saved any shows yet"
+          subtitle="When you save shows, they will show up here for future use."
+        />
+      )
     }
 
     return (
       <Theme>
-        <Box px={2}>
-          <FlatList
-            data={shows}
-            keyExtractor={item => item.__id}
-            renderItem={item => <ShowItemRow show={item.item} />}
-            onEndReached={this.loadMore}
-            onEndReachedThreshold={0.2}
-            ItemSeparatorComponent={() => <Separator />}
-            ListFooterComponent={
-              this.state.fetchingMoreData ? <Spinner style={{ marginTop: 20, marginBottom: 20 }} /> : null
-            }
-          />
-        </Box>
+        <FlatList
+          data={shows}
+          keyExtractor={item => item.__id}
+          renderItem={item => (
+            <Box m={2}>
+              <ShowItemRow show={item.item} />
+            </Box>
+          )}
+          onEndReached={this.loadMore}
+          onEndReachedThreshold={0.2}
+          ItemSeparatorComponent={() => <Separator />}
+          ListFooterComponent={
+            this.state.fetchingMoreData ? <Spinner style={{ marginTop: 20, marginBottom: 20 }} /> : null
+          }
+        />
       </Theme>
     )
   }

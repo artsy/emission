@@ -16,8 +16,37 @@
 
 ### Master
 
-### 1.8.26
+### 1.9.1
 
+- Do no reset safeAreaInsets back to 0 - luc
+
+### 1.9.0
+
+- Add cover images to stub shows in full list - luc
+- Reset zoom, pitch and heading upon city switch - roop
+- Fixes map intermittenly not render pins - luc
+- User location button would not render for users in cities - luc
+
+### 1.8.27
+
+- Map clustering data now doesn't recreate geo data on tab change - kieran & luc
+- Updates copy in Global Saves and Follows Shows tab - ashley
+- Add shouldComponentUpdate checks across City and Map components to avoid re-renders - luc
+- Cap show list tabs in City view and add view all link - luc
+- Adds a hitslop to the save button for shows - orta
+- Updates copy in Global Saves and Follows Shows tab - ashley
+- Adds message if fair is not active and hides fair details - kieran
+- Fixes LD saving events inconsistencies - ash
+- Relay no longer caches GraphQL responses which contain `errors` field - ash
+- Changes order of Favorites tabs and re-centers Favorites content when a new tab is selected - ashley
+- Adds pressReleaseUrl to show moreInfo - kieran
+- Adds correct formatting and data for show event sections - kieran
+- Updates dayThresholds for opening/closing shows to be 14/7 respectively - kieran
+- User location button hides when user is outside of currently selected city - ash
+- Adds "Ongoing" to shows running 2+ years beyond the present - ashley
+- Reset zoom, heading and pitch upon city change - roop
+
+### 1.8.26
 
 - Deploy script syncs local data with Metaphysics - ash
 - Updates drawer sub-scrollview enabled state when tabs change - ash
