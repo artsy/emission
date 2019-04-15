@@ -1084,6 +1084,11 @@
     parse-glob "3.0.4"
     promise-retry "1.1.1"
 
+"@react-native-community/async-storage@^1.2.4":
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@react-native-community/async-storage/-/async-storage-1.3.3.tgz#fbcd09c68be0f91362c1bc5696802d8e281cf67d"
+  integrity sha512-mypRivxWCO3apTDWpbvc7owcz5gZH0mI60JWPJDW/Pibr3vk9T7TQPA44b8m43qc/o5cnSEJFZk6l/1T4QEM/Q==
+
 "@react-native-community/cli@^1.2.1":
   version "1.4.6"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli/-/cli-1.4.6.tgz#fc719675cb95d1146c004c8829ae32d50fb4dde3"

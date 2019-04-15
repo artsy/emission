@@ -1,15 +1,20 @@
-import { Box, color, Flex, Sans, Theme } from "@artsy/palette"
+import { Box, color, Flex, Join, Sans, Theme } from "@artsy/palette"
 import Mapbox from "@mapbox/react-native-mapbox-gl"
 import { GlobalMap_viewer } from "__generated__/GlobalMap_viewer.graphql"
 import colors from "lib/data/colors"
 import { Pin } from "lib/Icons/Pin"
 import PinFairSelected from "lib/Icons/PinFairSelected"
 import PinSavedSelected from "lib/Icons/PinSavedSelected"
-import { convertCityToGeoJSON, fairToGeoCityFairs, showsToGeoCityShow } from "lib/utils/convertCityToGeoJSON"
+import {
+  convertCityToGeoJSON,
+  fairToGeoCityFairs,
+  selectedShowsToGeoCityShow,
+  showsToGeoCityShow,
+} from "lib/utils/convertCityToGeoJSON"
 import { Schema, screenTrack, track } from "lib/utils/track"
 import { get, isEqual, uniq } from "lodash"
 import React from "react"
-import { Animated, Dimensions, Easing, Image, NativeModules, View } from "react-native"
+import { Animated, AsyncStorage, Dimensions, Easing, Image, NativeModules, View } from "react-native"
 import { createFragmentContainer, graphql, RelayProp } from "react-relay"
 import { animated, config, Spring } from "react-spring/dist/native.cjs.js"
 import styled from "styled-components/native"
@@ -18,6 +23,7 @@ import { cityTabs } from "../City/cityTabs"
 import { bucketCityResults, BucketKey, BucketResults, emptyBucketResults } from "./bucketCityResults"
 import { CitySwitcherButton } from "./Components/CitySwitcherButton"
 import { PinsShapeLayer } from "./Components/PinsShapeLayer"
+import { SelectedPinsShapeLayer } from "./Components/SelectedPinsShapeLayer"
 import { ShowCard } from "./Components/ShowCard"
 import { UserPositionButton } from "./Components/UserPositionButton"
 import { EventEmitter } from "./EventEmitter"
@@ -102,6 +108,7 @@ interface State {
   activePin: MapGeoFeature
   /** Current map zoom level */
   currentZoom: number
+  pinOrClusterSelected: boolean
 }
 
 export const ArtsyMapStyleURL = "mapbox://styles/artsyit/cjrb59mjb2tsq2tqxl17pfoak"
@@ -198,13 +205,14 @@ export class GlobalMap extends React.Component<Props, State> {
       nearestFeature: null,
       activePin: null,
       currentZoom: DefaultZoomLevel,
+      pinOrClusterSelected: null,
     }
 
     this.updateShowIdMap()
   }
 
   handleFilterChange = activeIndex => {
-    this.setState({ activeIndex, activePin: null, activeShows: [] })
+    this.setState({ activeIndex, activePin: null, activeShows: [], pinOrClusterSelected: false })
   }
 
   resetZoomAndCamera = () => {
@@ -226,15 +234,27 @@ export class GlobalMap extends React.Component<Props, State> {
   }
 
   componentDidUpdate(_, prevState) {
+    const { bucketResults, activePin, activeShows, pinOrClusterSelected } = this.state
+    const { bucketResults: prevBucketResults, activePin: prevActivePin, activeShows: prevActiveShows } = prevState
+
     // Update the clusterMap if new bucket results
-    if (this.state.bucketResults) {
+    if (bucketResults) {
       const shouldUpdate = !isEqual(
-        prevState.bucketResults.saved.map(g => g.is_followed),
-        this.state.bucketResults.saved.map(g => g.is_followed)
+        prevBucketResults.saved.map(g => g.is_followed),
+        bucketResults.saved.map(g => g.is_followed)
       )
 
       if (shouldUpdate) {
         this.updateClusterMap()
+      }
+
+      if (!!!shouldUpdate) {
+        if (!pinOrClusterSelected || activeShows.length === 1) {
+          return
+        }
+        return this.retrieveSelectionFromStorage().then(savedEntity =>
+          this.renderSelectedCluster(JSON.parse(savedEntity))
+        )
       }
     }
   }
@@ -384,14 +404,91 @@ export class GlobalMap extends React.Component<Props, State> {
       })
     }
   }
+  retrieveSelectionFromStorage = async () => {
+    try {
+      const selectedEntity = await AsyncStorage.getItem("@lastSelectedEntity")
+      return selectedEntity
+    } catch (e) {
+      console.error("Error retrieving selected pin/cluster from AsyncStorage", e.message)
+    }
+  }
+
+  saveSelectionToAsyncStorage = async (activePin: MapGeoFeature) => {
+    try {
+      await AsyncStorage.setItem("@lastSelectedEntity", JSON.stringify(activePin))
+    } catch (e) {
+      console.error("Error saving selected pin/cluster to AsyncStorage", e.message)
+    }
+  }
+
+  renderSelectedCluster(cluster) {
+    const { activePin, pinOrClusterSelected } = this.state
+    if (!pinOrClusterSelected) {
+      return
+    }
+    if (isEqual(cluster, activePin)) {
+      const {
+        nearestFeature: { properties, geometry },
+      } = this.state
+      const [clusterLat, clusterLng] = geometry.coordinates
+
+      const clusterId = properties.cluster_id.toString()
+      let pointCount = properties.point_count
+
+      const radius = pointCount < 4 ? 40 : pointCount < 21 ? 50 : 65
+      pointCount = pointCount.toString()
+
+      return (
+        clusterId &&
+        clusterLat &&
+        clusterLng &&
+        pointCount && (
+          <Mapbox.PointAnnotation key={clusterId} id={clusterId} selected={true} coordinate={[clusterLat, clusterLng]}>
+            <SelectedCluster width={radius} height={radius}>
+              <Sans size="3" weight="medium" color={color("white100")}>
+                {pointCount}
+              </Sans>
+            </SelectedCluster>
+          </Mapbox.PointAnnotation>
+        )
+      )
+    }
+  }
 
   renderSelectedPin() {
-    const { activeShows, activePin } = this.state
+    const { activeShows, activePin, pinOrClusterSelected } = this.state
+    console.log("TCL: renderSelectedPin -> this.state", this.state)
+    const { properties: data } = activePin
     const {
       properties: { cluster, type },
     } = activePin
+    const [selection] = activeShows
+    const layerType = cluster ? cluster : "singlePin"
+    const pinToGeoJSON = selectedShowsToGeoCityShow([data]) // pass show data in as an array to convert JSON using existing utility function
+    const [mapPin] = pinToGeoJSON // destruct array as the Mapbox shape layer expects a single object
+    return (
+      <SelectedPinsShapeLayer
+        filterID={selection.id}
+        collections={mapPin}
+        onPress={e => this.handleSelectedFeaturePress(e.nativeEvent)}
+        layerType={layerType}
+      />
+    )
 
+    return
+    if (!pinOrClusterSelected) {
+      this.setState({ pinOrClusterSelected: true })
+    }
+    if (activePin) {
+      this.saveSelectionToAsyncStorage(activePin)
+    }
+    // @TODO: Why does a pin get selected when you have a cluster selected and you zoom in on it (redistribute the cluster?? gahhhh)
     if (cluster) {
+      if (activeShows.length === 1) {
+        this.setState({ activePin: null, activeShows: [] })
+
+        return
+      }
       const {
         nearestFeature: { properties, geometry },
       } = this.state
@@ -532,9 +629,15 @@ export class GlobalMap extends React.Component<Props, State> {
     }
 
     if (this.currentZoom !== zoom) {
-      this.setState({
-        activePin: null,
-      })
+      // Only clear selected pin when zoom state changes if a cluster is selected
+      // If a cluster is selected first check to see if pin clusters have changed on zoom, if not, then re-select pin
+      const { activeShows } = this.state
+      if (!!activeShows && activeShows.length > 1) {
+        this.setState({
+          activePin: null,
+          pinOrClusterSelected: false,
+        })
+      }
     }
   }
 
@@ -548,6 +651,7 @@ export class GlobalMap extends React.Component<Props, State> {
       this.setState({
         activeShows: [],
         activePin: null,
+        pinOrClusterSelected: false,
       })
     }
   }
@@ -556,6 +660,7 @@ export class GlobalMap extends React.Component<Props, State> {
     this.setState({
       activeShows: [],
       activePin: null,
+      pinOrClusterSelected: false,
     })
   }
 
@@ -736,6 +841,57 @@ export class GlobalMap extends React.Component<Props, State> {
       activeShows,
       activePin: nativeEvent.payload,
     })
+  }
+
+  async handleSelectedFeaturePress(nativeEvent: any) {
+    const {
+      payload: {
+        properties: { id, cluster, type },
+        geometry: { coordinates },
+      },
+    } = nativeEvent
+    console.log("TCL: handleSelectedFeaturePress -> nativeEvent", nativeEvent)
+
+    let activeShows: Array<Fair | Show> = []
+
+    if (!cluster) {
+      if (type === "Show") {
+        activeShows = [this.shows[id]]
+      } else if (type === "Fair") {
+        activeShows = [this.fairs[id]]
+      }
+    }
+
+    // Otherwise the logic is as follows
+    // We use our clusterEngine which is map of our clusters
+    // 1. Fetch all features (pins, clusters) based on the current map visible bounds
+    // 2. Sort them by distance to the user tap coordinates
+    // 3. Retrieve points within the cluster and map them back to shows
+    else {
+      // Get map zoom level and coordinates of where the user tapped
+      const zoom = Math.floor(await this.map.getZoom())
+      const [lat, lng] = coordinates
+
+      // Get coordinates of the map's current viewport bounds
+      const visibleBounds = await this.map.getVisibleBounds()
+      const [ne, sw] = visibleBounds
+      const [eastLng, northLat] = ne
+      const [westLng, southLat] = sw
+
+      const clusterEngine = this.currentFeatureCollection.clusterEngine
+      const visibleFeatures = clusterEngine.getClusters([westLng, southLat, eastLng, northLat], zoom)
+      const nearestFeature = this.getNearestPointToLatLongInCollection({ lat, lng }, visibleFeatures)
+      const points = clusterEngine.getLeaves(nearestFeature.properties.cluster_id, Infinity)
+      activeShows = points.map(a => a.properties) as any
+      // this.setState({
+      //   nearestFeature,
+      // })
+    }
+
+    // this.setState({
+    //   activeShows,
+    //   activePin: nativeEvent.payload,
+    // })
   }
 
   getNearestPointToLatLongInCollection(values: { lat: number; lng: number }, features: any[]) {

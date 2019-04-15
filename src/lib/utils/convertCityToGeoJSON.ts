@@ -38,6 +38,14 @@ export const fairToGeoCityFairs = (edges: Fair[]): Fair[] =>
     }
   })
 
+export const selectedShowsToGeoCityShow = (edges: Show[]): Show[] =>
+  edges.map(node => {
+    return {
+      ...node,
+      icon: node.is_followed ? "pin-saved-selected" : "pin-selected",
+    }
+  })
+
 export const convertCityToGeoJSON = data => {
   return {
     type: "FeatureCollection",

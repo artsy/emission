@@ -1,49 +1,41 @@
 import Mapbox from "@mapbox/react-native-mapbox-gl"
-import { isEqual } from "lodash"
 import React, { Component } from "react"
 import { Animated, Easing } from "react-native"
-import { BucketKey } from "../bucketCityResults"
-import { FilterData, MapGeoFeatureCollection } from "../types"
+import { MapGeoFeature } from "../types"
 
 interface Props {
-  featureCollections: { [key in BucketKey]: FilterData }
+  collections: MapGeoFeature
   onPress?: (nativeEvent) => void
-  duration: number
   filterID: string
+  duration: number
+
+  layerType: string
 }
 
-interface State {
-  pinOpacity: Animated.Value
-  clusterOpacity: Animated.Value
-  clusterRadius: Animated.Value
-  rendered: boolean
-}
 enum visibilityStatus {
   visible = "visible",
   none = "none",
 }
 
-export class ShapeLayer extends Component<Props, State> {
+export class SelectedShapeLayer extends Component<Props> {
   static defaultProps = {
     duration: 300,
   }
-
   state = {
     pinOpacity: new Animated.Value(0),
     clusterOpacity: new Animated.Value(0),
     clusterRadius: new Animated.Value(0),
     rendered: false,
   }
-
   stylesheet = Mapbox.StyleSheet.create({
     singleShow: {
       iconImage: Mapbox.StyleSheet.identity("icon"),
-      iconSize: 0.8,
+      iconSize: 1,
     },
 
     clusteredPoints: {
       circlePitchAlignment: "map",
-      circleColor: "black",
+      circleColor: "purple",
 
       circleRadius: Mapbox.StyleSheet.source(
         [[0, 15], [5, 20], [30, 30]],
@@ -63,19 +55,6 @@ export class ShapeLayer extends Component<Props, State> {
 
   componentDidMount() {
     this.fadeInAnimations()
-  }
-
-  shouldComponentUpdate(nextProps: Props, nextState: State) {
-    const { filterID } = this.props
-
-    const getFeatures = (props: Props) =>
-      props.featureCollections[filterID].featureCollection.features.map(g => g.is_followed)
-
-    return (
-      !isEqual(getFeatures(nextProps), getFeatures(this.props)) ||
-      this.state.rendered !== nextState.rendered ||
-      this.props.filterID !== nextProps.filterID
-    )
   }
 
   fadeInAnimations() {
@@ -106,34 +85,49 @@ export class ShapeLayer extends Component<Props, State> {
     )
   }
 
+  getShapeLayer(layerType, id) {
+    if (layerType === "singlePin") {
+      return (
+        <Mapbox.Animated.SymbolLayer
+          id={id}
+          iconAllowOverlap={true}
+          iconIgnorePlacement={true}
+          visibility={visibilityStatus.visible}
+          style={[this.stylesheet.singleShow, { iconOpacity: 1 }]}
+        />
+      )
+    } else {
+      return (
+        <>
+          <Mapbox.Animated.SymbolLayer id="selectedPointCount" style={this.stylesheet.clusterCount} />
+          <Mapbox.Animated.CircleLayer
+            id="selectedClusteredPoints"
+            // filter={["has", "point_count"]}
+            style={[this.stylesheet.clusteredPoints]}
+          />
+        </>
+      )
+    }
+  }
+
   render() {
-    const { featureCollections, filterID } = this.props
-    const collection: MapGeoFeatureCollection = featureCollections[filterID].featureCollection
-    console.log("animation values", this.state)
+    const { collections, filterID, layerType } = this.props
+    // const { properties: selectedFeatureProperties } = collections
+    console.log("TCL: ShapeLayer -> render -> collections", collections)
 
     return (
       <Mapbox.Animated.ShapeSource
-        id="shows"
-        shape={collection}
-        cluster
-        clusterRadius={50}
+        id="selectedShows"
+        shape={collections}
+        // buffer={512}
+        // cluster
+        // clusterRadius={50}
         onPress={this.props.onPress}
       >
-        <Mapbox.Animated.SymbolLayer
-          id="singleShow"
-          filter={["!has", "point_count"]}
-          style={[this.stylesheet.singleShow, { iconOpacity: this.state.pinOpacity }]}
-        />
-        <Mapbox.Animated.SymbolLayer id="pointCount" style={this.stylesheet.clusterCount} />
-        <Mapbox.Animated.CircleLayer
-          id="clusteredPoints"
-          belowLayerID="pointCount"
-          filter={["has", "point_count"]}
-          style={[this.stylesheet.clusteredPoints, { circleOpacity: this.state.clusterOpacity }]}
-        />
+        {this.getShapeLayer(layerType, filterID)}
       </Mapbox.Animated.ShapeSource>
     )
   }
 }
 
-export const PinsShapeLayer = Animated.createAnimatedComponent(ShapeLayer)
+export const SelectedPinsShapeLayer = Animated.createAnimatedComponent(SelectedShapeLayer)

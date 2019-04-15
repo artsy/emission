@@ -150,6 +150,8 @@ export class FairDetail extends React.Component<Props, State> {
   }
 
   renderItem = ({ item: { data, type, showIndex } }) => {
+    console.log("TCL: FairDetail -> renderItem -> data", data)
+    console.log("TCL: FairDetail -> renderItem -> type", type)
     switch (type) {
       case "location":
         return <LocationMap partnerType="Fair" {...data} />

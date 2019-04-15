@@ -23,7 +23,7 @@ export interface MapTab {
   text: string
   /** A func to grab the right shows for this tab on the map */
   getShows: (buckets: BucketResults) => Show[]
-  /** A func to grab the right ffairs for this tab on the map */
+  /** A func to grab the right fairs for this tab on the map */
   getFairs: (buckets: BucketResults) => Fair[]
 }
 
