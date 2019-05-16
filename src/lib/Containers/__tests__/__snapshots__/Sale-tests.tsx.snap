@@ -16,7 +16,7 @@ exports[`state looks okay by default 1`] = `
   <View
     style={
       Object {
-        "backgroundColor": "white",
+        "backgroundColor": "#000",
         "height": 200,
         "opacity": 1,
         "overflow": "hidden",
@@ -39,6 +39,7 @@ exports[`state looks okay by default 1`] = `
     </View>
   </View>
   <RCTScrollView
+    className="css-cxmp86"
     onChangeHeaderVisibility={[Function]}
     onScroll={[Function]}
     parallaxHeaderContainerStyles={
@@ -229,20 +230,17 @@ exports[`state looks okay by default 1`] = `
               }
             >
               <Text
-                className="sc-bdVaJa bDWFJH"
-                color="black"
+                className="css-1xu3tth sc-bdVaJa bDWFJH"
                 fontFamily="Unica77LL-Medium"
                 fontSize="14px"
                 lineHeight="24px"
                 style={
                   Array [
                     Object {
-                      "color": "black",
                       "fontFamily": "Unica77LL-Medium",
                       "fontSize": 14,
                       "lineHeight": 24,
                     },
-                    undefined,
                   ]
                 }
               >
@@ -349,7 +347,7 @@ exports[`state looks okay by default 1`] = `
     <View
       style={
         Object {
-          "backgroundColor": "white",
+          "backgroundColor": "#000",
           "height": 64,
           "opacity": 0,
         }

@@ -14,7 +14,6 @@ Array [
         Object {
           "height": 250,
         },
-        undefined,
       ]
     }
   >
@@ -26,29 +25,18 @@ Array [
             Object {
               "height": 250,
             },
-            undefined,
           ]
         }
       />
     </View>
   </RCTScrollView>,
   <View
-    alignItems="center"
-    flexDirection="row"
-    justifyContent="center"
-    mb={1}
-    mt={1}
+    className="css-76r5dt"
     style={
       Array [
         Object {
-          "alignItems": "center",
           "display": "flex",
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "marginBottom": 4,
-          "marginTop": 4,
         },
-        undefined,
       ]
     }
   >
@@ -71,7 +59,6 @@ Array [
             "marginRight": 0,
             "width": 6,
           },
-          undefined,
         ]
       }
     />

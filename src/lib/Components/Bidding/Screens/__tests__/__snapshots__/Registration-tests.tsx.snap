@@ -2,70 +2,46 @@
 
 exports[`renders properly for a user with a credit card 1`] = `
 <View
-  flex={1}
-  flexDirection="column"
-  justifyContent="space-between"
-  m={0}
+  className="css-6fsl11-Container"
   style={
     Array [
-      Object {
-        "flexBasis": 0,
-        "flexGrow": 1,
-        "flexShrink": 1,
-        "marginBottom": 0,
-        "marginLeft": 0,
-        "marginRight": 0,
-        "marginTop": 0,
-      },
-      undefined,
+      Object {},
     ]
   }
 >
   <View>
     <View
-      alignItems="center"
+      className="css-zcxndt"
       style={
         Array [
           Object {},
-          undefined,
         ]
       }
     >
       <Text
-        className="sc-bwzfXH uTxCW"
+        className="css-6bw7z5-Title sc-bwzfXH uTxCW"
         fontFamily="AGaramondPro-Semibold"
         fontSize="22px"
         lineHeight="28px"
-        m={4}
-        mb={3}
         style={
           Array [
             Object {
               "fontFamily": "AGaramondPro-Semibold",
               "fontSize": 22,
               "lineHeight": 28,
-              "marginBottom": 10,
-              "marginLeft": 20,
-              "marginRight": 20,
-              "marginTop": 20,
-              "textAlign": "center",
             },
-            undefined,
           ]
         }
-        textAlign="center"
       >
         Register to bid
       </Text>
       <View
-        alignItems="center"
+        className="css-1q6ogye-Countdown"
         style={
           Array [
             Object {
-              "alignItems": "center",
               "display": "flex",
             },
-            undefined,
           ]
         }
       >
@@ -81,7 +57,6 @@ exports[`renders properly for a user with a credit card 1`] = `
                 "fontSize": 16,
                 "lineHeight": 22,
               },
-              undefined,
             ]
           }
         >
@@ -99,7 +74,6 @@ exports[`renders properly for a user with a credit card 1`] = `
                 "fontSize": 12,
                 "lineHeight": 16,
               },
-              undefined,
             ]
           }
         >
@@ -107,28 +81,19 @@ exports[`renders properly for a user with a credit card 1`] = `
         </Text>
       </View>
       <Text
-        className="sc-bwzfXH uTxCW"
+        className="css-11fydvi sc-bwzfXH uTxCW"
         fontFamily="AGaramondPro-Semibold"
         fontSize="18px"
         lineHeight="22px"
-        mx={6}
-        my={5}
         style={
           Array [
             Object {
               "fontFamily": "AGaramondPro-Semibold",
               "fontSize": 18,
               "lineHeight": 22,
-              "marginBottom": 30,
-              "marginLeft": 40,
-              "marginRight": 40,
-              "marginTop": 30,
-              "textAlign": "center",
             },
-            undefined,
           ]
         }
-        textAlign="center"
       >
         Phillips New Now
       </Text>
@@ -165,7 +130,6 @@ exports[`renders properly for a user with a credit card 1`] = `
                 "flexShrink": 1,
                 "justifyContent": "center",
               },
-              undefined,
             ]
           }
         >
@@ -189,7 +153,6 @@ exports[`renders properly for a user with a credit card 1`] = `
                   "paddingTop": 20,
                   "width": 300,
                 },
-                undefined,
               ]
             }
           >
@@ -212,7 +175,6 @@ exports[`renders properly for a user with a credit card 1`] = `
                       "fontSize": 14,
                       "lineHeight": 24,
                     },
-                    undefined,
                   ]
                 }
               >
@@ -227,20 +189,17 @@ exports[`renders properly for a user with a credit card 1`] = `
               }
             >
               <Text
-                className="sc-bdVaJa bDWFJH"
-                color="#666"
+                className="css-1e758l9 sc-bdVaJa bDWFJH"
                 fontFamily="Unica77LL-Regular"
                 fontSize="14px"
                 lineHeight="24px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "Unica77LL-Regular",
                       "fontSize": 14,
                       "lineHeight": 24,
                     },
-                    undefined,
                   ]
                 }
               >
@@ -269,20 +228,17 @@ exports[`renders properly for a user with a credit card 1`] = `
               }
             >
               <Text
-                className="sc-bdVaJa bDWFJH"
-                color="black"
+                className="css-1xu3tth sc-bdVaJa bDWFJH"
                 fontFamily="Unica77LL-Medium"
                 fontSize="14px"
                 lineHeight="24px"
                 style={
                   Array [
                     Object {
-                      "color": "black",
                       "fontFamily": "Unica77LL-Medium",
                       "fontSize": 14,
                       "lineHeight": 24,
                     },
-                    undefined,
                   ]
                 }
               >
@@ -297,10 +253,7 @@ exports[`renders properly for a user with a credit card 1`] = `
   <View>
     <View
       accessible={true}
-      alignItems="center"
-      flexDirection="row"
-      justifyContent="center"
-      mb={4}
+      className="css-t14co2"
       onPress={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -310,10 +263,7 @@ exports[`renders properly for a user with a credit card 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Array [
-          Object {
-            "marginBottom": 20,
-          },
-          undefined,
+          Object {},
         ]
       }
     >
@@ -343,27 +293,21 @@ exports[`renders properly for a user with a credit card 1`] = `
         style={
           Array [
             Object {},
-            undefined,
           ]
         }
       >
         <Text
-          className="sc-bwzfXH uTxCW"
-          color="black60"
+          className="css-ioktyf sc-bwzfXH uTxCW"
           fontFamily="AGaramondPro-Regular"
           fontSize="14px"
           lineHeight="18px"
-          mt={2}
           style={
             Array [
               Object {
-                "color": "#666",
                 "fontFamily": "AGaramondPro-Regular",
                 "fontSize": 14,
                 "lineHeight": 18,
-                "marginTop": 5,
               },
-              undefined,
             ]
           }
         >
@@ -376,7 +320,6 @@ exports[`renders properly for a user with a credit card 1`] = `
                 Object {
                   "textDecorationLine": "underline",
                 },
-                undefined,
               ]
             }
           >
@@ -386,16 +329,10 @@ exports[`renders properly for a user with a credit card 1`] = `
       </View>
     </View>
     <View
-      m={4}
+      className="css-1kxrbkv"
       style={
         Array [
-          Object {
-            "marginBottom": 20,
-            "marginLeft": 20,
-            "marginRight": 20,
-            "marginTop": 20,
-          },
-          undefined,
+          Object {},
         ]
       }
     >
@@ -406,7 +343,6 @@ exports[`renders properly for a user with a credit card 1`] = `
             Object {
               "height": 50,
             },
-            undefined,
           ]
         }
       >
@@ -460,70 +396,46 @@ exports[`renders properly for a user with a credit card 1`] = `
 
 exports[`renders properly for a user without a credit card 1`] = `
 <View
-  flex={1}
-  flexDirection="column"
-  justifyContent="space-between"
-  m={0}
+  className="css-6fsl11-Container"
   style={
     Array [
-      Object {
-        "flexBasis": 0,
-        "flexGrow": 1,
-        "flexShrink": 1,
-        "marginBottom": 0,
-        "marginLeft": 0,
-        "marginRight": 0,
-        "marginTop": 0,
-      },
-      undefined,
+      Object {},
     ]
   }
 >
   <View>
     <View
-      alignItems="center"
+      className="css-zcxndt"
       style={
         Array [
           Object {},
-          undefined,
         ]
       }
     >
       <Text
-        className="sc-bwzfXH uTxCW"
+        className="css-6bw7z5-Title sc-bwzfXH uTxCW"
         fontFamily="AGaramondPro-Semibold"
         fontSize="22px"
         lineHeight="28px"
-        m={4}
-        mb={3}
         style={
           Array [
             Object {
               "fontFamily": "AGaramondPro-Semibold",
               "fontSize": 22,
               "lineHeight": 28,
-              "marginBottom": 10,
-              "marginLeft": 20,
-              "marginRight": 20,
-              "marginTop": 20,
-              "textAlign": "center",
             },
-            undefined,
           ]
         }
-        textAlign="center"
       >
         Register to bid
       </Text>
       <View
-        alignItems="center"
+        className="css-1q6ogye-Countdown"
         style={
           Array [
             Object {
-              "alignItems": "center",
               "display": "flex",
             },
-            undefined,
           ]
         }
       >
@@ -539,7 +451,6 @@ exports[`renders properly for a user without a credit card 1`] = `
                 "fontSize": 16,
                 "lineHeight": 22,
               },
-              undefined,
             ]
           }
         >
@@ -557,7 +468,6 @@ exports[`renders properly for a user without a credit card 1`] = `
                 "fontSize": 12,
                 "lineHeight": 16,
               },
-              undefined,
             ]
           }
         >
@@ -565,87 +475,52 @@ exports[`renders properly for a user without a credit card 1`] = `
         </Text>
       </View>
       <Text
-        className="sc-bwzfXH uTxCW"
+        className="css-11fydvi sc-bwzfXH uTxCW"
         fontFamily="AGaramondPro-Semibold"
         fontSize="18px"
         lineHeight="22px"
-        mx={6}
-        my={5}
         style={
           Array [
             Object {
               "fontFamily": "AGaramondPro-Semibold",
               "fontSize": 18,
               "lineHeight": 22,
-              "marginBottom": 30,
-              "marginLeft": 40,
-              "marginRight": 40,
-              "marginTop": 30,
-              "textAlign": "center",
             },
-            undefined,
           ]
         }
-        textAlign="center"
       >
         Phillips New Now
       </Text>
     </View>
     <View>
       <View
-        border={1}
-        borderBottomWidth={0}
-        borderColor="black10"
+        className="css-1fhh0y8-Divider"
         style={
           Array [
-            Object {
-              "borderColor": "#E5E5E5",
-              "borderStyle": "solid",
-              "borderWidth": 1,
-              "width": "100%",
-            },
-            undefined,
+            Object {},
           ]
         }
-        width="100%"
       />
       <View
         accessible={true}
-        alignItems="center"
-        flexDirection="row"
-        justifyContent="space-between"
-        mb={1}
+        className="css-865zlg-Row"
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
-        p={4}
-        pb={3}
         style={
           Array [
-            Object {
-              "marginBottom": 3,
-              "paddingBottom": 10,
-              "paddingLeft": 20,
-              "paddingRight": 20,
-              "paddingTop": 20,
-            },
-            undefined,
+            Object {},
           ]
         }
       >
         <View
-          flex={1}
+          className="css-8utqyx-Col"
           style={
             Array [
-              Object {
-                "flexBasis": 0,
-                "flexGrow": 1,
-                "flexShrink": 1,
-              },
-              undefined,
+              Object {},
             ]
           }
         >
@@ -661,7 +536,6 @@ exports[`renders properly for a user without a credit card 1`] = `
                   "fontSize": 16,
                   "lineHeight": 24,
                 },
-                undefined,
               ]
             }
           >
@@ -669,51 +543,33 @@ exports[`renders properly for a user without a credit card 1`] = `
           </Text>
         </View>
         <View
-          alignItems="flex-end"
-          flex={1}
+          className="css-nzb7am-Col"
           style={
             Array [
-              Object {
-                "flexBasis": 0,
-                "flexGrow": 1,
-                "flexShrink": 1,
-              },
-              undefined,
+              Object {},
             ]
           }
         />
         <View
-          alignItems="flex-end"
-          flex={null}
-          flexBasis="auto"
-          flexGrow={0}
-          flexShrink={0}
+          className="css-84s8hb-Col"
           style={
             Array [
               Object {},
-              undefined,
             ]
           }
         >
           <Text
-            className="sc-bdVaJa bDWFJH"
-            color="purple100"
+            className="css-8owuzh sc-bdVaJa bDWFJH"
             fontFamily="Unica77LL-Regular"
             fontSize="12px"
             lineHeight="16px"
-            mb={1}
-            ml={3}
             style={
               Array [
                 Object {
-                  "color": "#6E1EFF",
                   "fontFamily": "Unica77LL-Regular",
                   "fontSize": 12,
                   "lineHeight": 16,
-                  "marginBottom": 3,
-                  "marginLeft": 10,
                 },
-                undefined,
               ]
             }
           >
@@ -722,59 +578,33 @@ exports[`renders properly for a user without a credit card 1`] = `
         </View>
       </View>
       <View
-        border={1}
-        borderBottomWidth={0}
-        borderColor="black10"
+        className="css-1fhh0y8-Divider"
         style={
           Array [
-            Object {
-              "borderColor": "#E5E5E5",
-              "borderStyle": "solid",
-              "borderWidth": 1,
-              "width": "100%",
-            },
-            undefined,
+            Object {},
           ]
         }
-        width="100%"
       />
       <View
         accessible={true}
-        alignItems="center"
-        flexDirection="row"
-        justifyContent="space-between"
-        mb={1}
+        className="css-865zlg-Row"
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
-        p={4}
-        pb={3}
         style={
           Array [
-            Object {
-              "marginBottom": 3,
-              "paddingBottom": 10,
-              "paddingLeft": 20,
-              "paddingRight": 20,
-              "paddingTop": 20,
-            },
-            undefined,
+            Object {},
           ]
         }
       >
         <View
-          flex={1}
+          className="css-8utqyx-Col"
           style={
             Array [
-              Object {
-                "flexBasis": 0,
-                "flexGrow": 1,
-                "flexShrink": 1,
-              },
-              undefined,
+              Object {},
             ]
           }
         >
@@ -790,7 +620,6 @@ exports[`renders properly for a user without a credit card 1`] = `
                   "fontSize": 16,
                   "lineHeight": 24,
                 },
-                undefined,
               ]
             }
           >
@@ -798,51 +627,33 @@ exports[`renders properly for a user without a credit card 1`] = `
           </Text>
         </View>
         <View
-          alignItems="flex-end"
-          flex={1}
+          className="css-nzb7am-Col"
           style={
             Array [
-              Object {
-                "flexBasis": 0,
-                "flexGrow": 1,
-                "flexShrink": 1,
-              },
-              undefined,
+              Object {},
             ]
           }
         />
         <View
-          alignItems="flex-end"
-          flex={null}
-          flexBasis="auto"
-          flexGrow={0}
-          flexShrink={0}
+          className="css-84s8hb-Col"
           style={
             Array [
               Object {},
-              undefined,
             ]
           }
         >
           <Text
-            className="sc-bdVaJa bDWFJH"
-            color="purple100"
+            className="css-8owuzh sc-bdVaJa bDWFJH"
             fontFamily="Unica77LL-Regular"
             fontSize="12px"
             lineHeight="16px"
-            mb={1}
-            ml={3}
             style={
               Array [
                 Object {
-                  "color": "#6E1EFF",
                   "fontFamily": "Unica77LL-Regular",
                   "fontSize": 12,
                   "lineHeight": 16,
-                  "marginBottom": 3,
-                  "marginLeft": 10,
                 },
-                undefined,
               ]
             }
           >
@@ -851,21 +662,12 @@ exports[`renders properly for a user without a credit card 1`] = `
         </View>
       </View>
       <View
-        border={1}
-        borderBottomWidth={0}
-        borderColor="black10"
+        className="css-1fhh0y8-Divider"
         style={
           Array [
-            Object {
-              "borderColor": "#E5E5E5",
-              "borderStyle": "solid",
-              "borderWidth": 1,
-              "width": "100%",
-            },
-            undefined,
+            Object {},
           ]
         }
-        width="100%"
       />
     </View>
     <View
@@ -900,7 +702,6 @@ exports[`renders properly for a user without a credit card 1`] = `
                 "flexShrink": 1,
                 "justifyContent": "center",
               },
-              undefined,
             ]
           }
         >
@@ -924,7 +725,6 @@ exports[`renders properly for a user without a credit card 1`] = `
                   "paddingTop": 20,
                   "width": 300,
                 },
-                undefined,
               ]
             }
           >
@@ -947,7 +747,6 @@ exports[`renders properly for a user without a credit card 1`] = `
                       "fontSize": 14,
                       "lineHeight": 24,
                     },
-                    undefined,
                   ]
                 }
               >
@@ -962,20 +761,17 @@ exports[`renders properly for a user without a credit card 1`] = `
               }
             >
               <Text
-                className="sc-bdVaJa bDWFJH"
-                color="#666"
+                className="css-1e758l9 sc-bdVaJa bDWFJH"
                 fontFamily="Unica77LL-Regular"
                 fontSize="14px"
                 lineHeight="24px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "Unica77LL-Regular",
                       "fontSize": 14,
                       "lineHeight": 24,
                     },
-                    undefined,
                   ]
                 }
               >
@@ -1004,20 +800,17 @@ exports[`renders properly for a user without a credit card 1`] = `
               }
             >
               <Text
-                className="sc-bdVaJa bDWFJH"
-                color="black"
+                className="css-1xu3tth sc-bdVaJa bDWFJH"
                 fontFamily="Unica77LL-Medium"
                 fontSize="14px"
                 lineHeight="24px"
                 style={
                   Array [
                     Object {
-                      "color": "black",
                       "fontFamily": "Unica77LL-Medium",
                       "fontSize": 14,
                       "lineHeight": 24,
                     },
-                    undefined,
                   ]
                 }
               >
@@ -1032,10 +825,7 @@ exports[`renders properly for a user without a credit card 1`] = `
   <View>
     <View
       accessible={true}
-      alignItems="center"
-      flexDirection="row"
-      justifyContent="center"
-      mb={4}
+      className="css-t14co2"
       onPress={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -1045,10 +835,7 @@ exports[`renders properly for a user without a credit card 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Array [
-          Object {
-            "marginBottom": 20,
-          },
-          undefined,
+          Object {},
         ]
       }
     >
@@ -1078,27 +865,21 @@ exports[`renders properly for a user without a credit card 1`] = `
         style={
           Array [
             Object {},
-            undefined,
           ]
         }
       >
         <Text
-          className="sc-bwzfXH uTxCW"
-          color="black60"
+          className="css-ioktyf sc-bwzfXH uTxCW"
           fontFamily="AGaramondPro-Regular"
           fontSize="14px"
           lineHeight="18px"
-          mt={2}
           style={
             Array [
               Object {
-                "color": "#666",
                 "fontFamily": "AGaramondPro-Regular",
                 "fontSize": 14,
                 "lineHeight": 18,
-                "marginTop": 5,
               },
-              undefined,
             ]
           }
         >
@@ -1111,7 +892,6 @@ exports[`renders properly for a user without a credit card 1`] = `
                 Object {
                   "textDecorationLine": "underline",
                 },
-                undefined,
               ]
             }
           >
@@ -1121,16 +901,10 @@ exports[`renders properly for a user without a credit card 1`] = `
       </View>
     </View>
     <View
-      m={4}
+      className="css-1kxrbkv"
       style={
         Array [
-          Object {
-            "marginBottom": 20,
-            "marginLeft": 20,
-            "marginRight": 20,
-            "marginTop": 20,
-          },
-          undefined,
+          Object {},
         ]
       }
     >
@@ -1141,7 +915,6 @@ exports[`renders properly for a user without a credit card 1`] = `
             Object {
               "height": 50,
             },
-            undefined,
           ]
         }
       >

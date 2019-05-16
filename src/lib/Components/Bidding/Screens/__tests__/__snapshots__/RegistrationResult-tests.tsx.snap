@@ -2,37 +2,24 @@
 
 exports[`Registration result component renders registration complete properly 1`] = `
 <View
-  flex={1}
-  flexDirection="column"
-  justifyContent="space-between"
-  m={4}
-  mt={6}
+  className="css-1c0zneh-Container"
   style={
     Array [
-      Object {
-        "flexBasis": 0,
-        "flexGrow": 1,
-        "flexShrink": 1,
-        "marginBottom": 20,
-        "marginLeft": 20,
-        "marginRight": 20,
-        "marginTop": 40,
-      },
-      undefined,
+      Object {},
     ]
   }
 >
   <View>
     <View
-      alignItems="center"
+      className="css-zcxndt"
       style={
         Array [
           Object {},
-          undefined,
         ]
       }
     >
       <Image
+        className="css-yikrym"
         height={20}
         source={
           Object {
@@ -43,71 +30,51 @@ exports[`Registration result component renders registration complete properly 1`
           Array [
             Object {
               "height": 20,
-              "width": 20,
             },
-            undefined,
           ]
         }
-        width={20}
       />
       <Text
-        className="sc-bwzfXH uTxCW"
+        className="css-j5r89d-Title sc-bwzfXH uTxCW"
         fontFamily="AGaramondPro-Semibold"
         fontSize="22px"
         lineHeight="28px"
-        m={4}
-        mb={4}
-        mt={2}
         style={
           Array [
             Object {
               "fontFamily": "AGaramondPro-Semibold",
               "fontSize": 22,
               "lineHeight": 28,
-              "marginBottom": 20,
-              "marginLeft": 20,
-              "marginRight": 20,
-              "marginTop": 5,
-              "textAlign": "center",
             },
-            undefined,
           ]
         }
-        textAlign="center"
       >
         Registration complete
       </Text>
       <View
-        mb={5}
+        className="css-r7q7qr"
         style={
           Array [
             Object {
               "display": "flex",
-              "marginBottom": 30,
             },
-            undefined,
           ]
         }
       >
         <Text
-          className="sc-bdVaJa bDWFJH"
-          color="black60"
+          className="css-1l2ig8f sc-bdVaJa bDWFJH"
           fontFamily="Unica77LL-Regular"
           fontSize="14px"
           lineHeight="20px"
           style={
             Array [
               Object {
-                "color": "#666",
                 "fontFamily": "Unica77LL-Regular",
                 "fontSize": 14,
                 "lineHeight": 20,
-                "textAlign": "center",
               },
-              undefined,
             ]
           }
-          textAlign="center"
         >
           Thank you for registering. You’re now eligible
 to bid on works in this sale.
@@ -138,20 +105,17 @@ to bid on works in this sale.
     }
   >
     <Text
-      className="sc-bdVaJa bDWFJH"
-      color="black"
+      className="css-1xu3tth sc-bdVaJa bDWFJH"
       fontFamily="Unica77LL-Medium"
       fontSize="14px"
       lineHeight="24px"
       style={
         Array [
           Object {
-            "color": "black",
             "fontFamily": "Unica77LL-Medium",
             "fontSize": 14,
             "lineHeight": 24,
           },
-          undefined,
         ]
       }
     >
@@ -163,37 +127,24 @@ to bid on works in this sale.
 
 exports[`Registration result component renders registration error properly 1`] = `
 <View
-  flex={1}
-  flexDirection="column"
-  justifyContent="space-between"
-  m={4}
-  mt={6}
+  className="css-1c0zneh-Container"
   style={
     Array [
-      Object {
-        "flexBasis": 0,
-        "flexGrow": 1,
-        "flexShrink": 1,
-        "marginBottom": 20,
-        "marginLeft": 20,
-        "marginRight": 20,
-        "marginTop": 40,
-      },
-      undefined,
+      Object {},
     ]
   }
 >
   <View>
     <View
-      alignItems="center"
+      className="css-zcxndt"
       style={
         Array [
           Object {},
-          undefined,
         ]
       }
     >
       <Image
+        className="css-yikrym"
         height={20}
         source={
           Object {
@@ -204,71 +155,51 @@ exports[`Registration result component renders registration error properly 1`] =
           Array [
             Object {
               "height": 20,
-              "width": 20,
             },
-            undefined,
           ]
         }
-        width={20}
       />
       <Text
-        className="sc-bwzfXH uTxCW"
+        className="css-j5r89d-Title sc-bwzfXH uTxCW"
         fontFamily="AGaramondPro-Semibold"
         fontSize="22px"
         lineHeight="28px"
-        m={4}
-        mb={4}
-        mt={2}
         style={
           Array [
             Object {
               "fontFamily": "AGaramondPro-Semibold",
               "fontSize": 22,
               "lineHeight": 28,
-              "marginBottom": 20,
-              "marginLeft": 20,
-              "marginRight": 20,
-              "marginTop": 5,
-              "textAlign": "center",
             },
-            undefined,
           ]
         }
-        textAlign="center"
       >
         An error occured
       </Text>
       <View
-        mb={5}
+        className="css-r7q7qr"
         style={
           Array [
             Object {
               "display": "flex",
-              "marginBottom": 30,
             },
-            undefined,
           ]
         }
       >
         <Text
-          className="sc-bdVaJa bDWFJH"
-          color="black60"
+          className="css-1l2ig8f sc-bdVaJa bDWFJH"
           fontFamily="Unica77LL-Regular"
           fontSize="14px"
           lineHeight="20px"
           style={
             Array [
               Object {
-                "color": "#666",
                 "fontFamily": "Unica77LL-Regular",
                 "fontSize": 14,
                 "lineHeight": 20,
-                "textAlign": "center",
               },
-              undefined,
             ]
           }
-          textAlign="center"
         >
           Please contact 
           <Text
@@ -278,7 +209,6 @@ exports[`Registration result component renders registration error properly 1`] =
                 Object {
                   "textDecorationLine": "underline",
                 },
-                undefined,
               ]
             }
           >
@@ -313,20 +243,17 @@ with any questions.
     }
   >
     <Text
-      className="sc-bdVaJa bDWFJH"
-      color="black"
+      className="css-1xu3tth sc-bdVaJa bDWFJH"
       fontFamily="Unica77LL-Medium"
       fontSize="14px"
       lineHeight="24px"
       style={
         Array [
           Object {
-            "color": "black",
             "fontFamily": "Unica77LL-Medium",
             "fontSize": 14,
             "lineHeight": 24,
           },
-          undefined,
         ]
       }
     >
@@ -338,37 +265,24 @@ with any questions.
 
 exports[`Registration result component renders registration pending properly 1`] = `
 <View
-  flex={1}
-  flexDirection="column"
-  justifyContent="space-between"
-  m={4}
-  mt={6}
+  className="css-1c0zneh-Container"
   style={
     Array [
-      Object {
-        "flexBasis": 0,
-        "flexGrow": 1,
-        "flexShrink": 1,
-        "marginBottom": 20,
-        "marginLeft": 20,
-        "marginRight": 20,
-        "marginTop": 40,
-      },
-      undefined,
+      Object {},
     ]
   }
 >
   <View>
     <View
-      alignItems="center"
+      className="css-zcxndt"
       style={
         Array [
           Object {},
-          undefined,
         ]
       }
     >
       <Image
+        className="css-yikrym"
         height={20}
         source={
           Object {
@@ -379,71 +293,51 @@ exports[`Registration result component renders registration pending properly 1`]
           Array [
             Object {
               "height": 20,
-              "width": 20,
             },
-            undefined,
           ]
         }
-        width={20}
       />
       <Text
-        className="sc-bwzfXH uTxCW"
+        className="css-j5r89d-Title sc-bwzfXH uTxCW"
         fontFamily="AGaramondPro-Semibold"
         fontSize="22px"
         lineHeight="28px"
-        m={4}
-        mb={4}
-        mt={2}
         style={
           Array [
             Object {
               "fontFamily": "AGaramondPro-Semibold",
               "fontSize": 22,
               "lineHeight": 28,
-              "marginBottom": 20,
-              "marginLeft": 20,
-              "marginRight": 20,
-              "marginTop": 5,
-              "textAlign": "center",
             },
-            undefined,
           ]
         }
-        textAlign="center"
       >
         Registration pending
       </Text>
       <View
-        mb={5}
+        className="css-r7q7qr"
         style={
           Array [
             Object {
               "display": "flex",
-              "marginBottom": 30,
             },
-            undefined,
           ]
         }
       >
         <Text
-          className="sc-bdVaJa bDWFJH"
-          color="black60"
+          className="css-1l2ig8f sc-bdVaJa bDWFJH"
           fontFamily="Unica77LL-Regular"
           fontSize="14px"
           lineHeight="20px"
           style={
             Array [
               Object {
-                "color": "#666",
                 "fontFamily": "Unica77LL-Regular",
                 "fontSize": 14,
                 "lineHeight": 20,
-                "textAlign": "center",
               },
-              undefined,
             ]
           }
-          textAlign="center"
         >
           Your registration status is pending.
 Please contact 
@@ -454,7 +348,6 @@ Please contact
                 Object {
                   "textDecorationLine": "underline",
                 },
-                undefined,
               ]
             }
           >
@@ -489,20 +382,17 @@ more information.
     }
   >
     <Text
-      className="sc-bdVaJa bDWFJH"
-      color="black"
+      className="css-1xu3tth sc-bdVaJa bDWFJH"
       fontFamily="Unica77LL-Medium"
       fontSize="14px"
       lineHeight="24px"
       style={
         Array [
           Object {
-            "color": "black",
             "fontFamily": "Unica77LL-Medium",
             "fontSize": 14,
             "lineHeight": 24,
           },
-          undefined,
         ]
       }
     >

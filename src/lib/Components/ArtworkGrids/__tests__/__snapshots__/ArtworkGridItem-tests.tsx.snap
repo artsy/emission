@@ -31,7 +31,6 @@ exports[`in a closed sale renders bid when an auction is about to open, but not 
             "left": 1,
             "position": "absolute",
           },
-          undefined,
         ]
       }
     >
@@ -47,21 +46,20 @@ exports[`in a closed sale renders bid when an auction is about to open, but not 
               "paddingRight": 5,
               "paddingTop": 3,
             },
-            undefined,
           ]
         }
       >
         <Text
-          className="sc-bdVaJa bDWFJH"
+          className="css-1wui850 sc-bdVaJa bDWFJH"
           fontFamily="Unica77LL-Medium"
-          fontSize="8px"
-          lineHeight={8}
+          fontSize="10px"
+          lineHeight="14px"
           style={
             Array [
               Object {
                 "fontFamily": "Unica77LL-Medium",
-                "fontSize": 8,
-                "lineHeight": 8,
+                "fontSize": 10,
+                "lineHeight": 14,
               },
               Object {
                 "paddingTop": 1,
@@ -84,21 +82,20 @@ exports[`in a closed sale renders bid when an auction is about to open, but not 
               "paddingRight": 5,
               "paddingTop": 3,
             },
-            undefined,
           ]
         }
       >
         <Text
-          className="sc-bdVaJa bDWFJH"
+          className="css-1wui850 sc-bdVaJa bDWFJH"
           fontFamily="Unica77LL-Medium"
-          fontSize="8px"
-          lineHeight={8}
+          fontSize="10px"
+          lineHeight="14px"
           style={
             Array [
               Object {
                 "fontFamily": "Unica77LL-Medium",
-                "fontSize": 8,
-                "lineHeight": 8,
+                "fontSize": 10,
+                "lineHeight": 14,
               },
               Object {
                 "paddingTop": 1,
@@ -112,34 +109,27 @@ exports[`in a closed sale renders bid when an auction is about to open, but not 
     </View>
   </View>
   <View
-    flexDirection="row"
-    mb="2px"
+    className="css-lyoc09"
     style={
       Array [
         Object {
           "display": "flex",
-          "flexDirection": "row",
-          "marginBottom": 2,
         },
-        undefined,
       ]
     }
   >
     <Text
-      className="sc-bdVaJa bDWFJH"
-      color="#000"
+      className="css-1iizi73 sc-bdVaJa bDWFJH"
       fontFamily="Unica77LL-Medium"
-      fontSize="13px"
-      lineHeight="18px"
+      fontSize="12px"
+      lineHeight="16px"
       style={
         Array [
           Object {
-            "color": "#000",
             "fontFamily": "Unica77LL-Medium",
-            "fontSize": 13,
-            "lineHeight": 18,
+            "fontSize": 12,
+            "lineHeight": 16,
           },
-          undefined,
         ]
       }
     >
@@ -147,20 +137,17 @@ exports[`in a closed sale renders bid when an auction is about to open, but not 
        
     </Text>
     <Text
-      className="sc-bdVaJa bDWFJH"
-      color="#666"
+      className="css-1e758l9 sc-bdVaJa bDWFJH"
       fontFamily="Unica77LL-Regular"
       fontSize="12px"
       lineHeight="16px"
       style={
         Array [
           Object {
-            "color": "#666",
             "fontFamily": "Unica77LL-Regular",
             "fontSize": 12,
             "lineHeight": 16,
           },
-          undefined,
         ]
       }
     >
@@ -295,7 +282,6 @@ exports[`in a closed sale renders without any price information 1`] = `
             "left": 1,
             "position": "absolute",
           },
-          undefined,
         ]
       }
     >
@@ -311,21 +297,20 @@ exports[`in a closed sale renders without any price information 1`] = `
               "paddingRight": 5,
               "paddingTop": 3,
             },
-            undefined,
           ]
         }
       >
         <Text
-          className="sc-bdVaJa bDWFJH"
+          className="css-1wui850 sc-bdVaJa bDWFJH"
           fontFamily="Unica77LL-Medium"
-          fontSize="8px"
-          lineHeight={8}
+          fontSize="10px"
+          lineHeight="14px"
           style={
             Array [
               Object {
                 "fontFamily": "Unica77LL-Medium",
-                "fontSize": 8,
-                "lineHeight": 8,
+                "fontSize": 10,
+                "lineHeight": 14,
               },
               Object {
                 "paddingTop": 1,
@@ -348,21 +333,20 @@ exports[`in a closed sale renders without any price information 1`] = `
               "paddingRight": 5,
               "paddingTop": 3,
             },
-            undefined,
           ]
         }
       >
         <Text
-          className="sc-bdVaJa bDWFJH"
+          className="css-1wui850 sc-bdVaJa bDWFJH"
           fontFamily="Unica77LL-Medium"
-          fontSize="8px"
-          lineHeight={8}
+          fontSize="10px"
+          lineHeight="14px"
           style={
             Array [
               Object {
                 "fontFamily": "Unica77LL-Medium",
-                "fontSize": 8,
-                "lineHeight": 8,
+                "fontSize": 10,
+                "lineHeight": 14,
               },
               Object {
                 "paddingTop": 1,
@@ -376,34 +360,27 @@ exports[`in a closed sale renders without any price information 1`] = `
     </View>
   </View>
   <View
-    flexDirection="row"
-    mb="2px"
+    className="css-lyoc09"
     style={
       Array [
         Object {
           "display": "flex",
-          "flexDirection": "row",
-          "marginBottom": 2,
         },
-        undefined,
       ]
     }
   >
     <Text
-      className="sc-bdVaJa bDWFJH"
-      color="#000"
+      className="css-1iizi73 sc-bdVaJa bDWFJH"
       fontFamily="Unica77LL-Medium"
-      fontSize="13px"
-      lineHeight="18px"
+      fontSize="12px"
+      lineHeight="16px"
       style={
         Array [
           Object {
-            "color": "#000",
             "fontFamily": "Unica77LL-Medium",
-            "fontSize": 13,
-            "lineHeight": 18,
+            "fontSize": 12,
+            "lineHeight": 16,
           },
-          undefined,
         ]
       }
     >
@@ -411,20 +388,17 @@ exports[`in a closed sale renders without any price information 1`] = `
        
     </Text>
     <Text
-      className="sc-bdVaJa bDWFJH"
-      color="#666"
+      className="css-1e758l9 sc-bdVaJa bDWFJH"
       fontFamily="Unica77LL-Regular"
       fontSize="12px"
       lineHeight="16px"
       style={
         Array [
           Object {
-            "color": "#666",
             "fontFamily": "Unica77LL-Regular",
             "fontSize": 12,
             "lineHeight": 16,
           },
-          undefined,
         ]
       }
     >
@@ -559,7 +533,6 @@ exports[`in an open sale renders with current bid 1`] = `
             "left": 1,
             "position": "absolute",
           },
-          undefined,
         ]
       }
     >
@@ -575,21 +548,20 @@ exports[`in an open sale renders with current bid 1`] = `
               "paddingRight": 5,
               "paddingTop": 3,
             },
-            undefined,
           ]
         }
       >
         <Text
-          className="sc-bdVaJa bDWFJH"
+          className="css-1wui850 sc-bdVaJa bDWFJH"
           fontFamily="Unica77LL-Medium"
-          fontSize="8px"
-          lineHeight={8}
+          fontSize="10px"
+          lineHeight="14px"
           style={
             Array [
               Object {
                 "fontFamily": "Unica77LL-Medium",
-                "fontSize": 8,
-                "lineHeight": 8,
+                "fontSize": 10,
+                "lineHeight": 14,
               },
               Object {
                 "paddingTop": 1,
@@ -612,21 +584,20 @@ exports[`in an open sale renders with current bid 1`] = `
               "paddingRight": 5,
               "paddingTop": 3,
             },
-            undefined,
           ]
         }
       >
         <Text
-          className="sc-bdVaJa bDWFJH"
+          className="css-1wui850 sc-bdVaJa bDWFJH"
           fontFamily="Unica77LL-Medium"
-          fontSize="8px"
-          lineHeight={8}
+          fontSize="10px"
+          lineHeight="14px"
           style={
             Array [
               Object {
                 "fontFamily": "Unica77LL-Medium",
-                "fontSize": 8,
-                "lineHeight": 8,
+                "fontSize": 10,
+                "lineHeight": 14,
               },
               Object {
                 "paddingTop": 1,
@@ -640,34 +611,27 @@ exports[`in an open sale renders with current bid 1`] = `
     </View>
   </View>
   <View
-    flexDirection="row"
-    mb="2px"
+    className="css-lyoc09"
     style={
       Array [
         Object {
           "display": "flex",
-          "flexDirection": "row",
-          "marginBottom": 2,
         },
-        undefined,
       ]
     }
   >
     <Text
-      className="sc-bdVaJa bDWFJH"
-      color="#000"
+      className="css-1iizi73 sc-bdVaJa bDWFJH"
       fontFamily="Unica77LL-Medium"
-      fontSize="13px"
-      lineHeight="18px"
+      fontSize="12px"
+      lineHeight="16px"
       style={
         Array [
           Object {
-            "color": "#000",
             "fontFamily": "Unica77LL-Medium",
-            "fontSize": 13,
-            "lineHeight": 18,
+            "fontSize": 12,
+            "lineHeight": 16,
           },
-          undefined,
         ]
       }
     >
@@ -675,20 +639,17 @@ exports[`in an open sale renders with current bid 1`] = `
        
     </Text>
     <Text
-      className="sc-bdVaJa bDWFJH"
-      color="#666"
+      className="css-1e758l9 sc-bdVaJa bDWFJH"
       fontFamily="Unica77LL-Regular"
       fontSize="12px"
       lineHeight="16px"
       style={
         Array [
           Object {
-            "color": "#666",
             "fontFamily": "Unica77LL-Regular",
             "fontSize": 12,
             "lineHeight": 16,
           },
-          undefined,
         ]
       }
     >
@@ -823,7 +784,6 @@ exports[`in an open sale renders with starting bid 1`] = `
             "left": 1,
             "position": "absolute",
           },
-          undefined,
         ]
       }
     >
@@ -839,21 +799,20 @@ exports[`in an open sale renders with starting bid 1`] = `
               "paddingRight": 5,
               "paddingTop": 3,
             },
-            undefined,
           ]
         }
       >
         <Text
-          className="sc-bdVaJa bDWFJH"
+          className="css-1wui850 sc-bdVaJa bDWFJH"
           fontFamily="Unica77LL-Medium"
-          fontSize="8px"
-          lineHeight={8}
+          fontSize="10px"
+          lineHeight="14px"
           style={
             Array [
               Object {
                 "fontFamily": "Unica77LL-Medium",
-                "fontSize": 8,
-                "lineHeight": 8,
+                "fontSize": 10,
+                "lineHeight": 14,
               },
               Object {
                 "paddingTop": 1,
@@ -876,21 +835,20 @@ exports[`in an open sale renders with starting bid 1`] = `
               "paddingRight": 5,
               "paddingTop": 3,
             },
-            undefined,
           ]
         }
       >
         <Text
-          className="sc-bdVaJa bDWFJH"
+          className="css-1wui850 sc-bdVaJa bDWFJH"
           fontFamily="Unica77LL-Medium"
-          fontSize="8px"
-          lineHeight={8}
+          fontSize="10px"
+          lineHeight="14px"
           style={
             Array [
               Object {
                 "fontFamily": "Unica77LL-Medium",
-                "fontSize": 8,
-                "lineHeight": 8,
+                "fontSize": 10,
+                "lineHeight": 14,
               },
               Object {
                 "paddingTop": 1,
@@ -904,54 +862,44 @@ exports[`in an open sale renders with starting bid 1`] = `
     </View>
   </View>
   <View
-    flexDirection="row"
-    mb="2px"
+    className="css-lyoc09"
     style={
       Array [
         Object {
           "display": "flex",
-          "flexDirection": "row",
-          "marginBottom": 2,
         },
-        undefined,
       ]
     }
   >
     <Text
-      className="sc-bdVaJa bDWFJH"
-      color="#000"
+      className="css-1iizi73 sc-bdVaJa bDWFJH"
       fontFamily="Unica77LL-Medium"
-      fontSize="13px"
-      lineHeight="18px"
+      fontSize="12px"
+      lineHeight="16px"
       style={
         Array [
           Object {
-            "color": "#000",
             "fontFamily": "Unica77LL-Medium",
-            "fontSize": 13,
-            "lineHeight": 18,
+            "fontSize": 12,
+            "lineHeight": 16,
           },
-          undefined,
         ]
       }
     >
        
     </Text>
     <Text
-      className="sc-bdVaJa bDWFJH"
-      color="#666"
+      className="css-1e758l9 sc-bdVaJa bDWFJH"
       fontFamily="Unica77LL-Regular"
       fontSize="12px"
       lineHeight="16px"
       style={
         Array [
           Object {
-            "color": "#666",
             "fontFamily": "Unica77LL-Regular",
             "fontSize": 12,
             "lineHeight": 16,
           },
-          undefined,
         ]
       }
     >
@@ -1086,7 +1034,6 @@ exports[`renders properly 1`] = `
             "left": 1,
             "position": "absolute",
           },
-          undefined,
         ]
       }
     >
@@ -1102,21 +1049,20 @@ exports[`renders properly 1`] = `
               "paddingRight": 5,
               "paddingTop": 3,
             },
-            undefined,
           ]
         }
       >
         <Text
-          className="sc-bdVaJa bDWFJH"
+          className="css-1wui850 sc-bdVaJa bDWFJH"
           fontFamily="Unica77LL-Medium"
-          fontSize="8px"
-          lineHeight={8}
+          fontSize="10px"
+          lineHeight="14px"
           style={
             Array [
               Object {
                 "fontFamily": "Unica77LL-Medium",
-                "fontSize": 8,
-                "lineHeight": 8,
+                "fontSize": 10,
+                "lineHeight": 14,
               },
               Object {
                 "paddingTop": 1,
@@ -1139,21 +1085,20 @@ exports[`renders properly 1`] = `
               "paddingRight": 5,
               "paddingTop": 3,
             },
-            undefined,
           ]
         }
       >
         <Text
-          className="sc-bdVaJa bDWFJH"
+          className="css-1wui850 sc-bdVaJa bDWFJH"
           fontFamily="Unica77LL-Medium"
-          fontSize="8px"
-          lineHeight={8}
+          fontSize="10px"
+          lineHeight="14px"
           style={
             Array [
               Object {
                 "fontFamily": "Unica77LL-Medium",
-                "fontSize": 8,
-                "lineHeight": 8,
+                "fontSize": 10,
+                "lineHeight": 14,
               },
               Object {
                 "paddingTop": 1,
@@ -1167,34 +1112,27 @@ exports[`renders properly 1`] = `
     </View>
   </View>
   <View
-    flexDirection="row"
-    mb="2px"
+    className="css-lyoc09"
     style={
       Array [
         Object {
           "display": "flex",
-          "flexDirection": "row",
-          "marginBottom": 2,
         },
-        undefined,
       ]
     }
   >
     <Text
-      className="sc-bdVaJa bDWFJH"
-      color="#000"
+      className="css-1iizi73 sc-bdVaJa bDWFJH"
       fontFamily="Unica77LL-Medium"
-      fontSize="13px"
-      lineHeight="18px"
+      fontSize="12px"
+      lineHeight="16px"
       style={
         Array [
           Object {
-            "color": "#000",
             "fontFamily": "Unica77LL-Medium",
-            "fontSize": 13,
-            "lineHeight": 18,
+            "fontSize": 12,
+            "lineHeight": 16,
           },
-          undefined,
         ]
       }
     >
@@ -1202,20 +1140,17 @@ exports[`renders properly 1`] = `
        
     </Text>
     <Text
-      className="sc-bdVaJa bDWFJH"
-      color="#666"
+      className="css-1e758l9 sc-bdVaJa bDWFJH"
       fontFamily="Unica77LL-Regular"
       fontSize="12px"
       lineHeight="16px"
       style={
         Array [
           Object {
-            "color": "#666",
             "fontFamily": "Unica77LL-Regular",
             "fontSize": 12,
             "lineHeight": 16,
           },
-          undefined,
         ]
       }
     />

@@ -13,7 +13,7 @@ interface State {
 }
 
 export class DurationProvider extends React.Component<Props, State> {
-  private intervalId: number
+  private intervalId: any // For some reason this is type-checking against NodeJS.Interval
 
   constructor(props) {
     super(props)

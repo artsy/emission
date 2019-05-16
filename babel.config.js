@@ -21,7 +21,8 @@ module.exports = function(api) {
       ["@babel/plugin-proposal-decorators", { legacy: true }],
       ["@babel/plugin-proposal-class-properties", { loose: true }],
       ["relay", { artifactDirectory: "./src/__generated__" }],
+      ["@styled-system/babel-plugin"],
     ],
-    presets: ["module:metro-react-native-babel-preset", "@babel/preset-typescript"],
+    presets: ["module:metro-react-native-babel-preset", "@babel/preset-typescript", "@emotion/babel-preset-css-prop"],
   }
 }

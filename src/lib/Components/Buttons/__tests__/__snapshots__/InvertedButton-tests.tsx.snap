@@ -23,20 +23,17 @@ exports[`InvertedButton accepts textStyle prop 1`] = `
   }
 >
   <Text
-    className="sc-bdVaJa bDWFJH"
-    color="white"
+    className="css-kbn7if sc-bdVaJa bDWFJH"
     fontFamily="Unica77LL-Medium"
     fontSize="14px"
     lineHeight="24px"
     style={
       Array [
         Object {
-          "color": "white",
           "fontFamily": "Unica77LL-Medium",
           "fontSize": 14,
           "lineHeight": 24,
         },
-        undefined,
       ]
     }
   >
@@ -68,20 +65,17 @@ exports[`InvertedButton renders properly 1`] = `
   }
 >
   <Text
-    className="sc-bdVaJa bDWFJH"
-    color="white"
+    className="css-kbn7if sc-bdVaJa bDWFJH"
     fontFamily="Unica77LL-Medium"
     fontSize="14px"
     lineHeight="24px"
     style={
       Array [
         Object {
-          "color": "white",
           "fontFamily": "Unica77LL-Medium",
           "fontSize": 14,
           "lineHeight": 24,
         },
-        undefined,
       ]
     }
   >

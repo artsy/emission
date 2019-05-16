@@ -2,36 +2,23 @@
 
 exports[`renders properly 1`] = `
 <View
-  flex={1}
-  flexDirection="column"
-  justifyContent="space-between"
-  m={0}
+  className="css-6fsl11-Container"
   style={
     Array [
-      Object {
-        "flexBasis": 0,
-        "flexGrow": 1,
-        "flexShrink": 1,
-        "marginBottom": 0,
-        "marginLeft": 0,
-        "marginRight": 0,
-        "marginTop": 0,
-      },
-      undefined,
+      Object {},
     ]
   }
 >
   <View>
     <Image
       accessible={true}
-      left={10}
+      className="css-18ygu8q"
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
       onResponderTerminate={[Function]}
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
-      position="absolute"
       source={
         Object {
           "testUri": "../../../images/angle-left.png",
@@ -39,38 +26,27 @@ exports[`renders properly 1`] = `
       }
       style={
         Array [
-          Object {
-            "position": "absolute",
-          },
+          Object {},
           Object {
             "zIndex": 10,
           },
         ]
       }
-      top={10}
     />
     <Text
-      className="sc-bwzfXH uTxCW"
+      className="css-daktvc-Title sc-bwzfXH uTxCW"
       fontFamily="AGaramondPro-Semibold"
       fontSize="22px"
       lineHeight="28px"
-      m={4}
       style={
         Array [
           Object {
             "fontFamily": "AGaramondPro-Semibold",
             "fontSize": 22,
             "lineHeight": 28,
-            "marginBottom": 20,
-            "marginLeft": 20,
-            "marginRight": 20,
-            "marginTop": 20,
-            "textAlign": "center",
           },
-          undefined,
         ]
       }
-      textAlign="center"
     >
       Your max bid
     </Text>
@@ -81,7 +57,6 @@ exports[`renders properly 1`] = `
         Object {
           "width": "100%",
         },
-        undefined,
       ]
     }
   >
@@ -130,16 +105,10 @@ exports[`renders properly 1`] = `
     />
   </View>
   <View
-    m={4}
+    className="css-1kxrbkv"
     style={
       Array [
-        Object {
-          "marginBottom": 20,
-          "marginLeft": 20,
-          "marginRight": 20,
-          "marginTop": 20,
-        },
-        undefined,
+        Object {},
       ]
     }
   >
@@ -150,7 +119,6 @@ exports[`renders properly 1`] = `
           Object {
             "height": 50,
           },
-          undefined,
         ]
       }
     >

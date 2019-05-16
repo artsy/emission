@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing does it work 1`] = `
+<View
+  className="css-1xpieh6"
+  style={
+    Array [
+      Object {},
+    ]
+  }
+>
+  hi
+</View>
+`;

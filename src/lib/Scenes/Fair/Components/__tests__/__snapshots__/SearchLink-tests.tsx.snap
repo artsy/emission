@@ -3,52 +3,36 @@
 exports[`SearchLink Renders properly 1`] = `
 <View
   accessible={true}
-  background="#F8F8F8"
+  className="css-1aaekxs"
   height={46}
-  mb={1}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  px={2}
-  py={1}
   style={
     Array [
       Object {
-        "backgroundColor": "#F8F8F8",
         "height": 46,
-        "marginBottom": 4,
-        "paddingBottom": 4,
-        "paddingLeft": 8,
-        "paddingRight": 8,
-        "paddingTop": 4,
       },
-      undefined,
     ]
   }
 >
   <View
-    alignItems="center"
-    flexDirection="row"
-    flexWrap="nowrap"
+    className="css-1aoms0w"
     style={
       Array [
         Object {
-          "alignItems": "center",
           "display": "flex",
-          "flexDirection": "row",
-          "flexWrap": "nowrap",
         },
-        undefined,
       ]
     }
   >
     <RNSVGSvgView
       align="xMidYMid"
       bbHeight={14}
-      bbWidth={14}
+      className="css-nqlm4o-SearchIcon"
       height={14}
       meetOrSlice={0}
       minX={0}
@@ -61,18 +45,14 @@ exports[`SearchLink Renders properly 1`] = `
           },
           undefined,
           false,
-          Object {
-            "flex": 0,
-            "height": 14,
-            "width": 14,
-          },
+          null,
         ]
       }
       vbHeight={54}
       vbWidth={54}
-      width={14}
     >
       <RNSVGGroup
+        className="css-pfq4sg"
         fill={
           Array [
             0,
@@ -84,7 +64,6 @@ exports[`SearchLink Renders properly 1`] = `
         }
         fillOpacity={1}
         fillRule={1}
-        font={Object {}}
         matrix={
           Array [
             1,
@@ -180,33 +159,25 @@ exports[`SearchLink Renders properly 1`] = `
       </RNSVGGroup>
     </RNSVGSvgView>
     <View
-      ml={1}
-      pt={0.3}
+      className="css-5knwer"
       style={
         Array [
-          Object {
-            "marginLeft": 4,
-            "paddingTop": 0.3,
-          },
-          undefined,
+          Object {},
         ]
       }
     >
       <Text
-        className="sc-bwzfXH uTxCW"
-        color="#666"
+        className="css-1e758l9 sc-bwzfXH uTxCW"
         fontFamily="AGaramondPro-Regular"
         fontSize="16px"
         lineHeight="24px"
         style={
           Array [
             Object {
-              "color": "#666",
               "fontFamily": "AGaramondPro-Regular",
               "fontSize": 16,
               "lineHeight": 24,
             },
-            undefined,
           ]
         }
       >

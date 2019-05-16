@@ -10,7 +10,6 @@ exports[`Sets up the right view hierarchy 1`] = `
         "flexGrow": 1,
         "flexShrink": 1,
       },
-      undefined,
     ]
   }
 >
@@ -23,21 +22,16 @@ exports[`Sets up the right view hierarchy 1`] = `
           "height": "100%",
           "width": "100%",
         },
-        undefined,
       ]
     }
   >
     <View
+      className="css-lch8qa-BottomAlignedButton"
       onLayout={[Function]}
       style={
-        Array [
-          Object {
-            "flex": 1,
-          },
-          Object {
-            "paddingBottom": 0,
-          },
-        ]
+        Object {
+          "flex": 1,
+        }
       }
     >
       <View
@@ -97,7 +91,6 @@ exports[`Sets up the right view hierarchy 1`] = `
                         "width": "100%",
                         "zIndex": -1,
                       },
-                      undefined,
                     ]
                   }
                 >
@@ -124,7 +117,6 @@ exports[`Sets up the right view hierarchy 1`] = `
                         "fontSize": 20,
                         "height": "100%",
                       },
-                      undefined,
                     ]
                   }
                   underlineColorAndroid="transparent"
@@ -141,7 +133,6 @@ exports[`Sets up the right view hierarchy 1`] = `
               "backgroundColor": "#666666",
               "height": 1,
             },
-            undefined,
           ]
         }
       />
@@ -176,7 +167,6 @@ exports[`Sets up the right view hierarchy 1`] = `
                 "fontSize": 14,
                 "textAlign": "center",
               },
-              undefined,
             ]
           }
         >
@@ -198,7 +188,6 @@ exports[`with an existing state Sets up the right view hierarchy 1`] = `
         "flexGrow": 1,
         "flexShrink": 1,
       },
-      undefined,
     ]
   }
 >
@@ -211,21 +200,16 @@ exports[`with an existing state Sets up the right view hierarchy 1`] = `
           "height": "100%",
           "width": "100%",
         },
-        undefined,
       ]
     }
   >
     <View
+      className="css-lch8qa-BottomAlignedButton"
       onLayout={[Function]}
       style={
-        Array [
-          Object {
-            "flex": 1,
-          },
-          Object {
-            "paddingBottom": 0,
-          },
-        ]
+        Object {
+          "flex": 1,
+        }
       }
     >
       <View
@@ -294,7 +278,6 @@ exports[`with an existing state Sets up the right view hierarchy 1`] = `
                         "fontSize": 20,
                         "height": "100%",
                       },
-                      undefined,
                     ]
                   }
                   underlineColorAndroid="transparent"
@@ -312,7 +295,6 @@ exports[`with an existing state Sets up the right view hierarchy 1`] = `
               "backgroundColor": "#666666",
               "height": 1,
             },
-            undefined,
           ]
         }
       />
@@ -347,7 +329,6 @@ exports[`with an existing state Sets up the right view hierarchy 1`] = `
                 "fontSize": 14,
                 "textAlign": "center",
               },
-              undefined,
             ]
           }
         >

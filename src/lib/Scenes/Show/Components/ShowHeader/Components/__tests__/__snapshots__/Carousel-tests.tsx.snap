@@ -2,14 +2,10 @@
 
 exports[`Carousel renders properly 1`] = `
 <View
-  my={2}
+  className="css-1j9oeic"
   style={
     Array [
-      Object {
-        "marginBottom": 8,
-        "marginTop": 8,
-      },
-      undefined,
+      Object {},
     ]
   }
 >
@@ -67,24 +63,17 @@ exports[`Carousel renders properly 1`] = `
           "height": 350,
           "paddingLeft": 20,
         },
-        undefined,
       ]
     }
   >
     <View>
       <View
-        alignItems="flex-start"
-        mr={1}
-        pr={0}
+        className="css-1fcgr5v"
         style={
           Array [
             Object {
-              "alignItems": "flex-start",
               "display": "flex",
-              "marginRight": 4,
-              "paddingRight": 0,
             },
-            undefined,
           ]
         }
       >
@@ -99,24 +88,17 @@ exports[`Carousel renders properly 1`] = `
                 "marginTop": 150,
                 "width": 650,
               },
-              undefined,
             ]
           }
         />
       </View>
       <View
-        alignItems="flex-start"
-        mr={1}
-        pr={0}
+        className="css-1fcgr5v"
         style={
           Array [
             Object {
-              "alignItems": "flex-start",
               "display": "flex",
-              "marginRight": 4,
-              "paddingRight": 0,
             },
-            undefined,
           ]
         }
       >
@@ -130,24 +112,17 @@ exports[`Carousel renders properly 1`] = `
                 "height": 350,
                 "marginTop": 0,
               },
-              undefined,
             ]
           }
         />
       </View>
       <View
-        alignItems="flex-start"
-        mr={1}
-        pr={0}
+        className="css-1fcgr5v"
         style={
           Array [
             Object {
-              "alignItems": "flex-start",
               "display": "flex",
-              "marginRight": 4,
-              "paddingRight": 0,
             },
-            undefined,
           ]
         }
       >
@@ -161,24 +136,17 @@ exports[`Carousel renders properly 1`] = `
                 "height": 350,
                 "marginTop": 0,
               },
-              undefined,
             ]
           }
         />
       </View>
       <View
-        alignItems="flex-start"
-        mr={1}
-        pr={0}
+        className="css-1fcgr5v"
         style={
           Array [
             Object {
-              "alignItems": "flex-start",
               "display": "flex",
-              "marginRight": 4,
-              "paddingRight": 0,
             },
-            undefined,
           ]
         }
       >
@@ -192,24 +160,17 @@ exports[`Carousel renders properly 1`] = `
                 "height": 350,
                 "marginTop": 0,
               },
-              undefined,
             ]
           }
         />
       </View>
       <View
-        alignItems="flex-start"
-        mr={1}
-        pr={0}
+        className="css-1fcgr5v"
         style={
           Array [
             Object {
-              "alignItems": "flex-start",
               "display": "flex",
-              "marginRight": 4,
-              "paddingRight": 0,
             },
-            undefined,
           ]
         }
       >
@@ -223,24 +184,17 @@ exports[`Carousel renders properly 1`] = `
                 "height": 350,
                 "marginTop": 0,
               },
-              undefined,
             ]
           }
         />
       </View>
       <View
-        alignItems="flex-start"
-        mr={1}
-        pr={0}
+        className="css-1fcgr5v"
         style={
           Array [
             Object {
-              "alignItems": "flex-start",
               "display": "flex",
-              "marginRight": 4,
-              "paddingRight": 0,
             },
-            undefined,
           ]
         }
       >
@@ -254,24 +208,17 @@ exports[`Carousel renders properly 1`] = `
                 "height": 350,
                 "marginTop": 0,
               },
-              undefined,
             ]
           }
         />
       </View>
       <View
-        alignItems="flex-start"
-        mr={1}
-        pr={0}
+        className="css-1fcgr5v"
         style={
           Array [
             Object {
-              "alignItems": "flex-start",
               "display": "flex",
-              "marginRight": 4,
-              "paddingRight": 0,
             },
-            undefined,
           ]
         }
       >
@@ -285,24 +232,17 @@ exports[`Carousel renders properly 1`] = `
                 "height": 350,
                 "marginTop": 0,
               },
-              undefined,
             ]
           }
         />
       </View>
       <View
-        alignItems="flex-start"
-        mr={1}
-        pr={0}
+        className="css-1fcgr5v"
         style={
           Array [
             Object {
-              "alignItems": "flex-start",
               "display": "flex",
-              "marginRight": 4,
-              "paddingRight": 0,
             },
-            undefined,
           ]
         }
       >
@@ -316,24 +256,17 @@ exports[`Carousel renders properly 1`] = `
                 "height": 350,
                 "marginTop": 0,
               },
-              undefined,
             ]
           }
         />
       </View>
       <View
-        alignItems="flex-start"
-        mr={1}
-        pr={0}
+        className="css-1fcgr5v"
         style={
           Array [
             Object {
-              "alignItems": "flex-start",
               "display": "flex",
-              "marginRight": 4,
-              "paddingRight": 0,
             },
-            undefined,
           ]
         }
       >
@@ -347,24 +280,17 @@ exports[`Carousel renders properly 1`] = `
                 "height": 350,
                 "marginTop": 0,
               },
-              undefined,
             ]
           }
         />
       </View>
       <View
-        alignItems="flex-start"
-        mr={2}
-        pr={2}
+        className="css-1ttsi3g"
         style={
           Array [
             Object {
-              "alignItems": "flex-start",
               "display": "flex",
-              "marginRight": 8,
-              "paddingRight": 8,
             },
-            undefined,
           ]
         }
       >
@@ -378,7 +304,6 @@ exports[`Carousel renders properly 1`] = `
                 "height": 350,
                 "marginTop": 0,
               },
-              undefined,
             ]
           }
         />

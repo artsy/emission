@@ -17,23 +17,16 @@ exports[`looks correct when rendered 1`] = `
   }
 >
   <View
+    className="css-1yp8kwr"
     height={200}
-    mr={2}
-    my={15}
     style={
       Array [
         Object {
           "display": "flex",
           "height": 200,
-          "marginBottom": 15,
-          "marginRight": 20,
-          "marginTop": 15,
-          "width": 650,
         },
-        undefined,
       ]
     }
-    width={650}
   >
     <AROpaqueImageView
       imageURL="https://d32dm0rphc51dk.cloudfront.net/6HYZ-tKaXLrcqXCfYxNZQQ/large.jpg"
@@ -51,24 +44,20 @@ exports[`looks correct when rendered 1`] = `
       }
     />
     <View
-      my={2}
+      className="css-1j9oeic"
       style={
         Array [
           Object {
             "display": "flex",
-            "marginBottom": 20,
-            "marginTop": 20,
           },
-          undefined,
         ]
       }
     >
       <Text
-        className="sc-bdVaJa bDWFJH"
+        className="css-1tgix3g sc-bdVaJa bDWFJH"
         fontFamily="Unica77LL-Medium"
         fontSize="12px"
         lineHeight="16px"
-        mb={0.5}
         numberOfLines={1}
         style={
           Array [
@@ -76,49 +65,41 @@ exports[`looks correct when rendered 1`] = `
               "fontFamily": "Unica77LL-Medium",
               "fontSize": 12,
               "lineHeight": 16,
-              "marginBottom": 5,
             },
-            undefined,
           ]
         }
       >
         Delicate Power: The Delicacy and Complexity of Egg Tempera
       </Text>
       <Text
-        className="sc-bwzfXH uTxCW"
-        color="black60"
+        className="css-2g31kl sc-bwzfXH uTxCW"
         fontFamily="AGaramondPro-Regular"
         fontSize="14px"
         lineHeight="18px"
         style={
           Array [
             Object {
-              "color": "#666",
               "fontFamily": "AGaramondPro-Regular",
               "fontSize": 14,
               "lineHeight": 18,
             },
-            undefined,
           ]
         }
       >
         J. Cacciola Gallery
       </Text>
       <Text
-        className="sc-bwzfXH uTxCW"
-        color="black60"
+        className="css-2g31kl sc-bwzfXH uTxCW"
         fontFamily="AGaramondPro-Regular"
         fontSize="14px"
         lineHeight="18px"
         style={
           Array [
             Object {
-              "color": "#666",
               "fontFamily": "AGaramondPro-Regular",
               "fontSize": 14,
               "lineHeight": 18,
             },
-            undefined,
           ]
         }
       />

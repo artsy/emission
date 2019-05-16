@@ -33,7 +33,6 @@ exports[`looks like expected 1`] = `
             "flexShrink": 1,
             "justifyContent": "center",
           },
-          undefined,
         ]
       }
     >
@@ -57,7 +56,6 @@ exports[`looks like expected 1`] = `
               "paddingTop": 20,
               "width": 300,
             },
-            undefined,
           ]
         }
       >
@@ -80,7 +78,6 @@ exports[`looks like expected 1`] = `
                   "fontSize": 14,
                   "lineHeight": 24,
                 },
-                undefined,
               ]
             }
           >
@@ -95,20 +92,17 @@ exports[`looks like expected 1`] = `
           }
         >
           <Text
-            className="sc-bdVaJa bDWFJH"
-            color="#666"
+            className="css-1e758l9 sc-bdVaJa bDWFJH"
             fontFamily="Unica77LL-Regular"
             fontSize="14px"
             lineHeight="24px"
             style={
               Array [
                 Object {
-                  "color": "#666",
                   "fontFamily": "Unica77LL-Regular",
                   "fontSize": 14,
                   "lineHeight": 24,
                 },
-                undefined,
               ]
             }
           >
@@ -137,20 +131,17 @@ exports[`looks like expected 1`] = `
           }
         >
           <Text
-            className="sc-bdVaJa bDWFJH"
-            color="black"
+            className="css-1xu3tth sc-bdVaJa bDWFJH"
             fontFamily="Unica77LL-Medium"
             fontSize="14px"
             lineHeight="24px"
             style={
               Array [
                 Object {
-                  "color": "black",
                   "fontFamily": "Unica77LL-Medium",
                   "fontSize": 14,
                   "lineHeight": 24,
                 },
-                undefined,
               ]
             }
           >

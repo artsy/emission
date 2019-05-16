@@ -17,7 +17,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
           "flexGrow": 1,
           "flexShrink": 1,
         },
-        undefined,
       ]
     }
   >
@@ -30,21 +29,16 @@ exports[`state is set up with empty consignment metadata 1`] = `
             "height": "100%",
             "width": "100%",
           },
-          undefined,
         ]
       }
     >
       <View
+        className="css-lch8qa-BottomAlignedButton"
         onLayout={[Function]}
         style={
-          Array [
-            Object {
-              "flex": 1,
-            },
-            Object {
-              "paddingBottom": 0,
-            },
-          ]
+          Object {
+            "flex": 1,
+          }
         }
       >
         <View
@@ -136,7 +130,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
                                 "fontSize": 20,
                                 "height": 40,
                               },
-                              undefined,
                             ]
                           }
                           underlineColorAndroid="transparent"
@@ -211,7 +204,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
                                 "fontSize": 20,
                                 "height": 40,
                               },
-                              undefined,
                             ]
                           }
                           underlineColorAndroid="transparent"
@@ -286,7 +278,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
                                 "fontSize": 20,
                                 "height": 40,
                               },
-                              undefined,
                             ]
                           }
                           underlineColorAndroid="transparent"
@@ -362,7 +353,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
                                 "fontSize": 20,
                                 "height": 40,
                               },
-                              undefined,
                             ]
                           }
                           underlineColorAndroid="transparent"
@@ -425,7 +415,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
                                 "fontSize": 20,
                                 "height": 40,
                               },
-                              undefined,
                             ]
                           }
                           underlineColorAndroid="transparent"
@@ -501,7 +490,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
                                 "fontSize": 20,
                                 "height": 40,
                               },
-                              undefined,
                             ]
                           }
                           underlineColorAndroid="transparent"
@@ -591,7 +579,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
                                   "marginRight": 8,
                                   "marginTop": 9,
                                 },
-                                undefined,
                               ]
                             }
                           >
@@ -630,9 +617,7 @@ exports[`state is set up with empty consignment metadata 1`] = `
                                   },
                                 ]
                               }
-                            >
-                              IN
-                            </Text>
+                            />
                           </View>
                           <View
                             style={
@@ -746,7 +731,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
                 "backgroundColor": "#666666",
                 "height": 1,
               },
-              undefined,
             ]
           }
         />
@@ -781,7 +765,6 @@ exports[`state is set up with empty consignment metadata 1`] = `
                   "fontSize": 14,
                   "textAlign": "center",
                 },
-                undefined,
               ]
             }
           >
@@ -811,7 +794,6 @@ exports[`state is set up with filled consignment metadata 1`] = `
           "flexGrow": 1,
           "flexShrink": 1,
         },
-        undefined,
       ]
     }
   >
@@ -824,21 +806,16 @@ exports[`state is set up with filled consignment metadata 1`] = `
             "height": "100%",
             "width": "100%",
           },
-          undefined,
         ]
       }
     >
       <View
+        className="css-lch8qa-BottomAlignedButton"
         onLayout={[Function]}
         style={
-          Array [
-            Object {
-              "flex": 1,
-            },
-            Object {
-              "paddingBottom": 0,
-            },
-          ]
+          Object {
+            "flex": 1,
+          }
         }
       >
         <View
@@ -930,7 +907,6 @@ exports[`state is set up with filled consignment metadata 1`] = `
                                 "fontSize": 20,
                                 "height": 40,
                               },
-                              undefined,
                             ]
                           }
                           underlineColorAndroid="transparent"
@@ -1006,7 +982,6 @@ exports[`state is set up with filled consignment metadata 1`] = `
                                 "fontSize": 20,
                                 "height": 40,
                               },
-                              undefined,
                             ]
                           }
                           underlineColorAndroid="transparent"
@@ -1082,7 +1057,6 @@ exports[`state is set up with filled consignment metadata 1`] = `
                                 "fontSize": 20,
                                 "height": 40,
                               },
-                              undefined,
                             ]
                           }
                           underlineColorAndroid="transparent"
@@ -1159,7 +1133,6 @@ exports[`state is set up with filled consignment metadata 1`] = `
                                 "fontSize": 20,
                                 "height": 40,
                               },
-                              undefined,
                             ]
                           }
                           underlineColorAndroid="transparent"
@@ -1223,7 +1196,6 @@ exports[`state is set up with filled consignment metadata 1`] = `
                                 "fontSize": 20,
                                 "height": 40,
                               },
-                              undefined,
                             ]
                           }
                           underlineColorAndroid="transparent"
@@ -1300,7 +1272,6 @@ exports[`state is set up with filled consignment metadata 1`] = `
                                 "fontSize": 20,
                                 "height": 40,
                               },
-                              undefined,
                             ]
                           }
                           underlineColorAndroid="transparent"
@@ -1390,7 +1361,6 @@ exports[`state is set up with filled consignment metadata 1`] = `
                                   "marginRight": 8,
                                   "marginTop": 9,
                                 },
-                                undefined,
                               ]
                             }
                           >
@@ -1429,9 +1399,7 @@ exports[`state is set up with filled consignment metadata 1`] = `
                                   },
                                 ]
                               }
-                            >
-                              IN
-                            </Text>
+                            />
                           </View>
                           <View
                             style={
@@ -1545,7 +1513,6 @@ exports[`state is set up with filled consignment metadata 1`] = `
                 "backgroundColor": "#666666",
                 "height": 1,
               },
-              undefined,
             ]
           }
         />
@@ -1580,7 +1547,6 @@ exports[`state is set up with filled consignment metadata 1`] = `
                   "fontSize": 14,
                   "textAlign": "center",
                 },
-                undefined,
               ]
             }
           >

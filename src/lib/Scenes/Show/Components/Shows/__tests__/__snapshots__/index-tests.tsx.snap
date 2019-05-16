@@ -3,18 +3,12 @@
 exports[`looks correct when rendered 1`] = `
 Array [
   <View
-    alignItems="center"
-    flexDirection="row"
-    justifyContent="space-between"
+    className="css-1vn6cky-Shows"
     style={
       Array [
         Object {
-          "alignItems": "center",
           "display": "flex",
-          "flexDirection": "row",
-          "justifyContent": "space-between",
         },
-        undefined,
       ]
     }
   >
@@ -30,7 +24,6 @@ Array [
             "fontSize": 22,
             "lineHeight": 32,
           },
-          undefined,
         ]
       }
     >
@@ -677,23 +670,16 @@ Array [
           }
         >
           <View
+            className="css-1yp8kwr"
             height={200}
-            mr={2}
-            my={15}
             style={
               Array [
                 Object {
                   "display": "flex",
                   "height": 200,
-                  "marginBottom": 15,
-                  "marginRight": 20,
-                  "marginTop": 15,
-                  "width": 650,
                 },
-                undefined,
               ]
             }
-            width={650}
           >
             <AROpaqueImageView
               imageURL="https://d32dm0rphc51dk.cloudfront.net/6HYZ-tKaXLrcqXCfYxNZQQ/large.jpg"
@@ -711,24 +697,20 @@ Array [
               }
             />
             <View
-              my={2}
+              className="css-1j9oeic"
               style={
                 Array [
                   Object {
                     "display": "flex",
-                    "marginBottom": 20,
-                    "marginTop": 20,
                   },
-                  undefined,
                 ]
               }
             >
               <Text
-                className="sc-bdVaJa bDWFJH"
+                className="css-1tgix3g sc-bdVaJa bDWFJH"
                 fontFamily="Unica77LL-Medium"
                 fontSize="12px"
                 lineHeight="16px"
-                mb={0.5}
                 numberOfLines={1}
                 style={
                   Array [
@@ -736,49 +718,41 @@ Array [
                       "fontFamily": "Unica77LL-Medium",
                       "fontSize": 12,
                       "lineHeight": 16,
-                      "marginBottom": 5,
                     },
-                    undefined,
                   ]
                 }
               >
                 Delicate Power: The Delicacy and Complexity of Egg Tempera
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               >
                 J. Cacciola Gallery
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               />
@@ -813,23 +787,16 @@ Array [
           }
         >
           <View
+            className="css-1yp8kwr"
             height={200}
-            mr={2}
-            my={15}
             style={
               Array [
                 Object {
                   "display": "flex",
                   "height": 200,
-                  "marginBottom": 15,
-                  "marginRight": 20,
-                  "marginTop": 15,
-                  "width": 650,
                 },
-                undefined,
               ]
             }
-            width={650}
           >
             <AROpaqueImageView
               imageURL="https://d32dm0rphc51dk.cloudfront.net/f4ohqDUBJS298uXRvqgZvA/medium.jpg"
@@ -847,24 +814,20 @@ Array [
               }
             />
             <View
-              my={2}
+              className="css-1j9oeic"
               style={
                 Array [
                   Object {
                     "display": "flex",
-                    "marginBottom": 20,
-                    "marginTop": 20,
                   },
-                  undefined,
                 ]
               }
             >
               <Text
-                className="sc-bdVaJa bDWFJH"
+                className="css-1tgix3g sc-bdVaJa bDWFJH"
                 fontFamily="Unica77LL-Medium"
                 fontSize="12px"
                 lineHeight="16px"
-                mb={0.5}
                 numberOfLines={1}
                 style={
                   Array [
@@ -872,49 +835,41 @@ Array [
                       "fontFamily": "Unica77LL-Medium",
                       "fontSize": 12,
                       "lineHeight": 16,
-                      "marginBottom": 5,
                     },
-                    undefined,
                   ]
                 }
               >
                 Summer Discoveries: Group Exhibition
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               >
                 J. Cacciola Gallery
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               />
@@ -949,23 +904,16 @@ Array [
           }
         >
           <View
+            className="css-1yp8kwr"
             height={200}
-            mr={2}
-            my={15}
             style={
               Array [
                 Object {
                   "display": "flex",
                   "height": 200,
-                  "marginBottom": 15,
-                  "marginRight": 20,
-                  "marginTop": 15,
-                  "width": 650,
                 },
-                undefined,
               ]
             }
-            width={650}
           >
             <AROpaqueImageView
               imageURL="https://d32dm0rphc51dk.cloudfront.net/YonNiufAG-b6H6ynPQCVnQ/medium.jpg"
@@ -983,24 +931,20 @@ Array [
               }
             />
             <View
-              my={2}
+              className="css-1j9oeic"
               style={
                 Array [
                   Object {
                     "display": "flex",
-                    "marginBottom": 20,
-                    "marginTop": 20,
                   },
-                  undefined,
                 ]
               }
             >
               <Text
-                className="sc-bdVaJa bDWFJH"
+                className="css-1tgix3g sc-bdVaJa bDWFJH"
                 fontFamily="Unica77LL-Medium"
                 fontSize="12px"
                 lineHeight="16px"
-                mb={0.5}
                 numberOfLines={1}
                 style={
                   Array [
@@ -1008,49 +952,41 @@ Array [
                       "fontFamily": "Unica77LL-Medium",
                       "fontSize": 12,
                       "lineHeight": 16,
-                      "marginBottom": 5,
                     },
-                    undefined,
                   ]
                 }
               >
                 Winter Invitational
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               >
                 J. Cacciola Gallery
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               />
@@ -1085,23 +1021,16 @@ Array [
           }
         >
           <View
+            className="css-1yp8kwr"
             height={200}
-            mr={2}
-            my={15}
             style={
               Array [
                 Object {
                   "display": "flex",
                   "height": 200,
-                  "marginBottom": 15,
-                  "marginRight": 20,
-                  "marginTop": 15,
-                  "width": 650,
                 },
-                undefined,
               ]
             }
-            width={650}
           >
             <AROpaqueImageView
               imageURL="https://d32dm0rphc51dk.cloudfront.net/X8vGjbeGeRdpnwLGiyv8PA/medium.jpg"
@@ -1119,24 +1048,20 @@ Array [
               }
             />
             <View
-              my={2}
+              className="css-1j9oeic"
               style={
                 Array [
                   Object {
                     "display": "flex",
-                    "marginBottom": 20,
-                    "marginTop": 20,
                   },
-                  undefined,
                 ]
               }
             >
               <Text
-                className="sc-bdVaJa bDWFJH"
+                className="css-1tgix3g sc-bdVaJa bDWFJH"
                 fontFamily="Unica77LL-Medium"
                 fontSize="12px"
                 lineHeight="16px"
-                mb={0.5}
                 numberOfLines={1}
                 style={
                   Array [
@@ -1144,49 +1069,41 @@ Array [
                       "fontFamily": "Unica77LL-Medium",
                       "fontSize": 12,
                       "lineHeight": 16,
-                      "marginBottom": 5,
                     },
-                    undefined,
                   ]
                 }
               >
                 The Temporal Painter
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               >
                 J. Cacciola Gallery
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               />
@@ -1221,23 +1138,16 @@ Array [
           }
         >
           <View
+            className="css-1yp8kwr"
             height={200}
-            mr={2}
-            my={15}
             style={
               Array [
                 Object {
                   "display": "flex",
                   "height": 200,
-                  "marginBottom": 15,
-                  "marginRight": 20,
-                  "marginTop": 15,
-                  "width": 650,
                 },
-                undefined,
               ]
             }
-            width={650}
           >
             <AROpaqueImageView
               imageURL="https://d32dm0rphc51dk.cloudfront.net/-a1QlTsxnM_pYBCFvYbeDA/larger.jpg"
@@ -1255,24 +1165,20 @@ Array [
               }
             />
             <View
-              my={2}
+              className="css-1j9oeic"
               style={
                 Array [
                   Object {
                     "display": "flex",
-                    "marginBottom": 20,
-                    "marginTop": 20,
                   },
-                  undefined,
                 ]
               }
             >
               <Text
-                className="sc-bdVaJa bDWFJH"
+                className="css-1tgix3g sc-bdVaJa bDWFJH"
                 fontFamily="Unica77LL-Medium"
                 fontSize="12px"
                 lineHeight="16px"
-                mb={0.5}
                 numberOfLines={1}
                 style={
                   Array [
@@ -1280,49 +1186,41 @@ Array [
                       "fontFamily": "Unica77LL-Medium",
                       "fontSize": 12,
                       "lineHeight": 16,
-                      "marginBottom": 5,
                     },
-                    undefined,
                   ]
                 }
               >
                 Incidental Edges
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               >
                 J. Cacciola Gallery
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               />
@@ -1357,23 +1255,16 @@ Array [
           }
         >
           <View
+            className="css-1yp8kwr"
             height={200}
-            mr={2}
-            my={15}
             style={
               Array [
                 Object {
                   "display": "flex",
                   "height": 200,
-                  "marginBottom": 15,
-                  "marginRight": 20,
-                  "marginTop": 15,
-                  "width": 650,
                 },
-                undefined,
               ]
             }
-            width={650}
           >
             <AROpaqueImageView
               imageURL="https://d32dm0rphc51dk.cloudfront.net/9SYq8mu4dH_Z3uf5JYCEIA/larger.jpg"
@@ -1391,24 +1282,20 @@ Array [
               }
             />
             <View
-              my={2}
+              className="css-1j9oeic"
               style={
                 Array [
                   Object {
                     "display": "flex",
-                    "marginBottom": 20,
-                    "marginTop": 20,
                   },
-                  undefined,
                 ]
               }
             >
               <Text
-                className="sc-bdVaJa bDWFJH"
+                className="css-1tgix3g sc-bdVaJa bDWFJH"
                 fontFamily="Unica77LL-Medium"
                 fontSize="12px"
                 lineHeight="16px"
-                mb={0.5}
                 numberOfLines={1}
                 style={
                   Array [
@@ -1416,49 +1303,41 @@ Array [
                       "fontFamily": "Unica77LL-Medium",
                       "fontSize": 12,
                       "lineHeight": 16,
-                      "marginBottom": 5,
                     },
-                    undefined,
                   ]
                 }
               >
                 Reimagine Everything
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               >
                 J. Cacciola Gallery
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               />
@@ -1493,23 +1372,16 @@ Array [
           }
         >
           <View
+            className="css-1yp8kwr"
             height={200}
-            mr={2}
-            my={15}
             style={
               Array [
                 Object {
                   "display": "flex",
                   "height": 200,
-                  "marginBottom": 15,
-                  "marginRight": 20,
-                  "marginTop": 15,
-                  "width": 650,
                 },
-                undefined,
               ]
             }
-            width={650}
           >
             <AROpaqueImageView
               imageURL="https://d32dm0rphc51dk.cloudfront.net/u1p0egGUb1xma9vnSC2gcQ/medium.jpg"
@@ -1527,24 +1399,20 @@ Array [
               }
             />
             <View
-              my={2}
+              className="css-1j9oeic"
               style={
                 Array [
                   Object {
                     "display": "flex",
-                    "marginBottom": 20,
-                    "marginTop": 20,
                   },
-                  undefined,
                 ]
               }
             >
               <Text
-                className="sc-bdVaJa bDWFJH"
+                className="css-1tgix3g sc-bdVaJa bDWFJH"
                 fontFamily="Unica77LL-Medium"
                 fontSize="12px"
                 lineHeight="16px"
-                mb={0.5}
                 numberOfLines={1}
                 style={
                   Array [
@@ -1552,49 +1420,41 @@ Array [
                       "fontFamily": "Unica77LL-Medium",
                       "fontSize": 12,
                       "lineHeight": 16,
-                      "marginBottom": 5,
                     },
-                    undefined,
                   ]
                 }
               >
                 Crossroads
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               >
                 J. Cacciola Gallery
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               />
@@ -1629,23 +1489,16 @@ Array [
           }
         >
           <View
+            className="css-1yp8kwr"
             height={200}
-            mr={2}
-            my={15}
             style={
               Array [
                 Object {
                   "display": "flex",
                   "height": 200,
-                  "marginBottom": 15,
-                  "marginRight": 20,
-                  "marginTop": 15,
-                  "width": 650,
                 },
-                undefined,
               ]
             }
-            width={650}
           >
             <AROpaqueImageView
               imageURL="https://d32dm0rphc51dk.cloudfront.net/Cj1xcyiT6GqgMr2Lun3LeQ/medium.jpg"
@@ -1663,24 +1516,20 @@ Array [
               }
             />
             <View
-              my={2}
+              className="css-1j9oeic"
               style={
                 Array [
                   Object {
                     "display": "flex",
-                    "marginBottom": 20,
-                    "marginTop": 20,
                   },
-                  undefined,
                 ]
               }
             >
               <Text
-                className="sc-bdVaJa bDWFJH"
+                className="css-1tgix3g sc-bdVaJa bDWFJH"
                 fontFamily="Unica77LL-Medium"
                 fontSize="12px"
                 lineHeight="16px"
-                mb={0.5}
                 numberOfLines={1}
                 style={
                   Array [
@@ -1688,49 +1537,41 @@ Array [
                       "fontFamily": "Unica77LL-Medium",
                       "fontSize": 12,
                       "lineHeight": 16,
-                      "marginBottom": 5,
                     },
-                    undefined,
                   ]
                 }
               >
                 Boundless: The Abstract Landscapes of Carole Pierce
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               >
                 J. Cacciola Gallery
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               />
@@ -1765,23 +1606,16 @@ Array [
           }
         >
           <View
+            className="css-1yp8kwr"
             height={200}
-            mr={2}
-            my={15}
             style={
               Array [
                 Object {
                   "display": "flex",
                   "height": 200,
-                  "marginBottom": 15,
-                  "marginRight": 20,
-                  "marginTop": 15,
-                  "width": 650,
                 },
-                undefined,
               ]
             }
-            width={650}
           >
             <AROpaqueImageView
               imageURL="https://d32dm0rphc51dk.cloudfront.net/TSm-rJdHshNGSrB_A-cZnA/large.jpg"
@@ -1799,24 +1633,20 @@ Array [
               }
             />
             <View
-              my={2}
+              className="css-1j9oeic"
               style={
                 Array [
                   Object {
                     "display": "flex",
-                    "marginBottom": 20,
-                    "marginTop": 20,
                   },
-                  undefined,
                 ]
               }
             >
               <Text
-                className="sc-bdVaJa bDWFJH"
+                className="css-1tgix3g sc-bdVaJa bDWFJH"
                 fontFamily="Unica77LL-Medium"
                 fontSize="12px"
                 lineHeight="16px"
-                mb={0.5}
                 numberOfLines={1}
                 style={
                   Array [
@@ -1824,49 +1654,41 @@ Array [
                       "fontFamily": "Unica77LL-Medium",
                       "fontSize": 12,
                       "lineHeight": 16,
-                      "marginBottom": 5,
                     },
-                    undefined,
                   ]
                 }
               >
                 Nature is the Fountain's Head
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               >
                 J. Cacciola Gallery
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               />
@@ -1901,23 +1723,16 @@ Array [
           }
         >
           <View
+            className="css-1yp8kwr"
             height={200}
-            mr={2}
-            my={15}
             style={
               Array [
                 Object {
                   "display": "flex",
                   "height": 200,
-                  "marginBottom": 15,
-                  "marginRight": 20,
-                  "marginTop": 15,
-                  "width": 650,
                 },
-                undefined,
               ]
             }
-            width={650}
           >
             <AROpaqueImageView
               imageURL="https://d32dm0rphc51dk.cloudfront.net/h8fZL59xBrQWNCy_9qrULg/medium.jpg"
@@ -1935,24 +1750,20 @@ Array [
               }
             />
             <View
-              my={2}
+              className="css-1j9oeic"
               style={
                 Array [
                   Object {
                     "display": "flex",
-                    "marginBottom": 20,
-                    "marginTop": 20,
                   },
-                  undefined,
                 ]
               }
             >
               <Text
-                className="sc-bdVaJa bDWFJH"
+                className="css-1tgix3g sc-bdVaJa bDWFJH"
                 fontFamily="Unica77LL-Medium"
                 fontSize="12px"
                 lineHeight="16px"
-                mb={0.5}
                 numberOfLines={1}
                 style={
                   Array [
@@ -1960,49 +1771,41 @@ Array [
                       "fontFamily": "Unica77LL-Medium",
                       "fontSize": 12,
                       "lineHeight": 16,
-                      "marginBottom": 5,
                     },
-                    undefined,
                   ]
                 }
               >
                 2018 Winter Invitational
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               >
                 J. Cacciola Gallery
               </Text>
               <Text
-                className="sc-bwzfXH uTxCW"
-                color="black60"
+                className="css-2g31kl sc-bwzfXH uTxCW"
                 fontFamily="AGaramondPro-Regular"
                 fontSize="14px"
                 lineHeight="18px"
                 style={
                   Array [
                     Object {
-                      "color": "#666",
                       "fontFamily": "AGaramondPro-Regular",
                       "fontSize": 14,
                       "lineHeight": 18,
                     },
-                    undefined,
                   ]
                 }
               />

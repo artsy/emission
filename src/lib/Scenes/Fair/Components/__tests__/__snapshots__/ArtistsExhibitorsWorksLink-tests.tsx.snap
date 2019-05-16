@@ -2,36 +2,27 @@
 
 exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
 <View
-  mb={1}
+  className="css-1cqbdan"
   style={
     Array [
-      Object {
-        "marginBottom": 4,
-      },
-      undefined,
+      Object {},
     ]
   }
 >
   <View
-    flexDirection="row"
-    flexWrap="nowrap"
-    justifyContent="space-between"
+    className="css-1d6vo1"
     style={
       Array [
         Object {
           "display": "flex",
-          "flexDirection": "row",
-          "flexWrap": "nowrap",
-          "justifyContent": "space-between",
         },
-        undefined,
       ]
     }
   >
     <View
       accessible={true}
       align-items="base-line"
-      flexDirection="row"
+      className="css-jftmni-CaretButton"
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -42,14 +33,12 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
         Array [
           Object {
             "display": "flex",
-            "flexDirection": "row",
           },
-          undefined,
         ]
       }
     >
       <Text
-        className="sc-bdVaJa bDWFJH"
+        className="css-onxbld-CaretButton sc-bdVaJa bDWFJH"
         fontFamily="Unica77LL-Medium"
         fontSize="14px"
         lineHeight="20px"
@@ -60,19 +49,16 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
               "fontSize": 14,
               "lineHeight": 20,
             },
-            undefined,
           ]
         }
       >
         Artists
       </Text>
       <View
-        ml={0.5}
+        className="css-uaueeo-CaretButton"
         style={
           Array [
-            Object {
-              "marginLeft": 0.5,
-            },
+            Object {},
             Object {
               "marginTop": 1.5,
             },
@@ -82,7 +68,7 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
         <RNSVGSvgView
           align="xMidYMid"
           bbHeight={14}
-          bbWidth={14}
+          className="css-i0u64s-ChevronIcon"
           height={14}
           meetOrSlice={0}
           minX={0}
@@ -97,18 +83,14 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
                 "top": 1,
               },
               false,
-              Object {
-                "flex": 0,
-                "height": 14,
-                "width": 14,
-              },
+              null,
             ]
           }
           vbHeight={54}
           vbWidth={54}
-          width={14}
         >
           <RNSVGGroup
+            className="css-pfq4sg"
             fill={
               Array [
                 0,
@@ -120,7 +102,6 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
             }
             fillOpacity={1}
             fillRule={1}
-            font={Object {}}
             matrix={
               Array [
                 1,
@@ -166,6 +147,7 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
             y={0}
           >
             <RNSVGGroup
+              className="css-pfq4sg"
               fill={
                 Array [
                   0,
@@ -177,7 +159,6 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
               }
               fillOpacity={1}
               fillRule={1}
-              font={Object {}}
               matrix={
                 Array [
                   1,
@@ -264,7 +245,7 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
     <View
       accessible={true}
       align-items="base-line"
-      flexDirection="row"
+      className="css-jftmni-CaretButton"
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -275,14 +256,12 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
         Array [
           Object {
             "display": "flex",
-            "flexDirection": "row",
           },
-          undefined,
         ]
       }
     >
       <Text
-        className="sc-bdVaJa bDWFJH"
+        className="css-onxbld-CaretButton sc-bdVaJa bDWFJH"
         fontFamily="Unica77LL-Medium"
         fontSize="14px"
         lineHeight="20px"
@@ -293,19 +272,16 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
               "fontSize": 14,
               "lineHeight": 20,
             },
-            undefined,
           ]
         }
       >
         Exhibitors
       </Text>
       <View
-        ml={0.5}
+        className="css-uaueeo-CaretButton"
         style={
           Array [
-            Object {
-              "marginLeft": 0.5,
-            },
+            Object {},
             Object {
               "marginTop": 1.5,
             },
@@ -315,7 +291,7 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
         <RNSVGSvgView
           align="xMidYMid"
           bbHeight={14}
-          bbWidth={14}
+          className="css-i0u64s-ChevronIcon"
           height={14}
           meetOrSlice={0}
           minX={0}
@@ -330,18 +306,14 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
                 "top": 1,
               },
               false,
-              Object {
-                "flex": 0,
-                "height": 14,
-                "width": 14,
-              },
+              null,
             ]
           }
           vbHeight={54}
           vbWidth={54}
-          width={14}
         >
           <RNSVGGroup
+            className="css-pfq4sg"
             fill={
               Array [
                 0,
@@ -353,7 +325,6 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
             }
             fillOpacity={1}
             fillRule={1}
-            font={Object {}}
             matrix={
               Array [
                 1,
@@ -399,6 +370,7 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
             y={0}
           >
             <RNSVGGroup
+              className="css-pfq4sg"
               fill={
                 Array [
                   0,
@@ -410,7 +382,6 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
               }
               fillOpacity={1}
               fillRule={1}
-              font={Object {}}
               matrix={
                 Array [
                   1,
@@ -497,7 +468,7 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
     <View
       accessible={true}
       align-items="base-line"
-      flexDirection="row"
+      className="css-jftmni-CaretButton"
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
@@ -508,14 +479,12 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
         Array [
           Object {
             "display": "flex",
-            "flexDirection": "row",
           },
-          undefined,
         ]
       }
     >
       <Text
-        className="sc-bdVaJa bDWFJH"
+        className="css-onxbld-CaretButton sc-bdVaJa bDWFJH"
         fontFamily="Unica77LL-Medium"
         fontSize="14px"
         lineHeight="20px"
@@ -526,19 +495,16 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
               "fontSize": 14,
               "lineHeight": 20,
             },
-            undefined,
           ]
         }
       >
         Works
       </Text>
       <View
-        ml={0.5}
+        className="css-uaueeo-CaretButton"
         style={
           Array [
-            Object {
-              "marginLeft": 0.5,
-            },
+            Object {},
             Object {
               "marginTop": 1.5,
             },
@@ -548,7 +514,7 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
         <RNSVGSvgView
           align="xMidYMid"
           bbHeight={14}
-          bbWidth={14}
+          className="css-i0u64s-ChevronIcon"
           height={14}
           meetOrSlice={0}
           minX={0}
@@ -563,18 +529,14 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
                 "top": 1,
               },
               false,
-              Object {
-                "flex": 0,
-                "height": 14,
-                "width": 14,
-              },
+              null,
             ]
           }
           vbHeight={54}
           vbWidth={54}
-          width={14}
         >
           <RNSVGGroup
+            className="css-pfq4sg"
             fill={
               Array [
                 0,
@@ -586,7 +548,6 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
             }
             fillOpacity={1}
             fillRule={1}
-            font={Object {}}
             matrix={
               Array [
                 1,
@@ -632,6 +593,7 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
             y={0}
           >
             <RNSVGGroup
+              className="css-pfq4sg"
               fill={
                 Array [
                   0,
@@ -643,7 +605,6 @@ exports[`ArtistsExhibitorsWorksLink Renders correctly 1`] = `
               }
               fillOpacity={1}
               fillRule={1}
-              font={Object {}}
               matrix={
                 Array [
                   1,

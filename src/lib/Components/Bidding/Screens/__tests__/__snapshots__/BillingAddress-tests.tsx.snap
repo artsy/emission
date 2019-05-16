@@ -2,28 +2,23 @@
 
 exports[`renders properly 1`] = `
 <View
+  className="css-xh2dyr"
   onLayout={[Function]}
   style={
-    Array [
-      Object {
-        "flex": 1,
-      },
-      Object {
-        "paddingBottom": 0,
-      },
-    ]
+    Object {
+      "flex": 1,
+    }
   }
 >
   <Image
     accessible={true}
-    left={10}
+    className="css-18ygu8q"
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
     onResponderRelease={[Function]}
     onResponderTerminate={[Function]}
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
-    position="absolute"
     source={
       Object {
         "testUri": "../../../images/angle-left.png",
@@ -31,92 +26,61 @@ exports[`renders properly 1`] = `
     }
     style={
       Array [
-        Object {
-          "position": "absolute",
-        },
+        Object {},
         Object {
           "zIndex": 10,
         },
       ]
     }
-    top={10}
   />
   <RCTScrollView>
     <View>
       <View
-        flex={1}
-        flexDirection="column"
-        justifyContent="space-between"
-        m={4}
+        className="css-3qh1nr-Container"
         style={
           Array [
-            Object {
-              "flexBasis": 0,
-              "flexGrow": 1,
-              "flexShrink": 1,
-              "marginBottom": 20,
-              "marginLeft": 20,
-              "marginRight": 20,
-              "marginTop": 20,
-            },
-            undefined,
+            Object {},
           ]
         }
       >
         <Text
-          className="sc-bwzfXH uTxCW"
+          className="css-15qw3qz-Title sc-bwzfXH uTxCW"
           fontFamily="AGaramondPro-Semibold"
           fontSize="22px"
           lineHeight="28px"
-          m={4}
-          mb={6}
-          mt={0}
           style={
             Array [
               Object {
                 "fontFamily": "AGaramondPro-Semibold",
                 "fontSize": 22,
                 "lineHeight": 28,
-                "marginBottom": 40,
-                "marginLeft": 20,
-                "marginRight": 20,
-                "marginTop": 0,
-                "textAlign": "center",
               },
-              undefined,
             ]
           }
-          textAlign="center"
         >
           Your billing address
         </Text>
         <View
-          mb={4}
+          className="css-z2sxea-StyledInput"
           onLayout={[Function]}
           style={
             Array [
-              Object {
-                "marginBottom": 20,
-              },
-              undefined,
+              Object {},
             ]
           }
         >
           <Text
-            className="sc-bwzfXH uTxCW"
+            className="css-1k3s6nb-StyledInput sc-bwzfXH uTxCW"
             fontFamily="AGaramondPro-Regular"
             fontSize="16px"
             lineHeight="24px"
-            mb={2}
             style={
               Array [
                 Object {
                   "fontFamily": "AGaramondPro-Regular",
                   "fontSize": 16,
                   "lineHeight": 24,
-                  "marginBottom": 5,
                 },
-                undefined,
               ]
             }
           >
@@ -126,69 +90,48 @@ exports[`renders properly 1`] = `
             allowFontScaling={true}
             autoCapitalize="words"
             autoFocus={true}
-            border={1}
-            borderColor="black10"
+            className="css-15j6ge4-StyledInput"
             error={false}
-            fontSize={3}
             inputRef={[Function]}
-            mb={3}
             onBlur={[Function]}
             onChangeText={[Function]}
             onFocus={[Function]}
             onSubmitEditing={[Function]}
-            p={3}
-            pb={2}
             placeholder="Add your full name"
             rejectResponderTermination={true}
             returnKeyType="next"
             style={
               Array [
                 Object {
-                  "borderColor": "#E5E5E5",
-                  "borderStyle": "solid",
-                  "borderWidth": 1,
                   "fontFamily": "AGaramondPro-Regular",
-                  "fontSize": 16,
                   "height": 40,
-                  "marginBottom": 10,
-                  "paddingBottom": 5,
-                  "paddingLeft": 10,
-                  "paddingRight": 10,
-                  "paddingTop": 10,
                 },
-                undefined,
               ]
             }
             underlineColorAndroid="transparent"
           />
         </View>
         <View
-          mb={4}
+          className="css-z2sxea-StyledInput"
           onLayout={[Function]}
           style={
             Array [
-              Object {
-                "marginBottom": 20,
-              },
-              undefined,
+              Object {},
             ]
           }
         >
           <Text
-            className="sc-bwzfXH uTxCW"
+            className="css-1k3s6nb-StyledInput sc-bwzfXH uTxCW"
             fontFamily="AGaramondPro-Regular"
             fontSize="16px"
             lineHeight="24px"
-            mb={2}
             style={
               Array [
                 Object {
                   "fontFamily": "AGaramondPro-Regular",
                   "fontSize": 16,
                   "lineHeight": 24,
-                  "marginBottom": 5,
                 },
-                undefined,
               ]
             }
           >
@@ -197,69 +140,48 @@ exports[`renders properly 1`] = `
           <TextInput
             allowFontScaling={true}
             autoCapitalize="words"
-            border={1}
-            borderColor="black10"
+            className="css-15j6ge4-StyledInput"
             error={false}
-            fontSize={3}
             inputRef={[Function]}
-            mb={3}
             onBlur={[Function]}
             onChangeText={[Function]}
             onFocus={[Function]}
             onSubmitEditing={[Function]}
-            p={3}
-            pb={2}
             placeholder="Add your street address"
             rejectResponderTermination={true}
             returnKeyType="next"
             style={
               Array [
                 Object {
-                  "borderColor": "#E5E5E5",
-                  "borderStyle": "solid",
-                  "borderWidth": 1,
                   "fontFamily": "AGaramondPro-Regular",
-                  "fontSize": 16,
                   "height": 40,
-                  "marginBottom": 10,
-                  "paddingBottom": 5,
-                  "paddingLeft": 10,
-                  "paddingRight": 10,
-                  "paddingTop": 10,
                 },
-                undefined,
               ]
             }
             underlineColorAndroid="transparent"
           />
         </View>
         <View
-          mb={4}
+          className="css-z2sxea-StyledInput"
           onLayout={[Function]}
           style={
             Array [
-              Object {
-                "marginBottom": 20,
-              },
-              undefined,
+              Object {},
             ]
           }
         >
           <Text
-            className="sc-bwzfXH uTxCW"
+            className="css-1k3s6nb-StyledInput sc-bwzfXH uTxCW"
             fontFamily="AGaramondPro-Regular"
             fontSize="16px"
             lineHeight="24px"
-            mb={2}
             style={
               Array [
                 Object {
                   "fontFamily": "AGaramondPro-Regular",
                   "fontSize": 16,
                   "lineHeight": 24,
-                  "marginBottom": 5,
                 },
-                undefined,
               ]
             }
           >
@@ -268,69 +190,48 @@ exports[`renders properly 1`] = `
           <TextInput
             allowFontScaling={true}
             autoCapitalize="words"
-            border={1}
-            borderColor="black10"
+            className="css-15j6ge4-StyledInput"
             error={false}
-            fontSize={3}
             inputRef={[Function]}
-            mb={3}
             onBlur={[Function]}
             onChangeText={[Function]}
             onFocus={[Function]}
             onSubmitEditing={[Function]}
-            p={3}
-            pb={2}
             placeholder="Add your apt, floor, suite, etc."
             rejectResponderTermination={true}
             returnKeyType="next"
             style={
               Array [
                 Object {
-                  "borderColor": "#E5E5E5",
-                  "borderStyle": "solid",
-                  "borderWidth": 1,
                   "fontFamily": "AGaramondPro-Regular",
-                  "fontSize": 16,
                   "height": 40,
-                  "marginBottom": 10,
-                  "paddingBottom": 5,
-                  "paddingLeft": 10,
-                  "paddingRight": 10,
-                  "paddingTop": 10,
                 },
-                undefined,
               ]
             }
             underlineColorAndroid="transparent"
           />
         </View>
         <View
-          mb={4}
+          className="css-z2sxea-StyledInput"
           onLayout={[Function]}
           style={
             Array [
-              Object {
-                "marginBottom": 20,
-              },
-              undefined,
+              Object {},
             ]
           }
         >
           <Text
-            className="sc-bwzfXH uTxCW"
+            className="css-1k3s6nb-StyledInput sc-bwzfXH uTxCW"
             fontFamily="AGaramondPro-Regular"
             fontSize="16px"
             lineHeight="24px"
-            mb={2}
             style={
               Array [
                 Object {
                   "fontFamily": "AGaramondPro-Regular",
                   "fontSize": 16,
                   "lineHeight": 24,
-                  "marginBottom": 5,
                 },
-                undefined,
               ]
             }
           >
@@ -339,69 +240,48 @@ exports[`renders properly 1`] = `
           <TextInput
             allowFontScaling={true}
             autoCapitalize="words"
-            border={1}
-            borderColor="black10"
+            className="css-15j6ge4-StyledInput"
             error={false}
-            fontSize={3}
             inputRef={[Function]}
-            mb={3}
             onBlur={[Function]}
             onChangeText={[Function]}
             onFocus={[Function]}
             onSubmitEditing={[Function]}
-            p={3}
-            pb={2}
             placeholder="Add your city"
             rejectResponderTermination={true}
             returnKeyType="next"
             style={
               Array [
                 Object {
-                  "borderColor": "#E5E5E5",
-                  "borderStyle": "solid",
-                  "borderWidth": 1,
                   "fontFamily": "AGaramondPro-Regular",
-                  "fontSize": 16,
                   "height": 40,
-                  "marginBottom": 10,
-                  "paddingBottom": 5,
-                  "paddingLeft": 10,
-                  "paddingRight": 10,
-                  "paddingTop": 10,
                 },
-                undefined,
               ]
             }
             underlineColorAndroid="transparent"
           />
         </View>
         <View
-          mb={4}
+          className="css-z2sxea-StyledInput"
           onLayout={[Function]}
           style={
             Array [
-              Object {
-                "marginBottom": 20,
-              },
-              undefined,
+              Object {},
             ]
           }
         >
           <Text
-            className="sc-bwzfXH uTxCW"
+            className="css-1k3s6nb-StyledInput sc-bwzfXH uTxCW"
             fontFamily="AGaramondPro-Regular"
             fontSize="16px"
             lineHeight="24px"
-            mb={2}
             style={
               Array [
                 Object {
                   "fontFamily": "AGaramondPro-Regular",
                   "fontSize": 16,
                   "lineHeight": 24,
-                  "marginBottom": 5,
                 },
-                undefined,
               ]
             }
           >
@@ -410,69 +290,48 @@ exports[`renders properly 1`] = `
           <TextInput
             allowFontScaling={true}
             autoCapitalize="words"
-            border={1}
-            borderColor="black10"
+            className="css-15j6ge4-StyledInput"
             error={false}
-            fontSize={3}
             inputRef={[Function]}
-            mb={3}
             onBlur={[Function]}
             onChangeText={[Function]}
             onFocus={[Function]}
             onSubmitEditing={[Function]}
-            p={3}
-            pb={2}
             placeholder="Add state, province, or region"
             rejectResponderTermination={true}
             returnKeyType="next"
             style={
               Array [
                 Object {
-                  "borderColor": "#E5E5E5",
-                  "borderStyle": "solid",
-                  "borderWidth": 1,
                   "fontFamily": "AGaramondPro-Regular",
-                  "fontSize": 16,
                   "height": 40,
-                  "marginBottom": 10,
-                  "paddingBottom": 5,
-                  "paddingLeft": 10,
-                  "paddingRight": 10,
-                  "paddingTop": 10,
                 },
-                undefined,
               ]
             }
             underlineColorAndroid="transparent"
           />
         </View>
         <View
-          mb={4}
+          className="css-z2sxea-StyledInput"
           onLayout={[Function]}
           style={
             Array [
-              Object {
-                "marginBottom": 20,
-              },
-              undefined,
+              Object {},
             ]
           }
         >
           <Text
-            className="sc-bwzfXH uTxCW"
+            className="css-1k3s6nb-StyledInput sc-bwzfXH uTxCW"
             fontFamily="AGaramondPro-Regular"
             fontSize="16px"
             lineHeight="24px"
-            mb={2}
             style={
               Array [
                 Object {
                   "fontFamily": "AGaramondPro-Regular",
                   "fontSize": 16,
                   "lineHeight": 24,
-                  "marginBottom": 5,
                 },
-                undefined,
               ]
             }
           >
@@ -481,69 +340,48 @@ exports[`renders properly 1`] = `
           <TextInput
             allowFontScaling={true}
             autoCapitalize="words"
-            border={1}
-            borderColor="black10"
+            className="css-15j6ge4-StyledInput"
             error={false}
-            fontSize={3}
             inputRef={[Function]}
-            mb={3}
             onBlur={[Function]}
             onChangeText={[Function]}
             onFocus={[Function]}
             onSubmitEditing={[Function]}
-            p={3}
-            pb={2}
             placeholder="Add your postal code"
             rejectResponderTermination={true}
             returnKeyType="next"
             style={
               Array [
                 Object {
-                  "borderColor": "#E5E5E5",
-                  "borderStyle": "solid",
-                  "borderWidth": 1,
                   "fontFamily": "AGaramondPro-Regular",
-                  "fontSize": 16,
                   "height": 40,
-                  "marginBottom": 10,
-                  "paddingBottom": 5,
-                  "paddingLeft": 10,
-                  "paddingRight": 10,
-                  "paddingTop": 10,
                 },
-                undefined,
               ]
             }
             underlineColorAndroid="transparent"
           />
         </View>
         <View
-          mb={4}
+          className="css-z2sxea-StyledInput"
           onLayout={[Function]}
           style={
             Array [
-              Object {
-                "marginBottom": 20,
-              },
-              undefined,
+              Object {},
             ]
           }
         >
           <Text
-            className="sc-bwzfXH uTxCW"
+            className="css-1k3s6nb-StyledInput sc-bwzfXH uTxCW"
             fontFamily="AGaramondPro-Regular"
             fontSize="16px"
             lineHeight="24px"
-            mb={2}
             style={
               Array [
                 Object {
                   "fontFamily": "AGaramondPro-Regular",
                   "fontSize": 16,
                   "lineHeight": 24,
-                  "marginBottom": 5,
                 },
-                undefined,
               ]
             }
           >
@@ -552,68 +390,47 @@ exports[`renders properly 1`] = `
           <TextInput
             allowFontScaling={true}
             autoCapitalize="words"
-            border={1}
-            borderColor="black10"
+            className="css-15j6ge4-StyledInput"
             error={false}
-            fontSize={3}
             inputRef={[Function]}
-            mb={3}
             onBlur={[Function]}
             onChangeText={[Function]}
             onFocus={[Function]}
             onSubmitEditing={[Function]}
-            p={3}
-            pb={2}
             placeholder="Add your phone number"
             rejectResponderTermination={true}
             returnKeyType="next"
             style={
               Array [
                 Object {
-                  "borderColor": "#E5E5E5",
-                  "borderStyle": "solid",
-                  "borderWidth": 1,
                   "fontFamily": "AGaramondPro-Regular",
-                  "fontSize": 16,
                   "height": 40,
-                  "marginBottom": 10,
-                  "paddingBottom": 5,
-                  "paddingLeft": 10,
-                  "paddingRight": 10,
-                  "paddingTop": 10,
                 },
-                undefined,
               ]
             }
             underlineColorAndroid="transparent"
           />
         </View>
         <View
-          mb={4}
+          className="css-1itv5e3"
           style={
             Array [
-              Object {
-                "marginBottom": 20,
-              },
-              undefined,
+              Object {},
             ]
           }
         >
           <Text
-            className="sc-bwzfXH uTxCW"
+            className="css-wlea3r sc-bwzfXH uTxCW"
             fontFamily="AGaramondPro-Regular"
             fontSize="16px"
             lineHeight="24px"
-            mb={2}
             style={
               Array [
                 Object {
                   "fontFamily": "AGaramondPro-Regular",
                   "fontSize": 16,
                   "lineHeight": 24,
-                  "marginBottom": 5,
                 },
-                undefined,
               ]
             }
           >
@@ -621,48 +438,31 @@ exports[`renders properly 1`] = `
           </Text>
           <View
             accessible={true}
-            border={1}
-            borderColor="black10"
-            mb={3}
+            className="css-xdnqeh"
             onResponderGrant={[Function]}
             onResponderMove={[Function]}
             onResponderRelease={[Function]}
             onResponderTerminate={[Function]}
             onResponderTerminationRequest={[Function]}
             onStartShouldSetResponder={[Function]}
-            p={3}
-            pb={2}
             style={
               Array [
-                Object {
-                  "borderColor": "#E5E5E5",
-                  "borderStyle": "solid",
-                  "borderWidth": 1,
-                  "marginBottom": 10,
-                  "paddingBottom": 5,
-                  "paddingLeft": 10,
-                  "paddingRight": 10,
-                  "paddingTop": 10,
-                },
-                undefined,
+                Object {},
               ]
             }
           >
             <Text
-              className="sc-bwzfXH uTxCW"
-              color="black30"
+              className="css-oi1b5w sc-bwzfXH uTxCW"
               fontFamily="AGaramondPro-Regular"
               fontSize="16px"
               lineHeight="24px"
               style={
                 Array [
                   Object {
-                    "color": "#C2C2C2",
                     "fontFamily": "AGaramondPro-Regular",
                     "fontSize": 16,
                     "lineHeight": 24,
                   },
-                  undefined,
                 ]
               }
             >
@@ -677,7 +477,6 @@ exports[`renders properly 1`] = `
               Object {
                 "height": 50,
               },
-              undefined,
             ]
           }
         >

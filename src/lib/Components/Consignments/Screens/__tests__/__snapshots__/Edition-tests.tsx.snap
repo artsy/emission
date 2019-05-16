@@ -10,7 +10,6 @@ exports[`Sets up the right view hierarchy 1`] = `
         "flexGrow": 1,
         "flexShrink": 1,
       },
-      undefined,
     ]
   }
 >
@@ -23,21 +22,16 @@ exports[`Sets up the right view hierarchy 1`] = `
           "height": "100%",
           "width": "100%",
         },
-        undefined,
       ]
     }
   >
     <View
+      className="css-lch8qa-BottomAlignedButton"
       onLayout={[Function]}
       style={
-        Array [
-          Object {
-            "flex": 1,
-          },
-          Object {
-            "paddingBottom": 0,
-          },
-        ]
+        Object {
+          "flex": 1,
+        }
       }
     >
       <View
@@ -155,7 +149,6 @@ exports[`Sets up the right view hierarchy 1`] = `
                                 "marginRight": 8,
                                 "marginTop": 9,
                               },
-                              undefined,
                             ]
                           }
                         >
@@ -194,9 +187,7 @@ exports[`Sets up the right view hierarchy 1`] = `
                                 },
                               ]
                             }
-                          >
-                            NO
-                          </Text>
+                          />
                         </View>
                         <View
                           style={
@@ -310,7 +301,6 @@ exports[`Sets up the right view hierarchy 1`] = `
                                 "marginRight": 8,
                                 "marginTop": 9,
                               },
-                              undefined,
                             ]
                           }
                         >
@@ -349,9 +339,7 @@ exports[`Sets up the right view hierarchy 1`] = `
                                 },
                               ]
                             }
-                          >
-                            NO
-                          </Text>
+                          />
                         </View>
                         <View
                           style={
@@ -465,7 +453,6 @@ exports[`Sets up the right view hierarchy 1`] = `
                                 "marginRight": 8,
                                 "marginTop": 9,
                               },
-                              undefined,
                             ]
                           }
                         >
@@ -504,9 +491,7 @@ exports[`Sets up the right view hierarchy 1`] = `
                                 },
                               ]
                             }
-                          >
-                            NO
-                          </Text>
+                          />
                         </View>
                         <View
                           style={
@@ -557,7 +542,6 @@ exports[`Sets up the right view hierarchy 1`] = `
               "backgroundColor": "#666666",
               "height": 1,
             },
-            undefined,
           ]
         }
       />
@@ -592,7 +576,6 @@ exports[`Sets up the right view hierarchy 1`] = `
                 "fontSize": 14,
                 "textAlign": "center",
               },
-              undefined,
             ]
           }
         >
@@ -614,7 +597,6 @@ exports[`Shows and additional 2 inputs when there's edition info 1`] = `
         "flexGrow": 1,
         "flexShrink": 1,
       },
-      undefined,
     ]
   }
 >
@@ -627,21 +609,16 @@ exports[`Shows and additional 2 inputs when there's edition info 1`] = `
           "height": "100%",
           "width": "100%",
         },
-        undefined,
       ]
     }
   >
     <View
+      className="css-lch8qa-BottomAlignedButton"
       onLayout={[Function]}
       style={
-        Array [
-          Object {
-            "flex": 1,
-          },
-          Object {
-            "paddingBottom": 0,
-          },
-        ]
+        Object {
+          "flex": 1,
+        }
       }
     >
       <View
@@ -759,7 +736,6 @@ exports[`Shows and additional 2 inputs when there's edition info 1`] = `
                                 "marginRight": 8,
                                 "marginTop": 9,
                               },
-                              undefined,
                             ]
                           }
                         >
@@ -779,9 +755,7 @@ exports[`Shows and additional 2 inputs when there's edition info 1`] = `
                                 },
                               ]
                             }
-                          >
-                            YES
-                          </Text>
+                          />
                           <Text
                             style={
                               Array [
@@ -896,7 +870,6 @@ exports[`Shows and additional 2 inputs when there's edition info 1`] = `
                                 "fontSize": 20,
                                 "height": 40,
                               },
-                              undefined,
                             ]
                           }
                           underlineColorAndroid="transparent"
@@ -956,7 +929,6 @@ exports[`Shows and additional 2 inputs when there's edition info 1`] = `
                                 "fontSize": 20,
                                 "height": 40,
                               },
-                              undefined,
                             ]
                           }
                           underlineColorAndroid="transparent"
@@ -1048,7 +1020,6 @@ exports[`Shows and additional 2 inputs when there's edition info 1`] = `
                                 "marginRight": 8,
                                 "marginTop": 9,
                               },
-                              undefined,
                             ]
                           }
                         >
@@ -1087,9 +1058,7 @@ exports[`Shows and additional 2 inputs when there's edition info 1`] = `
                                 },
                               ]
                             }
-                          >
-                            NO
-                          </Text>
+                          />
                         </View>
                         <View
                           style={
@@ -1203,7 +1172,6 @@ exports[`Shows and additional 2 inputs when there's edition info 1`] = `
                                 "marginRight": 8,
                                 "marginTop": 9,
                               },
-                              undefined,
                             ]
                           }
                         >
@@ -1242,9 +1210,7 @@ exports[`Shows and additional 2 inputs when there's edition info 1`] = `
                                 },
                               ]
                             }
-                          >
-                            NO
-                          </Text>
+                          />
                         </View>
                         <View
                           style={
@@ -1295,7 +1261,6 @@ exports[`Shows and additional 2 inputs when there's edition info 1`] = `
               "backgroundColor": "#666666",
               "height": 1,
             },
-            undefined,
           ]
         }
       />
@@ -1330,7 +1295,6 @@ exports[`Shows and additional 2 inputs when there's edition info 1`] = `
                 "fontSize": 14,
                 "textAlign": "center",
               },
-              undefined,
             ]
           }
         >

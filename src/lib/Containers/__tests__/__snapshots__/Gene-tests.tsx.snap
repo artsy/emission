@@ -2,8 +2,8 @@
 
 exports[`looks like expected 1`] = `
 <react-native-parallax-scroll-view
-  backgroundColor="white"
   backgroundScrollSpeed={1}
+  className="css-cxmp86"
   contentBackgroundColor="white"
   fadeOutForeground={false}
   onChangeHeaderVisibility={[Function]}

@@ -46,7 +46,6 @@ exports[`Search states:  Looks right when Found four results 1`] = `
               "fontSize": 20,
               "height": 40,
             },
-            undefined,
           ]
         }
         underlineColorAndroid="transparent"
@@ -88,7 +87,6 @@ exports[`Search states:  Looks right when Found four results 1`] = `
               "height": 40,
               "marginBottom": 10,
             },
-            undefined,
           ]
         }
       >
@@ -116,7 +114,6 @@ exports[`Search states:  Looks right when Found four results 1`] = `
                   "height": 40,
                   "width": 40,
                 },
-                undefined,
               ]
             }
           />
@@ -130,7 +127,6 @@ exports[`Search states:  Looks right when Found four results 1`] = `
                   "marginLeft": 13,
                   "paddingTop": 8,
                 },
-                undefined,
               ]
             }
           >
@@ -153,7 +149,6 @@ exports[`Search states:  Looks right when Found four results 1`] = `
               "height": 40,
               "marginBottom": 10,
             },
-            undefined,
           ]
         }
       >
@@ -181,7 +176,6 @@ exports[`Search states:  Looks right when Found four results 1`] = `
                   "height": 40,
                   "width": 40,
                 },
-                undefined,
               ]
             }
           />
@@ -195,7 +189,6 @@ exports[`Search states:  Looks right when Found four results 1`] = `
                   "marginLeft": 13,
                   "paddingTop": 8,
                 },
-                undefined,
               ]
             }
           >
@@ -218,7 +211,6 @@ exports[`Search states:  Looks right when Found four results 1`] = `
               "height": 40,
               "marginBottom": 10,
             },
-            undefined,
           ]
         }
       >
@@ -246,7 +238,6 @@ exports[`Search states:  Looks right when Found four results 1`] = `
                   "height": 40,
                   "width": 40,
                 },
-                undefined,
               ]
             }
           />
@@ -260,7 +251,6 @@ exports[`Search states:  Looks right when Found four results 1`] = `
                   "marginLeft": 13,
                   "paddingTop": 8,
                 },
-                undefined,
               ]
             }
           >
@@ -283,7 +273,6 @@ exports[`Search states:  Looks right when Found four results 1`] = `
               "height": 40,
               "marginBottom": 10,
             },
-            undefined,
           ]
         }
       >
@@ -311,7 +300,6 @@ exports[`Search states:  Looks right when Found four results 1`] = `
                   "height": 40,
                   "width": 40,
                 },
-                undefined,
               ]
             }
           />
@@ -325,7 +313,6 @@ exports[`Search states:  Looks right when Found four results 1`] = `
                   "marginLeft": 13,
                   "paddingTop": 8,
                 },
-                undefined,
               ]
             }
           >
@@ -384,7 +371,6 @@ exports[`Search states:  Looks right when Found no results 1`] = `
               "fontSize": 20,
               "height": 40,
             },
-            undefined,
           ]
         }
         underlineColorAndroid="transparent"
@@ -419,7 +405,6 @@ exports[`Search states:  Looks right when Found no results 1`] = `
               "fontFamily": "AGaramondPro-Regular",
               "fontSize": 17,
             },
-            undefined,
           ]
         }
       >
@@ -433,7 +418,6 @@ exports[`Search states:  Looks right when Found no results 1`] = `
                 "fontFamily": "AGaramondPro-Italic",
                 "fontSize": 17,
               },
-              undefined,
             ]
           }
         >
@@ -491,7 +475,6 @@ exports[`Search states:  Looks right when Found one result 1`] = `
               "fontSize": 20,
               "height": 40,
             },
-            undefined,
           ]
         }
         underlineColorAndroid="transparent"
@@ -533,7 +516,6 @@ exports[`Search states:  Looks right when Found one result 1`] = `
               "height": 40,
               "marginBottom": 10,
             },
-            undefined,
           ]
         }
       >
@@ -561,7 +543,6 @@ exports[`Search states:  Looks right when Found one result 1`] = `
                   "height": 40,
                   "width": 40,
                 },
-                undefined,
               ]
             }
           />
@@ -575,7 +556,6 @@ exports[`Search states:  Looks right when Found one result 1`] = `
                   "marginLeft": 13,
                   "paddingTop": 8,
                 },
-                undefined,
               ]
             }
           >
@@ -634,7 +614,6 @@ exports[`Search states:  Looks right when Found one result, and searching 1`] = 
               "fontSize": 20,
               "height": 40,
             },
-            undefined,
           ]
         }
         underlineColorAndroid="transparent"
@@ -682,7 +661,6 @@ exports[`Search states:  Looks right when Found one result, and searching 1`] = 
               "height": 40,
               "marginBottom": 10,
             },
-            undefined,
           ]
         }
       >
@@ -710,7 +688,6 @@ exports[`Search states:  Looks right when Found one result, and searching 1`] = 
                   "height": 40,
                   "width": 40,
                 },
-                undefined,
               ]
             }
           />
@@ -724,7 +701,6 @@ exports[`Search states:  Looks right when Found one result, and searching 1`] = 
                   "marginLeft": 13,
                   "paddingTop": 8,
                 },
-                undefined,
               ]
             }
           >
@@ -783,7 +759,6 @@ exports[`Search states:  Looks right when Found two results 1`] = `
               "fontSize": 20,
               "height": 40,
             },
-            undefined,
           ]
         }
         underlineColorAndroid="transparent"
@@ -825,7 +800,6 @@ exports[`Search states:  Looks right when Found two results 1`] = `
               "height": 40,
               "marginBottom": 10,
             },
-            undefined,
           ]
         }
       >
@@ -853,7 +827,6 @@ exports[`Search states:  Looks right when Found two results 1`] = `
                   "height": 40,
                   "width": 40,
                 },
-                undefined,
               ]
             }
           />
@@ -867,7 +840,6 @@ exports[`Search states:  Looks right when Found two results 1`] = `
                   "marginLeft": 13,
                   "paddingTop": 8,
                 },
-                undefined,
               ]
             }
           >
@@ -890,7 +862,6 @@ exports[`Search states:  Looks right when Found two results 1`] = `
               "height": 40,
               "marginBottom": 10,
             },
-            undefined,
           ]
         }
       >
@@ -918,7 +889,6 @@ exports[`Search states:  Looks right when Found two results 1`] = `
                   "height": 40,
                   "width": 40,
                 },
-                undefined,
               ]
             }
           />
@@ -932,7 +902,6 @@ exports[`Search states:  Looks right when Found two results 1`] = `
                   "marginLeft": 13,
                   "paddingTop": 8,
                 },
-                undefined,
               ]
             }
           >
@@ -991,7 +960,6 @@ exports[`Search states:  Looks right when Looking for new results 1`] = `
               "fontSize": 20,
               "height": 40,
             },
-            undefined,
           ]
         }
         underlineColorAndroid="transparent"
@@ -1074,7 +1042,6 @@ exports[`Search states:  Looks right when No query 1`] = `
               "fontSize": 20,
               "height": 40,
             },
-            undefined,
           ]
         }
         underlineColorAndroid="transparent"

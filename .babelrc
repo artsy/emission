@@ -1,7 +1,12 @@
 {
   "plugins": [
-    ["relay", { "artifactDirectory": "./src/__generated__" }],
-    ["@babel/plugin-proposal-decorators", { "legacy": true }]
+    ["relay", {
+      "artifactDirectory": "./src/__generated__"
+    }],
+    ["@babel/plugin-proposal-decorators", {
+      "legacy": true
+    }],
+    ["@styled-system/babel-plugin"]
   ],
-  "presets": ["module:metro-react-native-babel-preset"]
+  "presets": ["module:metro-react-native-babel-preset", "@emotion/babel-preset-css-prop"]
 }

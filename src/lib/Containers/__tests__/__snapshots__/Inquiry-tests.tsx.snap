@@ -11,21 +11,16 @@ exports[`renders correctly 1`] = `
         "flexGrow": 1,
         "flexShrink": 1,
       },
-      undefined,
     ]
   }
 >
   <View
+    className="css-lch8qa-BottomAlignedButton"
     onLayout={[Function]}
     style={
-      Array [
-        Object {
-          "flex": 1,
-        },
-        Object {
-          "paddingBottom": 0,
-        },
-      ]
+      Object {
+        "flex": 1,
+      }
     }
   >
     <View
@@ -44,7 +39,6 @@ exports[`renders correctly 1`] = `
               "marginBottom": 30,
               "marginTop": 10,
             },
-            undefined,
           ]
         }
       >
@@ -55,7 +49,6 @@ exports[`renders correctly 1`] = `
                 "flexDirection": "row",
                 "justifyContent": "space-between",
               },
-              undefined,
             ]
           }
         >
@@ -101,7 +94,6 @@ exports[`renders correctly 1`] = `
                   "alignSelf": "center",
                   "marginTop": 6,
                 },
-                undefined,
               ]
             }
           >
@@ -118,7 +110,6 @@ exports[`renders correctly 1`] = `
                     Object {
                       "fontSize": 12,
                     },
-                    undefined,
                   ],
                   Object {
                     "fontFamily": "AvantGardeGothicITC",
@@ -140,7 +131,6 @@ exports[`renders correctly 1`] = `
                     "marginTop": 5,
                     "minHeight": 12,
                   },
-                  undefined,
                 ]
               }
             >
@@ -158,7 +148,6 @@ exports[`renders correctly 1`] = `
                         "color": "#f1af1b",
                         "marginTop": 5,
                       },
-                      undefined,
                     ],
                     Object {
                       "fontFamily": "AvantGardeGothicITC",
@@ -184,7 +173,6 @@ exports[`renders correctly 1`] = `
                     "color": "white",
                     "paddingRight": 20,
                   },
-                  undefined,
                 ],
                 Object {
                   "fontFamily": "AvantGardeGothicITC",
@@ -205,7 +193,6 @@ exports[`renders correctly 1`] = `
               "marginRight": 20,
               "width": 472,
             },
-            undefined,
           ]
         }
       >
@@ -244,7 +231,6 @@ exports[`renders correctly 1`] = `
                     "marginTop": 12,
                     "width": 80,
                   },
-                  undefined,
                 ]
               }
             />
@@ -252,17 +238,12 @@ exports[`renders correctly 1`] = `
               style={
                 Array [
                   Object {
+                    "alignSelf": "center",
                     "flexBasis": 0,
                     "flexDirection": "column",
                     "flexGrow": 1,
                     "flexShrink": 1,
                   },
-                  Array [
-                    Object {
-                      "alignSelf": "center",
-                    },
-                    undefined,
-                  ],
                 ]
               }
             >
@@ -280,7 +261,6 @@ exports[`renders correctly 1`] = `
                       Object {
                         "fontSize": 14,
                       },
-                      undefined,
                     ],
                     Object {
                       "fontFamily": "AGaramondPro-Regular",
@@ -299,7 +279,6 @@ exports[`renders correctly 1`] = `
                       "marginRight": 12,
                       "marginTop": 3,
                     },
-                    undefined,
                   ]
                 }
               >
@@ -326,7 +305,6 @@ exports[`renders correctly 1`] = `
                         Object {
                           "fontFamily": "AGaramondPro-Regular",
                         },
-                        undefined,
                       ]
                     }
                   >
@@ -352,7 +330,6 @@ exports[`renders correctly 1`] = `
                 "fontSize": 16,
                 "marginTop": 20,
               },
-              undefined,
             ]
           }
           underlineColorAndroid="transparent"
@@ -367,7 +344,6 @@ exports[`renders correctly 1`] = `
             "backgroundColor": "#666666",
             "height": 1,
           },
-          undefined,
         ]
       }
     />
@@ -402,7 +378,6 @@ exports[`renders correctly 1`] = `
               "fontSize": 14,
               "textAlign": "center",
             },
-            undefined,
           ]
         }
       >

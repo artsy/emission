@@ -2,27 +2,19 @@
 
 exports[`renders properly 1`] = `
 <Text
-  className="sc-bwzfXH uTxCW"
+  className="css-daktvc-Title sc-bwzfXH uTxCW"
   fontFamily="AGaramondPro-Semibold"
   fontSize="22px"
   lineHeight="28px"
-  m={4}
   style={
     Array [
       Object {
         "fontFamily": "AGaramondPro-Semibold",
         "fontSize": 22,
         "lineHeight": 28,
-        "marginBottom": 32,
-        "marginLeft": 32,
-        "marginRight": 32,
-        "marginTop": 32,
-        "textAlign": "center",
       },
-      undefined,
     ]
   }
-  textAlign="center"
 >
   Confirm your bid
 </Text>
