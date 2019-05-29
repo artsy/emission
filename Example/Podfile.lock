@@ -299,7 +299,7 @@ SPEC CHECKSUMS:
   SentryReactNative: 3dff4e9bd82aa581dc64ff8d2524d7007cea076b
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
   Stripe: db29ad197c74aca6fb981e4e8355cf7ebd0fca5a
-  tipsi-stripe: 2d0e33b5bb62168cd1f1777a904781725c5baf8a
+  tipsi-stripe: ebb140e03325d93a7bfdaf6131b37c557485f98e
   "UIView+BooleanAnimations": a760be9a066036e55f298b7b7350a6cb14cfcd97
   yoga: 3768a3026ade0fb46a68f3a31a917cf86bc34fc4
 
