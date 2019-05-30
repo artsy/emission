@@ -10,6 +10,16 @@ export const OtherWorksFragmentContainer = createFragmentContainer<{
     const contextType = props.artwork.context && props.artwork.context.__typename
 
     switch (contextType) {
+      // when we add other contexts this switch case makes more sense
+      case "ArtworkContextAuction": {
+        return null
+      }
+      case "ArtworkContextFair": {
+        return null
+      }
+      case "ArtworkContextPartnerShow": {
+        return null
+      }
       default: {
         return <ArtworkContextArtist artwork={props.artwork} />
       }

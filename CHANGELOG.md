@@ -16,6 +16,8 @@
 
 ### Master
 
+- Adds other works by artist to Artwork - ashkan18
+
 ### 1.11.4
 
 - Adds a non-interactive ArtworkActions component - sweir27
