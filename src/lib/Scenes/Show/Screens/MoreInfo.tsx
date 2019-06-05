@@ -21,11 +21,13 @@ interface Props extends ViewProperties {
   show: MoreInfo_show
 }
 
+interface Section {
+  type: "event" | "pressRelease" | "galleryWebsite" | "pressReleaseUrl" | "receptionText"
+  data: any
+}
+
 interface State {
-  sections: Array<{
-    type: "event" | "pressRelease" | "galleryWebsite" | "pressReleaseUrl" | "receptionText"
-    data: any
-  }>
+  sections: Section[]
 }
 @screenTrack<Props>(props => ({
   context_screen: Schema.PageNames.AboutTheShowPage,
@@ -34,14 +36,14 @@ interface State {
   context_screen_owner_id: props.show.internalID,
 }))
 export class MoreInfo extends React.Component<Props, State> {
-  state = {
-    sections: [] as any[],
+  state: State = {
+    sections: [],
   }
 
   componentDidMount() {
     const { show } = this.props
 
-    const sections = []
+    const sections: Section[] = []
 
     show.events.forEach(event => {
       sections.push({

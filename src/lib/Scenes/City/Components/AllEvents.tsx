@@ -4,7 +4,7 @@ import { BucketResults } from "lib/Scenes/Map/bucketCityResults"
 import { Show } from "lib/Scenes/Map/types"
 import { isEqual } from "lodash"
 import React from "react"
-import { FlatList, ViewProperties } from "react-native"
+import { FlatList, ListRenderItemInfo, ViewProperties } from "react-native"
 import { RelayProp } from "react-relay"
 import { BMWEventSection } from "./BMWEventSection"
 import { FairEventSection } from "./FairEventSection"
@@ -25,16 +25,18 @@ interface Props extends ViewProperties {
   relay: RelayProp
 }
 
+interface Section {
+  type: string
+  data?: any
+}
+
 interface State {
-  sections: Array<{
-    title: string
-    id: number
-  }>
+  sections: Section[]
 }
 
 export class AllEvents extends React.Component<Props, State> {
-  state = {
-    sections: [] as any[],
+  state: State = {
+    sections: [],
   }
 
   componentDidMount() {
@@ -76,7 +78,7 @@ export class AllEvents extends React.Component<Props, State> {
 
   updateSections = props => {
     const { buckets, cityName, sponsoredContent } = props
-    const sections = []
+    const sections: Section[] = []
 
     sections.push({
       type: "header",
@@ -146,7 +148,7 @@ export class AllEvents extends React.Component<Props, State> {
     }
   }
 
-  renderItem = ({ item: { data, type } }) => {
+  renderItem = ({ item: { data, type } }: ListRenderItemInfo<Section>) => {
     const { sponsoredContent, citySlug } = this.props
     switch (type) {
       case "fairs":

@@ -13,25 +13,27 @@ interface Props extends ViewProperties {
   relay: RelayRefetchProp
 }
 
+interface Row {
+  type: "artwork" | "artist" | "fairs"
+  data: any
+}
+
 interface State {
-  rowData: Array<{
-    type: "artwork" | "artist" | "fairs"
-    data: any
-  }>
+  rowData: Row[]
   isRefreshing: boolean
 }
 
 export class ForYou extends React.Component<Props, State> {
   currentScrollOffset?: number = 0
 
-  state = {
+  state: State = {
     isRefreshing: false,
-    rowData: [] as any[],
+    rowData: [],
   }
 
   componentDidMount() {
     const { forYou } = this.props
-    const rowData = []
+    const rowData: Row[] = []
     const artworkModules = forYou.artwork_modules || []
     const artistModules = forYou.artist_modules && forYou.artist_modules.concat()
     const fairsModule = forYou.fairs_module

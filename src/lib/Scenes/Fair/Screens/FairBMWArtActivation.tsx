@@ -15,11 +15,13 @@ interface Props extends ViewProperties {
   fair: FairBMWArtActivation_fair
 }
 
+interface Section {
+  type: "art-activation" | "press-release"
+  data: any
+}
+
 interface State {
-  sections: Array<{
-    type: "art-activation" | "press-release"
-    data: any
-  }>
+  sections: Section[]
 }
 
 interface ShowMoreMetadataForFairs {
@@ -52,15 +54,15 @@ const PressReleaseContainer = styled(Flex)`
     } as any)
 )
 export class FairBMWArtActivation extends React.Component<Props, State> {
-  state = {
-    sections: [] as any[],
+  state: State = {
+    sections: [],
   }
 
   componentDidMount() {
     const {
       fair: { sponsoredContent },
     } = this.props
-    const sections = []
+    const sections: Section[] = []
 
     if (sponsoredContent.activationText) {
       sections.push({

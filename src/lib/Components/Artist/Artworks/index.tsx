@@ -18,7 +18,7 @@ interface RenderSectionParams {
   filter: string
   onComplete: () => void | null
   Component: any
-  mapPropsToArtworksConnection: (Props) => any
+  mapPropsToArtworksConnection: (props: Props) => any
 }
 
 interface Props {

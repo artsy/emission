@@ -17,11 +17,13 @@ interface Props {
   show: Detail_show
 }
 
+interface Section {
+  type: "location" | "artworks" | "artists" | "shows"
+  data: any
+}
+
 interface State {
-  sections: Array<{
-    type: "location" | "artworks" | "artists" | "shows"
-    data: any
-  }>
+  sections: Section[]
   extraData?: { animatedValue: { height: number } }
 }
 
@@ -34,12 +36,12 @@ const track: Track<Props, State> = _track
 }))
 export class Detail extends React.Component<Props, State> {
   state: State = {
-    sections: [] as any[],
+    sections: [],
   }
 
   componentDidMount() {
     const { show } = this.props
-    const sections = []
+    const sections: Section[] = []
 
     if (show.location) {
       sections.push({

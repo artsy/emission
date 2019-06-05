@@ -13,8 +13,13 @@ import { defaultEnvironment } from "lib/relay/createEnvironment"
 import renderWithLoadProgress from "lib/utils/renderWithLoadProgress"
 import { FairBoothHeaderContainer as FairBoothHeader } from "../Components/FairBoothHeader"
 
+interface Section {
+  type: "artworks" | "artists"
+  data: object
+}
+
 interface State {
-  sections: Array<{ type: "artworks" | "artists"; data: object }>
+  sections: Section[]
 }
 
 interface Props {
@@ -28,8 +33,8 @@ interface Props {
   context_screen_owner_id: props.show.internalID,
 }))
 export class FairBooth extends React.Component<Props, State> {
-  state = {
-    sections: [] as any[],
+  state: State = {
+    sections: [],
   }
 
   onViewFairBoothArtworksPressed() {
@@ -42,7 +47,7 @@ export class FairBooth extends React.Component<Props, State> {
 
   componentDidMount() {
     const { show } = this.props
-    const sections = []
+    const sections: Section[] = []
 
     sections.push({
       type: "artworks",

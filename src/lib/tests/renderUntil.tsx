@@ -2,7 +2,7 @@ import { mount, ReactWrapper, RenderUntilPredicate } from "enzyme"
 import * as React from "react"
 
 function renderUntil<P = {}, S = {}, C extends React.Component = React.Component>(
-  this: ReactWrapper,
+  this: ReactWrapper<P, S, C>,
   predicate: RenderUntilPredicate<P, S, C>
 ) {
   return new Promise<ReactWrapper<P, S, C>>(resolve => {

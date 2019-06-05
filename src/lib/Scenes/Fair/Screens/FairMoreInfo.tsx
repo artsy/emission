@@ -19,11 +19,13 @@ interface Props extends ViewProperties {
   fair: FairMoreInfo_fair
 }
 
+interface Section {
+  type: "about" | "links"
+  data: any
+}
+
 interface State {
-  sections: Array<{
-    type: "about" | "links"
-    data: any
-  }>
+  sections: Section[]
 }
 
 interface ShowMoreMetadataForFairs {
@@ -47,13 +49,13 @@ export const shouldGoStraightToWebsite = (data: ShowMoreMetadataForFairs) => {
   context_screen_owner_id: props.fair.internalID,
 }))
 export class FairMoreInfo extends React.Component<Props, State> {
-  state = {
-    sections: [] as any[],
+  state: State = {
+    sections: [],
   }
 
   componentDidMount() {
     const { fair } = this.props
-    const sections = []
+    const sections: Section[] = []
 
     sections.push({
       type: "about",

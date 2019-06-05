@@ -144,7 +144,7 @@ if (process.env.ALLOW_CONSOLE_LOGS !== "true") {
     types.forEach(type => {
       // Don't spy on loggers that have been modified by the current test.
       if (console[type] === originalLoggers[type]) {
-        const handler = (...args) => {
+        const handler = (...args: any[]) => {
           const error = logToError(type, args, handler)
           if (error) {
             done.fail(error)

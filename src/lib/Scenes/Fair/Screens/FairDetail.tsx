@@ -3,7 +3,7 @@ import { FairDetail_fair } from "__generated__/FairDetail_fair.graphql"
 import { CaretButton } from "lib/Components/Buttons/CaretButton"
 import SwitchBoard from "lib/NativeModules/SwitchBoard"
 import React from "react"
-import { FlatList, ViewProperties } from "react-native"
+import { FlatList, ListRenderItemInfo, ViewProperties } from "react-native"
 import { createPaginationContainer, graphql, RelayPaginationProp } from "react-relay"
 
 import { HoursCollapsible } from "lib/Components/HoursCollapsible"
@@ -22,12 +22,23 @@ interface Props extends ViewProperties {
   relay: RelayPaginationProp
 }
 
+interface Section {
+  type:
+    | "hours"
+    | "location"
+    | "information"
+    | "bmwArtActivation"
+    | "title"
+    | "artistsExhibitorsWorks"
+    | "booth"
+    | "notActive"
+    | "search"
+  data?: any
+  showIndex?: any
+}
+
 interface State {
-  sections: Array<{
-    type: "hours" | "location"
-    data: any
-    showIndex: any
-  }>
+  sections: Section[]
   boothCount: number
   extraData?: { animatedValue: { height: number } }
 }
@@ -41,7 +52,7 @@ const track: Track<Props, State> = _track
 }))
 export class FairDetail extends React.Component<Props, State> {
   state: State = {
-    sections: [] as any[],
+    sections: [],
     boothCount: 0,
   }
 
@@ -58,7 +69,7 @@ export class FairDetail extends React.Component<Props, State> {
   updateSections = () => {
     const { fair } = this.props
     const { isActive } = fair
-    const sections = []
+    const sections: Section[] = []
 
     const coords = fair.location.coordinates
     if (coords && coords.lat && coords.lng) {
@@ -149,7 +160,7 @@ export class FairDetail extends React.Component<Props, State> {
     SwitchBoard.presentNavigationViewController(this, `/fair/${this.props.fair.gravityID}/bmw-sponsored-content`)
   }
 
-  renderItem = ({ item: { data, type, showIndex } }) => {
+  renderItem = ({ item: { data, type, showIndex } }: ListRenderItemInfo<Section>) => {
     switch (type) {
       case "location":
         return <LocationMap partnerType="Fair" {...data} />

@@ -102,7 +102,7 @@ const Gene: React.SFC<GeneProps> = track<GeneProps>(props => {
     context_screen_owner_slug: props.geneID,
     context_screen_owner_type: Schema.OwnerEntityTypes.Gene,
   }
-})(({ geneID, refineSettings: { medium, price_range } }) => {
+})(({ geneID, refineSettings: { medium, price_range } }: GeneProps) => {
   const initialProps = { geneID, medium, price_range }
   return <GeneRenderer {...initialProps} render={renderWithLoadProgress(Containers.Gene, initialProps)} />
 })
@@ -254,7 +254,7 @@ const FairArtists: React.SFC<FairArtistsProps> = track<FairArtistsProps>(props =
     context_screen_owner_slug: props.fairID,
     context_screen_owner_type: Schema.OwnerEntityTypes.Fair,
   }
-})(({ fairID }) => {
+})(({ fairID }: FairArtistsProps) => {
   return <FairArtistsRenderer fairID={fairID} />
 })
 
