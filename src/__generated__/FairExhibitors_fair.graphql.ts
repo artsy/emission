@@ -20,82 +20,82 @@ export type FairExhibitors_fair = {
 
 
 
-const node: ReaderFragment = (function () {
-    var v0 = ({
-        "kind": "ScalarField",
-        "alias": null,
-        "name": "gravityID",
-        "args": null,
-        "storageKey": null
-    } as any);
-    return {
-        "kind": "Fragment",
-        "name": "FairExhibitors_fair",
-        "type": "Fair",
-        "metadata": null,
-        "argumentDefinitions": [],
-        "selections": [
-            (v0 /*: any*/),
+const node: ReaderFragment = (function(){
+var v0 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "gravityID",
+  "args": null,
+  "storageKey": null
+};
+return {
+  "kind": "Fragment",
+  "name": "FairExhibitors_fair",
+  "type": "Fair",
+  "metadata": null,
+  "argumentDefinitions": [],
+  "selections": [
+    (v0/*: any*/),
+    {
+      "kind": "ScalarField",
+      "alias": null,
+      "name": "internalID",
+      "args": null,
+      "storageKey": null
+    },
+    {
+      "kind": "LinkedField",
+      "alias": null,
+      "name": "exhibitors_grouped_by_name",
+      "storageKey": null,
+      "args": null,
+      "concreteType": "FairExhibitorsGroup",
+      "plural": true,
+      "selections": [
+        {
+          "kind": "ScalarField",
+          "alias": null,
+          "name": "letter",
+          "args": null,
+          "storageKey": null
+        },
+        {
+          "kind": "LinkedField",
+          "alias": null,
+          "name": "exhibitors",
+          "storageKey": null,
+          "args": null,
+          "concreteType": "FairExhibitor",
+          "plural": true,
+          "selections": [
             {
-                "kind": "ScalarField",
-                "alias": null,
-                "name": "internalID",
-                "args": null,
-                "storageKey": null
+              "kind": "ScalarField",
+              "alias": null,
+              "name": "name",
+              "args": null,
+              "storageKey": null
+            },
+            (v0/*: any*/),
+            {
+              "kind": "ScalarField",
+              "alias": null,
+              "name": "profile_id",
+              "args": null,
+              "storageKey": null
             },
             {
-                "kind": "LinkedField",
-                "alias": null,
-                "name": "exhibitors_grouped_by_name",
-                "storageKey": null,
-                "args": null,
-                "concreteType": "FairExhibitorsGroup",
-                "plural": true,
-                "selections": [
-                    {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "name": "letter",
-                        "args": null,
-                        "storageKey": null
-                    },
-                    {
-                        "kind": "LinkedField",
-                        "alias": null,
-                        "name": "exhibitors",
-                        "storageKey": null,
-                        "args": null,
-                        "concreteType": "FairExhibitor",
-                        "plural": true,
-                        "selections": [
-                            {
-                                "kind": "ScalarField",
-                                "alias": null,
-                                "name": "name",
-                                "args": null,
-                                "storageKey": null
-                            },
-                            (v0 /*: any*/),
-                            {
-                                "kind": "ScalarField",
-                                "alias": null,
-                                "name": "profile_id",
-                                "args": null,
-                                "storageKey": null
-                            },
-                            {
-                                "kind": "ScalarField",
-                                "alias": null,
-                                "name": "partner_id",
-                                "args": null,
-                                "storageKey": null
-                            }
-                        ]
-                    }
-                ]
+              "kind": "ScalarField",
+              "alias": null,
+              "name": "partner_id",
+              "args": null,
+              "storageKey": null
             }
-        ]
-    } as any;
+          ]
+        }
+      ]
+    }
+  ]
+};
 })();
 (node as any).hash = '5b92859126ed7c7d9e73a8a411d9426c';
 export default node;
