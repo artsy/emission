@@ -610,14 +610,14 @@ const stripeToken = {
     brand: "VISA",
     last4: "4242",
   },
-  bankAccount: null,
-  extra: null,
+  bankAccount: null as any,
+  extra: null as any,
 }
 
 const sale = {
   gravityID: "sale-id",
   live_start_at: "2029-06-11T01:00:00+00:00",
-  end_at: null,
+  end_at: null as any,
   name: "Phillips New Now",
   start_at: "2018-06-11T01:00:00+00:00",
   is_preview: true,

@@ -1,6 +1,6 @@
 export const ArtworkFixture = {
-  " $refType": null,
-  " $fragmentRefs": null,
+  " $refType": null as any,
+  " $fragmentRefs": null as any,
   id: "abbas-kiarostami-untitled-7",
   _id: "5b2b745e9c18db204fc32e11",
   __id: "QXJ0d29yazphYmJhcy1raWFyb3N0YW1pLXVudGl0bGVkLTc=",
@@ -10,8 +10,8 @@ export const ArtworkFixture = {
   },
   artists: [
     {
-      " $refType": null,
-      " $fragmentRefs": null,
+      " $refType": null as any,
+      " $fragmentRefs": null as any,
       id: "QXJ0aXN0OmFiYmFzLWtpYXJvc3RhbWk=",
       gravityID: "abbas-kiarostami",
       name: "Abbas Kiarostami",
@@ -25,8 +25,8 @@ export const ArtworkFixture = {
     },
   ],
   artist: {
-    " $refType": null,
-    " $fragmentRefs": null,
+    " $refType": null as any,
+    " $fragmentRefs": null as any,
     id: "QXJ0aXN0OmFiYmFzLWtpYXJvc3RhbWk=",
     gravityID: "abbas-kiarostami",
     name: "Abbas Kiarostami",
@@ -47,7 +47,7 @@ export const ArtworkFixture = {
       edges: [
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "QXJ0d29yazphYmJhcy1raWFyb3N0YW1pLXVudGl0bGVkLTc=",
             image: {
               aspect_ratio: 1.52,
@@ -61,8 +61,8 @@ export const ArtworkFixture = {
             is_acquireable: false,
             is_offerable: false,
             gravityID: "abbas-kiarostami-untitled-7",
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Abbas Kiarostami",
@@ -76,7 +76,7 @@ export const ArtworkFixture = {
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "QXJ0d29yazphYmJhcy1raWFyb3N0YW1pLXNub3ctbm8tMTI=",
             image: {
               aspect_ratio: 1.58,
@@ -90,8 +90,8 @@ export const ArtworkFixture = {
             is_acquireable: false,
             is_offerable: false,
             gravityID: "abbas-kiarostami-snow-no-12",
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Abbas Kiarostami",
@@ -105,7 +105,7 @@ export const ArtworkFixture = {
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "QXJ0d29yazphYmJhcy1raWFyb3N0YW1pLXNub3ctbm8tMg==",
             image: {
               aspect_ratio: 1.58,
@@ -119,8 +119,8 @@ export const ArtworkFixture = {
             is_acquireable: false,
             is_offerable: false,
             gravityID: "abbas-kiarostami-snow-no-2",
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Abbas Kiarostami",
@@ -134,7 +134,7 @@ export const ArtworkFixture = {
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "QXJ0d29yazphYmJhcy1raWFyb3N0YW1pLXNub3ctbm8tMzQ=",
             image: {
               aspect_ratio: 1.58,
@@ -148,8 +148,8 @@ export const ArtworkFixture = {
             is_acquireable: false,
             is_offerable: false,
             gravityID: "abbas-kiarostami-snow-no-34",
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Abbas Kiarostami",
@@ -163,7 +163,7 @@ export const ArtworkFixture = {
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "QXJ0d29yazphYmJhcy1raWFyb3N0YW1pLXJvYWQtc2VyaWVzLTMw",
             image: {
               aspect_ratio: 1.5,
@@ -177,8 +177,8 @@ export const ArtworkFixture = {
             is_acquireable: false,
             is_offerable: false,
             gravityID: "abbas-kiarostami-road-series-30",
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Abbas Kiarostami",
@@ -192,7 +192,7 @@ export const ArtworkFixture = {
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "QXJ0d29yazphYmJhcy1raWFyb3N0YW1pLXJvYWQtc2VyaWVzLTI=",
             image: {
               aspect_ratio: 1.5,
@@ -206,8 +206,8 @@ export const ArtworkFixture = {
             is_acquireable: false,
             is_offerable: false,
             gravityID: "abbas-kiarostami-road-series-2",
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Abbas Kiarostami",
@@ -221,7 +221,7 @@ export const ArtworkFixture = {
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "QXJ0d29yazphYmJhcy1raWFyb3N0YW1pLXNub3ctbm8tMzE=",
             image: {
               aspect_ratio: 1.58,
@@ -235,8 +235,8 @@ export const ArtworkFixture = {
             is_acquireable: false,
             is_offerable: false,
             gravityID: "abbas-kiarostami-snow-no-31",
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Abbas Kiarostami",
@@ -250,7 +250,7 @@ export const ArtworkFixture = {
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "QXJ0d29yazphYmJhcy1raWFyb3N0YW1pLXNub3ctbm8tMw==",
             image: {
               aspect_ratio: 1.58,
@@ -264,8 +264,8 @@ export const ArtworkFixture = {
             is_acquireable: false,
             is_offerable: false,
             gravityID: "abbas-kiarostami-snow-no-3",
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Abbas Kiarostami",
@@ -288,7 +288,7 @@ export const ArtworkFixture = {
       edges: [
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "QXJ0d29yazptb3N0YWZhLW5vdXJiYWtoc2gtc21va2U=",
             image: {
               aspect_ratio: 1.47,
@@ -302,8 +302,8 @@ export const ArtworkFixture = {
             is_acquireable: false,
             is_offerable: false,
             gravityID: "mostafa-nourbakhsh-smoke",
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Mostafa Nourbakhsh",
@@ -317,7 +317,7 @@ export const ArtworkFixture = {
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "QXJ0d29yazpyZXphLXJlaW5laS11bnRpdGxlZC0y",
             image: {
               aspect_ratio: 1.06,
@@ -331,8 +331,8 @@ export const ArtworkFixture = {
             is_acquireable: false,
             is_offerable: false,
             gravityID: "reza-reinei-untitled-2",
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Reza Reinei",
@@ -346,7 +346,7 @@ export const ArtworkFixture = {
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "QXJ0d29yazpnaG9kcmF0b2xsYWgtYWdoZWxpLWV4dHJhb3JkaW5hcnktMQ==",
             image: {
               aspect_ratio: 1.41,
@@ -360,8 +360,8 @@ export const ArtworkFixture = {
             is_acquireable: false,
             is_offerable: false,
             gravityID: "ghodratollah-agheli-extraordinary-1",
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Ghodratollah Agheli",
@@ -375,7 +375,7 @@ export const ArtworkFixture = {
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "QXJ0d29yazptb3N0YWZhLW5vdXJiYWtoc2gtY2hhbmNl",
             image: {
               aspect_ratio: 0.71,
@@ -389,8 +389,8 @@ export const ArtworkFixture = {
             is_acquireable: false,
             is_offerable: false,
             gravityID: "mostafa-nourbakhsh-chance",
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Mostafa Nourbakhsh",
@@ -404,7 +404,7 @@ export const ArtworkFixture = {
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "QXJ0d29yazpyZXphLXJlaW5laS11bnRpdGxlZC0x",
             image: {
               aspect_ratio: 1.31,
@@ -418,8 +418,8 @@ export const ArtworkFixture = {
             is_acquireable: false,
             is_offerable: false,
             gravityID: "reza-reinei-untitled-1",
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Reza Reinei",
@@ -433,7 +433,7 @@ export const ArtworkFixture = {
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "QXJ0d29yazpwZWptYW4tcmFoaW1pemFkZWgtZmFzaGlvbg==",
             image: {
               aspect_ratio: 0.68,
@@ -447,8 +447,8 @@ export const ArtworkFixture = {
             is_acquireable: false,
             is_offerable: false,
             gravityID: "pejman-rahimizadeh-fashion",
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Pejman Rahimizadeh",
@@ -462,7 +462,7 @@ export const ArtworkFixture = {
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "QXJ0d29yazptb3N0YWZhLW5vdXJiYWtoc2gtaG9yc2Vz",
             image: {
               aspect_ratio: 1.88,
@@ -476,8 +476,8 @@ export const ArtworkFixture = {
             is_acquireable: false,
             is_offerable: false,
             gravityID: "mostafa-nourbakhsh-horses",
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Mostafa Nourbakhsh",
@@ -491,7 +491,7 @@ export const ArtworkFixture = {
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "QXJ0d29yazptb3N0YWZhLW5vdXJiYWtoc2gtYXJ0ZXJ5",
             image: {
               aspect_ratio: 1.43,
@@ -505,8 +505,8 @@ export const ArtworkFixture = {
             is_acquireable: false,
             is_offerable: false,
             gravityID: "mostafa-nourbakhsh-artery",
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Mostafa Nourbakhsh",
@@ -526,56 +526,56 @@ export const ArtworkFixture = {
       edges: [
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "shirin-neshat-mehri-zarin-series",
             title: "Mehri (Zarin series)",
           },
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "mitra-tabrizian-leicestershire-1",
             title: "Leicestershire",
           },
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "shadi-ghadirian-white-square-number-10",
             title: "White Square #10",
           },
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "oded-balilty-hide-and-seek-superman-dead-sea",
             title: "Hide and Seek, Superman, Dead sea",
           },
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "bettina-pousttchi-framework",
             title: "Framework",
           },
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "shoja-azari-the-dance-of-alema-or-the-ugly-hamza",
             title: "The Dance of Alema or The Ugly Hamza",
           },
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "malekeh-nayiny-early-spring",
             title: "Early spring",
           },
         },
         {
           node: {
-            " $fragmentRefs": null,
+            " $fragmentRefs": null as any,
             id: "reza-aramesh-action-143-slash-019-collage",
             title: "Action 143/019-collage",
           },

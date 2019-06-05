@@ -1,7 +1,7 @@
 export const fairFixture = {
   gravityID: "sofa-chicago-2018",
   internalID: "5aa1a9ee8b3b817c61dff02d",
-  followed_content: null,
+  followed_content: null as any,
   name: "SOFA CHICAGO 2018",
   exhibition_period: "Nov 1 – 4, 2018",
   image: {
@@ -20,7 +20,7 @@ export const fairFixture = {
     name: "art-basel",
     icon: {
       gravityID: "58ff95298b3b8104783c119c",
-      href: null,
+      href: null as any,
       height: 279,
       width: 279,
       url: "https://d32dm0rphc51dk.cloudfront.net/B1x-CqoWO1KitQnRj7PrrA/untouched-png.png",
@@ -55,9 +55,9 @@ export const fairFixture = {
       lat: 25.7949009,
       lng: -80.134698,
     },
-    cached: null,
-    day_schedules: null,
-    day_schedule_text: null,
+    cached: null as any,
+    day_schedules: null as any,
+    day_schedule_text: null as any,
     openingHours: {
       schedules: [
         {
@@ -266,8 +266,8 @@ export const fairFixture = {
             is_in_auction: false,
             is_biddable: false,
             is_acquireable: false,
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             image: {
               url: "https://d32dm0rphc51dk.cloudfront.net/uF3UWRba84Q4wSrRB-BxKA/large.jpg",
               aspect_ratio: 1.61,
@@ -292,8 +292,8 @@ export const fairFixture = {
             is_in_auction: false,
             is_biddable: false,
             is_acquireable: false,
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             image: {
               url: "https://d32dm0rphc51dk.cloudfront.net/EB-WA2El6g-tII076F5vFw/large.jpg",
               aspect_ratio: 0.67,
@@ -318,8 +318,8 @@ export const fairFixture = {
             is_in_auction: false,
             is_biddable: false,
             is_acquireable: false,
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             image: {
               url: "https://d32dm0rphc51dk.cloudfront.net/sAKQugZCVUZ9g5AoVyCJdA/large.jpg",
               aspect_ratio: 0.67,
@@ -344,8 +344,8 @@ export const fairFixture = {
             is_in_auction: false,
             is_biddable: false,
             is_acquireable: false,
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             image: {
               url: "https://d32dm0rphc51dk.cloudfront.net/jVS6Bolng37bN8GB0y8qfQ/large.jpg",
               aspect_ratio: 0.67,
@@ -370,8 +370,8 @@ export const fairFixture = {
             is_in_auction: false,
             is_biddable: false,
             is_acquireable: false,
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             image: {
               url: "https://d32dm0rphc51dk.cloudfront.net/tnjfaBzOFmFvfj227QjLJg/large.jpg",
               aspect_ratio: 1.5,
@@ -396,8 +396,8 @@ export const fairFixture = {
             is_in_auction: false,
             is_biddable: false,
             is_acquireable: false,
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             image: {
               url: "https://d32dm0rphc51dk.cloudfront.net/BwEuuw_gYmFs69ENusdang/large.jpg",
               aspect_ratio: 0.67,
@@ -588,8 +588,8 @@ export const fairFixture = {
                   is_biddable: false,
                   is_acquireable: false,
                   is_offerable: false,
-                  sale: null,
-                  sale_artwork: null,
+                  sale: null as any,
+                  sale_artwork: null as any,
                   href: "/artwork/christine-flynn-costa-rica-palms-1",
                   artists: [
                     {
@@ -618,8 +618,8 @@ export const fairFixture = {
                   is_biddable: false,
                   is_acquireable: false,
                   is_offerable: false,
-                  sale: null,
-                  sale_artwork: null,
+                  sale: null as any,
+                  sale_artwork: null as any,
                   href: "/artwork/reinhard-gorner-palacio-nacional-de-mafra-portugal",
                   artists: [
                     {
@@ -648,8 +648,8 @@ export const fairFixture = {
                   is_biddable: false,
                   is_acquireable: false,
                   is_offerable: false,
-                  sale: null,
-                  sale_artwork: null,
+                  sale: null as any,
+                  sale_artwork: null as any,
                   href: "/artwork/elisabeth-lecourt-ma-poupee-de-cire-en-fanfaron-nepal",
                   artists: [
                     {
@@ -678,8 +678,8 @@ export const fairFixture = {
                   is_biddable: false,
                   is_acquireable: false,
                   is_offerable: false,
-                  sale: null,
-                  sale_artwork: null,
+                  sale: null as any,
+                  sale_artwork: null as any,
                   href: "/artwork/damien-gard-au-travers-des-siecles-1",
                   artists: [
                     {

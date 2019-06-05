@@ -135,8 +135,8 @@ interface Styles {
 
 const styles = StyleSheet.create<Styles>({
   header: {
-    width: isPad ? 330 : null,
-    alignSelf: isPad ? "center" : null,
+    width: isPad ? 330 : (null as any),
+    alignSelf: isPad ? "center" : (null as any),
   },
   stickyHeader: {
     flexDirection: "row",

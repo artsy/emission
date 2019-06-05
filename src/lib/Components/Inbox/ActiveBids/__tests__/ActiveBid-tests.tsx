@@ -54,7 +54,7 @@ const bid = (_isLive?: boolean, isOpen?: boolean) => {
         display: "$10,000",
       },
       sale_artwork: {
-        reserve_status: null,
+        reserve_status: null as any,
         counts: {
           bidder_positions: 1,
         },

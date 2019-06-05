@@ -12,8 +12,8 @@ it("renders properly", () => {
     id: "banksy",
     has_metadata: true,
     is_display_auction_link: true,
-    articles: [],
-    related_artists: [],
+    articles: [] as any[],
+    related_artists: [] as any[],
   }
   const about = renderer
     .create(

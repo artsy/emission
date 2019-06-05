@@ -124,6 +124,6 @@ const stripeToken = {
     brand: "VISA",
     last4: "4242",
   },
-  bankAccount: null,
-  extra: null,
+  bankAccount: null as any,
+  extra: null as any,
 }

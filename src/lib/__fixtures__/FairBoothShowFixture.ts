@@ -27,8 +27,8 @@ export const FairBoothShowFixture = {
       is_in_auction: false,
       is_biddable: false,
       is_acquireable: false,
-      sale: null,
-      sale_artwork: null,
+      sale: null as any,
+      sale_artwork: null as any,
       artists: [
         {
           name: "Cecily Brown",
@@ -54,8 +54,8 @@ export const FairBoothShowFixture = {
       is_in_auction: false,
       is_biddable: false,
       is_acquireable: false,
-      sale: null,
-      sale_artwork: null,
+      sale: null as any,
+      sale_artwork: null as any,
       artists: [
         {
           name: "Cecily Brown",
@@ -81,8 +81,8 @@ export const FairBoothShowFixture = {
       is_in_auction: false,
       is_biddable: false,
       is_acquireable: false,
-      sale: null,
-      sale_artwork: null,
+      sale: null as any,
+      sale_artwork: null as any,
       artists: [
         {
           name: "Cecily Brown",
@@ -108,8 +108,8 @@ export const FairBoothShowFixture = {
       is_in_auction: false,
       is_biddable: false,
       is_acquireable: false,
-      sale: null,
-      sale_artwork: null,
+      sale: null as any,
+      sale_artwork: null as any,
       artists: [
         {
           name: "Cameron Jamie",
@@ -135,8 +135,8 @@ export const FairBoothShowFixture = {
       is_in_auction: false,
       is_biddable: false,
       is_acquireable: false,
-      sale: null,
-      sale_artwork: null,
+      sale: null as any,
+      sale_artwork: null as any,
       artists: [
         {
           name: "Cameron Jamie",
@@ -162,8 +162,8 @@ export const FairBoothShowFixture = {
       is_in_auction: false,
       is_biddable: false,
       is_acquireable: false,
-      sale: null,
-      sale_artwork: null,
+      sale: null as any,
+      sale_artwork: null as any,
       artists: [
         {
           name: "Cameron Jamie",
@@ -185,7 +185,7 @@ export const FairBoothShowFixture = {
       is_followed: false,
       nationality: "British",
       birthday: "1969",
-      deathday: null,
+      deathday: null as any,
       image: {
         url: "https://d32dm0rphc51dk.cloudfront.net/U0Ap3ZESNaZ1XHJQr8pmhw/tall.jpg",
       },
@@ -221,7 +221,7 @@ export const FairBoothShowFixture = {
       is_followed: false,
       nationality: "American",
       birthday: "1946",
-      deathday: null,
+      deathday: null as any,
       image: {
         url: "https://d32dm0rphc51dk.cloudfront.net/SjhBVNSH4IzXyPJj7sa2YA/tall.jpg",
       },
@@ -257,7 +257,7 @@ export const FairBoothShowFixture = {
       is_followed: false,
       nationality: "American",
       birthday: "1949",
-      deathday: null,
+      deathday: null as any,
       image: {
         url: "https://d32dm0rphc51dk.cloudfront.net/-0mMApS-BXoDZp1uiIfR2A/tall.jpg",
       },
@@ -286,7 +286,7 @@ export const FairBoothShowFixture = {
           is_followed: false,
           nationality: "British",
           birthday: "1969",
-          deathday: null,
+          deathday: null as any,
           image: {
             url: "https://d32dm0rphc51dk.cloudfront.net/U0Ap3ZESNaZ1XHJQr8pmhw/tall.jpg",
           },
@@ -354,7 +354,7 @@ export const FairBoothShowFixture = {
           is_followed: false,
           nationality: "American",
           birthday: "1946",
-          deathday: null,
+          deathday: null as any,
           image: {
             url: "https://d32dm0rphc51dk.cloudfront.net/SjhBVNSH4IzXyPJj7sa2YA/tall.jpg",
           },
@@ -366,7 +366,7 @@ export const FairBoothShowFixture = {
           is_followed: false,
           nationality: "American",
           birthday: "1949",
-          deathday: null,
+          deathday: null as any,
           image: {
             url: "https://d32dm0rphc51dk.cloudfront.net/-0mMApS-BXoDZp1uiIfR2A/tall.jpg",
           },
@@ -465,8 +465,8 @@ export const FairBoothShowFixture = {
             is_in_auction: false,
             is_biddable: false,
             is_acquireable: true,
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Mel Bochner",
@@ -496,8 +496,8 @@ export const FairBoothShowFixture = {
             is_in_auction: false,
             is_biddable: false,
             is_acquireable: true,
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Mel Bochner",
@@ -527,8 +527,8 @@ export const FairBoothShowFixture = {
             is_in_auction: false,
             is_biddable: false,
             is_acquireable: true,
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Mel Bochner",
@@ -558,8 +558,8 @@ export const FairBoothShowFixture = {
             is_in_auction: false,
             is_biddable: false,
             is_acquireable: true,
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Mel Bochner",
@@ -589,8 +589,8 @@ export const FairBoothShowFixture = {
             is_in_auction: false,
             is_biddable: false,
             is_acquireable: true,
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Mel Bochner",
@@ -620,8 +620,8 @@ export const FairBoothShowFixture = {
             is_in_auction: false,
             is_biddable: false,
             is_acquireable: true,
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Mel Bochner",
@@ -651,8 +651,8 @@ export const FairBoothShowFixture = {
             is_in_auction: false,
             is_biddable: false,
             is_acquireable: false,
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Mel Bochner",
@@ -682,8 +682,8 @@ export const FairBoothShowFixture = {
             is_in_auction: false,
             is_biddable: false,
             is_acquireable: false,
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Mel Bochner",
@@ -713,8 +713,8 @@ export const FairBoothShowFixture = {
             is_in_auction: false,
             is_biddable: false,
             is_acquireable: false,
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Mel Bochner",
@@ -744,8 +744,8 @@ export const FairBoothShowFixture = {
             is_in_auction: false,
             is_biddable: false,
             is_acquireable: false,
-            sale: null,
-            sale_artwork: null,
+            sale: null as any,
+            sale_artwork: null as any,
             artists: [
               {
                 name: "Mel Bochner",

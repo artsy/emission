@@ -594,10 +594,10 @@ Array [
             "id": "mindy-solomon-gallery-mindy-solomon-gallery-at-volta-ny-2014",
             "images": Array [],
             "location": Object {
-              "address": null,
-              "address_2": null,
-              "postal_code": null,
-              "state": null,
+              "address": null as any,
+              "address_2": null as any,
+              "postal_code": null as any,
+              "state": null as any,
             },
             "name": "Mindy Solomon Gallery at VOLTA NY 2014",
             "partner": Object {
@@ -610,10 +610,10 @@ Array [
             "id": "galerie-kleindienst-galerie-kleindienst-at-volta-ny-2014",
             "images": Array [],
             "location": Object {
-              "address": null,
-              "address_2": null,
-              "postal_code": null,
-              "state": null,
+              "address": null as any,
+              "address_2": null as any,
+              "postal_code": null as any,
+              "state": null as any,
             },
             "name": "Galerie Kleindienst at VOLTA NY 2014",
             "partner": Object {

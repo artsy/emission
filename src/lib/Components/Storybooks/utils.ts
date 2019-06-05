@@ -25,7 +25,7 @@ export const toSectionHeirarchy = (story: StorySection) => {
 export const sectionsToTree = (sections: StorySection[]) => {
   const root = {
     kind: "Stories",
-    sections: [],
+    sections: [] as any[],
   }
 
   sections.forEach(section => {

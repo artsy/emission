@@ -88,11 +88,11 @@ export function sendConversationMessage(
             body: text,
             from: {
               email: conversation.from.email,
-              name: null,
+              name: null as any,
             },
             is_from_user: true,
-            created_at: null, // Intentionally left blank so Message can recognize this as an optimistic response.
-            attachments: [],
+            created_at: null as any, // Intentionally left blank so Message can recognize this as an optimistic response.
+            attachments: [] as any[],
           } as any,
         },
       },

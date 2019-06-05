@@ -16,60 +16,60 @@ export type FairMoreInfo_fair = {
 
 
 
-const node: ReaderFragment = {
-  "kind": "Fragment",
-  "name": "FairMoreInfo_fair",
-  "type": "Fair",
-  "metadata": null,
-  "argumentDefinitions": [],
-  "selections": [
-    {
-      "kind": "LinkedField",
-      "alias": null,
-      "name": "organizer",
-      "storageKey": null,
-      "args": null,
-      "concreteType": "organizer",
-      "plural": false,
-      "selections": [
+const node: ReaderFragment = ({
+    "kind": "Fragment",
+    "name": "FairMoreInfo_fair",
+    "type": "Fair",
+    "metadata": null,
+    "argumentDefinitions": [],
+    "selections": [
         {
-          "kind": "ScalarField",
-          "alias": null,
-          "name": "website",
-          "args": null,
-          "storageKey": null
+            "kind": "LinkedField",
+            "alias": null,
+            "name": "organizer",
+            "storageKey": null,
+            "args": null,
+            "concreteType": "organizer",
+            "plural": false,
+            "selections": [
+                {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "name": "website",
+                    "args": null,
+                    "storageKey": null
+                }
+            ]
+        },
+        {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "gravityID",
+            "args": null,
+            "storageKey": null
+        },
+        {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "internalID",
+            "args": null,
+            "storageKey": null
+        },
+        {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "about",
+            "args": null,
+            "storageKey": null
+        },
+        {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "ticketsLink",
+            "args": null,
+            "storageKey": null
         }
-      ]
-    },
-    {
-      "kind": "ScalarField",
-      "alias": null,
-      "name": "gravityID",
-      "args": null,
-      "storageKey": null
-    },
-    {
-      "kind": "ScalarField",
-      "alias": null,
-      "name": "internalID",
-      "args": null,
-      "storageKey": null
-    },
-    {
-      "kind": "ScalarField",
-      "alias": null,
-      "name": "about",
-      "args": null,
-      "storageKey": null
-    },
-    {
-      "kind": "ScalarField",
-      "alias": null,
-      "name": "ticketsLink",
-      "args": null,
-      "storageKey": null
-    }
-  ]
-};
+    ]
+} as any);
 (node as any).hash = '1e608ac8da4ecc3364e869e73889400e';
 export default node;

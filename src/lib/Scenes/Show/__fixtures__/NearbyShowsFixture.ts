@@ -514,7 +514,7 @@ export const NearbyShows = {
           "kolodzei-art-foundation-finding-freedom-in-russian-art-1961-2014-selections-from-the-kolodzei-art-foundation-and-the-collection-of-dr-wayne-f-yakes-paul-and-lulu-hilliard-university-art-museum-university-of-louisiana-at-lafayette-lafayette-la",
         name:
           "Finding Freedom in Russian Art, 1961-2014. Selections from the Kolodzei Art Foundation and the Collection of Dr. Wayne F. Yakes. Paul and Lulu Hilliard University Art Museum, University of Louisiana at Lafayette,  Lafayette, LA",
-        images: [],
+        images: [] as any[],
         partner: {
           name: "Kolodzei Art Foundation",
         },
@@ -559,15 +559,15 @@ export const NearbyShows = {
       node: {
         id: "mindy-solomon-gallery-mindy-solomon-gallery-at-volta-ny-2014",
         name: "Mindy Solomon Gallery at VOLTA NY 2014",
-        images: [],
+        images: [] as any[],
         partner: {
           name: "Mindy Solomon Gallery",
         },
         location: {
-          address: null,
-          address_2: null,
-          state: null,
-          postal_code: null,
+          address: null as any,
+          address_2: null as any,
+          state: null as any,
+          postal_code: null as any,
         },
       },
     },
@@ -575,15 +575,15 @@ export const NearbyShows = {
       node: {
         id: "galerie-kleindienst-galerie-kleindienst-at-volta-ny-2014",
         name: "Galerie Kleindienst at VOLTA NY 2014",
-        images: [],
+        images: [] as any[],
         partner: {
           name: "Galerie Kleindienst",
         },
         location: {
-          address: null,
-          address_2: null,
-          state: null,
-          postal_code: null,
+          address: null as any,
+          address_2: null as any,
+          state: null as any,
+          postal_code: null as any,
         },
       },
     },

@@ -73,7 +73,7 @@ interface BillingAddressState {
 
 @screenTrack({
   context_screen: Schema.PageNames.BidFlowBillingAddressPage,
-  context_screen_owner_type: null,
+  context_screen_owner_type: null as any,
 })
 export class BillingAddress extends React.Component<BillingAddressProps, BillingAddressState> {
   private addressLine1: StyledInputInterface

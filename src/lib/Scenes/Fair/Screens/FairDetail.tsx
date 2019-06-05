@@ -41,7 +41,7 @@ const track: Track<Props, State> = _track
 }))
 export class FairDetail extends React.Component<Props, State> {
   state: State = {
-    sections: [],
+    sections: [] as any[],
     boothCount: 0,
   }
 

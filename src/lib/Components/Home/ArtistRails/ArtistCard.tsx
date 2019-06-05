@@ -41,8 +41,8 @@ interface State {
 export class ArtistCard extends React.Component<Props, State> {
   state = {
     processingChange: false,
-    followStatusChanged: null,
-    following: null,
+    followStatusChanged: null as any,
+    following: null as any,
   }
 
   handleTap() {

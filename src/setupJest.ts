@@ -37,7 +37,7 @@ jest.mock("./lib/NativeModules/NotificationsManager.tsx", () => ({
 jest.mock("@mapbox/react-native-mapbox-gl", () => ({
   MapView: () => null,
   StyleURL: {
-    Light: null,
+    Light: null as any,
   },
   setAccessToken: () => jest.fn(),
   StyleSheet: {

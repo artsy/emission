@@ -103,7 +103,7 @@ const Contents: React.SFC<DeviceProps> = deviceProps => {
 }
 
 export default class ZeroStateInbox extends React.Component<{}, State> {
-  state = { deviceProps: undefined }
+  state: State = { deviceProps: undefined }
 
   handleLayoutChange = (event: LayoutChangeEvent) => {
     const { width, height } = event.nativeEvent.layout

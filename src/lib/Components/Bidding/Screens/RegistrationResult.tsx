@@ -69,7 +69,7 @@ const resultEnumToPageName = (result: RegistrationStatus) => {
 
 @screenTrack((props: RegistrationResultProps) => ({
   context_screen: resultEnumToPageName(props.status),
-  context_screen_owner_type: null,
+  context_screen_owner_type: null as any,
 }))
 export class RegistrationResult extends React.Component<RegistrationResultProps, null> {
   exitBidFlow = async () => {

@@ -43,7 +43,7 @@ class Artworks extends Component<Props, State> {
         title: "Works",
         count: otherCount,
         filter: "IS_NOT_FOR_SALE",
-        onComplete: null,
+        onComplete: null as any,
         Component: ArtistNotForSaleArtworksGrid,
         mapPropsToArtworksConnection: props => props.artist.notForSaleArtworks,
       })
@@ -57,7 +57,7 @@ class Artworks extends Component<Props, State> {
             title: "Other Works",
             count: otherCount,
             filter: "IS_NOT_FOR_SALE",
-            onComplete: null,
+            onComplete: null as any,
             Component: ArtistNotForSaleArtworksGrid,
             mapPropsToArtworksConnection: props => props.artist.notForSaleArtworks,
           })

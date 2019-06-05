@@ -4,7 +4,7 @@ import * as renderer from "react-test-renderer"
 
 jest.mock("@react-native-community/cameraroll", () => jest.fn())
 
-import SelectFromPhotoLibrary from "../SelectFromPhotoLibrary"
+import SelectFromPhotoLibrary, { Props } from "../SelectFromPhotoLibrary"
 
 jest.mock("lib/NativeModules/triggerCamera", () => ({ triggerCamera: jest.fn() }))
 import { Theme } from "@artsy/palette"
@@ -16,7 +16,7 @@ jest.mock("Linking", () => ({ openURL: jest.fn() }))
 
 const nav = {} as any
 const route = {} as any
-const emptyProps = {
+const emptyProps: Props = {
   navigator: nav,
   route,
   setup: { photos: [] },

@@ -24,9 +24,9 @@ Object.keys(devices).forEach(device => {
             conversations: {
               pageInfo: {
                 hasNextPage: false,
-                endCursor: null,
+                endCursor: null as any,
               },
-              edges: [],
+              edges: [] as any[],
             },
           } as any
         }

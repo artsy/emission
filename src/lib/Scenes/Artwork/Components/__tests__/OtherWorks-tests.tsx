@@ -8,7 +8,7 @@ describe("OtherWorks", () => {
   it("renders ArtistArtworkGrid with empty context", () => {
     const regularArtwork = {
       ...ArtworkFixture,
-      context: null,
+      context: null as any,
     }
     const component = shallow(<OtherWorks artwork={regularArtwork} />)
     expect(component.find(ArtworkContextArtist).length).toEqual(1)

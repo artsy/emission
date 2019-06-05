@@ -13,7 +13,7 @@ const Sale = {
   gravityID: "david-lynch-foundation-benefit-auction-2018",
   end_at: "2018-06-26T19:30:00+00:00",
   is_preview: false,
-  live_start_at: null,
+  live_start_at: null as any,
   name: "David Lynch Foundation: Benefit Auction 2018",
   start_at: "2018-06-12T08:10:00+00:00",
   id: "U2FsZTpkYXZpZC1seW5jaC1mb3VuZGF0aW9uLWJlbmVmaXQtYXVjdGlvbi0yMDE4",

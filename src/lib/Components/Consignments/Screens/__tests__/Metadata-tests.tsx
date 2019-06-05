@@ -18,7 +18,7 @@ const exampleMetadata: ConsignmentMetadata = {
   medium: "Wood",
   width: "100",
   height: "100",
-  depth: null,
+  depth: null as any,
   unit: "cm",
   displayString: "5/5",
 }

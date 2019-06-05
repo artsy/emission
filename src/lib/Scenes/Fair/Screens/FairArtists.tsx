@@ -33,7 +33,7 @@ interface State {
 }))
 export class FairArtists extends React.Component<Props, State> {
   state = {
-    groupedArtists: [],
+    groupedArtists: [] as any[],
   }
 
   componentDidMount() {

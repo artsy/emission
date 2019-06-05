@@ -26,7 +26,7 @@ describe("ArtistArtworkGrid", () => {
       artist: {
         name: "CAMA Gallery",
         artworks_connection: {
-          edges: [],
+          edges: [] as any[],
         },
       },
     }

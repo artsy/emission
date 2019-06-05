@@ -30,7 +30,7 @@ export class FakeNavigator {
           nextScreen: true,
           navigator: this,
           relay: {
-            environment: null,
+            environment: null as any,
           },
         })}
       </Theme>

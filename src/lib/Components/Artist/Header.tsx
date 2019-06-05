@@ -183,8 +183,8 @@ const styles = StyleSheet.create<Styles>({
   },
   followButton: {
     height: 40,
-    width: isPad ? 330 : null,
-    alignSelf: isPad ? "center" : null,
+    width: isPad ? 330 : (null as any),
+    alignSelf: isPad ? "center" : (null as any),
     marginLeft: 0,
     marginRight: 0,
   },

@@ -51,7 +51,7 @@ interface Props {
 
 @screenTrack({
   context_screen: Schema.PageNames.SavesAndFollows,
-  context_screen_owner_type: null,
+  context_screen_owner_type: null as any,
 })
 
 // @TODO: Implement test on this component https://artsyproduct.atlassian.net/browse/LD-563

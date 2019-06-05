@@ -27,7 +27,7 @@ exports[`does not show artist avatar if no avatar image exists 1`] = `
     <Image
       source={
         Object {
-          "uri": null,
+          "uri": null as any,
         }
       }
       style={

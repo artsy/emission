@@ -29,7 +29,7 @@ const artwork = () => {
     gravityID: "long-title",
     title: "DO WOMEN STILL HAVE TO BE NAKED TO GET INTO THE MET. MUSEUM",
     date: "2012",
-    sale_message: null,
+    sale_message: null as any,
     is_in_auction: false,
     image: {
       url: "artsy.net/image-url",

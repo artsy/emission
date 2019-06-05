@@ -108,7 +108,7 @@ export const track: Track = _track
  *
  *       @screenTrack({
  *        context_screen: Schema.PageNames.ConsignmentsWelcome,
- *        context_screen_owner_slug: null,
+ *        context_screen_owner_slug: null as any,
  *        context_screen_owner_type: Schema.OwnerEntityTypes.Consignment,
  *       })
  *

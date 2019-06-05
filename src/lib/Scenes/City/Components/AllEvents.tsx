@@ -34,7 +34,7 @@ interface State {
 
 export class AllEvents extends React.Component<Props, State> {
   state = {
-    sections: [],
+    sections: [] as any[],
   }
 
   componentDidMount() {

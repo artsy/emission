@@ -30,14 +30,14 @@ const artworkTombstoneArtwork = {
       id: "1234",
       gravityID: "andy-warhol",
       is_followed: false,
-      " $fragmentRefs": null,
+      " $fragmentRefs": null as any,
     },
   ],
-  cultural_maker: null,
+  cultural_maker: null as any,
   dimensions: { in: "15 × 20 in", cm: "38.1 × 50.8 cm" },
   edition_of: "Edition 100/200",
   attribution_class: { short_description: "This is an edition of something" },
-  " $refType": null,
+  " $refType": null as any,
 }
 storiesOf("Artwork/Components").add("Tombstone", () => {
   return <MockArtworkTombstone artwork={artworkTombstoneArtwork} />

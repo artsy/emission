@@ -22,9 +22,9 @@ interface State {
 
 class HeroUnits extends React.Component<Props, State> {
   state = {
-    width: null,
-    height: null,
-    margin: null,
+    width: null as any,
+    height: null as any,
+    margin: null as any,
     fontSize: 0,
   }
 

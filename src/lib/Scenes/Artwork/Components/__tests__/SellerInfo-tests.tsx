@@ -23,8 +23,8 @@ describe("SellerInfo", () => {
 const artworkSellerInfo = {
   partner: {
     name: "Partner 1",
-    " $refType": null,
+    " $refType": null as any,
   },
-  " $refType": null,
-  " $fragmentRefs": null,
+  " $refType": null as any,
+  " $fragmentRefs": null as any,
 }

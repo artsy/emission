@@ -22,7 +22,7 @@ describe("consignment metadata -> submission", () => {
         medium: "Wood",
         width: "100",
         height: "100",
-        depth: null,
+        depth: null as any,
         unit: "CM",
         displayString: "5/5",
       },

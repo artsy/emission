@@ -232,9 +232,9 @@ describe("BidResult component", () => {
 const Statuses = {
   winning: {
     status: "WINNING",
-    message_header: null,
-    message_description_md: null,
-    position: null,
+    message_header: null as any,
+    message_description_md: null as any,
+    position: null as any,
   } as BidderPositionResult,
   outbid: {
     status: "OUTBID",
@@ -242,7 +242,7 @@ const Statuses = {
     message_description_md: `
       Another bidder placed a higher max bid or the same max bid before you did.
     `,
-    position: null,
+    position: null as any,
   } as BidderPositionResult,
   live_bidding_started: {
     status: "LIVE_BIDDING_STARTED",
@@ -251,6 +251,6 @@ const Statuses = {
       Sorry, your bid wasn’t received before live bidding started.
       To continue bidding, please [join the live auction](http://live-staging.artsy.net/).
     `,
-    position: null,
+    position: null as any,
   } as BidderPositionResult,
 }

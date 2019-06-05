@@ -62,7 +62,7 @@ export default class Composer extends React.Component<Props, State> {
 
     this.state = {
       active: false,
-      text: null,
+      text: null as any,
     }
   }
 

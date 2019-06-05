@@ -56,7 +56,7 @@ describe("messaging inbox", () => {
     conversations: {
       pageInfo: {
         hasNextPage: false,
-        endCursor: null,
+        endCursor: null as any,
       },
       edges: [
         {
@@ -123,9 +123,9 @@ describe("messaging inbox", () => {
     conversations: {
       pageInfo: {
         hasNextPage: false,
-        endCursor: null,
+        endCursor: null as any,
       },
-      edges: [],
+      edges: [] as any[],
     },
   } as any) as Conversations_me
 })

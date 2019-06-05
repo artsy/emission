@@ -15,53 +15,53 @@ export type FairBMWArtActivation_fair = {
 
 
 
-const node: ReaderFragment = {
-  "kind": "Fragment",
-  "name": "FairBMWArtActivation_fair",
-  "type": "Fair",
-  "metadata": null,
-  "argumentDefinitions": [],
-  "selections": [
-    {
-      "kind": "ScalarField",
-      "alias": null,
-      "name": "gravityID",
-      "args": null,
-      "storageKey": null
-    },
-    {
-      "kind": "ScalarField",
-      "alias": null,
-      "name": "internalID",
-      "args": null,
-      "storageKey": null
-    },
-    {
-      "kind": "LinkedField",
-      "alias": null,
-      "name": "sponsoredContent",
-      "storageKey": null,
-      "args": null,
-      "concreteType": "FairSponsoredContent",
-      "plural": false,
-      "selections": [
+const node: ReaderFragment = ({
+    "kind": "Fragment",
+    "name": "FairBMWArtActivation_fair",
+    "type": "Fair",
+    "metadata": null,
+    "argumentDefinitions": [],
+    "selections": [
         {
-          "kind": "ScalarField",
-          "alias": null,
-          "name": "activationText",
-          "args": null,
-          "storageKey": null
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "gravityID",
+            "args": null,
+            "storageKey": null
         },
         {
-          "kind": "ScalarField",
-          "alias": null,
-          "name": "pressReleaseUrl",
-          "args": null,
-          "storageKey": null
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "internalID",
+            "args": null,
+            "storageKey": null
+        },
+        {
+            "kind": "LinkedField",
+            "alias": null,
+            "name": "sponsoredContent",
+            "storageKey": null,
+            "args": null,
+            "concreteType": "FairSponsoredContent",
+            "plural": false,
+            "selections": [
+                {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "name": "activationText",
+                    "args": null,
+                    "storageKey": null
+                },
+                {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "name": "pressReleaseUrl",
+                    "args": null,
+                    "storageKey": null
+                }
+            ]
         }
-      ]
-    }
-  ]
-};
+    ]
+} as any);
 (node as any).hash = '2026a38b644dea99eba8dcafe53a7a47';
 export default node;

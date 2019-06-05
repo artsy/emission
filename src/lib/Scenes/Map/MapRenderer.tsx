@@ -39,7 +39,7 @@ export const MapRenderer: React.SFC<{
       render={({ props: mapProps, error, retry }) => {
         // viewer={null} is to handle the case where we want to render the map with initialCoordinates but the Relay
         // response hasn't arrived yet. Relay requires us to pass an explicit null if the missing data is intentional.
-        const computedProps: any = { viewer: null, ...mapProps, ...props }
+        const computedProps: any = { viewer: null as any, ...mapProps, ...props }
 
         if (error) {
           // Error indicates this is the first render with the error.

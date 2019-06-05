@@ -12,8 +12,8 @@ import { Theme } from "@artsy/palette"
 jest.mock("../../Components/Inbox/Conversations", () => "Conversations")
 
 const emptyMeProps = {
-  lot_standings: [],
-  conversations_existence_check: null,
+  lot_standings: [] as any[],
+  conversations_existence_check: null as any,
 }
 
 it("renders correctly", () => {

@@ -9,7 +9,7 @@ function createProps(state: Props["invoice"]["state"]): Props {
     onSelected: () => {
       console.log("Selected!")
     },
-    relay: { environment: null, refetch: () => null } as RelayRefetchProp,
+    relay: { environment: null as any, refetch: () => null } as RelayRefetchProp,
     invoice: {
       state,
       lewitt_invoice_id: "42",

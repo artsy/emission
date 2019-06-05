@@ -31,7 +31,7 @@ exports[`renders correctly at iPhone size 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "white",
-          "borderColor": null,
+          "borderColor": null as any,
           "borderWidth": 2,
           "height": 158,
           "justifyContent": "center",
@@ -52,7 +52,7 @@ exports[`renders correctly at iPhone size 1`] = `
     <View
       style={
         Object {
-          "borderColor": null,
+          "borderColor": null as any,
           "borderWidth": 2,
           "height": 158,
           "margin": 4,
@@ -93,7 +93,7 @@ exports[`renders correctly at iPhone size 1`] = `
     <View
       style={
         Object {
-          "borderColor": null,
+          "borderColor": null as any,
           "borderWidth": 2,
           "height": 158,
           "margin": 4,
@@ -134,7 +134,7 @@ exports[`renders correctly at iPhone size 1`] = `
     <View
       style={
         Object {
-          "borderColor": null,
+          "borderColor": null as any,
           "borderWidth": 2,
           "height": 158,
           "margin": 4,

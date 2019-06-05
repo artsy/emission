@@ -93,7 +93,7 @@ const resultForNetworkError = {
 
 @screenTrack({
   context_screen: Schema.PageNames.BidFlowConfirmBidPage,
-  context_screen_owner_type: null,
+  context_screen_owner_type: null as any,
 })
 export class ConfirmBid extends React.Component<ConfirmBidProps, ConfirmBidState> {
   private pollCount = 0
@@ -108,9 +108,9 @@ export class ConfirmBid extends React.Component<ConfirmBidProps, ConfirmBidState
     )
 
     this.state = {
-      billingAddress: null,
-      creditCardToken: null,
-      creditCardFormParams: null,
+      billingAddress: null as any,
+      creditCardToken: null as any,
+      creditCardFormParams: null as any,
       conditionsOfSaleChecked: false,
       isLoading: false,
       requiresCheckbox,

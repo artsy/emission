@@ -30,9 +30,9 @@ export default class Artist extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)
     this.state = {
-      query: null,
+      query: null as any,
       searching: false,
-      results: null,
+      results: null as any,
     }
   }
 

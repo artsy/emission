@@ -20,7 +20,7 @@ describe("MockRelayRenderer", () => {
             image: {
               url: "http://test/image.jpg",
             },
-            artist: null,
+            artist: null as any,
           }),
         }}
       />
@@ -47,7 +47,7 @@ describe("MockRelayRenderer", () => {
             image: {
               url: "http://test/image.jpg",
             },
-            artist: null,
+            artist: null as any,
           }),
         }}
       />

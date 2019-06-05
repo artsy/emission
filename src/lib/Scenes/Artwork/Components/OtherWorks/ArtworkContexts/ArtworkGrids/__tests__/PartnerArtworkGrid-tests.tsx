@@ -26,7 +26,7 @@ describe("PartnerArtworkGrid", () => {
       partner: {
         name: "CAMA Gallery",
         artworksConnection: {
-          edges: [],
+          edges: [] as any[],
         },
       },
     }

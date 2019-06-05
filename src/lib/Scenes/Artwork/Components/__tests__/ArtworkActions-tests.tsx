@@ -189,5 +189,5 @@ const artworkActionsArtwork = {
   id: "artwork12345",
   internalID: "12345",
   is_saved: false,
-  " $refType": null,
+  " $refType": null as any,
 }

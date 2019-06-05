@@ -949,8 +949,8 @@ const stripeToken = {
     brand: "VISA",
     last4: "4242",
   },
-  bankAccount: null,
-  extra: null,
+  bankAccount: null as any,
+  extra: null as any,
 }
 
 const initialProps = {
@@ -967,11 +967,11 @@ const initialProps = {
   ],
   selectedBidIndex: 0,
   relay: {
-    environment: null,
+    environment: null as any,
   },
   me: {
     has_qualified_credit_cards: true,
-    bidders: null,
+    bidders: null as any,
   },
   navigator: mockNavigator,
 } as any

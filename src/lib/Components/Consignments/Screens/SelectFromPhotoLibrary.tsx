@@ -16,7 +16,7 @@ import { ConsignmentSetup } from "../index"
 
 const { ARCocoaConstantsModule, ARTakeCameraPhotoModule } = NativeModules
 
-interface Props extends ViewProperties {
+export interface Props extends ViewProperties {
   navigator: NavigatorIOS
   route: Route
   setup: ConsignmentSetup
@@ -44,7 +44,7 @@ export default class SelectFromPhotoLibrary extends React.Component<Props, State
 
     const hasPhotos = props.setup && props.setup.photos
     this.state = {
-      cameraImages: [],
+      cameraImages: [] as any[],
       loadingMore: false,
       lastCursor: "",
       noMorePhotos: false,

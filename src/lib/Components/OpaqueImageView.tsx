@@ -109,7 +109,7 @@ export default class OpaqueImageView extends React.Component<Props, State> {
 
     Object.assign(props, {
       aspectRatio: this.state.aspectRatio,
-      imageURL: isLaidOut ? this.imageURL() : null,
+      imageURL: isLaidOut ? this.imageURL() : (null as any),
       onLayout: this.onLayout,
     })
 

@@ -25,7 +25,7 @@ describe("RelatedArtworkGrid", () => {
       ...ArtworkFixture,
       layer: {
         artworksConnection: {
-          edges: [],
+          edges: [] as any[],
         },
       },
     }

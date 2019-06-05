@@ -31,7 +31,7 @@ interface State {
 }))
 export class FairExhibitors extends React.Component<Props, State> {
   state = {
-    sections: [],
+    sections: [] as any[],
   }
 
   componentDidMount() {

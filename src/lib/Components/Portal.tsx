@@ -6,6 +6,10 @@ interface PortalProviderProps {
   children: React.ReactNode
 }
 
+interface PortalProviderState {
+  portalChildren: React.ReactNode
+}
+
 /**
  * Provides a `onSetPortalChildren` function available in Context that children `Portals`
  * can use to render "out of tree" and relative to the `PortalProvider` rather than their
@@ -15,8 +19,8 @@ interface PortalProviderProps {
  * React-based overlays and modals can use this to render over other components, though
  * `ReactNative.Modal` should be preferred whenever possible.
  */
-export class PortalProvider extends React.Component<PortalProviderProps> {
-  state = { portalChildren: null }
+export class PortalProvider extends React.Component<PortalProviderProps, PortalProviderState> {
+  state: PortalProviderState = { portalChildren: null }
 
   /**
    * We deliberately do not handle multiple child portals within a single

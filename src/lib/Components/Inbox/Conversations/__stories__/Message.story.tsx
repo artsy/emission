@@ -11,14 +11,14 @@ const messageWithoutFromNameProps = {
   conversationId: "1",
   message: {
     body: "body of the message",
-    created_at: null,
+    created_at: null as any,
     is_from_user: false,
-    invoice: null,
+    invoice: null as any,
     from: {
-      name: null,
+      name: null as any,
       email: "matt@testing.com",
     },
-    attachments: [],
+    attachments: [] as any[],
   },
 }
 
@@ -30,14 +30,14 @@ const messageWithFromNameProps = {
   conversationId: "1",
   message: {
     body: "body of the message",
-    created_at: null,
+    created_at: null as any,
     is_from_user: false,
-    invoice: null,
+    invoice: null as any,
     from: {
       name: "Matt the tester",
       email: "matt@testing.com",
     },
-    attachments: [],
+    attachments: [] as any[],
   },
 }
 storiesOf("Conversations/Message")

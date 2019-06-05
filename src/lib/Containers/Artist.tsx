@@ -151,10 +151,10 @@ interface Styles {
 
 const styles = StyleSheet.create<Styles>({
   tabView: {
-    width: isPad ? 330 : null,
+    width: isPad ? 330 : (null as any),
     marginTop: 30,
     marginBottom: 30,
-    alignSelf: isPad ? "center" : null,
+    alignSelf: isPad ? "center" : (null as any),
   },
 })
 

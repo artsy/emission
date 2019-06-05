@@ -53,7 +53,7 @@ const TakePhotoImage = (props: TakePhotoImageProps) => (
     style={{
       backgroundColor: "white",
       borderWidth: 2,
-      borderColor: null,
+      borderColor: null as any,
 
       height: 158,
       width: 158,
@@ -70,7 +70,7 @@ const ImageForURI = (props: ImagePreviewProps) => (
   <View
     style={{
       borderWidth: 2,
-      borderColor: props.selected ? "white" : null,
+      borderColor: props.selected ? "white" : (null as any),
       margin: 4,
       height: 158,
       width: 158,

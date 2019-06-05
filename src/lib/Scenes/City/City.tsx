@@ -42,13 +42,13 @@ const AllCityMetaTab = 0
 }))
 export class CityView extends Component<Props, State> {
   state = {
-    buckets: null,
+    buckets: null as any,
     filter: cityTabs[0],
-    relay: null,
+    relay: null as any,
     cityName: "",
     citySlug: "",
-    sponsoredContent: null,
-    relayErrorState: null,
+    sponsoredContent: null as any,
+    relayErrorState: null as any,
   }
 
   scrollViewVerticalStart = 0

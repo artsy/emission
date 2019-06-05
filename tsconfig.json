@@ -19,6 +19,7 @@
     "strictBindCallApply": true,
     "noImplicitThis": true,
     "strictFunctionTypes": true,
+    "noImplicitAny": true,
     "target": "es6",
     "types": ["jest", "react", "react-native"],
     "noEmit": true

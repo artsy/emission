@@ -30,9 +30,9 @@ export default class Location extends React.Component<Props, State> {
   constructor(props) {
     super(props)
     this.state = {
-      query: null,
+      query: null as any,
       searching: false,
-      results: null,
+      results: null as any,
     }
   }
 

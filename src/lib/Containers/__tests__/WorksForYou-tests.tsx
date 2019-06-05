@@ -121,7 +121,7 @@ const notificationsResponse = () => {
           notifications: {
             pageInfo: {
               hasNextPage: true,
-              endCursor: null,
+              endCursor: null as any,
             },
             edges: [
               {
@@ -165,7 +165,7 @@ const emptyStateResponse = () => {
             pageInfo: {
               hasNextPage: true,
             },
-            edges: [],
+            edges: [] as any[],
           },
         },
       },

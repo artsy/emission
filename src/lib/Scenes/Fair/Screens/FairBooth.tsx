@@ -29,7 +29,7 @@ interface Props {
 }))
 export class FairBooth extends React.Component<Props, State> {
   state = {
-    sections: [],
+    sections: [] as any[],
   }
 
   onViewFairBoothArtworksPressed() {

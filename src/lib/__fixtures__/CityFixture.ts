@@ -30,7 +30,7 @@ export const CityFixture = {
             gravityID: "art-paris-2019",
             icon: {
               height: 540,
-              href: null,
+              href: null as any,
               id: "5c9a172180c4b26e20caef53",
               url: "https://d32dm0rphc51dk.cloudfront.net/fEdSbiBZs9MJftHqjyW3sA/square140.png",
               width: 540,
@@ -66,7 +66,7 @@ export const CityFixture = {
             gravityID: "art-paris-2019",
             icon: {
               height: 540,
-              href: null,
+              href: null as any,
               id: "5c9a172180c4b26e20caef53",
               url: "https://d32dm0rphc51dk.cloudfront.net/fEdSbiBZs9MJftHqjyW3sA/square140.png",
               width: 540,
@@ -102,7 +102,7 @@ export const CityFixture = {
             gravityID: "art-paris-2019",
             icon: {
               height: 540,
-              href: null,
+              href: null as any,
               id: "5c9a172180c4b26e20caef53",
               url: "https://d32dm0rphc51dk.cloudfront.net/fEdSbiBZs9MJftHqjyW3sA/square140.png",
               width: 540,
@@ -138,7 +138,7 @@ export const CityFixture = {
             gravityID: "art-paris-2019",
             icon: {
               height: 540,
-              href: null,
+              href: null as any,
               id: "5c9a172180c4b26e20caef53",
               url: "https://d32dm0rphc51dk.cloudfront.net/fEdSbiBZs9MJftHqjyW3sA/square140.png",
               width: 540,
@@ -174,7 +174,7 @@ export const CityFixture = {
             gravityID: "art-paris-2019",
             icon: {
               height: 540,
-              href: null,
+              href: null as any,
               id: "5c9a172180c4b26e20caef53",
               url: "https://d32dm0rphc51dk.cloudfront.net/fEdSbiBZs9MJftHqjyW3sA/square140.png",
               width: 540,
@@ -210,7 +210,7 @@ export const CityFixture = {
             gravityID: "art-paris-2019",
             icon: {
               height: 540,
-              href: null,
+              href: null as any,
               id: "5c9a172180c4b26e20caef53",
               url: "https://d32dm0rphc51dk.cloudfront.net/fEdSbiBZs9MJftHqjyW3sA/square140.png",
               width: 540,
@@ -246,7 +246,7 @@ export const CityFixture = {
             gravityID: "art-paris-2019",
             icon: {
               height: 540,
-              href: null,
+              href: null as any,
               id: "5c9a172180c4b26e20caef53",
               url: "https://d32dm0rphc51dk.cloudfront.net/fEdSbiBZs9MJftHqjyW3sA/square140.png",
               width: 540,
@@ -282,7 +282,7 @@ export const CityFixture = {
             gravityID: "art-paris-2019",
             icon: {
               height: 540,
-              href: null,
+              href: null as any,
               id: "5c9a172180c4b26e20caef53",
               url: "https://d32dm0rphc51dk.cloudfront.net/fEdSbiBZs9MJftHqjyW3sA/square140.png",
               width: 540,
@@ -318,7 +318,7 @@ export const CityFixture = {
             gravityID: "art-paris-2019",
             icon: {
               height: 540,
-              href: null,
+              href: null as any,
               id: "5c9a172180c4b26e20caef53",
               url: "https://d32dm0rphc51dk.cloudfront.net/fEdSbiBZs9MJftHqjyW3sA/square140.png",
               width: 540,
@@ -354,7 +354,7 @@ export const CityFixture = {
             gravityID: "art-paris-2019",
             icon: {
               height: 540,
-              href: null,
+              href: null as any,
               id: "5c9a172180c4b26e20caef53",
               url: "https://d32dm0rphc51dk.cloudfront.net/fEdSbiBZs9MJftHqjyW3sA/square140.png",
               width: 540,
@@ -2245,7 +2245,7 @@ export const CityFixture = {
   slug: "new-york-ny-usa",
   sponsoredContent: {
     artGuideUrl: "https//example.com",
-    featuredShows: null,
+    featuredShows: null as any,
     introText:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.",
     shows: {

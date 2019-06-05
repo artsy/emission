@@ -41,8 +41,8 @@ export class Carousel extends React.Component<Props, State> {
   scrollView: ScrollView
   state = {
     activePageIdx: 0,
-    animationTargetIdx: null,
-    pageWidth: null,
+    animationTargetIdx: null as any,
+    pageWidth: null as any,
   }
 
   handleScroll = ev => {

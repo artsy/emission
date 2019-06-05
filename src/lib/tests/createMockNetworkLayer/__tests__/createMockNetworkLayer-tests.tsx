@@ -39,7 +39,7 @@ describe("createMockNetworkLayer", () => {
     it("returns null for nullable fields which are given as null", async () => {
       const data = await fetchQueryWithData({
         mockData: {
-          artwork: { title: null, id: "null" },
+          artwork: { title: null as any, id: "null" },
         },
       })
       expect(data.artwork.title).toEqual(null)

@@ -10,11 +10,11 @@ jest.mock("react-native-parallax-scroll-view", () => "react-native-parallax-scro
 // Stub out these views for simplicity sake
 jest.mock("../../Components/Gene/Header", () => "Header")
 
-import { Gene } from "../Gene"
+import { Gene, Props } from "../Gene"
 
 import { Theme } from "@artsy/palette"
 
-const exampleProps = {
+const exampleProps: Props = {
   medium: "propupines",
   price_range: "1000-80000",
   sort: "-desc",
@@ -24,7 +24,7 @@ const exampleProps = {
 describe("state", () => {
   it("sets up the initial state", () => {
     const gene = new Gene({
-      gene: null,
+      gene: null as any,
       medium: "glitch",
       price_range: "*-*",
     })

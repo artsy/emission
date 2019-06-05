@@ -17,16 +17,16 @@ const nav = {} as any
 const route = {} as any
 
 const blankMetadata = {
-  title: null,
-  year: null,
-  category: null,
-  categoryName: null,
-  medium: null,
-  width: null,
-  height: null,
-  depth: null,
+  title: null as any,
+  year: null as any,
+  category: null as any,
+  categoryName: null as any,
+  medium: null as any,
+  width: null as any,
+  height: null as any,
+  depth: null as any,
   unit: "in",
-  displayString: null,
+  displayString: null as any,
 }
 
 storiesOf("Consignments/_Screens")

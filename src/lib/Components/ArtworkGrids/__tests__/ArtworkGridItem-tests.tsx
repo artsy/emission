@@ -22,7 +22,7 @@ describe("in an open sale", () => {
   it("renders with starting bid", () => {
     const saleArtwork = {
       opening_bid: { display: "$100" },
-      current_bid: null,
+      current_bid: null as any,
       bidder_positions_count: 0,
       sale: {
         is_closed: false,

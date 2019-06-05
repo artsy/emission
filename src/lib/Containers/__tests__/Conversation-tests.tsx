@@ -97,7 +97,7 @@ const props = {
             id: 222,
             body: "Adoro! Por favor envie-me mais informações",
             from_email_address: "anita@garibaldi.br",
-            attachments: [],
+            attachments: [] as any[],
             from: {
               name: "Percy",
               email: "percy@cat.com",

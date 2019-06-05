@@ -35,7 +35,7 @@ export class CreditCardForm extends Component<CreditCardFormProps, CreditCardFor
     super(props)
 
     this.paymentInfo = (React as any).createRef()
-    this.state = { valid: null, params: { ...this.props.params }, isLoading: false, isError: false }
+    this.state = { valid: null as any, params: { ...this.props.params }, isLoading: false, isError: false }
   }
 
   componentDidMount() {

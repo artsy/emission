@@ -34,7 +34,7 @@ const track: Track<Props, State> = _track
 }))
 export class Detail extends React.Component<Props, State> {
   state: State = {
-    sections: [],
+    sections: [] as any[],
   }
 
   componentDidMount() {

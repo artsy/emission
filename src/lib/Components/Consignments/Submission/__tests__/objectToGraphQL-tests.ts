@@ -15,7 +15,7 @@ describe("JS -> GQL", () => {
 
   it("ignores null values", () => {
     const result = `{ a: 6 }`
-    const input = { a: 6, b: null }
+    const input = { a: 6, b: null as any }
     expect(objectToGraphQLInput(input)).toEqual(result)
   })
 
@@ -27,7 +27,7 @@ describe("JS -> GQL", () => {
 
   it("handles bools correctly", () => {
     const result = "{ a: true, b: false }"
-    const input = { a: true, b: false, c: undefined }
+    const input = { a: true, b: false, c: undefined as any }
     expect(objectToGraphQLInput(input, ["b"])).toEqual(result)
   })
 

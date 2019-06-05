@@ -17,21 +17,21 @@ exports[`layout works as expected with no tabs 1`] = `
       <Header
         artist={
           Object {
-            "birthday": null,
+            "birthday": null as any,
             "counts": Object {
               "articles": 0,
               "artworks": 0,
               "partner_shows": 0,
             },
-            "current_shows": null,
+            "current_shows": null as any,
             "has_metadata": false,
-            "id": null,
-            "internalID": null,
-            "name": null,
-            "nationality": null,
-            "past_large_shows": null,
-            "past_small_shows": null,
-            "upcoming_shows": null,
+            "id": null as any,
+            "internalID": null as any,
+            "name": null as any,
+            "nationality": null as any,
+            "past_large_shows": null as any,
+            "past_small_shows": null as any,
+            "upcoming_shows": null as any,
           }
         }
       />
@@ -64,21 +64,21 @@ exports[`layout works as expected with one tab 1`] = `
       <Header
         artist={
           Object {
-            "birthday": null,
+            "birthday": null as any,
             "counts": Object {
               "articles": 0,
               "artworks": 0,
               "partner_shows": 0,
             },
-            "current_shows": null,
+            "current_shows": null as any,
             "has_metadata": true,
-            "id": null,
-            "internalID": null,
-            "name": null,
-            "nationality": null,
-            "past_large_shows": null,
-            "past_small_shows": null,
-            "upcoming_shows": null,
+            "id": null as any,
+            "internalID": null as any,
+            "name": null as any,
+            "nationality": null as any,
+            "past_large_shows": null as any,
+            "past_small_shows": null as any,
+            "upcoming_shows": null as any,
           }
         }
       />
@@ -92,21 +92,21 @@ exports[`layout works as expected with one tab 1`] = `
         <About
           artist={
             Object {
-              "birthday": null,
+              "birthday": null as any,
               "counts": Object {
                 "articles": 0,
                 "artworks": 0,
                 "partner_shows": 0,
               },
-              "current_shows": null,
+              "current_shows": null as any,
               "has_metadata": true,
-              "id": null,
-              "internalID": null,
-              "name": null,
-              "nationality": null,
-              "past_large_shows": null,
-              "past_small_shows": null,
-              "upcoming_shows": null,
+              "id": null as any,
+              "internalID": null as any,
+              "name": null as any,
+              "nationality": null as any,
+              "past_large_shows": null as any,
+              "past_small_shows": null as any,
+              "upcoming_shows": null as any,
             }
           }
         />
@@ -133,20 +133,20 @@ exports[`layout works as expected with three tabs 1`] = `
       <Header
         artist={
           Object {
-            "birthday": null,
+            "birthday": null as any,
             "counts": Object {
               "artworks": 2,
               "partner_shows": 1,
             },
-            "current_shows": null,
+            "current_shows": null as any,
             "has_metadata": true,
-            "id": null,
-            "internalID": null,
-            "name": null,
-            "nationality": null,
-            "past_large_shows": null,
-            "past_small_shows": null,
-            "upcoming_shows": null,
+            "id": null as any,
+            "internalID": null as any,
+            "name": null as any,
+            "nationality": null as any,
+            "past_large_shows": null as any,
+            "past_small_shows": null as any,
+            "upcoming_shows": null as any,
           }
         }
       />
@@ -174,20 +174,20 @@ exports[`layout works as expected with three tabs 1`] = `
           <Artworks
             artist={
               Object {
-                "birthday": null,
+                "birthday": null as any,
                 "counts": Object {
                   "artworks": 2,
                   "partner_shows": 1,
                 },
-                "current_shows": null,
+                "current_shows": null as any,
                 "has_metadata": true,
-                "id": null,
-                "internalID": null,
-                "name": null,
-                "nationality": null,
-                "past_large_shows": null,
-                "past_small_shows": null,
-                "upcoming_shows": null,
+                "id": null as any,
+                "internalID": null as any,
+                "name": null as any,
+                "nationality": null as any,
+                "past_large_shows": null as any,
+                "past_small_shows": null as any,
+                "upcoming_shows": null as any,
               }
             }
           />

@@ -55,7 +55,7 @@ interface RegistrationState {
 
 @screenTrack({
   context_screen: Schema.PageNames.BidFlowRegistration,
-  context_screen_owner_type: null,
+  context_screen_owner_type: null as any,
 })
 export class Registration extends React.Component<RegistrationProps, RegistrationState> {
   constructor(props) {
@@ -65,9 +65,9 @@ export class Registration extends React.Component<RegistrationProps, Registratio
     const requiresPaymentInformation = !has_credit_cards
 
     this.state = {
-      billingAddress: null,
-      creditCardToken: null,
-      creditCardFormParams: null,
+      billingAddress: null as any,
+      creditCardToken: null as any,
+      creditCardFormParams: null as any,
       conditionsOfSaleChecked: false,
       requiresPaymentInformation,
       isLoading: false,

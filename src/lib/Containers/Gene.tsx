@@ -32,7 +32,8 @@ const TABS = {
 /** The title of the gene when scrolled, with margins */
 const HeaderHeight = 64
 
-interface Props extends ViewProperties {
+export interface Props extends ViewProperties {
+  sort?: string
   medium: string
   price_range: string
   gene: any
@@ -327,8 +328,8 @@ interface Styles {
 
 const styles = StyleSheet.create<Styles>({
   header: {
-    width: isPad ? 330 : null,
-    alignSelf: isPad ? "center" : null,
+    width: isPad ? 330 : (null as any),
+    alignSelf: isPad ? "center" : (null as any),
   },
   stickyHeader: {
     flexDirection: "row",

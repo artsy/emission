@@ -38,13 +38,13 @@ function relevantStateData(currentState: AuctionTimerState, { liveStartsAt, star
       return { date: liveStartsAt, label: `Live ${formatDate(liveStartsAt)}` }
     }
     case AuctionTimerState.LIVE_INTEGRATION_ONGOING: {
-      return { date: null, label: "In progress" }
+      return { date: null as any, label: "In progress" }
     }
     case AuctionTimerState.CLOSING: {
       return { date: endsAt, label: `Ends ${formatDate(endsAt)}` }
     }
     default: {
-      return { date: null, label: "Bidding closed" }
+      return { date: null as any, label: "Bidding closed" }
     }
   }
 }

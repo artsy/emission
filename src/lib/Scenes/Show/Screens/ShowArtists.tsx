@@ -31,7 +31,7 @@ interface State {
 }))
 export class ShowArtists extends React.Component<Props, State> {
   state = {
-    data: [],
+    data: [] as any[],
   }
 
   componentDidMount() {

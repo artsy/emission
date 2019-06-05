@@ -24,7 +24,7 @@ const track: Track<Props, State> = _track
 
 @track()
 class Header extends React.Component<Props, State> {
-  state = { following: null }
+  state: State = { following: null }
 
   componentDidMount() {
     NativeModules.ARTemporaryAPIModule.followStatusForGene(this.props.gene.internalID, (error, following) => {

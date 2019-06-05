@@ -20,5 +20,5 @@ describe("ArtworkAvailability", () => {
 
 const artworkAvailabilityArtwork = {
   availability: "on Loan",
-  " $refType": null,
+  " $refType": null as any,
 }

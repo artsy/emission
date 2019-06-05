@@ -35,7 +35,7 @@ interface State {
 }))
 export class MoreInfo extends React.Component<Props, State> {
   state = {
-    sections: [],
+    sections: [] as any[],
   }
 
   componentDidMount() {

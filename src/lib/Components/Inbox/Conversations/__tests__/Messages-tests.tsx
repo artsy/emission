@@ -27,8 +27,8 @@ const props = {
   initial_message: "Adoro! Por favor envie-me mais informações",
   messages: {
     pageInfo: {
-      startCursor: null,
-      endCursor: null,
+      startCursor: null as any,
+      endCursor: null as any,
       hasPreviousPage: false,
       hasNextPage: false,
     },
@@ -42,7 +42,7 @@ const props = {
           is_from_user: true,
           body: "Adoro! Por favor envie-me mais informações",
           from_email_address: "anita@garibaldi.br",
-          attachments: [],
+          attachments: [] as any[],
           from: {
             name: "Percy",
             email: "percy@cat.com",

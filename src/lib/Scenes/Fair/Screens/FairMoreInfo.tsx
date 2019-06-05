@@ -48,7 +48,7 @@ export const shouldGoStraightToWebsite = (data: ShowMoreMetadataForFairs) => {
 }))
 export class FairMoreInfo extends React.Component<Props, State> {
   state = {
-    sections: [],
+    sections: [] as any[],
   }
 
   componentDidMount() {

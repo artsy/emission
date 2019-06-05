@@ -29,7 +29,7 @@ function relevantStateData(state, { startAt, endAt, formattedOpeningHours }: Pro
       }
     case FairTimerState.PAST:
       return {
-        date: null,
+        date: null as any,
         label: formattedOpeningHours,
       }
   }

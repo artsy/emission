@@ -36,7 +36,7 @@ interface Props {
 export class LocationMap extends React.Component<Props> {
   render() {
     const { location, partnerName } = this.props
-    const { lat, lng } = location.coordinates || { lat: null, lng: null }
+    const { lat, lng } = location.coordinates || { lat: null as any, lng: null }
     const { address_2, address, gravityID, postal_code, city, summary } = location
 
     if (!lat || !lng) {

@@ -26,7 +26,7 @@ export class ForYou extends React.Component<Props, State> {
 
   state = {
     isRefreshing: false,
-    rowData: [],
+    rowData: [] as any[],
   }
 
   componentDidMount() {

@@ -65,7 +65,12 @@ storiesOf("Bidding")
           {
             internalID: "saleartwork12345",
             sale: { id: "sale-id", live_start_at: "2018-08-11T01:00:00+00:00", end_at: null },
-            artwork: { id: "artwork-id", title: "Morgan Hill (Prototype)", date: null, artist_names: "Lewis balts" },
+            artwork: {
+              id: "artwork-id",
+              title: "Morgan Hill (Prototype)",
+              date: null as any,
+              artist_names: "Lewis balts",
+            },
             lot_label: "2",
           } as any
         }
@@ -109,7 +114,7 @@ storiesOf("Bidding")
               sale: {
                 id: "1",
                 live_start_at: "2018-06-11T01:00:00+00:00",
-                end_at: null,
+                end_at: null as any,
               },
               artwork: {
                 id: "1",
@@ -121,7 +126,7 @@ storiesOf("Bidding")
             },
             me: {
               has_qualified_credit_cards: true,
-              bidders: [],
+              bidders: [] as any[],
             },
             increments: [{ display: "$45,000", cents: 4500000 }],
             selectedBidIndex: 0,
@@ -148,11 +153,11 @@ storiesOf("Bidding")
             sale: {
               id: "1",
               live_start_at: "2029-06-11T01:00:00+00:00",
-              end_at: null,
+              end_at: null as any,
               name: "Phillips New Now",
               start_at: "2018-06-11T01:00:00+00:00",
             },
-            me: { bidders: [], has_credit_cards: false },
+            me: { bidders: [] as any[], has_credit_cards: false },
           },
         }}
         style={{ flex: 1 }}
@@ -170,12 +175,12 @@ storiesOf("Bidding")
             sale: {
               id: "1",
               live_start_at: "2029-06-11T01:00:00+00:00",
-              end_at: null,
+              end_at: null as any,
               name: "Phillips New Now: Prints & Multiples from the estate of the esteemed Yuki Stockmeier",
               start_at: "2018-06-11T01:00:00+00:00",
             },
             me: {
-              bidders: [],
+              bidders: [] as any[],
               has_credit_cards: true,
             },
           },

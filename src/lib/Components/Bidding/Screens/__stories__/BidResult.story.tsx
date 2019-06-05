@@ -47,8 +47,8 @@ const saleArtwork = ({
 const Statuses = {
   winning: {
     status: "WINNING",
-    message_header: null,
-    message_description_md: null,
+    message_header: null as any,
+    message_description_md: null as any,
   } as BidderPositionResult,
   outbid: {
     status: "OUTBID",

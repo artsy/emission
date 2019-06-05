@@ -61,14 +61,14 @@ const railProps = (startedFetching = true) => {
   return {
     rail: {
       key: "live_auctions",
-      params: null,
+      params: null as any,
       context: {
         href: "/auction/on-hold-sale",
       },
-      results: [],
+      results: [] as any[],
     },
     relay: {
-      pendingVariables: null,
+      pendingVariables: null as any,
       route: {
         name: "HomeRoute",
         params: {},

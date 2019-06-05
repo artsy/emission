@@ -25,12 +25,12 @@ describe("callbacks", () => {
 describe("state", () => {
   it("is set up with empty props", () => {
     const artist = new Artist(emptyProps)
-    expect(artist.state).toEqual({ query: null, searching: false, results: null })
+    expect(artist.state).toEqual({ query: null as any, searching: false, results: null })
   })
 
   it("is set up with empty props", () => {
     const artist = new Artist(emptyProps)
-    expect(artist.state).toEqual({ query: null, searching: false, results: null })
+    expect(artist.state).toEqual({ query: null as any, searching: false, results: null })
   })
 
   it("sets new state when text is changed", () => {

@@ -188,15 +188,15 @@ export class GlobalMap extends React.Component<Props, State> {
 
     const currentLocation = this.props.initialCoordinates || get(this.props, "viewer.city.coordinates")
     this.state = {
-      activeShows: [],
+      activeShows: [] as any[],
       activeIndex: 0,
       currentLocation,
       bucketResults: emptyBucketResults,
-      featureCollections: null,
+      featureCollections: null as any,
       mapLoaded: false,
       isSavingShow: false,
-      nearestFeature: null,
-      activePin: null,
+      nearestFeature: null as any,
+      activePin: null as any,
       currentZoom: DefaultZoomLevel,
     }
 
@@ -204,7 +204,7 @@ export class GlobalMap extends React.Component<Props, State> {
   }
 
   handleFilterChange = activeIndex => {
-    this.setState({ activeIndex, activePin: null, activeShows: [] })
+    this.setState({ activeIndex, activePin: null as any, activeShows: [] })
   }
 
   resetZoomAndCamera = () => {
@@ -533,7 +533,7 @@ export class GlobalMap extends React.Component<Props, State> {
 
     if (this.currentZoom !== zoom) {
       this.setState({
-        activePin: null,
+        activePin: null as any,
       })
     }
   }
@@ -546,16 +546,16 @@ export class GlobalMap extends React.Component<Props, State> {
   onPressMap = () => {
     if (!this.state.isSavingShow) {
       this.setState({
-        activeShows: [],
-        activePin: null,
+        activeShows: [] as any[],
+        activePin: null as any,
       })
     }
   }
 
   onPressCitySwitcherButton = () => {
     this.setState({
-      activeShows: [],
-      activePin: null,
+      activeShows: [] as any[],
+      activePin: null as any,
     })
   }
 

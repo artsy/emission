@@ -186,7 +186,7 @@ const artworkTombstoneArtwork = {
       id: "1234",
       gravityID: "andy-warhol",
       is_followed: false,
-      " $fragmentRefs": null,
+      " $fragmentRefs": null as any,
     },
     {
       name: "Alex Katz",
@@ -194,7 +194,7 @@ const artworkTombstoneArtwork = {
       id: "4354",
       gravityID: "alex-katz",
       is_followed: false,
-      " $fragmentRefs": null,
+      " $fragmentRefs": null as any,
     },
     {
       name: "Pablo Picasso",
@@ -202,7 +202,7 @@ const artworkTombstoneArtwork = {
       id: "3433",
       gravityID: "pablo-picasso",
       is_followed: false,
-      " $fragmentRefs": null,
+      " $fragmentRefs": null as any,
     },
     {
       name: "Banksy",
@@ -210,7 +210,7 @@ const artworkTombstoneArtwork = {
       id: "3468",
       gravityID: "banksy",
       is_followed: false,
-      " $fragmentRefs": null,
+      " $fragmentRefs": null as any,
     },
     {
       name: "Barbara Kruger",
@@ -218,10 +218,10 @@ const artworkTombstoneArtwork = {
       id: "9874",
       gravityID: "barbara-kruger",
       is_followed: false,
-      " $fragmentRefs": null,
+      " $fragmentRefs": null as any,
     },
   ],
-  cultural_maker: null,
+  cultural_maker: null as any,
   dimensions: {
     in: "15 × 20 in",
     cm: "38.1 × 50.8 cm",
@@ -230,5 +230,5 @@ const artworkTombstoneArtwork = {
   attribution_class: {
     short_description: "This is an edition of something",
   },
-  " $refType": null,
+  " $refType": null as any,
 }

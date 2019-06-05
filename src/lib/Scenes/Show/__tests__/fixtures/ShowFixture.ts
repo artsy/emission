@@ -7,8 +7,8 @@ export const ShowFixture = {
       city: "Sea Island ",
       address: "Online Exclusive",
       address_2: "",
-      coordinates: null,
-      day_schedules: [],
+      coordinates: null as any,
+      day_schedules: [] as any[],
     },
     artists: [
       {

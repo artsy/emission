@@ -44,7 +44,7 @@ export class SelectCountry extends React.Component<SelectCountryProps, SelectCou
     this.state = {
       query: props.country && props.country.longName,
       isLoading: false,
-      results: [],
+      results: [] as any[],
     }
   }
 

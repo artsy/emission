@@ -132,7 +132,7 @@ export class MockRelayRenderer<T extends OperationBase = OperationDefaults> exte
   MockRelayRendererProps<T>,
   MockRelayRendererState
 > {
-  state = {
+  state: MockRelayRendererState = {
     caughtError: undefined,
   }
 

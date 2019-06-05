@@ -34,5 +34,5 @@ const show = {
   partner: {
     name: "Catty Partner",
   },
-  fair: null,
+  fair: null as any,
 }

@@ -146,6 +146,6 @@ const followArtistButtonArtist = {
   id: "12345",
   gravityID: "andy-warhol",
   is_followed: false,
-  " $refType": null,
-  " $fragmentRefs": null,
+  " $refType": null as any,
+  " $fragmentRefs": null as any,
 }

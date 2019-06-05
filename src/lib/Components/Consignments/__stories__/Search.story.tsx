@@ -7,17 +7,17 @@ export const name = "Consignments/Search"
 export const component = SearchResults
 
 const noQuery: SearchQueryProps<ArtistResult> = {
-  query: null,
+  query: null as any,
   searching: false,
   placeholder: "Artist/Designer Name",
   noResultsMessage: "Unfortunately we are not accepting consignments for works by",
-  results: [],
+  results: [] as any[],
 }
 
 const queryNoResults: SearchQueryProps<ArtistResult> = {
   query: "ba",
   searching: false,
-  results: [],
+  results: [] as any[],
   placeholder: "Artist/Designer Name",
   noResultsMessage: "Unfortunately we are not accepting consignments for works by",
 }
@@ -25,7 +25,7 @@ const queryNoResults: SearchQueryProps<ArtistResult> = {
 const queryNoResultsSearching: SearchQueryProps<ArtistResult> = {
   query: "ba",
   searching: true,
-  results: [],
+  results: [] as any[],
   placeholder: "Artist/Designer Name",
   noResultsMessage: "Unfortunately we are not accepting consignments for works by",
 }

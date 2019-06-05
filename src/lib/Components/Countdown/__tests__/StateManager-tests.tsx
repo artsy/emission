@@ -19,7 +19,7 @@ describe("StateManager", () => {
           date: new Date(Date.now() + 1000).toISOString(),
           label: "foo",
         })}
-        onNextTickerState={jest.fn(() => ({ label: "bar", date: null, state: "foo" }))}
+        onNextTickerState={jest.fn(() => ({ label: "bar", date: null as any, state: "foo" }))}
       />
     )
 
@@ -32,7 +32,7 @@ describe("StateManager", () => {
   })
 
   it("Transitions state when duration expires", () => {
-    const onNextTickerState = jest.fn(() => ({ label: "bar", date: null, state: "foo" }))
+    const onNextTickerState = jest.fn(() => ({ label: "bar", date: null as any, state: "foo" }))
     mount(
       <StateManager
         CountdownComponent={Countdown}

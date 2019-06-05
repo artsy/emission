@@ -47,10 +47,10 @@ export type BucketKey = keyof ReturnType<typeof bucketCityResults>
 export type BucketResults = ReturnType<typeof bucketCityResults>
 
 export const emptyBucketResults: BucketResults = {
-  saved: [],
-  fairs: [],
-  galleries: [],
-  museums: [],
-  closing: [],
-  opening: [],
+  saved: [] as any[],
+  fairs: [] as any[],
+  galleries: [] as any[],
+  museums: [] as any[],
+  closing: [] as any[],
+  opening: [] as any[],
 }

@@ -18,7 +18,7 @@ const fairsModule = {
       id: "the-profileless-fair",
       name: "The Profileless Fair: You Should Not See Me in Snapshots",
       mobile_image: { id: "image", url: "https://neopets.jpg" },
-      profile: null,
+      profile: null as any,
     },
   ],
 }

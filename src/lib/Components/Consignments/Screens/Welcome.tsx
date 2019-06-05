@@ -133,7 +133,7 @@ const Contents: React.SFC<{ deviceProps: DeviceProps; onPress: () => void }> = (
   context_screen_owner_type: Schema.OwnerEntityTypes.Consignment,
 })
 export default class Welcome extends React.Component<Props, State> {
-  state = { deviceProps: undefined }
+  state: State = { deviceProps: undefined }
 
   goTapped = () => this.props.navigator.push({ component: Overview })
 

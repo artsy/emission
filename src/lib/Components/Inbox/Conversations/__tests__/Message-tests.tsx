@@ -24,7 +24,7 @@ it("looks correct when rendered", () => {
       .toISOString(),
     body: messageBody,
     is_from_user: true,
-    attachments: [],
+    attachments: [] as any[],
     from: {
       name: "Percy",
       email: "percy@cat.com",

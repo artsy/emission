@@ -67,7 +67,7 @@ export class Conversation extends React.Component<Props, State> {
     isConnected: true,
     markedMessageAsRead: false,
     fetchingData: false,
-    failedMessageText: null,
+    failedMessageText: null as any,
   }
 
   componentDidMount() {

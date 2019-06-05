@@ -22,7 +22,7 @@ it("looks correct when rendered", () => {
 
 const props = {
   relay: {
-    environment: null,
+    environment: null as any,
     hasMore: jest.fn(),
     isLoading: jest.fn(),
     loadMore: jest.fn(),
@@ -37,7 +37,7 @@ const props = {
         is_open: true,
         is_live_open: true,
         start_at: "2017-10-16T22:00:00+00:00",
-        end_at: null,
+        end_at: null as any,
         registration_ends_at: "2017-11-01T13:00:00+00:00",
         live_start_at: "2017-11-02T13:00:00+00:00",
         display_timely_at: "In Progress",
@@ -52,7 +52,7 @@ const props = {
         is_open: true,
         is_live_open: false,
         start_at: "2017-10-17T15:00:00+00:00",
-        end_at: null,
+        end_at: null as any,
         registration_ends_at: "2017-11-01T17:00:00+00:00",
         live_start_at: "2017-11-02T17:00:00+00:00",
         display_timely_at: "In Progress",

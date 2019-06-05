@@ -30,7 +30,7 @@ exports[`renders properly with credit card 1`] = `
               "gravityID": "david-lynch-foundation-benefit-auction-2018",
               "id": "U2FsZTpkYXZpZC1seW5jaC1mb3VuZGF0aW9uLWJlbmVmaXQtYXVjdGlvbi0yMDE4",
               "is_preview": false,
-              "live_start_at": null,
+              "live_start_at": null as any,
               "name": "David Lynch Foundation: Benefit Auction 2018",
               "start_at": "2018-06-12T08:10:00+00:00",
             },
@@ -289,7 +289,7 @@ exports[`renders properly with credit card 1`] = `
                         ]
                       }
                     >
-                      
+
                     </Text>
                   </View>
                   <View
@@ -409,7 +409,7 @@ exports[`renders properly with credit card 1`] = `
                 }
               >
                 Agree to
-                 
+
                 <Text
                   onPress={[Function]}
                   style={
@@ -529,7 +529,7 @@ exports[`renders properly without credit card 1`] = `
               "gravityID": "david-lynch-foundation-benefit-auction-2018",
               "id": "U2FsZTpkYXZpZC1seW5jaC1mb3VuZGF0aW9uLWJlbmVmaXQtYXVjdGlvbi0yMDE4",
               "is_preview": false,
-              "live_start_at": null,
+              "live_start_at": null as any,
               "name": "David Lynch Foundation: Benefit Auction 2018",
               "start_at": "2018-06-12T08:10:00+00:00",
             },
@@ -1050,7 +1050,7 @@ exports[`renders properly without credit card 1`] = `
                         ]
                       }
                     >
-                      
+
                     </Text>
                   </View>
                   <View
@@ -1170,7 +1170,7 @@ exports[`renders properly without credit card 1`] = `
                 }
               >
                 Agree to
-                 
+
                 <Text
                   onPress={[Function]}
                   style={

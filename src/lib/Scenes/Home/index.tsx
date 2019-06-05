@@ -58,7 +58,7 @@ const screenSchemaForCurrentTab = currentSelectedTab => {
 // Also, it'll only fire when the home screen is mounted, the only event we would otherwise miss with our own callbacks
 @screenTrack((props: Props) => ({
   context_screen: screenSchemaForCurrentTab(props.initialTab),
-  context_screen_owner_type: null,
+  context_screen_owner_type: null as any,
 }))
 export default class Home extends React.Component<Props, State> {
   tabView?: ScrollableTabView | any
@@ -155,7 +155,7 @@ export default class Home extends React.Component<Props, State> {
   fireHomeScreenViewAnalytics = () => {
     this.props.tracking.trackEvent({
       context_screen: screenSchemaForCurrentTab(this.state.selectedTab),
-      context_screen_owner_type: null,
+      context_screen_owner_type: null as any,
     })
   }
 }
