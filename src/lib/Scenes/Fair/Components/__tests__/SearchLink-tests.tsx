@@ -23,7 +23,7 @@ describe("SearchLink", () => {
 
   it("Routes to Fair Search on click", () => {
     const comp = shallow(<SearchLink id="this-is-a-fair-id" internalID="123456" />)
-    const inst = comp.instance()
+    const inst = comp.instance() as SearchLink
 
     inst.handlePress()
 

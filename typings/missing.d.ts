@@ -20,7 +20,8 @@ declare module "react-spring/dist/native.cjs.js" {
 }
 
 declare module "@mapbox/react-native-mapbox-gl" {
-
+  const Mapbox: any
+  export default Mapbox
 }
 
 declare module "react-relay-network-modern/node8" {

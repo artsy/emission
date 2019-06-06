@@ -1,3 +1,4 @@
+import { CaretButton } from "lib/Components/Buttons/CaretButton"
 import { MockRelayRenderer } from "lib/tests/MockRelayRenderer"
 import { renderUntil } from "lib/tests/renderUntil"
 import React from "react"
@@ -46,7 +47,7 @@ describe("FairMoreInfo", () => {
 
   it("opens fair ticketsLink url", async () => {
     const tree = await renderTree()
-    const button = tree.find("[text='Buy tickets']")
+    const button = tree.find<CaretButton>("[text='Buy tickets']")
 
     button.props().onPress()
 

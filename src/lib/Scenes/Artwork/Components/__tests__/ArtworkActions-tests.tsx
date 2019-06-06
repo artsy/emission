@@ -102,7 +102,7 @@ describe("ArtworkActions", () => {
         mockSaveResults: unsaveResponse,
       })
 
-      const saveButton = artworkActions.find(Sans).at(0)
+      const saveButton = artworkActions.find<Sans>(Sans).at(0)
       expect(saveButton.text()).toMatchInlineSnapshot(`"Saved"`)
       expect(saveButton.props().color).toMatchInlineSnapshot(`"#6E1EFF"`)
 
