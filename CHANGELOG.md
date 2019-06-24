@@ -16,6 +16,10 @@
 
 ### Master
 
+- Fixes crash with empty country selection - ash
+
+### 1.12.x develop
+
 - Update typings for Relay to v4 and usage thereof - alloy
 - Use gravity ID when opening artwork from artwork grid instead of global object ID - alloy
 
