@@ -16,6 +16,8 @@
 
 ### Master
 
+### 1.12.2
+
 - Fixes crash with empty country selection - ash
 
 ### 1.12.x develop
