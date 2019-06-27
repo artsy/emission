@@ -70,7 +70,7 @@ export class Artist extends Component<Props, State> {
       action_name: actionName,
       action_type: Schema.ActionTypes.Tap,
       owner_id: props.artist.internalID,
-      owner_slug: props.artist.gravityID,
+      owner_slug: props.artist.slug,
       owner_type: Schema.OwnerEntityTypes.Artist,
     }
   })

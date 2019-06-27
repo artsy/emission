@@ -12,7 +12,7 @@ interface Props {
 
 export class ArtworksPreview extends React.Component<Props> {
   viewAllArtworksPressed() {
-    SwitchBoard.presentNavigationViewController(this, `/fair/${this.props.fair.gravityID}/artworks`)
+    SwitchBoard.presentNavigationViewController(this, `/fair/${this.props.fair.slug}/artworks`)
   }
 
   render() {

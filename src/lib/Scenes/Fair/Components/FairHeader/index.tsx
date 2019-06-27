@@ -60,11 +60,11 @@ export class FairHeader extends React.Component<Props, State> {
   state = { isSavedFairStateUpdating: false }
 
   viewAllArtists() {
-    SwitchBoard.presentNavigationViewController(this, `/fair/${this.props.fair.gravityID}/artists`)
+    SwitchBoard.presentNavigationViewController(this, `/fair/${this.props.fair.slug}/artists`)
   }
 
   viewAllExhibitors() {
-    SwitchBoard.presentNavigationViewController(this, `/fair/${this.props.fair.gravityID}/exhibitors`)
+    SwitchBoard.presentNavigationViewController(this, `/fair/${this.props.fair.slug}/exhibitors`)
   }
 
   getContextualDetails() {

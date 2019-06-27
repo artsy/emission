@@ -45,7 +45,7 @@ export class ShowHeader extends React.Component<Props, State> {
   handleFollowShow = () => {
     const {
       relay,
-      show: { gravityID: showSlugID, id: relayID, internalID: showID, is_followed: isShowFollowed },
+      show: { slug: showSlug, id: relayID, internalID: showID, is_followed: isShowFollowed },
     } = this.props
 
     this.setState(
@@ -77,7 +77,7 @@ export class ShowHeader extends React.Component<Props, State> {
               show: {
                 internalID: showID,
                 is_followed: !isShowFollowed,
-                gravityID: showSlugID,
+                slug: showSlug,
               },
             },
           },
@@ -93,7 +93,7 @@ export class ShowHeader extends React.Component<Props, State> {
     action_name: props.show.is_followed ? Schema.ActionNames.SaveShow : Schema.ActionNames.UnsaveShow,
     action_type: Schema.ActionTypes.Success,
     owner_id: props.show.internalID,
-    owner_slug: props.show.gravityID,
+    owner_slug: props.show.slug,
     owner_type: Schema.OwnerEntityTypes.Show,
   }))
   handleShowSuccessfullyUpdated() {
@@ -106,7 +106,7 @@ export class ShowHeader extends React.Component<Props, State> {
     action_name: Schema.ActionNames.CarouselSwipe,
     action_type: Schema.ActionTypes.Tap,
     owner_id: props.show.internalID,
-    owner_slug: props.show.gravityID,
+    owner_slug: props.show.slug,
     owner_type: Schema.OwnerEntityTypes.Show,
   }))
   handleUserSwipingCarousel() {
@@ -129,7 +129,7 @@ export class ShowHeader extends React.Component<Props, State> {
   }
 
   handleViewAllArtistsPressed() {
-    SwitchBoard.presentNavigationViewController(this, `/show/${this.props.show.gravityID}/artists`)
+    SwitchBoard.presentNavigationViewController(this, `/show/${this.props.show.slug}/artists`)
   }
 
   render() {

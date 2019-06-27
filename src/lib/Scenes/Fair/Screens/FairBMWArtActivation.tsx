@@ -47,7 +47,7 @@ const PressReleaseContainer = styled(Flex)`
     ({
       context_screen: Schema.PageNames.BMWFairActivation,
       context_screen_owner_type: Schema.OwnerEntityTypes.Fair,
-      context_screen_owner_slug: props.fair.gravityID,
+      context_screen_owner_slug: props.fair.slug,
       context_screen_owner_id: props.fair.internalID,
     } as any)
 )

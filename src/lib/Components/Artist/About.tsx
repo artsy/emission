@@ -42,7 +42,7 @@ class About extends React.Component<Props> {
     if (this.props.artist.is_display_auction_link) {
       // Keeps the same margins as the bio text
       const sideMargin = Dimensions.get("window").width > 700 ? 50 : 20
-      const url = `/artist/${this.props.artist.gravityID}/auction-results`
+      const url = `/artist/${this.props.artist.slug}/auction-results`
       return (
         <NavButton title="Auction Results" href={url} style={{ marginLeft: sideMargin, marginRight: sideMargin }} />
       )

@@ -44,10 +44,10 @@ export class ShowArtistsPreview extends React.Component<Props> {
         <Serif size="5">Artists</Serif>
         <Spacer m={1} />
         {items.map((artist, idx, arr) => {
-          const { href, gravityID, internalID } = artist
+          const { href, slug, internalID } = artist
           return (
-            <React.Fragment key={gravityID}>
-              <TouchableOpacity onPress={() => this.handlePress(href, gravityID, internalID)}>
+            <React.Fragment key={slug}>
+              <TouchableOpacity onPress={() => this.handlePress(href, slug, internalID)}>
                 <ArtistListItem artist={artist} Component={Component} />
               </TouchableOpacity>
               {idx < arr.length - 1 && <Spacer m={1} />}
