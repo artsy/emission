@@ -153,7 +153,7 @@ function eventProps(actionName: Schema.ActionNames, actionType: Schema.ActionTyp
 const FairBMWArtActivationFragmentContainer = createFragmentContainer(FairBMWArtActivation, {
   fair: graphql`
     fragment FairBMWArtActivation_fair on Fair {
-      gravityID
+      slug
       internalID
       sponsoredContent {
         activationText

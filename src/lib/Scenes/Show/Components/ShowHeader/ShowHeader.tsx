@@ -59,7 +59,7 @@ export class ShowHeader extends React.Component<Props, State> {
             mutation ShowHeaderFollowShowMutation($input: FollowShowInput!) {
               followShow(input: $input) {
                 show {
-                  gravityID
+                  slug
                   internalID
                   is_followed
                 }
@@ -205,7 +205,7 @@ export class ShowHeader extends React.Component<Props, State> {
 export const ShowHeaderContainer = createFragmentContainer(ShowHeader, {
   show: graphql`
     fragment ShowHeader_show on Show {
-      gravityID
+      slug
       internalID
       id
       name
@@ -218,7 +218,7 @@ export const ShowHeaderContainer = createFragmentContainer(ShowHeader, {
       partner {
         ... on Partner {
           name
-          gravityID
+          slug
           href
         }
       }
@@ -232,7 +232,7 @@ export const ShowHeaderContainer = createFragmentContainer(ShowHeader, {
             artist {
               name
               href
-              gravityID
+              slug
               internalID
             }
           }
@@ -241,7 +241,7 @@ export const ShowHeaderContainer = createFragmentContainer(ShowHeader, {
       artists {
         name
         href
-        gravityID
+        slug
         internalID
       }
     }

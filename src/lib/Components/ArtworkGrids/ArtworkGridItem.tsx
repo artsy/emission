@@ -202,7 +202,7 @@ export default createFragmentContainer(Artwork, {
       is_biddable
       is_acquireable
       is_offerable
-      gravityID
+      slug
       sale {
         is_auction
         is_live_open

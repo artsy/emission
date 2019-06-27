@@ -242,8 +242,8 @@ export class Inquiry extends React.Component<Props, State> {
 export default createFragmentContainer(Inquiry, {
   artwork: graphql`
     fragment Inquiry_artwork on Artwork {
+      slug
       internalID
-      gravityID
       contact_message
       partner {
         name

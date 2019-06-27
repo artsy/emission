@@ -63,7 +63,7 @@ export const FairArtworksContainer = createRefetchContainer(
         ) {
         id
         internalID
-        gravityID
+        slug
         artworks: filteredArtworks(
           size: 0
           medium: $medium

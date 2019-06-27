@@ -78,7 +78,7 @@ export class ShowItemRow extends React.Component<Props, State> {
               mutation ShowItemRowMutation($input: FollowShowInput!) {
                 followShow(input: $input) {
                   show {
-                    gravityID
+                    slug
                     internalID
                     is_followed
                   }
@@ -187,9 +187,9 @@ export class ShowItemRow extends React.Component<Props, State> {
 export const ShowItemRowContainer = createFragmentContainer(ShowItemRow, {
   show: graphql`
     fragment ShowItemRow_show on Show {
-      gravityID
-      internalID
       id
+      slug
+      internalID
       is_followed
       name
       isStubShow

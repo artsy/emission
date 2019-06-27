@@ -26,7 +26,7 @@ query ArtistListItemTestsQuery {
 fragment ArtistListItem_artist on Artist {
   id
   internalID
-  gravityID
+  slug
   name
   is_followed
   nationality
@@ -104,7 +104,7 @@ return {
           {
             "kind": "ScalarField",
             "alias": null,
-            "name": "gravityID",
+            "name": "slug",
             "args": null,
             "storageKey": null
           },
@@ -168,7 +168,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtistListItemTestsQuery",
-    "id": "ad42c869e9d3a391ca1609f30af5956b",
+    "id": "d4a968291df2c982d639652c41769925",
     "text": null,
     "metadata": {}
   }

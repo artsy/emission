@@ -196,13 +196,13 @@ export const DetailContainer = createFragmentContainer(Detail, {
   show: graphql`
     fragment Detail_show on Show {
       internalID
-      gravityID
+      slug
       name
       description
       city
       isStubShow
       images {
-        gravityID
+        internalID
       }
       ...ShowHeader_show
       ...ShowArtworksPreview_show
@@ -227,7 +227,7 @@ export const DetailContainer = createFragmentContainer(Detail, {
       # and so we need to request them back here to verify if we
       # should show the artists section at all
       artists_without_artworks {
-        gravityID
+        slug
       }
 
       counts {

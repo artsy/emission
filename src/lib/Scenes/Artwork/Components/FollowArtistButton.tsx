@@ -61,8 +61,8 @@ export class FollowArtistButton extends React.Component<Props> {
 export const FollowArtistButtonFragmentContainer = createFragmentContainer(FollowArtistButton, {
   artist: graphql`
     fragment FollowArtistButton_artist on Artist {
-      gravityID
       id
+      slug
       is_followed
     }
   `,

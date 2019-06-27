@@ -93,13 +93,13 @@ export default createFragmentContainer(FairsRail, {
   fairs_module: graphql`
     fragment FairsRail_fairs_module on HomePageFairsModule {
       results {
-        gravityID
+        slug
         name
         profile {
-          gravityID
+          slug
         }
         mobile_image {
-          gravityID
+          internalID
           url
         }
       }

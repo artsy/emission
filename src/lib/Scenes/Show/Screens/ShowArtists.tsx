@@ -58,7 +58,7 @@ export const ShowArtistsContainer = createFragmentContainer(ShowArtists, {
   show: graphql`
     fragment ShowArtists_show on Show {
       internalID
-      gravityID
+      slug
       artists_grouped_by_name {
         letter
         items {

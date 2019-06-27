@@ -176,7 +176,7 @@ const GenericGrid = createFragmentContainer(GenericArtworksGrid, {
   artworks: graphql`
     fragment GenericGrid_artworks on Artwork @relay(plural: true) {
       id
-      gravityID
+      slug
       image {
         aspect_ratio
       }

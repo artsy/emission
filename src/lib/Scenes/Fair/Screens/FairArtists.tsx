@@ -115,7 +115,7 @@ export const FairArtistsContainer = createPaginationContainer(
     fair: graphql`
       fragment FairArtists_fair on Fair
         @argumentDefinitions(count: { type: "Int", defaultValue: 10 }, cursor: { type: "String" }) {
-        gravityID
+        slug
         internalID
         artists(first: $count, after: $cursor) @connection(key: "Fair_artists") {
           pageInfo {
@@ -130,7 +130,7 @@ export const FairArtistsContainer = createPaginationContainer(
               sortable_id
               href
               internalID
-              gravityID
+              slug
             }
           }
         }

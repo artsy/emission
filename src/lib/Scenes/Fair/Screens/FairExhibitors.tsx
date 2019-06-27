@@ -128,13 +128,13 @@ export class FairExhibitors extends React.Component<Props, State> {
 const FairExhibitorsFragmentContainer = createFragmentContainer(FairExhibitors, {
   fair: graphql`
     fragment FairExhibitors_fair on Fair {
-      gravityID
+      slug
       internalID
       exhibitors_grouped_by_name {
         letter
         exhibitors {
           name
-          gravityID
+          slug
           profile_id
           partner_id
         }

@@ -97,7 +97,7 @@ export default createPaginationContainer(
           @connection(key: "CityFairList_fairs") {
           edges {
             node {
-              gravityID
+              slug
               name
               exhibition_period
               counts {
@@ -116,14 +116,14 @@ export default createPaginationContainer(
               }
               profile {
                 icon {
-                  gravityID
+                  internalID
                   href
                   height
                   width
                   url(version: "square140")
                 }
                 id
-                gravityID
+                slug
                 name
               }
               start_at

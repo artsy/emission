@@ -29,7 +29,7 @@ query MoreInfoQuery(
 
 fragment MoreInfo_show on Show {
   internalID
-  gravityID
+  slug
   exhibition_period
   pressReleaseUrl
   openingReceptionText
@@ -52,7 +52,7 @@ fragment MoreInfo_show on Show {
   }
 }
 
-fragment ShowEventSection_event on PartnerShowEventType {
+fragment ShowEventSection_event on PartnerShowEvent {
   event_type
   description
   start_at
@@ -134,7 +134,7 @@ return {
           {
             "kind": "ScalarField",
             "alias": null,
-            "name": "gravityID",
+            "name": "slug",
             "args": null,
             "storageKey": null
           },
@@ -211,7 +211,7 @@ return {
             "name": "events",
             "storageKey": null,
             "args": null,
-            "concreteType": "PartnerShowEventType",
+            "concreteType": "PartnerShowEvent",
             "plural": true,
             "selections": [
               {
@@ -252,7 +252,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "MoreInfoQuery",
-    "id": "3eff8911aad2f129b8acef054008bb0a",
+    "id": "9394d33f8505938f251d50238518fe53",
     "text": null,
     "metadata": {}
   }

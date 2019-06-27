@@ -161,7 +161,7 @@ export class FairHeader extends React.Component<Props, State> {
 export const FairHeaderContainer = createFragmentContainer(FairHeader, {
   fair: graphql`
     fragment FairHeader_fair on Fair {
-      gravityID
+      slug
       internalID
       name
       formattedOpeningHours
@@ -173,7 +173,7 @@ export const FairHeaderContainer = createFragmentContainer(FairHeader, {
         artists {
           name
           href
-          gravityID
+          slug
           internalID
         }
         galleries {
@@ -184,12 +184,12 @@ export const FairHeaderContainer = createFragmentContainer(FairHeader, {
       partner_names: shows_connection(first: 2) {
         edges {
           node {
-            gravityID
+            slug
             partner {
               ... on Partner {
                 profile {
                   name
-                  gravityID
+                  slug
                   internalID
                 }
               }
@@ -202,7 +202,7 @@ export const FairHeaderContainer = createFragmentContainer(FairHeader, {
           node {
             name
             href
-            gravityID
+            slug
             internalID
           }
         }
@@ -216,14 +216,14 @@ export const FairHeaderContainer = createFragmentContainer(FairHeader, {
 
       profile {
         icon {
-          gravityID
+          internalID
           href
           height
           width
           url(version: "square140")
         }
         id
-        gravityID
+        slug
         name
         is_followed
       }

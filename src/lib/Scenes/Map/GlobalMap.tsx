@@ -791,7 +791,7 @@ export const GlobalMapContainer = createFragmentContainer(GlobalMap, {
           introText
           artGuideUrl
           featuredShows {
-            gravityID
+            slug
             internalID
             id
             name
@@ -832,7 +832,7 @@ export const GlobalMapContainer = createFragmentContainer(GlobalMap, {
         ) {
           edges {
             node {
-              gravityID
+              slug
               internalID
               id
               isStubShow
@@ -872,7 +872,7 @@ export const GlobalMapContainer = createFragmentContainer(GlobalMap, {
         shows(includeStubShows: true, status: RUNNING, first: $maxInt, sort: PARTNER_ASC) {
           edges {
             node {
-              gravityID
+              slug
               internalID
               id
               isStubShow
@@ -912,7 +912,7 @@ export const GlobalMapContainer = createFragmentContainer(GlobalMap, {
         fairs(first: $maxInt, status: CURRENT, sort: START_AT_ASC) {
           edges {
             node {
-              gravityID
+              slug
               name
               exhibition_period
               counts {
@@ -934,14 +934,14 @@ export const GlobalMapContainer = createFragmentContainer(GlobalMap, {
 
               profile {
                 icon {
-                  gravityID
+                  internalID
                   href
                   height
                   width
                   url(version: "square140")
                 }
                 id
-                gravityID
+                slug
                 name
               }
 

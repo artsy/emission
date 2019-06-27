@@ -177,7 +177,7 @@ export const LocationMapContainer = createFragmentContainer(LocationMap, {
   location: graphql`
     fragment LocationMap_location on Location {
       id
-      gravityID
+      internalID
       city
       address
       address_2

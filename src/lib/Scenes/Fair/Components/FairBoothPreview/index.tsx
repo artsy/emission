@@ -77,7 +77,7 @@ export class FairBoothPreview extends React.Component<Props, State> {
             mutation FairBoothPreviewMutation($input: FollowProfileInput!) {
               followProfile(input: $input) {
                 profile {
-                  gravityID
+                  slug
                   internalID
                   is_followed
                 }
@@ -173,7 +173,7 @@ export class FairBoothPreview extends React.Component<Props, State> {
 export const FairBoothPreviewContainer = createFragmentContainer(FairBoothPreview, {
   show: graphql`
     fragment FairBoothPreview_show on Show {
-      gravityID
+      slug
       internalID
       name
       is_fair_booth
@@ -184,7 +184,7 @@ export const FairBoothPreviewContainer = createFragmentContainer(FairBoothPrevie
         ... on Partner {
           name
           href
-          gravityID
+          slug
           internalID
           id
           profile {

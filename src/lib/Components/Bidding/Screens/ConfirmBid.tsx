@@ -233,7 +233,7 @@ export class ConfirmBid extends React.Component<ConfirmBidProps, ConfirmBidState
               creditCardOrError {
                 ... on CreditCardMutationSuccess {
                   creditCard {
-                    gravityID
+                    internalID
                     brand
                     name
                     last_digits
@@ -270,7 +270,7 @@ export class ConfirmBid extends React.Component<ConfirmBidProps, ConfirmBidState
               message_header
               message_description_md
               position {
-                gravityID
+                internalID
                 suggested_next_bid {
                   cents
                   display
@@ -540,12 +540,12 @@ export const ConfirmBidScreen = createRefetchContainer(
       fragment ConfirmBid_sale_artwork on SaleArtwork {
         internalID
         sale {
-          gravityID
+          slug
           live_start_at
           end_at
         }
         artwork {
-          gravityID
+          slug
           title
           date
           artist_names

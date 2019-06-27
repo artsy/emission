@@ -80,7 +80,7 @@ export const ShowItemContainer = createFragmentContainer(ShowItem, {
   show: graphql`
     fragment ShowItem_show on Show {
       internalID
-      gravityID
+      slug
       name
       exhibition_period
       end_at

@@ -69,12 +69,12 @@ export const ShowArtistsPreviewContainer = createFragmentContainer(ShowArtistsPr
   show: graphql`
     fragment ShowArtistsPreview_show on Show {
       internalID
-      gravityID
+      slug
 
       # Comes from CMS
       artists {
         internalID
-        gravityID
+        slug
         href
         ...ArtistListItem_artist
       }
@@ -82,7 +82,7 @@ export const ShowArtistsPreviewContainer = createFragmentContainer(ShowArtistsPr
       # Comes from stubbed data
       artists_without_artworks {
         internalID
-        gravityID
+        slug
         href
         ...ArtistListItem_artist
       }

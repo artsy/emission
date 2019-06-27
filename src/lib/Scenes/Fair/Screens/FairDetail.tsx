@@ -259,7 +259,7 @@ export const FairDetailContainer = createPaginationContainer(
       fragment FairDetail_fair on Fair
         @argumentDefinitions(count: { type: "Int", defaultValue: 5 }, cursor: { type: "String" }) {
         ...FairHeader_fair
-        gravityID
+        slug
         internalID
         name
         hours
@@ -293,12 +293,12 @@ export const FairDetailContainer = createPaginationContainer(
           edges {
             cursor
             node {
-              gravityID
+              slug
               internalID
               artworks_connection(first: 4) {
                 edges {
                   node {
-                    gravityID
+                    slug
                   }
                 }
               }

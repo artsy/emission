@@ -25,17 +25,17 @@ query ShowArtistsPreviewTestsQuery {
 
 fragment ShowArtistsPreview_show on Show {
   internalID
-  gravityID
+  slug
   artists {
     internalID
-    gravityID
+    slug
     href
     ...ArtistListItem_artist
     id
   }
   artists_without_artworks {
     internalID
-    gravityID
+    slug
     href
     ...ArtistListItem_artist
     id
@@ -45,7 +45,7 @@ fragment ShowArtistsPreview_show on Show {
 fragment ArtistListItem_artist on Artist {
   id
   internalID
-  gravityID
+  slug
   name
   is_followed
   nationality
@@ -75,7 +75,7 @@ v1 = {
 v2 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "gravityID",
+  "name": "slug",
   "args": null,
   "storageKey": null
 },
@@ -222,7 +222,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ShowArtistsPreviewTestsQuery",
-    "id": "895f70fb99c72534467237e856cae5cf",
+    "id": "33aa15b61dc6603596020eaffa51f4a9",
     "text": null,
     "metadata": {}
   }

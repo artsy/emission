@@ -169,7 +169,7 @@ export default createFragmentContainer(ArtworkCarouselHeader, {
         ... on HomePageModuleContextFollowedArtist {
           artist {
             internalID
-            gravityID
+            slug
           }
         }
       }
@@ -177,7 +177,7 @@ export default createFragmentContainer(ArtworkCarouselHeader, {
         ... on HomePageModuleContextRelatedArtist {
           artist {
             internalID
-            gravityID
+            slug
           }
           based_on {
             name

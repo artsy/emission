@@ -72,7 +72,7 @@ export class Event extends React.Component<Props, State> {
               mutation EventMutation($input: FollowShowInput!) {
                 followShow(input: $input) {
                   show {
-                    gravityID
+                    slug
                     internalID
                     is_followed
                   }

@@ -32,7 +32,7 @@ query FairArtistsQuery(
 }
 
 fragment FairArtists_fair_1G22uz on Fair {
-  gravityID
+  slug
   internalID
   artists(first: $count, after: $cursor) {
     pageInfo {
@@ -47,7 +47,7 @@ fragment FairArtists_fair_1G22uz on Fair {
         sortable_id
         href
         internalID
-        gravityID
+        slug
         id
         __typename
       }
@@ -58,7 +58,7 @@ fragment FairArtists_fair_1G22uz on Fair {
 fragment ArtistListItem_artist on Artist {
   id
   internalID
-  gravityID
+  slug
   name
   is_followed
   nationality
@@ -101,7 +101,7 @@ v1 = [
 v2 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "gravityID",
+  "name": "slug",
   "args": null,
   "storageKey": null
 },
@@ -351,7 +351,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "FairArtistsQuery",
-    "id": "6a83210cbef31857b37408361a9ddf82",
+    "id": "5930a7a900071ad119efdaec37de66b3",
     "text": null,
     "metadata": {}
   }

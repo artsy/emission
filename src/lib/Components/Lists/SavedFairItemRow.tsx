@@ -33,7 +33,7 @@ export default class SavedFairItemRow extends React.Component<Props, State> {
             mutation SavedFairItemRowMutation($input: FollowProfileInput!) {
               followProfile(input: $input) {
                 profile {
-                  gravityID
+                  slug
                   is_followed
                   id
                 }

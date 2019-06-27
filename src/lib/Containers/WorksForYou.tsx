@@ -214,7 +214,7 @@ const WorksForYouContainer = createPaginationContainer(
           }
         }
         selectedArtist: artist(id: $selectedArtist) {
-          gravityID
+          slug
           href
           name
           image {

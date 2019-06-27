@@ -147,7 +147,7 @@ export default createFragmentContainer(Header, {
   gene: graphql`
     fragment Header_gene on Gene {
       internalID
-      gravityID
+      slug
       name
     }
   `,

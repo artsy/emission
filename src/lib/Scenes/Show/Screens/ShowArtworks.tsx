@@ -59,7 +59,7 @@ export const ShowArtworksContainer = createRefetchContainer(
           price_range: { type: "String", defaultValue: "*-*" }
         ) {
         id
-        gravityID
+        slug
         internalID
         filteredArtworks(
           size: 0
