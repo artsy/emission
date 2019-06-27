@@ -282,8 +282,9 @@ export class ConfirmBid extends React.Component<ConfirmBidProps, ConfirmBidState
       `,
       variables: {
         input: {
-          sale_id: this.props.sale_artwork.sale.gravityID,
-          artwork_id: this.props.sale_artwork.artwork.gravityID,
+          // FIXME: Should this be internal id?
+          sale_id: this.props.sale_artwork.sale.slug,
+          artwork_id: this.props.sale_artwork.artwork.slug,
           max_bid_amount_cents: this.selectedBid().cents,
         },
       },
@@ -331,7 +332,8 @@ export class ConfirmBid extends React.Component<ConfirmBidProps, ConfirmBidState
 
   refreshBidderInfo = () => {
     this.props.relay.refetch(
-      { saleID: this.props.sale_artwork.sale.gravityID },
+      // FIXME: Should this be internalID?
+      { saleID: this.props.sale_artwork.sale.slug },
       null,
       error => {
         if (error) {
@@ -385,11 +387,13 @@ export class ConfirmBid extends React.Component<ConfirmBidProps, ConfirmBidState
 
   presentBidResult(bidderPositionResult: BidderPositionResult) {
     NativeModules.ARNotificationsManager.postNotificationName("ARAuctionArtworkBidUpdated", {
-      ARAuctionID: this.props.sale_artwork.sale.gravityID,
-      ARAuctionArtworkID: this.props.sale_artwork.artwork.gravityID,
+      // FIXME: Should these be slug or internalID?
+      ARAuctionID: this.props.sale_artwork.sale.slug,
+      ARAuctionArtworkID: this.props.sale_artwork.artwork.slug,
     })
     NativeModules.ARNotificationsManager.postNotificationName("ARAuctionArtworkRegistrationUpdated", {
-      ARAuctionID: this.props.sale_artwork.sale.gravityID,
+      // FIXME: Should this be slug or internalID?
+      ARAuctionID: this.props.sale_artwork.sale.slug,
     })
 
     this.props.navigator.push({

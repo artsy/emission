@@ -240,13 +240,15 @@ export class Registration extends React.Component<RegistrationProps, Registratio
           }
         }
       `,
-      variables: { input: { sale_id: this.props.sale.gravityID } },
+      // FIXME: Should this be slug or internalID?
+      variables: { input: { sale_id: this.props.sale.slug } },
     })
   }
 
   presentRegistrationSuccess({ createBidder }) {
     NativeModules.ARNotificationsManager.postNotificationName("ARAuctionArtworkRegistrationUpdated", {
-      ARAuctionID: this.props.sale.gravityID,
+      // FIXME: Should this be slug or internalID?
+      ARAuctionID: this.props.sale.slug,
     })
 
     const qualifiedForBidding = createBidder.bidder.qualified_for_bidding

@@ -372,7 +372,8 @@ export class GlobalMap extends React.Component<Props, State> {
           return null
         }
 
-        this.shows[node.gravityID] = node
+        // FIXME: Should this be slug?
+        this.shows[node.slug] = node
       })
 
       city.fairs.edges.forEach(({ node }) => {
@@ -380,7 +381,8 @@ export class GlobalMap extends React.Component<Props, State> {
           return null
         }
 
-        this.fairs[node.gravityID] = {
+        // FIXME: Should this be slug?
+        this.fairs[node.slug] = {
           ...node,
           type: "Fair",
         }
@@ -430,7 +432,8 @@ export class GlobalMap extends React.Component<Props, State> {
 
     const lat = item.location.coordinates.lat
     const lng = item.location.coordinates.lng
-    const id = item.gravityID
+    // FIXME: Should this be slug? Looks like maybe it's internalID or id
+    const id = item.slug
 
     if (type === "Fair") {
       return (

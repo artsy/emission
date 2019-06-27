@@ -38,8 +38,9 @@ interface Props {
 
 export class Artwork extends React.Component<Props, any> {
   handleTap() {
-    this.props.onPress && this.props.artwork.gravityID
-      ? this.props.onPress(this.props.artwork.gravityID)
+    // FIXME: Should this be internalID?
+    this.props.onPress && this.props.artwork.slug
+      ? this.props.onPress(this.props.artwork.slug)
       : SwitchBoard.presentNavigationViewController(this, this.props.artwork.href)
   }
 
