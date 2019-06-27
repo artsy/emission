@@ -101,7 +101,7 @@ export class ArtistListItem extends React.Component<Props, State> {
       action_name: Schema.ActionNames.ListArtist,
       action_type: Schema.ActionTypes.Tap,
       owner_id: props.artist.internalID,
-      owner_slug: props.artist.gravityID,
+      owner_slug: props.artist.slug,
       owner_type: Schema.OwnerEntityTypes.Artist,
     } as any
   })
