@@ -47,6 +47,8 @@ fragment ArtistListItem_artist on Artist {
   internalID
   slug
   name
+  initials
+  href
   is_followed
   nationality
   birthday
@@ -101,6 +103,13 @@ v4 = [
     "kind": "ScalarField",
     "alias": null,
     "name": "name",
+    "args": null,
+    "storageKey": null
+  },
+  {
+    "kind": "ScalarField",
+    "alias": null,
+    "name": "initials",
     "args": null,
     "storageKey": null
   },
@@ -222,7 +231,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ShowArtistsPreviewTestsQuery",
-    "id": "33aa15b61dc6603596020eaffa51f4a9",
+    "id": "31b500f956732656601b862bf5481a68",
     "text": null,
     "metadata": {}
   }

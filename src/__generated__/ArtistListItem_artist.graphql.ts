@@ -8,6 +8,8 @@ export type ArtistListItem_artist = {
     readonly internalID: string;
     readonly slug: string;
     readonly name: string | null;
+    readonly initials: string | null;
+    readonly href: string | null;
     readonly is_followed: boolean | null;
     readonly nationality: string | null;
     readonly birthday: string | null;
@@ -52,6 +54,20 @@ const node: ReaderFragment = {
       "kind": "ScalarField",
       "alias": null,
       "name": "name",
+      "args": null,
+      "storageKey": null
+    },
+    {
+      "kind": "ScalarField",
+      "alias": null,
+      "name": "initials",
+      "args": null,
+      "storageKey": null
+    },
+    {
+      "kind": "ScalarField",
+      "alias": null,
+      "name": "href",
       "args": null,
       "storageKey": null
     },
@@ -103,5 +119,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = '41a50ae69dffba12a0042f48f2a37ffb';
+(node as any).hash = '7de9b43c27424b23c3f07ba54f99cae6';
 export default node;
