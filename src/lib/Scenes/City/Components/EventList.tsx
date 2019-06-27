@@ -97,7 +97,8 @@ export class EventList extends React.Component<Props> {
         data={renderedInTab ? bucket.slice(0, MaxRowCount) : bucket}
         ItemSeparatorComponent={() => <Separator />}
         ListFooterComponent={this.renderFooter()}
-        keyExtractor={item => item.gravityID}
+        // FIXME: Should this be slug? Maybe it should be id or internalID
+        keyExtractor={item => item.slug}
         renderItem={({ item }) => this.renderItem(item)}
         onScroll={onScroll}
         windowSize={50}

@@ -75,7 +75,8 @@ class CityFairList extends React.Component<Props, State> {
             }}
             data={edges}
             ItemSeparatorComponent={() => <Separator />}
-            keyExtractor={item => item.node.gravityID}
+            // FIXME: Should this be slug? Maybe it should be id or internalID?
+            keyExtractor={item => item.node.slug}
             renderItem={({ item }) => this.renderItem(item)}
             onScroll={isCloseToBottom(this.fetchData)}
             ListFooterComponent={!!fetchingNextPage && <Spinner style={{ marginTop: 20, marginBottom: 20 }} />}
