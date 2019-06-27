@@ -93,14 +93,15 @@ class ArtworkRailHeader extends React.Component<Props, State> {
 
   handleFollowChange = () => {
     const context = this.props.rail.context
-    ARTemporaryAPIModule.setFollowArtistStatus(!this.state.following, context.artist.gravityID, (error, following) => {
+    // FIXME: Should this be internalID or slug?
+    ARTemporaryAPIModule.setFollowArtistStatus(!this.state.following, context.artist.internalID, (error, following) => {
       if (error) {
         console.warn(error)
       } else {
         Events.postEvent({
           name: following ? "Follow artist" : "Unfollow artist",
-          artist_id: context.artist.gravityID,
-          artist_slug: context.artist.gravityID,
+          artist_id: context.artist.internalID,
+          artist_slug: context.artist.slug,
           source_screen: "home page",
           context_module: "random suggested artist",
         })
@@ -160,6 +161,7 @@ export default createFragmentContainer(ArtworkRailHeader, {
         ... on HomePageModuleContextRelatedArtist {
           artist {
             slug
+            internalID
           }
           based_on {
             name

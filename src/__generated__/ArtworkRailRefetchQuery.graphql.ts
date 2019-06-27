@@ -80,6 +80,7 @@ fragment ArtworkRailHeader_rail on HomePageArtworkModule {
     ... on HomePageModuleContextRelatedArtist {
       artist {
         slug
+        internalID
         id
       }
       based_on {
@@ -300,6 +301,13 @@ return {
                         "plural": false,
                         "selections": [
                           (v5/*: any*/),
+                          {
+                            "kind": "ScalarField",
+                            "alias": null,
+                            "name": "internalID",
+                            "args": null,
+                            "storageKey": null
+                          },
                           (v3/*: any*/),
                           (v6/*: any*/)
                         ]
@@ -584,7 +592,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkRailRefetchQuery",
-    "id": "bcb167510b969b95a05676ee98ec488f",
+    "id": "bf4eed3b34999a4b6154240daabdf43a",
     "text": null,
     "metadata": {}
   }

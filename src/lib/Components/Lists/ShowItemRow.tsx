@@ -46,7 +46,7 @@ export class ShowItemRow extends React.Component<Props, State> {
 
   @track(props => {
     const {
-      show: { gravityID: slug, internalID, is_followed },
+      show: { slug, internalID, is_followed },
     } = props
     return {
       action_name: is_followed ? Schema.ActionNames.UnsaveShow : Schema.ActionNames.SaveShow,
@@ -58,7 +58,7 @@ export class ShowItemRow extends React.Component<Props, State> {
   })
   handleSave() {
     const {
-      show: { gravityID: showSlug, id: nodeID, internalID: showID, is_followed: isShowFollowed },
+      show: { slug: showSlug, id: nodeID, internalID: showID, is_followed: isShowFollowed },
     } = this.props
 
     if (showID && showSlug && nodeID && !this.state.isFollowedSaving) {
@@ -93,7 +93,7 @@ export class ShowItemRow extends React.Component<Props, State> {
             optimisticResponse: {
               followShow: {
                 show: {
-                  gravityID: showSlug,
+                  slug: showSlug,
                   internalID: showID,
                   is_followed: !isShowFollowed,
                 },
@@ -126,9 +126,7 @@ export class ShowItemRow extends React.Component<Props, State> {
     const imageURL = mainCoverImageURL || galleryProfileIcon
 
     return (
-      <TouchableWithoutFeedback
-        onPress={() => (!this.isTapped ? this.handleTap(show.gravityID, show.internalID) : null)}
-      >
+      <TouchableWithoutFeedback onPress={() => (!this.isTapped ? this.handleTap(show.slug, show.internalID) : null)}>
         <Flex flexDirection="row">
           {!imageURL ? (
             <DefaultImageContainer p={15}>

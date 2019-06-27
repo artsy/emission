@@ -26,7 +26,7 @@ interface State {
 @screenTrack<Props>(props => ({
   context_screen: Schema.PageNames.FairAllExhibitorsPage,
   context_screen_owner_type: Schema.OwnerEntityTypes.Fair,
-  context_screen_owner_slug: props.fair.gravityID,
+  context_screen_owner_slug: props.fair.slug,
   context_screen_owner_id: props.fair.internalID,
 }))
 export class FairExhibitors extends React.Component<Props, State> {

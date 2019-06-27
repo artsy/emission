@@ -40,7 +40,7 @@ export class ArtistListItem extends React.Component<Props, State> {
   handleFollowArtist = () => {
     const {
       relay,
-      artist: { gravityID, id, is_followed },
+      artist: { slug, id, is_followed },
     } = this.props
 
     this.setState(
@@ -62,7 +62,8 @@ export class ArtistListItem extends React.Component<Props, State> {
           `,
           variables: {
             input: {
-              artist_id: gravityID,
+              // FIXME: Should this be internalID?
+              artist_id: slug,
               unfollow: is_followed,
             },
           },
@@ -86,7 +87,7 @@ export class ArtistListItem extends React.Component<Props, State> {
     action_name: props.artist.is_followed ? Schema.ActionNames.ArtistFollow : Schema.ActionNames.ArtistUnfollow,
     action_type: Schema.ActionTypes.Success,
     owner_id: props.artist.internalID,
-    owner_slug: props.artist.gravityID,
+    owner_slug: props.artist.slug,
     owner_type: Schema.OwnerEntityTypes.Artist,
   }))
   handleShowSuccessfullyUpdated() {

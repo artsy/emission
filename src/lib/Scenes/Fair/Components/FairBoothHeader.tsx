@@ -57,7 +57,7 @@ export class FairBoothHeader extends React.Component<Props, State> {
     const { show, relay } = this.props
     const {
       partner: {
-        gravityID: partnerSlug,
+        slug: partnerSlug,
         internalID: partnerID,
         id: partnerRelayID,
         profile: { is_followed: partnerFollowed, internalID: profileID },
@@ -96,7 +96,7 @@ export class FairBoothHeader extends React.Component<Props, State> {
             followProfile: {
               profile: {
                 internalID: profileID,
-                gravityID: partnerSlug,
+                slug: partnerSlug,
                 is_followed: !partnerFollowed,
               },
             },

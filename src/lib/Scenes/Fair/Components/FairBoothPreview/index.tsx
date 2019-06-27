@@ -54,7 +54,7 @@ export class FairBoothPreview extends React.Component<Props, State> {
   handleFollowPartner = () => {
     const { show, relay } = this.props
     const {
-      partner: { gravityID: partnerSlug, internalID: partnerID, id: partnerRelayID, profile },
+      partner: { slug: partnerSlug, internalID: partnerID, id: partnerRelayID, profile },
     } = show
     const isFollowed = !!profile ? profile.is_followed : null
     const internalID = !!profile ? profile.internalID : null
@@ -94,7 +94,7 @@ export class FairBoothPreview extends React.Component<Props, State> {
             followProfile: {
               profile: {
                 internalID,
-                gravityID: partnerSlug,
+                slug: partnerSlug,
                 is_followed: !isFollowed,
               },
             },
@@ -111,28 +111,28 @@ export class FairBoothPreview extends React.Component<Props, State> {
     action_name: Schema.ActionNames.AllBoothWorks,
     action_type: Schema.ActionTypes.Tap,
     owner_id: props.show.internalID,
-    owner_slug: props.show.gravityID,
+    owner_slug: props.show.slug,
     owner_type: Schema.OwnerEntityTypes.Gallery,
   }))
   trackOnViewFairBoothWorks() {
     const {
-      show: { gravityID: showID },
+      show: { slug: showSlug },
     } = this.props
-    SwitchBoard.presentNavigationViewController(this, `show/${showID}?entity=fair-booth`)
+    SwitchBoard.presentNavigationViewController(this, `show/${showSlug}?entity=fair-booth`)
   }
 
   @track(props => ({
     action_name: Schema.ActionNames.ListGallery,
     action_type: Schema.ActionTypes.Tap,
     owner_id: props.show.internalID,
-    owner_slug: props.show.gravityID,
+    owner_slug: props.show.slug,
     owner_type: Schema.OwnerEntityTypes.Gallery,
   }))
   viewFairBoothPressed() {
     const {
-      show: { gravityID: showID },
+      show: { slug: showSlug },
     } = this.props
-    SwitchBoard.presentNavigationViewController(this, `/show/${showID}?entity=fair-booth`)
+    SwitchBoard.presentNavigationViewController(this, `/show/${showSlug}?entity=fair-booth`)
   }
 
   render() {

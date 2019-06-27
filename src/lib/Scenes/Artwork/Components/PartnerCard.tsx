@@ -23,7 +23,7 @@ export class PartnerCard extends React.Component<Props, State> {
   handleFollowPartner = () => {
     const { artwork, relay } = this.props
     const {
-      gravityID: partnerSlug,
+      slug: partnerSlug,
       profile: { is_followed: partnerFollowed, internalID: profileID },
     } = artwork.partner
 
@@ -58,7 +58,7 @@ export class PartnerCard extends React.Component<Props, State> {
               profile: {
                 id: artwork.partner.profile.id,
                 internalID: profileID,
-                gravityID: partnerSlug,
+                slug: partnerSlug,
                 is_followed: !partnerFollowed,
               },
             },
