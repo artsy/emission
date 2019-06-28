@@ -35,7 +35,7 @@ fragment CityFairList_city_1G22uz on City {
   fairs(first: $count, after: $cursor, status: CURRENT, sort: START_AT_ASC) {
     edges {
       node {
-        slug
+        internalID
         name
         exhibition_period
         counts {
@@ -140,11 +140,18 @@ v3 = [
 v4 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "name",
+  "name": "internalID",
   "args": null,
   "storageKey": null
 },
 v5 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "name",
+  "args": null,
+  "storageKey": null
+},
+v6 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "id",
@@ -231,8 +238,8 @@ return {
                     "concreteType": "Fair",
                     "plural": false,
                     "selections": [
-                      (v2/*: any*/),
                       (v4/*: any*/),
+                      (v5/*: any*/),
                       {
                         "kind": "ScalarField",
                         "alias": null,
@@ -292,7 +299,7 @@ return {
                               }
                             ]
                           },
-                          (v5/*: any*/)
+                          (v6/*: any*/)
                         ]
                       },
                       {
@@ -345,13 +352,7 @@ return {
                             "concreteType": "Image",
                             "plural": false,
                             "selections": [
-                              {
-                                "kind": "ScalarField",
-                                "alias": null,
-                                "name": "internalID",
-                                "args": null,
-                                "storageKey": null
-                              },
+                              (v4/*: any*/),
                               {
                                 "kind": "ScalarField",
                                 "alias": null,
@@ -388,9 +389,9 @@ return {
                               }
                             ]
                           },
-                          (v5/*: any*/),
+                          (v6/*: any*/),
                           (v2/*: any*/),
-                          (v4/*: any*/)
+                          (v5/*: any*/)
                         ]
                       },
                       {
@@ -407,7 +408,7 @@ return {
                         "args": null,
                         "storageKey": null
                       },
-                      (v5/*: any*/),
+                      (v6/*: any*/),
                       {
                         "kind": "ScalarField",
                         "alias": null,
@@ -472,7 +473,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "CityFairListQuery",
-    "id": "757b0b3e88678cdd140054b95696ec8b",
+    "id": "e7d1ead3e0533d2de11eb9c101effebb",
     "text": null,
     "metadata": {}
   }

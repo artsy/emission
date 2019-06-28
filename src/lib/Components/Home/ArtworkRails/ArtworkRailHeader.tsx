@@ -93,8 +93,7 @@ class ArtworkRailHeader extends React.Component<Props, State> {
 
   handleFollowChange = () => {
     const context = this.props.rail.context
-    // FIXME: Should this be internalID or slug?
-    ARTemporaryAPIModule.setFollowArtistStatus(!this.state.following, context.artist.internalID, (error, following) => {
+    ARTemporaryAPIModule.setFollowArtistStatus(!this.state.following, context.artist.slug, (error, following) => {
       if (error) {
         console.warn(error)
       } else {

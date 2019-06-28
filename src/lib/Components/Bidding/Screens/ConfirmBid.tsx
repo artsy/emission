@@ -387,12 +387,10 @@ export class ConfirmBid extends React.Component<ConfirmBidProps, ConfirmBidState
 
   presentBidResult(bidderPositionResult: BidderPositionResult) {
     NativeModules.ARNotificationsManager.postNotificationName("ARAuctionArtworkBidUpdated", {
-      // FIXME: Should these be slug or internalID?
       ARAuctionID: this.props.sale_artwork.sale.slug,
       ARAuctionArtworkID: this.props.sale_artwork.artwork.slug,
     })
     NativeModules.ARNotificationsManager.postNotificationName("ARAuctionArtworkRegistrationUpdated", {
-      // FIXME: Should this be slug or internalID?
       ARAuctionID: this.props.sale_artwork.sale.slug,
     })
 

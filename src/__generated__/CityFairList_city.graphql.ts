@@ -8,7 +8,7 @@ export type CityFairList_city = {
     readonly fairs: {
         readonly edges: ReadonlyArray<{
             readonly node: {
-                readonly slug: string;
+                readonly internalID: string;
                 readonly name: string | null;
                 readonly exhibition_period: string | null;
                 readonly counts: {
@@ -56,6 +56,13 @@ var v0 = {
   "storageKey": null
 },
 v1 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "internalID",
+  "args": null,
+  "storageKey": null
+},
+v2 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "name",
@@ -132,8 +139,8 @@ return {
               "concreteType": "Fair",
               "plural": false,
               "selections": [
-                (v0/*: any*/),
                 (v1/*: any*/),
+                (v2/*: any*/),
                 {
                   "kind": "ScalarField",
                   "alias": null,
@@ -245,13 +252,7 @@ return {
                       "concreteType": "Image",
                       "plural": false,
                       "selections": [
-                        {
-                          "kind": "ScalarField",
-                          "alias": null,
-                          "name": "internalID",
-                          "args": null,
-                          "storageKey": null
-                        },
+                        (v1/*: any*/),
                         {
                           "kind": "ScalarField",
                           "alias": null,
@@ -296,7 +297,7 @@ return {
                       "storageKey": null
                     },
                     (v0/*: any*/),
-                    (v1/*: any*/)
+                    (v2/*: any*/)
                   ]
                 },
                 {
@@ -361,5 +362,5 @@ return {
   ]
 };
 })();
-(node as any).hash = 'b10a0945cbbbad127480bd159d55ae8d';
+(node as any).hash = 'b76fad505f2a5b06df60c65b3c35cd5b';
 export default node;

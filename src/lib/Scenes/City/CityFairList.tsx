@@ -75,8 +75,7 @@ class CityFairList extends React.Component<Props, State> {
             }}
             data={edges}
             ItemSeparatorComponent={() => <Separator />}
-            // FIXME: Should this be slug? Maybe it should be id or internalID?
-            keyExtractor={item => item.node.slug}
+            keyExtractor={item => item.node.internalID}
             renderItem={({ item }) => this.renderItem(item)}
             onScroll={isCloseToBottom(this.fetchData)}
             ListFooterComponent={!!fetchingNextPage && <Spinner style={{ marginTop: 20, marginBottom: 20 }} />}
@@ -98,7 +97,7 @@ export default createPaginationContainer(
           @connection(key: "CityFairList_fairs") {
           edges {
             node {
-              slug
+              internalID
               name
               exhibition_period
               counts {
