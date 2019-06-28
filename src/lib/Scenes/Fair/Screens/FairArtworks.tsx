@@ -28,8 +28,7 @@ interface State {
 }))
 export class FairArtworks extends React.Component<Props, State> {
   handleRefetch = params => {
-    // FIXME: Should this be id? It might have been internalID previously
-    const { id: fairID } = this.props.fair
+    const { internalID: fairID } = this.props.fair
     this.props.relay.refetch({
       ...params,
       fairID,

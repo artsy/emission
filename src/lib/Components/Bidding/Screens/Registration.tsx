@@ -247,7 +247,6 @@ export class Registration extends React.Component<RegistrationProps, Registratio
 
   presentRegistrationSuccess({ createBidder }) {
     NativeModules.ARNotificationsManager.postNotificationName("ARAuctionArtworkRegistrationUpdated", {
-      // FIXME: Should this be slug or internalID?
       ARAuctionID: this.props.sale.slug,
     })
 
