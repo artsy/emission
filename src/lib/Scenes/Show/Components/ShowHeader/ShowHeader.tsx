@@ -117,7 +117,7 @@ export class ShowHeader extends React.Component<Props, State> {
       owner_type: Schema.OwnerEntityTypes.Artist,
     } as any
   })
-  handleArtistSelected(url, _slug, _gravityID) {
+  handleArtistSelected(url, _slug, _internalID) {
     SwitchBoard.presentNavigationViewController(this, url)
   }
 

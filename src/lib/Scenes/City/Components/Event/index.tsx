@@ -114,7 +114,7 @@ export class Event extends React.Component<Props, State> {
       owner_slug: slug,
     } as any
   })
-  trackShowTap(_actionName, _slug, _gravityID) {
+  trackShowTap(_actionName, _slug, _internalID) {
     return null
   }
 

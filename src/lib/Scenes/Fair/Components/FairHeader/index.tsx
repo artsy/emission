@@ -98,7 +98,7 @@ export class FairHeader extends React.Component<Props, State> {
       owner_type: Schema.OwnerEntityTypes.Gallery,
     } as any
   })
-  handleExhibitorPress(href, _slug, _gravityID) {
+  handleExhibitorPress(href, _slug, _internalID) {
     SwitchBoard.presentNavigationViewController(this, `${href}?entity=fair-booth`)
   }
 
@@ -113,7 +113,7 @@ export class FairHeader extends React.Component<Props, State> {
       owner_type: Schema.OwnerEntityTypes.Artist,
     } as any
   })
-  handleArtistPress(href, _gravityID, _internalID) {
+  handleArtistPress(href, _slug, _internalID) {
     SwitchBoard.presentNavigationViewController(this, href)
   }
 
