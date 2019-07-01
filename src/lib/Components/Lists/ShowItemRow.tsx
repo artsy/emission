@@ -36,7 +36,7 @@ export class ShowItemRow extends React.Component<Props, State> {
   }
   isTapped: boolean
 
-  handleTap(_slug, _gravityID) {
+  handleTap(_slug, _internalID) {
     this.isTapped = true
     const href = hrefForPartialShow(this.props.show)
     SwitchBoard.presentNavigationViewController(this, href)
