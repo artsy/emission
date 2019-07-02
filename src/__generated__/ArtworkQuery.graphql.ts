@@ -5,7 +5,6 @@ import { Artwork_artwork$ref } from "./Artwork_artwork.graphql";
 export type ArtworkQueryVariables = {
     readonly artworkID: string;
     readonly excludeArtworkIds?: ReadonlyArray<string> | null;
-    readonly screenWidth: number;
 };
 export type ArtworkQueryResponse = {
     readonly artwork: {
@@ -23,7 +22,6 @@ export type ArtworkQuery = {
 query ArtworkQuery(
   $artworkID: String!
   $excludeArtworkIds: [String!]
-  $screenWidth: Int!
 ) {
   artwork(id: $artworkID) {
     ...Artwork_artwork
@@ -211,12 +209,18 @@ fragment ArtworkExtraLinks_artwork on Artwork {
 fragment ArtworkActions_artwork on Artwork {
   id
   internalID
+  slug
   title
   href
   is_saved
   artists {
     name
     id
+  }
+  image {
+    height
+    width
+    url
   }
 }
 
@@ -246,11 +250,6 @@ fragment ImageCarousel_images on Image {
   url
   width
   height
-  thumbnail: resized(width: $screenWidth) {
-    width
-    height
-    url
-  }
 }
 
 fragment FollowArtistButton_artist on Artist {
@@ -385,12 +384,6 @@ var v0 = [
     "kind": "LocalArgument",
     "name": "excludeArtworkIds",
     "type": "[String!]",
-    "defaultValue": null
-  },
-  {
-    "kind": "LocalArgument",
-    "name": "screenWidth",
-    "type": "Int!",
     "defaultValue": null
   }
 ],
@@ -725,14 +718,14 @@ v18 = [
 v19 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "width",
+  "name": "height",
   "args": null,
   "storageKey": null
 },
 v20 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "height",
+  "name": "width",
   "args": null,
   "storageKey": null
 };
@@ -1166,6 +1159,7 @@ return {
           },
           (v3/*: any*/),
           (v13/*: any*/),
+          (v4/*: any*/),
           (v5/*: any*/),
           (v9/*: any*/),
           {
@@ -1174,6 +1168,20 @@ return {
             "name": "is_saved",
             "args": null,
             "storageKey": null
+          },
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "name": "image",
+            "storageKey": null,
+            "args": null,
+            "concreteType": "Image",
+            "plural": false,
+            "selections": [
+              (v19/*: any*/),
+              (v20/*: any*/),
+              (v17/*: any*/)
+            ]
           },
           (v6/*: any*/),
           {
@@ -1244,28 +1252,8 @@ return {
             "plural": true,
             "selections": [
               (v17/*: any*/),
-              (v19/*: any*/),
               (v20/*: any*/),
-              {
-                "kind": "LinkedField",
-                "alias": "thumbnail",
-                "name": "resized",
-                "storageKey": null,
-                "args": [
-                  {
-                    "kind": "Variable",
-                    "name": "width",
-                    "variableName": "screenWidth"
-                  }
-                ],
-                "concreteType": "ResizedImageUrl",
-                "plural": false,
-                "selections": [
-                  (v19/*: any*/),
-                  (v20/*: any*/),
-                  (v17/*: any*/)
-                ]
-              }
+              (v19/*: any*/)
             ]
           },
           {
@@ -1282,11 +1270,11 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkQuery",
-    "id": "5d6078e2cc593f6479633568324cf0e6",
+    "id": "f7c8e61366cbda7392a47a6629c2993d",
     "text": null,
     "metadata": {}
   }
 };
 })();
-(node as any).hash = '2be034181818db394d253f760b167d76';
+(node as any).hash = '8c594e52f5c996aecbaac4b08d7da014';
 export default node;

@@ -26,12 +26,18 @@ query ArtworkActionsTestsErrorQuery {
 fragment ArtworkActions_artwork on Artwork {
   id
   internalID
+  slug
   title
   href
   is_saved
   artists {
     name
     id
+  }
+  image {
+    height
+    width
+    url
   }
 }
 */
@@ -103,6 +109,13 @@ return {
           {
             "kind": "ScalarField",
             "alias": null,
+            "name": "slug",
+            "args": null,
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
             "name": "title",
             "args": null,
             "storageKey": null
@@ -139,6 +152,38 @@ return {
               },
               (v1/*: any*/)
             ]
+          },
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "name": "image",
+            "storageKey": null,
+            "args": null,
+            "concreteType": "Image",
+            "plural": false,
+            "selections": [
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "height",
+                "args": null,
+                "storageKey": null
+              },
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "width",
+                "args": null,
+                "storageKey": null
+              },
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "url",
+                "args": null,
+                "storageKey": null
+              }
+            ]
           }
         ]
       }
@@ -147,7 +192,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkActionsTestsErrorQuery",
-    "id": "70104fb33b2cb3f5d9b1989a800d21eb",
+    "id": "af109b3c909f2cb266d6393ee889ee02",
     "text": null,
     "metadata": {}
   }

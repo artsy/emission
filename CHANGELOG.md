@@ -16,6 +16,13 @@
 
 ### Master
 
+### 1.12.4
+
+- Add shim for calling view in room view.
+- Fix carousel alignment - ds300
+- Fix styled-components warning - ds300
+- Use OpaqueImageView in ImageCarousel -ds300
+
 ### 1.12.3
 
 - The 1.12.2 version release failed, so this is a small bump to make sure the latest changes are included.
@@ -28,6 +35,15 @@
 - Fixes a React Native font-rendering issue - david & ash
 - Adds artwork classifications page and links to it from artwork page - lilyfromseattle
 - Add artwork history sections - steve
+
+### 1.11.6
+
+- Fixes crash with empty country selection - ash
+
+### 1.12.x develop
+
+- Update typings for Relay to v4 and usage thereof - alloy
+- Use gravity ID when opening artwork from artwork grid instead of global object ID - alloy
 
 ### 1.12.1
 
