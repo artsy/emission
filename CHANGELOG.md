@@ -16,6 +16,8 @@
 
 ### Master
 
+- Metaphysics v2 update that removes gravityID - zephraph
+
 ### 1.12.4
 
 - Add shim for calling view in room view.
