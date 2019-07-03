@@ -63,6 +63,46 @@ type AnalyticsArtworksPublishedStats {
 # An ISO 8601 datetime
 scalar AnalyticsDateTime
 
+# Visitor countries, device, referals and session page
+type AnalyticsGroupedStats {
+  groupedEntity: AnalyticsGroupedStatsUnion!
+  period: AnalyticsQueryPeriodEnum!
+}
+
+# The connection type for GroupedStats.
+type AnalyticsGroupedStatsConnection {
+  # A list of edges.
+  edges: [AnalyticsGroupedStatsEdge]
+
+  # A list of nodes.
+  nodes: [AnalyticsGroupedStats]
+
+  # Information to aid in pagination.
+  pageInfo: AnalyticsPageInfo!
+}
+
+# An edge in a connection.
+type AnalyticsGroupedStatsEdge {
+  # A cursor for use in pagination.
+  cursor: String!
+
+  # The item at the end of the edge.
+  node: AnalyticsGroupedStats
+}
+
+enum AnalyticsGroupedStatsMetricEnum {
+  # visitor_by_location
+  VISITOR_BY_LOCATION
+}
+
+enum AnalyticsGroupedStatsObjectTypeEnum {
+  # country
+  COUNTRY
+}
+
+# A grouped stat item: country or device etc.
+union AnalyticsGroupedStatsUnion = AnalyticsVisitorsByCountry
+
 # A histogram bin
 type AnalyticsHistogramBin {
   maxPriceCents: Int!
@@ -177,6 +217,24 @@ type AnalyticsPartnerStats {
 
   # Audience stats
   audience(period: AnalyticsQueryPeriodEnum!): AnalyticsPartnerAudienceStats
+
+  # Visitor countries, device, referals and session page
+  groupedStats(
+    # Returns the elements in the list that come after the specified cursor.
+    after: String
+
+    # Returns the elements in the list that come before the specified cursor.
+    before: String
+
+    # Returns the first _n_ elements from the list.
+    first: Int
+
+    # Returns the last _n_ elements from the list.
+    last: Int
+    metric: AnalyticsGroupedStatsMetricEnum!
+    objectType: AnalyticsGroupedStatsObjectTypeEnum!
+    period: AnalyticsQueryPeriodEnum!
+  ): AnalyticsGroupedStatsConnection
 
   # Inquiry stats
   inquiry(period: AnalyticsQueryPeriodEnum!): AnalyticsPartnerInquiryStats
@@ -373,6 +431,14 @@ union AnalyticsRankedStatsUnion = AnalyticsArtist | AnalyticsArtwork | Analytics
 
 type AnalyticsShow {
   entityId: String!
+}
+
+type AnalyticsVisitorsByCountry {
+  metric: String!
+  name: String!
+  percent: Float!
+  type: String!
+  value: Int!
 }
 
 input ApproveOrderInput {
@@ -1223,7 +1289,7 @@ type Artwork implements Node & Searchable & Sellable {
   sale_message: String
   series(format: Format): String
   show(size: Int, active: Boolean, at_a_fair: Boolean, sort: PartnerShowSorts): PartnerShow
-  shows(size: Int, active: Boolean, at_a_fair: Boolean, sort: PartnerShowSorts): [PartnerShow]
+  shows(size: Int, active: Boolean, at_a_fair: Boolean, sort: ShowSort): [Show]
   signature(format: Format): String
   title: String
   to_s: String
@@ -1944,7 +2010,7 @@ type ArtworkInquiry {
   # A globally unique ID.
   id: ID!
 
-  # A type-specific Gravity Mongo Document ID.
+  # A type-specific ID likely used as a database ID.
   internalID: ID!
   artwork: Artwork!
   impulse_conversation_id: String
@@ -2107,7 +2173,7 @@ type ArtworkItem implements Node & Searchable & Sellable {
   sale_message: String
   series(format: Format): String
   show(size: Int, active: Boolean, at_a_fair: Boolean, sort: PartnerShowSorts): PartnerShow
-  shows(size: Int, active: Boolean, at_a_fair: Boolean, sort: PartnerShowSorts): [PartnerShow]
+  shows(size: Int, active: Boolean, at_a_fair: Boolean, sort: ShowSort): [Show]
   signature(format: Format): String
   title: String
   to_s: String
@@ -2251,7 +2317,7 @@ type AttributionClass {
   # A globally unique ID.
   id: ID!
 
-  # A type-specific Gravity Mongo Document ID.
+  # A type-specific ID likely used as a database ID.
   internalID: ID!
 
   # Shortest form of attribution class display
@@ -2863,7 +2929,9 @@ type CitySponsoredContent {
 type Collection implements Node {
   # A globally unique ID.
   id: ID!
-  slug: String!
+
+  # A slug ID.
+  slug: ID!
 
   # A type-specific ID likely used as a database ID.
   internalID: ID!
@@ -4473,7 +4541,7 @@ type CreditCard {
   # A globally unique ID.
   id: ID!
 
-  # A type-specific Gravity Mongo Document ID.
+  # A type-specific ID likely used as a database ID.
   internalID: ID!
 
   # Brand of credit card
@@ -6704,6 +6772,9 @@ type MarketingCollection {
   # Background image for the header of the collection page
   headerImage: String
 
+  # URL for Thumbnail image to be used when this collection is displayed.
+  thumbnail: String
+
   # Set of keywords used for SEO purposes
   keywords: String!
 
@@ -6726,6 +6797,9 @@ type MarketingCollection {
 
   # Collection has prioritized connection to artist
   is_featured_artist_content: Boolean!
+
+  # CollectionGroups of this collection
+  linkedCollections: [MarketingCollectionGroup!]!
   relatedCollections: [MarketingCollection!]!
   artworks(
     acquireable: Boolean
@@ -6770,6 +6844,13 @@ type MarketingCollectionCategory {
   collections: [MarketingCollection!]!
 }
 
+type MarketingCollectionGroup {
+  internalID: ID!
+  groupType: MarketingGroupTypes!
+  name: String!
+  members: [String!]!
+}
+
 type MarketingCollectionQuery {
   internalID: ID
   acquireable: Boolean
@@ -6804,6 +6885,13 @@ type MarketingCollectionQuery {
 }
 
 scalar MarketingDateTime
+
+# Available types of CollectionGroup
+enum MarketingGroupTypes {
+  ArtistSeries
+  FeaturedCollections
+  OtherCollections
+}
 
 type Me implements Node {
   # A globally unique ID.
@@ -9735,7 +9823,10 @@ type SearchableItem implements Node & Searchable {
   # A globally unique ID.
   id: ID!
 
-  # A type-specific Gravity Mongo Document ID.
+  # A slug ID.
+  slug: ID!
+
+  # A type-specific ID likely used as a database ID.
   internalID: ID!
   description: String
   displayLabel: String
@@ -10620,7 +10711,7 @@ type User {
   # A globally unique ID.
   id: ID!
 
-  # A type-specific Gravity Mongo Document ID.
+  # A type-specific ID likely used as a database ID.
   internalID: ID!
   cached: Int
 
