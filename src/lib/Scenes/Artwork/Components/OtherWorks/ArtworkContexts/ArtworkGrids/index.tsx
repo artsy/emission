@@ -1,4 +1,5 @@
 export { ArtistArtworkGridFragmentContainer as ArtistArtworkGrid } from "./ArtistArtworkGrid"
+export { AuctionArtworkGridFragmentContainer as AuctionArtworkGrid } from "./AuctionArtworkGrid"
 export { FairArtworkGridFragmentContainer as FairArtworkGrid } from "./FairArtworkGrid"
 export { PartnerArtworkGridFragmentContainer as PartnerArtworkGrid } from "./PartnerArtworkGrid"
 export { RelatedArtworkGridFragmentContainer as RelatedArtworkGrid } from "./RelatedArtworkGrid"

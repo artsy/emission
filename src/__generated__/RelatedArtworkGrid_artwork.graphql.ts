@@ -24,7 +24,14 @@ const node: ReaderFragment = {
   "name": "RelatedArtworkGrid_artwork",
   "type": "Artwork",
   "metadata": null,
-  "argumentDefinitions": [],
+  "argumentDefinitions": [
+    {
+      "kind": "LocalArgument",
+      "name": "excludeArtworkIDs",
+      "type": "[String!]",
+      "defaultValue": null
+    }
+  ],
   "selections": [
     {
       "kind": "LinkedField",
@@ -89,5 +96,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = 'e6e11902f4852447cd1f33eca836619b';
+(node as any).hash = '815c8e36ddb9af4d2671423a5eaa5383';
 export default node;

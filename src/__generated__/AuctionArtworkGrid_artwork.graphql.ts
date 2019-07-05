@@ -2,12 +2,12 @@
 
 import { ReaderFragment } from "relay-runtime";
 import { GenericGrid_artworks$ref } from "./GenericGrid_artworks.graphql";
-declare const _ArtistArtworkGrid_artwork$ref: unique symbol;
-export type ArtistArtworkGrid_artwork$ref = typeof _ArtistArtworkGrid_artwork$ref;
-export type ArtistArtworkGrid_artwork = {
-    readonly artist: {
+declare const _AuctionArtworkGrid_artwork$ref: unique symbol;
+export type AuctionArtworkGrid_artwork$ref = typeof _AuctionArtworkGrid_artwork$ref;
+export type AuctionArtworkGrid_artwork = {
+    readonly sale: {
         readonly name: string | null;
-        readonly artworks_connection: {
+        readonly artworksConnection: {
             readonly edges: ReadonlyArray<{
                 readonly node: {
                     readonly " $fragmentRefs": GenericGrid_artworks$ref;
@@ -15,14 +15,14 @@ export type ArtistArtworkGrid_artwork = {
             } | null> | null;
         } | null;
     } | null;
-    readonly " $refType": ArtistArtworkGrid_artwork$ref;
+    readonly " $refType": AuctionArtworkGrid_artwork$ref;
 };
 
 
 
 const node: ReaderFragment = {
   "kind": "Fragment",
-  "name": "ArtistArtworkGrid_artwork",
+  "name": "AuctionArtworkGrid_artwork",
   "type": "Artwork",
   "metadata": null,
   "argumentDefinitions": [
@@ -31,21 +31,16 @@ const node: ReaderFragment = {
       "name": "excludeArtworkIDs",
       "type": "[String!]",
       "defaultValue": null
-    },
-    {
-      "kind": "RootArgument",
-      "name": "excludeArtworkIds",
-      "type": "[String]"
     }
   ],
   "selections": [
     {
       "kind": "LinkedField",
       "alias": null,
-      "name": "artist",
+      "name": "sale",
       "storageKey": null,
       "args": null,
-      "concreteType": "Artist",
+      "concreteType": "Sale",
       "plural": false,
       "selections": [
         {
@@ -58,23 +53,18 @@ const node: ReaderFragment = {
         {
           "kind": "LinkedField",
           "alias": null,
-          "name": "artworks_connection",
+          "name": "artworksConnection",
           "storageKey": null,
           "args": [
             {
               "kind": "Variable",
               "name": "exclude",
-              "variableName": "excludeArtworkIds"
+              "variableName": "excludeArtworkIDs"
             },
             {
               "kind": "Literal",
               "name": "first",
               "value": 6
-            },
-            {
-              "kind": "Literal",
-              "name": "sort",
-              "value": "PUBLISHED_AT_DESC"
             }
           ],
           "concreteType": "ArtworkConnection",
@@ -113,5 +103,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = '26497b75731c28503fbf353bdee65dde';
+(node as any).hash = 'dc892de1bc4eb17b2c1215786bc28522';
 export default node;

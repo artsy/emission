@@ -37,3 +37,9 @@ storiesOf("Artwork/Screens")
   .add("Artwork in a fair", () => {
     return <ArtworkRenderer artworkID="jasper-johns-figure-7-black-numerals-series" />
   })
+  .add("Artwork in an open auction", () => {
+    return <ArtworkRenderer artworkID="mariah-robertson-155-1" />
+  })
+  .add("Artwork in a closed auction", () => {
+    return <ArtworkRenderer artworkID="txema-yeste-bird-of-paradise" />
+  })

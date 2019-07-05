@@ -35,7 +35,7 @@ export class RelatedArtworkGrid extends React.Component<RelatedArtworkGridProps>
 
 export const RelatedArtworkGridFragmentContainer = createFragmentContainer(RelatedArtworkGrid, {
   artwork: graphql`
-    fragment RelatedArtworkGrid_artwork on Artwork {
+    fragment RelatedArtworkGrid_artwork on Artwork @argumentDefinitions(excludeArtworkIDs: { type: "[String!]" }) {
       layer(id: "main") {
         artworksConnection(first: 6) {
           edges {

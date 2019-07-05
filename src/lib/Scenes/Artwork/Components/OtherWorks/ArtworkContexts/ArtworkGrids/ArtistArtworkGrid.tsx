@@ -35,7 +35,7 @@ export class ArtistArtworkGrid extends React.Component<ArtistArtworkGridProps> {
 
 export const ArtistArtworkGridFragmentContainer = createFragmentContainer(ArtistArtworkGrid, {
   artwork: graphql`
-    fragment ArtistArtworkGrid_artwork on Artwork {
+    fragment ArtistArtworkGrid_artwork on Artwork @argumentDefinitions(excludeArtworkIDs: { type: "[String!]" }) {
       artist {
         name
         artworks_connection(first: 6, sort: PUBLISHED_AT_DESC, exclude: $excludeArtworkIds) {
