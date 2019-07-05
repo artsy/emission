@@ -2,13 +2,14 @@
 
 import { ReaderFragment } from "relay-runtime";
 import { ArtworkContextArtist_artwork$ref } from "./ArtworkContextArtist_artwork.graphql";
+import { ArtworkContextFair_artwork$ref } from "./ArtworkContextFair_artwork.graphql";
 declare const _OtherWorks_artwork$ref: unique symbol;
 export type OtherWorks_artwork$ref = typeof _OtherWorks_artwork$ref;
 export type OtherWorks_artwork = {
     readonly context: {
         readonly __typename: string;
     } | null;
-    readonly " $fragmentRefs": ArtworkContextArtist_artwork$ref;
+    readonly " $fragmentRefs": ArtworkContextArtist_artwork$ref & ArtworkContextFair_artwork$ref;
     readonly " $refType": OtherWorks_artwork$ref;
 };
 
@@ -43,8 +44,13 @@ const node: ReaderFragment = {
       "kind": "FragmentSpread",
       "name": "ArtworkContextArtist_artwork",
       "args": null
+    },
+    {
+      "kind": "FragmentSpread",
+      "name": "ArtworkContextFair_artwork",
+      "args": null
     }
   ]
 };
-(node as any).hash = '45f8f813fecb6d063c68a7ca6b8f9615';
+(node as any).hash = '798086603cd2215fd1c5e0da9ae0730e';
 export default node;

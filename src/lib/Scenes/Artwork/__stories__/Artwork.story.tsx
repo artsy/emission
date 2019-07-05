@@ -34,3 +34,6 @@ storiesOf("Artwork/Screens")
       />
     )
   })
+  .add("Artwork in a fair", () => {
+    return <ArtworkRenderer artworkID="jasper-johns-figure-7-black-numerals-series" />
+  })

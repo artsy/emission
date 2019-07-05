@@ -3,8 +3,8 @@ import { shallow } from "enzyme"
 import React from "react"
 import { Header } from "../Header"
 
-describe("ArtworkAvailability", () => {
-  it("renders artwork availability correctly", () => {
+describe("Header", () => {
+  it("renders the header title correctly", () => {
     const component = shallow(<Header title="This Is A Test" />)
     expect(component.find(Serif).length).toEqual(1)
 

@@ -2,10 +2,9 @@ import { OtherWorks_artwork } from "__generated__/OtherWorks_artwork.graphql"
 import React from "react"
 import { createFragmentContainer, graphql } from "react-relay"
 import { ArtworkContextArtistFragmentContainer as ArtworkContextArtist } from "./ArtworkContexts/ArtworkContextArtist"
+import { ArtworkContextFairFragmentContainer as ArtworkContextFair } from "./ArtworkContexts/ArtworkContextFair"
 
-export const OtherWorksFragmentContainer = createFragmentContainer<{
-  artwork: OtherWorks_artwork
-}>(
+export const OtherWorksFragmentContainer = createFragmentContainer<{ artwork: OtherWorks_artwork }>(
   props => {
     const contextType = props.artwork.context && props.artwork.context.__typename
 
@@ -15,7 +14,7 @@ export const OtherWorksFragmentContainer = createFragmentContainer<{
         return null
       }
       case "ArtworkContextFair": {
-        return null
+        return <ArtworkContextFair artwork={props.artwork} />
       }
       case "ArtworkContextPartnerShow": {
         return null
@@ -32,6 +31,7 @@ export const OtherWorksFragmentContainer = createFragmentContainer<{
           __typename
         }
         ...ArtworkContextArtist_artwork
+        ...ArtworkContextFair_artwork
       }
     `,
   }

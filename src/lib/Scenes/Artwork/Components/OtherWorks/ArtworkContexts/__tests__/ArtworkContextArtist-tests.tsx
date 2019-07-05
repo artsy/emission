@@ -6,7 +6,7 @@ import { ArtistArtworkGrid } from "../ArtworkGrids/ArtistArtworkGrid"
 import { PartnerArtworkGrid } from "../ArtworkGrids/PartnerArtworkGrid"
 import { RelatedArtworkGrid } from "../ArtworkGrids/RelatedArtworkGrid"
 
-describe("PartnerArtworkGrid", () => {
+describe("ArtworkContextArtist", () => {
   it("renders ArtworkContextArtist and all expected grid components", () => {
     const component = mount(<ArtworkContextArtist artwork={ArtworkFixture} />)
     expect(component.find(ArtistArtworkGrid).length).toEqual(1)

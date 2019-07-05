@@ -27,13 +27,8 @@ export const ArtworkFixture = {
   exhibition_history: null,
   literature: null,
   provenance: null,
-  context: {
-    __typename: "ArtworkContextPartnerShow",
-  },
-  dimensions: {
-    in: "23 1/5 × 33 1/10 in",
-    cm: "59 × 84 cm",
-  },
+  context: { __typename: "ArtworkContextPartnerShow" },
+  dimensions: { in: "23 1/5 × 33 1/10 in", cm: "59 × 84 cm" },
   images: [],
   artists: [
     {
@@ -46,12 +41,8 @@ export const ArtworkFixture = {
       nationality: "Iranian",
       birthday: "1940",
       deathday: "2016",
-      biography_blurb: {
-        text: "This is a biography of the artist",
-      },
-      image: {
-        url: "https://d32dm0rphc51dk.cloudfront.net/JX1xE4T_amcdrv2nFunIHw/tall.jpg",
-      },
+      biography_blurb: { text: "This is a biography of the artist" },
+      image: { url: "https://d32dm0rphc51dk.cloudfront.net/JX1xE4T_amcdrv2nFunIHw/tall.jpg" },
     },
   ],
   artist: {
@@ -64,12 +55,8 @@ export const ArtworkFixture = {
     nationality: "Iranian",
     birthday: "1940",
     deathday: "2016",
-    biography_blurb: {
-      text: "This is a biography of the artist",
-    },
-    image: {
-      url: "https://d32dm0rphc51dk.cloudfront.net/JX1xE4T_amcdrv2nFunIHw/tall.jpg",
-    },
+    biography_blurb: { text: "This is a biography of the artist" },
+    image: { url: "https://d32dm0rphc51dk.cloudfront.net/JX1xE4T_amcdrv2nFunIHw/tall.jpg" },
     artworks_connection: {
       pageInfo: {
         startCursor: "YXJyYXljb25uZWN0aW9uOjA=",
@@ -96,14 +83,8 @@ export const ArtworkFixture = {
             gravityID: "abbas-kiarostami-untitled-7",
             sale: null,
             sale_artwork: null,
-            artists: [
-              {
-                name: "Abbas Kiarostami",
-              },
-            ],
-            partner: {
-              name: "CAMA Gallery",
-            },
+            artists: [{ name: "Abbas Kiarostami" }],
+            partner: { name: "CAMA Gallery" },
             href: "/artwork/abbas-kiarostami-untitled-7",
           },
         },
@@ -125,14 +106,8 @@ export const ArtworkFixture = {
             gravityID: "abbas-kiarostami-snow-no-12",
             sale: null,
             sale_artwork: null,
-            artists: [
-              {
-                name: "Abbas Kiarostami",
-              },
-            ],
-            partner: {
-              name: "Rossi & Rossi",
-            },
+            artists: [{ name: "Abbas Kiarostami" }],
+            partner: { name: "Rossi & Rossi" },
             href: "/artwork/abbas-kiarostami-snow-no-12",
           },
         },
@@ -154,14 +129,8 @@ export const ArtworkFixture = {
             gravityID: "abbas-kiarostami-snow-no-2",
             sale: null,
             sale_artwork: null,
-            artists: [
-              {
-                name: "Abbas Kiarostami",
-              },
-            ],
-            partner: {
-              name: "Rossi & Rossi",
-            },
+            artists: [{ name: "Abbas Kiarostami" }],
+            partner: { name: "Rossi & Rossi" },
             href: "/artwork/abbas-kiarostami-snow-no-2",
           },
         },
@@ -183,14 +152,8 @@ export const ArtworkFixture = {
             gravityID: "abbas-kiarostami-snow-no-34",
             sale: null,
             sale_artwork: null,
-            artists: [
-              {
-                name: "Abbas Kiarostami",
-              },
-            ],
-            partner: {
-              name: "Rossi & Rossi",
-            },
+            artists: [{ name: "Abbas Kiarostami" }],
+            partner: { name: "Rossi & Rossi" },
             href: "/artwork/abbas-kiarostami-snow-no-34",
           },
         },
@@ -198,10 +161,7 @@ export const ArtworkFixture = {
           node: {
             " $fragmentRefs": null,
             id: "QXJ0d29yazphYmJhcy1raWFyb3N0YW1pLXJvYWQtc2VyaWVzLTMw",
-            image: {
-              aspect_ratio: 1.5,
-              url: "https://d32dm0rphc51dk.cloudfront.net/2Hqs5RhZx_m9nooWd2o4XA/large.jpg",
-            },
+            image: { aspect_ratio: 1.5, url: "https://d32dm0rphc51dk.cloudfront.net/2Hqs5RhZx_m9nooWd2o4XA/large.jpg" },
             title: "Road Series 30",
             date: "2007",
             sale_message: "Contact For Price",
@@ -212,14 +172,8 @@ export const ArtworkFixture = {
             gravityID: "abbas-kiarostami-road-series-30",
             sale: null,
             sale_artwork: null,
-            artists: [
-              {
-                name: "Abbas Kiarostami",
-              },
-            ],
-            partner: {
-              name: "Meem Gallery",
-            },
+            artists: [{ name: "Abbas Kiarostami" }],
+            partner: { name: "Meem Gallery" },
             href: "/artwork/abbas-kiarostami-road-series-30",
           },
         },
@@ -227,10 +181,7 @@ export const ArtworkFixture = {
           node: {
             " $fragmentRefs": null,
             id: "QXJ0d29yazphYmJhcy1raWFyb3N0YW1pLXJvYWQtc2VyaWVzLTI=",
-            image: {
-              aspect_ratio: 1.5,
-              url: "https://d32dm0rphc51dk.cloudfront.net/dl33GswHuS1u5OPgcaxyGg/large.jpg",
-            },
+            image: { aspect_ratio: 1.5, url: "https://d32dm0rphc51dk.cloudfront.net/dl33GswHuS1u5OPgcaxyGg/large.jpg" },
             title: "Road Series 2",
             date: "2007",
             sale_message: "Contact For Price",
@@ -241,73 +192,9 @@ export const ArtworkFixture = {
             gravityID: "abbas-kiarostami-road-series-2",
             sale: null,
             sale_artwork: null,
-            artists: [
-              {
-                name: "Abbas Kiarostami",
-              },
-            ],
-            partner: {
-              name: "Meem Gallery",
-            },
+            artists: [{ name: "Abbas Kiarostami" }],
+            partner: { name: "Meem Gallery" },
             href: "/artwork/abbas-kiarostami-road-series-2",
-          },
-        },
-        {
-          node: {
-            " $fragmentRefs": null,
-            id: "QXJ0d29yazphYmJhcy1raWFyb3N0YW1pLXNub3ctbm8tMzE=",
-            image: {
-              aspect_ratio: 1.58,
-              url: "https://d32dm0rphc51dk.cloudfront.net/GPyKpMgnrerQhQxTztbd1w/large.jpg",
-            },
-            title: "Snow No. 31",
-            date: "2002",
-            sale_message: "Contact For Price",
-            is_in_auction: false,
-            is_biddable: false,
-            is_acquireable: false,
-            is_offerable: false,
-            gravityID: "abbas-kiarostami-snow-no-31",
-            sale: null,
-            sale_artwork: null,
-            artists: [
-              {
-                name: "Abbas Kiarostami",
-              },
-            ],
-            partner: {
-              name: "Rossi & Rossi",
-            },
-            href: "/artwork/abbas-kiarostami-snow-no-31",
-          },
-        },
-        {
-          node: {
-            " $fragmentRefs": null,
-            id: "QXJ0d29yazphYmJhcy1raWFyb3N0YW1pLXNub3ctbm8tMw==",
-            image: {
-              aspect_ratio: 1.58,
-              url: "https://d32dm0rphc51dk.cloudfront.net/yLbgXEbCyDMCbODBpS5muQ/large.jpg",
-            },
-            title: "Snow No. 3",
-            date: "2002",
-            sale_message: "Contact For Price",
-            is_in_auction: false,
-            is_biddable: false,
-            is_acquireable: false,
-            is_offerable: false,
-            gravityID: "abbas-kiarostami-snow-no-3",
-            sale: null,
-            sale_artwork: null,
-            artists: [
-              {
-                name: "Abbas Kiarostami",
-              },
-            ],
-            partner: {
-              name: "Rossi & Rossi",
-            },
-            href: "/artwork/abbas-kiarostami-snow-no-3",
           },
         },
       ],
@@ -338,14 +225,8 @@ export const ArtworkFixture = {
             gravityID: "mostafa-nourbakhsh-smoke",
             sale: null,
             sale_artwork: null,
-            artists: [
-              {
-                name: "Mostafa Nourbakhsh",
-              },
-            ],
-            partner: {
-              name: "CAMA Gallery",
-            },
+            artists: [{ name: "Mostafa Nourbakhsh" }],
+            partner: { name: "CAMA Gallery" },
             href: "/artwork/mostafa-nourbakhsh-smoke",
           },
         },
@@ -367,14 +248,8 @@ export const ArtworkFixture = {
             gravityID: "reza-reinei-untitled-2",
             sale: null,
             sale_artwork: null,
-            artists: [
-              {
-                name: "Reza Reinei",
-              },
-            ],
-            partner: {
-              name: "CAMA Gallery",
-            },
+            artists: [{ name: "Reza Reinei" }],
+            partner: { name: "CAMA Gallery" },
             href: "/artwork/reza-reinei-untitled-2",
           },
         },
@@ -396,14 +271,8 @@ export const ArtworkFixture = {
             gravityID: "ghodratollah-agheli-extraordinary-1",
             sale: null,
             sale_artwork: null,
-            artists: [
-              {
-                name: "Ghodratollah Agheli",
-              },
-            ],
-            partner: {
-              name: "CAMA Gallery",
-            },
+            artists: [{ name: "Ghodratollah Agheli" }],
+            partner: { name: "CAMA Gallery" },
             href: "/artwork/ghodratollah-agheli-extraordinary-1",
           },
         },
@@ -425,14 +294,8 @@ export const ArtworkFixture = {
             gravityID: "mostafa-nourbakhsh-chance",
             sale: null,
             sale_artwork: null,
-            artists: [
-              {
-                name: "Mostafa Nourbakhsh",
-              },
-            ],
-            partner: {
-              name: "CAMA Gallery",
-            },
+            artists: [{ name: "Mostafa Nourbakhsh" }],
+            partner: { name: "CAMA Gallery" },
             href: "/artwork/mostafa-nourbakhsh-chance",
           },
         },
@@ -454,14 +317,8 @@ export const ArtworkFixture = {
             gravityID: "reza-reinei-untitled-1",
             sale: null,
             sale_artwork: null,
-            artists: [
-              {
-                name: "Reza Reinei",
-              },
-            ],
-            partner: {
-              name: "CAMA Gallery",
-            },
+            artists: [{ name: "Reza Reinei" }],
+            partner: { name: "CAMA Gallery" },
             href: "/artwork/reza-reinei-untitled-1",
           },
         },
@@ -483,73 +340,58 @@ export const ArtworkFixture = {
             gravityID: "pejman-rahimizadeh-fashion",
             sale: null,
             sale_artwork: null,
-            artists: [
-              {
-                name: "Pejman Rahimizadeh",
-              },
-            ],
-            partner: {
-              name: "CAMA Gallery",
-            },
+            artists: [{ name: "Pejman Rahimizadeh" }],
+            partner: { name: "CAMA Gallery" },
             href: "/artwork/pejman-rahimizadeh-fashion",
           },
         },
+      ],
+    },
+  },
+  fair: {
+    artworksConnection: {
+      edges: [
+        { node: { " $fragmentRefs": null, id: "shirin-neshat-mehri-zarin-series", title: "Mehri (Zarin series)" } },
+        { node: { " $fragmentRefs": null, id: "mitra-tabrizian-leicestershire-1", title: "Leicestershire" } },
+        { node: { " $fragmentRefs": null, id: "shadi-ghadirian-white-square-number-10", title: "White Square #10" } },
         {
           node: {
             " $fragmentRefs": null,
-            id: "QXJ0d29yazptb3N0YWZhLW5vdXJiYWtoc2gtaG9yc2Vz",
-            image: {
-              aspect_ratio: 1.88,
-              url: "https://d32dm0rphc51dk.cloudfront.net/E8Ujywk3iJg215XTvMs8BA/large.jpg",
-            },
-            title: "Horses",
-            date: "2002",
-            sale_message: "Contact For Price",
-            is_in_auction: false,
-            is_biddable: false,
-            is_acquireable: false,
-            is_offerable: false,
-            gravityID: "mostafa-nourbakhsh-horses",
-            sale: null,
-            sale_artwork: null,
-            artists: [
-              {
-                name: "Mostafa Nourbakhsh",
-              },
-            ],
-            partner: {
-              name: "CAMA Gallery",
-            },
-            href: "/artwork/mostafa-nourbakhsh-horses",
+            id: "oded-balilty-hide-and-seek-superman-dead-sea",
+            title: "Hide and Seek, Superman, Dead sea",
           },
         },
+        { node: { " $fragmentRefs": null, id: "bettina-pousttchi-framework", title: "Framework" } },
         {
           node: {
             " $fragmentRefs": null,
-            id: "QXJ0d29yazptb3N0YWZhLW5vdXJiYWtoc2gtYXJ0ZXJ5",
-            image: {
-              aspect_ratio: 1.43,
-              url: "https://d32dm0rphc51dk.cloudfront.net/JYVbWG8-o4iLZjOqc40QWw/large.jpg",
-            },
-            title: "Artery",
-            date: "2009",
-            sale_message: "Contact For Price",
-            is_in_auction: false,
-            is_biddable: false,
-            is_acquireable: false,
-            is_offerable: false,
-            gravityID: "mostafa-nourbakhsh-artery",
-            sale: null,
-            sale_artwork: null,
-            artists: [
-              {
-                name: "Mostafa Nourbakhsh",
-              },
-            ],
-            partner: {
-              name: "CAMA Gallery",
-            },
-            href: "/artwork/mostafa-nourbakhsh-artery",
+            id: "shoja-azari-the-dance-of-alema-or-the-ugly-hamza",
+            title: "The Dance of Alema or The Ugly Hamza",
+          },
+        },
+      ],
+    },
+  },
+  show: {
+    name: "Great Show",
+    artworksConnection: {
+      edges: [
+        { node: { " $fragmentRefs": null, id: "shirin-neshat-mehri-zarin-series", title: "Mehri (Zarin series)" } },
+        { node: { " $fragmentRefs": null, id: "mitra-tabrizian-leicestershire-1", title: "Leicestershire" } },
+        { node: { " $fragmentRefs": null, id: "shadi-ghadirian-white-square-number-10", title: "White Square #10" } },
+        {
+          node: {
+            " $fragmentRefs": null,
+            id: "oded-balilty-hide-and-seek-superman-dead-sea",
+            title: "Hide and Seek, Superman, Dead sea",
+          },
+        },
+        { node: { " $fragmentRefs": null, id: "bettina-pousttchi-framework", title: "Framework" } },
+        {
+          node: {
+            " $fragmentRefs": null,
+            id: "shoja-azari-the-dance-of-alema-or-the-ugly-hamza",
+            title: "The Dance of Alema or The Ugly Hamza",
           },
         },
       ],
@@ -558,27 +400,9 @@ export const ArtworkFixture = {
   layer: {
     artworksConnection: {
       edges: [
-        {
-          node: {
-            " $fragmentRefs": null,
-            id: "shirin-neshat-mehri-zarin-series",
-            title: "Mehri (Zarin series)",
-          },
-        },
-        {
-          node: {
-            " $fragmentRefs": null,
-            id: "mitra-tabrizian-leicestershire-1",
-            title: "Leicestershire",
-          },
-        },
-        {
-          node: {
-            " $fragmentRefs": null,
-            id: "shadi-ghadirian-white-square-number-10",
-            title: "White Square #10",
-          },
-        },
+        { node: { " $fragmentRefs": null, id: "shirin-neshat-mehri-zarin-series", title: "Mehri (Zarin series)" } },
+        { node: { " $fragmentRefs": null, id: "mitra-tabrizian-leicestershire-1", title: "Leicestershire" } },
+        { node: { " $fragmentRefs": null, id: "shadi-ghadirian-white-square-number-10", title: "White Square #10" } },
         {
           node: {
             " $fragmentRefs": null,
@@ -586,32 +410,12 @@ export const ArtworkFixture = {
             title: "Hide and Seek, Superman, Dead sea",
           },
         },
-        {
-          node: {
-            " $fragmentRefs": null,
-            id: "bettina-pousttchi-framework",
-            title: "Framework",
-          },
-        },
+        { node: { " $fragmentRefs": null, id: "bettina-pousttchi-framework", title: "Framework" } },
         {
           node: {
             " $fragmentRefs": null,
             id: "shoja-azari-the-dance-of-alema-or-the-ugly-hamza",
             title: "The Dance of Alema or The Ugly Hamza",
-          },
-        },
-        {
-          node: {
-            " $fragmentRefs": null,
-            id: "malekeh-nayiny-early-spring",
-            title: "Early spring",
-          },
-        },
-        {
-          node: {
-            " $fragmentRefs": null,
-            id: "reza-aramesh-action-143-slash-019-collage",
-            title: "Action 143/019-collage",
           },
         },
       ],
