@@ -1,8 +1,8 @@
-import { Box, Join, Separator } from "@artsy/palette"
 import { ArtworkContextArtist_artwork } from "__generated__/ArtworkContextArtist_artwork.graphql"
 import React from "react"
 import { createFragmentContainer, graphql } from "react-relay"
 
+import { ContextSectionsContainer } from "../ContextSectionsContainer"
 import { ArtistArtworkGrid, PartnerArtworkGrid, RelatedArtworkGrid } from "./ArtworkGrids"
 
 export const ArtworkContextArtistFragmentContainer = createFragmentContainer<{
@@ -10,17 +10,11 @@ export const ArtworkContextArtistFragmentContainer = createFragmentContainer<{
 }>(
   props => {
     return (
-      <Join
-        separator={
-          <Box my={3}>
-            <Separator />
-          </Box>
-        }
-      >
+      <ContextSectionsContainer>
         <ArtistArtworkGrid artwork={props.artwork} />
         <PartnerArtworkGrid artwork={props.artwork} />
         <RelatedArtworkGrid artwork={props.artwork} />
-      </Join>
+      </ContextSectionsContainer>
     )
   },
   {

@@ -1,8 +1,8 @@
-import { Join, Spacer } from "@artsy/palette"
 import { ArtworkContextAuction_artwork } from "__generated__/ArtworkContextAuction_artwork.graphql"
 import React from "react"
 import { createFragmentContainer, graphql } from "react-relay"
 
+import { ContextSectionsContainer } from "../ContextSectionsContainer"
 import { ArtistArtworkGrid, AuctionArtworkGrid, RelatedArtworkGrid } from "./ArtworkGrids"
 
 export const ArtworkContextAuctionFragmentContainer = createFragmentContainer<{
@@ -12,16 +12,16 @@ export const ArtworkContextAuctionFragmentContainer = createFragmentContainer<{
   props => {
     if (props.isClosed) {
       return (
-        <Join separator={<Spacer my={2} />}>
+        <ContextSectionsContainer>
           <ArtistArtworkGrid artwork={props.artwork} />
           <RelatedArtworkGrid artwork={props.artwork} />
-        </Join>
+        </ContextSectionsContainer>
       )
     } else {
       return (
-        <Join separator={<Spacer my={2} />}>
+        <ContextSectionsContainer>
           <AuctionArtworkGrid artwork={props.artwork} />
-        </Join>
+        </ContextSectionsContainer>
       )
     }
   },
