@@ -156,6 +156,7 @@ fragment OtherWorks_artwork on Artwork {
   ...ArtworkContextArtist_artwork
   ...ArtworkContextFair_artwork
   ...ArtworkContextAuction_artwork
+  ...ArtworkContextShow_artwork
 }
 
 fragment AboutArtist_artwork on Artwork {
@@ -323,19 +324,11 @@ fragment ArtworkContextAuction_artwork on Artwork {
   ...RelatedArtworkGrid_artwork
 }
 
-fragment AuctionArtworkGrid_artwork on Artwork {
-  sale {
-    name
-    artworksConnection(first: 6) {
-      edges {
-        node {
-          ...GenericGrid_artworks
-          id
-        }
-      }
-    }
-    id
-  }
+fragment ArtworkContextShow_artwork on Artwork {
+  ...ArtistArtworkGrid_artwork
+  ...PartnerArtworkGrid_artwork
+  ...RelatedArtworkGrid_artwork
+  ...ShowArtworkGrid_artwork
 }
 
 fragment ArtistArtworkGrid_artwork on Artwork {
@@ -353,8 +346,38 @@ fragment ArtistArtworkGrid_artwork on Artwork {
   }
 }
 
+fragment PartnerArtworkGrid_artwork on Artwork {
+  partner {
+    name
+    artworksConnection(first: 6, for_sale: true, sort: PUBLISHED_AT_DESC, exclude: $excludeArtworkIds) {
+      edges {
+        node {
+          ...GenericGrid_artworks
+          id
+        }
+      }
+    }
+    id
+  }
+}
+
 fragment RelatedArtworkGrid_artwork on Artwork {
   layer(id: "main") {
+    artworksConnection(first: 6) {
+      edges {
+        node {
+          ...GenericGrid_artworks
+          id
+        }
+      }
+    }
+    id
+  }
+}
+
+fragment ShowArtworkGrid_artwork on Artwork {
+  show {
+    name
     artworksConnection(first: 6) {
       edges {
         node {
@@ -414,39 +437,24 @@ fragment ArtworkGridItem_artwork on Artwork {
   href
 }
 
+fragment AuctionArtworkGrid_artwork on Artwork {
+  sale {
+    name
+    artworksConnection(first: 6) {
+      edges {
+        node {
+          ...GenericGrid_artworks
+          id
+        }
+      }
+    }
+    id
+  }
+}
+
 fragment FairArtworkGrid_artwork on Artwork {
   fair: show(at_a_fair: true) {
     artworksConnection(first: 6) {
-      edges {
-        node {
-          ...GenericGrid_artworks
-          id
-        }
-      }
-    }
-    id
-  }
-}
-
-fragment ShowArtworkGrid_artwork on Artwork {
-  show {
-    name
-    artworksConnection(first: 6) {
-      edges {
-        node {
-          ...GenericGrid_artworks
-          id
-        }
-      }
-    }
-    id
-  }
-}
-
-fragment PartnerArtworkGrid_artwork on Artwork {
-  partner {
-    name
-    artworksConnection(first: 6, for_sale: true, sort: PUBLISHED_AT_DESC, exclude: $excludeArtworkIds) {
       edges {
         node {
           ...GenericGrid_artworks
@@ -1400,7 +1408,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkQuery",
-    "id": "960667637bb27080cda4304b4108e69d",
+    "id": "37ccbb35154546f1b45a5da5363838c8",
     "text": null,
     "metadata": {}
   }

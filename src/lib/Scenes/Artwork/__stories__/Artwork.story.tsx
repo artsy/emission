@@ -43,3 +43,6 @@ storiesOf("Artwork/Screens")
   .add("Artwork in a closed auction", () => {
     return <ArtworkRenderer artworkID="txema-yeste-bird-of-paradise" />
   })
+  .add("Artwork in a show", () => {
+    return <ArtworkRenderer artworkID="michael-heizer-scoria-negative-wall-sculpture" />
+  })
