@@ -16,7 +16,7 @@ export type ShowEventSection_event = {
 const node: ReaderFragment = {
   "kind": "Fragment",
   "name": "ShowEventSection_event",
-  "type": "PartnerShowEvent",
+  "type": "PartnerShowEventType",
   "metadata": null,
   "argumentDefinitions": [],
   "selections": [
@@ -50,5 +50,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = '433f9e2a4746ae06d0b251385743afa5';
+(node as any).hash = '0b1484a3d0f0941058a1e2f71dc2aa0e';
 export default node;
