@@ -35,10 +35,10 @@ fragment ArtworkActions_artwork on Artwork {
     id
   }
   image {
-    height
-    width
     url
   }
+  widthCm
+  heightCm
 }
 */
 
@@ -165,25 +165,25 @@ return {
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "name": "height",
-                "args": null,
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "name": "width",
-                "args": null,
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
                 "name": "url",
                 "args": null,
                 "storageKey": null
               }
             ]
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "widthCm",
+            "args": null,
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "heightCm",
+            "args": null,
+            "storageKey": null
           }
         ]
       }
@@ -192,7 +192,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkActionsTestsQuery",
-    "id": "dc298bc3c9591f1a5aba04e1851ef5a4",
+    "id": "c2dceea6b4d7db6e409b2dc81b4039bb",
     "text": null,
     "metadata": {}
   }

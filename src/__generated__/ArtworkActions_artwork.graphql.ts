@@ -14,10 +14,10 @@ export type ArtworkActions_artwork = {
         readonly name: string | null;
     } | null> | null;
     readonly image: {
-        readonly height: number | null;
-        readonly width: number | null;
         readonly url: string | null;
     } | null;
+    readonly widthCm: number | null;
+    readonly heightCm: number | null;
     readonly " $refType": ArtworkActions_artwork$ref;
 };
 
@@ -102,27 +102,27 @@ const node: ReaderFragment = {
         {
           "kind": "ScalarField",
           "alias": null,
-          "name": "height",
-          "args": null,
-          "storageKey": null
-        },
-        {
-          "kind": "ScalarField",
-          "alias": null,
-          "name": "width",
-          "args": null,
-          "storageKey": null
-        },
-        {
-          "kind": "ScalarField",
-          "alias": null,
           "name": "url",
           "args": null,
           "storageKey": null
         }
       ]
+    },
+    {
+      "kind": "ScalarField",
+      "alias": null,
+      "name": "widthCm",
+      "args": null,
+      "storageKey": null
+    },
+    {
+      "kind": "ScalarField",
+      "alias": null,
+      "name": "heightCm",
+      "args": null,
+      "storageKey": null
     }
   ]
 };
-(node as any).hash = 'aed254d6ab46c98f3400787b35091f74';
+(node as any).hash = '2aec79a3ff555bec57c9bc2bfac60c4d';
 export default node;
