@@ -7,6 +7,7 @@ export type AuctionArtworkGrid_artwork$ref = typeof _AuctionArtworkGrid_artwork$
 export type AuctionArtworkGrid_artwork = {
     readonly sale: {
         readonly name: string | null;
+        readonly href: string | null;
         readonly artworksConnection: {
             readonly edges: ReadonlyArray<{
                 readonly node: {
@@ -47,6 +48,13 @@ const node: ReaderFragment = {
           "kind": "ScalarField",
           "alias": null,
           "name": "name",
+          "args": null,
+          "storageKey": null
+        },
+        {
+          "kind": "ScalarField",
+          "alias": null,
+          "name": "href",
           "args": null,
           "storageKey": null
         },
@@ -103,5 +111,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = 'dc892de1bc4eb17b2c1215786bc28522';
+(node as any).hash = '362c93841f01cf36d2121760b7304f02';
 export default node;

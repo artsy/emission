@@ -17,7 +17,7 @@ describe("RelatedArtworkGrid", () => {
         .text()
     ).toEqual("Related Works")
     expect(component.find(GenericGrid).length).toEqual(1)
-    expect(component.find(GenericGrid).props().artworks.length).toEqual(8)
+    expect(component.find(GenericGrid).props().artworks.length).toEqual(6)
   })
 
   it("does not include grid when there are no artworks", () => {

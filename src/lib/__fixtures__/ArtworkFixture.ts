@@ -51,6 +51,7 @@ export const ArtworkFixture = {
     id: "QXJ0aXN0OmFiYmFzLWtpYXJvc3RhbWk=",
     gravityID: "abbas-kiarostami",
     name: "Abbas Kiarostami",
+    href: "/artist/abbas-kiarostami",
     is_followed: false,
     nationality: "Iranian",
     birthday: "1940",
@@ -399,6 +400,7 @@ export const ArtworkFixture = {
   },
   sale: {
     name: "Great Sale",
+    href: "/sale/great-sale",
     artworksConnection: {
       edges: [
         { node: { " $fragmentRefs": null, id: "shirin-neshat-mehri-zarin-series", title: "Mehri (Zarin series)" } },

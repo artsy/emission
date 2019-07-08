@@ -6,6 +6,7 @@ declare const _FairArtworkGrid_artwork$ref: unique symbol;
 export type FairArtworkGrid_artwork$ref = typeof _FairArtworkGrid_artwork$ref;
 export type FairArtworkGrid_artwork = {
     readonly fair: {
+        readonly href: string | null;
         readonly artworksConnection: {
             readonly edges: ReadonlyArray<{
                 readonly node: {
@@ -48,6 +49,13 @@ const node: ReaderFragment = {
       "concreteType": "PartnerShow",
       "plural": false,
       "selections": [
+        {
+          "kind": "ScalarField",
+          "alias": null,
+          "name": "href",
+          "args": null,
+          "storageKey": null
+        },
         {
           "kind": "LinkedField",
           "alias": null,
@@ -101,5 +109,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = 'ed1404a284db571caf375eb072841e13';
+(node as any).hash = '74f39bd90025ee3ea4972e8e91ac5cc5';
 export default node;

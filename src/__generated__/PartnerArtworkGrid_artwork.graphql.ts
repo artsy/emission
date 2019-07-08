@@ -7,6 +7,7 @@ export type PartnerArtworkGrid_artwork$ref = typeof _PartnerArtworkGrid_artwork$
 export type PartnerArtworkGrid_artwork = {
     readonly partner: {
         readonly name: string | null;
+        readonly href: string | null;
         readonly artworksConnection: {
             readonly edges: ReadonlyArray<{
                 readonly node: {
@@ -46,6 +47,13 @@ const node: ReaderFragment = {
           "kind": "ScalarField",
           "alias": null,
           "name": "name",
+          "args": null,
+          "storageKey": null
+        },
+        {
+          "kind": "ScalarField",
+          "alias": null,
+          "name": "href",
           "args": null,
           "storageKey": null
         },
@@ -112,5 +120,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = '74b278b647bfe2f22c2d19819b172a72';
+(node as any).hash = 'd29228ecdccba1943c85b5b4b9d547b1';
 export default node;

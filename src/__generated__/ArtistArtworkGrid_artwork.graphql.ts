@@ -7,6 +7,7 @@ export type ArtistArtworkGrid_artwork$ref = typeof _ArtistArtworkGrid_artwork$re
 export type ArtistArtworkGrid_artwork = {
     readonly artist: {
         readonly name: string | null;
+        readonly href: string | null;
         readonly artworks_connection: {
             readonly edges: ReadonlyArray<{
                 readonly node: {
@@ -52,6 +53,13 @@ const node: ReaderFragment = {
           "kind": "ScalarField",
           "alias": null,
           "name": "name",
+          "args": null,
+          "storageKey": null
+        },
+        {
+          "kind": "ScalarField",
+          "alias": null,
+          "name": "href",
           "args": null,
           "storageKey": null
         },
@@ -113,5 +121,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = '26497b75731c28503fbf353bdee65dde';
+(node as any).hash = 'b597dfc86c26d564709887f29715cea1';
 export default node;
