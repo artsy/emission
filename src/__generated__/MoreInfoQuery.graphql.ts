@@ -52,7 +52,7 @@ fragment MoreInfo_show on Show {
   }
 }
 
-fragment ShowEventSection_event on PartnerShowEvent {
+fragment ShowEventSection_event on PartnerShowEventType {
   event_type
   description
   start_at
@@ -211,7 +211,7 @@ return {
             "name": "events",
             "storageKey": null,
             "args": null,
-            "concreteType": "PartnerShowEvent",
+            "concreteType": "PartnerShowEventType",
             "plural": true,
             "selections": [
               {
@@ -252,7 +252,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "MoreInfoQuery",
-    "id": "9394d33f8505938f251d50238518fe53",
+    "id": "119bfe21b2c61a9b6c044a6b6e81ff6a",
     "text": null,
     "metadata": {}
   }

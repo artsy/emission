@@ -116,7 +116,7 @@ const node: ReaderFragment = {
       "name": "events",
       "storageKey": null,
       "args": null,
-      "concreteType": "PartnerShowEvent",
+      "concreteType": "PartnerShowEventType",
       "plural": true,
       "selections": [
         {
