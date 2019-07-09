@@ -17,7 +17,7 @@ export const ArtworkContextFairFragmentContainer = createFragmentContainer<{ art
   },
   {
     artwork: graphql`
-      fragment ArtworkContextFair_artwork on Artwork {
+      fragment ArtworkContextFair_artwork on Artwork @argumentDefinitions(excludeArtworkIDs: { type: "[String!]" }) {
         ...FairArtworkGrid_artwork
         ...ShowArtworkGrid_artwork
         ...ArtistArtworkGrid_artwork

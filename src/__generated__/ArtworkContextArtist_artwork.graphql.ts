@@ -18,7 +18,14 @@ const node: ReaderFragment = {
   "name": "ArtworkContextArtist_artwork",
   "type": "Artwork",
   "metadata": null,
-  "argumentDefinitions": [],
+  "argumentDefinitions": [
+    {
+      "kind": "LocalArgument",
+      "name": "excludeArtworkIDs",
+      "type": "[String!]",
+      "defaultValue": null
+    }
+  ],
   "selections": [
     {
       "kind": "FragmentSpread",
@@ -37,5 +44,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = 'cc5a592628c0074b819bc3a354fc7c06';
+(node as any).hash = '113e469fc02115ed6481a83a64ad581f';
 export default node;

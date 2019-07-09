@@ -13,14 +13,17 @@ export class ContextGridCTA extends React.Component<ContextGridCTAProps> {
     const { href, label } = this.props
 
     return (
-      <TouchableWithoutFeedback onPress={() => href && SwitchBoard.presentNavigationViewController(this, href)}>
-        <Text>
-          <Sans size="2" textAlign="left" weight="medium">
-            {label}
-          </Sans>
-          <ArrowRightIcon fill="black30" height="8px" />
-        </Text>
-      </TouchableWithoutFeedback>
+      href &&
+      label && (
+        <TouchableWithoutFeedback onPress={() => href && SwitchBoard.presentNavigationViewController(this, href)}>
+          <Text>
+            <Sans size="3" textAlign="left" weight="medium">
+              {label}
+            </Sans>
+            <ArrowRightIcon fill="black30" ml={1} />
+          </Text>
+        </TouchableWithoutFeedback>
+      )
     )
   }
 }

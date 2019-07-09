@@ -28,6 +28,12 @@ const node: ReaderFragment = {
   "metadata": null,
   "argumentDefinitions": [
     {
+      "kind": "LocalArgument",
+      "name": "excludeArtworkIDs",
+      "type": "[String!]",
+      "defaultValue": null
+    },
+    {
       "kind": "RootArgument",
       "name": "excludeArtworkIds",
       "type": "[String]"
@@ -120,5 +126,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = 'd29228ecdccba1943c85b5b4b9d547b1';
+(node as any).hash = 'f0c9ae6b711f9552159665d0a7f12fb1';
 export default node;

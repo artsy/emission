@@ -8,7 +8,6 @@ export const ArtworkFixture = {
   title: "Untitled",
   href: "/artwork/andreas-rod-prinzknecht",
   availability: "for sale",
-  sale: null,
   category: "Photography",
   conditionDescription: null,
   signature: "Signed by artist on Back",
@@ -401,6 +400,8 @@ export const ArtworkFixture = {
   sale: {
     name: "Great Sale",
     href: "/sale/great-sale",
+    isGalleryAuction: false,
+    isBenefit: false,
     artworksConnection: {
       edges: [
         { node: { " $fragmentRefs": null, id: "shirin-neshat-mehri-zarin-series", title: "Mehri (Zarin series)" } },

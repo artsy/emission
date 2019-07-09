@@ -5,9 +5,7 @@ import { createFragmentContainer, graphql } from "react-relay"
 import { ContextSectionsContainer } from "../ContextSectionsContainer"
 import { ArtistArtworkGrid, PartnerArtworkGrid, RelatedArtworkGrid, ShowArtworkGrid } from "./ArtworkGrids"
 
-export const ArtworkContextShowFragmentContainer = createFragmentContainer<{
-  artwork: ArtworkContextShow_artwork
-}>(
+export const ArtworkContextShowFragmentContainer = createFragmentContainer<{ artwork: ArtworkContextShow_artwork }>(
   props => {
     return (
       <ContextSectionsContainer>
@@ -20,7 +18,7 @@ export const ArtworkContextShowFragmentContainer = createFragmentContainer<{
   },
   {
     artwork: graphql`
-      fragment ArtworkContextShow_artwork on Artwork {
+      fragment ArtworkContextShow_artwork on Artwork @argumentDefinitions(excludeArtworkIDs: { type: "[String!]" }) {
         ...ArtistArtworkGrid_artwork
         ...PartnerArtworkGrid_artwork
         ...RelatedArtworkGrid_artwork

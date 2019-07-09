@@ -40,7 +40,7 @@ export class PartnerArtworkGrid extends React.Component<PartnerArtworkGridProps>
 
 export const PartnerArtworkGridFragmentContainer = createFragmentContainer(PartnerArtworkGrid, {
   artwork: graphql`
-    fragment PartnerArtworkGrid_artwork on Artwork {
+    fragment PartnerArtworkGrid_artwork on Artwork @argumentDefinitions(excludeArtworkIDs: { type: "[String!]" }) {
       partner {
         name
         href
