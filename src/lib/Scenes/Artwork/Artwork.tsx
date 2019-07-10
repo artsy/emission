@@ -1,4 +1,4 @@
-import { Box, Theme } from "@artsy/palette"
+import { Box, Flex, Spinner, Theme } from "@artsy/palette"
 import { Artwork_artwork } from "__generated__/Artwork_artwork.graphql"
 import { ArtworkQuery } from "__generated__/ArtworkQuery.graphql"
 import Separator from "lib/Components/Separator"
@@ -7,7 +7,7 @@ import { SafeAreaInsets } from "lib/types/SafeAreaInsets"
 import renderWithLoadProgress from "lib/utils/renderWithLoadProgress"
 import React from "react"
 import { FlatList } from "react-native"
-import { createFragmentContainer, graphql, QueryRenderer } from "react-relay"
+import { createFragmentContainer, graphql, QueryRenderer, RelayProp } from "react-relay"
 import { AboutArtistFragmentContainer as AboutArtist } from "./Components/AboutArtist"
 import { AboutWorkFragmentContainer as AboutWork } from "./Components/AboutWork"
 import { ArtworkDetailsFragmentContainer as ArtworkDetails } from "./Components/ArtworkDetails"
@@ -20,9 +20,26 @@ import { PartnerCardFragmentContainer as PartnerCard } from "./Components/Partne
 interface Props {
   artwork: Artwork_artwork
   safeAreaInsets: SafeAreaInsets
+  relay: RelayProp
 }
 
-export class Artwork extends React.Component<Props> {
+interface State {
+  isLoading: boolean
+}
+
+export class Artwork extends React.Component<Props, State> {
+  sections = []
+
+  constructor(props: Props) {
+    super(props)
+
+    this.state = {
+      isLoading: false,
+    }
+
+    this.renderSections()
+  }
+
   shouldRenderDetails = () => {
     const {
       category,
@@ -65,59 +82,34 @@ export class Artwork extends React.Component<Props> {
     }
   }
 
-  shouldRenderOtherWorks = () => {
-    const {
-      artist: { artworks_connection },
-      partner: { artworksConnection },
-      layer,
-    } = this.props.artwork
-    if (
-      (artworks_connection && artworks_connection.edges && artworks_connection.edges.length) ||
-      (artworksConnection && artworksConnection.edges && artworksConnection.edges.length) ||
-      (layer && layer.artworksConnection && layer.artworksConnection.edges && layer.artworksConnection.edges.length)
-    ) {
-      return true
-    } else {
-      return false
-    }
-  }
-
-  sections = () => {
+  renderSections = () => {
     const { artwork } = this.props
     const {
       artist: { biography_blurb },
     } = artwork
 
-    const sections = []
-
-    sections.push("header")
-    sections.push("commercialInformation")
+    this.sections.push("header")
+    this.sections.push("commercialInformation")
 
     if (artwork.description || artwork.additional_information) {
-      sections.push("aboutWork")
+      this.sections.push("aboutWork")
     }
 
     if (this.shouldRenderDetails()) {
-      sections.push("details")
+      this.sections.push("details")
     }
 
     if (artwork.provenance || artwork.exhibition_history || artwork.literature) {
-      sections.push("history")
+      this.sections.push("history")
     }
 
     if (biography_blurb) {
-      sections.push("aboutArtist")
+      this.sections.push("aboutArtist")
     }
 
     if (this.shouldRenderPartner()) {
-      sections.push("partnerCard")
+      this.sections.push("partnerCard")
     }
-
-    if (this.shouldRenderOtherWorks()) {
-      sections.push("otherWorks")
-    }
-
-    return sections
   }
 
   renderItem = ({ item: section }) => {
@@ -144,12 +136,23 @@ export class Artwork extends React.Component<Props> {
     }
   }
 
+  loadOtherWorks = () => {
+    if (!this.sections.includes("otherWorks")) {
+      console.log("rendering")
+      this.setState({ isLoading: true })
+      this.sections.push("otherWorks")
+      this.setState({ isLoading: false })
+    }
+  }
+
   render() {
     return (
       <Theme>
-        <Box pt={this.props.safeAreaInsets.top}>
+        <Box pt={this.props.safeAreaInsets && this.props.safeAreaInsets.top}>
           <FlatList
-            data={this.sections()}
+            data={this.sections}
+            onEndReached={this.loadOtherWorks}
+            onEndReachedThreshold={0.2}
             ItemSeparatorComponent={() => (
               <Box px={2} mx={2} my={3}>
                 <Separator />
@@ -158,6 +161,13 @@ export class Artwork extends React.Component<Props> {
             keyExtractor={(item, index) => item.type + String(index)}
             renderItem={item =>
               item.item === "header" ? this.renderItem(item) : <Box px={2}>{this.renderItem(item)}</Box>
+            }
+            ListFooterComponent={
+              this.state.isLoading ? (
+                <Flex alignItems="center" justifyContent="center" flexGrow={1} mb={3}>
+                  <Spinner />
+                </Flex>
+              ) : null
             }
           />
         </Box>
@@ -175,38 +185,14 @@ export const ArtworkContainer = createFragmentContainer(Artwork, {
       exhibition_history
       literature
 
-      layer(id: "main") {
-        artworksConnection(first: 6) {
-          edges {
-            node {
-              id
-            }
-          }
-        }
-      }
-
       partner {
         type
-        artworksConnection(first: 6, for_sale: true, sort: PUBLISHED_AT_DESC, exclude: $excludeArtworkIds) {
-          edges {
-            node {
-              id
-            }
-          }
-        }
       }
 
       artist {
         name
         biography_blurb {
           text
-        }
-        artworks_connection(first: 6, sort: PUBLISHED_AT_DESC, exclude: $excludeArtworkIds) {
-          edges {
-            node {
-              id
-            }
-          }
         }
       }
 
