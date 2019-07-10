@@ -101,7 +101,7 @@ describe("OtherWorks", () => {
       .render()
       .text()
     expect(componentText).toMatchInlineSnapshot(
-      `"Other works from the boothView all works from the boothOther works from Great ShowView all works from Great ShowOther works by Abbas KiarostamiView all works by Abbas KiarostamiRelated Works"`
+      `"Other works from the boothView all works from CAMA Gallery at Art BaselOther works by Abbas KiarostamiView all works by Abbas KiarostamiRelated Works"`
     )
   })
 
@@ -109,7 +109,7 @@ describe("OtherWorks", () => {
     const regularArtwork = {
       ...ArtworkFixture,
       context: {
-        __typename: "ArtworkContextShow",
+        __typename: "ArtworkContextPartnerShow",
       },
     }
     const component = shallow(<OtherWorks artwork={regularArtwork} />)

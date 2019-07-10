@@ -44,5 +44,5 @@ storiesOf("Artwork/Screens")
     return <ArtworkRenderer artworkID="txema-yeste-bird-of-paradise" />
   })
   .add("Artwork in a show", () => {
-    return <ArtworkRenderer artworkID="michael-heizer-scoria-negative-wall-sculpture" />
+    return <ArtworkRenderer artworkID="li-hu-table-series-no-dot-3" />
   })

@@ -12,9 +12,8 @@ export class ContextGridCTA extends React.Component<ContextGridCTAProps> {
   render() {
     const { href, label } = this.props
 
-    return (
-      href &&
-      label && (
+    if (href && label) {
+      return (
         <TouchableWithoutFeedback onPress={() => href && SwitchBoard.presentNavigationViewController(this, href)}>
           <Text>
             <Sans size="3" textAlign="left" weight="medium">
@@ -24,6 +23,8 @@ export class ContextGridCTA extends React.Component<ContextGridCTAProps> {
           </Text>
         </TouchableWithoutFeedback>
       )
-    )
+    } else {
+      return null
+    }
   }
 }

@@ -205,6 +205,7 @@ export const ArtworkFixture = {
     type: "gallery",
     _id: "59ad77c6b202a34d6e059676",
     name: "CAMA Gallery",
+    href: "/cama-gallery",
     artworksConnection: {
       edges: [
         {
@@ -349,6 +350,8 @@ export const ArtworkFixture = {
     },
   },
   fair: {
+    href: "/cama-at-art-basel",
+    name: "CAMA Gallery at Art Basel",
     artworksConnection: {
       edges: [
         { node: { " $fragmentRefs": null, id: "shirin-neshat-mehri-zarin-series", title: "Mehri (Zarin series)" } },
@@ -374,6 +377,7 @@ export const ArtworkFixture = {
   },
   show: {
     name: "Great Show",
+    href: "/great-show",
     artworksConnection: {
       edges: [
         { node: { " $fragmentRefs": null, id: "shirin-neshat-mehri-zarin-series", title: "Mehri (Zarin series)" } },

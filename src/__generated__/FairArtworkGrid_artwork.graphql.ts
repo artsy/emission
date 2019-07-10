@@ -7,6 +7,7 @@ export type FairArtworkGrid_artwork$ref = typeof _FairArtworkGrid_artwork$ref;
 export type FairArtworkGrid_artwork = {
     readonly fair: {
         readonly href: string | null;
+        readonly name: string | null;
         readonly artworksConnection: {
             readonly edges: ReadonlyArray<{
                 readonly node: {
@@ -53,6 +54,13 @@ const node: ReaderFragment = {
           "kind": "ScalarField",
           "alias": null,
           "name": "href",
+          "args": null,
+          "storageKey": null
+        },
+        {
+          "kind": "ScalarField",
+          "alias": null,
+          "name": "name",
           "args": null,
           "storageKey": null
         },
@@ -109,5 +117,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = '74f39bd90025ee3ea4972e8e91ac5cc5';
+(node as any).hash = 'f1bda4767c83eec16bf0a39f124933e1';
 export default node;

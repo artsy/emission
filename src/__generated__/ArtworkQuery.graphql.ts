@@ -313,7 +313,6 @@ fragment ArtworkContextArtist_artwork on Artwork {
 
 fragment ArtworkContextFair_artwork on Artwork {
   ...FairArtworkGrid_artwork
-  ...ShowArtworkGrid_artwork
   ...ArtistArtworkGrid_artwork
   ...RelatedArtworkGrid_artwork
 }
@@ -459,6 +458,7 @@ fragment AuctionArtworkGrid_artwork on Artwork {
 fragment FairArtworkGrid_artwork on Artwork {
   fair: show(at_a_fair: true) {
     href
+    name
     artworksConnection(first: 6) {
       edges {
         node {
@@ -1219,6 +1219,7 @@ return {
             "plural": false,
             "selections": [
               (v10/*: any*/),
+              (v8/*: any*/),
               (v12/*: any*/),
               (v3/*: any*/)
             ]
@@ -1419,7 +1420,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkQuery",
-    "id": "03abcf5ac41c97c6c7a4deb8df2c5f3b",
+    "id": "133669442afe6fc08599f86d97c33773",
     "text": null,
     "metadata": {}
   }

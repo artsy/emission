@@ -31,7 +31,7 @@ export class FairArtworkGrid extends React.Component<FairArtworkGridProps> {
         <Header title={"Other works from the booth"} />
         <GenericGrid artworks={artworks} />
         <Box mt={2}>
-          <ContextGridCTA href={fair.href} label="View all works from the booth" />
+          <ContextGridCTA href={fair.href} label={`View all works from ${fair.name}`} />
         </Box>
       </>
     )
@@ -43,7 +43,7 @@ export const FairArtworkGridFragmentContainer = createFragmentContainer(FairArtw
     fragment FairArtworkGrid_artwork on Artwork @argumentDefinitions(excludeArtworkIDs: { type: "[String!]" }) {
       fair: show(at_a_fair: true) {
         href
-
+        name
         artworksConnection(first: 6, exclude: $excludeArtworkIDs) {
           edges {
             node {

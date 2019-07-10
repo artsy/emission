@@ -17,7 +17,7 @@ export const OtherWorksFragmentContainer = createFragmentContainer<{ artwork: Ot
       case "ArtworkContextFair": {
         return <ArtworkContextFair artwork={props.artwork} />
       }
-      case "ArtworkContextShow": {
+      case "ArtworkContextPartnerShow": {
         return <ArtworkContextShow artwork={props.artwork} />
       }
       default: {

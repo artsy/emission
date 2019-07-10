@@ -18,6 +18,7 @@ describe("FairArtworkGrid", () => {
       ...ArtworkFixture,
       fair: {
         href: "/fair/miami-is-awesome",
+        name: "Miami is awesome",
         artworksConnection: { ...ArtworkFixture.fair.artworksConnection },
       },
     }
@@ -35,7 +36,7 @@ describe("FairArtworkGrid", () => {
     expect(component.find(GenericGrid).props().artworks.length).toEqual(6)
 
     expect(component.find(ContextGridCTA).length).toEqual(1)
-    expect(component.find(ContextGridCTA).text()).toContain("View all works from the booth")
+    expect(component.find(ContextGridCTA).text()).toContain("View all works from Miami is awesome")
     component
       .find(TouchableWithoutFeedback)
       .props()
@@ -49,12 +50,7 @@ describe("FairArtworkGrid", () => {
   it("does not include grid when there are no artworks for the fair", () => {
     const artworkWithoutFairArtworks = {
       ...ArtworkFixture,
-      fair: {
-        href: "",
-        artworksConnection: {
-          edges: [],
-        },
-      },
+      fair: { href: "", name: "Miami is awesome", artworksConnection: { edges: [] } },
     }
     const component = mount(<FairArtworkGrid artwork={artworkWithoutFairArtworks} />)
     expect(component.text()).toEqual(null)
