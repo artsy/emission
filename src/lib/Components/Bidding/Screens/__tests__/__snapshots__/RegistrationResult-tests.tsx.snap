@@ -424,22 +424,29 @@ exports[`Registration result component renders registration pending properly 1`]
           }
           textAlign="center"
         >
-          Your registration status is pending.
-Please contact 
-          <Text
-            onPress={[Function]}
-            style={
-              Array [
-                Object {
-                  "textDecorationLine": "underline",
-                },
-              ]
-            }
-          >
-            support@artsy.net
-          </Text>
-           for
-more information.
+          You will receive an email from an Artsy specialist once your registration has been confirmed.
+        </Text>
+        <Text />
+        <Text
+          color="black60"
+          fontFamily="Unica77LL-Regular"
+          fontSize="14px"
+          lineHeight="20px"
+          style={
+            Array [
+              Object {
+                "color": "#666",
+                "fontFamily": "Unica77LL-Regular",
+                "fontSize": 14,
+                "lineHeight": 20,
+                "textAlign": "center",
+              },
+              Object {},
+            ]
+          }
+          textAlign="center"
+        >
+          In the meantime, you can still view works and watch lots that you’re interested in.
         </Text>
         <Text />
       </View>
