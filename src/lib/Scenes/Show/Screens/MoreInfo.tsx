@@ -158,7 +158,7 @@ export const MoreInfoContainer = createFragmentContainer(MoreInfo, {
   show: graphql`
     fragment MoreInfo_show on Show {
       internalID
-      gravityID
+      slug
       exhibition_period
       pressReleaseUrl
       openingReceptionText

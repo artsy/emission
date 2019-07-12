@@ -89,7 +89,7 @@ export class ShowPreview extends React.Component<Props> {
 export default createFragmentContainer(ShowPreview, {
   show: graphql`
     fragment ShowPreview_show on Show {
-      gravityID
+      slug
       internalID
       name
       cover_image {

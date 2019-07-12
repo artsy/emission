@@ -212,7 +212,7 @@ const styles = StyleSheet.create<Styles>({
 const ArtistCardContainer = createFragmentContainer(ArtistCard, {
   artist: graphql`
     fragment ArtistCard_artist on Artist {
-      gravityID
+      slug
       internalID
       href
       name

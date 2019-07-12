@@ -154,7 +154,7 @@ export const ArtistListItemContainer = createFragmentContainer(ArtistListItem, {
     fragment ArtistListItem_artist on Artist {
       id
       internalID
-      gravityID
+      slug
       name
       initials
       href

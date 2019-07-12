@@ -159,7 +159,7 @@ export default createFragmentContainer(ArtworkRailHeader, {
       context {
         ... on HomePageModuleContextRelatedArtist {
           artist {
-            gravityID
+            slug
           }
           based_on {
             name

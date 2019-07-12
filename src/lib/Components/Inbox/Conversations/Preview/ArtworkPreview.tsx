@@ -101,7 +101,7 @@ export class ArtworkPreview extends React.Component<Props> {
 export default createFragmentContainer(ArtworkPreview, {
   artwork: graphql`
     fragment ArtworkPreview_artwork on Artwork {
-      gravityID
+      slug
       internalID
       title
       artist_names

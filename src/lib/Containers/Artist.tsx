@@ -162,7 +162,7 @@ export default createFragmentContainer(Artist, {
   artist: graphql`
     fragment Artist_artist on Artist {
       internalID
-      gravityID
+      slug
       has_metadata
       counts {
         artworks

@@ -118,7 +118,7 @@ export const ArtworkActionsFragmentContainer = createFragmentContainer(ArtworkAc
     fragment ArtworkActions_artwork on Artwork {
       id
       internalID
-      gravityID
+      slug
       title
       href
       is_saved

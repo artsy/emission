@@ -40,7 +40,7 @@ export class PartnerCard extends React.Component<Props, State> {
               followProfile(input: $input) {
                 profile {
                   id
-                  gravityID
+                  slug
                   internalID
                   is_followed
                 }
@@ -128,7 +128,7 @@ export const PartnerCardFragmentContainer = createFragmentContainer(PartnerCard,
         is_default_profile_public
         type
         name
-        gravityID
+        slug
         internalID
         id
         href
@@ -136,7 +136,7 @@ export const PartnerCardFragmentContainer = createFragmentContainer(PartnerCard,
         profile {
           id
           internalID
-          gravityID
+          slug
           is_followed
           icon {
             url(version: "square140")

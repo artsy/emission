@@ -194,7 +194,7 @@ export default createFragmentContainer(Header, {
   artist: graphql`
     fragment Header_artist on Artist {
       internalID
-      gravityID
+      slug
       name
       nationality
       birthday

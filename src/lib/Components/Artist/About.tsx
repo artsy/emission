@@ -78,7 +78,7 @@ export default createFragmentContainer(About, {
     fragment About_artist on Artist {
       has_metadata
       is_display_auction_link
-      gravityID
+      slug
       ...Biography_artist
       related_artists: artists(size: 16) {
         ...RelatedArtists_artists

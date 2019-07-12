@@ -38,7 +38,7 @@ export class ContextCard extends React.Component<ContextCardProps, ContextCardSt
             mutation ContextCardFollowMutation($input: FollowShowInput!) {
               followShow(input: $input) {
                 show {
-                  gravityID
+                  slug
                   internalID
                   is_followed
                   id
@@ -197,7 +197,7 @@ export const ContextCardFragmentContainer = createFragmentContainer(ContextCard,
   artwork: graphql`
     fragment ContextCard_artwork on Artwork {
       id
-      gravityID
+      slug
       internalID
       context {
         __typename
@@ -224,7 +224,7 @@ export const ContextCardFragmentContainer = createFragmentContainer(ContextCard,
         id
         name
         href
-        gravityID
+        slug
         internalID
         exhibition_period
         is_followed

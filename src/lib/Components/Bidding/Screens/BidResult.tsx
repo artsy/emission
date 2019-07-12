@@ -125,7 +125,7 @@ export const BidResultScreen = createFragmentContainer(BidResult, {
       sale {
         live_start_at
         end_at
-        gravityID
+        slug
       }
     }
   `,

@@ -159,7 +159,7 @@ const FairMoreInfoFragmentContainer = createFragmentContainer(FairMoreInfo, {
       organizer {
         website
       }
-      gravityID
+      slug
       internalID
       about
       ticketsLink

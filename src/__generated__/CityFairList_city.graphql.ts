@@ -8,7 +8,7 @@ export type CityFairList_city = {
     readonly fairs: {
         readonly edges: ReadonlyArray<{
             readonly node: {
-                readonly gravityID: string;
+                readonly slug: string;
                 readonly name: string | null;
                 readonly exhibition_period: string | null;
                 readonly counts: {
@@ -27,14 +27,14 @@ export type CityFairList_city = {
                 } | null;
                 readonly profile: {
                     readonly icon: {
-                        readonly gravityID: string | null;
+                        readonly internalID: string | null;
                         readonly href: string | null;
                         readonly height: number | null;
                         readonly width: number | null;
                         readonly url: string | null;
                     } | null;
                     readonly id: string;
-                    readonly gravityID: string;
+                    readonly slug: string;
                     readonly name: string | null;
                 } | null;
                 readonly start_at: string | null;
@@ -51,7 +51,7 @@ const node: ReaderFragment = (function(){
 var v0 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "gravityID",
+  "name": "slug",
   "args": null,
   "storageKey": null
 },
@@ -93,13 +93,7 @@ return {
     }
   ],
   "selections": [
-    {
-      "kind": "ScalarField",
-      "alias": null,
-      "name": "slug",
-      "args": null,
-      "storageKey": null
-    },
+    (v0/*: any*/),
     {
       "kind": "LinkedField",
       "alias": "fairs",
@@ -251,7 +245,13 @@ return {
                       "concreteType": "Image",
                       "plural": false,
                       "selections": [
-                        (v0/*: any*/),
+                        {
+                          "kind": "ScalarField",
+                          "alias": null,
+                          "name": "internalID",
+                          "args": null,
+                          "storageKey": null
+                        },
                         {
                           "kind": "ScalarField",
                           "alias": null,
@@ -361,5 +361,5 @@ return {
   ]
 };
 })();
-(node as any).hash = 'b69ae96800a8605eea2b0c23647e9d63';
+(node as any).hash = 'b10a0945cbbbad127480bd159d55ae8d';
 export default node;

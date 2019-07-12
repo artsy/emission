@@ -107,7 +107,7 @@ export class FairBooth extends React.Component<Props, State> {
 export const FairBoothContainer = createFragmentContainer(FairBooth, {
   show: graphql`
     fragment FairBooth_show on Show {
-      gravityID
+      slug
       internalID
       ...FairBoothHeader_show
       ...ShowArtworksPreview_show

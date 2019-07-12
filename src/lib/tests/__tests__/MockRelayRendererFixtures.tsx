@@ -36,7 +36,7 @@ export const Artwork = createFragmentContainer(
           url
         }
         artist {
-          gravityID
+          slug
         }
         ...MockRelayRendererFixtures_artworkMetadata
       }
