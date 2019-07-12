@@ -26,7 +26,7 @@ export class ContextCard extends React.Component<ContextCardProps, ContextCardSt
 
   handleFollowShow = show => {
     const { relay } = this.props
-    const { gravityID, id, internalID, is_followed } = show
+    const { slug, id, internalID, is_followed } = show
     this.setState(
       {
         isSaving: true,
@@ -57,7 +57,7 @@ export class ContextCard extends React.Component<ContextCardProps, ContextCardSt
               show: {
                 internalID,
                 is_followed: !is_followed,
-                gravityID,
+                slug,
                 id,
               },
             },
