@@ -351,23 +351,6 @@ exports[`Registration result component renders registration pending properly 1`]
         ]
       }
     >
-      <Image
-        height={20}
-        source={
-          Object {
-            "testUri": "../../../images/circle-exclamation.png",
-          }
-        }
-        style={
-          Array [
-            Object {
-              "height": 20,
-              "width": 20,
-            },
-          ]
-        }
-        width={20}
-      />
       <Text
         fontFamily="ReactNativeAGaramondPro-Semibold"
         fontSize="22px"
