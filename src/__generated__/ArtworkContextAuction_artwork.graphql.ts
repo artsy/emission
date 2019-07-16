@@ -17,7 +17,9 @@ const node: ReaderFragment = {
   "kind": "Fragment",
   "name": "ArtworkContextAuction_artwork",
   "type": "Artwork",
-  "metadata": null,
+  "metadata": {
+    "mask": false
+  },
   "argumentDefinitions": [
     {
       "kind": "LocalArgument",
@@ -44,5 +46,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = '45d13c4ac2a20119f9520e771786614b';
+(node as any).hash = 'fa987de5623de02bac27c91f59a3a668';
 export default node;

@@ -10,6 +10,7 @@ export const ArtworkContextAuctionFragmentContainer = createFragmentContainer<{
   isClosed: boolean
 }>(
   props => {
+    console.log("PROPS", props)
     if (props.isClosed) {
       return (
         <ContextSectionsContainer>
@@ -28,9 +29,9 @@ export const ArtworkContextAuctionFragmentContainer = createFragmentContainer<{
   {
     artwork: graphql`
       fragment ArtworkContextAuction_artwork on Artwork @argumentDefinitions(excludeArtworkIDs: { type: "[String!]" }) {
-        ...AuctionArtworkGrid_artwork
-        ...ArtistArtworkGrid_artwork
-        ...RelatedArtworkGrid_artwork
+        ...AuctionArtworkGrid_artwork @relay(mask: false)
+        ...ArtistArtworkGrid_artwork @relay(mask: false)
+        ...RelatedArtworkGrid_artwork @relay(mask: false)
       }
     `,
   }

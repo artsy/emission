@@ -14,7 +14,7 @@ import { ArtworkDetailsFragmentContainer as ArtworkDetails } from "./Components/
 import { ArtworkHeaderFragmentContainer as ArtworkHeader } from "./Components/ArtworkHeader"
 import { ArtworkHistoryFragmentContainer as ArtworkHistory } from "./Components/ArtworkHistory"
 import { CommercialInformationFragmentContainer as CommercialInformation } from "./Components/CommercialInformation"
-import { OtherWorksFragmentContainer as OtherWorks } from "./Components/OtherWorks"
+import { OtherWorksRenderer as OtherWorks } from "./Components/OtherWorks"
 import { PartnerCardFragmentContainer as PartnerCard } from "./Components/PartnerCard"
 
 interface Props {
@@ -130,7 +130,7 @@ export class Artwork extends React.Component<Props, State> {
       case "partnerCard":
         return <PartnerCard artwork={artwork} />
       case "otherWorks":
-        return <OtherWorks artwork={artwork} />
+        return <OtherWorks artworkID={artwork.internalID} />
       default:
         return null
     }
@@ -138,10 +138,7 @@ export class Artwork extends React.Component<Props, State> {
 
   loadOtherWorks = () => {
     if (!this.sections.includes("otherWorks")) {
-      console.log("rendering")
-      this.setState({ isLoading: true })
       this.sections.push("otherWorks")
-      this.setState({ isLoading: false })
     }
   }
 
@@ -185,6 +182,8 @@ export const ArtworkContainer = createFragmentContainer(Artwork, {
       exhibition_history
       literature
 
+      internalID
+
       partner {
         type
       }
@@ -224,7 +223,6 @@ export const ArtworkContainer = createFragmentContainer(Artwork, {
 
       ...PartnerCard_artwork
       ...AboutWork_artwork
-      ...OtherWorks_artwork
       ...AboutArtist_artwork
       ...ArtworkDetails_artwork
       ...ArtworkHeader_artwork
@@ -242,7 +240,7 @@ export const ArtworkRenderer: React.SFC<{ artworkID: string; safeAreaInsets: Saf
     <QueryRenderer<ArtworkQuery>
       environment={defaultEnvironment}
       query={graphql`
-        query ArtworkQuery($artworkID: String!, $excludeArtworkIds: [String!]) {
+        query ArtworkQuery($artworkID: String!) {
           artwork(id: $artworkID) {
             ...Artwork_artwork
           }
@@ -250,7 +248,6 @@ export const ArtworkRenderer: React.SFC<{ artworkID: string; safeAreaInsets: Saf
       `}
       variables={{
         artworkID,
-        excludeArtworkIds: [artworkID],
       }}
       render={renderWithLoadProgress(ArtworkContainer, others)}
     />

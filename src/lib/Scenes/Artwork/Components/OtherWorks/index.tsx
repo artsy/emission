@@ -1,12 +1,15 @@
 import { OtherWorks_artwork } from "__generated__/OtherWorks_artwork.graphql"
+import { OtherWorksQuery } from "__generated__/OtherWorksQuery.graphql"
+import { defaultEnvironment } from "lib/relay/createEnvironment"
+import renderWithLoadProgress from "lib/utils/renderWithLoadProgress"
 import React from "react"
-import { createFragmentContainer, graphql } from "react-relay"
+import { createFragmentContainer, graphql, QueryRenderer } from "react-relay"
 import { ArtworkContextArtistFragmentContainer as ArtworkContextArtist } from "./ArtworkContexts/ArtworkContextArtist"
 import { ArtworkContextAuctionFragmentContainer as ArtworkContextAuction } from "./ArtworkContexts/ArtworkContextAuction"
 import { ArtworkContextFairFragmentContainer as ArtworkContextFair } from "./ArtworkContexts/ArtworkContextFair"
 import { ArtworkContextShowFragmentContainer as ArtworkContextShow } from "./ArtworkContexts/ArtworkContextShow"
 
-export const OtherWorksFragmentContainer = createFragmentContainer<{ artwork: OtherWorks_artwork }>(
+const OtherWorksFragmentContainer = createFragmentContainer<{ artwork: OtherWorks_artwork }>(
   props => {
     const contextType = props.artwork.context && props.artwork.context.__typename
 
@@ -42,3 +45,20 @@ export const OtherWorksFragmentContainer = createFragmentContainer<{ artwork: Ot
     `,
   }
 )
+
+export const OtherWorksRenderer: React.SFC<{ artworkID: string }> = ({ artworkID, ...others }) => {
+  return (
+    <QueryRenderer<OtherWorksQuery>
+      environment={defaultEnvironment}
+      query={graphql`
+        query OtherWorksQuery($artworkID: String!, $excludeArtworkIds: [String!]) {
+          artwork(id: $artworkID) {
+            ...OtherWorks_artwork
+          }
+        }
+      `}
+      variables={{ artworkID, excludeArtworkIds: [artworkID] }}
+      render={renderWithLoadProgress(OtherWorksFragmentContainer, others)}
+    />
+  )
+}

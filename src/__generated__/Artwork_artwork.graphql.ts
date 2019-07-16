@@ -7,7 +7,6 @@ import { ArtworkDetails_artwork$ref } from "./ArtworkDetails_artwork.graphql";
 import { ArtworkHeader_artwork$ref } from "./ArtworkHeader_artwork.graphql";
 import { ArtworkHistory_artwork$ref } from "./ArtworkHistory_artwork.graphql";
 import { CommercialInformation_artwork$ref } from "./CommercialInformation_artwork.graphql";
-import { OtherWorks_artwork$ref } from "./OtherWorks_artwork.graphql";
 import { PartnerCard_artwork$ref } from "./PartnerCard_artwork.graphql";
 declare const _Artwork_artwork$ref: unique symbol;
 export type Artwork_artwork$ref = typeof _Artwork_artwork$ref;
@@ -17,6 +16,7 @@ export type Artwork_artwork = {
     readonly provenance: string | null;
     readonly exhibition_history: string | null;
     readonly literature: string | null;
+    readonly internalID: string;
     readonly partner: {
         readonly type: string | null;
     } | null;
@@ -48,7 +48,7 @@ export type Artwork_artwork = {
     readonly publisher: string | null;
     readonly manufacturer: string | null;
     readonly image_rights: string | null;
-    readonly " $fragmentRefs": PartnerCard_artwork$ref & AboutWork_artwork$ref & OtherWorks_artwork$ref & AboutArtist_artwork$ref & ArtworkDetails_artwork$ref & ArtworkHeader_artwork$ref & CommercialInformation_artwork$ref & ArtworkHistory_artwork$ref;
+    readonly " $fragmentRefs": PartnerCard_artwork$ref & AboutWork_artwork$ref & AboutArtist_artwork$ref & ArtworkDetails_artwork$ref & ArtworkHeader_artwork$ref & CommercialInformation_artwork$ref & ArtworkHistory_artwork$ref;
     readonly " $refType": Artwork_artwork$ref;
 };
 
@@ -103,6 +103,13 @@ return {
       "kind": "ScalarField",
       "alias": null,
       "name": "literature",
+      "args": null,
+      "storageKey": null
+    },
+    {
+      "kind": "ScalarField",
+      "alias": null,
+      "name": "internalID",
       "args": null,
       "storageKey": null
     },
@@ -279,11 +286,6 @@ return {
     },
     {
       "kind": "FragmentSpread",
-      "name": "OtherWorks_artwork",
-      "args": null
-    },
-    {
-      "kind": "FragmentSpread",
       "name": "AboutArtist_artwork",
       "args": null
     },
@@ -310,5 +312,5 @@ return {
   ]
 };
 })();
-(node as any).hash = '2a23f3098b43001a4e327192d2cd9dca';
+(node as any).hash = 'de53ddaf146d63ccbb7d68632467a06b';
 export default node;
