@@ -109,7 +109,7 @@ it("displays the artwork title correctly without date", () => {
   expect(serifChildren(component)).not.toContain(`${saleArtwork.artwork.title},`)
 })
 
-describe.only("checkbox and payment info display", () => {
+describe("checkbox and payment info display", () => {
   it("shows no checkbox or payment info if the user is registered", () => {
     const component = renderer.create(
       <BiddingThemeProvider>
