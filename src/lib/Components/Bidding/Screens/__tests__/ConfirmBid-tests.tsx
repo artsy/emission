@@ -32,6 +32,7 @@ jest.mock("tipsi-stripe", () => ({
 }))
 import stripe from "tipsi-stripe"
 
+import { BidderPositionQueryResponse } from "__generated__/BidderPositionQuery.graphql"
 import { ConfirmBid_sale_artwork } from "__generated__/ConfirmBid_sale_artwork.graphql"
 import { ConfirmBidCreateBidderPositionMutationResponse } from "__generated__/ConfirmBidCreateBidderPositionMutation.graphql"
 import { ConfirmBidCreateCreditCardMutationResponse } from "__generated__/ConfirmBidCreateCreditCardMutation.graphql"
@@ -461,7 +462,9 @@ describe("polling to verify bid position", () => {
         component: BidResultScreen,
         passProps: {
           bidderPositionResult: {
-            position: {},
+            position: {
+              internalID: "bidder-position-id-from-polling",
+            },
             status: "RESERVE_NOT_MET",
           },
           refreshBidderInfo: expect.anything(),
@@ -846,27 +849,30 @@ const mockRequestResponses = {
       },
     } as ConfirmBidCreateBidderPositionMutationResponse,
   },
-  // TODO: Add types for each mock response
   pollingForBid: {
     highestBidder: {
       data: {
         me: {
           bidder_position: {
             status: "WINNING",
-            position: {},
+            position: {
+              internalID: "bidder-position-id-from-polling",
+            },
           },
         },
-      },
+      } as BidderPositionQueryResponse,
     },
     outbid: {
       data: {
         me: {
           bidder_position: {
             status: "OUTBID",
-            position: {},
+            position: {
+              internalID: "bidder-position-id-from-polling",
+            },
           },
         },
-      },
+      } as BidderPositionQueryResponse,
     },
     pending: {
       data: {
@@ -878,17 +884,19 @@ const mockRequestResponses = {
             status: "PENDING",
           },
         },
-      },
+      } as BidderPositionQueryResponse,
     },
     reserveNotMet: {
       data: {
         me: {
           bidder_position: {
-            position: {},
+            position: {
+              internalID: "bidder-position-id-from-polling",
+            },
             status: "RESERVE_NOT_MET",
           },
         },
-      },
+      } as BidderPositionQueryResponse,
     },
   },
 }
