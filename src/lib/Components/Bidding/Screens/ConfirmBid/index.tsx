@@ -284,14 +284,14 @@ export class ConfirmBid extends React.Component<ConfirmBidProps, ConfirmBidState
     action_type: Schema.ActionTypes.Success,
     action_name: Schema.ActionNames.BidFlowPlaceBid,
   })
-  bidPlacedSuccessfully(positionId) {
+  bidPlacedSuccessfully(positionId: string) {
     bidderPositionQuery(positionId)
       .then(this.checkBidderPosition.bind(this))
       .catch(error => this.presentErrorResult(error))
   }
 
-  checkBidderPosition(result: { data: BidderPositionQueryResponse }) {
-    const { bidder_position } = result.data.me
+  checkBidderPosition(data: BidderPositionQueryResponse) {
+    const { bidder_position } = data.me
 
     if (bidder_position.status === "PENDING" && this.pollCount < MAX_POLL_ATTEMPTS) {
       // initiating new request here (vs setInterval) to make sure we wait for the previous call to return before making a new one

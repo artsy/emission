@@ -1,15 +1,11 @@
-import { BidderPositionQueryResponse } from "__generated__/BidderPositionQuery.graphql"
-import { metaphysics } from "../../../../metaphysics"
-
-// We need this so the relay-compiler can auto-generate types.
-export const graphql = (strings, ...keys) => {
-  const lastIndex = strings.length - 1
-  return strings.slice(0, lastIndex).reduce((p, s, i) => p + s + keys[i], "") + strings[lastIndex]
-}
+import { BidderPositionQuery } from "__generated__/BidderPositionQuery.graphql"
+import { defaultEnvironment as environment } from "lib/relay/createEnvironment"
+import { fetchQuery, graphql } from "relay-runtime"
 
 export const bidderPositionQuery = (bidderPositionID: string) => {
-  return metaphysics<{ data: BidderPositionQueryResponse }>({
-    query: graphql`
+  return fetchQuery<BidderPositionQuery>(
+    environment,
+    graphql`
       query BidderPositionQuery($bidderPositionID: String!) {
         me {
           bidder_position(id: $bidderPositionID) {
@@ -27,8 +23,11 @@ export const bidderPositionQuery = (bidderPositionID: string) => {
         }
       }
     `,
-    variables: {
+    {
       bidderPositionID,
     },
-  })
+    {
+      force: true,
+    }
+  )
 }
