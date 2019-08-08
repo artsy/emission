@@ -4,7 +4,7 @@ Emission is a collection of [React Native] Components which are consumed by [Eig
 
 Inside Emission you will find:
 
-- An example app for building and running Emission's components with an Eigen-like API.
+- An example application for building and running Emission's components with an Eigen-like API.
 - An NPM module that relies on React Native and manages the components.
 - A Podspec that wraps it all together for easy external usage in Eigen.
 
