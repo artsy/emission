@@ -1,3 +1,49 @@
+# v1.12.14 (Thu Aug 08 2019)
+
+#### 🐛  Bug Fix
+
+- bump node version [#1783](https://github.com/artsy/emission/pull/1783) (d.j.sheldrick@gmail.com)
+- use PR branch for testing [#1783](https://github.com/artsy/emission/pull/1783) (d.j.sheldrick@gmail.com)
+- Download pods from a cdn [#1781](https://github.com/artsy/emission/pull/1781) ([@sweir27](https://github.com/sweir27))
+- Fixing auto-release script take 2 [#1780](https://github.com/artsy/emission/pull/1780) ([@sweir27](https://github.com/sweir27))
+- Pin dep @artsy/auto-config from ^1.0.1 to 1.0.1 [#1779](https://github.com/artsy/emission/pull/1779) ([@renovate-bot](https://github.com/renovate-bot))
+- Configures auto release on merges to master [#1778](https://github.com/artsy/emission/pull/1778) ([@sweir27](https://github.com/sweir27))
+- Pin dep auto from ^7.2.3 to 7.2.3 [#1776](https://github.com/artsy/emission/pull/1776) ([@renovate-bot](https://github.com/renovate-bot))
+
+#### ⚠️  Pushed to master
+
+- [Pod] Update release artefacts.  (it@artsymail.com)
+- install correct version of node  ([@sweir27](https://github.com/sweir27))
+- Attempt to use nvm in releases script  ([@sweir27](https://github.com/sweir27))
+- Adds more caching + github context  ([@sweir27](https://github.com/sweir27))
+- adds yarn cache and .gitignores the Example/vendor folder  ([@sweir27](https://github.com/sweir27))
+- Dont pull pods in releases script  ([@sweir27](https://github.com/sweir27))
+- break out steps and cd to Example in each  ([@sweir27](https://github.com/sweir27))
+- do everythign in Example directory  ([@sweir27](https://github.com/sweir27))
+- Pod install after pulling specs  ([@sweir27](https://github.com/sweir27))
+- Dont download all pods on circleci  ([@sweir27](https://github.com/sweir27))
+- Get version from npx  ([@sweir27](https://github.com/sweir27))
+- Revert sharing environment setup  ([@sweir27](https://github.com/sweir27))
+- Standardize environment setup and log progress  ([@sweir27](https://github.com/sweir27))
+- Use standard config  ([@sweir27](https://github.com/sweir27))
+- Valid circle config with docker  ([@sweir27](https://github.com/sweir27))
+- Revert orbs changes for now  ([@sweir27](https://github.com/sweir27))
+- Dont require build-and-test before deploy  ([@sweir27](https://github.com/sweir27))
+- Revert back to version 2.0 for circleci  ([@sweir27](https://github.com/sweir27))
+- Include keys with deploy build  ([@sweir27](https://github.com/sweir27))
+- Update circle config to checkout first  ([@sweir27](https://github.com/sweir27))
+- Updated CHANGELOG for new release  ([@yuki24](https://github.com/yuki24))
+
+#### Authors: 5
+
+- David Sheldrick (d.j.sheldrick@gmail.com)
+- Sarah Weir ([@sweir27](https://github.com/sweir27))
+- Renovate Bot ([@renovate-bot](https://github.com/renovate-bot))
+- artsyit (it@artsymail.com)
+- Yuki Nishijima ([@yuki24](https://github.com/yuki24))
+
+---
+
 <!--
 
 // Please add your own contribution below inside the Master section, no need to
