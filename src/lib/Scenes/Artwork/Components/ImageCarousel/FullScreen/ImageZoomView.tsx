@@ -6,6 +6,7 @@ import { useCallback, useContext, useEffect, useImperativeHandle, useMemo, useRe
 
 import {
   Animated,
+  Easing,
   NativeScrollEvent,
   NativeSyntheticEvent,
   NativeTouchEvent,
@@ -21,6 +22,7 @@ import { fitInside } from "../geometry"
 import OpaqueImageView from "lib/Components/OpaqueImageView/OpaqueImageView"
 import { screenSafeAreaInsets } from "lib/utils/screenSafeAreaInsets"
 import React from "react"
+import { PinchGestureHandler, State } from "react-native-gesture-handler"
 import { calculateMaxZoomViewScale, ImageDeepZoomView } from "./ImageDeepZoomView"
 import { screenBoundingBox, screenHeight, screenWidth } from "./screen"
 import { useDoublePressCallback } from "./useDoublePressCallback"
@@ -228,6 +230,39 @@ export const ImageZoomView: React.RefForwardingComponent<ImageZoomView, ImageZoo
         dispatch({ type: "ZOOM_SCALE_CHANGED", nextZoomScale: zoomScale.current })
       }
     }, [])
+
+    const lastScale = useRef(1)
+    const pinchScaleBase = useAnimatedValue(1)
+    const pinchScaleCurrent = useAnimatedValue(1)
+    const pinchScale = Animated.multiply(pinchScaleBase, pinchScaleCurrent)
+
+    return (
+      <PinchGestureHandler
+        onGestureEvent={Animated.event([{ nativeEvent: { scale: pinchScaleCurrent } }], { useNativeDriver: true })}
+        onHandlerStateChange={ev => {
+          if (ev.nativeEvent.oldState === State.ACTIVE) {
+            lastScale.current *= ev.nativeEvent.scale
+            pinchScaleBase.setValue(lastScale.current)
+            pinchScaleCurrent.setValue(1)
+          }
+        }}
+      >
+        <Animated.View collapsable={false} style={{ width, height }}>
+          <Animated.Image
+            source={{ uri: image.url }}
+            style={[
+              {
+                borderWidth: 1,
+                borderColor: "red",
+                width,
+                height,
+                transform: [{ scale: pinchScale }],
+              },
+            ]}
+          />
+        </Animated.View>
+      </PinchGestureHandler>
+    )
 
     return (
       <>
