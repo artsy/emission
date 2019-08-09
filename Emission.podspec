@@ -65,6 +65,7 @@ podspec = Pod::Spec.new do |s|
     'node_modules/react-native-sentry/SentryReactNative.podspec',
     'node_modules/react-native-svg/RNSVG.podspec',
     'node_modules/react-native-navigator-ios/react-native-navigator-ios.podspec',
+    'node_modules/react-native-gesture-handler/RNGestureHandler.podspec',
     'node_modules/@react-native-community/cameraroll/react-native-cameraroll.podspec'
   ]
 
