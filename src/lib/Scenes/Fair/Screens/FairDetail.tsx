@@ -276,14 +276,8 @@ export const FairDetailContainer = createPaginationContainer(
         organizer {
           website
         }
-        about
-        ticketsLink
         profile {
           name
-        }
-        sponsoredContent {
-          activationText
-          pressReleaseUrl
         }
         shows: showsConnection(first: $count, after: $cursor) @connection(key: "Fair_shows") {
           pageInfo {
@@ -294,8 +288,6 @@ export const FairDetailContainer = createPaginationContainer(
           edges {
             cursor
             node {
-              slug
-              internalID
               artworks: artworksConnection(first: 4) {
                 edges {
                   node {

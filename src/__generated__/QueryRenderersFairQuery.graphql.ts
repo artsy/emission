@@ -51,15 +51,9 @@ fragment FairDetail_fair on Fair {
     website
     id
   }
-  about
-  ticketsLink
   profile {
     name
     id
-  }
-  sponsoredContent {
-    activationText
-    pressReleaseUrl
   }
   shows: showsConnection(first: 5) {
     pageInfo {
@@ -70,8 +64,6 @@ fragment FairDetail_fair on Fair {
     edges {
       cursor
       node {
-        slug
-        internalID
         artworks: artworksConnection(first: 4) {
           edges {
             node {
@@ -736,45 +728,6 @@ return {
             ]
           },
           {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "about",
-            "args": null,
-            "storageKey": null
-          },
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "ticketsLink",
-            "args": null,
-            "storageKey": null
-          },
-          {
-            "kind": "LinkedField",
-            "alias": null,
-            "name": "sponsoredContent",
-            "storageKey": null,
-            "args": null,
-            "concreteType": "FairSponsoredContent",
-            "plural": false,
-            "selections": [
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "name": "activationText",
-                "args": null,
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "name": "pressReleaseUrl",
-                "args": null,
-                "storageKey": null
-              }
-            ]
-          },
-          {
             "kind": "LinkedField",
             "alias": "shows",
             "name": "showsConnection",
@@ -840,8 +793,6 @@ return {
                     "concreteType": "Show",
                     "plural": false,
                     "selections": [
-                      (v3/*: any*/),
-                      (v7/*: any*/),
                       {
                         "kind": "LinkedField",
                         "alias": "artworks",
@@ -1061,6 +1012,8 @@ return {
                           }
                         ]
                       },
+                      (v3/*: any*/),
+                      (v7/*: any*/),
                       (v4/*: any*/),
                       {
                         "kind": "ScalarField",
@@ -1187,7 +1140,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersFairQuery",
-    "id": "5a1f3aacfa7ef1a5c977e6f386a8fca3",
+    "id": "5a98e1ba47ca162d5f457de235e6e0f2",
     "text": null,
     "metadata": {}
   }
