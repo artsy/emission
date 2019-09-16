@@ -2,9 +2,6 @@
 yarn run v1.16.0
 $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 
-⚠️  ImageCarousel_images → src/lib/Scenes/Artwork/Components/ImageCarousel/ImageCarousel.tsx:108:5
-  Possibly unused field deepZoom/image
-
 ⚠️  ArtworkCarouselHeader_rail → src/lib/Scenes/Home/Components/ForYou/Components/ArtworkCarouselHeader.tsx:164:5
   Ignoring node of kind IntersectionType at path followedArtistContext.
   Ignoring node of kind IntersectionType at path relatedArtistContext.
