@@ -192,8 +192,6 @@ fragment ArtworkDetails_artwork on Artwork {
 
 fragment ContextCard_artwork on Artwork {
   id
-  slug
-  internalID
   context {
     __typename
     ... on Sale {
@@ -203,7 +201,7 @@ fragment ContextCard_artwork on Artwork {
       href
       formattedStartDateTime
       isAuction
-      cover_image: coverImage {
+      coverImage {
         url
       }
     }
@@ -211,34 +209,25 @@ fragment ContextCard_artwork on Artwork {
       id
       name
       href
-      exhibition_period: exhibitionPeriod
+      exhibitionPeriod
       image {
         url
       }
     }
     ... on Show {
       id
+      internalID
+      slug
       name
       href
-      exhibition_period: exhibitionPeriod
+      exhibitionPeriod
+      isFollowed
       coverImage {
         url
       }
     }
     ... on Node {
       id
-    }
-  }
-  shows(size: 1) {
-    id
-    name
-    href
-    slug
-    internalID
-    exhibition_period: exhibitionPeriod
-    is_followed: isFollowed
-    cover_image: coverImage {
-      url
     }
   }
 }
@@ -709,7 +698,7 @@ v13 = {
 },
 v14 = {
   "kind": "ScalarField",
-  "alias": "exhibition_period",
+  "alias": null,
   "name": "exhibitionPeriod",
   "args": null,
   "storageKey": null
@@ -735,7 +724,7 @@ v16 = {
 },
 v17 = {
   "kind": "LinkedField",
-  "alias": "cover_image",
+  "alias": null,
   "name": "coverImage",
   "storageKey": null,
   "args": null,
@@ -1255,19 +1244,19 @@ return {
                 "kind": "InlineFragment",
                 "type": "Show",
                 "selections": [
+                  (v7/*: any*/),
+                  (v4/*: any*/),
                   (v3/*: any*/),
                   (v5/*: any*/),
                   (v14/*: any*/),
                   {
-                    "kind": "LinkedField",
+                    "kind": "ScalarField",
                     "alias": null,
-                    "name": "coverImage",
-                    "storageKey": null,
+                    "name": "isFollowed",
                     "args": null,
-                    "concreteType": "Image",
-                    "plural": false,
-                    "selections": (v15/*: any*/)
-                  }
+                    "storageKey": null
+                  },
+                  (v17/*: any*/)
                 ]
               }
             ]
@@ -1552,31 +1541,6 @@ return {
                 "args": null,
                 "storageKey": null
               }
-            ]
-          },
-          {
-            "kind": "LinkedField",
-            "alias": null,
-            "name": "shows",
-            "storageKey": "shows(size:1)",
-            "args": [
-              {
-                "kind": "Literal",
-                "name": "size",
-                "value": 1
-              }
-            ],
-            "concreteType": "Show",
-            "plural": true,
-            "selections": [
-              (v2/*: any*/),
-              (v3/*: any*/),
-              (v5/*: any*/),
-              (v4/*: any*/),
-              (v7/*: any*/),
-              (v14/*: any*/),
-              (v8/*: any*/),
-              (v17/*: any*/)
             ]
           },
           (v18/*: any*/),
@@ -1985,7 +1949,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkQuery",
-    "id": "ee58ed8c22b420d79462bae020ab2d9e",
+    "id": "ef310db435bc6a7e0cd937bf062713fa",
     "text": null,
     "metadata": {}
   }
