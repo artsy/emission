@@ -13,6 +13,9 @@ export type Conversation_me = {
         readonly to: {
             readonly name: string;
         };
+        readonly from: {
+            readonly email: string;
+        };
         readonly " $fragmentRefs": Messages_conversation$ref;
     } | null;
     readonly " $refType": Conversation_me$ref;
@@ -95,6 +98,24 @@ const node: ReaderFragment = {
           ]
         },
         {
+          "kind": "LinkedField",
+          "alias": null,
+          "name": "from",
+          "storageKey": null,
+          "args": null,
+          "concreteType": "ConversationInitiator",
+          "plural": false,
+          "selections": [
+            {
+              "kind": "ScalarField",
+              "alias": null,
+              "name": "email",
+              "args": null,
+              "storageKey": null
+            }
+          ]
+        },
+        {
           "kind": "FragmentSpread",
           "name": "Messages_conversation",
           "args": null
@@ -103,5 +124,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = 'f942db068b99586de9bfe5a5eb26cc49';
+(node as any).hash = '453817fb6e16a3de8ec1ba95936c0a8a';
 export default node;

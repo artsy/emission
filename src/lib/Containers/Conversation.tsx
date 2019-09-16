@@ -183,6 +183,9 @@ export default createFragmentContainer(Conversation, {
         to {
           name
         }
+        from {
+          email
+        }
         ...Messages_conversation
       }
     }

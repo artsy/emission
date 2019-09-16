@@ -37,6 +37,10 @@ fragment Conversation_me on Me {
       name
       id
     }
+    from {
+      email
+      id
+    }
     ...Messages_conversation
   }
 }
@@ -366,10 +370,10 @@ return {
                 "concreteType": "ConversationInitiator",
                 "plural": false,
                 "selections": [
-                  (v3/*: any*/),
                   (v5/*: any*/),
-                  (v4/*: any*/),
-                  (v2/*: any*/)
+                  (v2/*: any*/),
+                  (v3/*: any*/),
+                  (v4/*: any*/)
                 ]
               },
               {
@@ -724,7 +728,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersConversationQuery",
-    "id": "68176af951c6bb335750690c7f1dcea3",
+    "id": "da82499be4eb913b14a04bb2eed65582",
     "text": null,
     "metadata": {}
   }
