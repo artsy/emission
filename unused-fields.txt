@@ -370,7 +370,3 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 
 ⚠️  Metadata_show → src/lib/Components/Artist/Shows/Metadata.tsx:81:5
   Ignoring node of kind IntersectionType at path partner.
-
-⚠️  MoreInfo_show → src/lib/Scenes/Show/Screens/MoreInfo.tsx:159:5
-  Possibly unused field exhibition_period
-  Ignoring node of kind IntersectionType at path partner.
