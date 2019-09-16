@@ -241,28 +241,23 @@ fragment ArtworkHeader_artwork on Artwork {
 }
 
 fragment CommercialInformation_artwork on Artwork {
+  isAcquireable
+  isOfferable
+  isInquireable
+  isInAuction
   availability
+  saleMessage
   artists {
     isConsignable
     id
   }
   editionSets {
-    isAcquireable
-    isOfferable
-    saleMessage
     id
   }
   sale {
     isClosed
     id
   }
-  saleMessage
-  shippingInfo
-  shippingOrigin
-  isAcquireable
-  isOfferable
-  isInquireable
-  isInAuction
   ...CommercialButtons_artwork
   ...CommercialPartnerInformation_artwork
   ...CommercialEditionSetInformation_artwork
@@ -1808,6 +1803,16 @@ return {
               }
             ]
           },
+          (v28/*: any*/),
+          (v29/*: any*/),
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "isInquireable",
+            "args": null,
+            "storageKey": null
+          },
+          (v30/*: any*/),
           {
             "kind": "LinkedField",
             "alias": null,
@@ -1817,11 +1822,11 @@ return {
             "concreteType": "EditionSet",
             "plural": true,
             "selections": [
+              (v2/*: any*/),
+              (v7/*: any*/),
               (v28/*: any*/),
               (v29/*: any*/),
               (v30/*: any*/),
-              (v2/*: any*/),
-              (v7/*: any*/),
               {
                 "kind": "ScalarField",
                 "alias": null,
@@ -1831,30 +1836,6 @@ return {
               },
               (v27/*: any*/)
             ]
-          },
-          (v30/*: any*/),
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "shippingInfo",
-            "args": null,
-            "storageKey": null
-          },
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "shippingOrigin",
-            "args": null,
-            "storageKey": null
-          },
-          (v28/*: any*/),
-          (v29/*: any*/),
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "isInquireable",
-            "args": null,
-            "storageKey": null
           },
           {
             "kind": "ScalarField",
@@ -1938,6 +1919,20 @@ return {
           {
             "kind": "ScalarField",
             "alias": null,
+            "name": "shippingOrigin",
+            "args": null,
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "shippingInfo",
+            "args": null,
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
             "name": "priceIncludesTaxDisplay",
             "args": null,
             "storageKey": null
@@ -1949,7 +1944,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkQuery",
-    "id": "ef310db435bc6a7e0cd937bf062713fa",
+    "id": "1180a7a7b2387d3e946fd62ce32a096d",
     "text": null,
     "metadata": {}
   }
