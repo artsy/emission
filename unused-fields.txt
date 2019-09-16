@@ -2,9 +2,6 @@
 yarn run v1.16.0
 $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 
-⚠️  ArtistRail_rail → src/lib/Components/Home/ArtistRails/ArtistRail.tsx:282:5
-  Possibly unused field results/internalID
-
 ⚠️  ArtistShow_show → src/lib/Components/Artist/Shows/ArtistShow.tsx:47:5
   Possibly unused field slug
   Possibly unused field href
