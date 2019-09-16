@@ -2,13 +2,6 @@
 yarn run v1.16.0
 $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 
-⚠️  Artists_me → src/lib/Scenes/Favorites/Components/Artists/index.tsx:88:7
-  Possibly unused field followsAndSaves/artists/pageInfo
-  Possibly unused field followsAndSaves/artists/edges/node/artist/slug
-  Possibly unused field followsAndSaves/artists/edges/node/artist/name
-  Possibly unused field followsAndSaves/artists/edges/node/artist/href
-  Possibly unused field followsAndSaves/artists/edges/node/artist/image
-
 ⚠️  ArtworkCarouselHeader_rail → src/lib/Scenes/Home/Components/ForYou/Components/ArtworkCarouselHeader.tsx:164:5
   Ignoring node of kind IntersectionType at path followedArtistContext.
   Ignoring node of kind IntersectionType at path relatedArtistContext.
