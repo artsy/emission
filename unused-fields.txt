@@ -2,6 +2,9 @@
 yarn run v1.16.0
 $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 
+⚠️  ImageCarousel_images → src/lib/Scenes/Artwork/Components/ImageCarousel/ImageCarousel.tsx:108:5
+  Possibly unused field deepZoom/image
+
 ⚠️  ArtworkCarouselHeader_rail → src/lib/Scenes/Home/Components/ForYou/Components/ArtworkCarouselHeader.tsx:164:5
   Ignoring node of kind IntersectionType at path followedArtistContext.
   Ignoring node of kind IntersectionType at path relatedArtistContext.
@@ -289,10 +292,3 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
   Possibly unused field heading
   Possibly unused field narrow_image_url
   Possibly unused field wide_image_url
-
-⚠️  ImageCarousel_images → src/lib/Scenes/Artwork/Components/ImageCarousel/ImageCarousel.tsx:108:5
-  Possibly unused field deepZoom/image
-
-⚠️  Inbox_me → src/lib/Containers/Inbox.tsx:91:7
-  Possibly unused field lot_standings/most_recent_bid
-  Possibly unused field conversations_existence_check/edges/node
