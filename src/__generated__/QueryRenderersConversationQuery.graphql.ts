@@ -52,7 +52,6 @@ fragment Messages_conversation on Conversation {
   internalID
   from {
     name
-    email
     initials
     id
   }
@@ -73,11 +72,8 @@ fragment Messages_conversation on Conversation {
       cursor
       node {
         id
-        impulse_id: impulseID
-        is_from_user: isFromUser
         body
         attachments {
-          internalID
           id
         }
         ...Message_message
@@ -454,20 +450,6 @@ return {
                           (v2/*: any*/),
                           {
                             "kind": "ScalarField",
-                            "alias": "impulse_id",
-                            "name": "impulseID",
-                            "args": null,
-                            "storageKey": null
-                          },
-                          {
-                            "kind": "ScalarField",
-                            "alias": "is_from_user",
-                            "name": "isFromUser",
-                            "args": null,
-                            "storageKey": null
-                          },
-                          {
-                            "kind": "ScalarField",
                             "alias": null,
                             "name": "body",
                             "args": null,
@@ -482,8 +464,8 @@ return {
                             "concreteType": "Attachment",
                             "plural": true,
                             "selections": [
-                              (v1/*: any*/),
                               (v2/*: any*/),
+                              (v1/*: any*/),
                               {
                                 "kind": "ScalarField",
                                 "alias": "content_type",
@@ -511,6 +493,13 @@ return {
                             "kind": "ScalarField",
                             "alias": "created_at",
                             "name": "createdAt",
+                            "args": null,
+                            "storageKey": null
+                          },
+                          {
+                            "kind": "ScalarField",
+                            "alias": "is_from_user",
+                            "name": "isFromUser",
                             "args": null,
                             "storageKey": null
                           },
@@ -730,7 +719,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersConversationQuery",
-    "id": "9e09d2bf9687286cc5ff5190b834359d",
+    "id": "8edd06c72c14d636b26939e6939b66d2",
     "text": null,
     "metadata": {}
   }

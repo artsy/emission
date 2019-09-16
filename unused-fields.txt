@@ -327,15 +327,3 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 ⚠️  Message_message → src/lib/Components/Inbox/Conversations/Message.tsx:208:5
   Possibly unused field from/email
   Possibly unused field attachments/file_name
-
-⚠️  Messages_conversation → src/lib/Components/Inbox/Conversations/Messages.tsx:174:7
-  Possibly unused field from/email
-  Possibly unused field messages/pageInfo
-  Possibly unused field messages/edges/node/impulse_id
-  Possibly unused field messages/edges/node/is_from_user
-  Possibly unused field messages/edges/node/attachments/internalID
-  Ignoring node of kind IntersectionType at path items/artwork.
-  Ignoring node of kind IntersectionType at path items/show.
-
-⚠️  Metadata_show → src/lib/Components/Artist/Shows/Metadata.tsx:81:5
-  Ignoring node of kind IntersectionType at path partner.
