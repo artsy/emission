@@ -33,6 +33,10 @@ interface Ignored {
  * Temporary way to ignore false positives due to indirect referencing
  */
 const ignoredFragments: Record<string, Ignored> = {
+  ArtistForSaleArtworksGrid_artist: {
+    // pagination container, compiler complains without edges
+    fields: ["forSaleArtworks/edges"],
+  },
   // ArtworkActions_artwork: {
   //   fields: ["dimensions", "image"],
   // },
