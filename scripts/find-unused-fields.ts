@@ -37,6 +37,10 @@ const ignoredFragments: Record<string, Ignored> = {
     // pagination container, compiler complains without edges
     fields: ["forSaleArtworks/edges"],
   },
+  ArtistNotForSaleArtworksGrid_artist: {
+    // pagination container, compiler complains without edges
+    fields: ["forSaleArtworks/edges"],
+  },
   // ArtworkActions_artwork: {
   //   fields: ["dimensions", "image"],
   // },

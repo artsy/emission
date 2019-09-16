@@ -2,9 +2,6 @@
 yarn run v1.16.0
 $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 
-⚠️  ArtistNotForSaleArtworksGrid_artist → src/lib/Components/ArtworkGrids/RelayConnections/ArtistNotForSaleArtworksGrid.tsx:23:7
-  Possibly unused field notForSaleArtworks/edges
-
 ⚠️  ArtistRail_rail → src/lib/Components/Home/ArtistRails/ArtistRail.tsx:282:5
   Possibly unused field results/internalID
 
