@@ -2,11 +2,6 @@
 yarn run v1.16.0
 $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 
-⚠️  AuctionPrice_artwork → src/lib/Scenes/Artwork/Components/AuctionPrice.tsx:112:5
-  Possibly unused field slug
-  Possibly unused field saleArtwork/isWithReserve
-  Possibly unused field saleArtwork/reserveStatus
-
 ================= City Guide =================
 
 ⚠️  CityBMWList_city → src/lib/Scenes/City/CityBMWList.tsx:78:7
