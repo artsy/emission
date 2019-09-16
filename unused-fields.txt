@@ -2,19 +2,6 @@
 yarn run v1.16.0
 $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 
-⚠️  ArtworkRailHeader_rail → src/lib/Components/Home/ArtworkRails/ArtworkRailHeader.tsx:156:5
-  Ignoring node of kind IntersectionType at path context.
-
-⚠️  ArtworkRail_rail → src/lib/Components/Home/ArtworkRails/ArtworkRail.tsx:304:7
-  Possibly unused field params
-  Ignoring node of kind IntersectionType at path context.
-
-⚠️  Artworks_me → src/lib/Scenes/Favorites/Components/Artworks/index.tsx:93:7
-  Possibly unused field followsAndSaves/artworks/pageInfo
-
-⚠️  AuctionCountDownTimer_artwork → src/lib/Scenes/Artwork/Components/AuctionCountDownTimer.tsx:72:5
-  Possibly unused field sale/liveStartAt
-
 ⚠️  AuctionPrice_artwork → src/lib/Scenes/Artwork/Components/AuctionPrice.tsx:112:5
   Possibly unused field slug
   Possibly unused field saleArtwork/isWithReserve

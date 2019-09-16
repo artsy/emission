@@ -322,7 +322,6 @@ fragment AuctionCountDownTimer_artwork on Artwork {
   sale {
     startAt
     endAt
-    liveStartAt
     formattedStartDateTime
     id
   }
@@ -1072,13 +1071,6 @@ return {
                 "kind": "ScalarField",
                 "alias": null,
                 "name": "endAt",
-                "args": null,
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "name": "liveStartAt",
                 "args": null,
                 "storageKey": null
               },
@@ -1904,7 +1896,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkQuery",
-    "id": "491c04ac17c88f166da7ae3ca1ed9250",
+    "id": "1704f5aaef6465a53dfd49bbc15d0e5b",
     "text": null,
     "metadata": {}
   }
