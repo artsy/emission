@@ -379,7 +379,3 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
   Possibly unused field partner/internalID
   Possibly unused field partner/profile/slug
   Possibly unused field partner/locations/city
-
-⚠️  RelatedArtist_artist → src/lib/Components/RelatedArtists/RelatedArtist.tsx:80:5
-  Possibly unused field counts/for_sale_artworks
-  Possibly unused field counts/artworks
