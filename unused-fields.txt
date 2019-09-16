@@ -316,10 +316,3 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
   Possibly unused field pageInfo/startCursor
   Possibly unused field pageInfo/endCursor
   Possibly unused field edges/node/slug
-
-⚠️  LocationMap_location → src/lib/Components/LocationMap/index.tsx:178:5
-  Possibly unused field day_schedules
-  Ignoring node of kind IntersectionType at path openingHours.
-
-⚠️  LotsByFollowedArtists_query → src/lib/Scenes/Home/Components/Sales/Components/LotsByFollowedArtists.tsx:46:7
-  Possibly unused field me/lotsByFollowedArtistsConnection/edges/cursor
