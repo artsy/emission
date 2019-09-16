@@ -134,15 +134,12 @@ fragment ArtworkGridItem_artwork on Artwork {
   title
   date
   sale_message: saleMessage
-  is_in_auction: isInAuction
   is_biddable: isBiddable
   is_acquireable: isAcquireable
   is_offerable: isOfferable
   slug
   sale {
     is_auction: isAuction
-    is_live_open: isLiveOpen
-    is_open: isOpen
     is_closed: isClosed
     display_timely_at: displayTimelyAt
     id
@@ -516,13 +513,6 @@ return {
                       },
                       {
                         "kind": "ScalarField",
-                        "alias": "is_in_auction",
-                        "name": "isInAuction",
-                        "args": null,
-                        "storageKey": null
-                      },
-                      {
-                        "kind": "ScalarField",
                         "alias": "is_biddable",
                         "name": "isBiddable",
                         "args": null,
@@ -556,20 +546,6 @@ return {
                             "kind": "ScalarField",
                             "alias": "is_auction",
                             "name": "isAuction",
-                            "args": null,
-                            "storageKey": null
-                          },
-                          {
-                            "kind": "ScalarField",
-                            "alias": "is_live_open",
-                            "name": "isLiveOpen",
-                            "args": null,
-                            "storageKey": null
-                          },
-                          {
-                            "kind": "ScalarField",
-                            "alias": "is_open",
-                            "name": "isOpen",
                             "args": null,
                             "storageKey": null
                           },
@@ -674,7 +650,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "FairBoothQuery",
-    "id": "cda7927477b7dddc82888f56e20dde8e",
+    "id": "2cb6bff2ecba2bf7034929f24b832bbe",
     "text": null,
     "metadata": {}
   }

@@ -106,15 +106,12 @@ fragment ArtworkGridItem_artwork on Artwork {
   title
   date
   sale_message: saleMessage
-  is_in_auction: isInAuction
   is_biddable: isBiddable
   is_acquireable: isAcquireable
   is_offerable: isOfferable
   slug
   sale {
     is_auction: isAuction
-    is_live_open: isLiveOpen
-    is_open: isOpen
     is_closed: isClosed
     display_timely_at: displayTimelyAt
     id
@@ -537,13 +534,6 @@ return {
                       },
                       {
                         "kind": "ScalarField",
-                        "alias": "is_in_auction",
-                        "name": "isInAuction",
-                        "args": null,
-                        "storageKey": null
-                      },
-                      {
-                        "kind": "ScalarField",
                         "alias": "is_biddable",
                         "name": "isBiddable",
                         "args": null,
@@ -576,20 +566,6 @@ return {
                             "kind": "ScalarField",
                             "alias": "is_auction",
                             "name": "isAuction",
-                            "args": null,
-                            "storageKey": null
-                          },
-                          {
-                            "kind": "ScalarField",
-                            "alias": "is_live_open",
-                            "name": "isLiveOpen",
-                            "args": null,
-                            "storageKey": null
-                          },
-                          {
-                            "kind": "ScalarField",
-                            "alias": "is_open",
-                            "name": "isOpen",
                             "args": null,
                             "storageKey": null
                           },
@@ -743,7 +719,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersGeneQuery",
-    "id": "17e717c99fefbce63f4affdc947a4d93",
+    "id": "581e58af4d1688ca76314b374515b96d",
     "text": null,
     "metadata": {}
   }

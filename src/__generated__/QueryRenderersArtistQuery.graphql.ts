@@ -189,15 +189,12 @@ fragment ArtworkGridItem_artwork on Artwork {
   title
   date
   sale_message: saleMessage
-  is_in_auction: isInAuction
   is_biddable: isBiddable
   is_acquireable: isAcquireable
   is_offerable: isOfferable
   slug
   sale {
     is_auction: isAuction
-    is_live_open: isLiveOpen
-    is_open: isOpen
     is_closed: isClosed
     display_timely_at: displayTimelyAt
     id
@@ -608,13 +605,6 @@ v24 = [
           },
           {
             "kind": "ScalarField",
-            "alias": "is_in_auction",
-            "name": "isInAuction",
-            "args": null,
-            "storageKey": null
-          },
-          {
-            "kind": "ScalarField",
             "alias": "is_biddable",
             "name": "isBiddable",
             "args": null,
@@ -647,20 +637,6 @@ v24 = [
                 "kind": "ScalarField",
                 "alias": "is_auction",
                 "name": "isAuction",
-                "args": null,
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": "is_live_open",
-                "name": "isLiveOpen",
-                "args": null,
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": "is_open",
-                "name": "isOpen",
                 "args": null,
                 "storageKey": null
               },
@@ -1252,7 +1228,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersArtistQuery",
-    "id": "1a1a94a4e3960fa30717ee3241f733c4",
+    "id": "6a4a323ea2211b9b7873dcf15e2d68e3",
     "text": null,
     "metadata": {}
   }

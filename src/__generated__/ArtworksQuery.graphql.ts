@@ -62,15 +62,12 @@ fragment ArtworkGridItem_artwork on Artwork {
   title
   date
   sale_message: saleMessage
-  is_in_auction: isInAuction
   is_biddable: isBiddable
   is_acquireable: isAcquireable
   is_offerable: isOfferable
   slug
   sale {
     is_auction: isAuction
-    is_live_open: isLiveOpen
-    is_open: isOpen
     is_closed: isClosed
     display_timely_at: displayTimelyAt
     id
@@ -328,13 +325,6 @@ return {
                           },
                           {
                             "kind": "ScalarField",
-                            "alias": "is_in_auction",
-                            "name": "isInAuction",
-                            "args": null,
-                            "storageKey": null
-                          },
-                          {
-                            "kind": "ScalarField",
                             "alias": "is_biddable",
                             "name": "isBiddable",
                             "args": null,
@@ -374,20 +364,6 @@ return {
                                 "kind": "ScalarField",
                                 "alias": "is_auction",
                                 "name": "isAuction",
-                                "args": null,
-                                "storageKey": null
-                              },
-                              {
-                                "kind": "ScalarField",
-                                "alias": "is_live_open",
-                                "name": "isLiveOpen",
-                                "args": null,
-                                "storageKey": null
-                              },
-                              {
-                                "kind": "ScalarField",
-                                "alias": "is_open",
-                                "name": "isOpen",
                                 "args": null,
                                 "storageKey": null
                               },
@@ -512,7 +488,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworksQuery",
-    "id": "2e358c66a0eae9b1ae253cbe02411b47",
+    "id": "7bccc77f16ad18b94cf64d34c1b2c537",
     "text": null,
     "metadata": {}
   }
