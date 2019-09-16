@@ -38,7 +38,6 @@ fragment Artwork_artwork on Artwork {
     id
   }
   artist {
-    name
     biography_blurb: biographyBlurb {
       text
     }
@@ -983,9 +982,9 @@ return {
             "concreteType": "Artist",
             "plural": false,
             "selections": [
-              (v3/*: any*/),
               (v9/*: any*/),
-              (v2/*: any*/)
+              (v2/*: any*/),
+              (v3/*: any*/)
             ]
           },
           {
@@ -1905,7 +1904,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkQuery",
-    "id": "702398ab845b284c9620c49055771352",
+    "id": "491c04ac17c88f166da7ae3ca1ed9250",
     "text": null,
     "metadata": {}
   }

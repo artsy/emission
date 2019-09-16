@@ -40,7 +40,6 @@ fragment Artwork_artwork_abFTe on Artwork {
     id
   }
   artist {
-    name
     biography_blurb: biographyBlurb {
       text
     }
@@ -1003,9 +1002,9 @@ return {
                 "concreteType": "Artist",
                 "plural": false,
                 "selections": [
-                  (v4/*: any*/),
                   (v10/*: any*/),
-                  (v3/*: any*/)
+                  (v3/*: any*/),
+                  (v4/*: any*/)
                 ]
               },
               {
@@ -1926,7 +1925,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkRefetchQuery",
-    "id": "9d03c4771d8aff377f6cf943ec3b5a62",
+    "id": "0b6fcd558122db99e1a7fb7b98add21c",
     "text": null,
     "metadata": {}
   }
