@@ -86,11 +86,9 @@ fragment ShowHeader_show on Show {
   internalID
   id
   name
-  press_release: pressRelease
   is_followed: isFollowed
   end_at: endAt
   exhibition_period: exhibitionPeriod
-  status
   isStubShow
   partner {
     __typename
@@ -216,7 +214,6 @@ fragment ShowItem_show on Show {
   end_at: endAt
   images {
     url
-    aspect_ratio: aspectRatio
   }
   partner {
     __typename
@@ -416,7 +413,10 @@ v16 = {
   "args": null,
   "storageKey": null
 },
-v17 = {
+v17 = [
+  (v5/*: any*/)
+],
+v18 = {
   "kind": "LinkedField",
   "alias": null,
   "name": "image",
@@ -424,11 +424,9 @@ v17 = {
   "args": null,
   "concreteType": "Image",
   "plural": false,
-  "selections": [
-    (v5/*: any*/)
-  ]
+  "selections": (v17/*: any*/)
 },
-v18 = [
+v19 = [
   (v3/*: any*/),
   (v7/*: any*/)
 ];
@@ -506,23 +504,9 @@ return {
             ]
           },
           (v7/*: any*/),
-          {
-            "kind": "ScalarField",
-            "alias": "press_release",
-            "name": "pressRelease",
-            "args": null,
-            "storageKey": null
-          },
           (v8/*: any*/),
           (v9/*: any*/),
           (v10/*: any*/),
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "status",
-            "args": null,
-            "storageKey": null
-          },
           {
             "kind": "LinkedField",
             "alias": null,
@@ -626,7 +610,7 @@ return {
               (v14/*: any*/),
               (v15/*: any*/),
               (v16/*: any*/),
-              (v17/*: any*/)
+              (v18/*: any*/)
             ]
           },
           {
@@ -854,7 +838,7 @@ return {
                         ],
                         "concreteType": "Artist",
                         "plural": true,
-                        "selections": (v18/*: any*/)
+                        "selections": (v19/*: any*/)
                       },
                       {
                         "kind": "LinkedField",
@@ -864,7 +848,7 @@ return {
                         "args": null,
                         "concreteType": "Partner",
                         "plural": false,
-                        "selections": (v18/*: any*/)
+                        "selections": (v19/*: any*/)
                       },
                       (v12/*: any*/)
                     ]
@@ -892,7 +876,7 @@ return {
               (v14/*: any*/),
               (v15/*: any*/),
               (v16/*: any*/),
-              (v17/*: any*/)
+              (v18/*: any*/)
             ]
           },
           {
@@ -942,10 +926,7 @@ return {
                         "args": null,
                         "concreteType": "Image",
                         "plural": true,
-                        "selections": [
-                          (v5/*: any*/),
-                          (v6/*: any*/)
-                        ]
+                        "selections": (v17/*: any*/)
                       },
                       {
                         "kind": "LinkedField",
@@ -1127,6 +1108,13 @@ return {
                 ]
               }
             ]
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "status",
+            "args": null,
+            "storageKey": null
           }
         ]
       }
@@ -1135,7 +1123,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "indexTestsQuery",
-    "id": "0c286e283330f263cab335134d1dd88e",
+    "id": "cbc49b22a38b2e512e82af66740fe8f3",
     "text": null,
     "metadata": {}
   }
