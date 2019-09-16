@@ -46,6 +46,10 @@ fragment FairDetail_fair on Fair {
     name
     id
   }
+  sponsoredContent {
+    pressReleaseUrl
+    activationText
+  }
   shows: showsConnection(first: 5) {
     pageInfo {
       hasNextPage
@@ -711,6 +715,31 @@ return {
           },
           {
             "kind": "LinkedField",
+            "alias": null,
+            "name": "sponsoredContent",
+            "storageKey": null,
+            "args": null,
+            "concreteType": "FairSponsoredContent",
+            "plural": false,
+            "selections": [
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "pressReleaseUrl",
+                "args": null,
+                "storageKey": null
+              },
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "activationText",
+                "args": null,
+                "storageKey": null
+              }
+            ]
+          },
+          {
+            "kind": "LinkedField",
             "alias": "shows",
             "name": "showsConnection",
             "storageKey": "showsConnection(first:5)",
@@ -1123,7 +1152,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "FairDetailTestsQuery",
-    "id": "9e0c355fdb4d2f71478aedec7ac29f5f",
+    "id": "57ab120e92cbefeb7ba729da72dea0c5",
     "text": null,
     "metadata": {}
   }

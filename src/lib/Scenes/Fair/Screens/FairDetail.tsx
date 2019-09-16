@@ -279,6 +279,10 @@ export const FairDetailContainer = createPaginationContainer(
         profile {
           name
         }
+        sponsoredContent {
+          pressReleaseUrl
+          activationText
+        }
         shows: showsConnection(first: $count, after: $cursor) @connection(key: "Fair_shows") {
           pageInfo {
             hasNextPage

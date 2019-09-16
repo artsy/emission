@@ -54,6 +54,10 @@ fragment FairDetail_fair_1G22uz on Fair {
     name
     id
   }
+  sponsoredContent {
+    pressReleaseUrl
+    activationText
+  }
   shows: showsConnection(first: $count, after: $cursor) {
     pageInfo {
       hasNextPage
@@ -755,6 +759,31 @@ return {
           },
           {
             "kind": "LinkedField",
+            "alias": null,
+            "name": "sponsoredContent",
+            "storageKey": null,
+            "args": null,
+            "concreteType": "FairSponsoredContent",
+            "plural": false,
+            "selections": [
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "pressReleaseUrl",
+                "args": null,
+                "storageKey": null
+              },
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "activationText",
+                "args": null,
+                "storageKey": null
+              }
+            ]
+          },
+          {
+            "kind": "LinkedField",
             "alias": "shows",
             "name": "showsConnection",
             "storageKey": null,
@@ -1167,7 +1196,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "FairDetailShowsQuery",
-    "id": "a9dc87b7e12b074ee42466944b997d17",
+    "id": "bc96029da69627fa16025a3323004f82",
     "text": null,
     "metadata": {}
   }
