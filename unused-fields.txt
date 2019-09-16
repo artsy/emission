@@ -2,11 +2,6 @@
 yarn run v1.16.0
 $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 
-⚠️  ArtistShow_show → src/lib/Components/Artist/Shows/ArtistShow.tsx:47:5
-  Possibly unused field slug
-  Possibly unused field href
-  Possibly unused field is_fair_booth
-
 ⚠️  Artists_me → src/lib/Scenes/Favorites/Components/Artists/index.tsx:88:7
   Possibly unused field followsAndSaves/artists/pageInfo
   Possibly unused field followsAndSaves/artists/edges/node/artist/slug
@@ -308,4 +303,3 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 ⚠️  Inbox_me → src/lib/Containers/Inbox.tsx:91:7
   Possibly unused field lot_standings/most_recent_bid
   Possibly unused field conversations_existence_check/edges/node
-
