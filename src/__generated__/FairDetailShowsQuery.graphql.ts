@@ -212,15 +212,12 @@ fragment ArtworkGridItem_artwork on Artwork {
   title
   date
   sale_message: saleMessage
-  is_in_auction: isInAuction
   is_biddable: isBiddable
   is_acquireable: isAcquireable
   is_offerable: isOfferable
   slug
   sale {
     is_auction: isAuction
-    is_live_open: isLiveOpen
-    is_open: isOpen
     is_closed: isClosed
     display_timely_at: displayTimelyAt
     id
@@ -932,13 +929,6 @@ return {
                                   },
                                   {
                                     "kind": "ScalarField",
-                                    "alias": "is_in_auction",
-                                    "name": "isInAuction",
-                                    "args": null,
-                                    "storageKey": null
-                                  },
-                                  {
-                                    "kind": "ScalarField",
                                     "alias": "is_biddable",
                                     "name": "isBiddable",
                                     "args": null,
@@ -971,20 +961,6 @@ return {
                                         "kind": "ScalarField",
                                         "alias": "is_auction",
                                         "name": "isAuction",
-                                        "args": null,
-                                        "storageKey": null
-                                      },
-                                      {
-                                        "kind": "ScalarField",
-                                        "alias": "is_live_open",
-                                        "name": "isLiveOpen",
-                                        "args": null,
-                                        "storageKey": null
-                                      },
-                                      {
-                                        "kind": "ScalarField",
-                                        "alias": "is_open",
-                                        "name": "isOpen",
                                         "args": null,
                                         "storageKey": null
                                       },
@@ -1174,7 +1150,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "FairDetailShowsQuery",
-    "id": "eea995a022c0293bedb8a7fcce6988bb",
+    "id": "182eb234d04f02be5e0d6681188f04c6",
     "text": null,
     "metadata": {}
   }

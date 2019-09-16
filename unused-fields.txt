@@ -2,46 +2,6 @@
 yarn run v1.16.0
 $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 
-⚠️  ArtworkCarouselHeader_rail → src/lib/Scenes/Home/Components/ForYou/Components/ArtworkCarouselHeader.tsx:164:5
-  Ignoring node of kind IntersectionType at path followedArtistContext.
-  Ignoring node of kind IntersectionType at path relatedArtistContext.
-
-⚠️  ArtworkCarousel_rail → src/lib/Scenes/Home/Components/ForYou/Components/ArtworkCarousel.tsx:257:5
-  Possibly unused field params
-  Ignoring node of kind IntersectionType at path context.
-
-⚠️  ArtworkDetails_artwork → src/lib/Scenes/Artwork/Components/ArtworkDetails.tsx:93:5
-  Possibly unused field conditionDescription/label
-  Possibly unused field signatureInfo/label
-
-⚠️  ArtworkGridItem_artwork → src/lib/Components/ArtworkGrids/ArtworkGridItem.tsx:206:5
-  Possibly unused field is_in_auction
-  Possibly unused field sale/is_live_open
-  Possibly unused field sale/is_open
-  Possibly unused field artists/name
-
-⚠️  ArtworkRailHeader_rail → src/lib/Components/Home/ArtworkRails/ArtworkRailHeader.tsx:156:5
-  Ignoring node of kind IntersectionType at path context.
-
-⚠️  ArtworkRail_rail → src/lib/Components/Home/ArtworkRails/ArtworkRail.tsx:304:7
-  Possibly unused field params
-  Ignoring node of kind IntersectionType at path context.
-
-⚠️  Artwork_artwork → src/lib/Scenes/Artwork/Artwork.tsx:209:7
-  Possibly unused field artist/name
-  Possibly unused field artist/biography_blurb/text
-  Possibly unused field conditionDescription/details
-  Possibly unused field signatureInfo/details
-  Possibly unused field certificateOfAuthenticity/details
-  Possibly unused field framed/details
-  Possibly unused field contextGrids/artworks/edges/node
-
-⚠️  Artworks_me → src/lib/Scenes/Favorites/Components/Artworks/index.tsx:93:7
-  Possibly unused field followsAndSaves/artworks/pageInfo
-
-⚠️  AuctionCountDownTimer_artwork → src/lib/Scenes/Artwork/Components/AuctionCountDownTimer.tsx:72:5
-  Possibly unused field sale/liveStartAt
-
 ⚠️  AuctionPrice_artwork → src/lib/Scenes/Artwork/Components/AuctionPrice.tsx:112:5
   Possibly unused field slug
   Possibly unused field saleArtwork/isWithReserve

@@ -57,7 +57,6 @@ fragment SelectMaxBid_me on Me {
 fragment ConfirmBid_me on Me {
   has_qualified_credit_cards: hasQualifiedCreditCards
   bidders(saleID: $saleID) {
-    qualified_for_bidding: qualifiedForBidding
     id
   }
 }
@@ -408,13 +407,6 @@ return {
             "concreteType": "Bidder",
             "plural": true,
             "selections": [
-              {
-                "kind": "ScalarField",
-                "alias": "qualified_for_bidding",
-                "name": "qualifiedForBidding",
-                "args": null,
-                "storageKey": null
-              },
               (v3/*: any*/)
             ]
           },
@@ -426,7 +418,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersBidFlowQuery",
-    "id": "d8f49963999f051cb428815924d28c1e",
+    "id": "995da4560fa72fc596ecbf3bf0343140",
     "text": null,
     "metadata": {}
   }

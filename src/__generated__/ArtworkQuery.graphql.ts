@@ -38,7 +38,6 @@ fragment Artwork_artwork on Artwork {
     id
   }
   artist {
-    name
     biography_blurb: biographyBlurb {
       text
     }
@@ -323,7 +322,6 @@ fragment AuctionCountDownTimer_artwork on Artwork {
   sale {
     startAt
     endAt
-    liveStartAt
     formattedStartDateTime
     id
   }
@@ -532,15 +530,12 @@ fragment ArtworkGridItem_artwork on Artwork {
   title
   date
   sale_message: saleMessage
-  is_in_auction: isInAuction
   is_biddable: isBiddable
   is_acquireable: isAcquireable
   is_offerable: isOfferable
   slug
   sale {
     is_auction: isAuction
-    is_live_open: isLiveOpen
-    is_open: isOpen
     is_closed: isClosed
     display_timely_at: displayTimelyAt
     id
@@ -986,9 +981,9 @@ return {
             "concreteType": "Artist",
             "plural": false,
             "selections": [
-              (v3/*: any*/),
               (v9/*: any*/),
-              (v2/*: any*/)
+              (v2/*: any*/),
+              (v3/*: any*/)
             ]
           },
           {
@@ -1076,13 +1071,6 @@ return {
                 "kind": "ScalarField",
                 "alias": null,
                 "name": "endAt",
-                "args": null,
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "name": "liveStartAt",
                 "args": null,
                 "storageKey": null
               },
@@ -1321,13 +1309,6 @@ return {
                             "args": null,
                             "storageKey": null
                           },
-                          {
-                            "kind": "ScalarField",
-                            "alias": "is_in_auction",
-                            "name": "isInAuction",
-                            "args": null,
-                            "storageKey": null
-                          },
                           (v20/*: any*/),
                           (v21/*: any*/),
                           (v22/*: any*/),
@@ -1345,20 +1326,6 @@ return {
                                 "kind": "ScalarField",
                                 "alias": "is_auction",
                                 "name": "isAuction",
-                                "args": null,
-                                "storageKey": null
-                              },
-                              {
-                                "kind": "ScalarField",
-                                "alias": "is_live_open",
-                                "name": "isLiveOpen",
-                                "args": null,
-                                "storageKey": null
-                              },
-                              {
-                                "kind": "ScalarField",
-                                "alias": "is_open",
-                                "name": "isOpen",
                                 "args": null,
                                 "storageKey": null
                               },
@@ -1929,7 +1896,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkQuery",
-    "id": "01ecc65bec757127e8e087b4e3fb2ec1",
+    "id": "1704f5aaef6465a53dfd49bbc15d0e5b",
     "text": null,
     "metadata": {}
   }
