@@ -1,8 +1,6 @@
 ~/C/A/emission [cleanup-fair-over-fetching] » yarn find-unused-fields
 yarn run v1.16.0
 $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
-⚠️  ActiveBid_bid → src/lib/Components/Inbox/ActiveBids/ActiveBid.tsx:155:5
-  Possibly unused field most_recent_bid/max_bid
 
 ⚠️  ArtistForSaleArtworksGrid_artist → src/lib/Components/ArtworkGrids/RelayConnections/ArtistForSaleArtworksGrid.tsx:22:7
   Possibly unused field forSaleArtworks/edges

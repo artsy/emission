@@ -78,9 +78,6 @@ fragment ActiveBid_bid on LotStanding {
   }
   most_recent_bid: mostRecentBid {
     id
-    max_bid: maxBid {
-      display
-    }
     sale_artwork: saleArtwork {
       artwork {
         href
@@ -149,23 +146,14 @@ var v0 = {
   "args": null,
   "storageKey": null
 },
-v1 = [
-  {
-    "kind": "ScalarField",
-    "alias": null,
-    "name": "display",
-    "args": null,
-    "storageKey": null
-  }
-],
-v2 = {
+v1 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "href",
   "args": null,
   "storageKey": null
 },
-v3 = [
+v2 = [
   {
     "kind": "ScalarField",
     "alias": null,
@@ -174,7 +162,7 @@ v3 = [
     "storageKey": null
   }
 ],
-v4 = {
+v3 = {
   "kind": "LinkedField",
   "alias": null,
   "name": "image",
@@ -182,23 +170,23 @@ v4 = {
   "args": null,
   "concreteType": "Image",
   "plural": false,
-  "selections": (v3/*: any*/)
+  "selections": (v2/*: any*/)
 },
-v5 = {
+v4 = {
   "kind": "ScalarField",
   "alias": "artist_names",
   "name": "artistNames",
   "args": null,
   "storageKey": null
 },
-v6 = {
+v5 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "internalID",
   "args": null,
   "storageKey": null
 },
-v7 = [
+v6 = [
   {
     "kind": "Literal",
     "name": "after",
@@ -210,18 +198,18 @@ v7 = [
     "value": 10
   }
 ],
-v8 = {
+v7 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "name",
   "args": null,
   "storageKey": null
 },
-v9 = [
-  (v8/*: any*/),
+v8 = [
+  (v7/*: any*/),
   (v0/*: any*/)
 ],
-v10 = {
+v9 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "__typename",
@@ -296,16 +284,6 @@ return {
                   (v0/*: any*/),
                   {
                     "kind": "LinkedField",
-                    "alias": "max_bid",
-                    "name": "maxBid",
-                    "storageKey": null,
-                    "args": null,
-                    "concreteType": "BidderPositionMaxBid",
-                    "plural": false,
-                    "selections": (v1/*: any*/)
-                  },
-                  {
-                    "kind": "LinkedField",
                     "alias": "sale_artwork",
                     "name": "saleArtwork",
                     "storageKey": null,
@@ -322,9 +300,9 @@ return {
                         "concreteType": "Artwork",
                         "plural": false,
                         "selections": [
-                          (v2/*: any*/),
+                          (v1/*: any*/),
+                          (v3/*: any*/),
                           (v4/*: any*/),
-                          (v5/*: any*/),
                           (v0/*: any*/)
                         ]
                       },
@@ -354,7 +332,15 @@ return {
                         "args": null,
                         "concreteType": "SaleArtworkHighestBid",
                         "plural": false,
-                        "selections": (v1/*: any*/)
+                        "selections": [
+                          {
+                            "kind": "ScalarField",
+                            "alias": null,
+                            "name": "display",
+                            "args": null,
+                            "storageKey": null
+                          }
+                        ]
                       },
                       {
                         "kind": "ScalarField",
@@ -391,7 +377,7 @@ return {
                 "concreteType": "Sale",
                 "plural": false,
                 "selections": [
-                  (v2/*: any*/),
+                  (v1/*: any*/),
                   {
                     "kind": "ScalarField",
                     "alias": "is_live_open",
@@ -437,7 +423,7 @@ return {
                     "concreteType": "Conversation",
                     "plural": false,
                     "selections": [
-                      (v6/*: any*/),
+                      (v5/*: any*/),
                       (v0/*: any*/)
                     ]
                   }
@@ -450,7 +436,7 @@ return {
             "alias": "conversations",
             "name": "conversationsConnection",
             "storageKey": "conversationsConnection(after:\"\",first:10)",
-            "args": (v7/*: any*/),
+            "args": (v6/*: any*/),
             "concreteType": "ConversationConnection",
             "plural": false,
             "selections": [
@@ -497,7 +483,7 @@ return {
                     "concreteType": "Conversation",
                     "plural": false,
                     "selections": [
-                      (v6/*: any*/),
+                      (v5/*: any*/),
                       {
                         "kind": "ScalarField",
                         "alias": "last_message",
@@ -513,7 +499,7 @@ return {
                         "args": null,
                         "concreteType": "ConversationResponder",
                         "plural": false,
-                        "selections": (v9/*: any*/)
+                        "selections": (v8/*: any*/)
                       },
                       {
                         "kind": "ScalarField",
@@ -547,7 +533,7 @@ return {
                             "concreteType": null,
                             "plural": false,
                             "selections": [
-                              (v10/*: any*/),
+                              (v9/*: any*/),
                               (v0/*: any*/),
                               {
                                 "kind": "InlineFragment",
@@ -567,8 +553,8 @@ return {
                                     "args": null,
                                     "storageKey": null
                                   },
-                                  (v5/*: any*/),
-                                  (v4/*: any*/)
+                                  (v4/*: any*/),
+                                  (v3/*: any*/)
                                 ]
                               },
                               {
@@ -583,9 +569,9 @@ return {
                                     "args": null,
                                     "concreteType": "Fair",
                                     "plural": false,
-                                    "selections": (v9/*: any*/)
+                                    "selections": (v8/*: any*/)
                                   },
-                                  (v8/*: any*/),
+                                  (v7/*: any*/),
                                   {
                                     "kind": "LinkedField",
                                     "alias": "cover_image",
@@ -594,7 +580,7 @@ return {
                                     "args": null,
                                     "concreteType": "Image",
                                     "plural": false,
-                                    "selections": (v3/*: any*/)
+                                    "selections": (v2/*: any*/)
                                   }
                                 ]
                               }
@@ -603,7 +589,7 @@ return {
                         ]
                       },
                       (v0/*: any*/),
-                      (v10/*: any*/)
+                      (v9/*: any*/)
                     ]
                   },
                   {
@@ -621,7 +607,7 @@ return {
             "kind": "LinkedHandle",
             "alias": "conversations",
             "name": "conversationsConnection",
-            "args": (v7/*: any*/),
+            "args": (v6/*: any*/),
             "handle": "connection",
             "key": "Conversations_conversations",
             "filters": null
@@ -634,7 +620,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersInboxQuery",
-    "id": "6ac07550f58c7a8a2c827a60ebf10545",
+    "id": "5d23caaead606a08107183baacae77ea",
     "text": null,
     "metadata": {}
   }
