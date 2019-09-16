@@ -8,16 +8,11 @@ export type Conversation_me = {
     readonly conversation: {
         readonly internalID: string | null;
         readonly id: string;
+        readonly lastMessageID: string | null;
+        readonly unread: boolean | null;
         readonly to: {
             readonly name: string;
-            readonly initials: string | null;
         };
-        readonly from: {
-            readonly email: string;
-        };
-        readonly last_message_id: string | null;
-        readonly initial_message: string;
-        readonly unread: boolean | null;
         readonly " $fragmentRefs": Messages_conversation$ref;
     } | null;
     readonly " $refType": Conversation_me$ref;
@@ -68,6 +63,20 @@ const node: ReaderFragment = {
           "storageKey": null
         },
         {
+          "kind": "ScalarField",
+          "alias": null,
+          "name": "lastMessageID",
+          "args": null,
+          "storageKey": null
+        },
+        {
+          "kind": "ScalarField",
+          "alias": null,
+          "name": "unread",
+          "args": null,
+          "storageKey": null
+        },
+        {
           "kind": "LinkedField",
           "alias": null,
           "name": "to",
@@ -82,54 +91,8 @@ const node: ReaderFragment = {
               "name": "name",
               "args": null,
               "storageKey": null
-            },
-            {
-              "kind": "ScalarField",
-              "alias": null,
-              "name": "initials",
-              "args": null,
-              "storageKey": null
             }
           ]
-        },
-        {
-          "kind": "LinkedField",
-          "alias": null,
-          "name": "from",
-          "storageKey": null,
-          "args": null,
-          "concreteType": "ConversationInitiator",
-          "plural": false,
-          "selections": [
-            {
-              "kind": "ScalarField",
-              "alias": null,
-              "name": "email",
-              "args": null,
-              "storageKey": null
-            }
-          ]
-        },
-        {
-          "kind": "ScalarField",
-          "alias": "last_message_id",
-          "name": "lastMessageID",
-          "args": null,
-          "storageKey": null
-        },
-        {
-          "kind": "ScalarField",
-          "alias": "initial_message",
-          "name": "initialMessage",
-          "args": null,
-          "storageKey": null
-        },
-        {
-          "kind": "ScalarField",
-          "alias": null,
-          "name": "unread",
-          "args": null,
-          "storageKey": null
         },
         {
           "kind": "FragmentSpread",
@@ -140,5 +103,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = '74b9d6ee6f9fad3edc49b42533d4a50e';
+(node as any).hash = 'f942db068b99586de9bfe5a5eb26cc49';
 export default node;
