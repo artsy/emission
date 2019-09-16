@@ -215,32 +215,6 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 ⚠️  FairMoreInfo_fair → src/lib/Scenes/Fair/Screens/FairMoreInfo.tsx:158:5
   Possibly unused field organizer/website
 
-⚠️  Fair_fair → src/lib/Scenes/Fair/Fair.tsx:25:5
-  Possibly unused field slug
-  Possibly unused field organizer
-  Possibly unused field about
-  Possibly unused field ticketsLink
-
-⚠️  FairsRail_fairs_module → src/lib/Scenes/Home/Components/ForYou/Components/FairsRail.tsx:94:5
-  Possibly unused field results/name
-  Possibly unused field results/profile/slug
-  Possibly unused field results/mobile_image/internalID
-
-⚠️  Fairs_me → src/lib/Scenes/Favorites/Components/Fairs/index.tsx:87:7
-  Possibly unused field followsAndSaves/fairs/edges/node/start_at
-  Possibly unused field followsAndSaves/fairs/edges/node/end_at
-
-⚠️  FilteredInfiniteScrollGrid_entity → src/lib/Components/FilteredInfiniteScrollGrid/FilteredInfiniteScrollGrid.tsx:114:7
-  Possibly unused field filterArtworksConnection/edges
-
-⚠️  Gene_gene → src/lib/Containers/Gene.tsx:340:7
-  Possibly unused field artworks/aggregations/slice
-  Possibly unused field artworks/aggregations/counts
-  Possibly unused field artworks/edges
-
-⚠️  GenericGrid_artworks → src/lib/Components/ArtworkGrids/GenericGrid.tsx:176:5
-  Possibly unused field slug
-
 ⚠️  GlobalMap_viewer → src/lib/Scenes/Map/GlobalMap.tsx:795:5
   Possibly unused field city/coordinates
   Possibly unused field city/sponsoredContent/introText
