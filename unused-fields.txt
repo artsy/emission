@@ -398,10 +398,3 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
   Possibly unused field end_at
   Possibly unused field registration_ends_at
   Possibly unused field cover_image/aspect_ratio
-
-⚠️  Sales_query → src/lib/Scenes/Home/Components/Sales/index.tsx:93:7
-  Possibly unused field salesConnection/edges/node/href
-
-⚠️  SelectMaxBid_sale_artwork → src/lib/Components/Bidding/Screens/SelectMaxBid.tsx:100:7
-  Possibly unused field increments/display
-  Possibly unused field increments/cents
