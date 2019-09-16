@@ -25,11 +25,9 @@ query CommercialButtonsTestsMutationQuery {
 
 fragment CommercialButtons_artwork on Artwork {
   slug
-  internalID
   isAcquireable
   isOfferable
   isInquireable
-  isBiddable
   isInAuction
   isBuyNowable
   editionSets {
@@ -105,14 +103,14 @@ v1 = {
 v2 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "internalID",
+  "name": "id",
   "args": null,
   "storageKey": null
 },
 v3 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "id",
+  "name": "internalID",
   "args": null,
   "storageKey": null
 },
@@ -165,7 +163,6 @@ return {
         "plural": false,
         "selections": [
           (v1/*: any*/),
-          (v2/*: any*/),
           {
             "kind": "ScalarField",
             "alias": null,
@@ -184,13 +181,6 @@ return {
             "kind": "ScalarField",
             "alias": null,
             "name": "isInquireable",
-            "args": null,
-            "storageKey": null
-          },
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "isBiddable",
             "args": null,
             "storageKey": null
           },
@@ -217,7 +207,7 @@ return {
             "concreteType": "EditionSet",
             "plural": true,
             "selections": [
-              (v3/*: any*/)
+              (v2/*: any*/)
             ]
           },
           {
@@ -236,9 +226,9 @@ return {
                 "args": null,
                 "storageKey": null
               },
-              (v3/*: any*/),
-              (v1/*: any*/),
               (v2/*: any*/),
+              (v1/*: any*/),
+              (v3/*: any*/),
               {
                 "kind": "LinkedField",
                 "alias": null,
@@ -255,7 +245,7 @@ return {
                     "args": null,
                     "storageKey": null
                   },
-                  (v3/*: any*/)
+                  (v2/*: any*/)
                 ]
               },
               {
@@ -288,6 +278,7 @@ return {
               }
             ]
           },
+          (v3/*: any*/),
           {
             "kind": "ScalarField",
             "alias": null,
@@ -331,7 +322,7 @@ return {
                       (v4/*: any*/)
                     ]
                   },
-                  (v3/*: any*/)
+                  (v2/*: any*/)
                 ]
               }
             ]
@@ -364,10 +355,10 @@ return {
                   }
                 ]
               },
-              (v3/*: any*/)
+              (v2/*: any*/)
             ]
           },
-          (v3/*: any*/)
+          (v2/*: any*/)
         ]
       }
     ]
@@ -375,7 +366,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "CommercialButtonsTestsMutationQuery",
-    "id": "2169f64fa04bc267a271a15d9bf97acc",
+    "id": "fc4cf9d031fe4c3e7965a1dbf2b53e51",
     "text": null,
     "metadata": {}
   }

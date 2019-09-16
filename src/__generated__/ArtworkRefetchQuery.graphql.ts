@@ -276,11 +276,9 @@ fragment ArtworkHistory_artwork on Artwork {
 
 fragment CommercialButtons_artwork on Artwork {
   slug
-  internalID
   isAcquireable
   isOfferable
   isInquireable
-  isBiddable
   isInAuction
   isBuyNowable
   editionSets {
@@ -1853,13 +1851,6 @@ return {
               {
                 "kind": "ScalarField",
                 "alias": null,
-                "name": "isBiddable",
-                "args": null,
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
                 "name": "isBuyNowable",
                 "args": null,
                 "storageKey": null
@@ -1959,7 +1950,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkRefetchQuery",
-    "id": "228f2644a02a4795f405d2af4b6af44f",
+    "id": "b5806b7b7d5d464db9db57bbd5815fe1",
     "text": null,
     "metadata": {}
   }
