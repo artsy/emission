@@ -15,12 +15,7 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 ⚠️  BidResult_sale_artwork → src/lib/Components/Bidding/Screens/BidResult.tsx:123:5
   Possibly unused field minimum_next_bid
 
-⚠️  Categories_me → src/lib/Scenes/Favorites/Components/Categories/index.tsx:87:7
-  Possibly unused field followsAndSaves/genes/pageInfo
-  Possibly unused field followsAndSaves/genes/edges/node/gene/slug
-  Possibly unused field followsAndSaves/genes/edges/node/gene/name
-  Possibly unused field followsAndSaves/genes/edges/node/gene/href
-  Possibly unused field followsAndSaves/genes/edges/node/gene/image
+================= City Guide =================
 
 ⚠️  CityBMWList_city → src/lib/Scenes/City/CityBMWList.tsx:78:7
   Possibly unused field sponsoredContent/shows/edges/node/slug
