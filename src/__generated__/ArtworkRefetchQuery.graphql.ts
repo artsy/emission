@@ -313,8 +313,6 @@ fragment CommercialEditionSetInformation_artwork on Artwork {
   editionSets {
     id
     internalID
-    isAcquireable
-    isOfferable
     saleMessage
     editionOf
     dimensions {
@@ -820,20 +818,6 @@ v27 = {
   ]
 },
 v28 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "isAcquireable",
-  "args": null,
-  "storageKey": null
-},
-v29 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "isOfferable",
-  "args": null,
-  "storageKey": null
-},
-v30 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "saleMessage",
@@ -1822,8 +1806,20 @@ return {
                   }
                 ]
               },
-              (v28/*: any*/),
-              (v29/*: any*/),
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "isAcquireable",
+                "args": null,
+                "storageKey": null
+              },
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "isOfferable",
+                "args": null,
+                "storageKey": null
+              },
               {
                 "kind": "ScalarField",
                 "alias": null,
@@ -1831,7 +1827,7 @@ return {
                 "args": null,
                 "storageKey": null
               },
-              (v30/*: any*/),
+              (v28/*: any*/),
               {
                 "kind": "LinkedField",
                 "alias": null,
@@ -1844,8 +1840,6 @@ return {
                   (v3/*: any*/),
                   (v8/*: any*/),
                   (v28/*: any*/),
-                  (v29/*: any*/),
-                  (v30/*: any*/),
                   {
                     "kind": "ScalarField",
                     "alias": null,
@@ -1965,7 +1959,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkRefetchQuery",
-    "id": "29447429575a89db34382a5f20cd670a",
+    "id": "228f2644a02a4795f405d2af4b6af44f",
     "text": null,
     "metadata": {}
   }

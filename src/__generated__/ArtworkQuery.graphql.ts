@@ -311,8 +311,6 @@ fragment CommercialEditionSetInformation_artwork on Artwork {
   editionSets {
     id
     internalID
-    isAcquireable
-    isOfferable
     saleMessage
     editionOf
     dimensions {
@@ -812,20 +810,6 @@ v27 = {
   ]
 },
 v28 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "isAcquireable",
-  "args": null,
-  "storageKey": null
-},
-v29 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "isOfferable",
-  "args": null,
-  "storageKey": null
-},
-v30 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "saleMessage",
@@ -1803,8 +1787,20 @@ return {
               }
             ]
           },
-          (v28/*: any*/),
-          (v29/*: any*/),
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "isAcquireable",
+            "args": null,
+            "storageKey": null
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "isOfferable",
+            "args": null,
+            "storageKey": null
+          },
           {
             "kind": "ScalarField",
             "alias": null,
@@ -1812,7 +1808,7 @@ return {
             "args": null,
             "storageKey": null
           },
-          (v30/*: any*/),
+          (v28/*: any*/),
           {
             "kind": "LinkedField",
             "alias": null,
@@ -1825,8 +1821,6 @@ return {
               (v2/*: any*/),
               (v7/*: any*/),
               (v28/*: any*/),
-              (v29/*: any*/),
-              (v30/*: any*/),
               {
                 "kind": "ScalarField",
                 "alias": null,
@@ -1944,7 +1938,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkQuery",
-    "id": "1180a7a7b2387d3e946fd62ce32a096d",
+    "id": "13d189f25d5384b8be40b9c8e14f8157",
     "text": null,
     "metadata": {}
   }
