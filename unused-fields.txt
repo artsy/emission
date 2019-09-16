@@ -374,8 +374,3 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 ⚠️  MoreInfo_show → src/lib/Scenes/Show/Screens/MoreInfo.tsx:159:5
   Possibly unused field exhibition_period
   Ignoring node of kind IntersectionType at path partner.
-
-⚠️  PartnerCard_artwork → src/lib/Scenes/Artwork/Components/PartnerCard.tsx:143:5
-  Possibly unused field partner/internalID
-  Possibly unused field partner/profile/slug
-  Possibly unused field partner/locations/city
