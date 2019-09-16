@@ -7,14 +7,6 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
   Possibly unused field saleArtwork/isWithReserve
   Possibly unused field saleArtwork/reserveStatus
 
-⚠️  BidButton_artwork → src/lib/Scenes/Artwork/Components/CommercialButtons/BidButton.tsx:125:5
-  Possibly unused field sale/internalID
-  Possibly unused field sale/isOpen
-  Possibly unused field saleArtwork/increments/display
-
-⚠️  BidResult_sale_artwork → src/lib/Components/Bidding/Screens/BidResult.tsx:123:5
-  Possibly unused field minimum_next_bid
-
 ================= City Guide =================
 
 ⚠️  CityBMWList_city → src/lib/Scenes/City/CityBMWList.tsx:78:7

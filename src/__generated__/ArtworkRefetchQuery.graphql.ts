@@ -349,7 +349,6 @@ fragment ArtworkExtraLinks_artwork on Artwork {
 }
 
 fragment AuctionPrice_artwork on Artwork {
-  slug
   sale {
     internalID
     isWithBuyersPremium
@@ -358,9 +357,7 @@ fragment AuctionPrice_artwork on Artwork {
     id
   }
   saleArtwork {
-    isWithReserve
     reserveMessage
-    reserveStatus
     currentBid {
       display
     }
@@ -1596,21 +1593,7 @@ return {
                   {
                     "kind": "ScalarField",
                     "alias": null,
-                    "name": "isWithReserve",
-                    "args": null,
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
                     "name": "reserveMessage",
-                    "args": null,
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "name": "reserveStatus",
                     "args": null,
                     "storageKey": null
                   },
@@ -1917,7 +1900,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkRefetchQuery",
-    "id": "cf13aa09e6b64503efe944e212d068d3",
+    "id": "6579a77e86b7705b1ecf64c691a51c8e",
     "text": null,
     "metadata": {}
   }
