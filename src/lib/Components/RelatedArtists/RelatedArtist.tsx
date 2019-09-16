@@ -37,11 +37,7 @@ class RelatedArtist extends Component<Props> {
     )
   }
 
-  artworksString(counts) {
-    if (counts.totalWorks <= 0) {
-      return ""
-    }
-
+  artworksString(counts: RelatedArtist_artist["counts"]) {
     const totalWorks = counts.artworks ? counts.artworks + (counts.artworks > 1 ? " works" : " work") : null
     if (totalWorks && counts.for_sale_artworks === counts.artworks) {
       return totalWorks + " for sale"

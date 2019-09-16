@@ -181,11 +181,6 @@ fragment LocationMap_location on Location {
     lat
     lng
   }
-  day_schedules: daySchedules {
-    start_time: startTime
-    end_time: endTime
-    day_of_week: dayOfWeek
-  }
   openingHours {
     __typename
     ... on OpeningHoursArray {
@@ -838,38 +833,6 @@ return {
               },
               {
                 "kind": "LinkedField",
-                "alias": "day_schedules",
-                "name": "daySchedules",
-                "storageKey": null,
-                "args": null,
-                "concreteType": "DaySchedule",
-                "plural": true,
-                "selections": [
-                  {
-                    "kind": "ScalarField",
-                    "alias": "start_time",
-                    "name": "startTime",
-                    "args": null,
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": "end_time",
-                    "name": "endTime",
-                    "args": null,
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": "day_of_week",
-                    "name": "dayOfWeek",
-                    "args": null,
-                    "storageKey": null
-                  }
-                ]
-              },
-              {
-                "kind": "LinkedField",
                 "alias": null,
                 "name": "openingHours",
                 "storageKey": null,
@@ -1382,7 +1345,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "FairDetailShowsQuery",
-    "id": "02fa370b7f84f13fe092962b51b6eef3",
+    "id": "13687853a0fef8cadeab7c16ff8f8a23",
     "text": null,
     "metadata": {}
   }

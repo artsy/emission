@@ -178,37 +178,6 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 ⚠️  ConversationSnippet_conversation → src/lib/Components/Inbox/Conversations/ConversationSnippet.tsx:179:5
   Ignoring node of kind IntersectionType at path items/item.
 
-⚠️  Conversation_me → src/lib/Containers/Conversation.tsx:177:5
-  Possibly unused field conversation/to/initials
-  Possibly unused field conversation/from
-  Possibly unused field conversation/initial_message
-
-⚠️  Conversations_me → src/lib/Components/Inbox/Conversations/index.tsx:116:7
-  Possibly unused field conversations/pageInfo
-  Possibly unused field conversations/edges/node/last_message
-
-⚠️  Detail_show → src/lib/Scenes/Show/Screens/Detail.tsx:197:5
-  Possibly unused field name
-  Possibly unused field city
-  Possibly unused field isStubShow
-  Possibly unused field images
-  Ignoring node of kind IntersectionType at path location/openingHours.
-  Possibly unused field artists_without_artworks/slug
-  Possibly unused field status
-  Ignoring node of kind IntersectionType at path partner.
-
-⚠️  FairArtists_fair → src/lib/Scenes/Fair/Screens/FairArtists.tsx:95:7
-  Possibly unused field artists/pageInfo
-  Possibly unused field artists/edges/cursor
-  Possibly unused field artists/edges/node/sortable_id
-  Possibly unused field artists/edges/node/href
-  Possibly unused field artists/edges/node/internalID
-  Possibly unused field artists/edges/node/slug
-
-⚠️  FairBoothHeader_show → src/lib/Scenes/Fair/Components/FairBoothHeader.tsx:164:5
-  Ignoring node of kind IntersectionType at path partner.
-  Possibly unused field counts/artworks
-  Possibly unused field counts/artists
 
 ⚠️  FairBoothPreview_show → src/lib/Scenes/Fair/Components/FairBoothPreview/index.tsx:175:5
   Possibly unused field name
@@ -340,52 +309,3 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
   Possibly unused field lot_standings/most_recent_bid
   Possibly unused field conversations_existence_check/edges/node
 
-⚠️  InfiniteScrollArtworksGrid_connection → src/lib/Components/ArtworkGrids/InfiniteScrollArtworksGrid.tsx:265:5
-  Possibly unused field pageInfo/startCursor
-  Possibly unused field pageInfo/endCursor
-  Possibly unused field edges/node/slug
-
-⚠️  LocationMap_location → src/lib/Components/LocationMap/index.tsx:178:5
-  Possibly unused field day_schedules
-  Ignoring node of kind IntersectionType at path openingHours.
-
-⚠️  LotsByFollowedArtists_query → src/lib/Scenes/Home/Components/Sales/Components/LotsByFollowedArtists.tsx:46:7
-  Possibly unused field me/lotsByFollowedArtistsConnection/edges/cursor
-
-⚠️  Message_message → src/lib/Components/Inbox/Conversations/Message.tsx:208:5
-  Possibly unused field from/email
-  Possibly unused field attachments/file_name
-
-⚠️  Messages_conversation → src/lib/Components/Inbox/Conversations/Messages.tsx:174:7
-  Possibly unused field from/email
-  Possibly unused field messages/pageInfo
-  Possibly unused field messages/edges/node/impulse_id
-  Possibly unused field messages/edges/node/is_from_user
-  Possibly unused field messages/edges/node/attachments/internalID
-  Ignoring node of kind IntersectionType at path items/artwork.
-  Ignoring node of kind IntersectionType at path items/show.
-
-⚠️  Metadata_show → src/lib/Components/Artist/Shows/Metadata.tsx:81:5
-  Ignoring node of kind IntersectionType at path partner.
-
-⚠️  MoreInfo_show → src/lib/Scenes/Show/Screens/MoreInfo.tsx:159:5
-  Possibly unused field exhibition_period
-  Ignoring node of kind IntersectionType at path partner.
-
-⚠️  PartnerCard_artwork → src/lib/Scenes/Artwork/Components/PartnerCard.tsx:143:5
-  Possibly unused field partner/internalID
-  Possibly unused field partner/profile/slug
-  Possibly unused field partner/locations/city
-
-⚠️  RelatedArtist_artist → src/lib/Components/RelatedArtists/RelatedArtist.tsx:80:5
-  Possibly unused field counts/for_sale_artworks
-  Possibly unused field counts/artworks
-
-⚠️  SaleListItem_sale → src/lib/Scenes/Home/Components/Sales/Components/SaleListItem.tsx:125:5
-  Possibly unused field slug
-  Possibly unused field is_open
-  Possibly unused field is_live_open
-  Possibly unused field start_at
-  Possibly unused field end_at
-  Possibly unused field registration_ends_at
-  Possibly unused field cover_image/aspect_ratio

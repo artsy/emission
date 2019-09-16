@@ -11,7 +11,6 @@ export type Messages_conversation = {
     readonly internalID: string | null;
     readonly from: {
         readonly name: string;
-        readonly email: string;
         readonly initials: string | null;
     };
     readonly to: {
@@ -30,11 +29,9 @@ export type Messages_conversation = {
             readonly cursor: string;
             readonly node: {
                 readonly id: string;
-                readonly impulse_id: string;
-                readonly is_from_user: boolean | null;
                 readonly body: string | null;
                 readonly attachments: ReadonlyArray<{
-                    readonly internalID: string;
+                    readonly id: string;
                 } | null> | null;
                 readonly " $fragmentRefs": Message_message$ref;
             } | null;
@@ -77,28 +74,23 @@ var v0 = {
   "args": null,
   "storageKey": null
 },
-v1 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "internalID",
-  "args": null,
-  "storageKey": null
-},
+v1 = [
+  {
+    "kind": "ScalarField",
+    "alias": null,
+    "name": "name",
+    "args": null,
+    "storageKey": null
+  },
+  {
+    "kind": "ScalarField",
+    "alias": null,
+    "name": "initials",
+    "args": null,
+    "storageKey": null
+  }
+],
 v2 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "name",
-  "args": null,
-  "storageKey": null
-},
-v3 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "initials",
-  "args": null,
-  "storageKey": null
-},
-v4 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "href",
@@ -137,7 +129,13 @@ return {
   ],
   "selections": [
     (v0/*: any*/),
-    (v1/*: any*/),
+    {
+      "kind": "ScalarField",
+      "alias": null,
+      "name": "internalID",
+      "args": null,
+      "storageKey": null
+    },
     {
       "kind": "LinkedField",
       "alias": null,
@@ -146,17 +144,7 @@ return {
       "args": null,
       "concreteType": "ConversationInitiator",
       "plural": false,
-      "selections": [
-        (v2/*: any*/),
-        {
-          "kind": "ScalarField",
-          "alias": null,
-          "name": "email",
-          "args": null,
-          "storageKey": null
-        },
-        (v3/*: any*/)
-      ]
+      "selections": (v1/*: any*/)
     },
     {
       "kind": "LinkedField",
@@ -166,10 +154,7 @@ return {
       "args": null,
       "concreteType": "ConversationResponder",
       "plural": false,
-      "selections": [
-        (v2/*: any*/),
-        (v3/*: any*/)
-      ]
+      "selections": (v1/*: any*/)
     },
     {
       "kind": "ScalarField",
@@ -254,20 +239,6 @@ return {
                 (v0/*: any*/),
                 {
                   "kind": "ScalarField",
-                  "alias": "impulse_id",
-                  "name": "impulseID",
-                  "args": null,
-                  "storageKey": null
-                },
-                {
-                  "kind": "ScalarField",
-                  "alias": "is_from_user",
-                  "name": "isFromUser",
-                  "args": null,
-                  "storageKey": null
-                },
-                {
-                  "kind": "ScalarField",
                   "alias": null,
                   "name": "body",
                   "args": null,
@@ -282,7 +253,7 @@ return {
                   "concreteType": "Attachment",
                   "plural": true,
                   "selections": [
-                    (v1/*: any*/)
+                    (v0/*: any*/)
                   ]
                 },
                 {
@@ -325,7 +296,7 @@ return {
               "kind": "InlineFragment",
               "type": "Artwork",
               "selections": [
-                (v4/*: any*/),
+                (v2/*: any*/),
                 {
                   "kind": "FragmentSpread",
                   "name": "ArtworkPreview_artwork",
@@ -348,7 +319,7 @@ return {
               "kind": "InlineFragment",
               "type": "Show",
               "selections": [
-                (v4/*: any*/),
+                (v2/*: any*/),
                 {
                   "kind": "FragmentSpread",
                   "name": "ShowPreview_show",
@@ -363,5 +334,5 @@ return {
   ]
 };
 })();
-(node as any).hash = 'ecb2d6daa828b6f1c8b326a8a3cc775f';
+(node as any).hash = 'de1405be4af5bee34b48608c749ba0ba';
 export default node;

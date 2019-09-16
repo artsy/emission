@@ -116,14 +116,12 @@ fragment PartnerCard_artwork on Artwork {
     type
     name
     slug
-    internalID
     id
     href
     initials
     profile {
       id
       internalID
-      slug
       is_followed: isFollowed
       icon {
         url(version: "square140")
@@ -630,21 +628,21 @@ v4 = {
 v5 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "internalID",
+  "name": "href",
   "args": null,
   "storageKey": null
 },
 v6 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "href",
+  "name": "initials",
   "args": null,
   "storageKey": null
 },
 v7 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "initials",
+  "name": "internalID",
   "args": null,
   "storageKey": null
 },
@@ -955,7 +953,6 @@ return {
               (v4/*: any*/),
               (v5/*: any*/),
               (v6/*: any*/),
-              (v7/*: any*/),
               {
                 "kind": "LinkedField",
                 "alias": null,
@@ -966,8 +963,7 @@ return {
                 "plural": false,
                 "selections": [
                   (v2/*: any*/),
-                  (v5/*: any*/),
-                  (v4/*: any*/),
+                  (v7/*: any*/),
                   (v8/*: any*/),
                   {
                     "kind": "LinkedField",
@@ -1062,7 +1058,7 @@ return {
                 "storageKey": null
               },
               (v4/*: any*/),
-              (v5/*: any*/),
+              (v7/*: any*/),
               {
                 "kind": "LinkedField",
                 "alias": null,
@@ -1233,7 +1229,7 @@ return {
                 "type": "Fair",
                 "selections": [
                   (v3/*: any*/),
-                  (v6/*: any*/),
+                  (v5/*: any*/),
                   (v14/*: any*/),
                   (v16/*: any*/)
                 ]
@@ -1244,7 +1240,7 @@ return {
                 "selections": [
                   (v3/*: any*/),
                   (v10/*: any*/),
-                  (v6/*: any*/),
+                  (v5/*: any*/),
                   (v11/*: any*/),
                   {
                     "kind": "ScalarField",
@@ -1261,7 +1257,7 @@ return {
                 "type": "Show",
                 "selections": [
                   (v3/*: any*/),
-                  (v6/*: any*/),
+                  (v5/*: any*/),
                   (v14/*: any*/),
                   {
                     "kind": "LinkedField",
@@ -1466,7 +1462,7 @@ return {
                             "plural": false,
                             "selections": (v25/*: any*/)
                           },
-                          (v6/*: any*/)
+                          (v5/*: any*/)
                         ]
                       }
                     ]
@@ -1492,7 +1488,7 @@ return {
             ]
           },
           (v4/*: any*/),
-          (v5/*: any*/),
+          (v7/*: any*/),
           (v2/*: any*/),
           (v21/*: any*/),
           (v22/*: any*/),
@@ -1522,11 +1518,11 @@ return {
             "selections": [
               (v2/*: any*/),
               (v9/*: any*/),
-              (v5/*: any*/),
+              (v7/*: any*/),
               (v4/*: any*/),
               (v3/*: any*/),
-              (v7/*: any*/),
               (v6/*: any*/),
+              (v5/*: any*/),
               (v8/*: any*/),
               {
                 "kind": "ScalarField",
@@ -1576,16 +1572,16 @@ return {
             "selections": [
               (v2/*: any*/),
               (v3/*: any*/),
-              (v6/*: any*/),
-              (v4/*: any*/),
               (v5/*: any*/),
+              (v4/*: any*/),
+              (v7/*: any*/),
               (v14/*: any*/),
               (v8/*: any*/),
               (v17/*: any*/)
             ]
           },
           (v18/*: any*/),
-          (v6/*: any*/),
+          (v5/*: any*/),
           {
             "kind": "ScalarField",
             "alias": "is_saved",
@@ -1862,7 +1858,7 @@ return {
               (v29/*: any*/),
               (v30/*: any*/),
               (v2/*: any*/),
-              (v5/*: any*/),
+              (v7/*: any*/),
               {
                 "kind": "ScalarField",
                 "alias": null,
@@ -1990,7 +1986,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkQuery",
-    "id": "c36c543b48219afbeb1466b9c4405d7e",
+    "id": "9ed3b0aa355b6d30ba3572f26a3a2332",
     "text": null,
     "metadata": {}
   }

@@ -86,9 +86,9 @@ export class SaleListItem extends React.Component<Props> {
   }
 
   render() {
-    const item = this.props.sale
-    const image = item.cover_image
-    const timestamp = item.display_timely_at.toUpperCase()
+    const sale = this.props.sale
+    const image = sale.cover_image
+    const timestamp = sale.display_timely_at.toUpperCase()
     const containerWidth = this.props.containerWidth
 
     const Container = styled.View`
@@ -103,8 +103,8 @@ export class SaleListItem extends React.Component<Props> {
           <Image imageURL={image && image.url} />
           <Content>
             <Header>
-              <Title numberOfLines={2}>{item.name}</Title>
-              {item.live_start_at && (
+              <Title numberOfLines={2}>{sale.name}</Title>
+              {sale.live_start_at && (
                 <Badge>
                   <BadgeText>LIVE</BadgeText>
                 </Badge>
@@ -123,20 +123,13 @@ export class SaleListItem extends React.Component<Props> {
 export default createFragmentContainer(SaleListItem, {
   sale: graphql`
     fragment SaleListItem_sale on Sale {
-      slug
       name
       href
-      is_open: isOpen
-      is_live_open: isLiveOpen
       live_url_if_open: liveURLIfOpen
-      start_at: startAt
-      end_at: endAt
-      registration_ends_at: registrationEndsAt
       live_start_at: liveStartAt
       display_timely_at: displayTimelyAt
       cover_image: coverImage {
         url(version: "large")
-        aspect_ratio: aspectRatio
       }
     }
   `,
