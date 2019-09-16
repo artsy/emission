@@ -29,14 +29,7 @@ query FairQuery(
 
 fragment Fair_fair on Fair {
   id
-  slug
   ...FairDetail_fair
-  organizer {
-    website
-    id
-  }
-  about
-  ticketsLink
 }
 
 fragment FairDetail_fair on Fair {
@@ -1362,7 +1355,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "FairQuery",
-    "id": "2dd4364236b36dc590e5d59a7b101607",
+    "id": "774c43b654814b0735717c1e372d7fd4",
     "text": null,
     "metadata": {}
   }

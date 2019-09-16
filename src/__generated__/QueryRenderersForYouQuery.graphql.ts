@@ -92,13 +92,11 @@ fragment FairsRail_fairs_module on HomePageFairsModule {
   results {
     id
     slug
-    name
     profile {
       slug
       id
     }
-    mobile_image: mobileImage {
-      internalID
+    mobileImage {
       url
     }
   }
@@ -769,7 +767,6 @@ return {
                 "selections": [
                   (v0/*: any*/),
                   (v5/*: any*/),
-                  (v7/*: any*/),
                   {
                     "kind": "LinkedField",
                     "alias": null,
@@ -785,14 +782,13 @@ return {
                   },
                   {
                     "kind": "LinkedField",
-                    "alias": "mobile_image",
+                    "alias": null,
                     "name": "mobileImage",
                     "storageKey": null,
                     "args": null,
                     "concreteType": "Image",
                     "plural": false,
                     "selections": [
-                      (v4/*: any*/),
                       {
                         "kind": "ScalarField",
                         "alias": null,
@@ -813,7 +809,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersForYouQuery",
-    "id": "d08d7ec3c246ed80ed2af98505d8e3a3",
+    "id": "39e5f6828e004cf96e816d719431d608",
     "text": null,
     "metadata": {}
   }
