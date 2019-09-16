@@ -279,6 +279,3 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
   Possibly unused field city/fairs/edges/node/profile/name
   Possibly unused field city/fairs/edges/node/start_at
   Possibly unused field city/fairs/edges/node/end_at
-
-⚠️  Header_sale → src/lib/Components/Sale/Header.tsx:39:5
-  Possibly unused field cover_image
