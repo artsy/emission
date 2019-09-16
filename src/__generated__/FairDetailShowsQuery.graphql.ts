@@ -158,8 +158,6 @@ fragment LocationMap_location on Location {
 fragment FairBoothPreview_show on Show {
   slug
   internalID
-  name
-  is_fair_booth: isFairBooth
   counts {
     artworks
   }
@@ -172,9 +170,10 @@ fragment FairBoothPreview_show on Show {
       internalID
       id
       profile {
-        internalID
-        is_followed: isFollowed
         id
+        slug
+        internalID
+        isFollowed
       }
     }
     ... on Node {
@@ -184,11 +183,7 @@ fragment FairBoothPreview_show on Show {
       id
     }
   }
-  fair {
-    name
-    id
-  }
-  cover_image: coverImage {
+  coverImage {
     url
   }
   location {
@@ -1069,14 +1064,6 @@ return {
                       },
                       (v2/*: any*/),
                       (v6/*: any*/),
-                      (v3/*: any*/),
-                      {
-                        "kind": "ScalarField",
-                        "alias": "is_fair_booth",
-                        "name": "isFairBooth",
-                        "args": null,
-                        "storageKey": null
-                      },
                       {
                         "kind": "LinkedField",
                         "alias": null,
@@ -1123,15 +1110,16 @@ return {
                                 "concreteType": "Profile",
                                 "plural": false,
                                 "selections": [
+                                  (v7/*: any*/),
+                                  (v2/*: any*/),
                                   (v6/*: any*/),
                                   {
                                     "kind": "ScalarField",
-                                    "alias": "is_followed",
+                                    "alias": null,
                                     "name": "isFollowed",
                                     "args": null,
                                     "storageKey": null
-                                  },
-                                  (v7/*: any*/)
+                                  }
                                 ]
                               }
                             ]
@@ -1141,16 +1129,6 @@ return {
                       {
                         "kind": "LinkedField",
                         "alias": null,
-                        "name": "fair",
-                        "storageKey": null,
-                        "args": null,
-                        "concreteType": "Fair",
-                        "plural": false,
-                        "selections": (v13/*: any*/)
-                      },
-                      {
-                        "kind": "LinkedField",
-                        "alias": "cover_image",
                         "name": "coverImage",
                         "storageKey": null,
                         "args": null,
@@ -1196,7 +1174,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "FairDetailShowsQuery",
-    "id": "bc96029da69627fa16025a3323004f82",
+    "id": "eea995a022c0293bedb8a7fcce6988bb",
     "text": null,
     "metadata": {}
   }
