@@ -126,11 +126,9 @@ export const FilteredInfiniteScrollGridContainer = createPaginationContainer(
           priceRange: $priceRange
           aggregations: [MEDIUM, PRICE_RANGE, TOTAL]
         ) @connection(key: "FilteredInfiniteScrollGridContainer_filterArtworksConnection") {
-          # TODO: Only to satisfy the relay compiler
           edges {
             node {
               id
-              slug
             }
           }
           ...Filters_filteredArtworks
