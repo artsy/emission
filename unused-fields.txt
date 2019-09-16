@@ -383,12 +383,3 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 ⚠️  RelatedArtist_artist → src/lib/Components/RelatedArtists/RelatedArtist.tsx:80:5
   Possibly unused field counts/for_sale_artworks
   Possibly unused field counts/artworks
-
-⚠️  SaleListItem_sale → src/lib/Scenes/Home/Components/Sales/Components/SaleListItem.tsx:125:5
-  Possibly unused field slug
-  Possibly unused field is_open
-  Possibly unused field is_live_open
-  Possibly unused field start_at
-  Possibly unused field end_at
-  Possibly unused field registration_ends_at
-  Possibly unused field cover_image/aspect_ratio
