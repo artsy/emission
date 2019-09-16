@@ -104,7 +104,6 @@ fragment InfiniteScrollArtworksGrid_connection on ArtworkConnectionInterface {
   edges {
     __typename
     node {
-      slug
       id
       image {
         aspectRatio
@@ -550,7 +549,6 @@ return {
                         "plural": false,
                         "selections": [
                           (v6/*: any*/),
-                          (v7/*: any*/),
                           {
                             "kind": "LinkedField",
                             "alias": null,
@@ -626,6 +624,7 @@ return {
                             "args": null,
                             "storageKey": null
                           },
+                          (v7/*: any*/),
                           {
                             "kind": "LinkedField",
                             "alias": null,
@@ -802,7 +801,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "GeneQuery",
-    "id": "1b26881965feca5694937ecc9e4fbeba",
+    "id": "21d63476a1043f6b3d406aada5ae37d7",
     "text": null,
     "metadata": {}
   }

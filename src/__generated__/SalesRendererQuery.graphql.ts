@@ -72,7 +72,6 @@ fragment InfiniteScrollArtworksGrid_connection on ArtworkConnectionInterface {
   edges {
     __typename
     node {
-      slug
       id
       image {
         aspectRatio
@@ -341,13 +340,6 @@ return {
                       },
                       (v5/*: any*/),
                       {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "name": "slug",
-                        "args": null,
-                        "storageKey": null
-                      },
-                      {
                         "kind": "LinkedField",
                         "alias": null,
                         "name": "image",
@@ -419,6 +411,13 @@ return {
                         "kind": "ScalarField",
                         "alias": "is_offerable",
                         "name": "isOfferable",
+                        "args": null,
+                        "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "name": "slug",
                         "args": null,
                         "storageKey": null
                       },
@@ -579,7 +578,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "SalesRendererQuery",
-    "id": "7fe6e52ba70afb33270219eb303e0751",
+    "id": "024d85bdc1b2b387b6e71ca8e8f62674",
     "text": null,
     "metadata": {}
   }

@@ -312,7 +312,3 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
   Possibly unused field lot_standings/most_recent_bid
   Possibly unused field conversations_existence_check/edges/node
 
-⚠️  InfiniteScrollArtworksGrid_connection → src/lib/Components/ArtworkGrids/InfiniteScrollArtworksGrid.tsx:265:5
-  Possibly unused field pageInfo/startCursor
-  Possibly unused field pageInfo/endCursor
-  Possibly unused field edges/node/slug

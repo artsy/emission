@@ -270,7 +270,6 @@ export const InfiniteScrollArtworksGridContainer = createFragmentContainer(Infin
       }
       edges {
         node {
-          slug
           id
           image {
             aspectRatio
