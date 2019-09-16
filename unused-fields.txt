@@ -2,21 +2,6 @@
 yarn run v1.16.0
 $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 
-⚠️  ArtistRail_rail → src/lib/Components/Home/ArtistRails/ArtistRail.tsx:282:5
-  Possibly unused field results/internalID
-
-⚠️  ArtistShow_show → src/lib/Components/Artist/Shows/ArtistShow.tsx:47:5
-  Possibly unused field slug
-  Possibly unused field href
-  Possibly unused field is_fair_booth
-
-⚠️  Artists_me → src/lib/Scenes/Favorites/Components/Artists/index.tsx:88:7
-  Possibly unused field followsAndSaves/artists/pageInfo
-  Possibly unused field followsAndSaves/artists/edges/node/artist/slug
-  Possibly unused field followsAndSaves/artists/edges/node/artist/name
-  Possibly unused field followsAndSaves/artists/edges/node/artist/href
-  Possibly unused field followsAndSaves/artists/edges/node/artist/image
-
 ⚠️  ArtworkCarouselHeader_rail → src/lib/Scenes/Home/Components/ForYou/Components/ArtworkCarouselHeader.tsx:164:5
   Ignoring node of kind IntersectionType at path followedArtistContext.
   Ignoring node of kind IntersectionType at path relatedArtistContext.
@@ -294,48 +279,3 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
   Possibly unused field city/fairs/edges/node/profile/name
   Possibly unused field city/fairs/edges/node/start_at
   Possibly unused field city/fairs/edges/node/end_at
-
-⚠️  Header_sale → src/lib/Components/Sale/Header.tsx:39:5
-  Possibly unused field cover_image
-
-⚠️  HeroUnits_hero_units → src/lib/Components/Home/HeroUnits.tsx:94:5
-  Possibly unused field href
-  Possibly unused field title
-  Possibly unused field heading
-  Possibly unused field narrow_image_url
-  Possibly unused field wide_image_url
-
-⚠️  ImageCarousel_images → src/lib/Scenes/Artwork/Components/ImageCarousel/ImageCarousel.tsx:108:5
-  Possibly unused field deepZoom/image
-
-⚠️  Inbox_me → src/lib/Containers/Inbox.tsx:91:7
-  Possibly unused field lot_standings/most_recent_bid
-  Possibly unused field conversations_existence_check/edges/node
-
-⚠️  InfiniteScrollArtworksGrid_connection → src/lib/Components/ArtworkGrids/InfiniteScrollArtworksGrid.tsx:265:5
-  Possibly unused field pageInfo/startCursor
-  Possibly unused field pageInfo/endCursor
-  Possibly unused field edges/node/slug
-
-⚠️  LocationMap_location → src/lib/Components/LocationMap/index.tsx:178:5
-  Possibly unused field day_schedules
-  Ignoring node of kind IntersectionType at path openingHours.
-
-⚠️  LotsByFollowedArtists_query → src/lib/Scenes/Home/Components/Sales/Components/LotsByFollowedArtists.tsx:46:7
-  Possibly unused field me/lotsByFollowedArtistsConnection/edges/cursor
-
-⚠️  Message_message → src/lib/Components/Inbox/Conversations/Message.tsx:208:5
-  Possibly unused field from/email
-  Possibly unused field attachments/file_name
-
-⚠️  Messages_conversation → src/lib/Components/Inbox/Conversations/Messages.tsx:174:7
-  Possibly unused field from/email
-  Possibly unused field messages/pageInfo
-  Possibly unused field messages/edges/node/impulse_id
-  Possibly unused field messages/edges/node/is_from_user
-  Possibly unused field messages/edges/node/attachments/internalID
-  Ignoring node of kind IntersectionType at path items/artwork.
-  Ignoring node of kind IntersectionType at path items/show.
-
-⚠️  Metadata_show → src/lib/Components/Artist/Shows/Metadata.tsx:81:5
-  Ignoring node of kind IntersectionType at path partner.

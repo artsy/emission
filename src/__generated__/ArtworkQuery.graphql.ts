@@ -501,7 +501,7 @@ fragment ArtworkTombstone_artwork on Artwork {
 }
 
 fragment ImageCarousel_images on Image {
-  image_url: imageURL
+  url: imageURL
   width
   height
   deepZoom {
@@ -1756,7 +1756,7 @@ return {
             "selections": [
               {
                 "kind": "ScalarField",
-                "alias": "image_url",
+                "alias": "url",
                 "name": "imageURL",
                 "args": null,
                 "storageKey": null
@@ -1986,7 +1986,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkQuery",
-    "id": "9ed3b0aa355b6d30ba3572f26a3a2332",
+    "id": "1a549d1a639cea2f465f67758f847765",
     "text": null,
     "metadata": {}
   }

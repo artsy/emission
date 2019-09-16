@@ -34,7 +34,7 @@ export const ImageCarousel = observer((props: ImageCarouselProps) => {
     () =>
       props.images
         .map(image => {
-          if (!image.height || !image.width || !image.image_url) {
+          if (!image.height || !image.width || !image.url) {
             // something is very wrong
             return null
           }
@@ -43,7 +43,7 @@ export const ImageCarousel = observer((props: ImageCarouselProps) => {
             width,
             height,
             url: createGeminiUrl({
-              imageURL: image.image_url.replace(":version", "normalized"),
+              imageURL: image.url.replace(":version", "normalized"),
               width,
               height,
             }),
@@ -106,7 +106,7 @@ export const PaginationDot = observer(({ diameter, index }: { diameter: number; 
 export const ImageCarouselFragmentContainer = createFragmentContainer(ImageCarousel, {
   images: graphql`
     fragment ImageCarousel_images on Image @relay(plural: true) {
-      image_url: imageURL
+      url: imageURL
       width
       height
       deepZoom {
