@@ -47,7 +47,7 @@ const Separator = styled.View`
   margin-top: 9px;
 `
 
-export interface SavedItemRowProps {
+interface SavedItemRowProps {
   href: string
   name: string
   image: {

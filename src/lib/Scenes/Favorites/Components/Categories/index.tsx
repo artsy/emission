@@ -2,7 +2,7 @@ import React from "react"
 import { FlatList, RefreshControl } from "react-native"
 import { createPaginationContainer, graphql, RelayPaginationProp } from "react-relay"
 
-import SavedItemRow, { SavedItemRowProps } from "lib/Components/Lists/SavedItemRow"
+import SavedItemRow from "lib/Components/Lists/SavedItemRow"
 import Spinner from "lib/Components/Spinner"
 import ZeroState from "lib/Components/States/ZeroState"
 import { PAGE_SIZE } from "lib/data/constants"
