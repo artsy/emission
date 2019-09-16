@@ -40,7 +40,6 @@ fragment ShowArtworksPreview_show on Show {
 
 fragment GenericGrid_artworks on Artwork {
   id
-  slug
   image {
     aspect_ratio: aspectRatio
   }
@@ -206,13 +205,6 @@ return {
                     "selections": [
                       (v1/*: any*/),
                       {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "name": "slug",
-                        "args": null,
-                        "storageKey": null
-                      },
-                      {
                         "kind": "LinkedField",
                         "alias": null,
                         "name": "image",
@@ -289,6 +281,13 @@ return {
                         "kind": "ScalarField",
                         "alias": "is_offerable",
                         "name": "isOfferable",
+                        "args": null,
+                        "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "name": "slug",
                         "args": null,
                         "storageKey": null
                       },
@@ -415,7 +414,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ShowArtworksPreviewTestsQuery",
-    "id": "264f7bdab64c1a3472de8bf33b0fd698",
+    "id": "8920ffc7ef3278934877f1246f75253c",
     "text": null,
     "metadata": {}
   }

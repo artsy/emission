@@ -158,7 +158,6 @@ fragment ArtworkCarouselHeader_rail on HomePageArtworkModule {
 
 fragment GenericGrid_artworks on Artwork {
   id
-  slug
   image {
     aspect_ratio: aspectRatio
   }
@@ -521,7 +520,6 @@ return {
                 "plural": true,
                 "selections": [
                   (v0/*: any*/),
-                  (v5/*: any*/),
                   {
                     "kind": "LinkedField",
                     "alias": null,
@@ -584,6 +582,7 @@ return {
                     "args": null,
                     "storageKey": null
                   },
+                  (v5/*: any*/),
                   {
                     "kind": "LinkedField",
                     "alias": null,
@@ -809,7 +808,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersForYouQuery",
-    "id": "39e5f6828e004cf96e816d719431d608",
+    "id": "426ab9d834689088280cfa2512a82d84",
     "text": null,
     "metadata": {}
   }

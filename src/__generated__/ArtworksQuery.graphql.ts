@@ -52,7 +52,6 @@ fragment Artworks_me_1G22uz on Me {
 
 fragment GenericGrid_artworks on Artwork {
   id
-  slug
   image {
     aspect_ratio: aspectRatio
   }
@@ -276,13 +275,6 @@ return {
                         "selections": [
                           (v2/*: any*/),
                           {
-                            "kind": "ScalarField",
-                            "alias": null,
-                            "name": "slug",
-                            "args": null,
-                            "storageKey": null
-                          },
-                          {
                             "kind": "LinkedField",
                             "alias": null,
                             "name": "image",
@@ -359,6 +351,13 @@ return {
                             "kind": "ScalarField",
                             "alias": "is_offerable",
                             "name": "isOfferable",
+                            "args": null,
+                            "storageKey": null
+                          },
+                          {
+                            "kind": "ScalarField",
+                            "alias": null,
+                            "name": "slug",
                             "args": null,
                             "storageKey": null
                           },
@@ -513,7 +512,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworksQuery",
-    "id": "214cddfbf797555cfca5305331f75127",
+    "id": "2e358c66a0eae9b1ae253cbe02411b47",
     "text": null,
     "metadata": {}
   }

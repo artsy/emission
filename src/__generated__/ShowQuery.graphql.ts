@@ -244,7 +244,6 @@ fragment ArtistListItem_artist on Artist {
 
 fragment GenericGrid_artworks on Artwork {
   id
-  slug
   image {
     aspect_ratio: aspectRatio
   }
@@ -668,7 +667,6 @@ return {
                     "plural": false,
                     "selections": [
                       (v4/*: any*/),
-                      (v3/*: any*/),
                       {
                         "kind": "LinkedField",
                         "alias": null,
@@ -743,6 +741,7 @@ return {
                         "args": null,
                         "storageKey": null
                       },
+                      (v3/*: any*/),
                       {
                         "kind": "LinkedField",
                         "alias": null,
@@ -1131,7 +1130,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ShowQuery",
-    "id": "d340261ecb07f6d9320ad95486ea6084",
+    "id": "5b5b47e87235b4c7eb8fbd8e253eb455",
     "text": null,
     "metadata": {}
   }

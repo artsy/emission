@@ -42,7 +42,6 @@ fragment ArtworksPreview_fair on Fair {
 
 fragment GenericGrid_artworks on Artwork {
   id
-  slug
   image {
     aspect_ratio: aspectRatio
   }
@@ -222,7 +221,6 @@ return {
                     "plural": false,
                     "selections": [
                       (v2/*: any*/),
-                      (v1/*: any*/),
                       {
                         "kind": "LinkedField",
                         "alias": null,
@@ -303,6 +301,7 @@ return {
                         "args": null,
                         "storageKey": null
                       },
+                      (v1/*: any*/),
                       {
                         "kind": "LinkedField",
                         "alias": null,
@@ -427,7 +426,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworksPreviewTestsQuery",
-    "id": "86fabd524076756029888cf93f009273",
+    "id": "8ebdc850ae829267f9f71ac07d4c6e8c",
     "text": null,
     "metadata": {}
   }

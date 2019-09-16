@@ -99,7 +99,6 @@ fragment ArtworkRailHeader_rail on HomePageArtworkModule {
 
 fragment GenericGrid_artworks on Artwork {
   id
-  slug
   image {
     aspect_ratio: aspectRatio
   }
@@ -400,7 +399,6 @@ return {
                     "plural": true,
                     "selections": [
                       (v3/*: any*/),
-                      (v5/*: any*/),
                       {
                         "kind": "LinkedField",
                         "alias": null,
@@ -475,6 +473,7 @@ return {
                         "args": null,
                         "storageKey": null
                       },
+                      (v5/*: any*/),
                       {
                         "kind": "LinkedField",
                         "alias": null,
@@ -592,7 +591,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkRailRefetchQuery",
-    "id": "0df9c49752891ef187577ec6e267f5c7",
+    "id": "be15ab575fbb0601adfad8c173b1f40c",
     "text": null,
     "metadata": {}
   }

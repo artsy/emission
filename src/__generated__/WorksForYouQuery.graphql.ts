@@ -89,7 +89,6 @@ fragment Notification_notification on FollowedArtistsArtworksGroup {
 
 fragment GenericGrid_artworks on Artwork {
   id
-  slug
   image {
     aspect_ratio: aspectRatio
   }
@@ -197,13 +196,6 @@ v6 = {
   "storageKey": null
 },
 v7 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "slug",
-  "args": null,
-  "storageKey": null
-},
-v8 = {
   "kind": "LinkedField",
   "alias": null,
   "name": "image",
@@ -234,52 +226,59 @@ v8 = {
     }
   ]
 },
-v9 = {
+v8 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "title",
   "args": null,
   "storageKey": null
 },
-v10 = {
+v9 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "date",
   "args": null,
   "storageKey": null
 },
-v11 = {
+v10 = {
   "kind": "ScalarField",
   "alias": "sale_message",
   "name": "saleMessage",
   "args": null,
   "storageKey": null
 },
-v12 = {
+v11 = {
   "kind": "ScalarField",
   "alias": "is_in_auction",
   "name": "isInAuction",
   "args": null,
   "storageKey": null
 },
-v13 = {
+v12 = {
   "kind": "ScalarField",
   "alias": "is_biddable",
   "name": "isBiddable",
   "args": null,
   "storageKey": null
 },
-v14 = {
+v13 = {
   "kind": "ScalarField",
   "alias": "is_acquireable",
   "name": "isAcquireable",
   "args": null,
   "storageKey": null
 },
-v15 = {
+v14 = {
   "kind": "ScalarField",
   "alias": "is_offerable",
   "name": "isOfferable",
+  "args": null,
+  "storageKey": null
+},
+v15 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "slug",
   "args": null,
   "storageKey": null
 },
@@ -650,7 +649,7 @@ return {
         "concreteType": "Artist",
         "plural": false,
         "selections": [
-          (v7/*: any*/),
+          (v15/*: any*/),
           (v5/*: any*/),
           (v6/*: any*/),
           (v20/*: any*/),
@@ -726,7 +725,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "WorksForYouQuery",
-    "id": "43d5289a4d6e1373641b40c8d284d094",
+    "id": "b87c86940cc95a307ca8f2e355a053b3",
     "text": null,
     "metadata": {}
   }
