@@ -119,23 +119,6 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
   Possibly unused field shows/edges/node/cover_image
   Possibly unused field shows/edges/node/exhibition_period
   Possibly unused field shows/edges/node/partner
-
-⚠️  CollectionHeader_collection → src/__generated__/CollectionHeader_collection.graphql.ts
-  Possibly unused field slug
-  Possibly unused field title
-  Possibly unused field description
-  Possibly unused field headerImage
-  Possibly unused field category
-  Possibly unused field credit
-
-⚠️  Collection_collection → src/__generated__/Collection_collection.graphql.ts
-  Possibly unused field slug
-  Possibly unused field title
-  Possibly unused field description
-  Possibly unused field headerImage
-  Possibly unused field category
-  Possibly unused field credit
-
 ⚠️  GlobalMap_viewer → src/lib/Scenes/Map/GlobalMap.tsx:795:5
   Possibly unused field city/coordinates
   Possibly unused field city/sponsoredContent/introText
