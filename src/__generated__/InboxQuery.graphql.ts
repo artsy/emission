@@ -108,8 +108,8 @@ fragment ConversationSnippet_conversation on Conversation {
     name
     id
   }
-  last_message: lastMessage
-  last_message_at: lastMessageAt
+  lastMessage
+  lastMessageAt
   unread
   items {
     item {
@@ -117,7 +117,7 @@ fragment ConversationSnippet_conversation on Conversation {
       ... on Artwork {
         date
         title
-        artist_names: artistNames
+        artistNames
         image {
           url
         }
@@ -128,7 +128,7 @@ fragment ConversationSnippet_conversation on Conversation {
           id
         }
         name
-        cover_image: coverImage {
+        coverImage {
           url
         }
       }
@@ -184,19 +184,12 @@ v4 = {
 },
 v5 = {
   "kind": "ScalarField",
-  "alias": "artist_names",
-  "name": "artistNames",
-  "args": null,
-  "storageKey": null
-},
-v6 = {
-  "kind": "ScalarField",
   "alias": null,
   "name": "internalID",
   "args": null,
   "storageKey": null
 },
-v7 = [
+v6 = [
   {
     "kind": "Literal",
     "name": "after",
@@ -208,18 +201,18 @@ v7 = [
     "value": 10
   }
 ],
-v8 = {
+v7 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "name",
   "args": null,
   "storageKey": null
 },
-v9 = [
-  (v8/*: any*/),
+v8 = [
+  (v7/*: any*/),
   (v1/*: any*/)
 ],
-v10 = {
+v9 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "__typename",
@@ -312,7 +305,13 @@ return {
                         "selections": [
                           (v2/*: any*/),
                           (v4/*: any*/),
-                          (v5/*: any*/),
+                          {
+                            "kind": "ScalarField",
+                            "alias": "artist_names",
+                            "name": "artistNames",
+                            "args": null,
+                            "storageKey": null
+                          },
                           (v1/*: any*/)
                         ]
                       },
@@ -433,7 +432,7 @@ return {
                     "concreteType": "Conversation",
                     "plural": false,
                     "selections": [
-                      (v6/*: any*/),
+                      (v5/*: any*/),
                       (v1/*: any*/)
                     ]
                   }
@@ -446,7 +445,7 @@ return {
             "alias": "conversations",
             "name": "conversationsConnection",
             "storageKey": "conversationsConnection(after:\"\",first:10)",
-            "args": (v7/*: any*/),
+            "args": (v6/*: any*/),
             "concreteType": "ConversationConnection",
             "plural": false,
             "selections": [
@@ -493,7 +492,7 @@ return {
                     "concreteType": "Conversation",
                     "plural": false,
                     "selections": [
-                      (v6/*: any*/),
+                      (v5/*: any*/),
                       {
                         "kind": "ScalarField",
                         "alias": "last_message",
@@ -509,11 +508,18 @@ return {
                         "args": null,
                         "concreteType": "ConversationResponder",
                         "plural": false,
-                        "selections": (v9/*: any*/)
+                        "selections": (v8/*: any*/)
                       },
                       {
                         "kind": "ScalarField",
-                        "alias": "last_message_at",
+                        "alias": null,
+                        "name": "lastMessage",
+                        "args": null,
+                        "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
                         "name": "lastMessageAt",
                         "args": null,
                         "storageKey": null
@@ -543,7 +549,7 @@ return {
                             "concreteType": null,
                             "plural": false,
                             "selections": [
-                              (v10/*: any*/),
+                              (v9/*: any*/),
                               (v1/*: any*/),
                               {
                                 "kind": "InlineFragment",
@@ -563,7 +569,13 @@ return {
                                     "args": null,
                                     "storageKey": null
                                   },
-                                  (v5/*: any*/),
+                                  {
+                                    "kind": "ScalarField",
+                                    "alias": null,
+                                    "name": "artistNames",
+                                    "args": null,
+                                    "storageKey": null
+                                  },
                                   (v4/*: any*/)
                                 ]
                               },
@@ -579,12 +591,12 @@ return {
                                     "args": null,
                                     "concreteType": "Fair",
                                     "plural": false,
-                                    "selections": (v9/*: any*/)
+                                    "selections": (v8/*: any*/)
                                   },
-                                  (v8/*: any*/),
+                                  (v7/*: any*/),
                                   {
                                     "kind": "LinkedField",
-                                    "alias": "cover_image",
+                                    "alias": null,
                                     "name": "coverImage",
                                     "storageKey": null,
                                     "args": null,
@@ -599,7 +611,7 @@ return {
                         ]
                       },
                       (v1/*: any*/),
-                      (v10/*: any*/)
+                      (v9/*: any*/)
                     ]
                   },
                   {
@@ -617,7 +629,7 @@ return {
             "kind": "LinkedHandle",
             "alias": "conversations",
             "name": "conversationsConnection",
-            "args": (v7/*: any*/),
+            "args": (v6/*: any*/),
             "handle": "connection",
             "key": "Conversations_conversations",
             "filters": null
@@ -630,7 +642,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "InboxQuery",
-    "id": "2d6cf91c92510f2ce223b3488031b0b0",
+    "id": "0c076583720e9dccc2883ad76b29dc55",
     "text": null,
     "metadata": {}
   }
