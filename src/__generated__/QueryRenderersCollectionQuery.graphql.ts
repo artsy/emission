@@ -27,12 +27,6 @@ query QueryRenderersCollectionQuery(
 }
 
 fragment Collection_collection on MarketingCollection {
-  slug
-  title
-  description
-  headerImage
-  category
-  credit
   ...CollectionHeader_collection
 }
 
@@ -102,13 +96,6 @@ return {
           {
             "kind": "ScalarField",
             "alias": null,
-            "name": "slug",
-            "args": null,
-            "storageKey": null
-          },
-          {
-            "kind": "ScalarField",
-            "alias": null,
             "name": "title",
             "args": null,
             "storageKey": null
@@ -119,27 +106,6 @@ return {
             "name": "description",
             "args": null,
             "storageKey": null
-          },
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "headerImage",
-            "args": null,
-            "storageKey": null
-          },
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "category",
-            "args": null,
-            "storageKey": null
-          },
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "credit",
-            "args": null,
-            "storageKey": null
           }
         ]
       }
@@ -148,7 +114,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersCollectionQuery",
-    "id": "4850fb4c1aeba20744c2c8337c41e11b",
+    "id": "18fe2187f5a732516ea47696a1ef21df",
     "text": null,
     "metadata": {}
   }
