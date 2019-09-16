@@ -55,6 +55,7 @@ fragment Message_message on Message {
   is_from_user: isFromUser
   from {
     name
+    email
   }
   invoice {
     payment_url: paymentURL
@@ -66,6 +67,7 @@ fragment Message_message on Message {
     internalID
     content_type: contentType
     download_url: downloadURL
+    file_name: fileName
     ...ImagePreview_attachment
     ...PDFPreview_attachment
   }
@@ -248,6 +250,13 @@ return {
                         "name": "name",
                         "args": null,
                         "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "name": "email",
+                        "args": null,
+                        "storageKey": null
                       }
                     ]
                   },
@@ -342,7 +351,7 @@ return {
   "params": {
     "operationKind": "mutation",
     "name": "SendConversationMessageMutation",
-    "id": "94ad61200ca74be7e9151fb603088fdd",
+    "id": "db16fc468ff20672a6f117fc1b6f0165",
     "text": null,
     "metadata": {}
   }

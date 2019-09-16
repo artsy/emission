@@ -111,14 +111,14 @@ export class Message extends React.Component<Props> {
       if (attachment.content_type.startsWith("image")) {
         return (
           <PreviewContainer key={attachment.id}>
-            <ImagePreview attachment={attachment} onSelected={previewAttachment} />
+            <ImagePreview attachment={attachment as any} onSelected={previewAttachment} />
           </PreviewContainer>
         )
       }
       if (attachment.content_type === "application/pdf") {
         return (
           <PreviewContainer key={attachment.id}>
-            <PDFPreview attachment={attachment} onSelected={previewAttachment} />
+            <PDFPreview attachment={attachment as any} onSelected={previewAttachment} />
           </PreviewContainer>
         )
       }
@@ -211,6 +211,7 @@ export default createFragmentContainer(Message, {
       is_from_user: isFromUser
       from {
         name
+        email
       }
       invoice {
         payment_url: paymentURL
@@ -221,6 +222,7 @@ export default createFragmentContainer(Message, {
         internalID
         content_type: contentType
         download_url: downloadURL
+        file_name: fileName
         ...ImagePreview_attachment
         ...PDFPreview_attachment
       }

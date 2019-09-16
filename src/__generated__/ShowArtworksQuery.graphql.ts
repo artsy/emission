@@ -74,6 +74,7 @@ fragment InfiniteScrollArtworksGrid_connection on ArtworkConnectionInterface {
   edges {
     __typename
     node {
+      slug
       id
       image {
         aspectRatio
@@ -579,7 +580,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ShowArtworksQuery",
-    "id": "5ff5c89961a443973af8593c49a019f7",
+    "id": "d528a3c7d2ec4f5a6beccdf606b1d293",
     "text": null,
     "metadata": {}
   }

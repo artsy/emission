@@ -104,6 +104,7 @@ fragment InfiniteScrollArtworksGrid_connection on ArtworkConnectionInterface {
   edges {
     __typename
     node {
+      slug
       id
       image {
         aspectRatio
@@ -167,7 +168,7 @@ fragment RelatedArtist_artist on Artist {
   href
   name
   counts {
-    for_sale_artworks: forSaleArtworks
+    forSaleArtworks
     artworks
   }
   image {
@@ -431,7 +432,7 @@ return {
                     "selections": [
                       {
                         "kind": "ScalarField",
-                        "alias": "for_sale_artworks",
+                        "alias": null,
                         "name": "forSaleArtworks",
                         "args": null,
                         "storageKey": null
@@ -549,6 +550,7 @@ return {
                         "plural": false,
                         "selections": [
                           (v6/*: any*/),
+                          (v7/*: any*/),
                           {
                             "kind": "LinkedField",
                             "alias": null,
@@ -624,7 +626,6 @@ return {
                             "args": null,
                             "storageKey": null
                           },
-                          (v7/*: any*/),
                           {
                             "kind": "LinkedField",
                             "alias": null,
@@ -801,7 +802,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "GeneQuery",
-    "id": "21d63476a1043f6b3d406aada5ae37d7",
+    "id": "6d3fa2661684c0c612add4fc1cd4d814",
     "text": null,
     "metadata": {}
   }

@@ -12,6 +12,7 @@ export type Message_message = {
     readonly is_from_user: boolean | null;
     readonly from: {
         readonly name: string | null;
+        readonly email: string | null;
     } | null;
     readonly invoice: {
         readonly payment_url: string | null;
@@ -22,6 +23,7 @@ export type Message_message = {
         readonly internalID: string;
         readonly content_type: string;
         readonly download_url: string;
+        readonly file_name: string;
         readonly " $fragmentRefs": ImagePreview_attachment$ref & PDFPreview_attachment$ref;
     } | null> | null;
     readonly " $refType": Message_message$ref;
@@ -70,6 +72,13 @@ const node: ReaderFragment = {
           "kind": "ScalarField",
           "alias": null,
           "name": "name",
+          "args": null,
+          "storageKey": null
+        },
+        {
+          "kind": "ScalarField",
+          "alias": null,
+          "name": "email",
           "args": null,
           "storageKey": null
         }
@@ -136,6 +145,13 @@ const node: ReaderFragment = {
           "storageKey": null
         },
         {
+          "kind": "ScalarField",
+          "alias": "file_name",
+          "name": "fileName",
+          "args": null,
+          "storageKey": null
+        },
+        {
           "kind": "FragmentSpread",
           "name": "ImagePreview_attachment",
           "args": null
@@ -149,5 +165,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = 'e7d7b851504d1975f1903ae5f63111a6';
+(node as any).hash = '3616264879c312d8f66303b13ca273d0';
 export default node;

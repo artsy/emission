@@ -15,6 +15,11 @@ export type LocationMap_location = {
         readonly lat: number | null;
         readonly lng: number | null;
     } | null;
+    readonly day_schedules: ReadonlyArray<{
+        readonly start_time: number | null;
+        readonly end_time: number | null;
+        readonly day_of_week: string | null;
+    } | null> | null;
     readonly openingHours: ({
         readonly schedules?: ReadonlyArray<{
             readonly days: string | null;
@@ -121,6 +126,38 @@ const node: ReaderFragment = {
     },
     {
       "kind": "LinkedField",
+      "alias": "day_schedules",
+      "name": "daySchedules",
+      "storageKey": null,
+      "args": null,
+      "concreteType": "DaySchedule",
+      "plural": true,
+      "selections": [
+        {
+          "kind": "ScalarField",
+          "alias": "start_time",
+          "name": "startTime",
+          "args": null,
+          "storageKey": null
+        },
+        {
+          "kind": "ScalarField",
+          "alias": "end_time",
+          "name": "endTime",
+          "args": null,
+          "storageKey": null
+        },
+        {
+          "kind": "ScalarField",
+          "alias": "day_of_week",
+          "name": "dayOfWeek",
+          "args": null,
+          "storageKey": null
+        }
+      ]
+    },
+    {
+      "kind": "LinkedField",
       "alias": null,
       "name": "openingHours",
       "storageKey": null,
@@ -176,5 +213,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = '72bfd2a6194413438510978aace4c9bf';
+(node as any).hash = 'f4911b776eb98bf925c62fde4c6bfaf8';
 export default node;

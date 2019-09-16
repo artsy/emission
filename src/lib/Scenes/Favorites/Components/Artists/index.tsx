@@ -15,8 +15,6 @@ interface Props {
   relay: RelayPaginationProp
 }
 
-type ArtistDetails = Artists_me["followsAndSaves"]["artists"]["edges"][number]["node"]["artist"]
-
 interface State {
   fetchingMoreData: boolean
   refreshingFromPull: boolean
@@ -56,7 +54,7 @@ class Artists extends React.Component<Props, State> {
 
   // @TODO: Implement test on this component https://artsyproduct.atlassian.net/browse/LD-563
   render() {
-    const rows: ArtistDetails[] = this.props.me.followsAndSaves.artists.edges.map(e => e.node.artist)
+    const rows: any[] = this.props.me.followsAndSaves.artists.edges.map(e => e.node.artist)
 
     if (rows.length === 0) {
       return (
@@ -68,16 +66,10 @@ class Artists extends React.Component<Props, State> {
     }
 
     return (
-      <FlatList<ArtistDetails>
+      <FlatList
         data={rows}
         keyExtractor={({ id }) => id}
-        renderItem={({
-          item: {
-            href,
-            image: { url },
-            name,
-          },
-        }) => <SavedItemRow href={href} image={{ url }} name={name} />}
+        renderItem={item => <SavedItemRow {...item.item} />}
         onEndReached={this.loadMore}
         onEndReachedThreshold={0.2}
         refreshControl={<RefreshControl refreshing={this.state.refreshingFromPull} onRefresh={this.handleRefresh} />}
@@ -97,9 +89,14 @@ export default createPaginationContainer(
         @argumentDefinitions(count: { type: "Int", defaultValue: 10 }, cursor: { type: "String" }) {
         followsAndSaves {
           artists: artistsConnection(first: $count, after: $cursor) @connection(key: "Artists_artists") {
+            pageInfo {
+              endCursor
+              hasNextPage
+            }
             edges {
               node {
                 artist {
+                  slug
                   id
                   name
                   href

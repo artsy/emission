@@ -31,19 +31,17 @@ fragment Conversation_me on Me {
   conversation(id: $conversationID) {
     internalID
     id
+    lastMessageID
+    unread
     to {
       name
-      initials
       id
     }
     from {
       email
       id
     }
-    last_message_id: lastMessageID
     ...Messages_conversation
-    initial_message: initialMessage
-    unread
   }
 }
 
@@ -52,6 +50,7 @@ fragment Messages_conversation on Conversation {
   internalID
   from {
     name
+    email
     initials
     id
   }
@@ -72,8 +71,11 @@ fragment Messages_conversation on Conversation {
       cursor
       node {
         id
+        impulse_id: impulseID
+        is_from_user: isFromUser
         body
         attachments {
+          internalID
           id
         }
         ...Message_message
@@ -111,6 +113,7 @@ fragment Message_message on Message {
   is_from_user: isFromUser
   from {
     name
+    email
   }
   invoice {
     payment_url: paymentURL
@@ -122,6 +125,7 @@ fragment Message_message on Message {
     internalID
     content_type: contentType
     download_url: downloadURL
+    file_name: fileName
     ...ImagePreview_attachment
     ...PDFPreview_attachment
   }
@@ -222,7 +226,14 @@ v4 = {
   "args": null,
   "storageKey": null
 },
-v5 = [
+v5 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "email",
+  "args": null,
+  "storageKey": null
+},
+v6 = [
   {
     "kind": "Literal",
     "name": "first",
@@ -233,9 +244,6 @@ v5 = [
     "name": "sort",
     "value": "DESC"
   }
-],
-v6 = [
-  (v3/*: any*/)
 ],
 v7 = {
   "kind": "ScalarField",
@@ -326,6 +334,20 @@ return {
               (v1/*: any*/),
               (v2/*: any*/),
               {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "lastMessageID",
+                "args": null,
+                "storageKey": null
+              },
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "unread",
+                "args": null,
+                "storageKey": null
+              },
+              {
                 "kind": "LinkedField",
                 "alias": null,
                 "name": "to",
@@ -335,8 +357,8 @@ return {
                 "plural": false,
                 "selections": [
                   (v3/*: any*/),
-                  (v4/*: any*/),
-                  (v2/*: any*/)
+                  (v2/*: any*/),
+                  (v4/*: any*/)
                 ]
               },
               {
@@ -348,24 +370,11 @@ return {
                 "concreteType": "ConversationInitiator",
                 "plural": false,
                 "selections": [
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "name": "email",
-                    "args": null,
-                    "storageKey": null
-                  },
+                  (v5/*: any*/),
                   (v2/*: any*/),
                   (v3/*: any*/),
                   (v4/*: any*/)
                 ]
-              },
-              {
-                "kind": "ScalarField",
-                "alias": "last_message_id",
-                "name": "lastMessageID",
-                "args": null,
-                "storageKey": null
               },
               {
                 "kind": "ScalarField",
@@ -379,7 +388,7 @@ return {
                 "alias": null,
                 "name": "messages",
                 "storageKey": "messages(first:10,sort:\"DESC\")",
-                "args": (v5/*: any*/),
+                "args": (v6/*: any*/),
                 "concreteType": "MessageConnection",
                 "plural": false,
                 "selections": [
@@ -450,6 +459,20 @@ return {
                           (v2/*: any*/),
                           {
                             "kind": "ScalarField",
+                            "alias": "impulse_id",
+                            "name": "impulseID",
+                            "args": null,
+                            "storageKey": null
+                          },
+                          {
+                            "kind": "ScalarField",
+                            "alias": "is_from_user",
+                            "name": "isFromUser",
+                            "args": null,
+                            "storageKey": null
+                          },
+                          {
+                            "kind": "ScalarField",
                             "alias": null,
                             "name": "body",
                             "args": null,
@@ -464,8 +487,8 @@ return {
                             "concreteType": "Attachment",
                             "plural": true,
                             "selections": [
-                              (v2/*: any*/),
                               (v1/*: any*/),
+                              (v2/*: any*/),
                               {
                                 "kind": "ScalarField",
                                 "alias": "content_type",
@@ -497,13 +520,6 @@ return {
                             "storageKey": null
                           },
                           {
-                            "kind": "ScalarField",
-                            "alias": "is_from_user",
-                            "name": "isFromUser",
-                            "args": null,
-                            "storageKey": null
-                          },
-                          {
                             "kind": "LinkedField",
                             "alias": null,
                             "name": "from",
@@ -511,7 +527,10 @@ return {
                             "args": null,
                             "concreteType": "MessageInitiator",
                             "plural": false,
-                            "selections": (v6/*: any*/)
+                            "selections": [
+                              (v3/*: any*/),
+                              (v5/*: any*/)
+                            ]
                           },
                           {
                             "kind": "LinkedField",
@@ -564,7 +583,7 @@ return {
                 "kind": "LinkedHandle",
                 "alias": null,
                 "name": "messages",
-                "args": (v5/*: any*/),
+                "args": (v6/*: any*/),
                 "handle": "connection",
                 "key": "Messages_messages",
                 "filters": []
@@ -687,7 +706,9 @@ return {
                               {
                                 "kind": "InlineFragment",
                                 "type": "Partner",
-                                "selections": (v6/*: any*/)
+                                "selections": [
+                                  (v3/*: any*/)
+                                ]
                               }
                             ]
                           }
@@ -696,13 +717,6 @@ return {
                     ]
                   }
                 ]
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "name": "unread",
-                "args": null,
-                "storageKey": null
               }
             ]
           },
@@ -714,7 +728,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersConversationQuery",
-    "id": "60729b63868a012e13f73be435f2c2c9",
+    "id": "da82499be4eb913b14a04bb2eed65582",
     "text": null,
     "metadata": {}
   }

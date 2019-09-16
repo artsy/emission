@@ -32,9 +32,14 @@ query ArtistsMeQuery(
 fragment Artists_me_1G22uz on Me {
   followsAndSaves {
     artists: artistsConnection(first: $count, after: $cursor) {
+      pageInfo {
+        endCursor
+        hasNextPage
+      }
       edges {
         node {
           artist {
+            slug
             id
             name
             href
@@ -46,10 +51,6 @@ fragment Artists_me_1G22uz on Me {
           __typename
         }
         cursor
-      }
-      pageInfo {
-        endCursor
-        hasNextPage
       }
     }
   }
@@ -163,6 +164,31 @@ return {
                   {
                     "kind": "LinkedField",
                     "alias": null,
+                    "name": "pageInfo",
+                    "storageKey": null,
+                    "args": null,
+                    "concreteType": "PageInfo",
+                    "plural": false,
+                    "selections": [
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "name": "endCursor",
+                        "args": null,
+                        "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "name": "hasNextPage",
+                        "args": null,
+                        "storageKey": null
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "LinkedField",
+                    "alias": null,
                     "name": "edges",
                     "storageKey": null,
                     "args": null,
@@ -187,6 +213,13 @@ return {
                             "concreteType": "Artist",
                             "plural": false,
                             "selections": [
+                              {
+                                "kind": "ScalarField",
+                                "alias": null,
+                                "name": "slug",
+                                "args": null,
+                                "storageKey": null
+                              },
                               (v2/*: any*/),
                               {
                                 "kind": "ScalarField",
@@ -240,31 +273,6 @@ return {
                         "storageKey": null
                       }
                     ]
-                  },
-                  {
-                    "kind": "LinkedField",
-                    "alias": null,
-                    "name": "pageInfo",
-                    "storageKey": null,
-                    "args": null,
-                    "concreteType": "PageInfo",
-                    "plural": false,
-                    "selections": [
-                      {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "name": "endCursor",
-                        "args": null,
-                        "storageKey": null
-                      },
-                      {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "name": "hasNextPage",
-                        "args": null,
-                        "storageKey": null
-                      }
-                    ]
                   }
                 ]
               },
@@ -287,7 +295,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtistsMeQuery",
-    "id": "b108ebed90e257a8a29d53a085165670",
+    "id": "c31e339940fd7dcf22e3e120670d26fb",
     "text": null,
     "metadata": {}
   }

@@ -177,6 +177,7 @@ export default createPaginationContainer(
         internalID
         from {
           name
+          email
           initials
         }
         to {
@@ -195,9 +196,11 @@ export default createPaginationContainer(
             cursor
             node {
               id
+              impulse_id: impulseID
+              is_from_user: isFromUser
               body
               attachments {
-                id
+                internalID
               }
               ...Message_message
             }

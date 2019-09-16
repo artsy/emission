@@ -6,9 +6,14 @@ export type Artists_me$ref = typeof _Artists_me$ref;
 export type Artists_me = {
     readonly followsAndSaves: {
         readonly artists: {
+            readonly pageInfo: {
+                readonly endCursor: string | null;
+                readonly hasNextPage: boolean;
+            };
             readonly edges: ReadonlyArray<{
                 readonly node: {
                     readonly artist: {
+                        readonly slug: string;
                         readonly id: string;
                         readonly name: string | null;
                         readonly href: string | null;
@@ -78,6 +83,31 @@ const node: ReaderFragment = {
             {
               "kind": "LinkedField",
               "alias": null,
+              "name": "pageInfo",
+              "storageKey": null,
+              "args": null,
+              "concreteType": "PageInfo",
+              "plural": false,
+              "selections": [
+                {
+                  "kind": "ScalarField",
+                  "alias": null,
+                  "name": "endCursor",
+                  "args": null,
+                  "storageKey": null
+                },
+                {
+                  "kind": "ScalarField",
+                  "alias": null,
+                  "name": "hasNextPage",
+                  "args": null,
+                  "storageKey": null
+                }
+              ]
+            },
+            {
+              "kind": "LinkedField",
+              "alias": null,
               "name": "edges",
               "storageKey": null,
               "args": null,
@@ -102,6 +132,13 @@ const node: ReaderFragment = {
                       "concreteType": "Artist",
                       "plural": false,
                       "selections": [
+                        {
+                          "kind": "ScalarField",
+                          "alias": null,
+                          "name": "slug",
+                          "args": null,
+                          "storageKey": null
+                        },
                         {
                           "kind": "ScalarField",
                           "alias": null,
@@ -160,31 +197,6 @@ const node: ReaderFragment = {
                   "storageKey": null
                 }
               ]
-            },
-            {
-              "kind": "LinkedField",
-              "alias": null,
-              "name": "pageInfo",
-              "storageKey": null,
-              "args": null,
-              "concreteType": "PageInfo",
-              "plural": false,
-              "selections": [
-                {
-                  "kind": "ScalarField",
-                  "alias": null,
-                  "name": "endCursor",
-                  "args": null,
-                  "storageKey": null
-                },
-                {
-                  "kind": "ScalarField",
-                  "alias": null,
-                  "name": "hasNextPage",
-                  "args": null,
-                  "storageKey": null
-                }
-              ]
             }
           ]
         }
@@ -192,5 +204,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = 'd47254c16bad91ecad0da4e66a930156';
+(node as any).hash = 'd0ea909bb37218abe30ea31f63b234c0';
 export default node;
