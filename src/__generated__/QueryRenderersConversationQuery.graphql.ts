@@ -111,7 +111,6 @@ fragment Message_message on Message {
   is_from_user: isFromUser
   from {
     name
-    email
   }
   invoice {
     payment_url: paymentURL
@@ -123,7 +122,6 @@ fragment Message_message on Message {
     internalID
     content_type: contentType
     download_url: downloadURL
-    file_name: fileName
     ...ImagePreview_attachment
     ...PDFPreview_attachment
   }
@@ -224,14 +222,7 @@ v4 = {
   "args": null,
   "storageKey": null
 },
-v5 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "email",
-  "args": null,
-  "storageKey": null
-},
-v6 = [
+v5 = [
   {
     "kind": "Literal",
     "name": "first",
@@ -242,6 +233,9 @@ v6 = [
     "name": "sort",
     "value": "DESC"
   }
+],
+v6 = [
+  (v3/*: any*/)
 ],
 v7 = {
   "kind": "ScalarField",
@@ -354,7 +348,13 @@ return {
                 "concreteType": "ConversationInitiator",
                 "plural": false,
                 "selections": [
-                  (v5/*: any*/),
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "name": "email",
+                    "args": null,
+                    "storageKey": null
+                  },
                   (v2/*: any*/),
                   (v3/*: any*/),
                   (v4/*: any*/)
@@ -379,7 +379,7 @@ return {
                 "alias": null,
                 "name": "messages",
                 "storageKey": "messages(first:10,sort:\"DESC\")",
-                "args": (v6/*: any*/),
+                "args": (v5/*: any*/),
                 "concreteType": "MessageConnection",
                 "plural": false,
                 "selections": [
@@ -511,10 +511,7 @@ return {
                             "args": null,
                             "concreteType": "MessageInitiator",
                             "plural": false,
-                            "selections": [
-                              (v3/*: any*/),
-                              (v5/*: any*/)
-                            ]
+                            "selections": (v6/*: any*/)
                           },
                           {
                             "kind": "LinkedField",
@@ -567,7 +564,7 @@ return {
                 "kind": "LinkedHandle",
                 "alias": null,
                 "name": "messages",
-                "args": (v6/*: any*/),
+                "args": (v5/*: any*/),
                 "handle": "connection",
                 "key": "Messages_messages",
                 "filters": []
@@ -690,9 +687,7 @@ return {
                               {
                                 "kind": "InlineFragment",
                                 "type": "Partner",
-                                "selections": [
-                                  (v3/*: any*/)
-                                ]
+                                "selections": (v6/*: any*/)
                               }
                             ]
                           }
@@ -719,7 +714,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersConversationQuery",
-    "id": "8edd06c72c14d636b26939e6939b66d2",
+    "id": "60729b63868a012e13f73be435f2c2c9",
     "text": null,
     "metadata": {}
   }

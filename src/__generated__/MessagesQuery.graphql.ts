@@ -100,7 +100,6 @@ fragment Message_message on Message {
   is_from_user: isFromUser
   from {
     name
-    email
   }
   invoice {
     payment_url: paymentURL
@@ -112,7 +111,6 @@ fragment Message_message on Message {
     internalID
     content_type: contentType
     download_url: downloadURL
-    file_name: fileName
     ...ImagePreview_attachment
     ...PDFPreview_attachment
   }
@@ -254,28 +252,31 @@ v7 = [
     "value": "DESC"
   }
 ],
-v8 = {
+v8 = [
+  (v5/*: any*/)
+],
+v9 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "__typename",
   "args": null,
   "storageKey": null
 },
-v9 = {
+v10 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "href",
   "args": null,
   "storageKey": null
 },
-v10 = {
+v11 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "slug",
   "args": null,
   "storageKey": null
 },
-v11 = [
+v12 = [
   {
     "kind": "ScalarField",
     "alias": null,
@@ -518,16 +519,7 @@ return {
                             "args": null,
                             "concreteType": "MessageInitiator",
                             "plural": false,
-                            "selections": [
-                              (v5/*: any*/),
-                              {
-                                "kind": "ScalarField",
-                                "alias": null,
-                                "name": "email",
-                                "args": null,
-                                "storageKey": null
-                              }
-                            ]
+                            "selections": (v8/*: any*/)
                           },
                           {
                             "kind": "LinkedField",
@@ -569,7 +561,7 @@ return {
                               (v3/*: any*/)
                             ]
                           },
-                          (v8/*: any*/)
+                          (v9/*: any*/)
                         ]
                       }
                     ]
@@ -603,14 +595,14 @@ return {
                     "concreteType": null,
                     "plural": false,
                     "selections": [
-                      (v8/*: any*/),
+                      (v9/*: any*/),
                       (v3/*: any*/),
                       {
                         "kind": "InlineFragment",
                         "type": "Artwork",
                         "selections": [
-                          (v9/*: any*/),
                           (v10/*: any*/),
+                          (v11/*: any*/),
                           (v4/*: any*/),
                           {
                             "kind": "ScalarField",
@@ -641,7 +633,7 @@ return {
                             "args": null,
                             "concreteType": "Image",
                             "plural": false,
-                            "selections": (v11/*: any*/)
+                            "selections": (v12/*: any*/)
                           }
                         ]
                       }
@@ -656,14 +648,14 @@ return {
                     "concreteType": null,
                     "plural": false,
                     "selections": [
-                      (v8/*: any*/),
+                      (v9/*: any*/),
                       (v3/*: any*/),
                       {
                         "kind": "InlineFragment",
                         "type": "Show",
                         "selections": [
-                          (v9/*: any*/),
                           (v10/*: any*/),
+                          (v11/*: any*/),
                           (v4/*: any*/),
                           (v5/*: any*/),
                           {
@@ -674,7 +666,7 @@ return {
                             "args": null,
                             "concreteType": "Image",
                             "plural": false,
-                            "selections": (v11/*: any*/)
+                            "selections": (v12/*: any*/)
                           },
                           {
                             "kind": "LinkedField",
@@ -698,14 +690,12 @@ return {
                             "concreteType": null,
                             "plural": false,
                             "selections": [
-                              (v8/*: any*/),
+                              (v9/*: any*/),
                               (v3/*: any*/),
                               {
                                 "kind": "InlineFragment",
                                 "type": "Partner",
-                                "selections": [
-                                  (v5/*: any*/)
-                                ]
+                                "selections": (v8/*: any*/)
                               }
                             ]
                           }
@@ -725,7 +715,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "MessagesQuery",
-    "id": "57b76fa0c9b4395460cd4c1cbd0b3d29",
+    "id": "796eb5b78d08c85fb8a0d56b609c57e2",
     "text": null,
     "metadata": {}
   }
