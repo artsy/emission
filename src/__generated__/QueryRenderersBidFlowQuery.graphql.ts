@@ -66,7 +66,6 @@ fragment SelectMaxBid_sale_artwork on SaleArtwork {
   id
   increments(useMyMaxBid: true) {
     display
-    cents
   }
   ...ConfirmBid_sale_artwork
 }
@@ -152,13 +151,6 @@ v4 = {
   "storageKey": null
 },
 v5 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "cents",
-  "args": null,
-  "storageKey": null
-},
-v6 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "slug",
@@ -258,8 +250,7 @@ return {
                 "concreteType": "BidIncrementsFormatted",
                 "plural": true,
                 "selections": [
-                  (v4/*: any*/),
-                  (v5/*: any*/)
+                  (v4/*: any*/)
                 ]
               },
               {
@@ -278,7 +269,7 @@ return {
                 "concreteType": "Sale",
                 "plural": false,
                 "selections": [
-                  (v6/*: any*/),
+                  (v5/*: any*/),
                   {
                     "kind": "ScalarField",
                     "alias": "live_start_at",
@@ -305,7 +296,7 @@ return {
                 "concreteType": "Artwork",
                 "plural": false,
                 "selections": [
-                  (v6/*: any*/),
+                  (v5/*: any*/),
                   {
                     "kind": "ScalarField",
                     "alias": null,
@@ -377,7 +368,13 @@ return {
                     "args": null,
                     "storageKey": null
                   },
-                  (v5/*: any*/),
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "name": "cents",
+                    "args": null,
+                    "storageKey": null
+                  },
                   (v4/*: any*/)
                 ]
               }
@@ -429,7 +426,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersBidFlowQuery",
-    "id": "b15d66d6742139d778366cabf951be30",
+    "id": "d8f49963999f051cb428815924d28c1e",
     "text": null,
     "metadata": {}
   }

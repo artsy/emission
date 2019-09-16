@@ -23,7 +23,6 @@ fragment Sales_query on Query {
     edges {
       node {
         ...SaleListItem_sale
-        href
         live_start_at: liveStartAt
         id
       }
@@ -616,7 +615,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "SalesRendererQuery",
-    "id": "3e552ef30cf75bce92cc14182ab003ab",
+    "id": "59e04325242db5876d9c73306ea4a519",
     "text": null,
     "metadata": {}
   }
