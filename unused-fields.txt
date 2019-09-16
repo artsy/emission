@@ -181,37 +181,6 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 ⚠️  ConversationSnippet_conversation → src/lib/Components/Inbox/Conversations/ConversationSnippet.tsx:179:5
   Ignoring node of kind IntersectionType at path items/item.
 
-⚠️  Conversation_me → src/lib/Containers/Conversation.tsx:177:5
-  Possibly unused field conversation/to/initials
-  Possibly unused field conversation/from
-  Possibly unused field conversation/initial_message
-
-⚠️  Conversations_me → src/lib/Components/Inbox/Conversations/index.tsx:116:7
-  Possibly unused field conversations/pageInfo
-  Possibly unused field conversations/edges/node/last_message
-
-⚠️  Detail_show → src/lib/Scenes/Show/Screens/Detail.tsx:197:5
-  Possibly unused field name
-  Possibly unused field city
-  Possibly unused field isStubShow
-  Possibly unused field images
-  Ignoring node of kind IntersectionType at path location/openingHours.
-  Possibly unused field artists_without_artworks/slug
-  Possibly unused field status
-  Ignoring node of kind IntersectionType at path partner.
-
-⚠️  FairArtists_fair → src/lib/Scenes/Fair/Screens/FairArtists.tsx:95:7
-  Possibly unused field artists/pageInfo
-  Possibly unused field artists/edges/cursor
-  Possibly unused field artists/edges/node/sortable_id
-  Possibly unused field artists/edges/node/href
-  Possibly unused field artists/edges/node/internalID
-  Possibly unused field artists/edges/node/slug
-
-⚠️  FairBoothHeader_show → src/lib/Scenes/Fair/Components/FairBoothHeader.tsx:164:5
-  Ignoring node of kind IntersectionType at path partner.
-  Possibly unused field counts/artworks
-  Possibly unused field counts/artists
 
 ⚠️  FairBoothPreview_show → src/lib/Scenes/Fair/Components/FairBoothPreview/index.tsx:175:5
   Possibly unused field name
