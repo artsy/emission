@@ -2,6 +2,17 @@
 yarn run v1.16.0
 $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 
+⚠️  ImageCarousel_images → src/lib/Scenes/Artwork/Components/ImageCarousel/ImageCarousel.tsx:108:5
+  Possibly unused field deepZoom/image
+
+⚠️  ArtistRail_rail → src/lib/Components/Home/ArtistRails/ArtistRail.tsx:282:5
+  Possibly unused field results/internalID
+
+⚠️  ArtistShow_show → src/lib/Components/Artist/Shows/ArtistShow.tsx:47:5
+  Possibly unused field slug
+  Possibly unused field href
+  Possibly unused field is_fair_booth
+
 ⚠️  Artists_me → src/lib/Scenes/Favorites/Components/Artists/index.tsx:88:7
   Possibly unused field followsAndSaves/artists/pageInfo
   Possibly unused field followsAndSaves/artists/edges/node/artist/slug
@@ -296,6 +307,7 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
   Possibly unused field heading
   Possibly unused field narrow_image_url
   Possibly unused field wide_image_url
+<<<<<<< HEAD
 
 ⚠️  ImageCarousel_images → src/lib/Scenes/Artwork/Components/ImageCarousel/ImageCarousel.tsx:108:5
   Possibly unused field deepZoom/image
@@ -303,3 +315,5 @@ $ ts-node --compiler-options '{"types": ["node"]}' scripts/find-unused-fields
 ⚠️  Inbox_me → src/lib/Containers/Inbox.tsx:91:7
   Possibly unused field lot_standings/most_recent_bid
   Possibly unused field conversations_existence_check/edges/node
+=======
+>>>>>>> stash
