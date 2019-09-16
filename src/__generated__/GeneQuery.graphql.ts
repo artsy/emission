@@ -168,7 +168,7 @@ fragment RelatedArtist_artist on Artist {
   href
   name
   counts {
-    forSaleArtworks
+    for_sale_artworks: forSaleArtworks
     artworks
   }
   image {
@@ -432,7 +432,7 @@ return {
                     "selections": [
                       {
                         "kind": "ScalarField",
-                        "alias": null,
+                        "alias": "for_sale_artworks",
                         "name": "forSaleArtworks",
                         "args": null,
                         "storageKey": null
@@ -802,7 +802,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "GeneQuery",
-    "id": "6d3fa2661684c0c612add4fc1cd4d814",
+    "id": "1b26881965feca5694937ecc9e4fbeba",
     "text": null,
     "metadata": {}
   }

@@ -6,10 +6,10 @@ export type SaleListItem_sale$ref = typeof _SaleListItem_sale$ref;
 export type SaleListItem_sale = {
     readonly name: string | null;
     readonly href: string | null;
-    readonly liveURLIfOpen: string | null;
-    readonly liveStartAt: string | null;
-    readonly displayTimelyAt: string | null;
-    readonly coverImage: {
+    readonly live_url_if_open: string | null;
+    readonly live_start_at: string | null;
+    readonly display_timely_at: string | null;
+    readonly cover_image: {
         readonly url: string | null;
     } | null;
     readonly " $refType": SaleListItem_sale$ref;
@@ -40,28 +40,28 @@ const node: ReaderFragment = {
     },
     {
       "kind": "ScalarField",
-      "alias": null,
+      "alias": "live_url_if_open",
       "name": "liveURLIfOpen",
       "args": null,
       "storageKey": null
     },
     {
       "kind": "ScalarField",
-      "alias": null,
+      "alias": "live_start_at",
       "name": "liveStartAt",
       "args": null,
       "storageKey": null
     },
     {
       "kind": "ScalarField",
-      "alias": null,
+      "alias": "display_timely_at",
       "name": "displayTimelyAt",
       "args": null,
       "storageKey": null
     },
     {
       "kind": "LinkedField",
-      "alias": null,
+      "alias": "cover_image",
       "name": "coverImage",
       "storageKey": null,
       "args": null,
@@ -85,5 +85,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = '05316e5bbded808509ab908b676ae8fe';
+(node as any).hash = 'e1afb9785fb7826a2a32eee309d6d0ad';
 export default node;

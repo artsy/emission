@@ -7,7 +7,7 @@ export type RelatedArtist_artist = {
     readonly href: string | null;
     readonly name: string | null;
     readonly counts: {
-        readonly forSaleArtworks: any | null;
+        readonly for_sale_artworks: any | null;
         readonly artworks: any | null;
     } | null;
     readonly image: {
@@ -50,7 +50,7 @@ const node: ReaderFragment = {
       "selections": [
         {
           "kind": "ScalarField",
-          "alias": null,
+          "alias": "for_sale_artworks",
           "name": "forSaleArtworks",
           "args": null,
           "storageKey": null
@@ -90,5 +90,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = 'a01ba9e049116bbbbb2881a012289fa8';
+(node as any).hash = 'd1df65fb9240d9d6b3d34e133d35ef0b';
 export default node;

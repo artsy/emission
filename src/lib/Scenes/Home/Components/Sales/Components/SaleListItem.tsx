@@ -79,16 +79,16 @@ interface Props {
 export class SaleListItem extends React.Component<Props> {
   handleTap = () => {
     const {
-      sale: { liveURLIfOpen, href },
+      sale: { live_url_if_open, href },
     } = this.props
-    const url = (liveURLIfOpen || href) as string
+    const url = (live_url_if_open || href) as string
     Switchboard.presentNavigationViewController(this, url)
   }
 
   render() {
     const sale = this.props.sale
-    const image = sale.coverImage
-    const timestamp = sale.displayTimelyAt.toUpperCase()
+    const image = sale.cover_image
+    const timestamp = sale.display_timely_at.toUpperCase()
     const containerWidth = this.props.containerWidth
 
     const Container = styled.View`
@@ -104,7 +104,7 @@ export class SaleListItem extends React.Component<Props> {
           <Content>
             <Header>
               <Title numberOfLines={2}>{sale.name}</Title>
-              {sale.liveStartAt && (
+              {sale.live_start_at && (
                 <Badge>
                   <BadgeText>LIVE</BadgeText>
                 </Badge>
@@ -125,10 +125,10 @@ export default createFragmentContainer(SaleListItem, {
     fragment SaleListItem_sale on Sale {
       name
       href
-      liveURLIfOpen
-      liveStartAt
-      displayTimelyAt
-      coverImage {
+      live_url_if_open: liveURLIfOpen
+      live_start_at: liveStartAt
+      display_timely_at: displayTimelyAt
+      cover_image: coverImage {
         url(version: "large")
       }
     }
