@@ -34,6 +34,7 @@ function loadStories() {
   require('../src/lib/Components/__stories__/DottedLine.story');
   require('../src/lib/Components/__stories__/Markdown.story');
   require('../src/lib/Components/__stories__/Modal.story');
+  require('../src/lib/Components/__stories__/MyNewComponent.story');
   require('../src/lib/Components/__stories__/TabBar.story');
   require('../src/lib/Components/__stories__/Video.story');
   require('../src/lib/Containers/__stories__/Artist.story');
@@ -85,6 +86,7 @@ const stories = [
   '../src/lib/Components/__stories__/DottedLine.story',
   '../src/lib/Components/__stories__/Markdown.story',
   '../src/lib/Components/__stories__/Modal.story',
+  '../src/lib/Components/__stories__/MyNewComponent.story',
   '../src/lib/Components/__stories__/TabBar.story',
   '../src/lib/Components/__stories__/Video.story',
   '../src/lib/Containers/__stories__/Artist.story',

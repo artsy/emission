@@ -34,6 +34,7 @@
 #import <Emission/ARFairComponentViewController.h>
 #import <Emission/ARShowComponentViewController.h>
 #import <Emission/ARMapContainerViewController.h>
+#import <Emission/ARMyNewComponentViewController.h>
 
 #import "ARStorybookComponentViewController.h"
 
@@ -115,6 +116,7 @@
   ARSectionData *sectionData = [[ARSectionData alloc] init];
   [self setupSection:sectionData withTitle:@"View Controllers"];
 
+  [sectionData addCellData:self.jumpToMyNewComponent];
   [sectionData addCellData:self.jumpToShow];
   [sectionData addCellData:self.jumpToFair];
   [sectionData addCellData:self.jumpToMap];
@@ -235,6 +237,12 @@
   }];
 }
 
+- (ARCellData *)jumpToMyNewComponent
+{
+  return [self tappableCellDataWithTitle:@"My New Component" selection: ^{
+    [self.navigationController pushViewController:[[ARMyNewComponentViewController alloc] init] animated:YES];
+  }];
+}
 
 - (ARCellData *)jumpToUserDocs
 {

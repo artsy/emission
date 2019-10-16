@@ -47,6 +47,8 @@ import { ShowArtistsRenderer, ShowArtworksRenderer, ShowMoreInfoRenderer } from 
 import renderWithLoadProgress from "./utils/renderWithLoadProgress"
 import { Schema, screenTrack as track } from "./utils/track"
 
+import { MyNewComponent } from "./Components/MyNewComponent"
+
 YellowBox.ignoreWarnings([
   // Deprecated, we'll transition when it's removed.
   "Warning: ListView is deprecated and will be removed in a future release. See https://fb.me/nolistview for more information",
@@ -365,3 +367,4 @@ AppRegistry.registerComponent("CityFairList", () => CityFairList)
 AppRegistry.registerComponent("CitySavedList", () => CitySavedList)
 AppRegistry.registerComponent("CitySectionList", () => CitySectionList)
 AppRegistry.registerComponent("Collection", () => Collection)
+AppRegistry.registerComponent("MyNewComponent", () => MyNewComponent)

@@ -47,10 +47,11 @@ export class Artwork extends React.Component<Props, any> {
     context_module: props.contextModule,
   }))
   handleTap() {
-    // FIXME: Should this be internalID?
-    this.props.onPress && this.props.artwork.slug
-      ? this.props.onPress(this.props.artwork.slug)
-      : SwitchBoard.presentNavigationViewController(this, this.props.artwork.href)
+    SwitchBoard.presentNavigationViewController(this, "/my-new-component")
+    // // FIXME: Should this be internalID?
+    // this.props.onPress && this.props.artwork.slug
+    //   ? this.props.onPress(this.props.artwork.slug)
+    //   : SwitchBoard.presentNavigationViewController(this, this.props.artwork.href)
   }
 
   render() {
