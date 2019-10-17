@@ -35,6 +35,8 @@ export class CommercialButtons extends React.Component<CommercialButtonProps> {
     const { isBuyNowable, isAcquireable, isOfferable, isInquireable, isInAuction, editionSets, isForSale } = artwork
     const noEditions = (editionSets && editionSets.length === 0) || !editionSets
 
+    const artworkSaleEnded = artwork.sale && artwork.sale.isClosed
+
     if (isInAuction && artwork.sale && auctionState !== "hasEnded" && isForSale) {
       return (
         <>
@@ -61,7 +63,7 @@ export class CommercialButtons extends React.Component<CommercialButtonProps> {
       return <BuyNowButton artwork={artwork} editionSetID={this.props.editionSetID} />
     } else if (isOfferable) {
       return <MakeOfferButton artwork={artwork} editionSetID={this.props.editionSetID} />
-    } else if (isInquireable) {
+    } else if (isInquireable && !artworkSaleEnded) {
       return (
         <Button onPress={() => this.handleInquiry()} size="large" block width={100}>
           Contact gallery

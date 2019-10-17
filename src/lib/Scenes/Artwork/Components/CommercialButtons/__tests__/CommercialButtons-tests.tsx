@@ -65,6 +65,23 @@ describe("CommercialButtons", () => {
     expect(commercialButtons.text()).toContain("Contact gallery")
   })
 
+  it("doesn't render button for Contact Gallery button if isInquireable but sale is closed", async () => {
+    const artwork = {
+      ...ArtworkFixture,
+      isAcquireable: false,
+      isOfferable: false,
+      isInquireable: true,
+      isForSale: true,
+      sale: {
+        isClosed: true,
+      },
+    }
+    const commercialButtons = await relayComponent({
+      artwork,
+    })
+    expect(commercialButtons.text()).not.toContain("Contact gallery")
+  })
+
   it("renders Make Offer button if isOfferable", async () => {
     const artwork = {
       ...ArtworkFixture,
