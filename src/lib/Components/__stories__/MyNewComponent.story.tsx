@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/react-native"
 import React from "react"
-import { MyNewComponent } from "../MyNewComponent"
+import { MyNewComponentQueryRenderer as MyNewComponent } from "../MyNewComponent"
 
-storiesOf("MyNewComponent").add("Show default component", () => {
-  return <MyNewComponent />
+storiesOf("MyNewComponent").add("Show Tim Fishlock", () => {
+  return <MyNewComponent artistID="tim-fishlock" />
 })

@@ -240,7 +240,7 @@
 - (ARCellData *)jumpToMyNewComponent
 {
   return [self tappableCellDataWithTitle:@"My New Component" selection: ^{
-    [self.navigationController pushViewController:[[ARMyNewComponentViewController alloc] init] animated:YES];
+    [self.navigationController pushViewController:[[ARMyNewComponentViewController alloc] initWithArtistID:@"tim-fishlock"] animated:YES];
   }];
 }
 

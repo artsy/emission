@@ -5,11 +5,14 @@
 
 @implementation ARMyNewComponentViewController
 
-- (instancetype)init;
+- (instancetype)initWithArtistID:(NSString *)artistID;
 {
-    return [super initWithEmission:nil
-                        moduleName:@"MyNewComponent"
-                 initialProperties:@{}];
+    if ((self = [super initWithEmission:nil
+                             moduleName:@"MyNewComponent"
+                      initialProperties:@{ @"artistID": artistID }])) {
+        _artistID = artistID;
+    }
+    return self;
 }
 
 - (BOOL)shouldInjectSafeAreaInsets

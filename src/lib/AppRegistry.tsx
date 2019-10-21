@@ -47,7 +47,7 @@ import { ShowArtistsRenderer, ShowArtworksRenderer, ShowMoreInfoRenderer } from 
 import renderWithLoadProgress from "./utils/renderWithLoadProgress"
 import { Schema, screenTrack as track } from "./utils/track"
 
-import { MyNewComponent } from "./Components/MyNewComponent"
+import { MyNewComponentQueryRenderer as MyNewComponent } from "./Components/MyNewComponent"
 
 YellowBox.ignoreWarnings([
   // Deprecated, we'll transition when it's removed.

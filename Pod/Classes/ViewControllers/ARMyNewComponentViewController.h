@@ -4,7 +4,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ARMyNewComponentViewController : ARComponentViewController
 
-- (instancetype)init;
+- (instancetype)initWithArtistID:(NSString *)artistID;
+
+@property (nonatomic, readonly) NSString *artistID;
 
 @end
 
