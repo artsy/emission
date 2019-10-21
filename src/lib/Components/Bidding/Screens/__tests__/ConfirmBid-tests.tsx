@@ -778,6 +778,7 @@ const serifChildren = comp =>
     .join(" ")
 
 const saleArtwork: ConfirmBid_sale_artwork = {
+  id: "node-id",
   internalID: "internal-id",
   artwork: {
     slug: "meteor-shower",

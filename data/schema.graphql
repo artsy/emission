@@ -1464,6 +1464,30 @@ type BuyersPremium {
   percent: Float
 }
 
+type BuyersPremiumAmount {
+  # A formatted price with various currency formatting options.
+  amount(
+    decimal: String = "."
+
+    # Allows control of symbol position (%v = value, %s = symbol)
+    format: String = "%s%v"
+    precision: Int = 0
+    symbol: String
+    thousand: String = ","
+  ): String
+
+  # An amount of money expressed in cents.
+  cents: Float
+
+  # A pre-formatted price.
+  display: String
+}
+
+type CalculatedCost {
+  buyersPremium: BuyersPremiumAmount
+  subtotal: SubtotalAmount
+}
+
 type City {
   slug: String
   name: String
@@ -4539,16 +4563,28 @@ type MarketingCollection {
   updatedAt: MarketingDateTime!
 
   # Suggested average price for included works
-  price_guidance: Float
+  price_guidance: Float @deprecated(reason: "Prefer priceGuidance")
+
+  # Suggested average price for included works
+  priceGuidance: Float
 
   # Collection can be surfaced on editorial pages
-  show_on_editorial: Boolean!
+  show_on_editorial: Boolean! @deprecated(reason: "Prefer showOnEditorial")
+
+  # Collection can be surfaced on editorial pages
+  showOnEditorial: Boolean!
 
   # Collection has prioritized connection to artist
-  is_featured_artist_content: Boolean!
+  is_featured_artist_content: Boolean! @deprecated(reason: "Prefer isFeaturedArtistContent")
+
+  # Collection has prioritized connection to artist
+  isFeaturedArtistContent: Boolean!
 
   # CollectionGroups of this collection
   linkedCollections: [MarketingCollectionGroup!]!
+
+  # IDs of artists that should be excluded from Featured Artists for this collection
+  featuredArtistExclusionIds: [String!]
   relatedCollections: [MarketingCollection!]!
 }
 
@@ -4558,6 +4594,7 @@ type MarketingCollectionCategory {
 }
 
 type MarketingCollectionGroup {
+  internalID: ID
   groupType: MarketingGroupTypes!
   name: String!
   members: [MarketingCollection!]!
@@ -4567,32 +4604,49 @@ type MarketingCollectionQuery {
   internalID: ID
   acquireable: Boolean
   aggregations: [String!]
-  artist_ids: [String!]
-  artist_id: String
-  at_auction: Boolean
+  artist_ids: [String!] @deprecated(reason: "Prefer artistIDs")
+  artistIDs: [String!]
+  artist_id: String @deprecated(reason: "Prefer artistID")
+  artistID: String
+  at_auction: Boolean @deprecated(reason: "Prefer atAuction")
+  atAuction: Boolean
   color: String
-  dimension_range: String
-  extra_aggregation_gene_ids: [String!]
-  include_artworks_by_followed_artists: Boolean
-  include_medium_filter_in_aggregation: Boolean
-  inquireable_only: Boolean
-  for_sale: Boolean
-  gene_id: String
-  gene_ids: [String!]
+  dimension_range: String @deprecated(reason: "Prefer dimensionRange")
+  dimensionRange: String
+  extra_aggregation_gene_ids: [String!] @deprecated(reason: "prefer extraAggregationGeneIDs")
+  extraAggregationGeneIDs: [String!]
+  include_artworks_by_followed_artists: Boolean @deprecated(reason: "Prefer includeArtworksByFollowedArtists")
+  includeArtworksByFollowedArtists: Boolean
+  include_medium_filter_in_aggregation: Boolean @deprecated(reason: "Prefer includeMediumFilterInAggregation")
+  includeMediumFilterInAggregation: Boolean
+  inquireable_only: Boolean @deprecated(reason: "Prefer inquireableOnly")
+  inquireableOnly: Boolean
+  for_sale: Boolean @deprecated(reason: "Prefer forSale")
+  forSale: Boolean
+  gene_id: String @deprecated(reason: "Prefer geneID")
+  geneID: String
+  gene_ids: [String!] @deprecated(reason: "Prefer geneIDs")
+  geneIDs: [String!]
   height: String
   width: String
   medium: String
   period: String
   periods: [String!]
-  major_periods: [String!]
-  partner_id: ID
-  partner_cities: [String!]
-  price_range: String
+  major_periods: [String!] @deprecated(reason: "Prefer majorPeriods")
+  majorPeriods: [String!]
+  partner_id: ID @deprecated(reason: "Prefer partnerID")
+  partnerID: ID
+  partner_cities: [String!] @deprecated(reason: "Prefer partnerCities")
+  partnerCities: [String!]
+  price_range: String @deprecated(reason: "Prefer priceRange")
+  priceRange: String
   page: Int
-  sale_id: ID
+  sale_id: ID @deprecated(reason: "Prefer saleID")
+  saleID: ID
   size: Int
   sort: String
-  tag_id: String
+  tag_id: String @deprecated(reason: "Prefer tagID")
+  tagID: String
   keyword: String
 }
 
@@ -5292,6 +5346,12 @@ type Query {
     id: ID!
   ): Node
 
+  # A Partner
+  partner(
+    # The slug or ID of the Partner
+    id: String!
+  ): Partner
+
   # A Sale
   sale(
     # The slug or ID of the Sale
@@ -5656,6 +5716,10 @@ type SaleArtwork implements Node & ArtworkEdgeInterface {
   reserveStatus: String
   saleID: String
   sale: Sale
+  calculatedCost(
+    # Max bid price for the sale artwork
+    bidAmountCents: Int
+  ): CalculatedCost
 
   # Currency symbol (e.g. "$")
   symbol: String
@@ -6423,6 +6487,25 @@ enum SubmissionStateAggregation {
   REJECTED
 }
 
+type SubtotalAmount {
+  # A formatted price with various currency formatting options.
+  amount(
+    decimal: String = "."
+
+    # Allows control of symbol position (%v = value, %s = symbol)
+    format: String = "%s%v"
+    precision: Int = 0
+    symbol: String
+    thousand: String = ","
+  ): String
+
+  # An amount of money expressed in cents.
+  cents: Float
+
+  # A pre-formatted price.
+  display: String
+}
+
 type System {
   # The schema for difference micro-service settings
   services: Services
@@ -6707,6 +6790,12 @@ type Viewer {
     # The globally unique ID of the node.
     id: ID!
   ): Node
+
+  # A Partner
+  partner(
+    # The slug or ID of the Partner
+    id: String!
+  ): Partner
 
   # A Sale
   sale(
