@@ -25,8 +25,7 @@ const _PriceSummary = ({ bid, calculatedCost }: PriceSummaryViewProps) => (
         Your max bid
       </Sans>
       <Sans size="3" color="black100">
-        {bid.display}
-        .00
+        {`${bid.display}.00`}
       </Sans>
     </Flex>
 
