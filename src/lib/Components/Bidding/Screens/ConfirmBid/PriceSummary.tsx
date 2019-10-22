@@ -1,8 +1,7 @@
-import { Box, Sans, Serif } from "@artsy/palette"
+import { Box, Flex, Sans, Serif } from "@artsy/palette"
 import React from "react"
 import { createFragmentContainer, graphql, QueryRenderer } from "react-relay"
 
-import { Flex } from "lib/Components/Bidding/Elements/Flex"
 import { Bid } from "lib/Components/Bidding/types"
 import { defaultEnvironment } from "lib/relay/createEnvironment"
 import renderWithLoadProgress from "lib/utils/renderWithLoadProgress"
