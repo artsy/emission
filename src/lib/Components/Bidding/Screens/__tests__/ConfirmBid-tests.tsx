@@ -76,6 +76,11 @@ beforeEach(() => {
   bidderPositionQueryMock.mockReset()
   mockPostNotificationName.mockReset()
   NativeModules.ARNotificationsManager = { postNotificationName: mockPostNotificationName }
+  NativeModules.Emission = {
+    options: {
+      enablePriceTransparency: true,
+    },
+  }
 })
 
 it("renders properly", () => {
@@ -147,6 +152,23 @@ it("can load and display price summary", () => {
   expect(sansText).toContain("Your max bid $45,000.00")
   expect(sansText).toContain("Buyer’s premium $9,000.00")
   expect(sansText).toContain("Subtotal $54,000.00")
+})
+
+it("does not display price summary when the feature flag is off", () => {
+  NativeModules.Emission.options.enablePriceTransparency = false
+
+  const component = mountConfirmBidComponent(initialProps)
+
+  expect(component.root.findAllByType(Spinner).length).toEqual(0)
+
+  const sansText = component.root
+    .findAllByType(Sans)
+    .map(sansComponent => sansComponent.props.children as string)
+    .join(" ")
+
+  expect(sansText).not.toContain("Your max bid $45,000.00")
+  expect(sansText).not.toContain("Buyer’s premium $9,000.00")
+  expect(sansText).not.toContain("Subtotal $54,000.00")
 })
 
 describe("checkbox and payment info display", () => {

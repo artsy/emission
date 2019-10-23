@@ -416,6 +416,8 @@ export class ConfirmBid extends React.Component<ConfirmBidProps, ConfirmBidState
     const { id, artwork, lot_label, sale } = this.props.sale_artwork
     const { requiresPaymentInformation, requiresCheckbox, isLoading } = this.state
     const artworkImage = artwork.image
+    const enablePriceTransparency =
+      NativeModules.Emission && NativeModules.Emission.options && NativeModules.Emission.options.enablePriceTransparency
 
     return (
       <BiddingThemeProvider>
@@ -466,7 +468,7 @@ export class ConfirmBid extends React.Component<ConfirmBidProps, ConfirmBidState
                 <Divider mb={2} />
               )}
 
-              <PriceSummary saleArtworkId={id} bid={this.selectedBid()} />
+              {enablePriceTransparency && <PriceSummary saleArtworkId={id} bid={this.selectedBid()} />}
 
               <Modal
                 visible={this.state.errorModalVisible}
