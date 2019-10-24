@@ -43,6 +43,8 @@ export const ImageCarouselEmbedded = () => {
   const dragX = useMemo(() => new Animated.Value(0 as number), [])
   const isDragging = useMemo(() => new Animated.Value(0 as number), [])
 
+  const clock = useMemo(() => new Animated.Clock(), [])
+
   Animated.useCode(
     Animated.cond(Animated.not(isDragging), [
       Animated.set(railLeft, Animated.add(railLeft, dragX)),
