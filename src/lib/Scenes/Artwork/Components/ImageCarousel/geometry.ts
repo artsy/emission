@@ -35,7 +35,7 @@ export function fitInside(container: Size, child: Size): Size & { marginHorizont
 /**
  * Represents geometric data to position images on the carousel rail
  */
-interface ImageMeasurements {
+export interface ImageMeasurements {
   width: number
   height: number
   marginLeft: number
@@ -55,24 +55,21 @@ export function getMeasurements({ images, boundingBox }: { images: ReadonlyArray
   for (let i = 0; i < images.length; i++) {
     const { width, height, marginHorizontal, marginVertical } = fitInside(boundingBox, images[i])
 
-    // collapse adjacent margins to avoid excess white space between images
-    const marginLeft = i === 0 ? marginHorizontal : Math.max(marginHorizontal - result[i - 1].marginRight, 0)
+    const prev = result[i - 1]
 
-    // make sure there's at least 20px between images
-    const paddingLeft = i === 0 ? 0 : Math.max(0, MIN_MARGIN - marginLeft)
-
-    // calculate cumulative scroll offset taking collapsed margins into account
-    const cumulativeScrollOffset =
-      i === 0 ? 0 : result[i - 1].cumulativeScrollOffset + boundingBox.width - (marginHorizontal - marginLeft)
+    const distanceBetweenImages = prev ? Math.max(prev.marginRight, marginHorizontal, MIN_MARGIN) : marginHorizontal
+    const cumulativeScrollOffset = prev
+      ? prev.cumulativeScrollOffset + boundingBox.width - prev.marginRight - marginHorizontal + distanceBetweenImages
+      : 0
 
     result.push({
       width,
       height,
-      marginLeft: marginLeft + paddingLeft,
+      marginLeft: marginHorizontal,
       marginRight: marginHorizontal,
       marginTop: marginVertical,
       marginBottom: marginVertical,
-      cumulativeScrollOffset: cumulativeScrollOffset + paddingLeft,
+      cumulativeScrollOffset,
     })
   }
 
