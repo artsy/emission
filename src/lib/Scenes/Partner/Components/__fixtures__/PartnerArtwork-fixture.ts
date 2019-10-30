@@ -1,5 +1,6 @@
 export const PartnerArtworkFixture = {
-  " $fragmentRefs": null,
+  " $fragmentRefs": null as any,
+  " $refType": null as any,
   internalID: "4d8b92c44eb68a1b2c0004cb",
   artworks: {
     edges: [

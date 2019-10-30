@@ -19,8 +19,8 @@ const PartnerOverviewFixture = {
   artists: {
     edges: [],
   },
-  " $fragmentRefs": null,
-  " $refType": null,
+  " $fragmentRefs": null as any,
+  " $refType": null as any,
 }
 
 describe("PartnerOverview", () => {

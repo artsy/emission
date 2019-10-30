@@ -177,6 +177,6 @@ const PartnerShowsFixture = {
       },
     ],
   },
-  " $fragmentRefs": null,
-  " $refType": null,
+  " $fragmentRefs": null as any,
+  " $refType": null as any,
 }
