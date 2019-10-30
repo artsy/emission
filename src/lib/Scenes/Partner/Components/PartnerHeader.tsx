@@ -9,7 +9,6 @@ import { PartnerFollowButtonFragmentContainer as FollowButton } from "./PartnerF
 
 const PartnerHeader: React.FC<{
   partner: PartnerHeader_partner
-  scrollY: number
 }> = ({ partner }) => {
   const followsCount = get(partner, p => p.profile.counts.follows)
   return (

@@ -9,15 +9,10 @@ import { PartnerArtworkFragmentContainer as PartnerArtwork } from "../PartnerArt
 jest.unmock("react-relay")
 
 describe("PartnerArtwork", () => {
-  it("Passes renders correctly", async () => {
-    const tree = await renderRelayTree({
-      Component: ({ partner }) => {
-        return (
-          <PartnerArtwork
-            partner={partner as PartnerArtwork_partner}
-            relay={{ environment: {} } as RelayPaginationProp}
-          />
-        )
+  const getWrapper = async (partner: Omit<PartnerArtwork_partner, " $fragmentRefs">) =>
+    await renderRelayTree({
+      Component: (props: any) => {
+        return <PartnerArtwork partner={{ ...partner }} relay={{ environment: {} } as RelayPaginationProp} {...props} />
       },
       query: graphql`
         query PartnerArtworkTestsQuery @raw_response_type {
@@ -34,13 +29,14 @@ describe("PartnerArtwork", () => {
         }
       `,
       mockData: {
-        partner: PartnerArtworkFixture,
+        partner,
       },
     })
-
-    const grid = tree.find(GenericGrid)
+  it("It renders renders the artworks", async () => {
+    const wrapper = await getWrapper(PartnerArtworkFixture)
+    const grid = wrapper.find(GenericGrid)
     expect(grid.props().artworks.length).toBe(10)
     expect(grid.length).toBe(1)
-    expect(tree).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
   })
 })

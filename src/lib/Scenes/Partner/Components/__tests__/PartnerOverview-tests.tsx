@@ -24,15 +24,12 @@ const PartnerOverviewFixture = {
 }
 
 describe("PartnerOverview", () => {
-  const getWrapper = async data =>
+  const getWrapper = async (partner: Omit<PartnerOverview_partner, " $fragmentRefs">) =>
     await renderRelayTree({
-      Component: ({ partner }) => {
+      Component: (props: any) => {
         return (
           <Theme>
-            <PartnerOverview
-              partner={partner as PartnerOverview_partner}
-              relay={{ environment: {} } as RelayPaginationProp}
-            />
+            <PartnerOverview partner={{ ...partner }} relay={{ environment: {} } as RelayPaginationProp} {...props} />
           </Theme>
         )
       },
@@ -61,7 +58,7 @@ describe("PartnerOverview", () => {
         }
       `,
       mockData: {
-        partner: data,
+        partner,
       },
     })
   it("It renders the artists correctly", async () => {

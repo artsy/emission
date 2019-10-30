@@ -16,12 +16,12 @@ const PartnerLocationSectionFixture = {
 }
 
 describe("PartnerLoationSection", () => {
-  const getWrapper = async data =>
+  const getWrapper = async (partner: Omit<PartnerLocationSection_partner, " $fragmentRefs">) =>
     await renderRelayTree({
-      Component: ({ partner }) => {
+      Component: (props: any) => {
         return (
           <Theme>
-            <PartnerLocationSection partner={partner as PartnerLocationSection_partner} />
+            <PartnerLocationSection partner={{ ...partner }} {...props} />
           </Theme>
         )
       },
@@ -36,7 +36,7 @@ describe("PartnerLoationSection", () => {
         }
       `,
       mockData: {
-        partner: data,
+        partner,
       },
     })
 

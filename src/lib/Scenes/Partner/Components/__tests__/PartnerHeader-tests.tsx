@@ -8,12 +8,12 @@ import { PartnerHeaderContainer as PartnerHeader } from "../PartnerHeader"
 jest.unmock("react-relay")
 
 describe("PartnerHeader", () => {
-  const getWrapper = async data =>
+  const getWrapper = async (partner: Omit<PartnerHeader_partner, " $fragmentRefs">) =>
     await renderRelayTree({
-      Component: ({ partner }) => {
+      Component: (props: any) => {
         return (
           <Theme>
-            <PartnerHeader partner={partner as PartnerHeader_partner} />
+            <PartnerHeader partner={{ ...partner }} {...props} />
           </Theme>
         )
       },
@@ -31,7 +31,7 @@ describe("PartnerHeader", () => {
         }
       `,
       mockData: {
-        partner: data,
+        partner,
       },
     })
 
@@ -54,6 +54,6 @@ const PartnerHeaderFixture = {
   },
   internalID: "4d8b92c44eb68a1b2c0004cb",
   slug: "gagosian",
-  " $fragmentRefs": null,
-  " $refType": null,
+  " $fragmentRefs": null as any,
+  " $refType": null as any,
 }

@@ -9,15 +9,12 @@ import { PartnerShowsFragmentContainer as PartnerShows } from "../PartnerShows"
 jest.unmock("react-relay")
 
 describe("PartnerShows", () => {
-  const getWrapper = async data =>
+  const getWrapper = async (partner: Omit<PartnerShows_partner, " $fragmentRefs">) =>
     await renderRelayTree({
-      Component: ({ partner }) => {
+      Component: (props: any) => {
         return (
           <Theme>
-            <PartnerShows
-              partner={partner as PartnerShows_partner}
-              relay={{ environment: {} } as RelayPaginationProp}
-            />
+            <PartnerShows partner={{ ...partner }} {...props} relay={{ environment: {} } as RelayPaginationProp} />
           </Theme>
         )
       },
@@ -62,7 +59,7 @@ describe("PartnerShows", () => {
         }
       `,
       mockData: {
-        partner: data,
+        partner,
       },
     })
 

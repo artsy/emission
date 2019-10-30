@@ -35,7 +35,7 @@ class Partner extends React.Component<Props> {
     return (
       <Theme>
         <Flex style={{ flex: 1 }}>
-          <PartnerHeader partner={partner} scrollY={this.state.scrollY} />
+          <PartnerHeader partner={partner} />
           <Spacer mb={1} />
           <ScrollableTabView
             initialPage={INITIAL_TAB}
