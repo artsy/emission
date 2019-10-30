@@ -54,6 +54,4 @@ const PartnerHeaderFixture = {
   },
   internalID: "4d8b92c44eb68a1b2c0004cb",
   slug: "gagosian",
-  " $fragmentRefs": null as any,
-  " $refType": null as any,
 }
