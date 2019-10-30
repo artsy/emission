@@ -4,6 +4,7 @@ import { get } from "lib/utils/get"
 import React from "react"
 import { Text } from "react-native"
 import { createFragmentContainer, graphql } from "react-relay"
+import styled from "styled-components/native"
 import { PartnerFollowButtonFragmentContainer as FollowButton } from "./PartnerFollowButton"
 
 const PartnerHeader: React.FC<{
@@ -22,12 +23,12 @@ const PartnerHeader: React.FC<{
           {followsCount && (
             <>
               <Spacer mb={0.5} />
-              <Text style={{ textAlign: "center" }}>
+              <CountText style={{ textAlign: "center" }}>
                 <Sans size="2" weight="medium">
                   {followsCount.toLocaleString()}
                 </Sans>
                 <Sans size="2"> Followers</Sans>
-              </Text>
+              </CountText>
             </>
           )}
           <Spacer mb={2} />
@@ -51,3 +52,7 @@ export const PartnerHeaderContainer = createFragmentContainer(PartnerHeader, {
     }
   `,
 })
+
+const CountText = styled(Text)``
+
+CountText.displayName = "CountText"

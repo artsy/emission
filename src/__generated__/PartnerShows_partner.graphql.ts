@@ -17,9 +17,6 @@ export type PartnerShows_partner = {
                 readonly images: ReadonlyArray<{
                     readonly url: string | null;
                 } | null> | null;
-                readonly partner: {
-                    readonly name?: string | null;
-                } | null;
                 readonly " $fragmentRefs": FragmentRefs<"PartnerShowRailItem_show">;
             } | null;
         } | null> | null;
@@ -193,24 +190,6 @@ return {
                   ]
                 },
                 {
-                  "kind": "LinkedField",
-                  "alias": null,
-                  "name": "partner",
-                  "storageKey": null,
-                  "args": null,
-                  "concreteType": null,
-                  "plural": false,
-                  "selections": [
-                    {
-                      "kind": "InlineFragment",
-                      "type": "Partner",
-                      "selections": [
-                        (v3/*: any*/)
-                      ]
-                    }
-                  ]
-                },
-                {
                   "kind": "FragmentSpread",
                   "name": "PartnerShowRailItem_show",
                   "args": null
@@ -344,5 +323,5 @@ return {
   ]
 };
 })();
-(node as any).hash = 'd3cf0f37bb279248ad66651fc250ccf5';
+(node as any).hash = 'd5f7ebb6cbd79b5cf778dcc567e184a1';
 export default node;

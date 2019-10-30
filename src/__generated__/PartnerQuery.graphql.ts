@@ -66,7 +66,6 @@ fragment PartnerArtwork_partner on Partner {
 
 fragment PartnerOverview_partner on Partner {
   internalID
-  website
   name
   locations {
     city
@@ -109,18 +108,6 @@ fragment PartnerShows_partner on Partner {
         endAt
         images {
           url
-        }
-        partner {
-          __typename
-          ... on Partner {
-            name
-          }
-          ... on Node {
-            id
-          }
-          ... on ExternalPartner {
-            id
-          }
         }
         ...PartnerShowRailItem_show
       }
@@ -725,13 +712,6 @@ return {
             "key": "Partner_artworks",
             "filters": null
           },
-          {
-            "kind": "ScalarField",
-            "alias": null,
-            "name": "website",
-            "args": null,
-            "storageKey": null
-          },
           (v8/*: any*/),
           {
             "kind": "LinkedField",
@@ -892,26 +872,6 @@ return {
                         "concreteType": "Image",
                         "plural": true,
                         "selections": (v16/*: any*/)
-                      },
-                      {
-                        "kind": "LinkedField",
-                        "alias": null,
-                        "name": "partner",
-                        "storageKey": null,
-                        "args": null,
-                        "concreteType": null,
-                        "plural": false,
-                        "selections": [
-                          (v11/*: any*/),
-                          (v2/*: any*/),
-                          {
-                            "kind": "InlineFragment",
-                            "type": "Partner",
-                            "selections": [
-                              (v8/*: any*/)
-                            ]
-                          }
-                        ]
                       }
                     ]
                   }
@@ -998,7 +958,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "PartnerQuery",
-    "id": "bf8fbb6430c2479d961615030a888595",
+    "id": "45d22da15e98c21f02d6e148192b9196",
     "text": null,
     "metadata": {}
   }

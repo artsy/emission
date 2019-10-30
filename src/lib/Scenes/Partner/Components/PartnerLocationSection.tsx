@@ -17,7 +17,7 @@ const PartnerLocationSection: React.FC<{
     const uniqCities = union(cities)
     const cityLength = uniqCities.length
     const lastUniqCity = uniqCities.pop()
-    const joinedCities = uniqCities.join(",  ")
+    const joinedCities = uniqCities.join(", ")
     const locationCountText = `${partner.name} has ${cityLength} locations in`
     return { locationText: locationCountText, cityText: joinedCities, lastCity: lastUniqCity }
   }

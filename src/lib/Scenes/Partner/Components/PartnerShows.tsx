@@ -119,12 +119,6 @@ export const PartnerShowsFragmentContainer = createPaginationContainer(
               images {
                 url
               }
-              partner {
-                ... on Partner {
-                  name
-                }
-              }
-
               ...PartnerShowRailItem_show
             }
           }
@@ -194,3 +188,5 @@ const EmptyImage = styled(Box)`
   height: 120;
   background-color: ${color("black10")};
 `
+
+GridItem.displayName = "GridItem"

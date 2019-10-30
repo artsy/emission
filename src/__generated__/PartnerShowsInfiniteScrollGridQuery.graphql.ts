@@ -46,18 +46,6 @@ fragment PartnerShows_partner_1G22uz on Partner {
         images {
           url
         }
-        partner {
-          __typename
-          ... on Partner {
-            name
-          }
-          ... on Node {
-            id
-          }
-          ... on ExternalPartner {
-            id
-          }
-        }
         ...PartnerShowRailItem_show
       }
     }
@@ -168,14 +156,7 @@ v7 = {
   "args": null,
   "storageKey": null
 },
-v8 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "__typename",
-  "args": null,
-  "storageKey": null
-},
-v9 = [
+v8 = [
   {
     "kind": "Variable",
     "name": "after",
@@ -317,26 +298,6 @@ return {
                         "selections": [
                           (v7/*: any*/)
                         ]
-                      },
-                      {
-                        "kind": "LinkedField",
-                        "alias": null,
-                        "name": "partner",
-                        "storageKey": null,
-                        "args": null,
-                        "concreteType": null,
-                        "plural": false,
-                        "selections": [
-                          (v8/*: any*/),
-                          (v4/*: any*/),
-                          {
-                            "kind": "InlineFragment",
-                            "type": "Partner",
-                            "selections": [
-                              (v5/*: any*/)
-                            ]
-                          }
-                        ]
                       }
                     ]
                   }
@@ -349,7 +310,7 @@ return {
             "alias": "pastShows",
             "name": "showsConnection",
             "storageKey": null,
-            "args": (v9/*: any*/),
+            "args": (v8/*: any*/),
             "concreteType": "ShowConnection",
             "plural": false,
             "selections": [
@@ -433,7 +394,13 @@ return {
                         "args": null,
                         "storageKey": null
                       },
-                      (v8/*: any*/)
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "name": "__typename",
+                        "args": null,
+                        "storageKey": null
+                      }
                     ]
                   },
                   {
@@ -451,7 +418,7 @@ return {
             "kind": "LinkedHandle",
             "alias": "pastShows",
             "name": "showsConnection",
-            "args": (v9/*: any*/),
+            "args": (v8/*: any*/),
             "handle": "connection",
             "key": "Partner_pastShows",
             "filters": [
@@ -467,7 +434,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "PartnerShowsInfiniteScrollGridQuery",
-    "id": "721a70e5e2bbeda0fa4532f6d8b954e5",
+    "id": "139affc05ea528ebd31094be84c283ae",
     "text": null,
     "metadata": {}
   }

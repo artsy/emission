@@ -9,7 +9,6 @@ import React, { useState } from "react"
 import { ScrollView } from "react-native"
 import { createPaginationContainer, graphql, RelayPaginationProp } from "react-relay"
 import { PartnerLocationSectionContainer as PartnerLocationSection } from "./PartnerLocationSection"
-import { PartnerOverviewWebsite } from "./PartnerOverviewWebsite"
 
 const textLimit = truncatedTextLimit()
 const PAGE_SIZE = 10
@@ -65,7 +64,6 @@ export const PartnerOverview: React.FC<{
           </>
         )}
         <PartnerLocationSection partner={partner} />
-        {!!partner.website && <PartnerOverviewWebsite website={partner.website} />}
         {!!artists && (
           <>
             <Sans size="3t" weight="medium">
@@ -88,7 +86,6 @@ export const PartnerOverviewFragmentContainer = createPaginationContainer(
       fragment PartnerOverview_partner on Partner
         @argumentDefinitions(count: { type: "Int", defaultValue: 10 }, cursor: { type: "String" }) {
         internalID
-        website
         name
         locations {
           city

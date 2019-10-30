@@ -12,7 +12,7 @@ const PAGE_SIZE = 6
 export const PartnerArtwork: React.FC<{
   partner: PartnerArtwork_partner
   relay: RelayPaginationProp
-  onScrollY: (scrollY: number) => void
+  onScrollY?: (scrollY: number) => void
 }> = ({ partner, relay, onScrollY }) => {
   const [fetchingNextPage, setFetchingNextPage] = useState(false)
 

@@ -67,7 +67,6 @@ fragment PartnerArtwork_partner on Partner {
 
 fragment PartnerOverview_partner on Partner {
   internalID
-  website
   name
   locations {
     city
@@ -110,18 +109,6 @@ fragment PartnerShows_partner on Partner {
         endAt
         images {
           url
-        }
-        partner {
-          __typename
-          ... on Partner {
-            name
-          }
-          ... on Node {
-            id
-          }
-          ... on ExternalPartner {
-            id
-          }
         }
         ...PartnerShowRailItem_show
       }
@@ -731,13 +718,6 @@ return {
                 "key": "Partner_artworks",
                 "filters": null
               },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "name": "website",
-                "args": null,
-                "storageKey": null
-              },
               (v9/*: any*/),
               {
                 "kind": "LinkedField",
@@ -898,26 +878,6 @@ return {
                             "concreteType": "Image",
                             "plural": true,
                             "selections": (v16/*: any*/)
-                          },
-                          {
-                            "kind": "LinkedField",
-                            "alias": null,
-                            "name": "partner",
-                            "storageKey": null,
-                            "args": null,
-                            "concreteType": null,
-                            "plural": false,
-                            "selections": [
-                              (v2/*: any*/),
-                              (v3/*: any*/),
-                              {
-                                "kind": "InlineFragment",
-                                "type": "Partner",
-                                "selections": [
-                                  (v9/*: any*/)
-                                ]
-                              }
-                            ]
                           }
                         ]
                       }
@@ -1006,7 +966,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "PartnerRefetchQuery",
-    "id": "c62dad5bf953e86ea1eca060d7f420ab",
+    "id": "735f85e577b7b2e36ea15ab0bdbc63a0",
     "text": null,
     "metadata": {}
   }
