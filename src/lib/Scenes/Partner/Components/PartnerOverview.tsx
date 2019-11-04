@@ -8,6 +8,7 @@ import { isCloseToBottom } from "lib/utils/isCloseToBottom"
 import React, { useState } from "react"
 import { ScrollView } from "react-native"
 import { createPaginationContainer, graphql, RelayPaginationProp } from "react-relay"
+import styled from "styled-components/native"
 import { PartnerLocationSectionContainer as PartnerLocationSection } from "./PartnerLocationSection"
 
 const textLimit = truncatedTextLimit()
@@ -41,10 +42,10 @@ export const PartnerOverview: React.FC<{
         return null
       }
       return (
-        <Box key={node.id}>
+        <ArtistListWrapper key={node.id}>
           <ArtistListItem artist={node} />
           <Spacer mb={2} />
-        </Box>
+        </ArtistListWrapper>
       )
     })
   }
@@ -139,3 +140,5 @@ export const PartnerOverviewFragmentContainer = createPaginationContainer(
     `,
   }
 )
+
+export const ArtistListWrapper = styled(Box)``

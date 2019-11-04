@@ -5,64 +5,12 @@ import { FragmentRefs } from "relay-runtime";
 export type PartnerOverviewTestsQueryVariables = {};
 export type PartnerOverviewTestsQueryResponse = {
     readonly partner: {
-        readonly internalID: string;
-        readonly name: string | null;
-        readonly locations: ReadonlyArray<{
-            readonly city: string | null;
-        } | null> | null;
-        readonly profile: {
-            readonly bio: string | null;
-        } | null;
-        readonly artists: {
-            readonly edges: ReadonlyArray<{
-                readonly node: {
-                    readonly id: string;
-                    readonly " $fragmentRefs": FragmentRefs<"ArtistListItem_artist">;
-                } | null;
-            } | null> | null;
-        } | null;
-        readonly " $fragmentRefs": FragmentRefs<"PartnerLocationSection_partner">;
+        readonly " $fragmentRefs": FragmentRefs<"PartnerOverview_partner">;
     } | null;
-};
-export type PartnerOverviewTestsQueryRawResponse = {
-    readonly partner: ({
-        readonly internalID: string;
-        readonly name: string | null;
-        readonly locations: ReadonlyArray<({
-            readonly city: string | null;
-            readonly id: string | null;
-        }) | null> | null;
-        readonly profile: ({
-            readonly bio: string | null;
-            readonly id: string | null;
-        }) | null;
-        readonly artists: ({
-            readonly edges: ReadonlyArray<({
-                readonly node: ({
-                    readonly id: string;
-                    readonly internalID: string;
-                    readonly slug: string;
-                    readonly name: string | null;
-                    readonly initials: string | null;
-                    readonly href: string | null;
-                    readonly is_followed: boolean | null;
-                    readonly nationality: string | null;
-                    readonly birthday: string | null;
-                    readonly deathday: string | null;
-                    readonly image: ({
-                        readonly url: string | null;
-                    }) | null;
-                }) | null;
-                readonly id: string | null;
-            }) | null> | null;
-        }) | null;
-        readonly id: string | null;
-    }) | null;
 };
 export type PartnerOverviewTestsQuery = {
     readonly response: PartnerOverviewTestsQueryResponse;
     readonly variables: PartnerOverviewTestsQueryVariables;
-    readonly rawResponse: PartnerOverviewTestsQueryRawResponse;
 };
 
 
@@ -70,28 +18,39 @@ export type PartnerOverviewTestsQuery = {
 /*
 query PartnerOverviewTestsQuery {
   partner(id: "gagosian") {
-    internalID
-    name
-    locations {
-      city
-      id
-    }
-    profile {
-      bio
-      id
-    }
-    artists: artistsConnection(first: 10) {
-      edges {
-        node {
-          id
-          ...ArtistListItem_artist
-        }
-        id
-      }
-    }
-    ...PartnerLocationSection_partner
+    ...PartnerOverview_partner
     id
   }
+}
+
+fragment PartnerOverview_partner on Partner {
+  internalID
+  name
+  locations {
+    city
+    id
+  }
+  profile {
+    bio
+    id
+  }
+  artists: artistsConnection(representedBy: true, sort: SORTABLE_ID_ASC, first: 10) {
+    pageInfo {
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    edges {
+      node {
+        id
+        ...ArtistListItem_artist
+        __typename
+      }
+      cursor
+      id
+    }
+  }
+  ...PartnerLocationSection_partner
 }
 
 fragment ArtistListItem_artist on Artist {
@@ -144,30 +103,50 @@ v2 = {
 v3 = {
   "kind": "ScalarField",
   "alias": null,
-  "name": "city",
+  "name": "id",
   "args": null,
   "storageKey": null
 },
-v4 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "bio",
-  "args": null,
-  "storageKey": null
-},
-v5 = [
+v4 = [
   {
     "kind": "Literal",
     "name": "first",
     "value": 10
+  },
+  {
+    "kind": "Literal",
+    "name": "representedBy",
+    "value": true
+  },
+  {
+    "kind": "Literal",
+    "name": "sort",
+    "value": "SORTABLE_ID_ASC"
   }
 ],
+v5 = {
+  "type": "ID",
+  "enumValues": null,
+  "plural": false,
+  "nullable": true
+},
 v6 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "id",
-  "args": null,
-  "storageKey": null
+  "type": "ID",
+  "enumValues": null,
+  "plural": false,
+  "nullable": false
+},
+v7 = {
+  "type": "String",
+  "enumValues": null,
+  "plural": false,
+  "nullable": true
+},
+v8 = {
+  "type": "String",
+  "enumValues": null,
+  "plural": false,
+  "nullable": false
 };
 return {
   "kind": "Request",
@@ -187,74 +166,9 @@ return {
         "concreteType": "Partner",
         "plural": false,
         "selections": [
-          (v1/*: any*/),
-          (v2/*: any*/),
-          {
-            "kind": "LinkedField",
-            "alias": null,
-            "name": "locations",
-            "storageKey": null,
-            "args": null,
-            "concreteType": "Location",
-            "plural": true,
-            "selections": [
-              (v3/*: any*/)
-            ]
-          },
-          {
-            "kind": "LinkedField",
-            "alias": null,
-            "name": "profile",
-            "storageKey": null,
-            "args": null,
-            "concreteType": "Profile",
-            "plural": false,
-            "selections": [
-              (v4/*: any*/)
-            ]
-          },
-          {
-            "kind": "LinkedField",
-            "alias": "artists",
-            "name": "artistsConnection",
-            "storageKey": "artistsConnection(first:10)",
-            "args": (v5/*: any*/),
-            "concreteType": "ArtistPartnerConnection",
-            "plural": false,
-            "selections": [
-              {
-                "kind": "LinkedField",
-                "alias": null,
-                "name": "edges",
-                "storageKey": null,
-                "args": null,
-                "concreteType": "ArtistPartnerEdge",
-                "plural": true,
-                "selections": [
-                  {
-                    "kind": "LinkedField",
-                    "alias": null,
-                    "name": "node",
-                    "storageKey": null,
-                    "args": null,
-                    "concreteType": "Artist",
-                    "plural": false,
-                    "selections": [
-                      (v6/*: any*/),
-                      {
-                        "kind": "FragmentSpread",
-                        "name": "ArtistListItem_artist",
-                        "args": null
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
           {
             "kind": "FragmentSpread",
-            "name": "PartnerLocationSection_partner",
+            "name": "PartnerOverview_partner",
             "args": null
           }
         ]
@@ -286,8 +200,14 @@ return {
             "concreteType": "Location",
             "plural": true,
             "selections": [
-              (v3/*: any*/),
-              (v6/*: any*/)
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "city",
+                "args": null,
+                "storageKey": null
+              },
+              (v3/*: any*/)
             ]
           },
           {
@@ -299,19 +219,57 @@ return {
             "concreteType": "Profile",
             "plural": false,
             "selections": [
-              (v4/*: any*/),
-              (v6/*: any*/)
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "bio",
+                "args": null,
+                "storageKey": null
+              },
+              (v3/*: any*/)
             ]
           },
           {
             "kind": "LinkedField",
             "alias": "artists",
             "name": "artistsConnection",
-            "storageKey": "artistsConnection(first:10)",
-            "args": (v5/*: any*/),
+            "storageKey": "artistsConnection(first:10,representedBy:true,sort:\"SORTABLE_ID_ASC\")",
+            "args": (v4/*: any*/),
             "concreteType": "ArtistPartnerConnection",
             "plural": false,
             "selections": [
+              {
+                "kind": "LinkedField",
+                "alias": null,
+                "name": "pageInfo",
+                "storageKey": null,
+                "args": null,
+                "concreteType": "PageInfo",
+                "plural": false,
+                "selections": [
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "name": "hasNextPage",
+                    "args": null,
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "name": "startCursor",
+                    "args": null,
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "name": "endCursor",
+                    "args": null,
+                    "storageKey": null
+                  }
+                ]
+              },
               {
                 "kind": "LinkedField",
                 "alias": null,
@@ -330,7 +288,7 @@ return {
                     "concreteType": "Artist",
                     "plural": false,
                     "selections": [
-                      (v6/*: any*/),
+                      (v3/*: any*/),
                       (v1/*: any*/),
                       {
                         "kind": "ScalarField",
@@ -399,15 +357,41 @@ return {
                             "storageKey": null
                           }
                         ]
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "name": "__typename",
+                        "args": null,
+                        "storageKey": null
                       }
                     ]
                   },
-                  (v6/*: any*/)
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "name": "cursor",
+                    "args": null,
+                    "storageKey": null
+                  },
+                  (v3/*: any*/)
                 ]
               }
             ]
           },
-          (v6/*: any*/)
+          {
+            "kind": "LinkedHandle",
+            "alias": "artists",
+            "name": "artistsConnection",
+            "args": (v4/*: any*/),
+            "handle": "connection",
+            "key": "Partner_artists",
+            "filters": [
+              "representedBy",
+              "sort"
+            ]
+          },
+          (v3/*: any*/)
         ]
       }
     ]
@@ -415,11 +399,96 @@ return {
   "params": {
     "operationKind": "query",
     "name": "PartnerOverviewTestsQuery",
-    "id": "faebf469b73a4524348a90b0325d5a8f",
+    "id": "f8c63de527fac832522c902825c7a3c6",
     "text": null,
-    "metadata": {}
+    "metadata": {
+      "relayTestingSelectionTypeInfo": {
+        "partner": {
+          "type": "Partner",
+          "enumValues": null,
+          "plural": false,
+          "nullable": true
+        },
+        "partner.id": (v5/*: any*/),
+        "partner.internalID": (v6/*: any*/),
+        "partner.name": (v7/*: any*/),
+        "partner.locations": {
+          "type": "Location",
+          "enumValues": null,
+          "plural": true,
+          "nullable": true
+        },
+        "partner.profile": {
+          "type": "Profile",
+          "enumValues": null,
+          "plural": false,
+          "nullable": true
+        },
+        "partner.artists": {
+          "type": "ArtistPartnerConnection",
+          "enumValues": null,
+          "plural": false,
+          "nullable": true
+        },
+        "partner.locations.city": (v7/*: any*/),
+        "partner.locations.id": (v5/*: any*/),
+        "partner.profile.bio": (v7/*: any*/),
+        "partner.profile.id": (v5/*: any*/),
+        "partner.artists.pageInfo": {
+          "type": "PageInfo",
+          "enumValues": null,
+          "plural": false,
+          "nullable": false
+        },
+        "partner.artists.edges": {
+          "type": "ArtistPartnerEdge",
+          "enumValues": null,
+          "plural": true,
+          "nullable": true
+        },
+        "partner.artists.pageInfo.hasNextPage": {
+          "type": "Boolean",
+          "enumValues": null,
+          "plural": false,
+          "nullable": false
+        },
+        "partner.artists.pageInfo.startCursor": (v7/*: any*/),
+        "partner.artists.pageInfo.endCursor": (v7/*: any*/),
+        "partner.artists.edges.node": {
+          "type": "Artist",
+          "enumValues": null,
+          "plural": false,
+          "nullable": true
+        },
+        "partner.artists.edges.id": (v5/*: any*/),
+        "partner.artists.edges.node.id": (v5/*: any*/),
+        "partner.artists.edges.cursor": (v8/*: any*/),
+        "partner.artists.edges.node.internalID": (v6/*: any*/),
+        "partner.artists.edges.node.slug": (v6/*: any*/),
+        "partner.artists.edges.node.name": (v7/*: any*/),
+        "partner.artists.edges.node.initials": (v7/*: any*/),
+        "partner.artists.edges.node.href": (v7/*: any*/),
+        "partner.artists.edges.node.is_followed": {
+          "type": "Boolean",
+          "enumValues": null,
+          "plural": false,
+          "nullable": true
+        },
+        "partner.artists.edges.node.nationality": (v7/*: any*/),
+        "partner.artists.edges.node.birthday": (v7/*: any*/),
+        "partner.artists.edges.node.deathday": (v7/*: any*/),
+        "partner.artists.edges.node.image": {
+          "type": "Image",
+          "enumValues": null,
+          "plural": false,
+          "nullable": true
+        },
+        "partner.artists.edges.node.__typename": (v8/*: any*/),
+        "partner.artists.edges.node.image.url": (v7/*: any*/)
+      }
+    }
   }
 };
 })();
-(node as any).hash = 'de903dd9a84cf8057b5738d77832cbd3';
+(node as any).hash = '4b7d031ac66c1c1ad81faba41fe3bb99';
 export default node;
