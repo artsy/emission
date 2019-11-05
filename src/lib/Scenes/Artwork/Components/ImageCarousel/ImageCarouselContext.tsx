@@ -87,7 +87,10 @@ export function useNewImageCarouselContext({ images }: { images: ImageDescriptor
             setFullScreenState("none")
             break
           case "TAPPED_TO_GO_FULL_SCREEN":
-            setFullScreenState("doing first render")
+            // avoid potential double-tap weirdness
+            if (fullScreenState.current !== "none") {
+              setFullScreenState("doing first render")
+            }
             break
           case "FULL_SCREEN_INITIAL_RENDER_COMPLETED":
             setFullScreenState("animating entry transition")

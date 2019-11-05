@@ -1,7 +1,7 @@
 import { useScreenDimensions } from "lib/utils/useScreenDimensions"
 import React, { useContext, useMemo } from "react"
 import { Image } from "react-native"
-import { PanGestureHandler, State } from "react-native-gesture-handler"
+import { PanGestureHandler, State, TapGestureHandler } from "react-native-gesture-handler"
 import Animated from "react-native-reanimated"
 import { isPad } from "../../hardware"
 import { getMeasurements, ImageMeasurements } from "./geometry"
@@ -190,42 +190,58 @@ export const ImageCarouselEmbedded = () => {
   )
 
   return (
-    <PanGestureHandler
-      // make the gesture horizontal-only
-      minDeltaX={10}
-      onGestureEvent={Animated.event(
-        [
-          {
-            nativeEvent: { translationX: dragX, velocityX },
-          },
-        ],
-        {
-          useNativeDriver: true,
+    <TapGestureHandler
+      onHandlerStateChange={e => {
+        if (e.nativeEvent.state === State.END) {
+          dispatch({ type: "TAPPED_TO_GO_FULL_SCREEN" })
         }
-      )}
-      onHandlerStateChange={Animated.event(
-        [
-          {
-            nativeEvent: { state: gestureState },
-          },
-        ],
-        { useNativeDriver: true }
-      )}
+      }}
     >
-      <Animated.View
-        style={[{ height: cardHeight }, { transform: [{ translateX: Animated.add(dragX, railLeft) as any }] }]}
-      >
-        {images.map((image, index) => {
-          const { width, height, cumulativeScrollOffset, marginTop, marginLeft } = measurements[index]
-          return (
-            <Image
-              key={index}
-              source={{ uri: image.url }}
-              style={{ width, height, left: cumulativeScrollOffset + marginLeft, top: marginTop, position: "absolute" }}
-            />
-          )
-        })}
+      <Animated.View>
+        <PanGestureHandler
+          // make the gesture horizontal-only
+          minDeltaX={10}
+          onGestureEvent={Animated.event(
+            [
+              {
+                nativeEvent: { translationX: dragX, velocityX },
+              },
+            ],
+            {
+              useNativeDriver: true,
+            }
+          )}
+          onHandlerStateChange={Animated.event(
+            [
+              {
+                nativeEvent: { state: gestureState },
+              },
+            ],
+            { useNativeDriver: true }
+          )}
+        >
+          <Animated.View
+            style={[{ height: cardHeight }, { transform: [{ translateX: Animated.add(dragX, railLeft) as any }] }]}
+          >
+            {images.map((image, index) => {
+              const { width, height, cumulativeScrollOffset, marginTop, marginLeft } = measurements[index]
+              return (
+                <Image
+                  key={index}
+                  source={{ uri: image.url }}
+                  style={{
+                    width,
+                    height,
+                    left: cumulativeScrollOffset + marginLeft,
+                    top: marginTop,
+                    position: "absolute",
+                  }}
+                />
+              )
+            })}
+          </Animated.View>
+        </PanGestureHandler>
       </Animated.View>
-    </PanGestureHandler>
+    </TapGestureHandler>
   )
 }
