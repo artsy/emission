@@ -349,7 +349,7 @@ export const ArtworkRenderer: React.SFC<{ artworkID: string; safeAreaInsets: Saf
                 }
               }
             `}
-            variables={{ artworkID: "candice-cmc-superman-donuts-1" }}
+            variables={{ artworkID }}
             cacheConfig={{
               // Bypass Relay cache on retries.
               ...(isRetry && { force: true }),
