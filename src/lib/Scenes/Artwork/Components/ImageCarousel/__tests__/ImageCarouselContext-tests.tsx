@@ -42,7 +42,7 @@ describe("image carousel context", () => {
     expect(context.imageIndex.current).toBe(0)
     expect(context.isZoomedCompletelyOut.current).toBe(true)
     expect(context.fullScreenState.current).toBe("none")
-    expect(context.embeddedFlatListRef.current).toBeFalsy()
+    expect(context.embeddedCarouselRef.current).toBeFalsy()
     expect(context.embeddedImageRefs).toEqual([])
   })
 
@@ -85,18 +85,23 @@ describe("image carousel context", () => {
   })
 
   it("scrolls the flatList when the image index changes", () => {
-    // @ts-ignore
-    context.embeddedFlatListRef.current = { scrollToIndex: jest.fn() }
+    context.embeddedCarouselRef.current = { scrollToIndexImmediately: jest.fn() }
     context.dispatch({ type: "TAPPED_TO_GO_FULL_SCREEN" })
     context.dispatch({ type: "FULL_SCREEN_INITIAL_RENDER_COMPLETED" })
     context.dispatch({ type: "FULL_SCREEN_FINISHED_ENTERING" })
     expect(context.fullScreenState.current).toBe("entered")
 
     context.dispatch({ type: "IMAGE_INDEX_CHANGED", nextImageIndex: 1 })
-    expect(context.embeddedFlatListRef.current.scrollToIndex).toHaveBeenCalledWith({ animated: false, index: 1 })
+    expect(context.embeddedCarouselRef.current.scrollToIndexImmediately).toHaveBeenCalledWith({
+      animated: false,
+      index: 1,
+    })
 
     context.dispatch({ type: "IMAGE_INDEX_CHANGED", nextImageIndex: 0 })
-    expect(context.embeddedFlatListRef.current.scrollToIndex).toHaveBeenCalledWith({ animated: false, index: 0 })
+    expect(context.embeddedCarouselRef.current.scrollToIndexImmediately).toHaveBeenCalledWith({
+      animated: false,
+      index: 0,
+    })
   })
 
   it("tracks the imageIndex changes", () => {
