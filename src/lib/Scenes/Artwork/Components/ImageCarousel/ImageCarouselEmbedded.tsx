@@ -6,6 +6,7 @@ import Animated from "react-native-reanimated"
 import { isPad } from "../../hardware"
 import { getMeasurements, ImageMeasurements } from "./geometry"
 import { ImageCarouselContext } from "./ImageCarouselContext"
+import { ImageWithLoadingState } from "./ImageWithLoadingState"
 
 const useAnimateValue = (init: number) => useMemo(() => new Animated.Value(init), [])
 
@@ -69,7 +70,7 @@ export const ImageCarouselEmbedded = () => {
 
   const embeddedCardBoundingBox = { width: screenDimensions.width, height: isPad() ? 460 : cardHeight }
 
-  const { images, dispatch } = useContext(ImageCarouselContext)
+  const { images, dispatch, embeddedImageRefs, embeddedCarouselRef } = useContext(ImageCarouselContext)
 
   // measurements is geometry data about each image.
   const measurements = getMeasurements({ images, boundingBox: embeddedCardBoundingBox })
@@ -77,12 +78,18 @@ export const ImageCarouselEmbedded = () => {
   const nextIndex = useAnimateValue(0)
   const currentIndex = useAnimateValue(0)
 
+  embeddedCarouselRef.current = {
+    scrollToIndexImmediately(index) {
+      currentIndex.setValue(index)
+    },
+  }
+
   const railLeft = useAnimateValue(0)
   const dragX = useAnimateValue(0)
   const velocityX = useAnimateValue(0)
   const snapVelocity = useAnimateValue(0)
   const isDragging = useAnimateValue(-1)
-  const offsetToSnapTo = useAnimateValue(0)
+  const offsetToSnapTo = useMemo(() => getOffsetForIndex(measurements, currentIndex), [])
 
   const hasTriggeredSnap = useAnimateValue(0)
 
@@ -114,8 +121,6 @@ export const ImageCarouselEmbedded = () => {
             ]
           ),
           Animated.set(currentIndex, nextIndex),
-          // update offset to snap to
-          Animated.set(offsetToSnapTo, getOffsetForIndex(measurements, currentIndex)),
         ]),
       ],
       []
@@ -224,18 +229,28 @@ export const ImageCarouselEmbedded = () => {
             style={[{ height: cardHeight }, { transform: [{ translateX: Animated.add(dragX, railLeft) as any }] }]}
           >
             {images.map((image, index) => {
-              const { width, height, cumulativeScrollOffset, marginTop, marginLeft } = measurements[index]
+              const { width, height, cumulativeScrollOffset, marginLeft, marginTop } = measurements[index]
               return (
-                <Image
+                <ImageWithLoadingState
                   key={index}
-                  source={{ uri: image.url }}
-                  style={{
-                    width,
-                    height,
-                    left: cumulativeScrollOffset + marginLeft,
-                    top: marginTop,
-                    position: "absolute",
+                  imageURL={image.url}
+                  width={width}
+                  height={height}
+                  // make sure first image loads first
+                  highPriority={index === 0}
+                  ref={ref => {
+                    embeddedImageRefs[index] = ref
                   }}
+                  style={[
+                    {
+                      width,
+                      height,
+                      left: cumulativeScrollOffset + marginLeft,
+                      top: marginTop,
+                      position: "absolute",
+                    },
+                    images.length === 1 ? { marginTop: 0, marginBottom: 0 } : {},
+                  ]}
                 />
               )
             })}

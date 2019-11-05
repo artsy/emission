@@ -41,13 +41,13 @@ export interface ImageCarouselContext {
   isZoomedCompletelyOut: GlobalState<boolean>
   images: ImageDescriptor[]
   embeddedImageRefs: View[]
-  embeddedFlatListRef: React.RefObject<FlatList<any>>
+  embeddedCarouselRef: React.MutableRefObject<{ scrollToIndexImmediately(index: number): void }>
   dispatch(action: ImageCarouselAction): void
 }
 
 export function useNewImageCarouselContext({ images }: { images: ImageDescriptor[] }): ImageCarouselContext {
   const embeddedImageRefs = useMemo(() => [], [])
-  const embeddedFlatListRef = useRef<FlatList<any>>()
+  const embeddedCarouselRef = useRef<{ scrollToIndexImmediately(index: number): void }>()
   const [imageIndex, setImageIndex] = useGlobalState(0)
   const [lastImageIndex, setLastImageIndex] = useGlobalState(0)
   const [fullScreenState, setFullScreenState] = useGlobalState("none" as FullScreenState)
@@ -62,7 +62,7 @@ export function useNewImageCarouselContext({ images }: { images: ImageDescriptor
       isZoomedCompletelyOut,
       images,
       embeddedImageRefs,
-      embeddedFlatListRef,
+      embeddedCarouselRef,
       dispatch: (action: ImageCarouselAction) => {
         switch (action.type) {
           case "IMAGE_INDEX_CHANGED":
@@ -76,7 +76,7 @@ export function useNewImageCarouselContext({ images }: { images: ImageDescriptor
               setImageIndex(action.nextImageIndex)
               setIsZoomedCompletelyOut(true)
               if (fullScreenState.current !== "none") {
-                embeddedFlatListRef.current.scrollToIndex({ index: action.nextImageIndex, animated: false })
+                embeddedCarouselRef.current.scrollToIndexImmediately(action.nextImageIndex)
               }
             }
             break
@@ -88,9 +88,7 @@ export function useNewImageCarouselContext({ images }: { images: ImageDescriptor
             break
           case "TAPPED_TO_GO_FULL_SCREEN":
             // avoid potential double-tap weirdness
-            if (fullScreenState.current !== "none") {
-              setFullScreenState("doing first render")
-            }
+            setFullScreenState("doing first render")
             break
           case "FULL_SCREEN_INITIAL_RENDER_COMPLETED":
             setFullScreenState("animating entry transition")
