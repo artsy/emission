@@ -1,6 +1,5 @@
 import { useScreenDimensions } from "lib/utils/useScreenDimensions"
 import React, { useContext, useMemo } from "react"
-import { Image } from "react-native"
 import { PanGestureHandler, State, TapGestureHandler } from "react-native-gesture-handler"
 import Animated from "react-native-reanimated"
 import { isPad } from "../../hardware"
