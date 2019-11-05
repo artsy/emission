@@ -4,7 +4,6 @@ import { Image } from "react-native"
 import { PanGestureHandler, State } from "react-native-gesture-handler"
 import Animated from "react-native-reanimated"
 import { isPad } from "../../hardware"
-import { useNewEventStream } from "./FullScreen/useEventStream"
 import { getMeasurements, ImageMeasurements } from "./geometry"
 import { ImageCarouselContext } from "./ImageCarouselContext"
 
@@ -148,9 +147,13 @@ export const ImageCarouselEmbedded = () => {
   )
 
   Animated.useCode(
-    Animated.cond(Animated.not(isDragging), [
-      Animated.cond(Animated.not(Animated.clockRunning(clock)), [Animated.startClock(clock)]),
+    Animated.cond(Animated.clockRunning(clock), [
       Animated.spring(clock, state, config),
+      Animated.cond(state.finished, [
+        Animated.stopClock(clock),
+        Animated.set(state.finished, 0),
+        Animated.set(state.time, 0),
+      ]),
     ]),
     []
   )
@@ -170,7 +173,11 @@ export const ImageCarouselEmbedded = () => {
     Animated.cond(
       // if the gesture ended
       Animated.and(Animated.neq(gestureState, State.ACTIVE), Animated.neq(gestureState, State.BEGAN)),
-      [Animated.set(isDragging, 0)],
+      // TODO: maybe refactor to remove isDragging and put animation triggering stuff in here
+      [
+        Animated.set(isDragging, 0),
+        Animated.cond(Animated.not(Animated.clockRunning(clock)), [Animated.startClock(clock)]),
+      ],
       [
         // if the gesture started
         Animated.cond(Animated.or(Animated.eq(gestureState, State.ACTIVE), Animated.eq(gestureState, State.BEGAN)), [
@@ -184,6 +191,8 @@ export const ImageCarouselEmbedded = () => {
 
   return (
     <PanGestureHandler
+      // make the gesture horizontal-only
+      minDeltaX={10}
       onGestureEvent={Animated.event(
         [
           {
