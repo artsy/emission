@@ -3,6 +3,27 @@ import React, { useContext, useMemo } from "react"
 import { PanGestureHandler, State, TapGestureHandler } from "react-native-gesture-handler"
 import Animated from "react-native-reanimated"
 import { isPad } from "../../hardware"
+import {
+  abs,
+  add,
+  and,
+  call,
+  clockRunning,
+  cond,
+  eq,
+  greaterThan,
+  max,
+  min,
+  neq,
+  not,
+  or,
+  set,
+  spring,
+  startClock,
+  stopClock,
+  sub,
+  useCode,
+} from "./animated"
 import { getMeasurements, ImageMeasurements } from "./geometry"
 import { ImageCarouselContext } from "./ImageCarouselContext"
 import { ImageWithLoadingState } from "./ImageWithLoadingState"
@@ -32,8 +53,8 @@ function _findClosestIndex({
   if (midpointIndex === midpoints.length) {
     return midpointIndex
   } else {
-    return Animated.cond(
-      Animated.greaterThan(currentOffset, -midpoints[midpointIndex]),
+    return cond(
+      greaterThan(currentOffset, -midpoints[midpointIndex]),
       midpointIndex,
       _findClosestIndex({
         measurements,
@@ -53,12 +74,61 @@ function getOffsetForIndex(
   if (measurementsIndex === measurements.length - 1) {
     return -measurements[measurements.length - 1].cumulativeScrollOffset
   } else {
-    return Animated.cond(
-      Animated.eq(index, measurementsIndex),
+    return cond(
+      eq(index, measurementsIndex),
       -measurements[measurementsIndex].cumulativeScrollOffset,
       getOffsetForIndex(measurements, index, measurementsIndex + 1)
     )
   }
+}
+
+function useSpring({
+  position,
+  toValue,
+  velocity,
+}: {
+  velocity: Animated.Value<number>
+  position: Animated.Value<number>
+  toValue: Animated.Node<number>
+}) {
+  const clock = useMemo(() => new Animated.Clock(), [])
+
+  const code = useMemo(() => {
+    const state = {
+      finished: new Animated.Value(0),
+      velocity,
+      position,
+      time: new Animated.Value(0),
+    }
+
+    const config = {
+      damping: 50,
+      mass: 1,
+      stiffness: 640.6,
+      overshootClamping: false,
+      restSpeedThreshold: 0.001,
+      restDisplacementThreshold: 0.001,
+      toValue,
+    }
+
+    return cond(neq(toValue, position), [
+      cond(not(clockRunning(clock)), startClock(clock)),
+      spring(clock, state, config),
+      cond(state.finished, [stopClock(clock), set(state.finished, 0), set(state.time, 0), set(position, toValue)]),
+    ])
+  }, [])
+
+  useCode(code, [code])
+}
+
+function useHandlerStateChange(
+  fn: (props: { state: Animated.Node<State>; oldState: Animated.Node<State> }) => Animated.Node<any>
+) {
+  const state = useAnimateValue(State.UNDETERMINED)
+  const oldState = useAnimateValue(State.UNDETERMINED)
+  const code = useMemo(() => fn({ state, oldState }), [])
+  useCode(cond(neq(state, oldState), [code, set(oldState, state)]), [])
+  return Animated.event([{ nativeEvent: { state, oldState } }], { useNativeDriver: true })
 }
 
 // This is the main image caoursel visible on the root of the artwork page
@@ -74,96 +144,36 @@ export const ImageCarouselEmbedded = () => {
   // measurements is geometry data about each image.
   const measurements = getMeasurements({ images, boundingBox: embeddedCardBoundingBox })
 
-  const nextIndex = useAnimateValue(0)
-  const currentIndex = useAnimateValue(0)
+  // which image we are 'snapped' to. This only makes sense while not dragging
+  const snapIndex = useAnimateValue(0)
+  const snapOffset = useMemo(() => getOffsetForIndex(measurements, snapIndex), [])
+
+  // The non-drag x-offset of the carousel rail
+  const railLeft = useAnimateValue(0)
+  // The drag x-offset of the carousel rail
+  const dragX = useAnimateValue(0)
+  // The combined (and final) x-offset of the carousel rail
+  const translateX = useMemo(() => add(railLeft, dragX), [])
+
+  const velocityX = useAnimateValue(0)
+
+  const closestIndex = useMemo(() => findClosestIndex(measurements, translateX), [])
+
+  const isDragging = useAnimateValue(0)
 
   embeddedCarouselRef.current = {
     scrollToIndexImmediately(index) {
-      currentIndex.setValue(index)
+      snapIndex.setValue(index)
+      railLeft.setValue(snapOffset)
     },
   }
 
-  const railLeft = useAnimateValue(0)
-  const dragX = useAnimateValue(0)
-  const velocityX = useAnimateValue(0)
-  const snapVelocity = useAnimateValue(0)
-  const isDragging = useAnimateValue(-1)
-  const offsetToSnapTo = useMemo(() => getOffsetForIndex(measurements, currentIndex), [])
+  useSpring({ position: railLeft, toValue: cond(isDragging, railLeft, snapOffset), velocity: velocityX })
 
-  const hasTriggeredSnap = useAnimateValue(0)
-
-  const clock = useMemo(() => new Animated.Clock(), [])
-
-  Animated.useCode(
-    Animated.cond(
-      Animated.eq(isDragging, 0),
-      [
-        Animated.set(railLeft, Animated.add(railLeft, dragX)),
-        Animated.set(dragX, 0),
-        Animated.cond(Animated.not(hasTriggeredSnap), [
-          Animated.set(hasTriggeredSnap, 1),
-          Animated.set(snapVelocity, velocityX),
-          // calculate the closest index to the current viewport and set nextIndex
-          Animated.set(nextIndex, findClosestIndex(measurements, railLeft)),
-          // if it's not different than the previous index and then maybe we need to handle a swipe gesture
-          Animated.cond(
-            Animated.and(Animated.eq(nextIndex, currentIndex), Animated.greaterThan(Animated.abs(velocityX), 10)),
-            [
-              // trigger gesture
-              Animated.cond(
-                // if we're swiping our finger to the right then the velocity is positive and we want the image
-                // index to decrement
-                Animated.greaterThan(velocityX, 0),
-                [Animated.set(nextIndex, Animated.max(0, Animated.sub(nextIndex, 1)))],
-                [Animated.set(nextIndex, Animated.min(measurements.length - 1, Animated.add(nextIndex, 1)))]
-              ),
-            ]
-          ),
-          Animated.set(currentIndex, nextIndex),
-        ]),
-      ],
-      []
+  useCode(
+    call([Animated.cond(isDragging, closestIndex, snapIndex)], ([nextImageIndex]) =>
+      dispatch({ type: "IMAGE_INDEX_CHANGED", nextImageIndex })
     ),
-    []
-  )
-
-  const state = useMemo(
-    () => ({
-      finished: new Animated.Value(0),
-      velocity: snapVelocity,
-      position: railLeft,
-      time: new Animated.Value(0),
-    }),
-    []
-  )
-
-  const config = useMemo(
-    () => ({
-      damping: 50,
-      mass: 1,
-      stiffness: 640.6,
-      overshootClamping: false,
-      restSpeedThreshold: 0.001,
-      restDisplacementThreshold: 0.001,
-      toValue: offsetToSnapTo,
-    }),
-    []
-  )
-
-  Animated.useCode(
-    Animated.cond(Animated.clockRunning(clock), [
-      Animated.spring(clock, state, config),
-      Animated.cond(state.finished, [
-        Animated.stopClock(clock),
-        Animated.set(state.finished, 0),
-        Animated.set(state.time, 0),
-      ]),
-    ]),
-    []
-  )
-
-  Animated.useCode(
-    Animated.call([currentIndex], ([nextImageIndex]) => dispatch({ type: "IMAGE_INDEX_CHANGED", nextImageIndex })),
     []
   )
 
@@ -171,26 +181,34 @@ export const ImageCarouselEmbedded = () => {
   // rubber banding?
   //
 
-  const gestureState = useAnimateValue(0)
-
-  Animated.useCode(
-    Animated.cond(
+  const onHandlerStateChange = useHandlerStateChange(({ state }) =>
+    cond(
       // if the gesture ended
-      Animated.and(Animated.neq(gestureState, State.ACTIVE), Animated.neq(gestureState, State.BEGAN)),
-      // TODO: maybe refactor to remove isDragging and put animation triggering stuff in here
+      and(neq(state, State.ACTIVE), neq(state, State.BEGAN)),
       [
-        Animated.set(isDragging, 0),
-        Animated.cond(Animated.not(Animated.clockRunning(clock)), [Animated.startClock(clock)]),
+        set(isDragging, 0),
+        // apply drag offset to railLeft
+        set(railLeft, add(railLeft, dragX)),
+        set(dragX, 0),
+        // if the snap index is still the closest index then we might need to interpret a swipe gesture
+        cond(
+          and(eq(closestIndex, snapIndex), greaterThan(abs(velocityX), 10)),
+          [
+            // trigger gesture
+            cond(
+              // if we're swiping our finger to the right then the velocity is positive and we want the image
+              // index to decrement
+              greaterThan(velocityX, 0),
+              [set(snapIndex, max(0, sub(snapIndex, 1)))],
+              [set(snapIndex, min(measurements.length - 1, add(snapIndex, 1)))]
+            ),
+          ],
+          [set(snapIndex, closestIndex)]
+        ),
       ],
-      [
-        // if the gesture started
-        Animated.cond(Animated.or(Animated.eq(gestureState, State.ACTIVE), Animated.eq(gestureState, State.BEGAN)), [
-          Animated.set(isDragging, 1),
-          Animated.set(hasTriggeredSnap, 0),
-        ]),
-      ]
-    ),
-    []
+      // if the gesture started
+      cond(or(eq(state, State.ACTIVE), eq(state, State.BEGAN)), [set(isDragging, 1)])
+    )
   )
 
   return (
@@ -215,18 +233,9 @@ export const ImageCarouselEmbedded = () => {
               useNativeDriver: true,
             }
           )}
-          onHandlerStateChange={Animated.event(
-            [
-              {
-                nativeEvent: { state: gestureState },
-              },
-            ],
-            { useNativeDriver: true }
-          )}
+          onHandlerStateChange={onHandlerStateChange}
         >
-          <Animated.View
-            style={[{ height: cardHeight }, { transform: [{ translateX: Animated.add(dragX, railLeft) as any }] }]}
-          >
+          <Animated.View style={[{ height: cardHeight }, { transform: [{ translateX: translateX as any }] }]}>
             {images.map((image, index) => {
               const { width, height, cumulativeScrollOffset, marginLeft, marginTop } = measurements[index]
               return (
