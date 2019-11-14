@@ -23,6 +23,7 @@ query QueryRenderersCollectionQuery(
 ) {
   collection: marketingCollection(slug: $collectionID) {
     ...Collection_collection
+    id
   }
 }
 
@@ -33,6 +34,16 @@ fragment Collection_collection on MarketingCollection {
 fragment CollectionHeader_collection on MarketingCollection {
   title
   description
+  headerImage
+  image: artworksConnection(sort: "-merchandisability", first: 1) {
+    edges {
+      node {
+        imageUrl
+        id
+      }
+    }
+    id
+  }
 }
 */
 
@@ -51,7 +62,14 @@ v1 = [
     "name": "slug",
     "variableName": "collectionID"
   }
-];
+],
+v2 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "id",
+  "args": null,
+  "storageKey": null
+};
 return {
   "kind": "Request",
   "fragment": {
@@ -106,7 +124,68 @@ return {
             "name": "description",
             "args": null,
             "storageKey": null
-          }
+          },
+          {
+            "kind": "ScalarField",
+            "alias": null,
+            "name": "headerImage",
+            "args": null,
+            "storageKey": null
+          },
+          {
+            "kind": "LinkedField",
+            "alias": "image",
+            "name": "artworksConnection",
+            "storageKey": "artworksConnection(first:1,sort:\"-merchandisability\")",
+            "args": [
+              {
+                "kind": "Literal",
+                "name": "first",
+                "value": 1
+              },
+              {
+                "kind": "Literal",
+                "name": "sort",
+                "value": "-merchandisability"
+              }
+            ],
+            "concreteType": "FilterArtworksConnection",
+            "plural": false,
+            "selections": [
+              {
+                "kind": "LinkedField",
+                "alias": null,
+                "name": "edges",
+                "storageKey": null,
+                "args": null,
+                "concreteType": "FilterArtworksEdge",
+                "plural": true,
+                "selections": [
+                  {
+                    "kind": "LinkedField",
+                    "alias": null,
+                    "name": "node",
+                    "storageKey": null,
+                    "args": null,
+                    "concreteType": "Artwork",
+                    "plural": false,
+                    "selections": [
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "name": "imageUrl",
+                        "args": null,
+                        "storageKey": null
+                      },
+                      (v2/*: any*/)
+                    ]
+                  }
+                ]
+              },
+              (v2/*: any*/)
+            ]
+          },
+          (v2/*: any*/)
         ]
       }
     ]
@@ -114,7 +193,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersCollectionQuery",
-    "id": "18fe2187f5a732516ea47696a1ef21df",
+    "id": "447ccb1187fd9e81a072958a0ada2ca1",
     "text": null,
     "metadata": {}
   }
