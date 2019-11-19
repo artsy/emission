@@ -1,10 +1,25 @@
-import { Box, Serif } from "@artsy/palette"
+import { Box, color, Serif } from "@artsy/palette"
 import OpaqueImageView from "lib/Components/OpaqueImageView/OpaqueImageView"
 import React from "react"
 import { Dimensions } from "react-native"
 import { createFragmentContainer, graphql } from "react-relay"
 
-export const CollectionHeader = props => {
+interface CollectionHeaderProps {
+  collection: {
+    title: string
+    description: string
+    headerImage: string
+    image: {
+      edges: Array<{
+        node: {
+          imageUrl: string
+        }
+      }>
+    }
+  }
+}
+
+export const CollectionHeader: React.SFC<CollectionHeaderProps> = props => {
   const { title, description, image } = props.collection
   const url = image.edges[0].node.imageUrl || ""
   const { width: screenWidth } = Dimensions.get("window")
@@ -15,10 +30,10 @@ export const CollectionHeader = props => {
       <Box mb={2}>
         <OpaqueImageView imageURL={url} height={imageHeight} width={screenWidth} />
       </Box>
-      <Serif size="8" color="black100" ml={2}>
+      <Serif size="8" color={color("black100")} ml={2}>
         {title}
       </Serif>
-      <Serif size="4" color="black100" mt={2}>
+      <Serif size="4" color={color("black100")} mt={2}>
         {description}
       </Serif>
     </>
