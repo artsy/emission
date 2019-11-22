@@ -1,7 +1,8 @@
 import { Spacer } from "@artsy/palette"
-import React, { useContext, useEffect, useRef } from "react"
+import React, { useContext, useRef } from "react"
+import { View } from "react-native"
 import Animated from "react-native-reanimated"
-import { useAnimatedValue, useValueReader } from "./reanimatedHelpers"
+import { useAnimatedValue, useValue } from "./reanimatedHelpers"
 import { TAB_BAR_HEIGHT } from "./StickyTabPage"
 
 export const StickyTabScrollViewContext = React.createContext<{
@@ -17,12 +18,18 @@ export const useStickyTabContext = () => {
 // how fast you have to be scrolling up to show the header when not near the top of the scroll view
 const SHOW_HEADER_VELOCITY = 10
 
+export interface TabState {
+  isActive: Animated.Node<number>
+  shouldLoad: Animated.Value<number>
+  hasLoaded: Animated.Value<number>
+}
+
 export const StickyTabScrollView: React.FC<{
   headerHeight: number
   headerOffsetY: Animated.Value<number>
-  isActive: boolean
+  tabState: TabState
   content: React.ReactNode
-}> = ({ headerHeight, headerOffsetY, content, isActive }) => {
+}> = ({ headerHeight, headerOffsetY, content, tabState }) => {
   const contentHeight = useAnimatedValue(0)
   const layoutHeight = useAnimatedValue(0)
   const scrollOffsetY = useAnimatedValue(0)
@@ -37,24 +44,31 @@ export const StickyTabScrollView: React.FC<{
 
   const scrollViewRef = useRef<Animated.ScrollView>()
 
-  const readVals = useValueReader({ headerOffsetY, scrollOffsetY })
+  const lastIsActive = useAnimatedValue(-1)
 
-  // make sure that when the tab becomes active it does not have any unsightly padding at the top in cases
-  // where the header has been retracted but this tab is near the top of its content
-  useEffect(
-    () => {
-      if (isActive) {
-        readVals().then(vals => {
-          if (-vals.headerOffsetY > vals.scrollOffsetY) {
-            scrollViewRef.current.getNode().scrollTo({ y: -vals.headerOffsetY, animated: false })
-          }
-          lockHeaderPosition.setValue(0)
-        })
-      } else {
-        lockHeaderPosition.setValue(1)
-      }
-    },
-    [isActive]
+  // prevent this tab from manipulating the header position when it is not active
+  Animated.useCode(
+    () =>
+      Animated.cond(Animated.neq(lastIsActive, tabState.isActive), [
+        Animated.set(lastIsActive, tabState.isActive),
+        Animated.cond(
+          tabState.isActive,
+          [
+            // the tab just became active so we might need to adjust the scroll offset to avoid unwanted
+            // white space before allowing the scroll offset to affect the header position
+            Animated.cond(
+              Animated.greaterThan(Animated.multiply(-1, headerOffsetY), scrollOffsetY),
+              Animated.call([headerOffsetY], ([y]) => {
+                scrollViewRef.current.getNode().scrollTo({ y: -y, animated: false })
+                lockHeaderPosition.setValue(0)
+              }),
+              Animated.set(lockHeaderPosition, 0)
+            ),
+          ],
+          Animated.set(lockHeaderPosition, 1)
+        ),
+      ]),
+    []
   )
 
   return (
@@ -81,9 +95,29 @@ export const StickyTabScrollView: React.FC<{
         scrollEventThrottle={0.0000000001}
       >
         <Spacer mb={headerHeight + TAB_BAR_HEIGHT} />
-        {content}
+        <LazyLoadTabContent tabState={tabState} content={content} />
       </Animated.ScrollView>
     </StickyTabScrollViewContext.Provider>
+  )
+}
+
+const LazyLoadTabContent: React.FC<{ tabState: TabState; content: React.ReactNode }> = ({ tabState, content }) => {
+  const showing = Boolean(useValue(tabState.shouldLoad))
+
+  return showing ? (
+    <View
+      onLayout={() => {
+        setTimeout(() => {
+          tabState.hasLoaded.setValue(1)
+          // use significant timeout to avoid busy cpu cascade while loading tabs
+        }, 300)
+      }}
+      style={{ flex: 1 }}
+    >
+      {content}
+    </View>
+  ) : (
+    <></>
   )
 }
 
