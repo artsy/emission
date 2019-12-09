@@ -3634,7 +3634,7 @@ type ExternalPartner {
   name: String
 }
 
-type Fair implements EntityWithFilterArtworksConnectionInterface {
+type Fair implements Node & EntityWithFilterArtworksConnectionInterface {
   # A globally unique ID.
   id: ID!
 
