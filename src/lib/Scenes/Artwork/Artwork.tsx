@@ -1,4 +1,4 @@
-import { Box, Theme } from "@artsy/palette"
+import { Box, color, space, Spacer, Theme } from "@artsy/palette"
 import { Artwork_artwork } from "__generated__/Artwork_artwork.graphql"
 import { ArtworkMarkAsRecentlyViewedQuery } from "__generated__/ArtworkMarkAsRecentlyViewedQuery.graphql"
 import { ArtworkQuery } from "__generated__/ArtworkQuery.graphql"
@@ -6,12 +6,15 @@ import { RetryErrorBoundary } from "lib/Components/RetryErrorBoundary"
 import Separator from "lib/Components/Separator"
 import { defaultEnvironment } from "lib/relay/createEnvironment"
 import { SafeAreaInsets } from "lib/types/SafeAreaInsets"
+import { OpacityGroup, Placeholder, RaggedText } from "lib/utils/placeholders"
 import renderWithLoadProgress from "lib/utils/renderWithLoadProgress"
+import { renderWithPlaceholder } from "lib/utils/renderWithPlaceholder"
 import { Schema, screenTrack } from "lib/utils/track"
 import { ProvideScreenDimensions } from "lib/utils/useScreenDimensions"
-import React from "react"
-import { FlatList } from "react-native"
+import React, { useContext, useEffect, useMemo } from "react"
+import { FlatList, View, ViewProperties } from "react-native"
 import { RefreshControl } from "react-native"
+import Animated from "react-native-reanimated"
 import { commitMutation, createRefetchContainer, graphql, QueryRenderer, RelayRefetchProp } from "react-relay"
 import { AboutArtistFragmentContainer as AboutArtist } from "./Components/AboutArtist"
 import { AboutWorkFragmentContainer as AboutWork } from "./Components/AboutWork"
@@ -354,10 +357,44 @@ export const ArtworkRenderer: React.SFC<{ artworkID: string; safeAreaInsets: Saf
               // Bypass Relay cache on retries.
               ...(isRetry && { force: true }),
             }}
-            render={renderWithLoadProgress(ArtworkContainer, others)}
+            render={renderWithPlaceholder({
+              Container: ArtworkContainer,
+              initialProps: others,
+              renderPlaceholder: () => <ArtworkPlaceholder />,
+            })}
           />
         )
       }}
     />
+  )
+}
+
+const ArtworkPlaceholder: React.FC<{}> = ({}) => {
+  return (
+    <Theme>
+      <View style={{ flex: 1, padding: space(2) }}>
+        {/* Artwork thumbnail */}
+        <Placeholder height={280} />
+        <Spacer mb={2} />
+        {/* save/share buttons */}
+        <View style={{ flexDirection: "row", justifyContent: "center" }}>
+          <Placeholder width={50} height={space(2)} marginHorizontal={space(1)} />
+          <Placeholder width={50} height={space(2)} marginHorizontal={space(1)} />
+        </View>
+        <Spacer mb={2} />
+        {/* Artist name */}
+        <Placeholder width={100} height={space(1)} />
+        <Spacer mb={2} />
+        {/* Artwork tombstone details */}
+        <View style={{ width: 130 }}>
+          <RaggedText numLines={5} />
+        </View>
+        <Spacer mb={2} />
+        {/* more junk */}
+        <Placeholder width={190} height={space(1)} marginBottom={5} />
+        <Spacer mb={2} />
+        <RaggedText numLines={6} />
+      </View>
+    </Theme>
   )
 }

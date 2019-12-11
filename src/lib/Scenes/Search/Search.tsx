@@ -1,4 +1,5 @@
 import { color, Flex, Sans, Serif, Theme } from "@artsy/palette"
+import { RetryErrorBoundary } from "lib/Components/RetryErrorBoundary"
 import SearchIcon from "lib/Icons/SearchIcon"
 import { ProvideScreenDimensions, useScreenDimensions } from "lib/utils/useScreenDimensions"
 import React, { useRef, useState } from "react"
