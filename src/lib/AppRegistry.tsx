@@ -70,6 +70,10 @@ YellowBox.ignoreWarnings([
 
   // This is for the Artist page, which will likely get redone soon anyway.
   "VirtualizedLists should never be nested inside plain ScrollViews with the same orientation - use another VirtualizedList-backed container instead.",
+
+  // This happened after the relay 6 update. Apparently the problem is that relay thinks our edges
+  // should have id fields but they don't. https://artsy.slack.com/archives/C2TQ4PT8R/p1573502018214300
+  "RelayResponseNormalizer: Payload did not contain a value for field `id: id`. Check that you are parsing with the same query that was used to fetch the payload.",
 ])
 
 interface ArtistProps {
