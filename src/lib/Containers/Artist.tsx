@@ -1,4 +1,4 @@
-import { Flex, Theme } from "@artsy/palette"
+import { Flex, Spacer, Theme } from "@artsy/palette"
 import { Artist_artist } from "__generated__/Artist_artist.graphql"
 import ArtistAbout from "lib/Components/Artist/ArtistAbout"
 import ArtistArtworks from "lib/Components/Artist/ArtistArtworks"
@@ -72,7 +72,15 @@ export class Artist extends React.Component<Props, State> {
       <Theme>
         <ProvideScreenDimensions>
           <Flex style={{ flex: 1 }}>
-            <StickyTabPage headerContent={<ArtistHeader artist={artist} />} tabs={tabs} />
+            <StickyTabPage
+              staticHeaderContent={
+                <>
+                  <ArtistHeader artist={artist} />
+                  <Spacer mb={1} />
+                </>
+              }
+              tabs={tabs}
+            />
           </Flex>
         </ProvideScreenDimensions>
       </Theme>

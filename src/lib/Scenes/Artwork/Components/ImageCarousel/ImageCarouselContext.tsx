@@ -1,9 +1,9 @@
 import { ImageCarousel_images } from "__generated__/ImageCarousel_images.graphql"
 import { Schema } from "lib/utils/track"
+import { GlobalState, useGlobalState } from "lib/utils/useGlobalState"
 import React, { useMemo, useRef } from "react"
 import { FlatList, View } from "react-native"
 import { useTracking } from "react-tracking"
-import { GlobalState, useGlobalState } from "./useGlobalState"
 
 export type ImageDescriptor = Pick<ImageCarousel_images[number], "deepZoom" | "height" | "width" | "url">
 

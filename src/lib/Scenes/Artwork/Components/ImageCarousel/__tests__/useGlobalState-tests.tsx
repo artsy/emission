@@ -1,6 +1,6 @@
 import { mount } from "enzyme"
 import React from "react"
-import { useGlobalState } from "../useGlobalState"
+import { useGlobalState } from "../lib/utils/useGlobalState"
 
 describe(useGlobalState, () => {
   let [n, setN] = [null, null] as any
