@@ -39,7 +39,7 @@ export class Collection extends Component<CollectionProps, CollectionState> {
       case "featuredArtists":
         return (
           <Box>
-            <CollectionFeaturedArtists featuredArtists={this.props.collection} />
+            <CollectionFeaturedArtists collection={this.props.collection} />
           </Box>
         )
       default:
@@ -73,7 +73,7 @@ export const CollectionContainer = createFragmentContainer(Collection, {
   collection: graphql`
     fragment Collection_collection on MarketingCollection {
       ...CollectionHeader_collection
-      ...FeaturedArtists_featuredArtists
+      ...FeaturedArtists_collection
     }
   `,
 })

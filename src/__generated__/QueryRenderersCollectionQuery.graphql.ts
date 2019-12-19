@@ -29,7 +29,7 @@ query QueryRenderersCollectionQuery(
 
 fragment Collection_collection on MarketingCollection {
   ...CollectionHeader_collection
-  ...FeaturedArtists_featuredArtists
+  ...FeaturedArtists_collection
 }
 
 fragment CollectionHeader_collection on MarketingCollection {
@@ -47,7 +47,7 @@ fragment CollectionHeader_collection on MarketingCollection {
   }
 }
 
-fragment FeaturedArtists_featuredArtists on MarketingCollection {
+fragment FeaturedArtists_collection on MarketingCollection {
   artworksConnection(aggregations: [MERCHANDISABLE_ARTISTS], size: 9, sort: "-decayed_merch") {
     merchandisableArtists {
       slug
@@ -296,7 +296,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersCollectionQuery",
-    "id": "9e0b4755fb6aa92d1edab5be04ecee8e",
+    "id": "2fc649fb2fd82cd35ac716df45209f7c",
     "text": null,
     "metadata": {}
   }
