@@ -1,101 +1,156 @@
 import { Box, color, Flex, Sans, Serif, space, Spacer } from "@artsy/palette"
 import { PartnerShows_partner } from "__generated__/PartnerShows_partner.graphql"
 import Spinner from "lib/Components/Spinner"
-import { isCloseToBottom } from "lib/utils/isCloseToBottom"
-import React, { useState } from "react"
-import { ImageBackground, ScrollView, TouchableWithoutFeedback } from "react-native"
+import { useNativeValue } from "lib/Components/StickyTabPage/reanimatedHelpers"
+import {
+  StickyTabPageFlatList,
+  StickyTabPageFlatListContext,
+  StickyTabSection,
+} from "lib/Components/StickyTabPage/StickyTabPageFlatList"
+import { TabEmptyState } from "lib/Components/TabEmptyState"
+import SwitchBoard from "lib/NativeModules/SwitchBoard"
+import React, { useContext, useMemo, useState } from "react"
+import { ImageBackground, TouchableWithoutFeedback } from "react-native"
 import { createPaginationContainer, graphql, RelayPaginationProp } from "react-relay"
 import styled from "styled-components/native"
-import { PartnerEmptyState } from "./PartnerEmptyState"
 import { PartnerShowsRailContainer as PartnerShowsRail } from "./PartnerShowsRail"
 
-const PAGE_SIZE = 6
+const PAGE_SIZE = 32
 
-const ShowGridItem = ({
-  show,
-  itemIndex,
-}: {
+interface ShowGridItemProps {
   show: PartnerShows_partner["pastShows"]["edges"][0]["node"]
   itemIndex: number
-}) => {
-  const showImageURL = show.coverImage && show.coverImage.url
-  const styles = itemIndex % 2 === 0 ? { paddingRight: space(1) } : { paddingLeft: space(1) }
-  return (
-    <GridItem key={show.id}>
-      <TouchableWithoutFeedback onPress={null}>
-        <Box style={styles}>
-          {showImageURL ? (
-            <BackgroundImage key={show.id} style={{ resizeMode: "cover" }} source={{ uri: showImageURL }} />
-          ) : (
-            <EmptyImage />
-          )}
-          <Spacer mb={0.5} />
-          <Sans size="2">{show.name}</Sans>
-          <Serif size="2" color="black60">
-            {show.exhibitionPeriod}
-          </Serif>
-        </Box>
-      </TouchableWithoutFeedback>
-      <Spacer mb={2} />
-    </GridItem>
-  )
+}
+
+class ShowGridItem extends React.Component<ShowGridItemProps> {
+  onPress = () => {
+    const { show } = this.props
+    SwitchBoard.presentNavigationViewController(this, `/show/${show.slug}`)
+  }
+
+  render() {
+    const { show, itemIndex } = this.props
+    const showImageURL = show.coverImage && show.coverImage.url
+    const styles = itemIndex % 2 === 0 ? { paddingRight: space(1) } : { paddingLeft: space(1) }
+
+    return (
+      <GridItem key={show.id}>
+        <TouchableWithoutFeedback onPress={this.onPress}>
+          <Box style={styles}>
+            {showImageURL ? (
+              <BackgroundImage key={show.id} style={{ resizeMode: "cover" }} source={{ uri: showImageURL }} />
+            ) : (
+              <EmptyImage />
+            )}
+            <Spacer mb={0.5} />
+            <Sans size="2">{show.name}</Sans>
+            <Serif size="2" color="black60">
+              {show.exhibitionPeriod}
+            </Serif>
+          </Box>
+        </TouchableWithoutFeedback>
+        <Spacer mb={2} />
+      </GridItem>
+    )
+  }
 }
 
 export const PartnerShows: React.FC<{
   partner: PartnerShows_partner
   relay: RelayPaginationProp
 }> = ({ partner, relay }) => {
-  const [hasRecentShows, setHasRecentShows] = useState(false)
-  const [fetchingNextPage, setFetchingNextPage] = useState(false)
+  const [isLoadingMore, setIsLoadingMore] = useState(false)
 
-  const fetchNextPage = () => {
-    if (fetchingNextPage || !relay.hasMore()) {
-      return
-    }
-    setFetchingNextPage(true)
-    relay.loadMore(PAGE_SIZE, error => {
-      if (error) {
-        // FIXME: Handle error
-        console.error("PartnerShows.tsx", error.message)
-      }
-      setFetchingNextPage(false)
-    })
-  }
+  const hasRecentShows = partner.recentShows.edges.length > 0
 
   const pastShows = partner.pastShows && partner.pastShows.edges
-  if (!pastShows && !hasRecentShows) {
-    return <PartnerEmptyState text="There are no shows from this gallery yet" />
-  }
 
-  return (
-    <ScrollView onScroll={isCloseToBottom(fetchNextPage)}>
-      <Box px={2} py={3}>
-        <PartnerShowsRail partner={partner} setHasRecentShows={setHasRecentShows} />
-        {!!pastShows &&
-          !!pastShows.length && (
-            <>
+  const sections: StickyTabSection[] = useMemo(
+    () => {
+      if (!pastShows && !hasRecentShows) {
+        return [
+          {
+            key: "empty_state",
+            content: <TabEmptyState text="There are no shows from this gallery yet" />,
+          },
+        ]
+      }
+
+      const result: StickyTabSection[] = []
+      if (hasRecentShows) {
+        result.push({
+          key: "recent_shows",
+          content: <PartnerShowsRail partner={partner} />,
+        })
+      }
+
+      if (partner.pastShows.edges.length) {
+        result.push({
+          key: "past_shows_header",
+          content: (
+            <Flex mb={2}>
               <Sans size="3t" weight="medium">
                 Past shows
               </Sans>
-              <Spacer mb={2} />
+            </Flex>
+          ),
+        })
+
+        // chunk needs to be even to get seamless columns
+        const chunkSize = 8
+        for (let i = 0; i < partner.pastShows.edges.length; i += chunkSize) {
+          const chunk = partner.pastShows.edges.slice(i, i + chunkSize)
+          const actualChunkSize = chunk.length
+          result.push({
+            key: `chunk ${i}:${actualChunkSize}`,
+            content: (
               <Flex flexDirection="row" flexWrap="wrap">
-                {pastShows.map((show, index) => {
-                  const node = show.node
-                  return <ShowGridItem itemIndex={index} key={node.id} show={node} />
-                })}
+                {chunk.map(({ node }, index) => (
+                  <ShowGridItem itemIndex={index} key={node.id} show={node} />
+                ))}
               </Flex>
-              {fetchingNextPage && (
-                <Box p={2} style={{ height: 50 }}>
-                  <Flex style={{ flex: 1 }} flexDirection="row" justifyContent="center">
-                    <Spinner />
-                  </Flex>
-                </Box>
-              )}
-              <Spacer mb={3} />
-            </>
-          )}
-      </Box>
-    </ScrollView>
+            ),
+          })
+        }
+      }
+
+      return result
+    },
+    [partner.pastShows.edges, hasRecentShows, pastShows]
+  )
+
+  const tabContext = useContext(StickyTabPageFlatListContext)
+
+  const tabIsActive = Boolean(useNativeValue(tabContext.tabIsActive, 0))
+
+  return (
+    <StickyTabPageFlatList
+      data={sections}
+      // using tabIsActive here to render only the minimal UI on this tab before the user actually switches to it
+      onEndReachedThreshold={tabIsActive ? 1 : 0}
+      // render up to the first chunk on initial mount
+      initialNumToRender={sections.findIndex(section => section.key.startsWith("chunk")) + 1}
+      windowSize={tabIsActive ? 5 : 1}
+      onEndReached={() => {
+        if (isLoadingMore || !relay.hasMore()) {
+          return
+        }
+        setIsLoadingMore(true)
+        relay.loadMore(PAGE_SIZE, error => {
+          if (error) {
+            // FIXME: Handle error
+            console.error("PartnerShows.tsx", error.message)
+          }
+          setIsLoadingMore(false)
+        })
+      }}
+      refreshing={isLoadingMore}
+      ListFooterComponent={() => (
+        <Flex alignItems="center" justifyContent="center" height={space(6)}>
+          {isLoadingMore ? <Spinner /> : null}
+        </Flex>
+      )}
+    />
   )
 }
 
@@ -104,9 +159,17 @@ export const PartnerShowsFragmentContainer = createPaginationContainer(
   {
     partner: graphql`
       fragment PartnerShows_partner on Partner
-        @argumentDefinitions(count: { type: "Int", defaultValue: 6 }, cursor: { type: "String" }) {
+        @argumentDefinitions(count: { type: "Int", defaultValue: 32 }, cursor: { type: "String" }) {
         slug
         internalID
+        # need to know whether there are any current shows
+        recentShows: showsConnection(status: CURRENT, first: 1) {
+          edges {
+            node {
+              id
+            }
+          }
+        }
         pastShows: showsConnection(status: CLOSED, sort: END_AT_DESC, first: $count, after: $cursor)
           @connection(key: "Partner_pastShows") {
           pageInfo {

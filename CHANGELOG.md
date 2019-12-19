@@ -1,6 +1,383 @@
-# v1.18.35 (Thu Nov 21 2019)
+# v1.20.2 (Wed Dec 18 2019)
 
 #### 🐛  Bug Fix
+
+- Updates shows to use coverImage [#2016](https://github.com/artsy/emission/pull/2016) ([@kierangillen](https://github.com/kierangillen))
+
+#### Authors: 1
+
+- Kieran Gillen ([@kierangillen](https://github.com/kierangillen))
+
+---
+
+# v1.20.1 (Tue Dec 17 2019)
+
+#### 🐛  Bug Fix
+
+- Correct the punctuation for e.g. Phillips [#2017](https://github.com/artsy/emission/pull/2017) ([@yuki24](https://github.com/yuki24))
+
+#### Authors: 1
+
+- Yuki Nishijima ([@yuki24](https://github.com/yuki24))
+
+---
+
+# v1.20.0 (Mon Dec 16 2019)
+
+#### 🚀  Enhancement
+
+- Include partner's name on copy stating bidders agree to Artsy's COS [#2012](https://github.com/artsy/emission/pull/2012) ([@yuki24](https://github.com/yuki24))
+
+#### Authors: 1
+
+- Yuki Nishijima ([@yuki24](https://github.com/yuki24))
+
+---
+
+# v1.19.20 (Mon Dec 16 2019)
+
+#### 🐛  Bug Fix
+
+- Removes bundler installation from deploy job [#2014](https://github.com/artsy/emission/pull/2014) ([@ashfurrow](https://github.com/ashfurrow))
+- Adds documentation for releasing iOS features [#2013](https://github.com/artsy/emission/pull/2013) ([@ashfurrow](https://github.com/ashfurrow))
+
+#### Authors: 1
+
+- Ash Furrow ([@ashfurrow](https://github.com/ashfurrow))
+
+---
+
+# v1.19.19 (Fri Dec 13 2019)
+
+#### 🐛  Bug Fix
+
+- [MX-75] fix scroll to bottom in conversations [#2011](https://github.com/artsy/emission/pull/2011) ([@ds300](https://github.com/ds300))
+
+#### Authors: 1
+
+- David Sheldrick ([@ds300](https://github.com/ds300))
+
+---
+
+# v1.19.18 (Fri Dec 13 2019)
+
+#### 🐛  Bug Fix
+
+- Fix artist header when `bylineRequired` field is an empty string. [#2010](https://github.com/artsy/emission/pull/2010) ([@ds300](https://github.com/ds300))
+
+#### Authors: 1
+
+- David Sheldrick ([@ds300](https://github.com/ds300))
+
+---
+
+# v1.19.17 (Thu Dec 12 2019)
+
+#### 🐛  Bug Fix
+
+- MX-100 - Removes SearchLink from Fair [#2009](https://github.com/artsy/emission/pull/2009) ([@kierangillen](https://github.com/kierangillen))
+
+#### Authors: 1
+
+- Kieran Gillen ([@kierangillen](https://github.com/kierangillen))
+
+---
+
+# v1.19.16 (Thu Dec 12 2019)
+
+#### 🐛  Bug Fix
+
+- Moves collection screens to new a sub dir of collections [#2006](https://github.com/artsy/emission/pull/2006) ([@ashleyjelks](https://github.com/ashleyjelks))
+
+#### Authors: 1
+
+- Ashley Jelks ([@ashleyjelks](https://github.com/ashleyjelks))
+
+---
+
+# v1.19.15 (Wed Dec 11 2019)
+
+#### 🐛  Bug Fix
+
+- MX-117 Retry failed persisted queries with full text [#2007](https://github.com/artsy/emission/pull/2007) ([@ds300](https://github.com/ds300))
+
+#### Authors: 1
+
+- David Sheldrick ([@ds300](https://github.com/ds300))
+
+---
+
+# v1.19.14 (Wed Dec 11 2019)
+
+#### 🐛  Bug Fix
+
+- Adding more tests for search UI [#1999](https://github.com/artsy/emission/pull/1999) ([@ds300](https://github.com/ds300))
+
+#### Authors: 1
+
+- David Sheldrick ([@ds300](https://github.com/ds300))
+
+---
+
+# v1.19.13 (Wed Dec 11 2019)
+
+#### 🐛  Bug Fix
+
+- Updates Danger rule for adding tests for new files [#2008](https://github.com/artsy/emission/pull/2008) ([@ashfurrow](https://github.com/ashfurrow))
+
+#### Authors: 1
+
+- Ash Furrow ([@ashfurrow](https://github.com/ashfurrow))
+
+---
+
+# v1.19.12 (Tue Dec 10 2019)
+
+#### 🐛  Bug Fix
+
+- Fix sticky tab header positioning when content is not so high [#2002](https://github.com/artsy/emission/pull/2002) ([@ds300](https://github.com/ds300))
+
+#### Authors: 1
+
+- David Sheldrick ([@ds300](https://github.com/ds300))
+
+---
+
+# v1.19.11 (Mon Dec 09 2019)
+
+#### 🐛  Bug Fix
+
+- Points to our fork of tipsi-stripe #trivial [#2004](https://github.com/artsy/emission/pull/2004) ([@ashfurrow](https://github.com/ashfurrow))
+
+#### Authors: 1
+
+- Ash Furrow ([@ashfurrow](https://github.com/ashfurrow))
+
+---
+
+# v1.19.10 (Mon Dec 09 2019)
+
+#### 🐛  Bug Fix
+
+- Updates emission VC to expose artworkID [#2003](https://github.com/artsy/emission/pull/2003) ([@kierangillen](https://github.com/kierangillen))
+
+#### Authors: 1
+
+- Kieran Gillen ([@kierangillen](https://github.com/kierangillen))
+
+---
+
+# v1.19.9 (Mon Dec 09 2019)
+
+#### 🐛  Bug Fix
+
+- Update dep @artsy/palette from 5.1.6 to v5.1.11 [#2000](https://github.com/artsy/emission/pull/2000) ([@renovate-bot](https://github.com/renovate-bot))
+
+#### Authors: 1
+
+- Renovate Bot ([@renovate-bot](https://github.com/renovate-bot))
+
+---
+
+# v1.19.8 (Mon Dec 09 2019)
+
+#### 🐛  Bug Fix
+
+- Run unit tests on master [#1998](https://github.com/artsy/emission/pull/1998) ([@ds300](https://github.com/ds300))
+
+#### ⚠️  Pushed to master
+
+- Empty commit to trigger CI run on master.  ([@ashfurrow](https://github.com/ashfurrow))
+
+#### Authors: 2
+
+- David Sheldrick ([@ds300](https://github.com/ds300))
+- Ash Furrow ([@ashfurrow](https://github.com/ashfurrow))
+
+---
+
+# v1.19.7 (Fri Dec 06 2019)
+
+#### 🐛  Bug Fix
+
+- [MX-54] App Ratings Prompt [#1995](https://github.com/artsy/emission/pull/1995) ([@ashfurrow](https://github.com/ashfurrow))
+- [MX-87] Search Results Pagination + other search improvements [#1994](https://github.com/artsy/emission/pull/1994) ([@ds300](https://github.com/ds300))
+- Refactor and modernize Consignments/Welcome & Inbox empty state [#1993](https://github.com/artsy/emission/pull/1993) ([@kierangillen](https://github.com/kierangillen))
+- Updates point people [#1992](https://github.com/artsy/emission/pull/1992) ([@kierangillen](https://github.com/kierangillen))
+- MX-116 - Fixes markdown bug causing Artwork crash [#1991](https://github.com/artsy/emission/pull/1991) ([@kierangillen](https://github.com/kierangillen))
+- Updates to Node 12 [#1986](https://github.com/artsy/emission/pull/1986) ([@kierangillen](https://github.com/kierangillen) [@ashfurrow](https://github.com/ashfurrow) [@ds300](https://github.com/ds300))
+- Adds note about auto-deploys [#1989](https://github.com/artsy/emission/pull/1989) ([@ashfurrow](https://github.com/ashfurrow))
+
+#### ⚠️  Pushed to master
+
+- Revert "Removes Ruby version specifier."  ([@ashfurrow](https://github.com/ashfurrow))
+- Removes Ruby version specifier.  ([@ashfurrow](https://github.com/ashfurrow))
+
+#### Authors: 3
+
+- Ash Furrow ([@ashfurrow](https://github.com/ashfurrow))
+- David Sheldrick ([@ds300](https://github.com/ds300))
+- Kieran Gillen ([@kierangillen](https://github.com/kierangillen))
+
+---
+
+# v1.19.6 (Wed Dec 04 2019)
+
+#### 🐛 Bug Fix
+
+- Update dep typescript from 3.7.2 to v3.7.3 [#1990](https://github.com/artsy/emission/pull/1990) ([@renovate-bot](https://github.com/renovate-bot))
+
+#### Authors: 1
+
+- Renovate Bot ([@renovate-bot](https://github.com/renovate-bot))
+
+---
+
+# v1.19.5 (Tue Dec 03 2019)
+
+#### 🐛 Bug Fix
+
+- Pin dep @react-native-community/async-storage from ^1.6.3 to 1.6.3 [#1987](https://github.com/artsy/emission/pull/1987) ([@renovate-bot](https://github.com/renovate-bot))
+- StickyTabs perf + UX improvements [#1982](https://github.com/artsy/emission/pull/1982) ([@ds300](https://github.com/ds300))
+
+#### Authors: 2
+
+- Renovate Bot ([@renovate-bot](https://github.com/renovate-bot))
+- David Sheldrick ([@ds300](https://github.com/ds300))
+
+---
+
+# v1.19.4 (Tue Dec 03 2019)
+
+#### 🐛 Bug Fix
+
+- [ME-84] Add recent searches [#1972](https://github.com/artsy/emission/pull/1972) ([@ds300](https://github.com/ds300))
+
+#### Authors: 1
+
+- David Sheldrick ([@ds300](https://github.com/ds300))
+
+---
+
+# v1.19.3 (Tue Dec 03 2019)
+
+#### 🐛 Bug Fix
+
+- Show sticky header based on scroll offset rather than velocity [#1985](https://github.com/artsy/emission/pull/1985) ([@ds300](https://github.com/ds300))
+
+#### Authors: 1
+
+- David Sheldrick ([@ds300](https://github.com/ds300))
+
+---
+
+# v1.19.2 (Tue Dec 03 2019)
+
+#### 🐛 Bug Fix
+
+- [MX-114] Infrastructure for hiding back button on Partner view [#1981](https://github.com/artsy/emission/pull/1981) ([@ashfurrow](https://github.com/ashfurrow) [@ds300](https://github.com/ds300))
+- Partner artworks to InfiniteScrollGrid [#1983](https://github.com/artsy/emission/pull/1983) ([@kierangillen](https://github.com/kierangillen) [@ds300](https://github.com/ds300))
+
+#### Authors: 3
+
+- Ash Furrow ([@ashfurrow](https://github.com/ashfurrow))
+- David Sheldrick ([@ds300](https://github.com/ds300))
+- Kieran Gillen ([@kierangillen](https://github.com/kierangillen))
+
+---
+
+# v1.19.1 (Mon Dec 02 2019)
+
+#### 🐛 Bug Fix
+
+- Pin dependencies [#1984](https://github.com/artsy/emission/pull/1984) ([@renovate-bot](https://github.com/renovate-bot))
+
+#### Authors: 1
+
+- Renovate Bot ([@renovate-bot](https://github.com/renovate-bot))
+
+---
+
+# v1.19.0 (Mon Dec 02 2019)
+
+#### 🚀 Enhancement
+
+- [ME-113] Upgrade RN [#1970](https://github.com/artsy/emission/pull/1970) ([@kierangillen](https://github.com/kierangillen) [@ashfurrow](https://github.com/ashfurrow) [@ds300](https://github.com/ds300))
+
+#### Authors: 3
+
+- Kieran Gillen ([@kierangillen](https://github.com/kierangillen))
+- Ash Furrow ([@ashfurrow](https://github.com/ashfurrow))
+- David Sheldrick ([@ds300](https://github.com/ds300))
+
+---
+
+# v1.18.40 (Mon Nov 25 2019)
+
+#### 🐛 Bug Fix
+
+- ME-108 - Updates Artist page to use new design system and spec [#1977](https://github.com/artsy/emission/pull/1977) ([@kierangillen](https://github.com/kierangillen))
+
+#### Authors: 1
+
+- Kieran Gillen ([@kierangillen](https://github.com/kierangillen))
+
+---
+
+# v1.18.39 (Fri Nov 22 2019)
+
+#### 🐛 Bug Fix
+
+- Fixes an issue where the feature flag of '0' causes a crash [#1980](https://github.com/artsy/emission/pull/1980) ([@yuki24](https://github.com/yuki24))
+
+#### Authors: 1
+
+- Yuki Nishijima ([@yuki24](https://github.com/yuki24))
+
+---
+
+# v1.18.38 (Fri Nov 22 2019)
+
+#### 🐛 Bug Fix
+
+- Small cleanup of unused code [#1979](https://github.com/artsy/emission/pull/1979) ([@kierangillen](https://github.com/kierangillen))
+- Adds sort to Partner.artworks [#1978](https://github.com/artsy/emission/pull/1978) ([@kierangillen](https://github.com/kierangillen))
+
+#### Authors: 1
+
+- Kieran Gillen ([@kierangillen](https://github.com/kierangillen))
+
+---
+
+# v1.18.37 (Fri Nov 22 2019)
+
+#### 🐛 Bug Fix
+
+- ME-110 - Partner QA [#1976](https://github.com/artsy/emission/pull/1976) ([@kierangillen](https://github.com/kierangillen))
+- Pin dep react-native-reanimated from ^1.4.0 to 1.4.0 [#1975](https://github.com/artsy/emission/pull/1975) ([@renovate-bot](https://github.com/renovate-bot))
+
+#### Authors: 2
+
+- Kieran Gillen ([@kierangillen](https://github.com/kierangillen))
+- Renovate Bot ([@renovate-bot](https://github.com/renovate-bot))
+
+---
+
+# v1.18.36 (Thu Nov 21 2019)
+
+#### 🐛 Bug Fix
+
+- Sticky tab collapsing header [#1974](https://github.com/artsy/emission/pull/1974) ([@ds300](https://github.com/ds300))
+
+#### Authors: 1
+
+- David Sheldrick ([@ds300](https://github.com/ds300))
+
+---
+
+# v1.18.35 (Thu Nov 21 2019)
+
+#### 🐛 Bug Fix
 
 - Collection Header [#1971](https://github.com/artsy/emission/pull/1971) ([@ashleyjelks](https://github.com/ashleyjelks))
 
@@ -12,7 +389,7 @@
 
 # v1.18.34 (Tue Nov 19 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Update dep typescript from 3.6.4 to v3.7.2 [#1973](https://github.com/artsy/emission/pull/1973) ([@renovate-bot](https://github.com/renovate-bot))
 
@@ -24,7 +401,7 @@
 
 # v1.18.33 (Fri Nov 15 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Partner updates [#1969](https://github.com/artsy/emission/pull/1969) ([@kierangillen](https://github.com/kierangillen))
 
@@ -36,7 +413,7 @@
 
 # v1.18.32 (Fri Nov 15 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - ME-86 Search Autosuggest [#1966](https://github.com/artsy/emission/pull/1966) ([@ds300](https://github.com/ds300))
 
@@ -48,7 +425,7 @@
 
 # v1.18.31 (Thu Nov 14 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Adds spinners to partner page [#1968](https://github.com/artsy/emission/pull/1968) ([@kierangillen](https://github.com/kierangillen))
 
@@ -60,7 +437,7 @@
 
 # v1.18.30 (Thu Nov 14 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Fixes it(It... [#1967](https://github.com/artsy/emission/pull/1967) ([@kierangillen](https://github.com/kierangillen))
 
@@ -72,7 +449,7 @@
 
 # v1.18.29 (Thu Nov 14 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Partner view tests [#1945](https://github.com/artsy/emission/pull/1945) ([@kierangillen](https://github.com/kierangillen))
 
@@ -84,7 +461,7 @@
 
 # v1.18.28 (Wed Nov 13 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - ME-89 - Adds partner locations view to partner view [#1960](https://github.com/artsy/emission/pull/1960) ([@kierangillen](https://github.com/kierangillen))
 
@@ -96,7 +473,7 @@
 
 # v1.18.27 (Tue Nov 12 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Condenses partner header [#1964](https://github.com/artsy/emission/pull/1964) ([@kierangillen](https://github.com/kierangillen))
 
@@ -108,7 +485,7 @@
 
 # v1.18.26 (Tue Nov 12 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - hide artists list when no artists [#1963](https://github.com/artsy/emission/pull/1963) ([@ds300](https://github.com/ds300))
 
@@ -120,7 +497,7 @@
 
 # v1.18.25 (Fri Nov 08 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Update dep vscode-apollo-relay from 1.4.3 to v1.5.0 [#1962](https://github.com/artsy/emission/pull/1962) ([@renovate-bot](https://github.com/renovate-bot))
 
@@ -132,7 +509,7 @@
 
 # v1.18.24 (Wed Nov 06 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Update dep @artsy/palette from 5.1.5 to v5.1.6 [#1961](https://github.com/artsy/emission/pull/1961) ([@renovate-bot](https://github.com/renovate-bot))
 
@@ -144,7 +521,7 @@
 
 # v1.18.23 (Wed Nov 06 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - AUCT-677 update buyer's premium copy [#1959](https://github.com/artsy/emission/pull/1959) ([@bhoggard](https://github.com/bhoggard))
 
@@ -156,7 +533,7 @@
 
 # v1.18.22 (Tue Nov 05 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Adds EmptyState, Horizontal Pagination and Artwork Counts to Partner also adds isCloseToEdge util [#1956](https://github.com/artsy/emission/pull/1956) ([@kierangillen](https://github.com/kierangillen))
 
@@ -168,7 +545,7 @@
 
 # v1.18.21 (Tue Nov 05 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - [ME-83] Adds empty View Controller for upcoming Search work [#1958](https://github.com/artsy/emission/pull/1958) ([@ashfurrow](https://github.com/ashfurrow))
 - Updates Extraction #trivial [#1957](https://github.com/artsy/emission/pull/1957) ([@ashfurrow](https://github.com/ashfurrow))
@@ -182,7 +559,7 @@
 
 # v1.18.20 (Mon Nov 04 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Pin dependencies [#1955](https://github.com/artsy/emission/pull/1955) ([@renovate-bot](https://github.com/renovate-bot))
 
@@ -194,13 +571,11 @@
 
 # v1.18.19 (Mon Nov 04 2019)
 
-
-
 ---
 
 # v1.18.18 (Mon Nov 04 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Update dep @artsy/palette from 5.1.4 to v5.1.5 [#1953](https://github.com/artsy/emission/pull/1953) ([@renovate-bot](https://github.com/renovate-bot))
 
@@ -212,7 +587,7 @@
 
 # v1.18.17 (Sat Nov 02 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Adjust the loader position for <PriceSummary> [#1952](https://github.com/artsy/emission/pull/1952) ([@yuki24](https://github.com/yuki24))
 
@@ -224,7 +599,7 @@
 
 # v1.18.16 (Fri Nov 01 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Repalce bidAmountMinor bidAmountCents [#1951](https://github.com/artsy/emission/pull/1951) ([@yuki24](https://github.com/yuki24))
 
@@ -236,7 +611,7 @@
 
 # v1.18.15 (Thu Oct 31 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - [ME-77] Marks artworks as recently viewed [#1949](https://github.com/artsy/emission/pull/1949) ([@ashfurrow](https://github.com/ashfurrow))
 - [AUCT-692] Adds margin top to position the loader at a more appropriate location in `<PriceSummary>` [#1952](https://github.com/artsy/emission/pull/1952) ([@yuki24](https://github.com/yuki2))
@@ -249,13 +624,11 @@
 
 # v1.18.14 (Thu Oct 31 2019)
 
-
-
 ---
 
 # v1.18.13 (Thu Oct 31 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - [PURCHASE-1545] All artwork details subfields have a ReadMore link [#1944](https://github.com/artsy/emission/pull/1944) ([@ashfurrow](https://github.com/ashfurrow))
 
@@ -267,7 +640,7 @@
 
 # v1.18.12 (Thu Oct 31 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Prevent concurrent builds on master [#1946](https://github.com/artsy/emission/pull/1946) ([@ds300](https://github.com/ds300))
 
@@ -279,11 +652,11 @@
 
 # v1.18.11 (Wed Oct 30 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - ME-42 Make sure artists feed is up-to-date on refresh [#1943](https://github.com/artsy/emission/pull/1943) ([@ds300](https://github.com/ds300))
 
-#### 🏠  Internal
+#### 🏠 Internal
 
 - Minor typo in docs: `stores` -> `stories` [#1941](https://github.com/artsy/emission/pull/1941) ([@pepopowitz](https://github.com/pepopowitz))
 
@@ -296,7 +669,7 @@
 
 # v1.18.10 (Wed Oct 30 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - PURCHASE-1599: Consolidates Auction State across Artwork and Bid pages [#1934](https://github.com/artsy/emission/pull/1934) ([@sweir27](https://github.com/sweir27))
 
@@ -308,13 +681,11 @@
 
 # v1.18.9 (Tue Oct 29 2019)
 
-
-
 ---
 
 # v1.18.8 (Tue Oct 29 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Update dep @artsy/palette from 5.0.0 to v5.1.2 [#1931](https://github.com/artsy/emission/pull/1931) ([@renovate-bot](https://github.com/renovate-bot))
 
@@ -326,7 +697,7 @@
 
 # v1.18.7 (Mon Oct 28 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Adds react-native Partner view [#1927](https://github.com/artsy/emission/pull/1927) ([@kierangillen](https://github.com/kierangillen))
 
@@ -338,7 +709,7 @@
 
 # v1.18.6 (Mon Oct 28 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Rename enablePriceTransparency to AROptionsPriceTransparency for consistency [#1936](https://github.com/artsy/emission/pull/1936) ([@yuki24](https://github.com/yuki24))
 
@@ -350,7 +721,7 @@
 
 # v1.18.5 (Mon Oct 28 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - [ME-65] Migrate Artist page to use same sort as web [#1937](https://github.com/artsy/emission/pull/1937) ([@ashfurrow](https://github.com/ashfurrow))
 
@@ -362,7 +733,7 @@
 
 # v1.18.4 (Mon Oct 28 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - ME-58 fix saved artworks zero state [#1940](https://github.com/artsy/emission/pull/1940) ([@ds300](https://github.com/ds300))
 
@@ -374,7 +745,7 @@
 
 # v1.18.3 (Mon Oct 28 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Add artsy open source footer [#1939](https://github.com/artsy/emission/pull/1939) ([@jonallured](https://github.com/jonallured))
 
@@ -386,13 +757,13 @@
 
 # v1.18.2 (Mon Oct 28 2019)
 
-#### 🐛  Bug Fix
+#### 🐛 Bug Fix
 
 - Pin dependencies [#1938](https://github.com/artsy/emission/pull/1938) ([@renovate-bot](https://github.com/renovate-bot))
 
-#### ⚠️  Pushed to master
+#### ⚠️ Pushed to master
 
-- update changelog before updating release artefacts  (d.j.sheldrick@gmail.com)
+- update changelog before updating release artefacts (d.j.sheldrick@gmail.com)
 
 #### Authors: 2
 

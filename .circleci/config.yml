@@ -4,7 +4,7 @@ jobs:
   build-and-test:
     # Specify the Xcode version to use
     macos:
-      xcode: "10.1.0"
+      xcode: "10.3.0"
 
     shell: /bin/bash --login -eo pipefail
 
@@ -24,12 +24,6 @@ jobs:
       - run:
           name: List Simulators
           command: xcrun simctl list
-
-      - checkout
-
-      - run:
-          name: Install Bundler 2.0.2
-          command: gem update --system && gem install bundler -v 2.0.2
 
       - checkout
 
@@ -93,7 +87,7 @@ jobs:
 
       - run:
           name: Run Unit Tests
-          command: yarn ci:skip-native-if-possible || { cd Example ; set -o pipefail && xcodebuild -workspace Emission.xcworkspace -scheme "Emission Example" -configuration Debug test -sdk iphonesimulator -destination "platform=iOS Simulator,OS=10.3.1,name=iPhone 6" GCC_PREPROCESSOR_DEFINITIONS="\$GCC_PREPROCESSOR_DEFINITIONS RUNNING_ON_CI=1" | tee /tmp/xcode_test_raw.log | xcpretty -c --test --report junit --output /tmp/test_results/xcode/results.xml ; }
+          command: yarn ci:skip-native-if-possible || { cd Example ; set -o pipefail && xcodebuild -workspace Emission.xcworkspace -scheme "Emission Example" -configuration Debug test -sdk iphonesimulator -destination "platform=iOS Simulator,OS=12.4,name=iPhone X" GCC_PREPROCESSOR_DEFINITIONS="\$GCC_PREPROCESSOR_DEFINITIONS RUNNING_ON_CI=1" | tee /tmp/xcode_test_raw.log | xcpretty -c --test --report junit --output /tmp/test_results/xcode/results.xml ; }
 
       - store_test_results:
           path: /tmp/test_results/
@@ -104,7 +98,7 @@ jobs:
 
   deploy:
     macos:
-      xcode: "10.1.0"
+      xcode: "10.3.0"
 
     shell: /bin/bash --login -eo pipefail
 
@@ -126,10 +120,6 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "23:11:82:24:bb:cb:a8:1e:7a:eb:b1:f3:d6:e1:55:32"
-
-      - run:
-          name: Install Bundler 2.0.2
-          command: gem update --system && gem install bundler -v 2.0.2
 
       - restore_cache:
           keys:
@@ -181,11 +171,7 @@ workflows:
   version: 2
   build-test:
     jobs:
-      - build-and-test:
-          filters:
-            branches:
-              ignore:
-                - master
+      - build-and-test
       - deploy:
           filters:
             branches:

@@ -1,24 +1,43 @@
 /* tslint:disable */
 
 import { ConcreteRequest } from "relay-runtime";
+import { FragmentRefs } from "relay-runtime";
 export type AutosuggestResultsQueryVariables = {
     query: string;
+    count: number;
 };
 export type AutosuggestResultsQueryResponse = {
-    readonly searchConnection: {
-        readonly edges: ReadonlyArray<{
-            readonly node: {
+    readonly " $fragmentRefs": FragmentRefs<"AutosuggestResults_results">;
+};
+export type AutosuggestResultsQueryRawResponse = {
+    readonly results: ({
+        readonly edges: ReadonlyArray<({
+            readonly node: ({
                 readonly imageUrl: string | null;
                 readonly href: string | null;
                 readonly displayLabel: string | null;
-                readonly displayType?: string | null;
-            } | null;
-        } | null> | null;
-    } | null;
+                readonly id: string | null;
+                readonly __typename: "SearchableItem";
+                readonly displayType: string | null;
+            } | {
+                readonly imageUrl: string | null;
+                readonly href: string | null;
+                readonly displayLabel: string | null;
+                readonly id: string | null;
+                readonly __typename: string;
+            }) | null;
+            readonly cursor: string;
+        }) | null> | null;
+        readonly pageInfo: {
+            readonly endCursor: string | null;
+            readonly hasNextPage: boolean;
+        };
+    }) | null;
 };
 export type AutosuggestResultsQuery = {
     readonly response: AutosuggestResultsQueryResponse;
     readonly variables: AutosuggestResultsQueryVariables;
+    readonly rawResponse: AutosuggestResultsQueryRawResponse;
 };
 
 
@@ -26,11 +45,15 @@ export type AutosuggestResultsQuery = {
 /*
 query AutosuggestResultsQuery(
   $query: String!
+  $count: Int!
 ) {
-  searchConnection(query: $query, mode: AUTOSUGGEST, first: 5) {
+  ...AutosuggestResults_results_1bcUq5
+}
+
+fragment AutosuggestResults_results_1bcUq5 on Query {
+  results: searchConnection(query: $query, mode: AUTOSUGGEST, first: $count) {
     edges {
       node {
-        __typename
         imageUrl
         href
         displayLabel
@@ -40,7 +63,13 @@ query AutosuggestResultsQuery(
         ... on Node {
           id
         }
+        __typename
       }
+      cursor
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
     }
   }
 }
@@ -53,59 +82,32 @@ var v0 = [
     "name": "query",
     "type": "String!",
     "defaultValue": null
+  },
+  {
+    "kind": "LocalArgument",
+    "name": "count",
+    "type": "Int!",
+    "defaultValue": null
   }
 ],
-v1 = [
+v1 = {
+  "kind": "Variable",
+  "name": "query",
+  "variableName": "query"
+},
+v2 = [
   {
-    "kind": "Literal",
+    "kind": "Variable",
     "name": "first",
-    "value": 5
+    "variableName": "count"
   },
   {
     "kind": "Literal",
     "name": "mode",
     "value": "AUTOSUGGEST"
   },
-  {
-    "kind": "Variable",
-    "name": "query",
-    "variableName": "query"
-  }
-],
-v2 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "imageUrl",
-  "args": null,
-  "storageKey": null
-},
-v3 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "href",
-  "args": null,
-  "storageKey": null
-},
-v4 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "displayLabel",
-  "args": null,
-  "storageKey": null
-},
-v5 = {
-  "kind": "InlineFragment",
-  "type": "SearchableItem",
-  "selections": [
-    {
-      "kind": "ScalarField",
-      "alias": null,
-      "name": "displayType",
-      "args": null,
-      "storageKey": null
-    }
-  ]
-};
+  (v1/*: any*/)
+];
 return {
   "kind": "Request",
   "fragment": {
@@ -116,40 +118,15 @@ return {
     "argumentDefinitions": (v0/*: any*/),
     "selections": [
       {
-        "kind": "LinkedField",
-        "alias": null,
-        "name": "searchConnection",
-        "storageKey": null,
-        "args": (v1/*: any*/),
-        "concreteType": "SearchableConnection",
-        "plural": false,
-        "selections": [
+        "kind": "FragmentSpread",
+        "name": "AutosuggestResults_results",
+        "args": [
           {
-            "kind": "LinkedField",
-            "alias": null,
-            "name": "edges",
-            "storageKey": null,
-            "args": null,
-            "concreteType": "SearchableEdge",
-            "plural": true,
-            "selections": [
-              {
-                "kind": "LinkedField",
-                "alias": null,
-                "name": "node",
-                "storageKey": null,
-                "args": null,
-                "concreteType": null,
-                "plural": false,
-                "selections": [
-                  (v2/*: any*/),
-                  (v3/*: any*/),
-                  (v4/*: any*/),
-                  (v5/*: any*/)
-                ]
-              }
-            ]
-          }
+            "kind": "Variable",
+            "name": "count",
+            "variableName": "count"
+          },
+          (v1/*: any*/)
         ]
       }
     ]
@@ -161,10 +138,10 @@ return {
     "selections": [
       {
         "kind": "LinkedField",
-        "alias": null,
+        "alias": "results",
         "name": "searchConnection",
         "storageKey": null,
-        "args": (v1/*: any*/),
+        "args": (v2/*: any*/),
         "concreteType": "SearchableConnection",
         "plural": false,
         "selections": [
@@ -189,13 +166,24 @@ return {
                   {
                     "kind": "ScalarField",
                     "alias": null,
-                    "name": "__typename",
+                    "name": "imageUrl",
                     "args": null,
                     "storageKey": null
                   },
-                  (v2/*: any*/),
-                  (v3/*: any*/),
-                  (v4/*: any*/),
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "name": "href",
+                    "args": null,
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "name": "displayLabel",
+                    "args": null,
+                    "storageKey": null
+                  },
                   {
                     "kind": "ScalarField",
                     "alias": null,
@@ -203,11 +191,74 @@ return {
                     "args": null,
                     "storageKey": null
                   },
-                  (v5/*: any*/)
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "name": "__typename",
+                    "args": null,
+                    "storageKey": null
+                  },
+                  {
+                    "kind": "InlineFragment",
+                    "type": "SearchableItem",
+                    "selections": [
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "name": "displayType",
+                        "args": null,
+                        "storageKey": null
+                      }
+                    ]
+                  }
                 ]
+              },
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "cursor",
+                "args": null,
+                "storageKey": null
+              }
+            ]
+          },
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "name": "pageInfo",
+            "storageKey": null,
+            "args": null,
+            "concreteType": "PageInfo",
+            "plural": false,
+            "selections": [
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "endCursor",
+                "args": null,
+                "storageKey": null
+              },
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "hasNextPage",
+                "args": null,
+                "storageKey": null
               }
             ]
           }
+        ]
+      },
+      {
+        "kind": "LinkedHandle",
+        "alias": "results",
+        "name": "searchConnection",
+        "args": (v2/*: any*/),
+        "handle": "connection",
+        "key": "AutosuggestResults_results",
+        "filters": [
+          "query",
+          "mode"
         ]
       }
     ]
@@ -215,11 +266,11 @@ return {
   "params": {
     "operationKind": "query",
     "name": "AutosuggestResultsQuery",
-    "id": "12f6b52ac05a984fee9358bfb139c213",
+    "id": "e8aedb33805f04cc23175bc5cf7a9545",
     "text": null,
     "metadata": {}
   }
 };
 })();
-(node as any).hash = 'df1324149fa22b112d3bcf141f3249a9';
+(node as any).hash = '2196a55f29c246b84a934662a5addb90';
 export default node;

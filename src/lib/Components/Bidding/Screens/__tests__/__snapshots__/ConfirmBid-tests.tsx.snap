@@ -239,8 +239,10 @@ exports[`renders properly 1`] = `
           accessible={true}
           alignItems="center"
           flexDirection="row"
+          focusable={true}
           justifyContent="space-between"
           mb={1}
+          onClick={[Function]}
           onResponderGrant={[Function]}
           onResponderMove={[Function]}
           onResponderRelease={[Function]}
@@ -412,6 +414,8 @@ exports[`renders properly 1`] = `
           >
             <View
               accessible={true}
+              focusable={true}
+              onClick={[Function]}
               onResponderGrant={[Function]}
               onResponderMove={[Function]}
               onResponderRelease={[Function]}
@@ -434,6 +438,8 @@ exports[`renders properly 1`] = `
             >
               <View
                 accessible={true}
+                focusable={true}
+                onClick={[Function]}
                 onResponderGrant={[Function]}
                 onResponderMove={[Function]}
                 onResponderRelease={[Function]}
@@ -510,6 +516,8 @@ exports[`renders properly 1`] = `
                 <View
                   accessible={true}
                   flexDirection="row"
+                  focusable={true}
+                  onClick={[Function]}
                   onResponderGrant={[Function]}
                   onResponderMove={[Function]}
                   onResponderRelease={[Function]}
@@ -870,8 +878,11 @@ exports[`renders properly 1`] = `
       accessible={true}
       alignItems="center"
       flexDirection="row"
+      focusable={true}
       justifyContent="center"
       mt={4}
+      mx={5}
+      onClick={[Function]}
       onPress={[Function]}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
@@ -882,6 +893,8 @@ exports[`renders properly 1`] = `
       style={
         Array [
           Object {
+            "marginLeft": 30,
+            "marginRight": 30,
             "marginTop": 20,
           },
         ]
@@ -947,7 +960,8 @@ exports[`renders properly 1`] = `
               ]
             }
           >
-            Conditions of Sale
+            Artsy's and Christie's
+             Conditions of Sale
           </Text>
           .
         </Text>
@@ -969,6 +983,8 @@ exports[`renders properly 1`] = `
       <View
         accessible={true}
         flexDirection="row"
+        focusable={true}
+        onClick={[Function]}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}

@@ -1,162 +1,209 @@
-import { Flex, Sans, Serif, Spacer } from "@artsy/palette"
+import { Flex, Serif, space } from "@artsy/palette"
+import { AutosuggestResults_results } from "__generated__/AutosuggestResults_results.graphql"
 import { AutosuggestResultsQuery } from "__generated__/AutosuggestResultsQuery.graphql"
-import OpaqueImageView from "lib/Components/OpaqueImageView/OpaqueImageView"
-import SwitchBoard from "lib/NativeModules/SwitchBoard"
+import Spinner from "lib/Components/Spinner"
 import { defaultEnvironment } from "lib/relay/createEnvironment"
-import { throttle } from "lodash"
-import { useEffect, useMemo, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef } from "react"
 import React from "react"
-import { Animated, TouchableOpacity } from "react-native"
+import { FlatList } from "react-native"
 import Sentry from "react-native-sentry"
-import { fetchQuery, graphql } from "react-relay"
+import { createPaginationContainer, graphql, QueryRenderer, RelayPaginationProp } from "react-relay"
+import { SearchResult } from "./SearchResult"
 
-type AutosuggestResult = AutosuggestResultsQuery["response"]["searchConnection"]["edges"][0]["node"]
+export type AutosuggestResult = AutosuggestResults_results["results"]["edges"][0]["node"]
 
-async function fetchResults(query: string): Promise<AutosuggestResult[]> {
-  try {
-    const data = await fetchQuery<AutosuggestResultsQuery>(
-      defaultEnvironment,
-      graphql`
-        query AutosuggestResultsQuery($query: String!) {
-          searchConnection(query: $query, mode: AUTOSUGGEST, first: 5) {
-            edges {
-              node {
-                imageUrl
-                href
-                displayLabel
-                ... on SearchableItem {
-                  displayType
-                }
+const INITIAL_BATCH_SIZE = 16
+const SUBSEQUENT_BATCH_SIZE = 64
+
+const AutosuggestResultsFlatList: React.FC<{
+  query: string
+  // if results are null that means we are waiting on a response from MP
+  results: AutosuggestResults_results | null
+  relay: RelayPaginationProp
+}> = ({ query, results: latestResults, relay }) => {
+  const loadMore = useCallback(() => relay.loadMore(SUBSEQUENT_BATCH_SIZE), [])
+
+  // We only want to load more results after the user has started scrolling, and unfortunately
+  // FlatList calls onEndReached right after mounting because the default threshold is quite
+  // generous. We want that generosity during a scroll but most of the time a user will not
+  // scroll at all so to begin with we only want to fetch enough content to fill the screen.
+  // So we're using this flag to 'gate' loadMore
+  const userHasStartedScrolling = useRef(false)
+  const onScrollBeginDrag = useCallback(() => {
+    if (!userHasStartedScrolling.current) {
+      userHasStartedScrolling.current = true
+      // fetch second page immediately
+      loadMore()
+    }
+  }, [])
+  const onEndReached = useCallback(() => {
+    if (userHasStartedScrolling.current) {
+      loadMore()
+    }
+  }, [])
+  useEffect(() => {
+    if (query) {
+      // the query changed, prevent loading more pages until the user starts scrolling
+      userHasStartedScrolling.current = false
+    }
+  }, [query])
+
+  // When the user has scrolled down some and then starts typing again we want to
+  // take them back to the top of the results list. But if we do that immediately
+  // after the query changed then janky behaviour ensues, so we need to wait for
+  // the relevant results to be fetched and rendered. We know new results come
+  // in when the previous results we encountered were `null` (when the query changed but
+  /// the fetch/cache-lookup has not completed yet) so we can scroll the user back to
+  // the top whenever that happens.
+  const lastResults = usePreviousValue(latestResults, undefined)
+  const flatListRef = useRef<FlatList<any>>()
+  useEffect(() => {
+    if (lastResults === null && latestResults !== null) {
+      // results were updated after a new query, scroll user back to top
+      flatListRef.current.scrollToOffset({ offset: 0, animated: true })
+      // (we need to wait for the results to be updated to avoid janky behaviour that
+      // happens when the results get updated during a scroll)
+    }
+  }, [lastResults])
+
+  // if the latestResults are null then the query just changed but we didn't get a response
+  // yet. We don't want to keep rendering whatever was there before rather than show a blank
+  // screen for a split second.
+  const results = useRef(latestResults)
+  results.current = latestResults || results.current
+
+  const nodes = useMemo(() => results.current?.results.edges.map(e => ({ ...e.node, key: e.node.href })), [
+    results.current,
+  ])
+
+  // We want to show a loading spinner at the bottom so long as there are more results to be had
+  const hasMoreResults = results.current && results.current.results.edges.length > 0 && relay.hasMore()
+  const ListFooterComponent = useMemo(() => {
+    return () => (
+      <Flex justifyContent="center" p={3} pb={6}>
+        {hasMoreResults ? <Spinner /> : null}
+      </Flex>
+    )
+  }, [hasMoreResults])
+
+  const noResults = results.current && results.current.results.edges.length === 0
+
+  return (
+    <FlatList<AutosuggestResult>
+      ref={flatListRef}
+      style={{ flex: 1, padding: space(2) }}
+      data={nodes}
+      showsVerticalScrollIndicator={false}
+      ListFooterComponent={ListFooterComponent}
+      keyboardDismissMode="on-drag"
+      keyboardShouldPersistTaps="handled"
+      ListEmptyComponent={
+        noResults
+          ? () => {
+              return <Serif size="3">We couldn't find anything for “{query}”</Serif>
+            }
+          : null
+      }
+      renderItem={({ item }) => {
+        return (
+          <Flex mb={2}>
+            <SearchResult highlight={query} result={item} />
+          </Flex>
+        )
+      }}
+      onScrollBeginDrag={onScrollBeginDrag}
+      onEndReached={onEndReached}
+    />
+  )
+}
+
+const AutosuggestResultsContainer = createPaginationContainer(
+  AutosuggestResultsFlatList,
+  {
+    results: graphql`
+      fragment AutosuggestResults_results on Query
+        @argumentDefinitions(query: { type: "String!" }, count: { type: "Int!" }, cursor: { type: "String" }) {
+        results: searchConnection(query: $query, mode: AUTOSUGGEST, first: $count, after: $cursor)
+          @connection(key: "AutosuggestResults_results") {
+          edges {
+            node {
+              imageUrl
+              href
+              displayLabel
+              ... on SearchableItem {
+                displayType
               }
             }
           }
         }
-      `,
-      { query },
-      { force: true }
-    )
-
-    return data.searchConnection.edges.map(e => e.node)
-  } catch (e) {
-    Sentry.captureMessage(e.stack)
-    if (__DEV__ && typeof jest === "undefined") {
-      console.error(e)
-    }
-    return []
-  }
-}
-
-export const AutosuggestResults: React.FC<{ query: string }> = ({ query }) => {
-  const [results, setResults] = useState<AutosuggestResult[]>([])
-  const throttledFetchResults = useMemo(
-    () =>
-      throttle(
-        async (q: string) => {
-          const r = await fetchResults(q)
-          setResults(r)
-        },
-        400,
-        { leading: false, trailing: true }
-      ),
-    []
-  )
-  useEffect(
-    () => {
-      if (query) {
-        throttledFetchResults(query)
-      } else {
-        setResults([])
+      }
+    `,
+  },
+  {
+    direction: "forward",
+    getConnectionFromProps(props) {
+      return props.results?.results
+    },
+    getFragmentVariables(vars, totalCount) {
+      return {
+        ...vars,
+        count: totalCount,
       }
     },
-    [query]
-  )
-  const navRef = useRef<any>()
-  return (
-    <Flex ref={navRef}>
-      {results.map(({ displayLabel, displayType, href, imageUrl }, i) => (
-        <FadeIn key={href} delay={i * 40}>
-          <AutosuggestResult
-            title={highlight(displayLabel, query)}
-            description={
-              displayType && (
-                <Sans size="2" color="black60">
-                  {displayType}
-                </Sans>
-              )
-            }
-            imageURL={imageUrl}
-            onPress={() => {
-              SwitchBoard.presentNavigationViewController(navRef.current, href)
-            }}
-          />
-        </FadeIn>
-      ))}
-    </Flex>
-  )
-}
-
-export const AutosuggestResult: React.FC<{
-  title: React.ReactChild
-  description: React.ReactChild
-  imageURL: string
-  onPress(): void
-}> = ({ title, onPress, description, imageURL }) => {
-  return (
-    <TouchableOpacity onPress={onPress}>
-      <Flex flexDirection="row" p={2} pb={0} alignItems="center">
-        <OpaqueImageView imageURL={imageURL} style={{ width: 36, height: 36 }} />
-        <Spacer ml={1} />
-        <Flex>
-          {title}
-          {description}
-        </Flex>
-      </Flex>
-    </TouchableOpacity>
-  )
-}
-
-function highlight(displayLabel: string, query: string) {
-  const i = displayLabel.toLowerCase().indexOf(query.toLowerCase())
-  if (i === -1) {
-    return (
-      <Serif size="3" weight="regular">
-        {displayLabel}
-      </Serif>
-    )
+    getVariables(_props, { count, cursor }, fragmentVariables) {
+      return {
+        ...fragmentVariables,
+        cursor,
+        count,
+      }
+    },
+    query: graphql`
+      query AutosuggestResultsPaginationQuery($query: String!, $count: Int!, $cursor: String) @raw_response_type {
+        ...AutosuggestResults_results @arguments(query: $query, count: $count, cursor: $cursor)
+      }
+    `,
   }
-  return (
-    <Serif size="3" weight="regular">
-      {displayLabel.slice(0, i)}
-      <Serif size="3" weight="semibold">
-        {displayLabel.slice(i, i + query.length)}
-      </Serif>
-      {displayLabel.slice(i + query.length)}
-    </Serif>
-  )
-}
+)
 
-const FadeIn: React.FC<{ delay: number }> = ({ delay, children }) => {
-  const showing = useMemo(() => {
-    return new Animated.Value(0)
-  }, [])
-  useEffect(() => {
-    Animated.spring(showing, { toValue: 1, useNativeDriver: true, speed: 100, delay }).start()
-  }, [])
-  return (
-    <Animated.View
-      style={{
-        transform: [
-          {
-            translateY: showing.interpolate({
-              inputRange: [0, 1],
-              outputRange: [10, 0],
-            }),
-          },
-        ],
-        opacity: showing,
-      }}
-    >
-      {children}
-    </Animated.View>
-  )
+export const AutosuggestResults: React.FC<{ query: string }> = React.memo(
+  ({ query }) => {
+    return (
+      <QueryRenderer<AutosuggestResultsQuery>
+        render={({ props, error }) => {
+          if (error) {
+            if (__DEV__) {
+              console.error(error)
+            } else {
+              Sentry.captureMessage(error.stack)
+            }
+            return (
+              <Flex p={2} alignItems="center" justifyContent="center">
+                <Flex maxWidth={280}>
+                  <Serif size="3" textAlign="center">
+                    There seems to be a problem with the connection. Please try again shortly.
+                  </Serif>
+                </Flex>
+              </Flex>
+            )
+          }
+          return <AutosuggestResultsContainer query={query} results={props} />
+        }}
+        variables={{ query, count: INITIAL_BATCH_SIZE }}
+        query={graphql`
+          query AutosuggestResultsQuery($query: String!, $count: Int!) @raw_response_type {
+            ...AutosuggestResults_results @arguments(query: $query, count: $count)
+          }
+        `}
+        environment={defaultEnvironment}
+      />
+    )
+  },
+  (a, b) => a.query === b.query
+)
+
+function usePreviousValue<T>(val: T, init: T) {
+  const prev = useRef(init)
+  const result = prev.current
+  prev.current = val
+  return result
 }

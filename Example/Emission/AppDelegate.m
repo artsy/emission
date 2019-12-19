@@ -153,6 +153,7 @@ randomBOOL(void)
 
   AREmissionConfiguration *config = [[AREmissionConfiguration alloc] initWithUserID:userID
                                                                 authenticationToken:accessToken
+                                                                        launchCount:2 // launches mod20 == 2 is the trigger for showing ratings prompt (eg, launch on 2, 22, 42, etc).
                                                                           sentryDSN:sentryDSN
                                                                stripePublishableKey:[keys stripePublishableKey]
                                                                    googleMapsAPIKey:[keys googleMapsAPIKey]
@@ -223,6 +224,12 @@ randomBOOL(void)
     [alert addAction:defaultAction];
     id controller = self.navigationController;
     [controller presentViewController:alert animated:YES completion:nil];
+  };
+
+  emission.switchBoardModule.updateShouldHideBackButton = ^(BOOL shouldHide) {
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [[self.navigationController backButton] setHidden:shouldHide];
+    });
   };
 
   emission.switchBoardModule.presentNavigationViewController = ^(UIViewController * _Nonnull fromViewController,

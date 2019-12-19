@@ -16,6 +16,9 @@ const PartnerOverviewFixture = {
   profile: {
     bio: "",
   },
+  counts: {
+    artists: 3,
+  },
   artists: {
     edges: [],
   },
