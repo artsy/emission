@@ -53,7 +53,11 @@ fragment FeaturedArtists_collection on MarketingCollection {
       slug
       internalID
       name
-      imageUrl
+      image {
+        resized(width: 100) {
+          url
+        }
+      }
       birthday
       nationality
       isFollowed
@@ -81,13 +85,6 @@ v1 = [
   }
 ],
 v2 = {
-  "kind": "ScalarField",
-  "alias": null,
-  "name": "imageUrl",
-  "args": null,
-  "storageKey": null
-},
-v3 = {
   "kind": "ScalarField",
   "alias": null,
   "name": "id",
@@ -194,13 +191,19 @@ return {
                     "concreteType": "Artwork",
                     "plural": false,
                     "selections": [
-                      (v2/*: any*/),
-                      (v3/*: any*/)
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "name": "imageUrl",
+                        "args": null,
+                        "storageKey": null
+                      },
+                      (v2/*: any*/)
                     ]
                   }
                 ]
               },
-              (v3/*: any*/)
+              (v2/*: any*/)
             ]
           },
           {
@@ -260,7 +263,41 @@ return {
                     "args": null,
                     "storageKey": null
                   },
-                  (v2/*: any*/),
+                  {
+                    "kind": "LinkedField",
+                    "alias": null,
+                    "name": "image",
+                    "storageKey": null,
+                    "args": null,
+                    "concreteType": "Image",
+                    "plural": false,
+                    "selections": [
+                      {
+                        "kind": "LinkedField",
+                        "alias": null,
+                        "name": "resized",
+                        "storageKey": "resized(width:100)",
+                        "args": [
+                          {
+                            "kind": "Literal",
+                            "name": "width",
+                            "value": 100
+                          }
+                        ],
+                        "concreteType": "ResizedImageUrl",
+                        "plural": false,
+                        "selections": [
+                          {
+                            "kind": "ScalarField",
+                            "alias": null,
+                            "name": "url",
+                            "args": null,
+                            "storageKey": null
+                          }
+                        ]
+                      }
+                    ]
+                  },
                   {
                     "kind": "ScalarField",
                     "alias": null,
@@ -282,13 +319,13 @@ return {
                     "args": null,
                     "storageKey": null
                   },
-                  (v3/*: any*/)
+                  (v2/*: any*/)
                 ]
               },
-              (v3/*: any*/)
+              (v2/*: any*/)
             ]
           },
-          (v3/*: any*/)
+          (v2/*: any*/)
         ]
       }
     ]
@@ -296,7 +333,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersCollectionQuery",
-    "id": "2fc649fb2fd82cd35ac716df45209f7c",
+    "id": "294aff334af160173700193edc4627c5",
     "text": null,
     "metadata": {}
   }
