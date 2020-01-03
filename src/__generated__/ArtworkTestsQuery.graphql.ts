@@ -306,6 +306,11 @@ fragment CommercialPartnerInformation_artwork on Artwork {
     name
     id
   }
+  sale {
+    name
+    href
+    id
+  }
 }
 
 fragment CommercialEditionSetInformation_artwork on Artwork {
@@ -1170,6 +1175,8 @@ return {
                 "args": null,
                 "storageKey": null
               },
+              (v2/*: any*/),
+              (v4/*: any*/),
               (v12/*: any*/),
               (v6/*: any*/),
               {
@@ -1975,7 +1982,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkTestsQuery",
-    "id": "9e26d90dd865931068f6b79dd6b2cbe1",
+    "id": "35260b643292167ada6f1de905e16a83",
     "text": null,
     "metadata": {
       "relayTestingSelectionTypeInfo": {
@@ -2177,6 +2184,8 @@ return {
           "plural": false,
           "nullable": true
         },
+        "artwork.sale.name": (v31/*: any*/),
+        "artwork.sale.href": (v31/*: any*/),
         "artwork.editionSets.internalID": (v30/*: any*/),
         "artwork.editionSets.saleMessage": (v31/*: any*/),
         "artwork.editionSets.editionOf": (v31/*: any*/),

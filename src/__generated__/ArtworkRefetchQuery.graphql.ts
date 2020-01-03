@@ -311,6 +311,11 @@ fragment CommercialPartnerInformation_artwork on Artwork {
     name
     id
   }
+  sale {
+    name
+    href
+    id
+  }
 }
 
 fragment CommercialEditionSetInformation_artwork on Artwork {
@@ -1081,6 +1086,8 @@ return {
                     "args": null,
                     "storageKey": null
                   },
+                  (v4/*: any*/),
+                  (v6/*: any*/),
                   (v14/*: any*/),
                   (v8/*: any*/),
                   {
@@ -1887,7 +1894,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "ArtworkRefetchQuery",
-    "id": "e87e08f65910b389b278adef0c3736d8",
+    "id": "ef37a841e2afc3325009a21e6dd3afe3",
     "text": null,
     "metadata": {}
   }

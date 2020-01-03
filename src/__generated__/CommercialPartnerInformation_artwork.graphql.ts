@@ -12,12 +12,24 @@ export type CommercialPartnerInformation_artwork = {
     readonly partner: {
         readonly name: string | null;
     } | null;
+    readonly sale: {
+        readonly name: string | null;
+        readonly href: string | null;
+    } | null;
     readonly " $refType": "CommercialPartnerInformation_artwork";
 };
 
 
 
-const node: ReaderFragment = {
+const node: ReaderFragment = (function(){
+var v0 = {
+  "kind": "ScalarField",
+  "alias": null,
+  "name": "name",
+  "args": null,
+  "storageKey": null
+};
+return {
   "kind": "Fragment",
   "name": "CommercialPartnerInformation_artwork",
   "type": "Artwork",
@@ -82,10 +94,23 @@ const node: ReaderFragment = {
       "concreteType": "Partner",
       "plural": false,
       "selections": [
+        (v0/*: any*/)
+      ]
+    },
+    {
+      "kind": "LinkedField",
+      "alias": null,
+      "name": "sale",
+      "storageKey": null,
+      "args": null,
+      "concreteType": "Sale",
+      "plural": false,
+      "selections": [
+        (v0/*: any*/),
         {
           "kind": "ScalarField",
           "alias": null,
-          "name": "name",
+          "name": "href",
           "args": null,
           "storageKey": null
         }
@@ -93,5 +118,6 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = 'f9a0bea135bd5f94a8aefee20b854c1e';
+})();
+(node as any).hash = 'd6d424894f5003c753ab1284e758a3b1';
 export default node;
