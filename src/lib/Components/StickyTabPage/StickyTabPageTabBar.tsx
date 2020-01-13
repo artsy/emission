@@ -3,7 +3,7 @@ import React from "react"
 import { TouchableOpacity, View } from "react-native"
 import { useStickyTabPageContext } from "./StickyTabPage"
 
-export const TAB_BAR_HEIGHT = 48
+const TAB_BAR_HEIGHT = 48
 
 export const StickyTabPageTabBar: React.FC = () => {
   const { tabLabels, activeTabIndex, setActiveTabIndex } = useStickyTabPageContext()
