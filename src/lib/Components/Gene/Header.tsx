@@ -1,11 +1,10 @@
-import { Box, Button, Theme } from "@artsy/palette"
+import { Button, Serif, Spacer } from "@artsy/palette"
 import { Header_gene } from "__generated__/Header_gene.graphql"
 import { HeaderFollowGeneMutation } from "__generated__/HeaderFollowGeneMutation.graphql"
 import React from "react"
-import { Dimensions, StyleSheet, TextStyle, View } from "react-native"
+import { View } from "react-native"
 import { commitMutation, createFragmentContainer, graphql, RelayProp } from "react-relay"
 import { Schema, Track, track as _track } from "../../utils/track"
-import Headline from "../Text/Headline"
 
 interface Props {
   gene: Header_gene
@@ -26,14 +25,23 @@ class Header extends React.Component<Props, State> {
   render() {
     const { gene } = this.props
     return (
-      <Theme>
-        <View style={styles.header}>
-          <Headline style={styles.headline} numberOfLines={2}>
+      <View>
+        <View style={{ paddingHorizontal: 45, paddingTop: 18 }}>
+          <Serif size="5" textAlign="center">
             {gene.name}
-          </Headline>
+          </Serif>
         </View>
-        {this.renderFollowButton()}
-      </Theme>
+        <Spacer mb={2} />
+        <Button
+          variant={gene.isFollowed ? "secondaryOutline" : "primaryBlack"}
+          block
+          width={100}
+          loading={this.state.isFollowedChanging}
+          onPress={() => this.handleFollowChange()}
+        >
+          {gene.isFollowed ? "Following" : "Follow"}
+        </Button>
+      </View>
     )
   }
 
@@ -121,50 +129,7 @@ class Header extends React.Component<Props, State> {
       isFollowedChanging: false,
     })
   }
-
-  renderFollowButton() {
-    if (this.props.shortForm) {
-      return null
-    }
-    const { gene } = this.props
-
-    return (
-      <Box mt={3}>
-        <Button
-          variant={gene.isFollowed ? "secondaryOutline" : "primaryBlack"}
-          block
-          width={100}
-          loading={this.state.isFollowedChanging}
-          onPress={() => this.handleFollowChange()}
-        >
-          {gene.isFollowed ? "Following" : "Follow"}
-        </Button>
-      </Box>
-    )
-  }
 }
-
-const isPad = Dimensions.get("window").width > 700
-
-interface Styles {
-  header: TextStyle
-  headline: TextStyle
-}
-
-const styles = StyleSheet.create<Styles>({
-  header: {
-    marginTop: 15,
-    height: 36,
-    justifyContent: "center",
-    alignItems: "center",
-    paddingLeft: 40,
-    paddingRight: 40,
-  },
-  headline: {
-    textAlign: "center",
-    fontSize: isPad ? 20 : 14,
-  },
-})
 
 export default createFragmentContainer(Header, {
   gene: graphql`

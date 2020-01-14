@@ -1,11 +1,15 @@
-import { Button, Theme } from "@artsy/palette"
+import { Button, space, Spacer, Theme } from "@artsy/palette"
 import { Gene_gene } from "__generated__/Gene_gene.graphql"
+import { StickyTabPage } from "lib/Components/StickyTabPage/StickyTabPage"
+import { StickyTabPageFlatList } from "lib/Components/StickyTabPage/StickyTabPageFlatList"
+import { StickyTabPageScrollView } from "lib/Components/StickyTabPage/StickyTabPageScrollView"
+import { StickyTabPageTabBar } from "lib/Components/StickyTabPage/StickyTabPageTabBar"
 import colors from "lib/data/colors"
 import { Schema, Track, track as _track } from "lib/utils/track"
+import { ProvideScreenDimensions } from "lib/utils/useScreenDimensions"
 import * as _ from "lodash"
 import React from "react"
 import { Dimensions, StyleSheet, View, ViewProperties, ViewStyle } from "react-native"
-import ParallaxScrollView from "react-native-parallax-scroll-view"
 import { createPaginationContainer, graphql, RelayPaginationProp } from "react-relay"
 import { InfiniteScrollArtworksGridContainer as InfiniteScrollArtworksGrid } from "../Components/ArtworkGrids/InfiniteScrollArtworksGrid"
 import About from "../Components/Gene/About"
@@ -104,9 +108,9 @@ export class Gene extends React.Component<Props, State> {
   renderSectionForTab = () => {
     switch (this.selectedTabTitle()) {
       case TABS.ABOUT:
-        return <About gene={this.props.gene} />
+        return
       case TABS.WORKS:
-        return <InfiniteScrollArtworksGrid connection={this.props.gene.artworks} loadMore={this.props.relay.loadMore} />
+        return
     }
   }
 
@@ -195,19 +199,6 @@ export class Gene extends React.Component<Props, State> {
     })
   }
 
-  /** Title of the Gene */
-  renderStickyHeader = () => {
-    if (!this.showingArtworksSection) {
-      return null
-    }
-    const commonPadding = this.commonPadding
-    return (
-      <View style={{ paddingLeft: commonPadding, paddingRight: commonPadding, backgroundColor: "white" }}>
-        <Header gene={this.props.gene} shortForm={true} />
-      </View>
-    )
-  }
-
   /**  Count of the works, and the refine button - sticks to the top of screen when scrolling */
   renderStickyRefineSection = () => {
     if (!this.showingArtworksSection) {
@@ -220,46 +211,60 @@ export class Gene extends React.Component<Props, State> {
     const maxLabelWidth = Dimensions.get("window").width - this.commonPadding * 2 - refineButtonWidth - 10
 
     return (
-      <Theme>
-        <View style={{ backgroundColor: "white" }}>
-          <Separator style={{ marginTop: topMargin, backgroundColor: separatorColor }} />
-          <View style={[styles.refineContainer, { paddingLeft: this.commonPadding, paddingRight: this.commonPadding }]}>
-            <SerifText style={{ fontStyle: "italic", marginTop: 2, maxWidth: maxLabelWidth }}>
-              {this.artworkQuerySummaryString()}
-            </SerifText>
-            <Button variant="secondaryOutline" onPress={() => this.refineTapped()} size="small">
-              Refine
-            </Button>
-          </View>
-          <Separator style={{ backgroundColor: separatorColor }} />
+      <View style={{ backgroundColor: "white", position: "absolute", bottom: 0, left: 0, right: 0 }}>
+        <Separator style={{ marginTop: topMargin, backgroundColor: separatorColor }} />
+        <View style={[styles.refineContainer, { paddingLeft: this.commonPadding, paddingRight: this.commonPadding }]}>
+          <SerifText style={{ fontStyle: "italic", marginTop: 2, maxWidth: maxLabelWidth }}>
+            {this.artworkQuerySummaryString()}
+          </SerifText>
+          <Button variant="secondaryOutline" onPress={() => this.refineTapped()} size="small">
+            Refine
+          </Button>
         </View>
-      </Theme>
+        <Separator style={{ backgroundColor: separatorColor }} />
+      </View>
     )
   }
 
   render() {
-    const stickyTopMargin = this.state.showingStickyHeader ? 0 : -HeaderHeight
-
     return (
-      <ParallaxScrollView
-        scrollsToTop={true}
-        fadeOutForeground={false}
-        backgroundScrollSpeed={1}
-        backgroundColor="white"
-        contentBackgroundColor="white"
-        renderForeground={this.renderForeground}
-        stickyHeaderHeight={this.stickyHeaderHeight()}
-        renderStickyHeader={this.renderStickyHeader}
-        onChangeHeaderVisibility={this.onChangeHeaderVisibility}
-        stickyHeaderIndices={[1]}
-        renderBodyComponentHeader={this.renderStickyRefineSection}
-        parallaxHeaderHeight={this.foregroundHeight}
-        parallaxHeaderContainerStyles={{ marginBottom: stickyTopMargin }}
-      >
-        <View style={{ marginTop: 20, paddingLeft: this.commonPadding, paddingRight: this.commonPadding }}>
-          {this.renderSectionForTab()}
-        </View>
-      </ParallaxScrollView>
+      <Theme>
+        <ProvideScreenDimensions>
+          <StickyTabPage
+            staticHeaderContent={
+              <>
+                <View style={{ paddingHorizontal: space(2) }}>
+                  <Header gene={this.props.gene} shortForm={false} />
+                </View>
+                <Spacer mb={1} />
+                <StickyTabPageTabBar />
+              </>
+            }
+            stickyHeaderContent={null}
+            tabs={[
+              {
+                title: "Works",
+                content: (
+                  <StickyTabPageScrollView>
+                    <InfiniteScrollArtworksGrid
+                      connection={this.props.gene.artworks}
+                      loadMore={this.props.relay.loadMore}
+                    />
+                  </StickyTabPageScrollView>
+                ),
+              },
+              {
+                title: "About",
+                content: (
+                  <StickyTabPageScrollView>
+                    <About gene={this.props.gene} />
+                  </StickyTabPageScrollView>
+                ),
+              },
+            ]}
+          />
+        </ProvideScreenDimensions>
+      </Theme>
     )
   }
 
