@@ -7,7 +7,7 @@ RCT_EXPORT_MODULE();
 
 - (NSArray<NSString *> *)supportedEvents
 {
-    return @[@"PaymentRequestPaid"];
+    return @[@"PaymentRequestPaid", @"SearchButtonTapped"];
 }
 
 // Will be called when this module's first listener is added.
@@ -24,6 +24,11 @@ RCT_EXPORT_MODULE();
 {
     NSURL *URL = notification.userInfo[@"ARPaymentRequestURL"];
     [self sendEventWithName:@"PaymentRequestPaid" body:@{ @"url": URL.absoluteString }];
+}
+
+- (void)notifySearchButtonTap
+{
+  [self sendEventWithName:@"SearchButtonTapped" body:@{}];
 }
 
 RCT_EXPORT_METHOD(postNotificationName:(nonnull NSString *)notificationName userInfo:(NSDictionary *)userInfo)

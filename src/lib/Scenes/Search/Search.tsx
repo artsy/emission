@@ -1,7 +1,8 @@
 import { color, Flex, Sans, Serif, Theme } from "@artsy/palette"
 import SearchIcon from "lib/Icons/SearchIcon"
+import { NotificationsManager } from "lib/NativeModules/NotificationsManager"
 import { ProvideScreenDimensions, useScreenDimensions } from "lib/utils/useScreenDimensions"
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { KeyboardAvoidingView, LayoutAnimation, TouchableOpacity, View } from "react-native"
 import { AutosuggestResults } from "./AutosuggestResults"
 import { Input } from "./Input"
@@ -16,6 +17,15 @@ const SearchPage: React.FC = () => {
   const {
     safeAreaInsets: { top },
   } = useScreenDimensions()
+  useEffect(() => {
+    const onSearchButtonTapped = () => {
+      input.current.focus()
+    }
+    NotificationsManager.addListener("SearchButtonTapped", onSearchButtonTapped)
+    return () => {
+      NotificationsManager.removeListener("SearchButtonTapped", onSearchButtonTapped)
+    }
+  }, [])
   return (
     <SearchContext.Provider value={{ inputRef: input }}>
       <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding" keyboardVerticalOffset={top} enabled>
