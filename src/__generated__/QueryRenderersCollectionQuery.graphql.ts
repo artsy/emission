@@ -5,6 +5,7 @@ import { FragmentRefs } from "relay-runtime";
 export type QueryRenderersCollectionQueryVariables = {
     collectionID: string;
     screenWidth?: number | null;
+    headerHeight?: number | null;
 };
 export type QueryRenderersCollectionQueryResponse = {
     readonly collection: {
@@ -22,22 +23,23 @@ export type QueryRenderersCollectionQuery = {
 query QueryRenderersCollectionQuery(
   $collectionID: String!
   $screenWidth: Int
+  $headerHeight: Int
 ) {
   collection: marketingCollection(slug: $collectionID) {
-    ...Collection_collection_2qE49v
+    ...Collection_collection_3gg1q9
     id
   }
 }
 
-fragment Collection_collection_2qE49v on MarketingCollection {
+fragment Collection_collection_3gg1q9 on MarketingCollection {
   id
   slug
-  ...CollectionHeader_collection_2qE49v
+  ...CollectionHeader_collection_3gg1q9
   ...CollectionArtworks_collection
   ...FeaturedArtists_collection_2qE49v
 }
 
-fragment CollectionHeader_collection_2qE49v on MarketingCollection {
+fragment CollectionHeader_collection_3gg1q9 on MarketingCollection {
   title
   headerImage
   descriptionMarkdown
@@ -45,7 +47,7 @@ fragment CollectionHeader_collection_2qE49v on MarketingCollection {
     edges {
       node {
         image {
-          resized(width: $screenWidth, height: 204) {
+          resized(width: $screenWidth, height: $headerHeight) {
             url
           }
         }
@@ -172,6 +174,12 @@ var v0 = [
     "name": "screenWidth",
     "type": "Int",
     "defaultValue": null
+  },
+  {
+    "kind": "LocalArgument",
+    "name": "headerHeight",
+    "type": "Int",
+    "defaultValue": null
   }
 ],
 v1 = [
@@ -264,6 +272,11 @@ return {
             "args": [
               {
                 "kind": "Variable",
+                "name": "headerHeight",
+                "variableName": "headerHeight"
+              },
+              {
+                "kind": "Variable",
                 "name": "screenWidth",
                 "variableName": "screenWidth"
               }
@@ -354,9 +367,9 @@ return {
                             "storageKey": null,
                             "args": [
                               {
-                                "kind": "Literal",
+                                "kind": "Variable",
                                 "name": "height",
-                                "value": 204
+                                "variableName": "headerHeight"
                               },
                               (v6/*: any*/)
                             ],
@@ -762,11 +775,11 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersCollectionQuery",
-    "id": "62a88c67cb57f9c622a2582cd3f2e16b",
+    "id": "495a1b23518f7b3d37246b99203611f4",
     "text": null,
     "metadata": {}
   }
 };
 })();
-(node as any).hash = '1feb45547aa6127fe5f740c3c3e5a0ce';
+(node as any).hash = '92293485d54b2c6363615f886935a6da';
 export default node;

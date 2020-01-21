@@ -284,15 +284,16 @@ export const CollectionRenderer: React.SFC<CollectionRendererProps> = ({ collect
   <QueryRenderer<QueryRenderersCollectionQuery>
     environment={environment}
     query={graphql`
-      query QueryRenderersCollectionQuery($collectionID: String!, $screenWidth: Int) {
+      query QueryRenderersCollectionQuery($collectionID: String!, $screenWidth: Int, $headerHeight: Int) {
         collection: marketingCollection(slug: $collectionID) {
-          ...Collection_collection @arguments(screenWidth: $screenWidth)
+          ...Collection_collection @arguments(screenWidth: $screenWidth, headerHeight: $headerHeight)
         }
       }
     `}
     variables={{
       collectionID,
-      screenWidth: Dimensions.get("screen").width,
+      screenWidth: Dimensions.get("screen").width > 500 ? Dimensions.get("screen").width : 500,
+      headerHeight: Dimensions.get("screen").height > 700 ? Dimensions.get("screen").height : 204,
     }}
     cacheConfig={{
       // Bypass Relay cache on retries.

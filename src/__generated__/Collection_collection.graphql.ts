@@ -12,13 +12,11 @@ export type Collection_collection = {
 
 
 const node: ReaderFragment = (function(){
-var v0 = [
-  {
-    "kind": "Variable",
-    "name": "screenWidth",
-    "variableName": "screenWidth"
-  }
-];
+var v0 = {
+  "kind": "Variable",
+  "name": "screenWidth",
+  "variableName": "screenWidth"
+};
 return {
   "kind": "Fragment",
   "name": "Collection_collection",
@@ -30,6 +28,12 @@ return {
       "name": "screenWidth",
       "type": "Int",
       "defaultValue": 500
+    },
+    {
+      "kind": "LocalArgument",
+      "name": "headerHeight",
+      "type": "Int",
+      "defaultValue": 204
     }
   ],
   "selections": [
@@ -50,7 +54,14 @@ return {
     {
       "kind": "FragmentSpread",
       "name": "CollectionHeader_collection",
-      "args": (v0/*: any*/)
+      "args": [
+        {
+          "kind": "Variable",
+          "name": "headerHeight",
+          "variableName": "headerHeight"
+        },
+        (v0/*: any*/)
+      ]
     },
     {
       "kind": "FragmentSpread",
@@ -60,10 +71,12 @@ return {
     {
       "kind": "FragmentSpread",
       "name": "FeaturedArtists_collection",
-      "args": (v0/*: any*/)
+      "args": [
+        (v0/*: any*/)
+      ]
     }
   ]
 };
 })();
-(node as any).hash = '8cb3e72d7dff7e1ff17f0b1fa27ad37e';
+(node as any).hash = 'c466937a7fdbb42629780e7c4836e6e9';
 export default node;

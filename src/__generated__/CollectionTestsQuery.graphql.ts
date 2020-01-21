@@ -26,12 +26,12 @@ query CollectionTestsQuery {
 fragment Collection_collection on MarketingCollection {
   id
   slug
-  ...CollectionHeader_collection_Z952l
+  ...CollectionHeader_collection_2Pk2VQ
   ...CollectionArtworks_collection
   ...FeaturedArtists_collection_Z952l
 }
 
-fragment CollectionHeader_collection_Z952l on MarketingCollection {
+fragment CollectionHeader_collection_2Pk2VQ on MarketingCollection {
   title
   headerImage
   descriptionMarkdown
@@ -808,7 +808,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "CollectionTestsQuery",
-    "id": "099f421ba1e361949422be8ea8c47037",
+    "id": "7c45a2d0597272fe8e7de810d7290aff",
     "text": null,
     "metadata": {
       "relayTestingSelectionTypeInfo": {

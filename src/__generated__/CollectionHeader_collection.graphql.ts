@@ -32,6 +32,12 @@ const node: ReaderFragment = {
       "name": "screenWidth",
       "type": "Int",
       "defaultValue": 500
+    },
+    {
+      "kind": "LocalArgument",
+      "name": "headerHeight",
+      "type": "Int",
+      "defaultValue": 204
     }
   ],
   "selections": [
@@ -110,9 +116,9 @@ const node: ReaderFragment = {
                       "storageKey": null,
                       "args": [
                         {
-                          "kind": "Literal",
+                          "kind": "Variable",
                           "name": "height",
-                          "value": 204
+                          "variableName": "headerHeight"
                         },
                         {
                           "kind": "Variable",
@@ -142,5 +148,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = '3fd21029669bea349c2ec4456f023aa0';
+(node as any).hash = 'd82a17896d564991da6b3f50149aa744';
 export default node;
