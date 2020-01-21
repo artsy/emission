@@ -4,6 +4,7 @@ import { ReaderFragment } from "relay-runtime";
 export type FeaturedArtists_collection = {
     readonly artworksConnection: {
         readonly merchandisableArtists: ReadonlyArray<{
+            readonly id: string;
             readonly slug: string;
             readonly internalID: string;
             readonly name: string | null;
@@ -76,6 +77,13 @@ const node: ReaderFragment = {
           "concreteType": "Artist",
           "plural": true,
           "selections": [
+            {
+              "kind": "ScalarField",
+              "alias": null,
+              "name": "id",
+              "args": null,
+              "storageKey": null
+            },
             {
               "kind": "ScalarField",
               "alias": null,
@@ -184,5 +192,5 @@ const node: ReaderFragment = {
     }
   ]
 };
-(node as any).hash = '38648f0d965f8caa18a38d54b5ccbe5e';
+(node as any).hash = '4656aea6bb48221c3198fa2d168e476e';
 export default node;

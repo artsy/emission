@@ -12,6 +12,7 @@ export type FeaturedArtistsTestsQueryRawResponse = {
     readonly marketingCollection: ({
         readonly artworksConnection: ({
             readonly merchandisableArtists: ReadonlyArray<({
+                readonly id: string;
                 readonly slug: string;
                 readonly internalID: string;
                 readonly name: string | null;
@@ -23,7 +24,6 @@ export type FeaturedArtistsTestsQueryRawResponse = {
                 readonly birthday: string | null;
                 readonly nationality: string | null;
                 readonly isFollowed: boolean | null;
-                readonly id: string | null;
             }) | null> | null;
             readonly id: string | null;
         }) | null;
@@ -54,6 +54,7 @@ query FeaturedArtistsTestsQuery {
 fragment FeaturedArtists_collection on MarketingCollection {
   artworksConnection(aggregations: [MERCHANDISABLE_ARTISTS], size: 9, sort: "-decayed_merch") {
     merchandisableArtists {
+      id
       slug
       internalID
       name
@@ -65,7 +66,6 @@ fragment FeaturedArtists_collection on MarketingCollection {
       birthday
       nationality
       isFollowed
-      id
     }
     id
   }
@@ -169,6 +169,7 @@ return {
                 "concreteType": "Artist",
                 "plural": true,
                 "selections": [
+                  (v1/*: any*/),
                   {
                     "kind": "ScalarField",
                     "alias": null,
@@ -245,8 +246,7 @@ return {
                     "name": "isFollowed",
                     "args": null,
                     "storageKey": null
-                  },
-                  (v1/*: any*/)
+                  }
                 ]
               },
               (v1/*: any*/)
@@ -286,7 +286,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "FeaturedArtistsTestsQuery",
-    "id": "3016be253f8faa7f4a0720968b41dd13",
+    "id": "49a001a2f14522470466d899e6695bf9",
     "text": null,
     "metadata": {}
   }

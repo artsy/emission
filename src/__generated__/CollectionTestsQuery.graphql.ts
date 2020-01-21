@@ -73,6 +73,7 @@ fragment CollectionArtworks_collection on MarketingCollection {
 fragment FeaturedArtists_collection_Z952l on MarketingCollection {
   artworksConnection(aggregations: [MERCHANDISABLE_ARTISTS], size: 9, sort: "-decayed_merch") {
     merchandisableArtists {
+      id
       slug
       internalID
       name
@@ -84,7 +85,6 @@ fragment FeaturedArtists_collection_Z952l on MarketingCollection {
       birthday
       nationality
       isFollowed
-      id
     }
     id
   }
@@ -716,6 +716,7 @@ return {
                 "concreteType": "Artist",
                 "plural": true,
                 "selections": [
+                  (v1/*: any*/),
                   (v2/*: any*/),
                   {
                     "kind": "ScalarField",
@@ -768,8 +769,7 @@ return {
                     "name": "isFollowed",
                     "args": null,
                     "storageKey": null
-                  },
-                  (v1/*: any*/)
+                  }
                 ]
               },
               (v1/*: any*/)
@@ -808,7 +808,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "CollectionTestsQuery",
-    "id": "7c45a2d0597272fe8e7de810d7290aff",
+    "id": "10d94b2071de86a7dfc2f9be29226c6b",
     "text": null,
     "metadata": {
       "relayTestingSelectionTypeInfo": {
@@ -859,6 +859,7 @@ return {
         "marketingCollection.query.id": (v15/*: any*/),
         "marketingCollection.image.edges.node": (v17/*: any*/),
         "marketingCollection.collectionArtworks.edges.node": (v17/*: any*/),
+        "marketingCollection.artworksConnection.merchandisableArtists.id": (v10/*: any*/),
         "marketingCollection.artworksConnection.merchandisableArtists.slug": (v10/*: any*/),
         "marketingCollection.artworksConnection.merchandisableArtists.internalID": (v10/*: any*/),
         "marketingCollection.artworksConnection.merchandisableArtists.name": (v12/*: any*/),
@@ -866,7 +867,6 @@ return {
         "marketingCollection.artworksConnection.merchandisableArtists.birthday": (v12/*: any*/),
         "marketingCollection.artworksConnection.merchandisableArtists.nationality": (v12/*: any*/),
         "marketingCollection.artworksConnection.merchandisableArtists.isFollowed": (v19/*: any*/),
-        "marketingCollection.artworksConnection.merchandisableArtists.id": (v15/*: any*/),
         "marketingCollection.image.edges.node.image": (v18/*: any*/),
         "marketingCollection.image.edges.node.id": (v15/*: any*/),
         "marketingCollection.collectionArtworks.edges.node.id": (v10/*: any*/),

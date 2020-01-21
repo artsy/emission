@@ -1,22 +1,27 @@
 import { Box, Button, EntityHeader, Flex, Sans } from "@artsy/palette"
 import { FeaturedArtists_collection } from "__generated__/FeaturedArtists_collection.graphql"
+import { FeaturedArtists_collectionMutation } from "__generated__/FeaturedArtists_collectionMutation.graphql"
+import Events from "lib/NativeModules/Events"
 import SwitchBoard from "lib/NativeModules/SwitchBoard"
 import { get } from "lib/utils/get"
 import React from "react"
 import { TouchableHighlight, TouchableWithoutFeedback } from "react-native"
-import { createFragmentContainer, graphql } from "react-relay"
+import { commitMutation, createFragmentContainer, graphql, RelayProp } from "react-relay"
 
 interface FeaturedArtistsProps {
   collection: FeaturedArtists_collection
+  relay: RelayProp
 }
 
 interface FeaturedArtistsState {
   showMore: boolean
+  isFollowedChanging: boolean
 }
 
 export class FeaturedArtists extends React.Component<FeaturedArtistsProps, FeaturedArtistsState> {
   state = {
     showMore: false,
+    isFollowedChanging: false,
   }
 
   handleTap = (context: any, href: string) => {
@@ -43,6 +48,7 @@ export class FeaturedArtists extends React.Component<FeaturedArtistsProps, Featu
                   variant={artist.isFollowed ? "primaryBlack" : "secondaryOutline"}
                   size="small"
                   longestText="Following"
+                  onPress={() => this.handleFollowArtist(artist)}
                 >
                   {artist.isFollowed ? "Following" : "Follow"}
                 </Button>
@@ -69,6 +75,67 @@ export class FeaturedArtists extends React.Component<FeaturedArtistsProps, Featu
     return allArtists
   }
 
+  failedFollowChange() {
+    // callback for analytics purposes
+    this.setState({
+      isFollowedChanging: false,
+    })
+  }
+
+  successfulFollowChange() {
+    // callback for analytics purposes
+    Events.userHadMeaningfulInteraction()
+    this.setState({
+      isFollowedChanging: false,
+    })
+  }
+
+  handleFollowArtist(artist) {
+    const { slug, id, isFollowed } = artist
+    const { relay } = this.props
+    const { isFollowedChanging } = this.state
+
+    if (isFollowedChanging) {
+      return
+    }
+
+    this.setState(
+      {
+        isFollowedChanging: true,
+      },
+      () => {
+        commitMutation<FeaturedArtists_collectionMutation>(relay.environment, {
+          onCompleted: () => this.successfulFollowChange(),
+          mutation: graphql`
+            mutation FeaturedArtists_collectionMutation($input: FollowArtistInput!) {
+              followArtist(input: $input) {
+                artist {
+                  id
+                  isFollowed
+                }
+              }
+            }
+          `,
+          variables: {
+            input: {
+              artistID: slug,
+              unfollow: isFollowed,
+            },
+          },
+          optimisticResponse: {
+            followArtist: {
+              artist: {
+                id,
+                isFollowed: !isFollowed,
+              },
+            },
+          },
+          onError: () => this.failedFollowChange(),
+        })
+      }
+    )
+  }
+
   render() {
     const artists = this.getFeaturedArtists()
     if (artists.length <= 0) {
@@ -76,10 +143,10 @@ export class FeaturedArtists extends React.Component<FeaturedArtistsProps, Featu
     }
 
     const hasMultipleArtists = artists.length > 1
-
+    const featuredArtistEntityCollection = this.getFeaturedArtistEntityCollection(artists)
     const artistCount = 3
     const remainingCount = artists.length - artistCount
-    const truncatedArtists = this.getFeaturedArtistEntityCollection(artists).slice(0, artistCount)
+    const truncatedArtists = featuredArtistEntityCollection.slice(0, artistCount)
     const headlineLabel = "Featured Artist" + (hasMultipleArtists ? "s" : "")
 
     return (
@@ -89,7 +156,7 @@ export class FeaturedArtists extends React.Component<FeaturedArtistsProps, Featu
         </Sans>
         <Flex flexWrap="wrap">
           {this.state.showMore || artists.length <= artistCount ? (
-            this.getFeaturedArtistEntityCollection(artists)
+            featuredArtistEntityCollection
           ) : (
             <>
               {truncatedArtists}
@@ -116,6 +183,7 @@ export const CollectionFeaturedArtistsContainer = createFragmentContainer(Featur
       #  why the back-end is not respecting that argument.
       artworksConnection(aggregations: [MERCHANDISABLE_ARTISTS], size: 9, sort: "-decayed_merch") {
         merchandisableArtists {
+          id
           slug
           internalID
           name

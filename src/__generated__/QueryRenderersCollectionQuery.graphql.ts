@@ -81,6 +81,7 @@ fragment CollectionArtworks_collection on MarketingCollection {
 fragment FeaturedArtists_collection_2qE49v on MarketingCollection {
   artworksConnection(aggregations: [MERCHANDISABLE_ARTISTS], size: 9, sort: "-decayed_merch") {
     merchandisableArtists {
+      id
       slug
       internalID
       name
@@ -92,7 +93,6 @@ fragment FeaturedArtists_collection_2qE49v on MarketingCollection {
       birthday
       nationality
       isFollowed
-      id
     }
     id
   }
@@ -683,6 +683,7 @@ return {
                 "concreteType": "Artist",
                 "plural": true,
                 "selections": [
+                  (v2/*: any*/),
                   (v3/*: any*/),
                   {
                     "kind": "ScalarField",
@@ -735,8 +736,7 @@ return {
                     "name": "isFollowed",
                     "args": null,
                     "storageKey": null
-                  },
-                  (v2/*: any*/)
+                  }
                 ]
               },
               (v2/*: any*/)
@@ -775,7 +775,7 @@ return {
   "params": {
     "operationKind": "query",
     "name": "QueryRenderersCollectionQuery",
-    "id": "495a1b23518f7b3d37246b99203611f4",
+    "id": "7654b0a14293a1d12de105d31066cfa4",
     "text": null,
     "metadata": {}
   }
