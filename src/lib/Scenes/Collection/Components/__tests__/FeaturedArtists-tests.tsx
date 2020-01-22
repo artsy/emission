@@ -11,6 +11,7 @@ const CollectionFixture: FeaturedArtists_collection = {
   artworksConnection: {
     merchandisableArtists: [
       {
+        id: "12345hij",
         slug: "pablo-picasso",
         internalID: "2342-pablo-picassos-id",
         name: "Pablo Picasso",
@@ -24,6 +25,7 @@ const CollectionFixture: FeaturedArtists_collection = {
         isFollowed: true,
       },
       {
+        id: "12345def",
         slug: "andy-warhol",
         internalID: "34534-andy-warhols-id",
         name: "Andy Warhol",
@@ -37,6 +39,7 @@ const CollectionFixture: FeaturedArtists_collection = {
         isFollowed: false,
       },
       {
+        id: "12345abc",
         slug: "joan-miro",
         internalID: "3454",
         name: "Joan Miro",

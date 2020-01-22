@@ -14,7 +14,7 @@ exports[`Collection renders a snapshot 1`] = `
         collection={
           Object {
             "__fragmentOwner": Object {
-              "identifier": "7c45a2d0597272fe8e7de810d7290aff{}",
+              "identifier": "10d94b2071de86a7dfc2f9be29226c6b{}",
               "node": Object {
                 "fragment": Object {
                   "argumentDefinitions": Array [],
@@ -597,6 +597,13 @@ exports[`Collection renders a snapshot 1`] = `
                                   "alias": null,
                                   "args": null,
                                   "kind": "ScalarField",
+                                  "name": "id",
+                                  "storageKey": null,
+                                },
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "kind": "ScalarField",
                                   "name": "slug",
                                   "storageKey": null,
                                 },
@@ -670,13 +677,6 @@ exports[`Collection renders a snapshot 1`] = `
                                   "name": "isFollowed",
                                   "storageKey": null,
                                 },
-                                Object {
-                                  "alias": null,
-                                  "args": null,
-                                  "kind": "ScalarField",
-                                  "name": "id",
-                                  "storageKey": null,
-                                },
                               ],
                               "storageKey": null,
                             },
@@ -728,7 +728,7 @@ exports[`Collection renders a snapshot 1`] = `
                   ],
                 },
                 "params": Object {
-                  "id": "7c45a2d0597272fe8e7de810d7290aff",
+                  "id": "10d94b2071de86a7dfc2f9be29226c6b",
                   "metadata": Object {
                     "relayTestingSelectionTypeInfo": Object {
                       "marketingCollection": Object {
@@ -763,7 +763,7 @@ exports[`Collection renders a snapshot 1`] = `
                       },
                       "marketingCollection.artworksConnection.merchandisableArtists.id": Object {
                         "enumValues": null,
-                        "nullable": true,
+                        "nullable": false,
                         "plural": false,
                         "type": "ID",
                       },
