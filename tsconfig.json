@@ -4,6 +4,7 @@
     "esModuleInterop": true,
     "baseUrl": "src",
     "experimentalDecorators": true,
+    "incremental": true,
     "lib": ["es2015"],
     "jsx": "react",
     "keyofStringsOnly": true,
