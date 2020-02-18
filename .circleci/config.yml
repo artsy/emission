@@ -166,9 +166,9 @@ jobs:
 
       - restore_cache:
           keys:
-            - v3-yarn-{{ checksum "yarn.lock" }}
+            - v4-yarn-{{ checksum "yarn.lock" }}
             # Fall back to using the latest cache if no exact match is found.
-            - v3-yarn-
+            - v4-yarn-
 
       - run:
           name: Install Yarn Dependencies
