@@ -1,4 +1,4 @@
-import Sentry from "@sentry/react-native"
+import * as Sentry from "@sentry/react-native"
 import { useScreenDimensions } from "lib/utils/useScreenDimensions"
 import React, { useCallback, useContext } from "react"
 import { FlatList, NativeScrollEvent, NativeSyntheticEvent } from "react-native"
@@ -64,7 +64,8 @@ export const ImageCarouselEmbedded = () => {
     if (!info) {
       if (!__DEV__) {
         Sentry.withScope(scope => {
-          scope.setExtra(touchBank, indexOfSingleActiveTouch)
+          scope.setExtra("indexOfSingleActiveTouch", indexOfSingleActiveTouch)
+          scope.setExtra("touchBank", touchBank)
           Sentry.captureMessage("touchBank has unexpected structure")
         })
       }

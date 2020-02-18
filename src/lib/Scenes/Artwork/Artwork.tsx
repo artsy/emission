@@ -1,5 +1,5 @@
 import { Box, Separator, space, Spacer, Theme } from "@artsy/palette"
-import Sentry from "@sentry/react-native"
+import * as Sentry from "@sentry/react-native"
 import { Artwork_artworkAboveTheFold } from "__generated__/Artwork_artworkAboveTheFold.graphql"
 import { ArtworkAboveTheFoldQuery } from "__generated__/ArtworkAboveTheFoldQuery.graphql"
 import { ArtworkFullQuery, ArtworkFullQueryResponse } from "__generated__/ArtworkFullQuery.graphql"
