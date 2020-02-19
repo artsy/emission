@@ -58,16 +58,16 @@ jobs:
 
       - restore_cache:
           keys:
-            - v3-yarn-{{ checksum "yarn.lock" }}
+            - v4-yarn-{{ checksum "yarn.lock" }}
             # Fall back to using the latest cache if no exact match is found.
-            - v3-yarn-
+            - v4-yarn-
 
       - run:
           name: Install Yarn Dependencies
           command: yarn ci:skip-native-if-possible || yarn install --ignore-engines
 
       - save_cache:
-          key: v3-yarn-{{ checksum "yarn.lock" }}
+          key: v4-yarn-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
 
@@ -175,7 +175,7 @@ jobs:
           command: yarn install --ignore-engines
 
       - save_cache:
-          key: v3-yarn-{{ checksum "yarn.lock" }}
+          key: v4-yarn-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
 
