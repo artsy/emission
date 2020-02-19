@@ -9,5 +9,4 @@ script:
 cache:
   yarn: false
   directories:
-    - node_modules
     - .jest/cache
