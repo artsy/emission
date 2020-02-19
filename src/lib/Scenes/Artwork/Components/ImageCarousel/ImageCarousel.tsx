@@ -155,7 +155,7 @@ function getBestImageVersionForThumbnail(imageVersions: readonly string[]) {
   }
 
   if (!__DEV__) {
-    Sentry.captureMessage("No appropriate image size found for artwork (see breadcrumbs for artwork slug)")
+    captureMessage("No appropriate image size found for artwork (see breadcrumbs for artwork slug)")
   } else {
     console.warn("No appropriate image size found!")
   }

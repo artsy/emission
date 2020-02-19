@@ -46,7 +46,10 @@ target 'Emission' do
     pod pod_name.to_s, props
   end
 
-  pod 'Sentry', subspecs: %w[Core KSCrash]
+  pod 'Sentry', git: 'https://github.com/getsentry/sentry-cocoa.git',
+                tag: '4.4.1',
+                subspecs: %w[Core]
+
   # Got to make it look right
   pod 'Artsy+UIFonts'
 

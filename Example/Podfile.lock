@@ -34,9 +34,9 @@ PODS:
     - React-RCTLinking (= 0.61.4)
     - React-RCTNetwork (= 0.61.4)
     - React-RCTText (= 0.61.4)
+    - RNSentry (= 1.3.1)
     - RNSVG (= 9.13.3)
     - SDWebImage (< 4, >= 3.7.2)
-    - SentryReactNative (= 0.30.3)
     - tipsi-stripe (= 7.5.0)
   - Expecta (1.0.6)
   - Extraction (1.2.6):
@@ -91,16 +91,6 @@ PODS:
   - INTUAnimationEngine/SpringSolver (1.4.2)
   - ISO8601DateFormatter (0.8)
   - Keys (1.0.1)
-  - KSCrash/Core (1.15.20):
-    - KSCrash/Reporting/Filters/Basic
-  - KSCrash/Recording (1.15.20):
-    - KSCrash/Recording/Tools (= 1.15.20)
-  - KSCrash/Recording/Tools (1.15.20)
-  - KSCrash/Reporting/Filters/Base (1.15.20):
-    - KSCrash/Recording
-  - KSCrash/Reporting/Filters/Basic (1.15.20):
-    - KSCrash/Recording
-    - KSCrash/Reporting/Filters/Base
   - "NSURL+QueryDictionary (1.2.0)"
   - ORStackView (2.0.3):
     - FLKAutoLayout
@@ -317,22 +307,18 @@ PODS:
     - React
   - RNReanimated (1.4.0):
     - React
+  - RNSentry (1.3.1):
+    - React
+    - Sentry (~> 4.4.0)
   - RNSVG (9.13.3):
     - React
   - SAMKeychain (1.5.3)
   - SDWebImage (3.8.3):
     - SDWebImage/Core (= 3.8.3)
   - SDWebImage/Core (3.8.3)
-  - Sentry (3.9.1):
-    - Sentry/Core (= 3.9.1)
-    - Sentry/KSCrash (= 3.9.1)
-  - Sentry/Core (3.9.1)
-  - Sentry/KSCrash (3.9.1):
-    - KSCrash/Core (~> 1.15.12)
-  - SentryReactNative (0.30.3):
-    - React
-    - Sentry (~> 3.9.0)
-    - Sentry/KSCrash (~> 3.9.0)
+  - Sentry (4.4.1):
+    - Sentry/Core (= 4.4.1)
+  - Sentry/Core (4.4.1)
   - Specta (1.0.7)
   - Stripe (14.0.0)
   - tipsi-stripe (7.5.0):
@@ -384,11 +370,10 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
   - RNReanimated (from `../node_modules/react-native-reanimated`)
+  - "RNSentry (from `../node_modules/@sentry/react-native`)"
   - RNSVG (from `../node_modules/react-native-svg`)
   - SAMKeychain
-  - Sentry/Core
-  - Sentry/KSCrash
-  - SentryReactNative (from `../node_modules/react-native-sentry`)
+  - Sentry/Core (from `https://github.com/getsentry/sentry-cocoa.git`, tag `4.4.1`)
   - Specta
   - tipsi-stripe (from `../node_modules/tipsi-stripe/tipsi-stripe.podspec`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -402,12 +387,10 @@ SPEC REPOS:
     - FLKAutoLayout
     - INTUAnimationEngine
     - ISO8601DateFormatter
-    - KSCrash
     - "NSURL+QueryDictionary"
     - ORStackView
     - SAMKeychain
     - SDWebImage
-    - Sentry
     - Specta
     - Stripe
     - "UIView+BooleanAnimations"
@@ -490,10 +473,13 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-community/async-storage"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
+  RNSentry:
+    :path: "../node_modules/@sentry/react-native"
   RNSVG:
     :path: "../node_modules/react-native-svg"
-  SentryReactNative:
-    :path: "../node_modules/react-native-sentry"
+  Sentry:
+    :git: https://github.com/getsentry/sentry-cocoa.git
+    :tag: 4.4.1
   tipsi-stripe:
     :podspec: "../node_modules/tipsi-stripe/tipsi-stripe.podspec"
   Yoga:
@@ -506,6 +492,9 @@ CHECKOUT OPTIONS:
   Pulley:
     :commit: 23f1c0e8cad5a72d03176fe33535c14726e7a160
     :git: https://github.com/l2succes/Pulley.git
+  Sentry:
+    :git: https://github.com/getsentry/sentry-cocoa.git
+    :tag: 4.4.1
   tipsi-stripe:
     :commit: aeb742baf1a8329ba371d9c94c7650104a112807
     :git: https://github.com/ashfurrow/tipsi-stripe
@@ -518,7 +507,7 @@ SPEC CHECKSUMS:
   Artsy-UIButtons: 3c396f0fad352a7b0332100e0ffcb0ca577e0082
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
-  Emission: 71a5d324e09b36d739eff55de47c4951c1edb4bc
+  Emission: a29b033a0696371e38cc3969beae30cb1c95eb03
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
   Extraction: 2be993a17f8f8c4fac988ebecaed93a409181faf
   FBLazyVector: feb35a6b7f7b50f367be07f34012f34a79282fa3
@@ -530,7 +519,6 @@ SPEC CHECKSUMS:
   INTUAnimationEngine: 3a7d63738cd51af573d16848a771feedea7cc9f2
   ISO8601DateFormatter: 4551b6ce4f83185425f583b0b3feb3c7b59b942c
   Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
-  KSCrash: 4dc18329a90b516342809b9ca92fc4d199d712ea
   "NSURL+QueryDictionary": bae616404e2adf6409d3d5c02a093cbf44c8a236
   ORStackView: b9507271cb41fb9e0b3eecc6414d831201e7cf7c
   Pulley: edc993fb57f7eb20541c8453d0fce10559f21dac
@@ -560,17 +548,17 @@ SPEC CHECKSUMS:
   ReactCommon: a6a294e7028ed67b926d29551aa9394fd989c24c
   RNCAsyncStorage: 3c304d1adfaea02ec732ac218801cb13897aa8c0
   RNReanimated: b2ab0b693dddd2339bd2f300e770f6302d2e960c
+  RNSentry: 6458ba85aa3f8ae291abed4f72abbd7080839c71
   RNSVG: f6177f8d7c095fada7cfee2e4bb7388ba426064c
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SDWebImage: a72e880a8fe0f7fc31efe15aaed443c074d2a80c
-  Sentry: e2707f9a6b498277d9620a48fcb1bd3b655c8473
-  SentryReactNative: 3dff4e9bd82aa581dc64ff8d2524d7007cea076b
+  Sentry: 5d312a04e369154aeac616214f4dfc3cbcc8b296
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
   Stripe: db29ad197c74aca6fb981e4e8355cf7ebd0fca5a
   tipsi-stripe: 8aaaa6f5e4cfea5c35be3affbb616c4e6cfafa5f
   "UIView+BooleanAnimations": a760be9a066036e55f298b7b7350a6cb14cfcd97
   Yoga: ba3d99dbee6c15ea6bbe3783d1f0cb1ffb79af0f
 
-PODFILE CHECKSUM: b9064f04abd7946ac749571c08020f82271ac2d4
+PODFILE CHECKSUM: a2564e613a6fc3311e552672243bf3491b841ec4
 
 COCOAPODS: 1.7.5

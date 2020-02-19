@@ -1,4 +1,4 @@
-#import <KSCrash/KSCrash.h>
+#import <Sentry/SentryCrash.h>
 #import <Foundation/Foundation.h>
 
 #import "AppDelegate.h"

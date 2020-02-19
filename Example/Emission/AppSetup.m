@@ -1,4 +1,4 @@
-#import <KSCrash/KSCrash.h>
+#import <Sentry/SentryCrash.h>
 
 #import "ARDefaults.h"
 #import "AppSetup.h"
@@ -32,7 +32,7 @@
 
     BOOL runningUnitTests = NSClassFromString(@"XCTest") != Nil;
     BOOL runningCITests = NO;
-    BOOL useMaster = ![[KSCrash sharedInstance] crashedLastLaunch];
+    BOOL useMaster = ![[SentryCrash sharedInstance] crashedLastLaunch];
     BOOL usePRBuild = NO;
     BOOL useRNP = NO;
     BOOL isSimulator = NO;
