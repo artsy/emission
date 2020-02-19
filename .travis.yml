@@ -8,5 +8,6 @@ script:
 
 cache:
   yarn: false
+  npm: false
   directories:
     - .jest/cache
