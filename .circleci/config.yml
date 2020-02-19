@@ -58,16 +58,16 @@ jobs:
 
       - restore_cache:
           keys:
-            - v3-yarn-{{ checksum "yarn.lock" }}
+            - v4-yarn-{{ checksum "yarn.lock" }}
             # Fall back to using the latest cache if no exact match is found.
-            - v3-yarn-
+            - v4-yarn-
 
       - run:
           name: Install Yarn Dependencies
           command: yarn ci:skip-native-if-possible || yarn install --ignore-engines
 
       - save_cache:
-          key: v3-yarn-{{ checksum "yarn.lock" }}
+          key: v4-yarn-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
 
@@ -96,8 +96,7 @@ jobs:
 
       - run:
           name: Run Unit Tests
-          command:
-            yarn ci:skip-native-if-possible || { cd Example ; set -o pipefail && xcodebuild -workspace
+          command: yarn ci:skip-native-if-possible || { cd Example ; set -o pipefail && xcodebuild -workspace
             Emission.xcworkspace -scheme "Emission Example" -configuration Debug test -sdk iphonesimulator -destination
             "platform=iOS Simulator,OS=12.4,name=iPhone X" GCC_PREPROCESSOR_DEFINITIONS="\$GCC_PREPROCESSOR_DEFINITIONS
             RUNNING_ON_CI=1" | tee /tmp/xcode_test_raw.log | xcpretty -c --test --report junit --output
@@ -166,16 +165,16 @@ jobs:
 
       - restore_cache:
           keys:
-            - v3-yarn-{{ checksum "yarn.lock" }}
+            - v4-yarn-{{ checksum "yarn.lock" }}
             # Fall back to using the latest cache if no exact match is found.
-            - v3-yarn-
+            - v4-yarn-
 
       - run:
           name: Install Yarn Dependencies
           command: yarn install --ignore-engines
 
       - save_cache:
-          key: v3-yarn-{{ checksum "yarn.lock" }}
+          key: v4-yarn-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
 
