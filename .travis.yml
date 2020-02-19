@@ -7,7 +7,7 @@ script:
   - yarn danger ci --verbose
 
 cache:
-  yarn: true
+  yarn: false
   directories:
     - node_modules
     - .jest/cache
