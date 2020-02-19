@@ -8,15 +8,7 @@ import {
   WaysToBuyOptions,
 } from "lib/data/ArtworkFilterOptions"
 import React from "react"
-import {
-  FlatList,
-  LayoutAnimation,
-  Modal as RNModal,
-  // NavigatorIOS,
-  NativeModules,
-  TouchableWithoutFeedback,
-  ViewProperties,
-} from "react-native"
+import { FlatList, LayoutAnimation, Modal as RNModal, TouchableWithoutFeedback, ViewProperties } from "react-native"
 import NavigatorIOS from "react-native-navigator-ios"
 import styled from "styled-components/native"
 import { SortModal } from "./SortModal"
@@ -25,7 +17,7 @@ interface ModalProps extends ViewProperties {
   // visible: boolean
   // closeModal?: () => void
   navigator?: NavigatorIOS
-  // isArtworkGridVisible: boolean
+  isFilterArtworksModalVisible: boolean
 }
 
 // TODO:  Define a TypeScript interface to represent possible filter states (take a look at the Pick TypeScript generic)
@@ -38,44 +30,22 @@ interface State {
   priceRangeSortOrder: PriceRangeOptions
   sizeSortOrder: SizeOptions
   timePeriodSortOrder: TimePeriodOptions
-  showModal: boolean
-  isFilterArtworksModalVisible: boolean
+  shouldShowModal: boolean
 }
 
-export class FilterModalNavigator extends React.Component<ModalProps, any> {
-  render() {
-    return (
-      <NavigatorIOS
-        navigationBarHidden={true}
-        initialRoute={{
-          component: FilterModal,
-          passProps: { visible: this.props.visible, closeModal: this.props.closeModal },
-          title: "????", // what does this string need to be?
-        }}
-        style={{ flex: 1 }}
-      />
-    )
+export class FilterModalNavigator extends React.Component<ModalProps, State> {
+  state = {
+    isComponentMounted: false,
+    sortableItems: [],
+    currentSortOrder: SortOptions.Default,
+    waysToBuySortOrder: WaysToBuyOptions.All,
+    mediumSortOrder: MediumOptions.All,
+    priceRangeSortOrder: PriceRangeOptions.All,
+    sizeSortOrder: SizeOptions.All,
+    timePeriodSortOrder: TimePeriodOptions.All,
+    shouldShowModal: this.props.isFilterArtworksModalVisible,
+    previousShouldShowModal: this.props.isFilterArtworksModalVisible,
   }
-}
-
-class FilterModal extends React.Component<ModalProps, State> {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      isComponentMounted: false,
-      sortableItems: [],
-      currentSortOrder: SortOptions.Default,
-      waysToBuySortOrder: WaysToBuyOptions.All,
-      mediumSortOrder: MediumOptions.All,
-      priceRangeSortOrder: PriceRangeOptions.All,
-      sizeSortOrder: SizeOptions.All,
-      timePeriodSortOrder: TimePeriodOptions.All,
-      showModal: false,
-      isFilterArtworksModalVisible: false,
-    }
-  }
-
   componentDidMount() {
     setTimeout(() => {
       LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
@@ -125,12 +95,14 @@ class FilterModal extends React.Component<ModalProps, State> {
       sortableItems,
     })
   }
-  closeModal() {
-    console.log("TCL: FilterModal -> closeModal -> closeModal")
-    if (this.props.closeModal) {
-      this.props.closeModal()
-    }
-  }
+
+  // closeModal() {
+  //   console.log("TCL: FilterModal -> closeModal -> closeModal")
+  //   if (this.props.closeModal) {
+  //     this.props.closeModal()
+  //   }
+  // }
+
   getDefaultSort(type) {
     switch (type) {
       case "Sort by":
@@ -149,12 +121,13 @@ class FilterModal extends React.Component<ModalProps, State> {
         return null
     }
   }
+
   getSortItem(type) {
     return (
       <SortRowItem>
         <Flex p={2} flexDirection="row" justifyContent="space-between" flexGrow={1}>
           <Serif size="3">{type}</Serif>
-          <ClickDefault flexDirection="row" onTouchEnd={this.openFilterScreen.bind(this)}>
+          <ClickDefault flexDirection="row" onTouchEnd={() => this._handleNextPress()}>
             <Serif color={color("black60")} size="3">
               {this.getDefaultSort(type)}
             </Serif>
@@ -164,97 +137,98 @@ class FilterModal extends React.Component<ModalProps, State> {
       </SortRowItem>
     )
   }
+
   renderSortItem = ({ item: { type } }) => {
     return this.getSortItem(type)
   }
-  openFilterScreen() {
-    return
+
+  _handleBackPress() {
+    this.props.navigator.pop()
+  }
+
+  _handleNextPress() {
+    // console.log("TCL: _handleNextPress -> _handleNextPress")
+    console.log("navvvvvv", this.props.navigator)
     this.props.navigator.push({
       title: "Sort Modal",
       component: SortModal,
     })
   }
-
-  shouldShowModal() {
-    this.setState({ showModal: !this.state.showModal })
-  }
-
-  handleFilterArtworksModal() {
-    console.log("this when modal button activated", this)
-    this.setState({ isFilterArtworksModalVisible: !this.state.isFilterArtworksModalVisible })
-  }
-
-  renderFilterButton() {
-    const { isArtworkGridVisible } = this.props
-    const isArtworkFilterEnabled = NativeModules.Emission?.options?.AROptionsFilterCollectionsArtworks
-
-    return isArtworkGridVisible && isArtworkFilterEnabled ? (
-      <FilterArtworkButtonContainer>
-        <FilterArtworkButton variant="primaryBlack" onPress={() => this.handleFilterArtworksModal()}>
-          Filter
-        </FilterArtworkButton>
-      </FilterArtworkButtonContainer>
-    ) : null
-  }
-
   render() {
-    const { sortableItems, isFilterArtworksModalVisible } = this.state
+    const { sortableItems } = this.state
+    const { isFilterArtworksModalVisible } = this.props
+    console.log("TCL: render -> this.props", this.props.isFilterArtworksModalVisible)
     // const { visible } = this.props
-    const visible = true
-
     return (
-      this.renderFilterButton(),
-      isFilterArtworksModalVisible && (
-        <RNModal animationType="fade" transparent={true} visible={visible}>
-          <TouchableWithoutFeedback>
-            <ModalBackgroundView>
-              <TouchableWithoutFeedback onPress={null}>
-                <>
-                  <Flex onTouchStart={this.closeModal.bind(this)} style={{ flexGrow: 1 }} />
-                  <ModalInnerView visible={this.state.isComponentMounted}>
-                    <Flex flexDirection="row" justifyContent="space-between">
-                      <Flex alignItems="flex-end" mt={0.5} mb={2}>
-                        <Box ml={2} mt={2} onTouchStart={this.closeModal.bind(this)}>
-                          <CloseIcon fill="black100" />
-                        </Box>
+      <>
+        <NavigatorIOS
+          navigationBarHidden={true}
+          initialRoute={{
+            component: SortModal,
+            passProps: { isFilterArtworksModalVisible: this.props.isFilterArtworksModalVisible },
+            title: "????", // what does this string need to be?
+          }}
+          style={{ flex: 1 }}
+        />
+        {isFilterArtworksModalVisible && (
+          <RNModal animationType="fade" transparent={true} visible={isFilterArtworksModalVisible}>
+            <TouchableWithoutFeedback>
+              <ModalBackgroundView>
+                <TouchableWithoutFeedback onPress={null}>
+                  <>
+                    <Flex onTouchStart={null} style={{ flexGrow: 1 }} />
+                    <ModalInnerView visible={this.state.isComponentMounted}>
+                      <Flex flexDirection="row" justifyContent="space-between">
+                        <Flex alignItems="flex-end" mt={0.5} mb={2}>
+                          <Box ml={2} mt={2} onTouchStart={null}>
+                            <CloseIcon fill="black100" />
+                          </Box>
+                        </Flex>
+                        <Sans mt={2} weight="medium" size="4">
+                          Filter
+                        </Sans>
+                        <Sans mr={2} mt={2} size="4">
+                          Clear all
+                        </Sans>
                       </Flex>
-                      <Sans mt={2} weight="medium" size="4">
-                        Filter
-                      </Sans>
-                      <Sans mr={2} mt={2} size="4">
-                        Clear all
-                      </Sans>
-                    </Flex>
-                    {this.props.children}
-                    <Flex flexDirection="row">
-                      <FlatList
-                        keyExtractor={(_item, index) => String(index)}
-                        data={sortableItems}
-                        renderItem={item => <Box>{this.renderSortItem(item)}</Box>}
-                      />
-                    </Flex>
-                    <Box p={2}>
-                      <Button
-                        onPress={() => {
-                          this.closeModal()
-                        }}
-                        block
-                        width={100}
-                        variant="secondaryOutline"
-                      >
-                        Ok
-                      </Button>
-                    </Box>
-                  </ModalInnerView>
-                </>
-              </TouchableWithoutFeedback>
-            </ModalBackgroundView>
-          </TouchableWithoutFeedback>
-        </RNModal>
-      )
+                      {this.props.children}
+                      <Flex flexDirection="row">
+                        <FlatList
+                          keyExtractor={(_item, index) => String(index)}
+                          data={sortableItems}
+                          renderItem={item => <Box>{this.renderSortItem(item)}</Box>}
+                        />
+                      </Flex>
+                      <Box p={2}>
+                        <Button
+                          onPress={() =>
+                            // this.closeModal()
+                            null
+                          }
+                          block
+                          width={100}
+                          variant="secondaryOutline"
+                        >
+                          Ok
+                        </Button>
+                      </Box>
+                    </ModalInnerView>
+                  </>
+                </TouchableWithoutFeedback>
+              </ModalBackgroundView>
+            </TouchableWithoutFeedback>
+          </RNModal>
+        )}
+      </>
     )
   }
 }
+
+// export class FilterModal extends React.Component<ModalProps, State> {
+//   render() {
+//     return null
+//   }
+// }
 
 export const FilterArtworkButtonContainer = styled(Flex)`
   position: absolute;
