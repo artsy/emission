@@ -1,4 +1,8 @@
-# Reactions ⇒ Emissions
+# ⚠️ This repo is depreacted
+
+The code in this repository was folded into [Eigen]. Please go there for all future development.
+
+## Reactions ⇒ Emissions
 
 Emission is a collection of [React Native] Components which are consumed by [Eigen]. A writeup on how & why we made a lot of the repo decisions is on our [blog here].
 
