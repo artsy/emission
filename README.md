@@ -1,4 +1,4 @@
-# ⚠️ This repo is depreacted
+# ⚠️ This repo is deprecated
 
 The code in this repository was folded into [Eigen]. Please go there for all future development.
 
