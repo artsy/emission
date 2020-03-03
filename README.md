@@ -14,7 +14,7 @@ Inside Emission you will find:
 
 ### Meta
 
-- **State:** production
+- **State:** retired, see [Eigen]
 - **Point People:** [@ashfurrow](https://github.com/ashfurrow), [@ds300](https://github.com/ds300)
 - **CI:**
   - React Native components: [![Build Status](https://travis-ci.org/artsy/emission.svg?branch=master)](https://travis-ci.org/artsy/emission)
@@ -152,7 +152,7 @@ Deploys are automated on CI after each PR merge, based on the patch/minor/major 
 
 ## License
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fartsy%2Femission.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fartsy%2Femission?ref=badge_large)
+MIT.
 
 ## About Artsy
 
